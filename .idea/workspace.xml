@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="50a42859-7cab-4e7c-9e92-732ea1084cec" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/m-blog.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/m-veloper.iml" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/blogForM_veloper.iml" afterPath="$PROJECT_DIR$/m-veloper.github.io.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -21,11 +18,11 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
-              <caret line="61" column="57" lean-forward="true" selection-start-line="61" selection-start-column="57" selection-end-line="61" selection-end-column="57" />
+            <state relative-caret-position="586">
+              <caret line="4226" column="56" lean-forward="false" selection-start-line="4226" selection-start-column="48" selection-end-line="4226" selection-end-column="56" />
               <folding>
-                <marker date="1580833756866" expanded="false" signature="75910:75942" ph="..." />
-                <marker date="1580833756866" expanded="false" signature="76266:76326" ph="..." />
+                <marker date="1580834309157" expanded="false" signature="75894:75926" ph="..." />
+                <marker date="1580834309157" expanded="false" signature="76250:76310" ph="..." />
               </folding>
             </state>
           </provider>
@@ -36,6 +33,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>localhost:4000</find>
+      <find>?v=6.4.0</find>
     </findStrings>
     <replaceStrings>
       <replace>m-veloper.github.io</replace>
@@ -93,6 +91,56 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="m-veloper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="m-veloper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="m-veloper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="m-veloper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="m-veloper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="m-veloper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="m-veloper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -216,12 +264,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1580833429587</updated>
-      <workItem from="1580833431237" duration="270000" />
+      <workItem from="1580833431237" duration="600000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="270000" />
+    <option name="totallyTimeSpent" value="600000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="944" extended-state="6" />
@@ -270,11 +318,11 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="61" column="57" lean-forward="true" selection-start-line="61" selection-start-column="57" selection-end-line="61" selection-end-column="57" />
+        <state relative-caret-position="586">
+          <caret line="4226" column="56" lean-forward="false" selection-start-line="4226" selection-start-column="48" selection-end-line="4226" selection-end-column="56" />
           <folding>
-            <marker date="1580833756866" expanded="false" signature="75910:75942" ph="..." />
-            <marker date="1580833756866" expanded="false" signature="76266:76326" ph="..." />
+            <marker date="1580834309157" expanded="false" signature="75894:75926" ph="..." />
+            <marker date="1580834309157" expanded="false" signature="76250:76310" ph="..." />
           </folding>
         </state>
       </provider>
