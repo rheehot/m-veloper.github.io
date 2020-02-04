@@ -18,11 +18,11 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="586">
-              <caret line="4226" column="56" lean-forward="false" selection-start-line="4226" selection-start-column="48" selection-end-line="4226" selection-end-column="56" />
+            <state relative-caret-position="159">
+              <caret line="54" column="2" lean-forward="true" selection-start-line="54" selection-start-column="2" selection-end-line="54" selection-end-column="2" />
               <folding>
-                <marker date="1580834309157" expanded="false" signature="75894:75926" ph="..." />
-                <marker date="1580834309157" expanded="false" signature="76250:76310" ph="..." />
+                <marker date="1580834555699" expanded="false" signature="75902:75934" ph="..." />
+                <marker date="1580834555699" expanded="false" signature="76258:76318" ph="..." />
               </folding>
             </state>
           </provider>
@@ -34,9 +34,13 @@
     <findStrings>
       <find>localhost:4000</find>
       <find>?v=6.4.0</find>
+      <find>http</find>
+      <find>veloper</find>
+      <find>http://m-veloper</find>
     </findStrings>
     <replaceStrings>
       <replace>m-veloper.github.io</replace>
+      <replace>https://m-veloper</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -264,12 +268,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1580833429587</updated>
-      <workItem from="1580833431237" duration="600000" />
+      <workItem from="1580833431237" duration="729000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="600000" />
+    <option name="totallyTimeSpent" value="729000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="944" extended-state="6" />
@@ -318,11 +322,11 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="586">
-          <caret line="4226" column="56" lean-forward="false" selection-start-line="4226" selection-start-column="48" selection-end-line="4226" selection-end-column="56" />
+        <state relative-caret-position="159">
+          <caret line="54" column="2" lean-forward="true" selection-start-line="54" selection-start-column="2" selection-end-line="54" selection-end-column="2" />
           <folding>
-            <marker date="1580834309157" expanded="false" signature="75894:75926" ph="..." />
-            <marker date="1580834309157" expanded="false" signature="76250:76310" ph="..." />
+            <marker date="1580834555699" expanded="false" signature="75902:75934" ph="..." />
+            <marker date="1580834555699" expanded="false" signature="76258:76318" ph="..." />
           </folding>
         </state>
       </provider>
