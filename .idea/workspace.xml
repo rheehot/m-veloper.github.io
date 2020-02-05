@@ -2,331 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="50a42859-7cab-4e7c-9e92-732ea1084cec" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/logo2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/video/2020/01/27/react-tutorial-video/index.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/favicon.ico" afterPath="$PROJECT_DIR$/favicon.ico" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/404.html" afterPath="$PROJECT_DIR$/404.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/about/index.html" afterPath="$PROJECT_DIR$/about/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/hydejack.js" afterPath="$PROJECT_DIR$/assets/js/hydejack.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/category/artwork/index.html" afterPath="$PROJECT_DIR$/category/artwork/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/category/devlog/index.html" afterPath="$PROJECT_DIR$/category/devlog/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/category/essay/index.html" afterPath="$PROJECT_DIR$/category/essay/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/category/review/index.html" afterPath="$PROJECT_DIR$/category/review/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/category/tip/index.html" afterPath="$PROJECT_DIR$/category/tip/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/category/video/index.html" afterPath="$PROJECT_DIR$/category/video/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2017/02/09/TIL-JavaScript-스크롤-위치-옮기기/index.html" afterPath="$PROJECT_DIR$/devlog/2017/02/09/TIL-JavaScript-스크롤-위치-옮기기/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2017/02/09/TIL-material-icon-ie-적용/index.html" afterPath="$PROJECT_DIR$/devlog/2017/02/09/TIL-material-icon-ie-적용/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2017/02/15/daum-smartwork/index.html" afterPath="$PROJECT_DIR$/devlog/2017/02/15/daum-smartwork/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2017/02/15/git-되돌리기/index.html" afterPath="$PROJECT_DIR$/devlog/2017/02/15/git-되돌리기/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2017/02/26/meteor-user-collection-바꾸기/index.html" afterPath="$PROJECT_DIR$/devlog/2017/02/26/meteor-user-collection-바꾸기/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2017/03/01/METEOR-publish-제대로하기/index.html" afterPath="$PROJECT_DIR$/devlog/2017/03/01/METEOR-publish-제대로하기/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2017/03/01/TIL-meteor-종료/index.html" afterPath="$PROJECT_DIR$/devlog/2017/03/01/TIL-meteor-종료/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2017/03/01/TIL-ps-명령어/index.html" afterPath="$PROJECT_DIR$/devlog/2017/03/01/TIL-ps-명령어/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2017/03/01/TIL-ssh종료후-유지/index.html" afterPath="$PROJECT_DIR$/devlog/2017/03/01/TIL-ssh종료후-유지/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2017/03/03/Winston-사용하기/index.html" afterPath="$PROJECT_DIR$/devlog/2017/03/03/Winston-사용하기/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2017/03/03/mongoDB-backup-restore/index.html" afterPath="$PROJECT_DIR$/devlog/2017/03/03/mongoDB-backup-restore/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2017/03/09/Blog-Jekyll-theme/index.html" afterPath="$PROJECT_DIR$/devlog/2017/03/09/Blog-Jekyll-theme/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2017/03/09/Blog-Jekyll/index.html" afterPath="$PROJECT_DIR$/devlog/2017/03/09/Blog-Jekyll/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2017/04/12/JavaScript/index.html" afterPath="$PROJECT_DIR$/devlog/2017/04/12/JavaScript/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2017/04/13/JavaScript2/index.html" afterPath="$PROJECT_DIR$/devlog/2017/04/13/JavaScript2/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2017/04/14/JWT/index.html" afterPath="$PROJECT_DIR$/devlog/2017/04/14/JWT/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2017/04/15/JWT-2/index.html" afterPath="$PROJECT_DIR$/devlog/2017/04/15/JWT-2/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2017/04/17/DP/index.html" afterPath="$PROJECT_DIR$/devlog/2017/04/17/DP/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2017/04/18/linux-command/index.html" afterPath="$PROJECT_DIR$/devlog/2017/04/18/linux-command/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2017/04/28/es6/index.html" afterPath="$PROJECT_DIR$/devlog/2017/04/28/es6/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2017/04/29/es6-2/index.html" afterPath="$PROJECT_DIR$/devlog/2017/04/29/es6-2/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2017/04/30/react-tutorial/index.html" afterPath="$PROJECT_DIR$/devlog/2017/04/30/react-tutorial/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2017/05/03/es6-3/index.html" afterPath="$PROJECT_DIR$/devlog/2017/05/03/es6-3/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2017/05/12/regex-tag/index.html" afterPath="$PROJECT_DIR$/devlog/2017/05/12/regex-tag/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2017/05/19/about-spa/index.html" afterPath="$PROJECT_DIR$/devlog/2017/05/19/about-spa/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2017/05/19/phantomjs-error/index.html" afterPath="$PROJECT_DIR$/devlog/2017/05/19/phantomjs-error/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2017/05/24/react-component/index.html" afterPath="$PROJECT_DIR$/devlog/2017/05/24/react-component/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2017/05/30/Information-Visualization-and-Visual-Analytics/index.html" afterPath="$PROJECT_DIR$/devlog/2017/05/30/Information-Visualization-and-Visual-Analytics/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2017/05/30/REST-API/index.html" afterPath="$PROJECT_DIR$/devlog/2017/05/30/REST-API/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2017/05/30/big-data/index.html" afterPath="$PROJECT_DIR$/devlog/2017/05/30/big-data/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2017/05/30/feature-branch-workflow/index.html" afterPath="$PROJECT_DIR$/devlog/2017/05/30/feature-branch-workflow/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2017/05/30/ghost-button/index.html" afterPath="$PROJECT_DIR$/devlog/2017/05/30/ghost-button/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2017/05/30/git-pull-request/index.html" afterPath="$PROJECT_DIR$/devlog/2017/05/30/git-pull-request/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2017/05/30/linux-guest-extension/index.html" afterPath="$PROJECT_DIR$/devlog/2017/05/30/linux-guest-extension/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2017/05/30/linux-setup/index.html" afterPath="$PROJECT_DIR$/devlog/2017/05/30/linux-setup/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2017/05/30/linux-systemcall-add/index.html" afterPath="$PROJECT_DIR$/devlog/2017/05/30/linux-systemcall-add/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2017/05/30/opensource-community/index.html" afterPath="$PROJECT_DIR$/devlog/2017/05/30/opensource-community/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2017/05/30/raspberrypi-systemcall/index.html" afterPath="$PROJECT_DIR$/devlog/2017/05/30/raspberrypi-systemcall/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2017/05/30/raspberrypi-wlan/index.html" afterPath="$PROJECT_DIR$/devlog/2017/05/30/raspberrypi-wlan/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2017/06/08/array-find-object/index.html" afterPath="$PROJECT_DIR$/devlog/2017/06/08/array-find-object/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2017/06/08/aws-deploy/index.html" afterPath="$PROJECT_DIR$/devlog/2017/06/08/aws-deploy/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2017/06/10/aws-s3-tip/index.html" afterPath="$PROJECT_DIR$/devlog/2017/06/10/aws-s3-tip/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2017/06/13/security-remember-me/index.html" afterPath="$PROJECT_DIR$/devlog/2017/06/13/security-remember-me/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2017/06/14/infomation-visualization/index.html" afterPath="$PROJECT_DIR$/devlog/2017/06/14/infomation-visualization/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2017/06/21/pm2-usage/index.html" afterPath="$PROJECT_DIR$/devlog/2017/06/21/pm2-usage/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2017/06/21/storage-cookie/index.html" afterPath="$PROJECT_DIR$/devlog/2017/06/21/storage-cookie/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2017/06/27/node-js/index.html" afterPath="$PROJECT_DIR$/devlog/2017/06/27/node-js/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2017/06/30/key-press/index.html" afterPath="$PROJECT_DIR$/devlog/2017/06/30/key-press/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2017/07/06/browser-rendering/index.html" afterPath="$PROJECT_DIR$/devlog/2017/07/06/browser-rendering/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2017/07/07/git-branching/index.html" afterPath="$PROJECT_DIR$/devlog/2017/07/07/git-branching/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2017/07/10/javascript-perfomance-optimization/index.html" afterPath="$PROJECT_DIR$/devlog/2017/07/10/javascript-perfomance-optimization/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2017/07/19/about-vue/index.html" afterPath="$PROJECT_DIR$/devlog/2017/07/19/about-vue/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2017/07/21/github-opensource-pr/index.html" afterPath="$PROJECT_DIR$/devlog/2017/07/21/github-opensource-pr/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2017/07/26/problem-of-webfont/index.html" afterPath="$PROJECT_DIR$/devlog/2017/07/26/problem-of-webfont/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2017/07/27/about-webfont/index.html" afterPath="$PROJECT_DIR$/devlog/2017/07/27/about-webfont/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2017/08/15/hoisting/index.html" afterPath="$PROJECT_DIR$/devlog/2017/08/15/hoisting/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2017/08/16/closure/index.html" afterPath="$PROJECT_DIR$/devlog/2017/08/16/closure/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2017/10/25/machine-learning-1/index.html" afterPath="$PROJECT_DIR$/devlog/2017/10/25/machine-learning-1/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2017/10/26/machine-learning-2/index.html" afterPath="$PROJECT_DIR$/devlog/2017/10/26/machine-learning-2/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2017/10/27/machine-learning-3/index.html" afterPath="$PROJECT_DIR$/devlog/2017/10/27/machine-learning-3/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2017/10/28/machine-learning-4/index.html" afterPath="$PROJECT_DIR$/devlog/2017/10/28/machine-learning-4/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2017/10/28/machine-learning-5/index.html" afterPath="$PROJECT_DIR$/devlog/2017/10/28/machine-learning-5/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2017/10/28/machine-learning-6/index.html" afterPath="$PROJECT_DIR$/devlog/2017/10/28/machine-learning-6/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2017/10/29/machine-learning-7/index.html" afterPath="$PROJECT_DIR$/devlog/2017/10/29/machine-learning-7/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2017/10/31/machine-learning-8/index.html" afterPath="$PROJECT_DIR$/devlog/2017/10/31/machine-learning-8/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2017/10/31/machine-learning-appendix-1/index.html" afterPath="$PROJECT_DIR$/devlog/2017/10/31/machine-learning-appendix-1/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2017/11/11/azure-ml/index.html" afterPath="$PROJECT_DIR$/devlog/2017/11/11/azure-ml/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2017/11/17/machine-learning-9/index.html" afterPath="$PROJECT_DIR$/devlog/2017/11/17/machine-learning-9/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2017/11/18/machine-learning-10/index.html" afterPath="$PROJECT_DIR$/devlog/2017/11/18/machine-learning-10/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2017/11/20/pm2-docker-ruby/index.html" afterPath="$PROJECT_DIR$/devlog/2017/11/20/pm2-docker-ruby/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2018/08/15/aws-amplify-confilict/index.html" afterPath="$PROJECT_DIR$/devlog/2018/08/15/aws-amplify-confilict/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2019/01/09/react-native-sentry-setting/index.html" afterPath="$PROJECT_DIR$/devlog/2019/01/09/react-native-sentry-setting/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2019/01/10/dev-convention/index.html" afterPath="$PROJECT_DIR$/devlog/2019/01/10/dev-convention/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2019/04/12/functional-programing-1/index.html" afterPath="$PROJECT_DIR$/devlog/2019/04/12/functional-programing-1/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2019/04/13/functional-programing-2/index.html" afterPath="$PROJECT_DIR$/devlog/2019/04/13/functional-programing-2/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2019/04/14/functional-programing-3/index.html" afterPath="$PROJECT_DIR$/devlog/2019/04/14/functional-programing-3/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2019/04/15/functional-programing-4/index.html" afterPath="$PROJECT_DIR$/devlog/2019/04/15/functional-programing-4/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2019/04/16/functional-programing-5/index.html" afterPath="$PROJECT_DIR$/devlog/2019/04/16/functional-programing-5/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2019/04/17/functional-programing-6/index.html" afterPath="$PROJECT_DIR$/devlog/2019/04/17/functional-programing-6/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2019/04/18/functional-programing-7/index.html" afterPath="$PROJECT_DIR$/devlog/2019/04/18/functional-programing-7/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2019/04/18/klaytn-contract-fee-delegation/index.html" afterPath="$PROJECT_DIR$/devlog/2019/04/18/klaytn-contract-fee-delegation/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2019/04/19/functional-programing-8/index.html" afterPath="$PROJECT_DIR$/devlog/2019/04/19/functional-programing-8/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2019/10/22/modern-javascript/index.html" afterPath="$PROJECT_DIR$/devlog/2019/10/22/modern-javascript/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2019/10/23/modern-javascript-2/index.html" afterPath="$PROJECT_DIR$/devlog/2019/10/23/modern-javascript-2/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2019/10/25/modern-javascript-4/index.html" afterPath="$PROJECT_DIR$/devlog/2019/10/25/modern-javascript-4/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2019/10/26/modern-javascript-5/index.html" afterPath="$PROJECT_DIR$/devlog/2019/10/26/modern-javascript-5/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2019/10/27/modern-javascript-6/index.html" afterPath="$PROJECT_DIR$/devlog/2019/10/27/modern-javascript-6/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2019/10/28/modern-javascript-7/index.html" afterPath="$PROJECT_DIR$/devlog/2019/10/28/modern-javascript-7/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2019/10/29/modern-javascript-8/index.html" afterPath="$PROJECT_DIR$/devlog/2019/10/29/modern-javascript-8/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2019/10/29/modern-javascript-9/index.html" afterPath="$PROJECT_DIR$/devlog/2019/10/29/modern-javascript-9/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2019/10/30/modern-javascript-10/index.html" afterPath="$PROJECT_DIR$/devlog/2019/10/30/modern-javascript-10/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2019/10/30/modern-javascript-11/index.html" afterPath="$PROJECT_DIR$/devlog/2019/10/30/modern-javascript-11/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2019/10/30/modern-javascript-12/index.html" afterPath="$PROJECT_DIR$/devlog/2019/10/30/modern-javascript-12/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2019/10/30/modern-javascript-13/index.html" afterPath="$PROJECT_DIR$/devlog/2019/10/30/modern-javascript-13/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2019/10/30/modern-javascript-14/index.html" afterPath="$PROJECT_DIR$/devlog/2019/10/30/modern-javascript-14/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2019/10/30/modern-javascript-15/index.html" afterPath="$PROJECT_DIR$/devlog/2019/10/30/modern-javascript-15/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2019/10/30/modern-javascript-16/index.html" afterPath="$PROJECT_DIR$/devlog/2019/10/30/modern-javascript-16/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2019/10/30/modern-javascript-17/index.html" afterPath="$PROJECT_DIR$/devlog/2019/10/30/modern-javascript-17/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2019/10/30/modern-javascript-18/index.html" afterPath="$PROJECT_DIR$/devlog/2019/10/30/modern-javascript-18/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2019/10/31/modern-javascript-19/index.html" afterPath="$PROJECT_DIR$/devlog/2019/10/31/modern-javascript-19/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2019/11/01/modern-javascript-20/index.html" afterPath="$PROJECT_DIR$/devlog/2019/11/01/modern-javascript-20/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2019/11/05/modern-javascript-21/index.html" afterPath="$PROJECT_DIR$/devlog/2019/11/05/modern-javascript-21/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2019/11/06/modern-javascript-22/index.html" afterPath="$PROJECT_DIR$/devlog/2019/11/06/modern-javascript-22/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2019/11/07/modern-javascript-23/index.html" afterPath="$PROJECT_DIR$/devlog/2019/11/07/modern-javascript-23/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2019/11/08/modern-javascript-24/index.html" afterPath="$PROJECT_DIR$/devlog/2019/11/08/modern-javascript-24/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2019/11/13/modern-javascript-25/index.html" afterPath="$PROJECT_DIR$/devlog/2019/11/13/modern-javascript-25/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2019/11/14/modern-javascript-26/index.html" afterPath="$PROJECT_DIR$/devlog/2019/11/14/modern-javascript-26/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2019/11/15/git-commit-revert/index.html" afterPath="$PROJECT_DIR$/devlog/2019/11/15/git-commit-revert/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2019/11/15/modern-javascript-27/index.html" afterPath="$PROJECT_DIR$/devlog/2019/11/15/modern-javascript-27/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2019/11/20/modern-javascript-28/index.html" afterPath="$PROJECT_DIR$/devlog/2019/11/20/modern-javascript-28/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2019/12/03/modern-javascript-29/index.html" afterPath="$PROJECT_DIR$/devlog/2019/12/03/modern-javascript-29/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2019/12/05/modern-javascript-30-copy/index.html" afterPath="$PROJECT_DIR$/devlog/2019/12/05/modern-javascript-30-copy/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2019/12/09/modern-javascript-31/index.html" afterPath="$PROJECT_DIR$/devlog/2019/12/09/modern-javascript-31/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/essay/2016/09/30/disapoint-iphone/index.html" afterPath="$PROJECT_DIR$/essay/2016/09/30/disapoint-iphone/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/essay/2016/10/01/note-design/index.html" afterPath="$PROJECT_DIR$/essay/2016/10/01/note-design/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/essay/2016/10/01/note-iphone-design/index.html" afterPath="$PROJECT_DIR$/essay/2016/10/01/note-iphone-design/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/essay/2017/05/07/fukuoka/index.html" afterPath="$PROJECT_DIR$/essay/2017/05/07/fukuoka/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/essay/2017/05/08/work-life/index.html" afterPath="$PROJECT_DIR$/essay/2017/05/08/work-life/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/essay/2017/05/27/work-life-balance/index.html" afterPath="$PROJECT_DIR$/essay/2017/05/27/work-life-balance/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/essay/2017/06/02/do-not-alone/index.html" afterPath="$PROJECT_DIR$/essay/2017/06/02/do-not-alone/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/essay/2017/06/16/people-like-startup/index.html" afterPath="$PROJECT_DIR$/essay/2017/06/16/people-like-startup/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/essay/2017/06/19/how-to-write-business-plan/index.html" afterPath="$PROJECT_DIR$/essay/2017/06/19/how-to-write-business-plan/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/essay/2017/06/20/make-me-to-study/index.html" afterPath="$PROJECT_DIR$/essay/2017/06/20/make-me-to-study/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/essay/2017/07/15/military-reserve-forces/index.html" afterPath="$PROJECT_DIR$/essay/2017/07/15/military-reserve-forces/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/essay/2017/07/30/change-blog-theme/index.html" afterPath="$PROJECT_DIR$/essay/2017/07/30/change-blog-theme/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/essay/2017/07/31/self-branding/index.html" afterPath="$PROJECT_DIR$/essay/2017/07/31/self-branding/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/essay/2017/08/25/medium-logo-change/index.html" afterPath="$PROJECT_DIR$/essay/2017/08/25/medium-logo-change/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/essay/2018/04/12/before-you-build-jekyll-blog/index.html" afterPath="$PROJECT_DIR$/essay/2018/04/12/before-you-build-jekyll-blog/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/feed.xml" afterPath="$PROJECT_DIR$/feed.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page-10/index.html" afterPath="$PROJECT_DIR$/page-10/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page-11/index.html" afterPath="$PROJECT_DIR$/page-11/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page-12/index.html" afterPath="$PROJECT_DIR$/page-12/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page-13/index.html" afterPath="$PROJECT_DIR$/page-13/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page-14/index.html" afterPath="$PROJECT_DIR$/page-14/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page-15/index.html" afterPath="$PROJECT_DIR$/page-15/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page-16/index.html" afterPath="$PROJECT_DIR$/page-16/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page-17/index.html" afterPath="$PROJECT_DIR$/page-17/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page-18/index.html" afterPath="$PROJECT_DIR$/page-18/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page-19/index.html" afterPath="$PROJECT_DIR$/page-19/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page-2/index.html" afterPath="$PROJECT_DIR$/page-2/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page-20/index.html" afterPath="$PROJECT_DIR$/page-20/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page-21/index.html" afterPath="$PROJECT_DIR$/page-21/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page-22/index.html" afterPath="$PROJECT_DIR$/page-22/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page-23/index.html" afterPath="$PROJECT_DIR$/page-23/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page-24/index.html" afterPath="$PROJECT_DIR$/page-24/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page-25/index.html" afterPath="$PROJECT_DIR$/page-25/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page-26/index.html" afterPath="$PROJECT_DIR$/page-26/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page-27/index.html" afterPath="$PROJECT_DIR$/page-27/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page-28/index.html" afterPath="$PROJECT_DIR$/page-28/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page-29/index.html" afterPath="$PROJECT_DIR$/page-29/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page-3/index.html" afterPath="$PROJECT_DIR$/page-3/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page-30/index.html" afterPath="$PROJECT_DIR$/page-30/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page-31/index.html" afterPath="$PROJECT_DIR$/page-31/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page-32/index.html" afterPath="$PROJECT_DIR$/page-32/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page-4/index.html" afterPath="$PROJECT_DIR$/page-4/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page-5/index.html" afterPath="$PROJECT_DIR$/page-5/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page-6/index.html" afterPath="$PROJECT_DIR$/page-6/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page-7/index.html" afterPath="$PROJECT_DIR$/page-7/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page-8/index.html" afterPath="$PROJECT_DIR$/page-8/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page-9/index.html" afterPath="$PROJECT_DIR$/page-9/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/posts/index.html" afterPath="$PROJECT_DIR$/posts/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2016/02/29/review-busker-album-2/index.html" afterPath="$PROJECT_DIR$/review/2016/02/29/review-busker-album-2/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2016/02/29/review-busker-beatiful-age/index.html" afterPath="$PROJECT_DIR$/review/2016/02/29/review-busker-beatiful-age/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2016/02/29/review-busker-love-is/index.html" afterPath="$PROJECT_DIR$/review/2016/02/29/review-busker-love-is/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2016/02/29/review-busker-night/index.html" afterPath="$PROJECT_DIR$/review/2016/02/29/review-busker-night/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2016/02/29/review-busker-regret/index.html" afterPath="$PROJECT_DIR$/review/2016/02/29/review-busker-regret/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2016/03/29/reveiw-why-am-i-love-you/index.html" afterPath="$PROJECT_DIR$/review/2016/03/29/reveiw-why-am-i-love-you/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2016/03/29/review-all-of-my-wife/index.html" afterPath="$PROJECT_DIR$/review/2016/03/29/review-all-of-my-wife/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2016/03/29/review-legend-fist/index.html" afterPath="$PROJECT_DIR$/review/2016/03/29/review-legend-fist/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2016/03/29/review-life-of-pi/index.html" afterPath="$PROJECT_DIR$/review/2016/03/29/review-life-of-pi/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2016/03/31/iptime-hdd-1/index.html" afterPath="$PROJECT_DIR$/review/2016/03/31/iptime-hdd-1/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2016/03/31/iptime-hdd-2/index.html" afterPath="$PROJECT_DIR$/review/2016/03/31/iptime-hdd-2/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2016/09/29/tammuz-review/index.html" afterPath="$PROJECT_DIR$/review/2016/09/29/tammuz-review/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2016/10/07/review-gobe-gukatsu/index.html" afterPath="$PROJECT_DIR$/review/2016/10/07/review-gobe-gukatsu/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2016/10/07/review-wiener-melange/index.html" afterPath="$PROJECT_DIR$/review/2016/10/07/review-wiener-melange/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2016/10/18/review-cream-bread/index.html" afterPath="$PROJECT_DIR$/review/2016/10/18/review-cream-bread/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2016/10/18/review-folklet-hongdae/index.html" afterPath="$PROJECT_DIR$/review/2016/10/18/review-folklet-hongdae/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2016/10/20/intake-meals/index.html" afterPath="$PROJECT_DIR$/review/2016/10/20/intake-meals/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2017/01/20/빙글-테크톡-2번째/index.html" afterPath="$PROJECT_DIR$/review/2017/01/20/빙글-테크톡-2번째/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2017/01/20/빙글-테크톡-첫번째/index.html" afterPath="$PROJECT_DIR$/review/2017/01/20/빙글-테크톡-첫번째/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2017/01/23/XECon2016-후기/index.html" afterPath="$PROJECT_DIR$/review/2017/01/23/XECon2016-후기/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2017/01/31/나는프로그래머다-나프다를-읽고/index.html" afterPath="$PROJECT_DIR$/review/2017/01/31/나는프로그래머다-나프다를-읽고/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2017/03/17/AWSome-Day/index.html" afterPath="$PROJECT_DIR$/review/2017/03/17/AWSome-Day/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2017/05/17/js-con/index.html" afterPath="$PROJECT_DIR$/review/2017/05/17/js-con/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2017/06/24/review-modu-pythone/index.html" afterPath="$PROJECT_DIR$/review/2017/06/24/review-modu-pythone/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2017/08/14/my-first-ai/index.html" afterPath="$PROJECT_DIR$/review/2017/08/14/my-first-ai/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2017/08/18/seoul-js-ECMA/index.html" afterPath="$PROJECT_DIR$/review/2017/08/18/seoul-js-ECMA/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2017/08/18/seoul-js-electron/index.html" afterPath="$PROJECT_DIR$/review/2017/08/18/seoul-js-electron/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2017/08/18/seoul-js-flybook/index.html" afterPath="$PROJECT_DIR$/review/2017/08/18/seoul-js-flybook/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2017/08/18/seoul-js-tooling/index.html" afterPath="$PROJECT_DIR$/review/2017/08/18/seoul-js-tooling/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2017/08/19/gdg-reactive-programming/index.html" afterPath="$PROJECT_DIR$/review/2017/08/19/gdg-reactive-programming/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2017/08/27/webtech-angular-base/index.html" afterPath="$PROJECT_DIR$/review/2017/08/27/webtech-angular-base/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2017/09/08/openup-g-hub-2/index.html" afterPath="$PROJECT_DIR$/review/2017/09/08/openup-g-hub-2/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2017/09/08/openup-g-hub/index.html" afterPath="$PROJECT_DIR$/review/2017/09/08/openup-g-hub/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2017/09/21/AWS-based-serverless/index.html" afterPath="$PROJECT_DIR$/review/2017/09/21/AWS-based-serverless/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2017/09/21/AWS-deploy/index.html" afterPath="$PROJECT_DIR$/review/2017/09/21/AWS-deploy/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2017/09/21/lambda-bigdata/index.html" afterPath="$PROJECT_DIR$/review/2017/09/21/lambda-bigdata/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2017/09/22/kakao-devops/index.html" afterPath="$PROJECT_DIR$/review/2017/09/22/kakao-devops/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2017/09/22/netflix-on-cloud/index.html" afterPath="$PROJECT_DIR$/review/2017/09/22/netflix-on-cloud/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2017/10/16/deview-autonomous-driving/index.html" afterPath="$PROJECT_DIR$/review/2017/10/16/deview-autonomous-driving/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2017/10/16/deview-machine-learning-cs/index.html" afterPath="$PROJECT_DIR$/review/2017/10/16/deview-machine-learning-cs/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2017/10/21/feconf-electron-app/index.html" afterPath="$PROJECT_DIR$/review/2017/10/21/feconf-electron-app/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2017/10/21/feconf-redux-saga/index.html" afterPath="$PROJECT_DIR$/review/2017/10/21/feconf-redux-saga/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2017/10/21/feconf-rxjs/index.html" afterPath="$PROJECT_DIR$/review/2017/10/21/feconf-rxjs/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2017/10/21/feconf-typescript/index.html" afterPath="$PROJECT_DIR$/review/2017/10/21/feconf-typescript/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2017/10/26/soscon-infra/index.html" afterPath="$PROJECT_DIR$/review/2017/10/26/soscon-infra/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2017/10/26/soscon-webassembly/index.html" afterPath="$PROJECT_DIR$/review/2017/10/26/soscon-webassembly/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2017/11/19/gdg-devfest-chatbot/index.html" afterPath="$PROJECT_DIR$/review/2017/11/19/gdg-devfest-chatbot/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2017/11/19/gdg-devfest-cloud/index.html" afterPath="$PROJECT_DIR$/review/2017/11/19/gdg-devfest-cloud/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2017/11/19/gdg-devfest-hosting/index.html" afterPath="$PROJECT_DIR$/review/2017/11/19/gdg-devfest-hosting/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2017/11/19/gdg-devfest-pwa/index.html" afterPath="$PROJECT_DIR$/review/2017/11/19/gdg-devfest-pwa/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2017/11/25/lightning-talk/index.html" afterPath="$PROJECT_DIR$/review/2017/11/25/lightning-talk/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2017/11/25/masocon-ai-search-system/index.html" afterPath="$PROJECT_DIR$/review/2017/11/25/masocon-ai-search-system/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2017/11/25/masocon-data-define/index.html" afterPath="$PROJECT_DIR$/review/2017/11/25/masocon-data-define/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2017/11/25/masocon-electron-typescript/index.html" afterPath="$PROJECT_DIR$/review/2017/11/25/masocon-electron-typescript/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2017/11/25/masocon-oss-developer/index.html" afterPath="$PROJECT_DIR$/review/2017/11/25/masocon-oss-developer/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2017/11/25/masocon-oss-licence/index.html" afterPath="$PROJECT_DIR$/review/2017/11/25/masocon-oss-licence/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2017/11/25/masocon-r-api/index.html" afterPath="$PROJECT_DIR$/review/2017/11/25/masocon-r-api/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2017/11/25/masocon-react-react/index.html" afterPath="$PROJECT_DIR$/review/2017/11/25/masocon-react-react/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2017/11/28/fb-cdd/index.html" afterPath="$PROJECT_DIR$/review/2017/11/28/fb-cdd/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2017/11/28/fb-devc-accountkit/index.html" afterPath="$PROJECT_DIR$/review/2017/11/28/fb-devc-accountkit/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2017/11/28/fb-graphql/index.html" afterPath="$PROJECT_DIR$/review/2017/11/28/fb-graphql/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2017/11/28/fb-react-architecture/index.html" afterPath="$PROJECT_DIR$/review/2017/11/28/fb-react-architecture/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2017/12/06/vingle-techtalk-search-service/index.html" afterPath="$PROJECT_DIR$/review/2017/12/06/vingle-techtalk-search-service/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2017/12/18/okkycon-agile/index.html" afterPath="$PROJECT_DIR$/review/2017/12/18/okkycon-agile/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2017/12/18/okkycon-communicate/index.html" afterPath="$PROJECT_DIR$/review/2017/12/18/okkycon-communicate/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2017/12/18/okkycon-design-system/index.html" afterPath="$PROJECT_DIR$/review/2017/12/18/okkycon-design-system/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2017/12/18/okkycon-extreme-programming/index.html" afterPath="$PROJECT_DIR$/review/2017/12/18/okkycon-extreme-programming/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2017/12/18/okkycon-productivity/index.html" afterPath="$PROJECT_DIR$/review/2017/12/18/okkycon-productivity/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2017/12/18/okkycon-superstition/index.html" afterPath="$PROJECT_DIR$/review/2017/12/18/okkycon-superstition/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2017/12/20/peoplefund-ecs-deepdive/index.html" afterPath="$PROJECT_DIR$/review/2017/12/20/peoplefund-ecs-deepdive/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2017/12/20/peoplefund-frontend/index.html" afterPath="$PROJECT_DIR$/review/2017/12/20/peoplefund-frontend/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2017/12/20/peoplefund-webservice-improvement/index.html" afterPath="$PROJECT_DIR$/review/2017/12/20/peoplefund-webservice-improvement/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2018/03/29/peoplefund-cryptography/index.html" afterPath="$PROJECT_DIR$/review/2018/03/29/peoplefund-cryptography/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2018/03/29/peoplefund-python/index.html" afterPath="$PROJECT_DIR$/review/2018/03/29/peoplefund-python/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2018/03/29/peoplefund-strange-javascript/index.html" afterPath="$PROJECT_DIR$/review/2018/03/29/peoplefund-strange-javascript/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2018/08/19/blockchain-1/index.html" afterPath="$PROJECT_DIR$/review/2018/08/19/blockchain-1/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2018/08/19/blockchain-2/index.html" afterPath="$PROJECT_DIR$/review/2018/08/19/blockchain-2/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2018/09/02/crypto-economics-1/index.html" afterPath="$PROJECT_DIR$/review/2018/09/02/crypto-economics-1/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2018/09/02/crypto-economics-2/index.html" afterPath="$PROJECT_DIR$/review/2018/09/02/crypto-economics-2/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2018/09/06/real-business-in-blockchain-2/index.html" afterPath="$PROJECT_DIR$/review/2018/09/06/real-business-in-blockchain-2/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2018/09/06/real-business-in-blockchain/index.html" afterPath="$PROJECT_DIR$/review/2018/09/06/real-business-in-blockchain/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2018/10/07/token-economics-2/index.html" afterPath="$PROJECT_DIR$/review/2018/10/07/token-economics-2/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2018/10/07/token-economics/index.html" afterPath="$PROJECT_DIR$/review/2018/10/07/token-economics/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2018/11/08/line-link-dev-1/index.html" afterPath="$PROJECT_DIR$/review/2018/11/08/line-link-dev-1/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2018/11/08/line-link-dev-2/index.html" afterPath="$PROJECT_DIR$/review/2018/11/08/line-link-dev-2/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2018/11/08/line-link-dev-3/index.html" afterPath="$PROJECT_DIR$/review/2018/11/08/line-link-dev-3/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2018/11/28/devfest-2018/index.html" afterPath="$PROJECT_DIR$/review/2018/11/28/devfest-2018/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2018/12/05/cosmochain/index.html" afterPath="$PROJECT_DIR$/review/2018/12/05/cosmochain/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2018/12/13/blockchain-storage/index.html" afterPath="$PROJECT_DIR$/review/2018/12/13/blockchain-storage/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2018/12/15/masocon-2/index.html" afterPath="$PROJECT_DIR$/review/2018/12/15/masocon-2/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2018/12/15/masocon/index.html" afterPath="$PROJECT_DIR$/review/2018/12/15/masocon/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2018/12/15/seedevcon/index.html" afterPath="$PROJECT_DIR$/review/2018/12/15/seedevcon/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2019/01/02/retrospect-my-life/index.html" afterPath="$PROJECT_DIR$/review/2019/01/02/retrospect-my-life/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2019/06/30/gdg-googleio-1/index.html" afterPath="$PROJECT_DIR$/review/2019/06/30/gdg-googleio-1/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2019/06/30/gdg-googleio-2/index.html" afterPath="$PROJECT_DIR$/review/2019/06/30/gdg-googleio-2/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2019/07/04/line-developer/index.html" afterPath="$PROJECT_DIR$/review/2019/07/04/line-developer/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2019/07/23/techyanolza/index.html" afterPath="$PROJECT_DIR$/review/2019/07/23/techyanolza/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2019/08/03/dsts2019/index.html" afterPath="$PROJECT_DIR$/review/2019/08/03/dsts2019/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2019/08/08/aws-meetup/index.html" afterPath="$PROJECT_DIR$/review/2019/08/08/aws-meetup/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2019/10/20/firebase-predictions/index.html" afterPath="$PROJECT_DIR$/review/2019/10/20/firebase-predictions/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2019/10/20/testable-architecture/index.html" afterPath="$PROJECT_DIR$/review/2019/10/20/testable-architecture/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2019/10/20/webservice-msa/index.html" afterPath="$PROJECT_DIR$/review/2019/10/20/webservice-msa/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2019/11/29/txgx-klaytn-next/index.html" afterPath="$PROJECT_DIR$/review/2019/11/29/txgx-klaytn-next/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/robots.xml" afterPath="$PROJECT_DIR$/robots.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sitemap.xml" afterPath="$PROJECT_DIR$/sitemap.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tag/devlog-algorithm/index.html" afterPath="$PROJECT_DIR$/tag/devlog-algorithm/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tag/devlog-aws/index.html" afterPath="$PROJECT_DIR$/tag/devlog-aws/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tag/devlog-data/index.html" afterPath="$PROJECT_DIR$/tag/devlog-data/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tag/devlog-git/index.html" afterPath="$PROJECT_DIR$/tag/devlog-git/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tag/devlog-infra/index.html" afterPath="$PROJECT_DIR$/tag/devlog-infra/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tag/devlog-javascript/index.html" afterPath="$PROJECT_DIR$/tag/devlog-javascript/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tag/devlog-jekyll/index.html" afterPath="$PROJECT_DIR$/tag/devlog-jekyll/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tag/devlog-linux/index.html" afterPath="$PROJECT_DIR$/tag/devlog-linux/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tag/devlog-meteor/index.html" afterPath="$PROJECT_DIR$/tag/devlog-meteor/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tag/devlog-ml/index.html" afterPath="$PROJECT_DIR$/tag/devlog-ml/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tag/devlog-mongo/index.html" afterPath="$PROJECT_DIR$/tag/devlog-mongo/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tag/devlog-node/index.html" afterPath="$PROJECT_DIR$/tag/devlog-node/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tag/devlog-react/index.html" afterPath="$PROJECT_DIR$/tag/devlog-react/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tag/devlog-vue/index.html" afterPath="$PROJECT_DIR$/tag/devlog-vue/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tag/devlog-web/index.html" afterPath="$PROJECT_DIR$/tag/devlog-web/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tag/essay-essay/index.html" afterPath="$PROJECT_DIR$/tag/essay-essay/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tag/essay-startup/index.html" afterPath="$PROJECT_DIR$/tag/essay-startup/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tag/review-book/index.html" afterPath="$PROJECT_DIR$/tag/review-book/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tag/review-event/index.html" afterPath="$PROJECT_DIR$/tag/review-event/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tag/review-food/index.html" afterPath="$PROJECT_DIR$/tag/review-food/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tag/review-movie/index.html" afterPath="$PROJECT_DIR$/tag/review-movie/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tag/review-music/index.html" afterPath="$PROJECT_DIR$/tag/review-music/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tag/review-things/index.html" afterPath="$PROJECT_DIR$/tag/review-things/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tag/shopping-shopping/index.html" afterPath="$PROJECT_DIR$/tag/shopping-shopping/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tag/tip-japan/index.html" afterPath="$PROJECT_DIR$/tag/tip-japan/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tag/tip-tip/index.html" afterPath="$PROJECT_DIR$/tag/tip-tip/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tag/video-react/index.html" afterPath="$PROJECT_DIR$/tag/video-react/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tip/2016/03/29/display-1/index.html" afterPath="$PROJECT_DIR$/tip/2016/03/29/display-1/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tip/2016/03/29/display-2/index.html" afterPath="$PROJECT_DIR$/tip/2016/03/29/display-2/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tip/2016/03/29/display-3/index.html" afterPath="$PROJECT_DIR$/tip/2016/03/29/display-3/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tip/2016/03/29/notebook-bible/index.html" afterPath="$PROJECT_DIR$/tip/2016/03/29/notebook-bible/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tip/2019/04/14/japanese-1/index.html" afterPath="$PROJECT_DIR$/tip/2019/04/14/japanese-1/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tip/2019/04/15/japanese-2/index.html" afterPath="$PROJECT_DIR$/tip/2019/04/15/japanese-2/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tip/2019/04/16/japanese-3/index.html" afterPath="$PROJECT_DIR$/tip/2019/04/16/japanese-3/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tip/2019/04/17/japanese-4/index.html" afterPath="$PROJECT_DIR$/tip/2019/04/17/japanese-4/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tip/2019/04/18/japanese-5/index.html" afterPath="$PROJECT_DIR$/tip/2019/04/18/japanese-5/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tip/2019/04/19/japanese-6/index.html" afterPath="$PROJECT_DIR$/tip/2019/04/19/japanese-6/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tip/2019/04/20/japanese-7/index.html" afterPath="$PROJECT_DIR$/tip/2019/04/20/japanese-7/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tip/2019/04/21/japanese-8/index.html" afterPath="$PROJECT_DIR$/tip/2019/04/21/japanese-8/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tip/2019/04/22/japanese-9/index.html" afterPath="$PROJECT_DIR$/tip/2019/04/22/japanese-9/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tip/2019/04/23/japanese-10/index.html" afterPath="$PROJECT_DIR$/tip/2019/04/23/japanese-10/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tip/2019/06/21/international-liquor-1/index.html" afterPath="$PROJECT_DIR$/tip/2019/06/21/international-liquor-1/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tip/2019/06/22/international-liquor-2/index.html" afterPath="$PROJECT_DIR$/tip/2019/06/22/international-liquor-2/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/video/2017/04/30/react-tutorial-video/index.html" afterPath="$PROJECT_DIR$/video/2017/04/30/react-tutorial-video/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/video/2017/07/04/tuto-HOC/index.html" afterPath="$PROJECT_DIR$/video/2017/07/04/tuto-HOC/index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -342,18 +18,18 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="72" column="48" lean-forward="true" selection-start-line="72" selection-start-column="48" selection-end-line="72" selection-end-column="48" />
+            <state relative-caret-position="292">
+              <caret line="103" column="67" lean-forward="false" selection-start-line="103" selection-start-column="55" selection-end-line="103" selection-end-column="67" />
               <folding>
                 <element signature="e#1357#1365#0" expanded="true" />
-                <marker date="1580920911939" expanded="false" signature="13681:13697" ph="..." />
-                <marker date="1580920911939" expanded="false" signature="14631:14647" ph="..." />
-                <marker date="1580920911939" expanded="false" signature="15587:15603" ph="..." />
-                <marker date="1580920911939" expanded="false" signature="16488:16504" ph="..." />
-                <marker date="1580920911939" expanded="false" signature="17402:17418" ph="..." />
-                <marker date="1580920911939" expanded="false" signature="18304:18320" ph="..." />
-                <marker date="1580920911939" expanded="false" signature="19248:19264" ph="..." />
-                <marker date="1580920911939" expanded="false" signature="20184:20200" ph="..." />
+                <marker date="1580921220247" expanded="false" signature="13665:13681" ph="..." />
+                <marker date="1580921220247" expanded="false" signature="14615:14631" ph="..." />
+                <marker date="1580921220247" expanded="false" signature="15571:15587" ph="..." />
+                <marker date="1580921220247" expanded="false" signature="16472:16488" ph="..." />
+                <marker date="1580921220247" expanded="false" signature="17386:17402" ph="..." />
+                <marker date="1580921220247" expanded="false" signature="18288:18304" ph="..." />
+                <marker date="1580921220247" expanded="false" signature="19232:19248" ph="..." />
+                <marker date="1580921220247" expanded="false" signature="20168:20184" ph="..." />
               </folding>
             </state>
           </provider>
@@ -371,6 +47,7 @@
       <find>a</find>
       <find>ads</find>
       <find>http://localhost:4000</find>
+      <find>hydejack.css</find>
     </findStrings>
     <replaceStrings>
       <replace>m-veloper.github.io</replace>
@@ -429,6 +106,56 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="m-veloper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="m-veloper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="m-veloper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="m-veloper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="m-veloper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="icomoon" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="m-veloper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="m-veloper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -553,12 +280,12 @@
       <option name="presentableId" value="Default" />
       <updated>1580833429587</updated>
       <workItem from="1580833431237" duration="1008000" />
-      <workItem from="1580920723342" duration="188000" />
+      <workItem from="1580920723342" duration="462000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1196000" />
+    <option name="totallyTimeSpent" value="1470000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="944" extended-state="6" />
@@ -611,14 +338,14 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#1357#1365#0" expanded="true" />
-            <marker date="1580920911939" expanded="false" signature="13681:13697" ph="..." />
-            <marker date="1580920911939" expanded="false" signature="14631:14647" ph="..." />
-            <marker date="1580920911939" expanded="false" signature="15587:15603" ph="..." />
-            <marker date="1580920911939" expanded="false" signature="16488:16504" ph="..." />
-            <marker date="1580920911939" expanded="false" signature="17402:17418" ph="..." />
-            <marker date="1580920911939" expanded="false" signature="18304:18320" ph="..." />
-            <marker date="1580920911939" expanded="false" signature="19248:19264" ph="..." />
-            <marker date="1580920911939" expanded="false" signature="20184:20200" ph="..." />
+            <marker date="1580921220247" expanded="false" signature="13665:13681" ph="..." />
+            <marker date="1580921220247" expanded="false" signature="14615:14631" ph="..." />
+            <marker date="1580921220247" expanded="false" signature="15571:15587" ph="..." />
+            <marker date="1580921220247" expanded="false" signature="16472:16488" ph="..." />
+            <marker date="1580921220247" expanded="false" signature="17386:17402" ph="..." />
+            <marker date="1580921220247" expanded="false" signature="18288:18304" ph="..." />
+            <marker date="1580921220247" expanded="false" signature="19232:19248" ph="..." />
+            <marker date="1580921220247" expanded="false" signature="20168:20184" ph="..." />
           </folding>
         </state>
       </provider>
@@ -628,20 +355,28 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/hydejack.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="72" column="48" lean-forward="true" selection-start-line="72" selection-start-column="48" selection-end-line="72" selection-end-column="48" />
+        <state relative-caret-position="292">
+          <caret line="103" column="67" lean-forward="false" selection-start-line="103" selection-start-column="55" selection-end-line="103" selection-end-column="67" />
           <folding>
             <element signature="e#1357#1365#0" expanded="true" />
-            <marker date="1580920911939" expanded="false" signature="13681:13697" ph="..." />
-            <marker date="1580920911939" expanded="false" signature="14631:14647" ph="..." />
-            <marker date="1580920911939" expanded="false" signature="15587:15603" ph="..." />
-            <marker date="1580920911939" expanded="false" signature="16488:16504" ph="..." />
-            <marker date="1580920911939" expanded="false" signature="17402:17418" ph="..." />
-            <marker date="1580920911939" expanded="false" signature="18304:18320" ph="..." />
-            <marker date="1580920911939" expanded="false" signature="19248:19264" ph="..." />
-            <marker date="1580920911939" expanded="false" signature="20184:20200" ph="..." />
+            <marker date="1580921220247" expanded="false" signature="13665:13681" ph="..." />
+            <marker date="1580921220247" expanded="false" signature="14615:14631" ph="..." />
+            <marker date="1580921220247" expanded="false" signature="15571:15587" ph="..." />
+            <marker date="1580921220247" expanded="false" signature="16472:16488" ph="..." />
+            <marker date="1580921220247" expanded="false" signature="17386:17402" ph="..." />
+            <marker date="1580921220247" expanded="false" signature="18288:18304" ph="..." />
+            <marker date="1580921220247" expanded="false" signature="19232:19248" ph="..." />
+            <marker date="1580921220247" expanded="false" signature="20168:20184" ph="..." />
           </folding>
         </state>
       </provider>
