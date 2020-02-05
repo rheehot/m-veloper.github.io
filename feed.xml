@@ -2,89 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>m-veloper</title>
-    <description>상대를 대할 때에 사람의 깊이를 보자.
-</description>
+    <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 05 Feb 2020 00:01:48 +0900</pubDate>
-    <lastBuildDate>Wed, 05 Feb 2020 00:01:48 +0900</lastBuildDate>
+    <pubDate>Thu, 06 Feb 2020 01:33:23 +0900</pubDate>
+    <lastBuildDate>Thu, 06 Feb 2020 01:33:23 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
-    
-      <item>
-        <title>포스트 테스트</title>
-        <description>&lt;p&gt;React로 웹 어플리케이션 빌드하기 동영상강좌를 촬영하고있습니다.&lt;/p&gt;
-
-&lt;p&gt;첫 동영상 강좌라 어숙한점이 많지만 회가 거듭될수록 조금씩 나아지는 모습으로 뵐 수 있도록 하겠습니다.&lt;/p&gt;
-
-&lt;p&gt;바이트사이즈로 10분이내의 강좌를 여러개 찍고있습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLBrx45N7b6tkdisu8ZhKs02tEf5wDuk2W&quot;&gt;강좌바로가기&lt;/a&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://youtu.be/r9fbXIaNxck?list=PLBrx45N7b6tkdisu8ZhKs02tEf5wDuk2W&quot;&gt; create react app로 빌드하기 &lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://youtu.be/UfFmRTSgzhw?list=PLBrx45N7b6tkdisu8ZhKs02tEf5wDuk2W&quot;&gt; React component 만들기 &lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://youtu.be/LqH4UnZ51z0?list=PLBrx45N7b6tkdisu8ZhKs02tEf5wDuk2W&quot;&gt; react의 render method에 대해 알아보기 &lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://youtu.be/lzRLyWkjypo?list=PLBrx45N7b6tkdisu8ZhKs02tEf5wDuk2W&quot;&gt; React props에 대해 알아보기 &lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://youtu.be/bQ0BVWKs9xo?list=PLBrx45N7b6tkdisu8ZhKs02tEf5wDuk2W&quot;&gt; setState로 React Component State 관리하기 &lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://youtu.be/Fu8oEdeQebY?list=PLBrx45N7b6tkdisu8ZhKs02tEf5wDuk2W&quot;&gt;React에서 자식컴포넌트 사용하기 &lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://youtu.be/xXyHRrnEdfI?list=PLBrx45N7b6tkdisu8ZhKs02tEf5wDuk2W&quot;&gt; props children으로 내제된 데이터에 접근하기 &lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://youtu.be/A0Gp1riRvfg?list=PLBrx45N7b6tkdisu8ZhKs02tEf5wDuk2W&quot;&gt; 커스텀 propType Validation 만들기 &lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://youtu.be/EdVcSoX7lEM?list=PLBrx45N7b6tkdisu8ZhKs02tEf5wDuk2W&quot;&gt; React의 이벤트 시스템 이해하기 &lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://youtu.be/S3DB0_l8pKk?list=PLBrx45N7b6tkdisu8ZhKs02tEf5wDuk2W&quot;&gt; ref로 특정 컴포넌트 참조하기 &lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://youtu.be/sw45IIdkR2g?list=PLBrx45N7b6tkdisu8ZhKs02tEf5wDuk2W&quot;&gt; React Component Lifecycle 이해하기 &lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://youtu.be/5bYfJ0zY-wE?list=PLBrx45N7b6tkdisu8ZhKs02tEf5wDuk2W&quot;&gt; React Component State를 생명주기와 함께 관리하기 &lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://youtu.be/cdKaLmygXH0?list=PLBrx45N7b6tkdisu8ZhKs02tEf5wDuk2W&quot;&gt; props와 컴포넌트 업데이트 &lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://youtu.be/887EuSnz7uY?list=PLBrx45N7b6tkdisu8ZhKs02tEf5wDuk2W&quot;&gt; React에서 반복하기 &lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://youtu.be/FK9QjkEQ4sQ?list=PLBrx45N7b6tkdisu8ZhKs02tEf5wDuk2W&quot;&gt; Higher Order Component 이해하기 &lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://youtu.be/fXj-sXENkC4?list=PLBrx45N7b6tkdisu8ZhKs02tEf5wDuk2W&quot;&gt; Live Compiler 만들기 &lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Mon, 27 Jan 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/video/2020/01/27/react-tutorial-video/</link>
-        <guid isPermaLink="true">http://localhost:4000/video/2020/01/27/react-tutorial-video/</guid>
-        
-        <category>javascript</category>
-        
-        <category>react</category>
-        
-        <category>tutorial</category>
-        
-        
-        <category>video</category>
-        
-      </item>
     
       <item>
         <title>[모던자바스크립트] 31. 문자열</title>
@@ -1016,6 +939,87 @@ World`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
         
         
         <category>devlog</category>
+        
+      </item>
+    
+      <item>
+        <title>[12월] 겨울 생필품 쇼핑목록 BEST 5</title>
+        <description>&lt;p&gt;난 생각보다 청결에 신경을 꽤 쓰는 편이다.&lt;/p&gt;
+
+&lt;h2 id=&quot;1-나우푸드-100-천연-호호바-오일&quot;&gt;1. &lt;a href=&quot;https://coupa.ng/bko7Fu&quot;&gt;나우푸드 100% 천연 호호바 오일&lt;/a&gt;&lt;/h2&gt;
+
+&lt;div class=&quot;row-center&quot;&gt;
+&lt;iframe src=&quot;https://coupa.ng/bko7Fu&quot; width=&quot;240&quot; height=&quot;240&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;나는 몸이 많이 &lt;code class=&quot;highlighter-rouge&quot;&gt;건조&lt;/code&gt;한 편이다. 겨울에는 통증이 느껴지는 건조함. 바디로션으로는 커버가 잘 되지 않고, 바르는 것도 번거웠다. 이번에 &lt;code class=&quot;highlighter-rouge&quot;&gt;호호바 오일&lt;/code&gt;을 작은용량을 구매해 봤는데 효과가 좋아서 큰 걸 구매하게 되었다.&lt;/p&gt;
+
+&lt;p&gt;이 오일은 &lt;code class=&quot;highlighter-rouge&quot;&gt;멀티용도&lt;/code&gt;라 머리칼, 두피, 얼굴, 몸 전부 사용이 가능하다. 헤어컨디셔너용으로 사용할 경우 샤워를 시작할때 젖은 머리에 바르고 5-10분 후 샴푸하면된다. 스킨컨디셔너로 사용할 경우 샤워가 끝나고 살짝 젖은 피부위에 바르면 된다.&lt;/p&gt;
+
+&lt;p&gt;내 고통을 없애준 &lt;code class=&quot;highlighter-rouge&quot;&gt;정말 고마운 제품&lt;/code&gt;. 나는 이 제품 덕분에 샤워하는 시간이 기다려진다.&lt;/p&gt;
+
+&lt;h2 id=&quot;2-리스테린-헬씨-브라이트&quot;&gt;2. &lt;a href=&quot;https://coupa.ng/bko8w2&quot;&gt;리스테린 헬씨 브라이트&lt;/a&gt;&lt;/h2&gt;
+
+&lt;div class=&quot;row-center&quot;&gt;
+&lt;iframe src=&quot;https://coupa.ng/bko8w2&quot; width=&quot;240&quot; height=&quot;240&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;이건 예전에 &lt;code class=&quot;highlighter-rouge&quot;&gt;일본가면 꼭 사와야하는 제품&lt;/code&gt;으로 사람들이 많이 추천하던 제품이었다. 당시에는 우리나라에는 없는 제품이었지만, 용량이 대용량이라 괜히 샀다 별로면 어떡하지 라는 마음에 그냥 넘어갔던 제품이다.&lt;/p&gt;
+
+&lt;p&gt;근데 올해 초에 우리나라에도 런칭하면서 구매해봤는데, 다른 구강청결제보다 &lt;code class=&quot;highlighter-rouge&quot;&gt;순하고 미백효과가 있어서&lt;/code&gt; 재구매하는 제품이다.&lt;/p&gt;
+
+&lt;p&gt;나같은경우 아침을 먹지 않은 날이면 이걸로만 끝내기도 한다.&lt;/p&gt;
+
+&lt;h2 id=&quot;3-페브리즈-내추리스-레몬그라스진저&quot;&gt;3. &lt;a href=&quot;https://coupa.ng/bko8Wl&quot;&gt;페브리즈 내추리스 레몬그라스&amp;amp;진저&lt;/a&gt;&lt;/h2&gt;
+
+&lt;div class=&quot;row-center&quot;&gt;
+&lt;iframe src=&quot;https://coupa.ng/bko8Wl&quot; width=&quot;240&quot; height=&quot;240&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;누구나 그렇듯 나도 냄새보다는 &lt;code class=&quot;highlighter-rouge&quot;&gt;향기로운 향&lt;/code&gt;을 좋아하는 편이라 섬유탈취제를 상비해 놓는 편이다. 특히 가족과 함께 살때는 원인을 알 수 없는 악취가 어딘가에서 날 떄가 있기 때문에 무척 도움이 된다.&lt;/p&gt;
+
+&lt;p&gt;이 향은 처음 구매해 보는 향이지만 평이 괜찮고 저렴하길래 3개들이로 구매했다.&lt;/p&gt;
+
+&lt;h2 id=&quot;4-코카콜라-190ml-x-30-x-3&quot;&gt;4. &lt;a href=&quot;https://coupa.ng/bko9q4&quot;&gt;코카콜라 190ml x 30 x 3&lt;/a&gt;&lt;/h2&gt;
+
+&lt;div class=&quot;row-center&quot;&gt;
+&lt;iframe src=&quot;https://coupa.ng/bko9q4&quot; width=&quot;240&quot; height=&quot;240&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;빠-밤! 나는 콜라를 좋아한다. 탄산이 가득한 콜라를 좋아해서 1.5리터는 마시지 않는다. 대신 작은 용량으로 마시는데, 185ml가 가장 알맞아서 마시고 있다. &lt;code class=&quot;highlighter-rouge&quot;&gt;엄청 조그마한데 생각보다 충분하다&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;이제 185ml는 생산되지 않고 190ml로 바뀐다는 것 같다. 용량은 늘었는데 가격은 그대로라 만족스럽게 구매한다.&lt;/p&gt;
+
+&lt;p&gt;몸 관리도 소홀히 할 수는 없어서 하루에 한캔이상은 마시지 않으려고 한다.&lt;/p&gt;
+
+&lt;h2 id=&quot;5-이케아-예르브피엘레트-의자&quot;&gt;5. &lt;a href=&quot;https://www.ikea.com/kr/ko/catalog/products/S19297195/&quot;&gt;이케아 예르브피엘레트 의자&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.ikea.com/kr/ko/catalog/products/S19297195/&quot;&gt;이케아 예르브피엘레트 의자&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;이케아 의자중 최상위권에 속하는 &lt;code class=&quot;highlighter-rouge&quot;&gt;마르쿠스&lt;/code&gt;의 개선판이라고 볼 수 있다. 나는 키가 작지 않은편이지만 마르쿠스는 우리나라사람들에게는 너무 크다는 평이 많다.&lt;/p&gt;
+
+&lt;p&gt;마르쿠스에 비해 &lt;code class=&quot;highlighter-rouge&quot;&gt;예르브피엘레트&lt;/code&gt;는 높이 조절등 다양한 보조기능이 들어갔다고해서 구매해보려한다.&lt;/p&gt;
+
+&lt;p&gt;집에 사용하는 의자의 메인프레임이 고장나서 찾아보다가, 몇가지를 봤는데 이게 가장 와닿아서 구매를 결정하게되었다.&lt;/p&gt;
+
+&lt;h2 id=&quot;끝&quot;&gt;끝&lt;/h2&gt;
+
+&lt;p&gt;작지만 소소하게 일상의 질을 높일 수 있는 물건부터 내가 가장 오랜시간을 머무르는 의자까지, 내 쇼핑목록을 공유하는건 처음이지만 정말 &lt;code class=&quot;highlighter-rouge&quot;&gt;호호바 오일&lt;/code&gt;같은 경우는 나처럼 건조로 인해 통증을 겪는 사람에게 추천한다.&lt;/p&gt;
+
+&lt;p&gt;나는 다른사람들도 다 아픈 줄 알았다. 예전에 연애하던 친구가 나를 걱정하기 전까지는.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;상품 링크가 쿠팡일 경우, 링크를 통한 구매는 저에게 일정액의 수수료를 제공할 수 있습니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        <pubDate>Thu, 05 Dec 2019 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/shopping/2019/12/05/december-shopping-list/</link>
+        <guid isPermaLink="true">http://localhost:4000/shopping/2019/12/05/december-shopping-list/</guid>
+        
+        <category>shopping</category>
+        
+        
+        <category>shopping</category>
         
       </item>
     
