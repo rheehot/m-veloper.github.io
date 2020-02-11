@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/m-veloper.github.io.iml" filepath="$PROJECT_DIR$/m-veloper.github.io.iml" />
+      <module fileurl="file://$PROJECT_DIR$/m-veloper.iml" filepath="$PROJECT_DIR$/m-veloper.iml" />
     </modules>
   </component>
 </project>
