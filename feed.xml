@@ -5,9 +5,175 @@
     <description></description>
     <link>https://m-veloper.github.io/</link>
     <atom:link href="https://m-veloper.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 13 Feb 2020 00:38:25 +0900</pubDate>
-    <lastBuildDate>Thu, 13 Feb 2020 00:38:25 +0900</lastBuildDate>
+    <pubDate>Fri, 14 Feb 2020 00:18:48 +0900</pubDate>
+    <lastBuildDate>Fri, 14 Feb 2020 00:18:48 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>[Database] 데이터베이스 시스템</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-14-database-03.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;데이터베이스-시스템-dbs-database-system&quot;&gt;데이터베이스 시스템 (DBS, DataBase System)&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;데이터를 데이터베이스에 저장하고, 관리하여 사용자의 요청에 따라 필요한 정보를 생성해주는 시스템&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;구성요소&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;데이터베이스 관리 시스템 : 사용자와 데이터베이스를 연결시켜주는 소프트웨어&lt;/li&gt;
+      &lt;li&gt;데이터베이스 : 데이터를 저장하는 곳&lt;/li&gt;
+      &lt;li&gt;데이터 모델 : 연관된 데이터를 저장하는 방식&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-14-database-03-01.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;데이터베이스-사용자&quot;&gt;데이터베이스 사용자&lt;/h1&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;일반사용자&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;프로그래머가 개발한 응용프로그램을 사용하여 데이터베이스에 접근&lt;/li&gt;
+      &lt;li&gt;DBMS 사용에 관심이 없고, 요청하여 받은 데이터의 내용에만 관심을 가짐&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;응용프로그래머 / 데이터베이스 프로그래머&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;일반 사용자가 사용할 수 있는 응용 프로그램을 개발&lt;/li&gt;
+      &lt;li&gt;자바, JSP, PHP, ASP, C 등의 프로그래밍 언어를 사용하여 일반 사용자를 위한 인터페이스(GUI)와 데이터 관리 프로그램을 개발&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;데이터베이스 관리자&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;데이터베이스 시스템을 관리하는 사람&lt;/li&gt;
+      &lt;li&gt;데이터 설계, 구현, 유지보수 등을 담당&lt;/li&gt;
+      &lt;li&gt;데이터베이스 사용자, 보안, 접근 권한, 백업, 회복 등을 관리&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;dbms의-기능&quot;&gt;DBMS의 기능&lt;/h1&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;데이터 정의 (Definition)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;데이터의 구조를 정의, 수정 및 삭제하는 기능&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;데이터 조작 (Manipulation)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;응용프로그램의 요청으로 데이터의 삽입, 수정, 삭제하는 기능&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;데이터 추출 (Retrieval)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;응용프로그램의 요청에 따라 필요한 데이터를 추출하는 기능&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;데이터 제어 (Control)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;사용자를 관리 (계정 생성, 접근 제한)하는 기능&lt;/li&gt;
+      &lt;li&gt;백업, 회복, 동시성 제어 등의 기능&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;데이터-언어-data-language&quot;&gt;데이터 언어 (Data Language)&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;사용자가 데이터베이스 관리 시스템을 사용하기 위한 언어&lt;/li&gt;
+  &lt;li&gt;사용 목적에 따라 구분&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;데이터 정의어 (DDL, Data Definition Language)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;데이터의 구조를 정의, 수정, 삭제하기 위해 사용하는 언어&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;데이터 조작어(DML, Data Manupulation Language)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;데이터의 삽입, 수정, 삭제, 검색 등의 요청을 위해 사용하는 언어&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;절차적 데이터 조작어와 비절차적 데이터 조작어로 구분&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;
+            &lt;p&gt;절차적 데이터 조작어 (Procedural DML) : 사용자가 원하는 데이터와 데이터를 얻는 처리 방법을 설명하는 조작어&lt;/p&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;비절차적 데이터 조작어 (Nonprocedural DML) : 사용자가 원하는 데이터만 설명하는 조작어&lt;/p&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;데이터 제어어(DCL, Data Control Language)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;내부적으로 필요한 규칙이나 기법을 정의하기 위해 사용하는 언어&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;규칙이나 기법을 정의하는 이유&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;
+            &lt;p&gt;무결성 : 데이터베이스에 정확하고 유효한 데이터만 유지한다.&lt;/p&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;보안 : 허가받지 않은 사용자의 데이터 접근 차단 및 허가된 사용자가 접근 허용된 데이터만 접근하도록 제어&lt;/p&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;회복 : 장애 발생시 데이터의 일관성을 유지&lt;/p&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;동시성 : 다수의 사용자가 같은 데이터에 동시에 접근하여 데이터를 조작할 수 있도록 제어&lt;/p&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-14-database-03-02.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 14 Feb 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/devlog/2020/02/14/database-03/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/02/14/database-03/</guid>
+        
+        <category>database</category>
+        
+        
+        <category>devlog</category>
+        
+      </item>
     
       <item>
         <title>[Database] 데이터베이스 모델</title>
