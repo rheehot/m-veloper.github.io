@@ -88,7 +88,34 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 
   !function(e){"use strict";var n=function(n,t,o){function i(e){if(a.body)return e();setTimeout(function(){i(e)})}function r(){l.addEventListener&&l.removeEventListener("load",r),l.media=o||"all"}var d,a=e.document,l=a.createElement("link");if(t)d=t;else{var f=(a.body||a.getElementsByTagName("head")[0]).childNodes;d=f[f.length-1]}var s=a.styleSheets;l.rel="stylesheet",l.href=n,l.media="only x",i(function(){d.parentNode.insertBefore(l,t?d:d.nextSibling)});var u=function(e){for(var n=l.href,t=s.length;t--;)if(s[t].href===n)return e();setTimeout(function(){u(e)})};return l.addEventListener&&l.addEventListener("load",r),l.onloadcssdefined=u,u(r),l};"undefined"!=typeof exports?exports.loadCSS=n:e.loadCSS=n}("undefined"!=typeof global?global:this);
 
-  !function(t){if(t.loadCSS){var e=loadCSS.relpreload={};if(e.support=function(){try{return t.document.createElement("link").relList.supports("preload")}catch(t){return!1}},e.poly=function(){for(var e=t.document.getElementsByTagName("link"),r=0;r<e.length;r++){var n=e[r];"preload"===n.rel&&"style"===n.getAttribute("as")&&(t.loadCSS(n.href,n,n.getAttribute("media")),n.rel=null)}},!e.support()){e.poly();var r=t.setInterval(e.poly,300);t.addEventListener&&t.addEventListener("load",function(){e.poly(),t.clearInterval(r)}),t.attachEvent&&t.attachEvent("onload",function(){t.clearInterval(r)})}}}(this);
+  !function (t) {
+  if (t.loadCSS) {
+    var e = loadCSS.relpreload = {};
+    if (e.support = function () {
+        try {
+          return t.document.createElement("link").relList.supports("preload")
+        }
+        catch (t) {
+          return !1
+        }
+      }, e.poly = function () {
+        for (var e = t.document.getElementsByTagName("link"), r = 0; r < e.length; r++) {
+          var n = e[r];
+          "preload" === n.rel && "style" === n.getAttribute("as") && (t.loadCSS(n.href,
+            n,
+            n.getAttribute("media")), n.rel = null)
+        }
+      }, !e.support()) {
+      e.poly();
+      var r = t.setInterval(e.poly, 300);
+      t.addEventListener && t.addEventListener("load", function () {
+        e.poly(), t.clearInterval(r)
+      }), t.attachEvent && t.attachEvent("onload", function () {
+        t.clearInterval(r)
+      })
+    }
+  }
+}(this);
 
   window.disablePushState = false;
   window.disableDrawer = false;
@@ -575,52 +602,6 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
     e,
     { passive: !0 }) : s.attachEvent ? s.attachEvent("onscroll", e) : s.onscroll = e)
 }(window, document);
-
-window.onresize = function () {
-  reset_disqus();
-};
-
-var params;
-var disqus_url;
-var disqus_title;
-var disqus_shortname;
-var disqus_identifier;
-
-window.onload = function () {
-  var match,
-    pattern = /\+/g,
-    search = /([^&=]+)=?([^&]*)/g,
-    decode = function (s) { return decodeURIComponent(s.replace(pattern, " ")); },
-    query = window.location.search.substring(1);
-
-  params = {};
-  while (match = search.exec(query))
-    params[decode(match[1])] = decode(match[2]);
-
-  if (params["m-veloper"] === undefined || params["https://m-veloper.github.io/devlog/2020/02/12/database-01/"] === undefined || params["[Database] 데이터베이스"] === undefined) {
-    alert("Required arguments missing");
-  }
-  else {
-    loadComments(params["m-veloper"], params["{ page.url | absolute_url }}"], params["[Database] 데이터베이스"], params["https://m-veloper.github.io/devlog/2020/02/12/database-01/"]);
-  }
-};
-
-function loadComments(shortname, url, title, identifier) {
-  disqus_url = url;
-  disqus_title = title;
-  disqus_shortname = shortname;
-
-  if (identifier !== undefined)
-    disqus_identifier = identifier;
-  else
-    disqus_identifier = "";
-
-  (function() {
-    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = false;
-    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-  })();
-}
 
   </script>
   <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
@@ -1175,6 +1156,13 @@ function loadComments(shortname, url, title, identifier) {
 <!-- =============== -->
 <!-- SCRIPTS         -->
 <!-- =============== -->
+
+<script>
+  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+  ga('create', 'UA-158538042-1', 'auto');
+  ga('send', 'pageview');
+  loadJSDeferred('https://www.google-analytics.com/analytics.js');
+</script>
 
 
 
