@@ -1,11 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdafb760-8ba7-496c-93b2-274f6e2cda1c" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/blogForM_veloper.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/m-veloper.github.io.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/m_veloper.github.io.iml" afterPath="" />
+    <list default="true" id="a005ac70-636c-4545-aa3e-45801e8e4c5f" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/about/index.html" afterPath="$PROJECT_DIR$/about/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/category/artwork/index.html" afterPath="$PROJECT_DIR$/category/artwork/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/category/devlog/index.html" afterPath="$PROJECT_DIR$/category/devlog/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/category/essay/index.html" afterPath="$PROJECT_DIR$/category/essay/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/category/review/index.html" afterPath="$PROJECT_DIR$/category/review/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/category/tip/index.html" afterPath="$PROJECT_DIR$/category/tip/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/category/travel/index.html" afterPath="$PROJECT_DIR$/category/travel/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2020/02/12/database-01/index.html" afterPath="$PROJECT_DIR$/devlog/2020/02/12/database-01/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2020/02/13/database-02/index.html" afterPath="$PROJECT_DIR$/devlog/2020/02/13/database-02/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2020/02/14/database-03/index.html" afterPath="$PROJECT_DIR$/devlog/2020/02/14/database-03/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/feed.xml" afterPath="$PROJECT_DIR$/feed.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/posts/index.html" afterPath="$PROJECT_DIR$/posts/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/robots.txt" afterPath="$PROJECT_DIR$/robots.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tag/devlog-algorithm/index.html" afterPath="$PROJECT_DIR$/tag/devlog-algorithm/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tag/devlog-aws/index.html" afterPath="$PROJECT_DIR$/tag/devlog-aws/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tag/devlog-database/index.html" afterPath="$PROJECT_DIR$/tag/devlog-database/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tag/devlog-git/index.html" afterPath="$PROJECT_DIR$/tag/devlog-git/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tag/devlog-javascript/index.html" afterPath="$PROJECT_DIR$/tag/devlog-javascript/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tag/devlog-jekyll/index.html" afterPath="$PROJECT_DIR$/tag/devlog-jekyll/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tag/devlog-linux/index.html" afterPath="$PROJECT_DIR$/tag/devlog-linux/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tag/devlog-machinelearning/index.html" afterPath="$PROJECT_DIR$/tag/devlog-machinelearning/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tag/devlog-mongodb/index.html" afterPath="$PROJECT_DIR$/tag/devlog-mongodb/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tag/devlog-node/index.html" afterPath="$PROJECT_DIR$/tag/devlog-node/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tag/devlog-react/index.html" afterPath="$PROJECT_DIR$/tag/devlog-react/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tag/devlog-vue/index.html" afterPath="$PROJECT_DIR$/tag/devlog-vue/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tag/essay-essay/index.html" afterPath="$PROJECT_DIR$/tag/essay-essay/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tag/essay-startup/index.html" afterPath="$PROJECT_DIR$/tag/essay-startup/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tag/review-book/index.html" afterPath="$PROJECT_DIR$/tag/review-book/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tag/review-food/index.html" afterPath="$PROJECT_DIR$/tag/review-food/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tag/review-things/index.html" afterPath="$PROJECT_DIR$/tag/review-things/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tag/tip-css/index.html" afterPath="$PROJECT_DIR$/tag/tip-css/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tag/tip-javascript/index.html" afterPath="$PROJECT_DIR$/tag/tip-javascript/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tag/travel-korea/index.html" afterPath="$PROJECT_DIR$/tag/travel-korea/index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,8 +63,18 @@
       <file leaf-file-name="404.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/404.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="51" column="34" lean-forward="false" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
+            <state relative-caret-position="409">
+              <caret line="53" column="41" lean-forward="true" selection-start-line="53" selection-start-column="41" selection-end-line="53" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="m-veloper.github.io.iml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/m-veloper.github.io.iml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -42,6 +84,7 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
+      <find>http://localhost:4000http://localhost:4000</find>
       <find>http://localhost:4000</find>
     </findStrings>
     <replaceStrings>
@@ -91,8 +134,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -107,7 +150,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -221,20 +264,21 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="cdafb760-8ba7-496c-93b2-274f6e2cda1c" name="Default" comment="" />
-      <created>1581648150010</created>
+      <changelist id="a005ac70-636c-4545-aa3e-45801e8e4c5f" name="Default" comment="" />
+      <created>1581649862516</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1581648150010</updated>
-      <workItem from="1581648152709" duration="487000" />
+      <updated>1581649862516</updated>
+      <workItem from="1581649864106" duration="51000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="487000" />
+    <option name="totallyTimeSpent" value="51000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -244,21 +288,21 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -278,6 +322,14 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/m-veloper.github.io.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/sitemap.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="64">
@@ -288,24 +340,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/404.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="51" column="34" lean-forward="false" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m_veloper.github.io.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m-veloper.github.io.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="409">
+          <caret line="53" column="41" lean-forward="true" selection-start-line="53" selection-start-column="41" selection-end-line="53" selection-end-column="41" />
           <folding />
         </state>
       </provider>
