@@ -5,9 +5,254 @@
     <description></description>
     <link>https://m-veloper.github.io/</link>
     <atom:link href="https://m-veloper.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 16 Feb 2020 00:12:24 +0900</pubDate>
-    <lastBuildDate>Sun, 16 Feb 2020 00:12:24 +0900</lastBuildDate>
+    <pubDate>Mon, 17 Feb 2020 14:13:36 +0900</pubDate>
+    <lastBuildDate>Mon, 17 Feb 2020 14:13:36 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>[Database] 개체, 개체 타입과 속성</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-17-database-06.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;개체와-개체타입&quot;&gt;개체와 개체타입&lt;/h1&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;개체 타입 (Entity Type)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;비슷한 속성을 가진 개체&lt;/li&gt;
+      &lt;li&gt;개체를 이름과 속성으로 정의한 것&lt;/li&gt;
+      &lt;li&gt;파일시스템이나 데이터베이스의 레코드 타입 (Record Type)&lt;/li&gt;
+      &lt;li&gt;프로그래밍언어의 데이터타입과 유사&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;유형&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;강한 개체 (Strong Entity) : 다른 개체의 도움 없이 독자적으로 존재하는 개체&lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;약한 개체 (Weak Entity) :&lt;/p&gt;
+
+            &lt;p&gt;독자적으로 존재하지 않고, 상위 개체 타입을 가짐&lt;br /&gt;
+  상위 개체 타입이 결정되지 않으면 개별 개체를 식별할 수 없음&lt;/p&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;예 : 회사의 직원&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;직원의 부양가족은 직원 개체가 존재해야 존재할 수 있다&lt;/li&gt;
+          &lt;li&gt;강한 개체 : 직원&lt;/li&gt;
+          &lt;li&gt;약한 개체 : 부양 가족
+  · 개체타입의 ER 다이어그램 표현&lt;/li&gt;
+          &lt;li&gt;직사각형으로 표현&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-17-database-06-01.png&quot; alt=&quot;&quot; /&gt;
+ &lt;br /&gt;
+ &lt;br /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;개체 인스턴스 (Entity Instance)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;개체의 속성에 실제 값을 주어 실체화된 개체&lt;/li&gt;
+      &lt;li&gt;파일시스템이나 데이터베이스의 레코드 인스턴스 (Record Instance)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;개체 집합 (Entity Set)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;개체 인스턴스를 모아 놓은 것.&lt;/li&gt;
+      &lt;li&gt;데이터베이스의 테이블.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;개체 (Entity)&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-17-database-06-02.png&quot; alt=&quot;&quot; /&gt;
+ &lt;br /&gt;
+ &lt;br /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;속성&quot;&gt;속성&lt;/h1&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;속성/애트리뷰트 (Attribute)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;사물의 본질적인 고유의 성질(특성)로, 의미 있는 데이터의 가장 작은 단위&lt;/li&gt;
+      &lt;li&gt;파일시스템이나 데이터베이스에서 하나의 필드로 표현됨&lt;/li&gt;
+      &lt;li&gt;예시 : 사람의 속성 - 이름, 출생일, 성별, 국적 등&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;속성의 ER 다이어그램 표현&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;타원으로 표현&lt;/li&gt;
+      &lt;li&gt;개체 타입과 실선으로 연결&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-17-database-06-03.png&quot; alt=&quot;&quot; /&gt;
+ &lt;br /&gt;
+ &lt;br /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;속성의-유형&quot;&gt;속성의 유형&lt;/h1&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;키 속성 (Key Attribute)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;개체 인스턴스를 식별하는데 사용되는 속성&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;모든 개체 인스턴스의 키 속성 값은 달라야 함.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;둘 이상의 속성으로 구성할 수 있음&lt;/li&gt;
+      &lt;li&gt;예: 쇼핑몰의 고객 개체의 계정, 회사의 직원 사번&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-17-database-06-04.png&quot; alt=&quot;&quot; /&gt;
+ &lt;br /&gt;
+ &lt;br /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;속성 값의 개수에 따른 분류&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;단일 값 속성 (Single-valued Attribute)&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;예: 책의 이름, 회사내 팀의 팀장&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;다중 값 속성 (Multi-valued Attribute)&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;예: 책의 저자, 회사내 팀의 팀원번&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-17-database-06-05.png&quot; alt=&quot;&quot; /&gt;
+ &lt;br /&gt;
+ &lt;br /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;의미의 세분화에 따른 분류&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;단순 속성 (Simple Attribute)&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;의미를 세분화할 수 없는 경우&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;예: 개체의 이름&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;복합 속성 (Composite Attribute)&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;의미를 세분화할 수 있는 경우&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;예: 전화번호, 생년월일&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-17-database-06-06.png&quot; alt=&quot;&quot; /&gt;
+ &lt;br /&gt;
+ &lt;br /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;저장 속성 (Stored Attribute)과 유도 속성 (Derived Attribute)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;저장속성&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;다른 속성의 영향 없이 단독으로 저장되는 속성&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;유도 속성&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;다른 속성을 사용하여 만들 수 있는 속성&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;예: 판매물건의 부가세 금액, 나이(생년월일로부터 계산)&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-17-database-06-07.png&quot; alt=&quot;&quot; /&gt;
+ &lt;br /&gt;
+ &lt;br /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;널 속성 (Null Attribute)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;값이 없어도 되는 속성&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;예: 회원 가입시 선택항목&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;데이터를 입력하지 않아도 데이터베이스에 개체를 저장하는데 문제가 없다
+&lt;br /&gt;
+&lt;br /&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;개체와 속성의 ER 다이어그램 표현&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-17-database-06-08.png&quot; alt=&quot;&quot; /&gt;
+ &lt;br /&gt;
+ &lt;br /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+</description>
+        <pubDate>Mon, 17 Feb 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/devlog/2020/02/17/database-06/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/02/17/database-06/</guid>
+        
+        <category>database</category>
+        
+        
+        <category>devlog</category>
+        
+      </item>
     
       <item>
         <title>[Database] 모델링과 개체-관계 모델 및 다이어그램</title>

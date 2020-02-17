@@ -31,7 +31,7 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="naver-site-verification" content="fa37cbf8ce41948de6e94c01991ffa04cea9b093"/>
 <meta name="google-site-verification" content="5M4Zw9wg_UqQkvlayfb5Mc_ogvJdc013w_zLUkxgO-Y" />
-<meta property="og:title" content="Devlog">
+<meta property="og:title" content="[Database] 개체, 개체 타입과 속성">
 <meta property="og:type" content="article">
 
 
@@ -46,13 +46,15 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 
 
 
-  <title>Devlog &middot; m_veloper</title>
+  <title>[Database] 개체, 개체 타입과 속성 &middot; m_veloper</title>
 
 
 
-<meta name="description" content="개발관련 공부한 내용을 포스팅 합니다.
+<meta name="description" content="
+
 ">
-<meta property="og:description" content="개발관련 공부한 내용을 포스팅 합니다.
+<meta property="og:description" content="
+
 ">
 
 
@@ -60,17 +62,15 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 <!-- =============== -->
 <!-- LINKS           -->
 <!-- =============== -->
-<link rel="canonical" href="https://m-veloper.github.io/category/devlog/">
-<meta property="og:url" content="https://m-veloper.github.io/category/devlog/">
+<link rel="canonical" href="https://m-veloper.github.io/devlog/2020/02/17/database-06/">
+<meta property="og:url" content="https://m-veloper.github.io/devlog/2020/02/17/database-06/">
 
 <link rel="alternate" type="application/atom+xml" title="m_veloper Feed" href="https://m-veloper.github.io/feed.xml">
 
 
-  <link rel="prev" href="https://m-veloper.github.io/category/artwork/">
+  <link rel="prev" href="https://m-veloper.github.io/devlog/2020/02/16/database-05/">
 
 
-
-  <link rel="next" href="https://m-veloper.github.io/category/essay/">
 
 
 <link rel="apple-touch-icon" href="https://m-veloper.github.io/apple-touch-icon.png">
@@ -196,55 +196,453 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 <div id="_yPushState">
   <div class="fade-in">
     <main id="_main" class="content" role="main" data-color="#e2adfd" data-image="/assets/img/nap.jpg">
-      
+      <style>
+  .myAd1190 {
+    width: 48%;
+    height: 280px;
+  }
+
+  .myAd1290 {
+    width: 48%;
+    height: 280px;
+  }
+
+  @media(max-width: 800px) {
+    .myAd1190 {
+      display: none;
+    }
+
+    .myAd1290 {
+      width: 98%;
+    }
+  }
+  /*광고 붙을떄 까지 안보이게*/
+  .row {
+    /*display: flex;*/
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    height: 300px;
+  }
+
+  .row-center {
+    display: flex;
+    justify-content: center;
+    height: 258px;
+  }
+  /*광고 붙을떄 까지 안보이게*/
+  .right-side{
+    display: none;
+  }
+
+  #tag{
+    margin-bottom: 0.875rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    height: 2rem;
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    margin-right: 0.875rem;
+    color: rgb(12, 166, 120);
+    font-size: 0.9rem;
+    background: rgb(241, 243, 245);
+    border-radius: 1rem;
+    text-decoration: none;
+  }
+  .post-date{
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+
+  .markdown-body h1 {
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+    margin-top: 56px;
+  }
+
+</style>
 
 
 
+
+
+<article id="post-devlog/2020/02/17/database-06" class="post this" role="article">
   <header>
-    <h1 class="page-title">Devlog</h1>
+
+    <h1 class="post-title">
+      
+        [Database] 개체, 개체 타입과 속성
+        
+    </h1>
+
+    <p class="post-date heading">
+      <!--<time datetime="2020-02-17T00:00:00+09:00">17 Feb 2020</time>-->
+      <time datetime="2020-02-17T00:00:00+09:00">2020년 02월 17일</time>
+    </p>
     
-  
-  
-<p class="message">개발관련 공부한 내용을 포스팅 합니다.</p>
 
 
+
+
+
+
+
+
+
+<a href="/category/devlog/" data-flip="title" id="tag">Devlog</a>
+
+    
+
+
+
+
+
+
+
+
+
+<a href="/tag/devlog-database/" data-flip="title" id="tag">Database</a>
+
+
+    
+  <div class="hr" style="padding-bottom:0"></div>
 
 
   </header>
-  <hr class="sr-only"/>
-
-
-
   
+
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  
+  <div class="markdown-body">
+
+    <!--  -->
+
+    <div class='row'>
+      <ins class="adsbygoogle myAd1190" data-ad-client="ca-pub-9134477021095729" data-ad-slot="6559875097"></ins>
+      <ins class="adsbygoogle myAd1290" data-ad-client="ca-pub-9134477021095729" data-ad-slot="6559875097"></ins>
+    </div>
+
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+
+    <br />
+    <p><img src="/assets/img/database/2020-02-17-database-06.png" alt="" /></p>
+
+<h1 id="개체와-개체타입">개체와 개체타입</h1>
+<p><br />
+<br /></p>
+
+<ol>
+  <li>
+    <p>개체 타입 (Entity Type)</p>
+
+    <ul>
+      <li>비슷한 속성을 가진 개체</li>
+      <li>개체를 이름과 속성으로 정의한 것</li>
+      <li>파일시스템이나 데이터베이스의 레코드 타입 (Record Type)</li>
+      <li>프로그래밍언어의 데이터타입과 유사</li>
+      <li>
+        <p>유형</p>
+
+        <ul>
+          <li>강한 개체 (Strong Entity) : 다른 개체의 도움 없이 독자적으로 존재하는 개체</li>
+          <li>
+            <p>약한 개체 (Weak Entity) :</p>
+
+            <p>독자적으로 존재하지 않고, 상위 개체 타입을 가짐<br />
+  상위 개체 타입이 결정되지 않으면 개별 개체를 식별할 수 없음</p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>예 : 회사의 직원</p>
+
+        <ul>
+          <li>직원의 부양가족은 직원 개체가 존재해야 존재할 수 있다</li>
+          <li>강한 개체 : 직원</li>
+          <li>약한 개체 : 부양 가족
+  · 개체타입의 ER 다이어그램 표현</li>
+          <li>직사각형으로 표현</li>
+        </ul>
+      </li>
+    </ul>
+
+    <p><img src="/assets/img/database/2020-02-17-database-06-01.png" alt="" />
+ <br />
+ <br /></p>
+  </li>
+  <li>
+    <p>개체 인스턴스 (Entity Instance)</p>
+
+    <ul>
+      <li>개체의 속성에 실제 값을 주어 실체화된 개체</li>
+      <li>파일시스템이나 데이터베이스의 레코드 인스턴스 (Record Instance)</li>
+    </ul>
+  </li>
+  <li>
+    <p>개체 집합 (Entity Set)</p>
+
+    <ul>
+      <li>개체 인스턴스를 모아 놓은 것.</li>
+      <li>데이터베이스의 테이블.</li>
+    </ul>
+  </li>
+  <li>
+    <p>개체 (Entity)</p>
+
+    <p><img src="/assets/img/database/2020-02-17-database-06-02.png" alt="" />
+ <br />
+ <br /></p>
+  </li>
+</ol>
+
+<h1 id="속성">속성</h1>
+
+<p><br />
+<br /></p>
+
+<ol>
+  <li>
+    <p>속성/애트리뷰트 (Attribute)</p>
+
+    <ul>
+      <li>사물의 본질적인 고유의 성질(특성)로, 의미 있는 데이터의 가장 작은 단위</li>
+      <li>파일시스템이나 데이터베이스에서 하나의 필드로 표현됨</li>
+      <li>예시 : 사람의 속성 - 이름, 출생일, 성별, 국적 등</li>
+    </ul>
+  </li>
+  <li>
+    <p>속성의 ER 다이어그램 표현</p>
+
+    <ul>
+      <li>타원으로 표현</li>
+      <li>개체 타입과 실선으로 연결</li>
+    </ul>
+
+    <p><img src="/assets/img/database/2020-02-17-database-06-03.png" alt="" />
+ <br />
+ <br /></p>
+  </li>
+</ol>
+
+<h1 id="속성의-유형">속성의 유형</h1>
+
+<p><br />
+<br /></p>
+
+<ol>
+  <li>
+    <p>키 속성 (Key Attribute)</p>
+
+    <ul>
+      <li>
+        <p>개체 인스턴스를 식별하는데 사용되는 속성</p>
+
+        <ul>
+          <li>모든 개체 인스턴스의 키 속성 값은 달라야 함.</li>
+        </ul>
+      </li>
+      <li>둘 이상의 속성으로 구성할 수 있음</li>
+      <li>예: 쇼핑몰의 고객 개체의 계정, 회사의 직원 사번</li>
+    </ul>
+
+    <p><img src="/assets/img/database/2020-02-17-database-06-04.png" alt="" />
+ <br />
+ <br /></p>
+  </li>
+  <li>
+    <p>속성 값의 개수에 따른 분류</p>
+
+    <ul>
+      <li>
+        <p>단일 값 속성 (Single-valued Attribute)</p>
+
+        <ul>
+          <li>예: 책의 이름, 회사내 팀의 팀장</li>
+        </ul>
+      </li>
+      <li>
+        <p>다중 값 속성 (Multi-valued Attribute)</p>
+
+        <ul>
+          <li>예: 책의 저자, 회사내 팀의 팀원번</li>
+        </ul>
+      </li>
+    </ul>
+
+    <p><img src="/assets/img/database/2020-02-17-database-06-05.png" alt="" />
+ <br />
+ <br /></p>
+  </li>
+  <li>
+    <p>의미의 세분화에 따른 분류</p>
+
+    <ul>
+      <li>
+        <p>단순 속성 (Simple Attribute)</p>
+
+        <ul>
+          <li>의미를 세분화할 수 없는 경우</li>
+        </ul>
+      </li>
+      <li>
+        <p>예: 개체의 이름</p>
+
+        <ul>
+          <li>복합 속성 (Composite Attribute)</li>
+        </ul>
+      </li>
+      <li>
+        <p>의미를 세분화할 수 있는 경우</p>
+
+        <ul>
+          <li>예: 전화번호, 생년월일</li>
+        </ul>
+      </li>
+    </ul>
+
+    <p><img src="/assets/img/database/2020-02-17-database-06-06.png" alt="" />
+ <br />
+ <br /></p>
+  </li>
+  <li>
+    <p>저장 속성 (Stored Attribute)과 유도 속성 (Derived Attribute)</p>
+
+    <ul>
+      <li>
+        <p>저장속성</p>
+
+        <ul>
+          <li>다른 속성의 영향 없이 단독으로 저장되는 속성</li>
+        </ul>
+      </li>
+      <li>
+        <p>유도 속성</p>
+
+        <ul>
+          <li>다른 속성을 사용하여 만들 수 있는 속성</li>
+        </ul>
+      </li>
+      <li>
+        <p>예: 판매물건의 부가세 금액, 나이(생년월일로부터 계산)</p>
+      </li>
+    </ul>
+
+    <p><img src="/assets/img/database/2020-02-17-database-06-07.png" alt="" />
+ <br />
+ <br /></p>
+  </li>
+  <li>
+    <p>널 속성 (Null Attribute)</p>
+
+    <ul>
+      <li>값이 없어도 되는 속성</li>
+      <li>
+        <p>예: 회원 가입시 선택항목</p>
+
+        <ul>
+          <li>데이터를 입력하지 않아도 데이터베이스에 개체를 저장하는데 문제가 없다
+<br />
+<br /></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>개체와 속성의 ER 다이어그램 표현</p>
+
+    <p><img src="/assets/img/database/2020-02-17-database-06-08.png" alt="" />
+ <br />
+ <br /></p>
+  </li>
+</ol>
+
+
+    <br />
+    <br />
+  </div>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+  
+
+</article>
+
+
+<div class="share">
+  <h2>Share this post</h2>
+  <div class="share-body">
+    <a href="http://twitter.com/share?text=[Database] 개체, 개체 타입과 속성&amp;url=https://m-veloper.github.io/devlog/2020/02/17/database-06/"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="icon-twitter">
+      </span>
+    </a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://m-veloper.github.io/devlog/2020/02/17/database-06/"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="icon-facebook">
+      </span>
+    </a>
+  </div>
+</div>
+<br />
+
+
+
+<!--
+
+
+  <aside class="author" role="complementary">
+    <div class="author">
+  <h2 class="page-title hr">
+    About
+  </h2>
+<div class="author-body">
   
     
-    <h2 id="y2020" class="hr">2020</h2>
-    <ul class="related-posts">
+  
+
+  
+
+  <img
+    src="/assets/img/me.jpeg"
+    class="me"
+    alt="m_veloper"
+    srcset="/assets/img/me.jpeg 1x,/assets/img/me.jpeg 2x"
     
+  />
+
+
   
-  
+  <div class="author-body-description">
+    
+
+  </div>
+</div>
+</div>
+
+  </aside>
+
+-->
 
 
 
-<style>
-  .related-posts>li>small{
-    margin-left: 10px;
-  }
-</style>
-<li class="h4">
-  <a href="/devlog/2020/02/17/database-06/" data-flip="title">
-    <span>[Database] 개체, 개체 타입과 속성</span>
-  </a>
-  <small><time datetime="2020-02-17T00:00:00+09:00">
-    2020년 02월 17일
-  </time></small>
-</li>
+<aside class="related" role="complementary">
+  <h2 class="hr">Related Posts</h2>
 
-  
-
-  
-  
-  
+  <ul class="related-posts">
+    
+      
+      
+      
+        
+          
+          
+        
+        
+          
 
 
 
@@ -262,11 +660,11 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
   </time></small>
 </li>
 
-  
-
-  
-  
-  
+        
+      
+        
+        
+          
 
 
 
@@ -284,11 +682,11 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
   </time></small>
 </li>
 
-  
-
-  
-  
-  
+        
+      
+        
+        
+          
 
 
 
@@ -306,53 +704,45 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
   </time></small>
 </li>
 
-  
-
-  
-  
-  
-
-
-
-<style>
-  .related-posts>li>small{
-    margin-left: 10px;
-  }
-</style>
-<li class="h4">
-  <a href="/devlog/2020/02/13/database-02/" data-flip="title">
-    <span>[Database] 데이터베이스 모델</span>
-  </a>
-  <small><time datetime="2020-02-13T00:00:00+09:00">
-    2020년 02월 13일
-  </time></small>
-</li>
-
-  
-
-  
-  
-  
-
-
-
-<style>
-  .related-posts>li>small{
-    margin-left: 10px;
-  }
-</style>
-<li class="h4">
-  <a href="/devlog/2020/02/12/database-01/" data-flip="title">
-    <span>[Database] 데이터베이스</span>
-  </a>
-  <small><time datetime="2020-02-12T00:00:00+09:00">
-    2020년 02월 12일
-  </time></small>
-</li>
-
+        
+      
+    
   </ul>
+</aside>
 
 
+
+      
+        <aside class="comments" role="complementary">
+  <h2>Comments</h2>
+  <hr/>
+
+  <div id="disqus_thread"></div>
+
+  <script>
+    !function (s, i) {
+  function e(e) {
+    var t = s.pageYOffset || i.body.scrollTop;
+    s.DISQUS && !s._disqusThis && !s._disqusFirst && t + s.innerHeight >= s._disqusThreadOffsetTop && (s._disqusThis = !0, s.DISQUS.reset(
+      { reload: !0, config: d }))
+  }
+
+  var d = function () {
+    this.page.title = "[Database] 개체, 개체 타입과 속성",
+      this.page.identifier = "/devlog/2020/02/17/database-06",
+      this.page.url = "https://m-veloper.github.io/devlog/2020/02/17/database-06/"
+  };
+  s._disqusFirst = void 0 === s._disqusFirst || s._disqusFirst, s._disqusLoading = void 0 !== s._disqusLoading && s._disqusLoading, s._disqusThis = !1, s._disqusThreadOffsetTop = i.getElementById(
+    "disqus_thread").offsetTop, s._disqusLoading ? s._disqusFirst = !1 : (s._disqusLoading = !0, loadJSDeferred(
+    "//m-veloper.disqus.com/embed.js"), s.addEventListener ? s.addEventListener(
+    "scroll",
+    e,
+    { passive: !0 }) : s.attachEvent ? s.attachEvent("onscroll", e) : s.onscroll = e)
+}(window, document);
+
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</aside>
 
       
 
@@ -683,7 +1073,7 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
     <li>
       <input type="checkbox" id="list-item-5"/>
       <div  class="list-wrapper">
-      <a class="sidebar-nav-item active" href="/category/devlog/">Devlog</a>
+      <a class="sidebar-nav-item" href="/category/devlog/">Devlog</a>
        <label class="folder" for="list-item-5">▾</label>
     </div>
      <ul class="list-body">
