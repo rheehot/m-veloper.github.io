@@ -3,11 +3,634 @@
   <channel>
     <title>m_veloper</title>
     <description></description>
-    <link>https://m-veloper.github.io/</link>
-    <atom:link href="https://m-veloper.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 17 Feb 2020 14:13:36 +0900</pubDate>
-    <lastBuildDate>Mon, 17 Feb 2020 14:13:36 +0900</lastBuildDate>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 18 Feb 2020 22:45:01 +0900</pubDate>
+    <lastBuildDate>Tue, 18 Feb 2020 22:45:01 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>[유닉스] 명령어</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-02-18-unix-03.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;사용자-계정-관리&quot;&gt;사용자 계정 관리&lt;/h1&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;시스템 관리자 또는 슈퍼유저(superuser)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;유닉스 시스템은 여러 사용자가 하나의 시스템을 사용하는 다중 사용자 시스템이므로 전체 시스템을 관리하는 시스템 관리자 필요&lt;/li&gt;
+      &lt;li&gt;root 계정을 사용하여 로그인&lt;/li&gt;
+      &lt;li&gt;사용자 계정을 추가, 삭제, 사용자 패스워드 변경&lt;/li&gt;
+      &lt;li&gt;소프트웨어 설치, 로그 파일 검사 등 전체 시스템 관리와 유지보수&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;일반 사용자가 슈퍼유저로 로그인 : su 명령어 사용하여 root 계정으로 로그인&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ su [사용자명]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;사용자 계정 등록&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;로그인 ID : 영문 소문자를 사용하여 8자까지 가능&lt;/li&gt;
+      &lt;li&gt;비밀번호 : 최소 하나 이상의 숫자와 알파벳을 사용하여 최소 6자 이상을 허용&lt;/li&gt;
+      &lt;li&gt;로그인 ID와 초기 비밀번호는 시스템 관리자가 지정&lt;/li&gt;
+      &lt;li&gt;비밀번호는 사용자가 변경 가능(passwd 명령)&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;사용자 계정 추가&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  # useradd [옵션] [사용자명]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+
+        &lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-02-18-unix-03-01.png&quot; alt=&quot;&quot; /&gt;
+  &lt;br /&gt;
+  &lt;br /&gt;&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;그룹 추가, 삭제&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;사용자는 하나 이상의 그룹에 속하게 됨&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;그룹 추가&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   # groupadd 그룹명
+         
+   /etc/group 파일에 해당 그룹에 대한 정보가 추가됨
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;그룹 삭제&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  # groupdel 그룹명
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;쉘 프롬프트&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;로그인이 성공하면 시스템은 사용자의 입력을 기다림&lt;/li&gt;
+      &lt;li&gt;대기 상태는 프롬프트와 커서로 표시&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;프롬프트&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &quot;#&quot; : 현재 로그인한 사용자가 시스템 관리자(root)임을 나타냄
+  &quot;$&quot; : 본(Bourne) 쉘 또는 콘(Korn) 쉘에서 사용
+  &quot;%&quot; : C 쉘에서 사용
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;프롬프트 모양은 변경 가능&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;쉘&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;명령어 해석기(command processor)&lt;/li&gt;
+      &lt;li&gt;사용자가 입력하는 명령을 읽고 해석하는 프로그램&lt;/li&gt;
+      &lt;li&gt;‘스크립트(script)’라는 프로그램을 해석&lt;/li&gt;
+      &lt;li&gt;Bourne 쉘을 기본으로 사용, C 쉘, Korn 쉘, Bash 쉘&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;홈 디렉토리&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;유닉스 시스템에서 사용자가 로그인한 직후의 디렉토리가 사용자의 홈 디렉토리&lt;/li&gt;
+      &lt;li&gt;사용자는 홈 디렉토리 아래에 자신이 원하는 파일이나 디렉토리를 생성하여 작업&lt;/li&gt;
+      &lt;li&gt;사용자의 홈 디렉토리는 사용자 계정 등록할 때 결정&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;명령행 편집 방법&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;유닉스, 리눅스는 대문자와 소문자를 구별함&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;문자 지우기&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  ← 키나 Delete 키를 사용
+  유닉스 종류에 따라 기본값 설정이 다름
+  ← 키 눌렀는데 “^H”만 나오면 Delete 키가 기본값으로 설정된 경우, Delete 키나 Ctrl + ? 키로 지울 수 있음
+  Delete 키 눌렀는데 “^?”가 나오면 ← 키가 기본값으로 설정된 경우
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;단어 지우기&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  Ctrl + W 키를 사용하여 단어 삭제
+  단어는 공백으로 구분
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;문장 지우기&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  Ctrl + U 키를 사용하여 해당 행의 내용을 모두 삭제
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;로그아웃&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;작업 후 로그아웃(logout)을 하여 세션(session)을 종료&lt;/li&gt;
+      &lt;li&gt;exit, logout 명령 사용&lt;/li&gt;
+      &lt;li&gt;Ctrl + D 키는 강제 종료. 파일의 끝이라는 신호를 보내게 되므로 쉘을 끝내고 로그아웃됨&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Tue, 18 Feb 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/2020/02/18/unix-03/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/2020/02/18/unix-03/</guid>
+        
+        <category>unix</category>
+        
+        
+        <category>devlog</category>
+        
+      </item>
+    
+      <item>
+        <title>[유닉스] 특징 및 구조</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-02-18-unix-02.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;유닉스의-특징&quot;&gt;유닉스의 특징&lt;/h1&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;단순성&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;운영체제 자체를 단순화시켜 최소한의 필요한 기능만 제공&lt;/li&gt;
+      &lt;li&gt;자원에 관한 일관성 있는 관점 제공, 주변 장치를 파일과 같은 형식으로 사용&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;이식성과 확장성&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;고급 언어인 C로 작성되어 다양한 플랫폼에 이식하여 사용 가능&lt;/li&gt;
+      &lt;li&gt;각 기능이 모듈화되어 있어 새 기능 추가시 모듈만 추가하면 됨&lt;/li&gt;
+      &lt;li&gt;주요 유닉스 계열의 운영체제
+ – 안드로이드(Adroid) OS
+ – iOS
+ – 맥(Mac) OS X
+ – 리눅스(Linux)
+ – BSD 유닉스(Unix)
+ – 시스템 V
+ – Sun 솔라리스(Solaris)
+ – IBM AIX
+ – HP HP-UX
+ – Cray 유니코스(Unicos)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;개방성&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;소스 코드 공개&lt;/li&gt;
+      &lt;li&gt;대학에서 유닉스를 기반으로 여러 가지 유용한 소프트웨어 개발, 보급&lt;/li&gt;
+      &lt;li&gt;유닉스의 양적, 질적인 면에서 폭발적 성장을 촉진하는 원동력&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;대화형 시스템&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;명령어 기반 사용자 인터페이스 이용&lt;/li&gt;
+      &lt;li&gt;유닉스가 이해할 수 있는 ‘명령’을 사람이 입력, 유닉스는 명령 처리 결과를 화면에 출력&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;다중 사용자 시스템, 다중 작업용 시스템&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;여러 사용자가 컴퓨터에 동시에 접속하여 사용할 수 있는 운영체제&lt;/li&gt;
+      &lt;li&gt;사용자들은 직렬 회선(Serial Cable)으로 연결된 단말기를 통해 유닉스에 접속&lt;/li&gt;
+      &lt;li&gt;한 대의 컴퓨터에서 여러 작업을 동시에 수행&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;쉘 스크립트&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;유닉스 명령어나 유틸리티 등을 사용하여 프로그램을 작성하여 사용&lt;/li&gt;
+      &lt;li&gt;큰 작업을 수행할 때 기존의 작은 프로그램들을 적절히 결합하여 수행하는 방식&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;다양한 부가 기능 제공&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;ftp, telnet, www 등 다양한 네트워크 관련 응용 프로그램 제공&lt;/li&gt;
+      &lt;li&gt;웹 서버, DB 서버, 메일 서버, 뉴스 서버, 네임 서버 등 네트워크 서버 기능 지원&lt;/li&gt;
+      &lt;li&gt;프로그래밍 및 디버깅 도구, 문서 편집 도구, 출력 관련 도구 제공&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;유닉스-리눅스의-활용-분야&quot;&gt;유닉스, 리눅스의 활용 분야&lt;/h1&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;서버&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;웹 서버, DB 서버, 파일 서버, 메일 서버, 뉴스 서버, 네임 서버, 클러스터링 등&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;임베디드 시스템&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;통신 단말기 : 휴대폰, PDA, PMP, 무선 IP 공유기, IPTV 셋탑박스, 인터넷폰 등&lt;/li&gt;
+      &lt;li&gt;네트워크 장비 : 스위치, 방화벽, 게이트웨이 등&lt;/li&gt;
+      &lt;li&gt;가전 제품 : DVD Player, MP3 Player 등&lt;/li&gt;
+      &lt;li&gt;생산 설비 : 홈오토메이션, 공장 자동화, 산업용 로봇 등&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;유닉스-시스템의-구조&quot;&gt;유닉스 시스템의 구조&lt;/h1&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;유닉스 시스템의 구조&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;구성요소 : 하드웨어, 커널, 쉘 및 라이브러리, 사용자 및 응용 프로그램&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-02-18-unix-02-01.png&quot; alt=&quot;&quot; /&gt;
+ &lt;br /&gt;
+ &lt;br /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;커널&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;운영체제의 핵심&lt;/li&gt;
+      &lt;li&gt;하드웨어를 운영 관리&lt;/li&gt;
+      &lt;li&gt;프로세스 관리 (Process management)
+ – 여러 개의 응용 프로그램들이 동시에 수행되는 것처럼 실행될 수 있도록 프로세스 스케줄링&lt;/li&gt;
+      &lt;li&gt;파일 관리 (File management)
+ – 디스크 상에 파일 시스템을 구성하여 파일을 관리&lt;/li&gt;
+      &lt;li&gt;메모리 관리 (Memory management)
+ – 메인 메모리가 효과적으로 사용될 수 있도록 관리&lt;/li&gt;
+      &lt;li&gt;통신 관리 (Communication management)
+ – 네트워크를 통해 정보를 주고 받을 수 있도록 관리&lt;/li&gt;
+      &lt;li&gt;주변 장치 관리 (Device management)
+ – 모니터, 키보드, 마우스와 같은 장치를 사용할 수 있도록 관리&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;시스템 호출(system call)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;커널이 제공하는 서비스에 대한 프로그래밍 인터페이스 역할&lt;/li&gt;
+      &lt;li&gt;시스템 호출에 기반하여 공통적인 함수들의 모음인 라이브러리 존재&lt;/li&gt;
+      &lt;li&gt;응용 프로그램은 필요시 시스템 호출과 라이브러리를 자유롭게 사용&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;쉘&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;사용자와 커널 사이의 중간자 역할&lt;/li&gt;
+      &lt;li&gt;사용자가 입력한 명령을 해석하여 커널에 전달&lt;/li&gt;
+      &lt;li&gt;커널이 명령 수행 결과를 돌려주면 사용자에게 전달&lt;/li&gt;
+      &lt;li&gt;본 쉘(sh, Bourne Shell), C 쉘(csh, C Shell), 콘 쉘(kch, Korn Shell), 배시 쉘(bash, Bourne Again Shell)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;사용자 및 응용 프로그램, 유틸리티&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;사용자가 개발한 프로그램, 응용 프로그램&lt;/li&gt;
+      &lt;li&gt;각종 개발 도구, 문서 편집 도구, 네트워크 관련 도구&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Tue, 18 Feb 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/2020/02/18/unix-02/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/2020/02/18/unix-02/</guid>
+        
+        <category>unix</category>
+        
+        
+        <category>devlog</category>
+        
+      </item>
+    
+      <item>
+        <title>[유닉스] 역사와 발전</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-02-18-unix-01.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;유닉스와-리눅스의-탄생&quot;&gt;유닉스와 리눅스의 탄생&lt;/h1&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;운영체제란&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;컴퓨터 시스템을 제어하는 프로그램들의 집합&lt;/li&gt;
+      &lt;li&gt;하드웨어와 사용자 또는 응용 프로그램 사이에 위치&lt;/li&gt;
+      &lt;li&gt;하드웨어와 사용자 또는 응용 프로그램이 쉽고 편리하게 컴퓨터 시스템을 이용할 수 있도록 컴퓨터 시스템을 제어하고 관리&lt;/li&gt;
+      &lt;li&gt;초기 운영체제는 단일 사용자 형태&lt;/li&gt;
+      &lt;li&gt;유닉스를 시작으로 다중 사용자, 다중 작업 운영체제로 발전&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;유닉스(UNIX)의 탄생&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;1969년 벨연구소의 켄 톰슨(Ken Thompson)과 데니스 리치(Dennis Ritchie)가 개발&lt;/li&gt;
+      &lt;li&gt;1973년 어셈블리 언어에서 C 언어로 변경&lt;/li&gt;
+      &lt;li&gt;대학을 중심으로 유닉스를 많이 이용하여 무료로 제공&lt;/li&gt;
+      &lt;li&gt;AT&amp;amp;T가 벨연구소를 인수하게 되면서 유닉스를 상용으로 공급&lt;/li&gt;
+      &lt;li&gt;AT&amp;amp;T 유닉스 버전과 BSD(Berkeley Software Distribution) UNIX 버전 발표&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;리눅스(Linux)의 탄생&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;1991년 핀란드 헬싱키 대학의 리누스 토발즈(Linus Torvalds)가 개발&lt;/li&gt;
+      &lt;li&gt;PC에서도 사용할 수 있는 UNIX와 같은 운영체제 개발&lt;/li&gt;
+      &lt;li&gt;뉴스그룹 구성원들과 전세게 네티즌들에게 리눅스 커널(kernel) 부분의 소스 파일을 공개하여 아이디어를 공유, 문제점 개선 등으로 만들어짐&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;유닉스와-리눅스의-탄생-1&quot;&gt;유닉스와 리눅스의 탄생&lt;/h1&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;유닉스의 발전 과정&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-02-18-unix-01-01.png&quot; alt=&quot;&quot; /&gt;
+ &lt;br /&gt;
+ &lt;br /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;유닉스의 종류&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;시스템 V&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;AT&amp;amp;T 벨연구소에서 개발한 UNIX&lt;/li&gt;
+          &lt;li&gt;상업 제품으로, IBM의 AIX, Sun(2009년 Oracle에 합병됨)의 Solaris, HP의 HP-UX&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;BSD 유닉스&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;버클리 대학교에서 발전됨&lt;/li&gt;
+          &lt;li&gt;메모리 관리 기능 향상&lt;/li&gt;
+          &lt;li&gt;TCP/IP, 소켓(Socket) 등 네트워킹 기능 추가&lt;/li&gt;
+          &lt;li&gt;HP나 Sun Microsystems 같은 회사에서 많이 사용&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;솔라리스
+        &lt;ul&gt;
+          &lt;li&gt;Sun 사에 의해 출시됨&lt;/li&gt;
+          &lt;li&gt;Sparc CPU 전용 운영체제에서 인텔용 솔라리스도 출시&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;리눅스&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;레드햇(RedHat) 사의 레드햇(RedHat)과 페도라(Fedora), 캐노니컬(Canonical) 사의 우분투(Ubuntu), 그리고, 데비안(Debian), CentOS 등&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;맥 OS
+        &lt;ul&gt;
+          &lt;li&gt;1984년 애플 컴퓨터의 매킨토시 컴퓨터용 운영체제로 개발&lt;/li&gt;
+          &lt;li&gt;NexTSTEP 운영체제와 BSD 유닉스 기반으로 맥 OS X (맥 오에스 텐으로 발음함) 개발&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;모바일 기기용 운영체제&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;안드로이드 : 리눅스 기반, 소스 코드 공개&lt;/li&gt;
+          &lt;li&gt;iOS : 맥 OS X 기반, 소스 코드 비공개, 애플사의 모바일 기기(iphone, iPad, iPod)에서 사용&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;리눅스 커널&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;커널은 리눅스 운영체제의 핵심이 되는 부분&lt;/li&gt;
+      &lt;li&gt;커널의 버전
+ – 안정 버전(Stable Version)과 개발 버전(Development Version)으로 구분
+ – 안정 버전 : 개발 완료된 코드로 구성된 버전
+ – 개발 버전 : 현재 개발 중인 버전, 상대적으로 불안정&lt;/li&gt;
+      &lt;li&gt;파일 이름에서 커널 표시
+ – 파일 이름 : linux-3.7.1.tar
+ – ‘3’은 주 버전 (Major Version)
+ – ‘7’은 부 버전 (Minor Version)
+ – ‘1’은 패치 버전 (Patch Version)
+ – ‘linux-3.7.1.xx’의 경우 ‘xx’는 사소한 개정이 있을 경우&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;배포판(Distribution)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;커널을 기반으로 GNU 프로젝트의 라이브러리와 도구들을 패키지화시킨 것&lt;/li&gt;
+      &lt;li&gt;사용 목적에 따라 무수히 많은 종류의 배포판 존재&lt;/li&gt;
+      &lt;li&gt;국외 리눅스 배포판&lt;/li&gt;
+      &lt;li&gt;국내 리눅스 배포판&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;슬랙웨어(Slackware)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;1993년 패트릭 폴커딩(Patrick Volkerding)에 의해 처음 릴리즈됨&lt;/li&gt;
+      &lt;li&gt;높은 수준의 안전성과 보안성&lt;/li&gt;
+      &lt;li&gt;사용자 인터페이스 환경이 화려하지 않고 텍스트 기반&lt;/li&gt;
+      &lt;li&gt;리눅스를 좀더 깊이 공부하고 싶은 사람에게 추천&lt;/li&gt;
+      &lt;li&gt;홈페이지 : http://www.slackware.com 미국&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;레드햇(RedHat)
+    &lt;ul&gt;
+      &lt;li&gt;가장 인기 있는 배포판&lt;/li&gt;
+      &lt;li&gt;RedHat Linux 9 버전까지만 소스 공개&lt;/li&gt;
+      &lt;li&gt;RedHat Enterprise Linux는 유료 배포판&lt;/li&gt;
+      &lt;li&gt;홈페이지 : http://www.redhat.com 미국&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;페도라(Fedora)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;레드햇 회사에서 후원하고 Fedora 커뮤니티에서 개발하는 무료 배포판&lt;/li&gt;
+      &lt;li&gt;국내에서 가장 인기 있는 배포판&lt;/li&gt;
+      &lt;li&gt;빠르고, 안정적이고, 강력한 운영체제&lt;/li&gt;
+      &lt;li&gt;홈페이지 : http://fedoraproject.org 미국&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;데비안(Debian GNU/Linux)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;자원 봉사 모임인 데비안 프로젝트(Debian Project)에서 만들어 배포하는 공개 운영체제&lt;/li&gt;
+      &lt;li&gt;가장 강력한 패키지 관리 시스템&lt;/li&gt;
+      &lt;li&gt;Intel, Alpha, Sparc, PowerPC 등 다양한 아키텍처 지원&lt;/li&gt;
+      &lt;li&gt;100% 자유 소프트웨어를 유지&lt;/li&gt;
+      &lt;li&gt;데비안으로 작성된 프로그램을 무료로 라이선스 공개&lt;/li&gt;
+      &lt;li&gt;홈페이지 : http://www.debian,.org&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;우분투(Ubuntu)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;데스크탑에서 쉬운 리눅스를 사용하기 위해 만들어짐&lt;/li&gt;
+      &lt;li&gt;데비안 리눅스를 기반으로 사용자가 손쉽게 사용할 수 있도록 함&lt;/li&gt;
+      &lt;li&gt;개인용 컴퓨터 사용자와 개발자에게 가장 인기&lt;/li&gt;
+      &lt;li&gt;우분투 : 남아프리카 줄루족의 말, “네가 있으니 내가 있다”는 뜻&lt;/li&gt;
+      &lt;li&gt;홈페이지 : http://www.ubuntu.com&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;수세 리눅스(SuSE-Linux)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;독일업체 수세(S.u.S.E)에서 개발된 배포판&lt;/li&gt;
+      &lt;li&gt;레드햇 리눅스와 함께 인기 있는 상용 배포판&lt;/li&gt;
+      &lt;li&gt;2003년 수세는 노벨(Novell)에 인수됨&lt;/li&gt;
+      &lt;li&gt;홈페이지 : http://www.novell.com/linux 독일&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;CentOS(Community ENTerprise Operating System)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;레드햇 엔터프라이즈 배포판을 기반으로 하는 무료 운영체제&lt;/li&gt;
+      &lt;li&gt;웹 서버용으로 가장 많이 사용&lt;/li&gt;
+      &lt;li&gt;홈페이지 : http://www.centos.org&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;국내 리눅스 배포판&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;레드햇 리눅스를 기반으로 한글 인터페이스를 제공한 배포판
+– 파워 리눅스, K-리눅스, 알짜 리눅스, 미지 리눅스, 와우 리눅스 등
+– 현재는 제공되지 않음&lt;/li&gt;
+      &lt;li&gt;아시아눅스(Asianux)
+– 한국, 중국, 일본의 아시아 기업들이 협력하여 만들었음
+– 한컴 리눅스, 홍기 리눅스(중국), 미라클 리눅스(일본)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;유닉스와-리눅스의-탄생-2&quot;&gt;유닉스와 리눅스의 탄생&lt;/h1&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;GNU, GNU 프로젝트&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;GNU’s Not Unix, 즉 ‘GNU는 유닉스가 아니다’라는 뜻&lt;/li&gt;
+      &lt;li&gt;1984년 리처드 스톨먼(Richard Matthew Stallman)을 주축으로 유닉스와 호환되면서 더 강력한 운영체제를 만들고자 하는 프로젝트 시작&lt;/li&gt;
+      &lt;li&gt;‘모두가 공유할 수 있는 소프트웨어’를 만드는 것을 모티브로 출발&lt;/li&gt;
+      &lt;li&gt;GNU C 컴파일러인 gcc, 문서편집기인 emacs, X 윈도우 데스크탑 환경인 GNOME, tar를 개조한 GNU tar 등 응용 프로그램을 만듦&lt;/li&gt;
+      &lt;li&gt;소프트웨어의 상업화에 반대해 소프트웨어를 자유롭게 사용하도록 하는 것이 목적&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;자유 소프트웨어 재단 FSF(Free Software Foundation)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;1985년 리처드 스톨먼이 세운 비영리 조직&lt;/li&gt;
+      &lt;li&gt;‘구속되지 않는다‘는 관점에서 프로그램의 변경이나 수정의 자유를 의미&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Copyleft와 GNU GPL(General Public License)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;Copyleft
+ – 저작권(Copyright)의 반대를 뜻하는 의미로 사용
+ – 프로그램의 제작, 배포에 대한 권리를 모든 사람에게 허용&lt;/li&gt;
+      &lt;li&gt;GNU GPL
+ – GNU 소프트웨어에서 Copyleft를 실제로 구현한 라이선스를 의미
+ – GNU 정신에 입각하여 자유 소프트웨어를 보호, 실제로 Copyleft를 담보할 수 있는 법률적 허가권&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;커널(kernel)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;운영체제의 핵심으로, 시스템이 부팅될 때 로드&lt;/li&gt;
+      &lt;li&gt;시스템의 하드웨어 제어&lt;/li&gt;
+      &lt;li&gt;자원 스케줄링, 실행중인 프로그램 관리, 자료 관리&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Tue, 18 Feb 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/2020/02/18/unix-01/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/2020/02/18/unix-01/</guid>
+        
+        <category>unix</category>
+        
+        
+        <category>devlog</category>
+        
+      </item>
     
       <item>
         <title>[Database] 개체, 개체 타입과 속성</title>
@@ -244,8 +867,8 @@
 
 </description>
         <pubDate>Mon, 17 Feb 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/02/17/database-06/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/02/17/database-06/</guid>
+        <link>https://m-veloper.github.io/2020/02/17/database-06/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/2020/02/17/database-06/</guid>
         
         <category>database</category>
         
@@ -570,8 +1193,8 @@
 
 </description>
         <pubDate>Sun, 16 Feb 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/02/16/database-05/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/02/16/database-05/</guid>
+        <link>https://m-veloper.github.io/2020/02/16/database-05/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/2020/02/16/database-05/</guid>
         
         <category>database</category>
         
@@ -763,8 +1386,8 @@
 
 </description>
         <pubDate>Sat, 15 Feb 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/02/15/database-04/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/02/15/database-04/</guid>
+        <link>https://m-veloper.github.io/2020/02/15/database-04/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/2020/02/15/database-04/</guid>
         
         <category>database</category>
         
@@ -929,8 +1552,8 @@
 &lt;br /&gt;&lt;/p&gt;
 </description>
         <pubDate>Fri, 14 Feb 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/02/14/database-03/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/02/14/database-03/</guid>
+        <link>https://m-veloper.github.io/2020/02/14/database-03/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/2020/02/14/database-03/</guid>
         
         <category>database</category>
         
@@ -997,8 +1620,8 @@
 
 </description>
         <pubDate>Thu, 13 Feb 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/02/13/database-02/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/02/13/database-02/</guid>
+        <link>https://m-veloper.github.io/2020/02/13/database-02/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/2020/02/13/database-02/</guid>
         
         <category>database</category>
         
@@ -1136,8 +1759,8 @@
 &lt;/ol&gt;
 </description>
         <pubDate>Wed, 12 Feb 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/02/12/database-01/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/02/12/database-01/</guid>
+        <link>https://m-veloper.github.io/2020/02/12/database-01/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/2020/02/12/database-01/</guid>
         
         <category>database</category>
         
