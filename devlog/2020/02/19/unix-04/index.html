@@ -31,14 +31,15 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="naver-site-verification" content="fa37cbf8ce41948de6e94c01991ffa04cea9b093"/>
 <meta name="google-site-verification" content="5M4Zw9wg_UqQkvlayfb5Mc_ogvJdc013w_zLUkxgO-Y" />
-<meta property="og:title" content="[Database] 개체, 개체 타입과 속성">
+<meta property="og:title" content="[유닉스] 일반 명령어">
 <meta property="og:type" content="article">
 
 
 
 
 
-  <meta property="og:image" content="https://m-veloper.github.io/assets/img/logo.png">
+  <meta property="og:image" content="https://m-veloper.github.io/assets//img/linux-logo.png">
+  <br/>
 
 
 <meta property="og:image:width" content="640" />
@@ -46,7 +47,7 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 
 
 
-  <title>[Database] 개체, 개체 타입과 속성 &middot; m_veloper</title>
+  <title>[유닉스] 일반 명령어 &middot; m_veloper</title>
 
 
 
@@ -62,17 +63,15 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 <!-- =============== -->
 <!-- LINKS           -->
 <!-- =============== -->
-<link rel="canonical" href="https://m-veloper.github.io/devlog/2020/02/17/database-06/">
-<meta property="og:url" content="https://m-veloper.github.io/devlog/2020/02/17/database-06/">
+<link rel="canonical" href="https://m-veloper.github.io/devlog/2020/02/19/unix-04/">
+<meta property="og:url" content="https://m-veloper.github.io/devlog/2020/02/19/unix-04/">
 
 <link rel="alternate" type="application/atom+xml" title="m_veloper Feed" href="https://m-veloper.github.io/feed.xml">
 
 
-  <link rel="prev" href="https://m-veloper.github.io/devlog/2020/02/16/database-05/">
+  <link rel="prev" href="https://m-veloper.github.io/devlog/2020/02/18/unix-03/">
 
 
-
-  <link rel="next" href="https://m-veloper.github.io/devlog/2020/02/18/unix-01/">
 
 
 <link rel="apple-touch-icon" href="https://m-veloper.github.io/apple-touch-icon.png">
@@ -270,18 +269,18 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 
 
 
-<article id="post-devlog/2020/02/17/database-06" class="post this" role="article">
+<article id="post-devlog/2020/02/19/unix-04" class="post this" role="article">
   <header>
 
     <h1 class="post-title">
       
-        [Database] 개체, 개체 타입과 속성
+        [유닉스] 일반 명령어
         
     </h1>
 
     <p class="post-date heading">
-      <!--<time datetime="2020-02-17T00:00:00+09:00">17 Feb 2020</time>-->
-      <time datetime="2020-02-17T00:00:00+09:00">2020년 02월 17일</time>
+      <!--<time datetime="2020-02-19T00:00:00+09:00">19 Feb 2020</time>-->
+      <time datetime="2020-02-19T00:00:00+09:00">2020년 02월 19일</time>
     </p>
     
 
@@ -305,7 +304,7 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 
 
 
-<a href="/tag/devlog-database/" data-flip="title" id="tag">Database</a>
+<a href="/tag/devlog-unix/" data-flip="title" id="tag">Unix</a>
 
 
     
@@ -319,7 +318,9 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
   
   <div class="markdown-body">
 
-    <!--  -->
+    <!-- 
+    <div class="head-image"><img src="https://m-veloper.github.io/assets//img/linux-logo.png" /></div>
+    <br /> -->
 
     <div class='row'>
       <ins class="adsbygoogle myAd1190" data-ad-client="ca-pub-9134477021095729" data-ad-slot="6559875097"></ins>
@@ -331,237 +332,358 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
     </script>
 
     <br />
-    <p><img src="/assets/img/database/2020-02-17-database-06.png" alt="" /></p>
+    <p><img src="/assets/img/unix/2020-02-19-unix-04.png" alt="" /></p>
 
-<h1 id="개체와-개체타입">개체와 개체타입</h1>
+<h1 id="명령어-구조">명령어 구조</h1>
 <p><br />
 <br /></p>
 
 <ol>
   <li>
-    <p>개체 타입 (Entity Type)</p>
+    <p>개요</p>
 
     <ul>
-      <li>비슷한 속성을 가진 개체</li>
-      <li>개체를 이름과 속성으로 정의한 것</li>
-      <li>파일시스템이나 데이터베이스의 레코드 타입 (Record Type)</li>
-      <li>프로그래밍언어의 데이터타입과 유사</li>
+      <li>유닉스 명령어는 내부 명령어와 외부 명령어로 구분</li>
       <li>
-        <p>유형</p>
+        <p>내부 명령어</p>
 
         <ul>
-          <li>강한 개체 (Strong Entity) : 다른 개체의 도움 없이 독자적으로 존재하는 개체</li>
-          <li>
-            <p>약한 개체 (Weak Entity) :</p>
+          <li>cd, export 등 파일로 존재하지 않고 쉘에 내장되어 있음</li>
+          <li>실행시 별도의 프로세스를 발생시키지 않음</li>
+        </ul>
+      </li>
+      <li>
+        <p>외부 명령어</p>
 
-            <p>독자적으로 존재하지 않고, 상위 개체 타입을 가짐<br />
-  상위 개체 타입이 결정되지 않으면 개별 개체를 식별할 수 없음</p>
+        <ul>
+          <li>유닉스 명령어의 대부분을 차지</li>
+          <li>/bin, /usr/bin, /sbin 디렉토리에 파일 형태로 존재</li>
+        </ul>
+      </li>
+      <li>명령을 입력한 전체 줄을 명령어 라인(command line)이라고 함</li>
+    </ul>
+  </li>
+  <li>
+    <p>명령의 구조</p>
+
+    <ul>
+      <li>
+        <p>형식</p>
+
+        <ul>
+          <li>명령 [옵션] [인자 … ]</li>
+        </ul>
+      </li>
+      <li>
+        <p>명령</p>
+
+        <ul>
+          <li>사용자가 입력하는 명령, 유닉스에 작업을 지시하는 프로그램 이름</li>
+          <li>내부 명령어, 외부 명령어, 유틸리티</li>
+          <li>예) ls, date, cal 등</li>
+        </ul>
+      </li>
+      <li>
+        <p>옵션</p>
+
+        <ul>
+          <li>명령의 세부 기능</li>
+          <li>‘-’ 기호로 시작하며 숫자, 영문 대문자나 소문자로 구성</li>
+          <li>예) ls -l</li>
+        </ul>
+      </li>
+      <li>
+        <p>인자</p>
+
+        <p>– 명령으로 전달되는 값
+  – 파일명이나 디렉토리명을 사용
+  – 예) ls /tmp, ls l /tmp</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>명령어의 경로 표시</p>
+
+    <ul>
+      <li>외부 명령어의 경우 쉘 외부에 별도의 파일로 저장되어 있음</li>
+      <li>
+        <p>명령어가 어느 디렉토리에 속해 있는지 알고자 할 경우 which 명령 사용</p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ which date
+  /bin/date
+  $ &lt;br&gt; &lt;br&gt;
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<h1 id="명령어-구조-1">명령어 구조</h1>
+
+<p><br />
+<br /></p>
+
+<ol>
+  <li>
+    <p>passwd 명령</p>
+
+    <ul>
+      <li>
+        <p>비밀번호 변경</p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ passwd
+  Changing password for ksshin
+  Enter new UNIX password:
+  Retype new UNIX password:
+  passwd: password updated successfully
+  $
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>banner 명령</p>
+
+    <ul>
+      <li>
+        <p>문자열을 큰 문자로 출력</p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ banner unix
+        
+  #   #   #     #   #     #     #
+  #   #   ##    #   #      #   #
+  #   #   #  #  #   #       # #
+  #   #   #   # #   #       # #
+  #   #   #    ##   #      #   #
+  ####    #     #   #     #     #
+        
+  $
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>date 명령</p>
+
+    <ul>
+      <li>
+        <p>현재 날짜와 시간 출력</p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ date
+  2015. 06. 01. (월) 13:34:25 KST
+  $
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>hostname 명령</p>
+
+    <ul>
+      <li>
+        <p>사용하고 있는 호스트 이름 출력</p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ hostname
+  Ubuntu
+  $
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>uname 명령</p>
+
+    <ul>
+      <li>
+        <p>사용하고 있는 운영체제 확인</p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ uname
+  Linux
+  $
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>who 명령</p>
+
+    <ul>
+      <li>
+        <p>현재 로그인한 사용자 확인</p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ who
+  ksshin tty1 2015-06-01 11:04
+  ksshin :0 2015-06-01 10:20 (:0)
+  $
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>ls 명령</p>
+
+    <ul>
+      <li>
+        <p>현재 디렉토리 내의 파일 목록 출력</p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ ls
+  Desktop Downloads Music Public Videos
+  Documents examples.desktop PicturesTemplates
+  $
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>clear 명령</p>
+
+    <ul>
+      <li>
+        <p>화면을 깨끗이 지워줌</p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ clear
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p>화면에서 clear 명령을 내리면, 화면의 내용이 모두 지워지고 터미널 맨 윗줄에 프롬프트만 나타남</p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<p><br />
+<br /></p>
+
+<h1 id="온라인-매뉴얼">온라인 매뉴얼</h1>
+
+<p><br />
+<br /></p>
+
+<ol>
+  <li>
+    <p>온라인 매뉴얼의 구성</p>
+
+    <ul>
+      <li>
+        <p>온라인 매뉴얼이란</p>
+
+        <ul>
+          <li>특정 명령어의 사용법을 알고 싶을 때 man 명령을 이용해 매뉴얼을 볼 수 있게 한 것</li>
+        </ul>
+      </li>
+      <li>
+        <p>8개의 주요 절로 구성</p>
+      </li>
+    </ul>
+
+    <p><img src="/assets/img/unix/2020-02-19-unix-04-01.png" alt="" />
+ <br />
+ <br /></p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- 1, 7절 : 사용자가 가장 많이 보는 절
+- 2, 3, 4, 5절 : 프로그래머에게 필요한 절
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>온라인 매뉴얼 사용법</p>
+
+    <ul>
+      <li>
+        <p>man 명령</p>
+
+        <ul>
+          <li>기능 : 명령의 사용법을 화면으로 출력</li>
+          <li>형식 : man [절 번호] 명령</li>
+          <li>옵션에 절 번호를 넣으면, 같은 명령이라도 그 절 안에서 찾는다.</li>
+        </ul>
+      </li>
+      <li>
+        <p>예) man clear</p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ man clear
+  clear               General Commnds Manual              clear(1)
+        
+  NAME
+      clear – clear the terminal screen
+  SYNOPSIS
+      clear
+  DESCRIPTION
+      clear clears your screen if this is possible, including its
+      scrollback buffer (if the extended “E3” capability is defined).
+      clear looks in the environment for the terminal type and then
+      in the terminfo database to determine how to clear the screen.
+            
+      clear ignores any command-line parameters that may be
+      present.
+  SEE ALSO
+      tput(1), terminfo(5)
+      This describes ncurses version 5.9 (patch 20140118).
+  $
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>온라인 매뉴얼에서의 사용 키</p>
+
+    <p><img src="/assets/img/unix/2020-02-19-unix-04-02.png" alt="" />
+ <br />
+ <br /></p>
+  </li>
+  <li>
+    <p>매뉴얼 페이지 형식</p>
+
+    <ul>
+      <li>man 페이지는 사용자가 보기 편하도록 표준 머리말을 사용</li>
+    </ul>
+
+    <p><img src="/assets/img/unix/2020-02-19-unix-04-03.png" alt="" />
+ <br />
+ <br /></p>
+  </li>
+  <li>
+    <p>빠른 명령어 탐색</p>
+
+    <ul>
+      <li>
+        <p>whatis</p>
+
+        <ul>
+          <li>
+            <p>명령에 대한 간단한 설명만 필요로 할 때 사용</p>
+
+            <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ whatis ls
+  ls (1)          - list directory contents
+</code></pre></div>            </div>
           </li>
         </ul>
       </li>
       <li>
-        <p>예 : 회사의 직원</p>
+        <p>apropos</p>
 
         <ul>
-          <li>직원의 부양가족은 직원 개체가 존재해야 존재할 수 있다</li>
-          <li>강한 개체 : 직원</li>
-          <li>약한 개체 : 부양 가족
-  · 개체타입의 ER 다이어그램 표현</li>
-          <li>직사각형으로 표현</li>
+          <li>
+            <p>어떤 명령을 사용할지 모를 때 특정 단어가 들어가 있는 명령어 검색</p>
+
+            <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ apropos cp
+  ...
+  cp (1) - copy files and directories
+  cpio (1) - copy files to and from archives
+  ...
+  $
+</code></pre></div>            </div>
+          </li>
+          <li>
+            <p>이 명령은 man 명령에서 ‘-k’ 옵션을 써서 대체할 수 있음</p>
+          </li>
         </ul>
       </li>
     </ul>
-
-    <p><img src="/assets/img/database/2020-02-17-database-06-01.png" alt="" />
- <br />
- <br /></p>
-  </li>
-  <li>
-    <p>개체 인스턴스 (Entity Instance)</p>
-
-    <ul>
-      <li>개체의 속성에 실제 값을 주어 실체화된 개체</li>
-      <li>파일시스템이나 데이터베이스의 레코드 인스턴스 (Record Instance)</li>
-    </ul>
-  </li>
-  <li>
-    <p>개체 집합 (Entity Set)</p>
-
-    <ul>
-      <li>개체 인스턴스를 모아 놓은 것.</li>
-      <li>데이터베이스의 테이블.</li>
-    </ul>
-  </li>
-  <li>
-    <p>개체 (Entity)</p>
-
-    <p><img src="/assets/img/database/2020-02-17-database-06-02.png" alt="" />
- <br />
- <br /></p>
   </li>
 </ol>
-
-<h1 id="속성">속성</h1>
-
-<p><br />
-<br /></p>
-
-<ol>
-  <li>
-    <p>속성/애트리뷰트 (Attribute)</p>
-
-    <ul>
-      <li>사물의 본질적인 고유의 성질(특성)로, 의미 있는 데이터의 가장 작은 단위</li>
-      <li>파일시스템이나 데이터베이스에서 하나의 필드로 표현됨</li>
-      <li>예시 : 사람의 속성 - 이름, 출생일, 성별, 국적 등</li>
-    </ul>
-  </li>
-  <li>
-    <p>속성의 ER 다이어그램 표현</p>
-
-    <ul>
-      <li>타원으로 표현</li>
-      <li>개체 타입과 실선으로 연결</li>
-    </ul>
-
-    <p><img src="/assets/img/database/2020-02-17-database-06-03.png" alt="" />
- <br />
- <br /></p>
-  </li>
-</ol>
-
-<h1 id="속성의-유형">속성의 유형</h1>
-
-<p><br />
-<br /></p>
-
-<ol>
-  <li>
-    <p>키 속성 (Key Attribute)</p>
-
-    <ul>
-      <li>
-        <p>개체 인스턴스를 식별하는데 사용되는 속성</p>
-
-        <ul>
-          <li>모든 개체 인스턴스의 키 속성 값은 달라야 함.</li>
-        </ul>
-      </li>
-      <li>둘 이상의 속성으로 구성할 수 있음</li>
-      <li>예: 쇼핑몰의 고객 개체의 계정, 회사의 직원 사번</li>
-    </ul>
-
-    <p><img src="/assets/img/database/2020-02-17-database-06-04.png" alt="" />
- <br />
- <br /></p>
-  </li>
-  <li>
-    <p>속성 값의 개수에 따른 분류</p>
-
-    <ul>
-      <li>
-        <p>단일 값 속성 (Single-valued Attribute)</p>
-
-        <ul>
-          <li>예: 책의 이름, 회사내 팀의 팀장</li>
-        </ul>
-      </li>
-      <li>
-        <p>다중 값 속성 (Multi-valued Attribute)</p>
-
-        <ul>
-          <li>예: 책의 저자, 회사내 팀의 팀원번</li>
-        </ul>
-      </li>
-    </ul>
-
-    <p><img src="/assets/img/database/2020-02-17-database-06-05.png" alt="" />
- <br />
- <br /></p>
-  </li>
-  <li>
-    <p>의미의 세분화에 따른 분류</p>
-
-    <ul>
-      <li>
-        <p>단순 속성 (Simple Attribute)</p>
-
-        <ul>
-          <li>의미를 세분화할 수 없는 경우</li>
-        </ul>
-      </li>
-      <li>
-        <p>예: 개체의 이름</p>
-
-        <ul>
-          <li>복합 속성 (Composite Attribute)</li>
-        </ul>
-      </li>
-      <li>
-        <p>의미를 세분화할 수 있는 경우</p>
-
-        <ul>
-          <li>예: 전화번호, 생년월일</li>
-        </ul>
-      </li>
-    </ul>
-
-    <p><img src="/assets/img/database/2020-02-17-database-06-06.png" alt="" />
- <br />
- <br /></p>
-  </li>
-  <li>
-    <p>저장 속성 (Stored Attribute)과 유도 속성 (Derived Attribute)</p>
-
-    <ul>
-      <li>
-        <p>저장속성</p>
-
-        <ul>
-          <li>다른 속성의 영향 없이 단독으로 저장되는 속성</li>
-        </ul>
-      </li>
-      <li>
-        <p>유도 속성</p>
-
-        <ul>
-          <li>다른 속성을 사용하여 만들 수 있는 속성</li>
-        </ul>
-      </li>
-      <li>
-        <p>예: 판매물건의 부가세 금액, 나이(생년월일로부터 계산)</p>
-      </li>
-    </ul>
-
-    <p><img src="/assets/img/database/2020-02-17-database-06-07.png" alt="" />
- <br />
- <br /></p>
-  </li>
-  <li>
-    <p>널 속성 (Null Attribute)</p>
-
-    <ul>
-      <li>값이 없어도 되는 속성</li>
-      <li>
-        <p>예: 회원 가입시 선택항목</p>
-
-        <ul>
-          <li>데이터를 입력하지 않아도 데이터베이스에 개체를 저장하는데 문제가 없다
-<br />
-<br /></li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <p>개체와 속성의 ER 다이어그램 표현</p>
-
-    <p><img src="/assets/img/database/2020-02-17-database-06-08.png" alt="" />
- <br />
- <br /></p>
-  </li>
-</ol>
-
 
     <br />
     <br />
@@ -577,12 +699,12 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 <div class="share">
   <h2>Share this post</h2>
   <div class="share-body">
-    <a href="http://twitter.com/share?text=[Database] 개체, 개체 타입과 속성&amp;url=https://m-veloper.github.io/devlog/2020/02/17/database-06/"
+    <a href="http://twitter.com/share?text=[유닉스] 일반 명령어&amp;url=https://m-veloper.github.io/devlog/2020/02/19/unix-04/"
       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
       <span class="icon-twitter">
       </span>
     </a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://m-veloper.github.io/devlog/2020/02/17/database-06/"
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://m-veloper.github.io/devlog/2020/02/19/unix-04/"
       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
       <span class="icon-facebook">
       </span>
@@ -640,27 +762,8 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
       
       
         
-        
           
-
-
-
-<style>
-  .related-posts>li>small{
-    margin-left: 10px;
-  }
-</style>
-<li class="h4">
-  <a href="/devlog/2020/02/19/unix-04/" data-flip="title">
-    <span>[유닉스] 일반 명령어</span>
-  </a>
-  <small><time datetime="2020-02-19T00:00:00+09:00">
-    2020년 02월 19일
-  </time></small>
-</li>
-
-        
-      
+          
         
         
           
@@ -707,6 +810,25 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
       
         
         
+          
+
+
+
+<style>
+  .related-posts>li>small{
+    margin-left: 10px;
+  }
+</style>
+<li class="h4">
+  <a href="/devlog/2020/02/18/unix-01/" data-flip="title">
+    <span>[유닉스] 역사와 발전</span>
+  </a>
+  <small><time datetime="2020-02-18T00:00:00+09:00">
+    2020년 02월 18일
+  </time></small>
+</li>
+
+        
       
     
   </ul>
@@ -730,9 +852,9 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
   }
 
   var d = function () {
-    this.page.title = "[Database] 개체, 개체 타입과 속성",
-      this.page.identifier = "/devlog/2020/02/17/database-06",
-      this.page.url = "https://m-veloper.github.io/devlog/2020/02/17/database-06/"
+    this.page.title = "[유닉스] 일반 명령어",
+      this.page.identifier = "/devlog/2020/02/19/unix-04",
+      this.page.url = "https://m-veloper.github.io/devlog/2020/02/19/unix-04/"
   };
   s._disqusFirst = void 0 === s._disqusFirst || s._disqusFirst, s._disqusLoading = void 0 !== s._disqusLoading && s._disqusLoading, s._disqusThis = !1, s._disqusThreadOffsetTop = i.getElementById(
     "disqus_thread").offsetTop, s._disqusLoading ? s._disqusFirst = !1 : (s._disqusLoading = !0, loadJSDeferred(
