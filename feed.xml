@@ -5,9 +5,354 @@
     <description></description>
     <link>https://m-veloper.github.io/</link>
     <atom:link href="https://m-veloper.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 20 Feb 2020 22:08:21 +0900</pubDate>
-    <lastBuildDate>Thu, 20 Feb 2020 22:08:21 +0900</lastBuildDate>
+    <pubDate>Sat, 22 Feb 2020 17:11:01 +0900</pubDate>
+    <lastBuildDate>Sat, 22 Feb 2020 17:11:01 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>[유닉스] 디렉토리 계층구조</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-02-22-unix-06.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;디렉토리-계층-구조&quot;&gt;디렉토리 계층 구조&lt;/h1&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;디렉토리 계층 구조&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;데이터를 효율적으로 관리하기 위해 시스템을 계층적인 트리 구조로 구성&lt;/li&gt;
+      &lt;li&gt;트리 구조 : 모양이 나무를 거꾸로 한 것과 유사&lt;/li&gt;
+      &lt;li&gt;파일이 나무의 잎에, 디렉토리가 나뭇가지에 해당&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;루트(root) 디렉토리&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;모든 디렉토리, 파일의 원조 및 시작&lt;/li&gt;
+          &lt;li&gt;슬래시(/) 기호로 표시&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;여러 가지 디렉토리&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;상위 디렉토리는 기호 ..으로 표시&lt;/li&gt;
+      &lt;li&gt;모든 디렉토리의 최상위는 루트 디렉토리(/)&lt;/li&gt;
+      &lt;li&gt;루트 디렉토리 : 상위 디렉토리가 없는 유일한 디렉토리&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;작업 디렉토리(working directory), 현재 디렉토리(current directory)&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;현재 작업을 하고 있는 디렉토리&lt;/li&gt;
+          &lt;li&gt;기호 ‘.’로 표시&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;홈 디렉토리&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;기호 틸드(~)로 표시&lt;/li&gt;
+      &lt;li&gt;다중 사용자 시스템에서 각 사용자에게 할당된 작업 영역&lt;/li&gt;
+      &lt;li&gt;파일의 생성, 삭제를 자유롭게 할 수 있는 디렉토리&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;리눅스의 계층구조 디렉토리&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-02-22-unix-06-01.png&quot; alt=&quot;&quot; /&gt;
+ &lt;br /&gt;
+ &lt;br /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;루트(/) 디렉토리&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;리눅스 시스템의 최상위 디렉토리&lt;/li&gt;
+      &lt;li&gt;디렉토리 구조의 시작&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;리눅스는 루트(/)를 기준으로 디렉토리를 생성&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ cd /
+  $ ls
+  bin etc lost+found opt run sys var
+  boot home media proc sbin tmp
+  dev lib mnt root srv usr
+  $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;기본 실행 명령어 디렉토리 (/bin)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;‘binaries’, 리눅스 시스템에서 가장 많이 사용되는 디렉토리 중 하나&lt;/li&gt;
+      &lt;li&gt;기본 명령어 파일들이 2진수의 형태로 모여 있는 디렉토리&lt;/li&gt;
+      &lt;li&gt;대부분의 일반적인 명령어들 포함&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;시스템 운영 명령어 디렉토리 (/sbin)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;‘system binaries’, 시스템 관리(부팅, 복구, 보수 등)를 위한 명령어들&lt;/li&gt;
+      &lt;li&gt;시스템 운영에 필요한 명령어들 포함&lt;/li&gt;
+      &lt;li&gt;관리자 계정인 루트(root)만이 사용할 수 있는 명령어들로 구성&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;시스템 설정 파일 디렉토리 (/etc)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;리눅스 시스템에 대한 환경 설정과 관련된 파일 및 디렉토리&lt;/li&gt;
+      &lt;li&gt;사용자 관리를 위한 암호 관련 파일, 네트워크 정보를 보유한 파일 등 시스템 관리에 전반적인 파일들 존재&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;부팅 관련 파일 디렉토리 (/boot)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;리눅스 커널이 저장되어 있는 디렉토리&lt;/li&gt;
+      &lt;li&gt;각종 리눅스 부트에 필요한 부팅 지원 파일들&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;입출력 장치 연결 마운트 디렉토리 (/mnt)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;‘mount directory’, 각종 입출력 장치와 연결할 때 마운트하게 되면 해당 파일 시스템의 내용이 이 디렉토리에 저장됨&lt;/li&gt;
+      &lt;li&gt;가상 머신으로 리눅스 설치시 비어있음&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;임시 마운트 디렉토리 (/media)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;CD/DVD 또는 FDD, USB 등이 임시로 마운트되는 역할 수행&lt;/li&gt;
+      &lt;li&gt;가상 머신으로 리눅스 설치시 비어있음&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;응용 패키지 프로그램 설치 디렉토리 (/usr)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;사용자가 사용할 응용 패키지 프로그램 설치시 사용&lt;/li&gt;
+      &lt;li&gt;윈도우 운영체제에서의 [Program Files]와 같은 역할&lt;/li&gt;
+      &lt;li&gt;시스템에 사용되는 각종 응용 프로그램들이 설치되는 디렉토리&lt;/li&gt;
+      &lt;li&gt;거의 모든 프로그램과 그에 관련된 명령어 및 라이브러리들 포함&lt;/li&gt;
+      &lt;li&gt;X 윈도우 시스템 관련 파일들과 리눅스 커널 소스, 각종 C 언어 관련 헤더 파일 등 저장&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;공유 라이브러리 디렉토리 (/lib)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;프로그램들의 각종 라이브러리들 존재, 대부분 공유 라이브러리&lt;/li&gt;
+      &lt;li&gt;평소에는 파일 크기를 줄여서 존재, 라이브러리 실행시 풀어서 사용&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;일반 사용자들의 홈 디렉토리 (/home)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;시스템 계정을 사용하는 사용자들의 홈 디렉토리&lt;/li&gt;
+      &lt;li&gt;FTP, www 등과 같은 서비스 디렉토리들 저장&lt;/li&gt;
+      &lt;li&gt;시스템에서 사용되지 않고, 원격지 상에서 시스템으로 접속을 시도하는 사용자들을 위한 공간으로 사용&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;시스템 디바이스 장치 파일 디렉토리 (/dev)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;시스템의 각종 장치들을 사용할 수 있도록 장치 드라이버들 저장&lt;/li&gt;
+      &lt;li&gt;리눅스에서는 각종 장치들을 하나의 파일로 취급&lt;/li&gt;
+      &lt;li&gt;시스템은 각 장치를 설치하는데 필요한 정보를 이 디렉토리에서 가져옴&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;가상 파일 시스템 디렉토리 (/proc)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;시스템의 각종 프로세스와 프로그램 정보 및 하드웨어적인 정보들 저장&lt;/li&gt;
+      &lt;li&gt;물리적인 하드디스크 용량을 사용하지 않고 커널에 의해 메모리에 저장됨&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;가변 자료 저장 디렉토리 (/var)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;시스템에서 사용되는 동적인 파일, 즉 변경되는 파일들 저장&lt;/li&gt;
+      &lt;li&gt;각종 시스템 로그 파일, 사용자 로그인에 대한 보안 기록 등&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;임시 파일 저장 디렉토리 (/tmp)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;프로그램 수행 과정에서의 임시 파일들 저장&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;리눅스에 없는 프로그램 추가 설치 디렉토리 (/opt)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;리눅스에서 제공되지 않는 프로그램을 추가로 설치할 경우 사용&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;복구 프로그램인 fsck에 의해 사용되는 디렉토리 (/lost+found)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;수행 중 파일시스템의 이상 유/무를 진단하고 복구하는 프로그램인 fsck(file system check)에 의해 사용되는 디렉토리&lt;/li&gt;
+      &lt;li&gt;일반 사용자 계정으로 로그인한 상태에서는 접근 불가&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;관리자 계정인 root로 접속해야 디렉토리의 내용을 볼 수 있음&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ cd /lost+found
+  -bash: cd: /lost+found: Permission denied
+  $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;디렉토리-계층-구조-1&quot;&gt;디렉토리 계층 구조&lt;/h1&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;디렉토리&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;서로 연관이 있는 파일들을 하나의 그룹으로 만들어서 저장할 수 있도록 구분된 공간을 의미&lt;/li&gt;
+      &lt;li&gt;각 디렉토리의 이름은 “/”로 구별&lt;/li&gt;
+      &lt;li&gt;특정 파일을 지정할 때는 맨 마지막에 파일이름을 쓴다.&lt;/li&gt;
+      &lt;li&gt;파일시스템의 맨 상위 디렉토리를 root 디렉토리&lt;/li&gt;
+      &lt;li&gt;root 디렉토리는 “/”로 표기&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;경로명(path name)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;파일이나 디렉토리의 전체 이름&lt;/li&gt;
+      &lt;li&gt;디렉토리 계층 구조에 있는 특정 파일이나 디렉토리의 위치를 나타내는 것&lt;/li&gt;
+      &lt;li&gt;디렉토리와 디렉토리, 디렉토리와 파일을 구별하는 구별자로 “/”를 사용&lt;/li&gt;
+      &lt;li&gt;경로명이 디렉토리 이름으로 끝나는 경우 제일 뒤에 “/”를 붙이거나 붙이지 않을 수 있음&lt;/li&gt;
+      &lt;li&gt;절대경로명과 상대경로명이 있음&lt;/li&gt;
+      &lt;li&gt;파일 이름이나 디렉토리 지정하는 방법도 절대경로명을 사용하거나 상대경로명을 사용하는 방법&lt;/li&gt;
+      &lt;li&gt;파일을 명시할 때, 별도의 경로명을 써주지 않으면 현재 디렉토리를 가리킴&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;절대경로명&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;루트 디렉토리를 기준으로 파일의 위치를 나타낸 것&lt;/li&gt;
+      &lt;li&gt;루트 디렉토리부터 시작해서 특정 파일의 위치까지 이동하는데 거치는 모든 디렉토리의 이름 표시&lt;/li&gt;
+      &lt;li&gt;항상 “/”로 시작&lt;/li&gt;
+      &lt;li&gt;특정 파일을 가리키는 절대경로명은 항상 동일&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;상대경로명&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;현재 디렉토리를 기준으로 파일의 위치를 나타낸 것&lt;/li&gt;
+      &lt;li&gt;현재 디렉토리부터 시작해서 하위로 내려가면 디렉토리 이름 추가&lt;/li&gt;
+      &lt;li&gt;루트를 향해 올라가면 “..”을 추가&lt;/li&gt;
+      &lt;li&gt;“/” 이외의 문자로 시작&lt;/li&gt;
+      &lt;li&gt;상대경로명은 현재 디렉토리의 위치에 따라 달라짐&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;탐색 경로&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;명령어를 실행시키면 리눅스는 명령어의 실행 파일이 있는 위치를 찾음&lt;/li&gt;
+      &lt;li&gt;탐색 경로 : 명령어를 어디에서 찾아야 할지 명시하는 것&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;명령어가 존재하는 디렉토리가 탐색 경로에 없으면 명령어 이름만으로 실행시킬 수 없음&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;절대 경로명을 다 써주어 실행시키거나&lt;/li&gt;
+          &lt;li&gt;현재 작업 디렉토리를 나타내는 “.”을 사용&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;명령 실행시 탐색 경로의 예&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;test 파일의 내용이 다음과 같은 경우&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ cat test
+  ls
+  date
+  cat test
+  $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;현재 작업 디렉토리가 탐색 경로에 지정되지 않았으므로 실행되지 않음&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ test
+  $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;현재 작업 디렉토리를 지정한 경우&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ ./test
+  Desktop Downloads Music Public Videos
+  Documents examples.desktop Pictures Templates
+  2015. 06. 01. (월) 13:34:25 KST
+  ls
+  date
+  cat test
+  $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;또는 절대경로명을 다 써줄 수 있음&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ /home/ksshin/test
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;기호로 디렉토리 이동&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;~ : 홈 디렉토리로 이동&lt;/li&gt;
+      &lt;li&gt;. : 현재 디렉토리 지정&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Sat, 22 Feb 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/devlog/2020/02/22/unix-06/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/02/22/unix-06/</guid>
+        
+        <category>unix</category>
+        
+        
+        <category>devlog</category>
+        
+      </item>
     
       <item>
         <title>[유닉스] 파일의 종류</title>
