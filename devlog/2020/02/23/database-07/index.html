@@ -31,15 +31,14 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="naver-site-verification" content="fa37cbf8ce41948de6e94c01991ffa04cea9b093"/>
 <meta name="google-site-verification" content="5M4Zw9wg_UqQkvlayfb5Mc_ogvJdc013w_zLUkxgO-Y" />
-<meta property="og:title" content="[유닉스] 디렉토리 계층구조">
+<meta property="og:title" content="[Database] 약한 개체와 IE표기법">
 <meta property="og:type" content="article">
 
 
 
 
 
-  <meta property="og:image" content="https://m-veloper.github.io/assets//img/linux-logo.png">
-  <br/>
+  <meta property="og:image" content="https://m-veloper.github.io/assets/img/logo.png">
 
 
 <meta property="og:image:width" content="640" />
@@ -47,7 +46,7 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 
 
 
-  <title>[유닉스] 디렉토리 계층구조 &middot; m_veloper</title>
+  <title>[Database] 약한 개체와 IE표기법 &middot; m_veloper</title>
 
 
 
@@ -63,17 +62,15 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 <!-- =============== -->
 <!-- LINKS           -->
 <!-- =============== -->
-<link rel="canonical" href="https://m-veloper.github.io/devlog/2020/02/22/unix-06/">
-<meta property="og:url" content="https://m-veloper.github.io/devlog/2020/02/22/unix-06/">
+<link rel="canonical" href="https://m-veloper.github.io/devlog/2020/02/23/database-07/">
+<meta property="og:url" content="https://m-veloper.github.io/devlog/2020/02/23/database-07/">
 
 <link rel="alternate" type="application/atom+xml" title="m_veloper Feed" href="https://m-veloper.github.io/feed.xml">
 
 
-  <link rel="prev" href="https://m-veloper.github.io/devlog/2020/02/20/unix-05/">
+  <link rel="prev" href="https://m-veloper.github.io/devlog/2020/02/22/unix-06/">
 
 
-
-  <link rel="next" href="https://m-veloper.github.io/devlog/2020/02/23/database-07/">
 
 
 <link rel="apple-touch-icon" href="https://m-veloper.github.io/apple-touch-icon.png">
@@ -271,18 +268,18 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 
 
 
-<article id="post-devlog/2020/02/22/unix-06" class="post this" role="article">
+<article id="post-devlog/2020/02/23/database-07" class="post this" role="article">
   <header>
 
     <h1 class="post-title">
       
-        [유닉스] 디렉토리 계층구조
+        [Database] 약한 개체와 IE표기법
         
     </h1>
 
     <p class="post-date heading">
-      <!--<time datetime="2020-02-22T00:00:00+09:00">22 Feb 2020</time>-->
-      <time datetime="2020-02-22T00:00:00+09:00">2020년 02월 22일</time>
+      <!--<time datetime="2020-02-23T00:00:00+09:00">23 Feb 2020</time>-->
+      <time datetime="2020-02-23T00:00:00+09:00">2020년 02월 23일</time>
     </p>
     
 
@@ -306,7 +303,7 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 
 
 
-<a href="/tag/devlog-unix/" data-flip="title" id="tag">Unix</a>
+<a href="/tag/devlog-database/" data-flip="title" id="tag">Database</a>
 
 
     
@@ -320,9 +317,7 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
   
   <div class="markdown-body">
 
-    <!-- 
-    <div class="head-image"><img src="https://m-veloper.github.io/assets//img/linux-logo.png" /></div>
-    <br /> -->
+    <!--  -->
 
     <div class='row'>
       <ins class="adsbygoogle myAd1190" data-ad-client="ca-pub-9134477021095729" data-ad-slot="6559875097"></ins>
@@ -334,337 +329,210 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
     </script>
 
     <br />
-    <p><img src="/assets/img/unix/2020-02-22-unix-06.png" alt="" /></p>
+    <p><img src="/assets/img/database/2020-02-23-database-07.png" alt="" /></p>
 
-<h1 id="디렉토리-계층-구조">디렉토리 계층 구조</h1>
+<h1 id="약한-개체의-개체타입-식별관계타입-및-식별자">약한 개체의 개체타입, 식별관계타입 및 식별자</h1>
 <p><br />
 <br /></p>
 
 <ol>
   <li>
-    <p>디렉토리 계층 구조</p>
+    <p>약한 개체 타입</p>
 
     <ul>
-      <li>데이터를 효율적으로 관리하기 위해 시스템을 계층적인 트리 구조로 구성</li>
-      <li>트리 구조 : 모양이 나무를 거꾸로 한 것과 유사</li>
-      <li>파일이 나무의 잎에, 디렉토리가 나뭇가지에 해당</li>
-      <li>
-        <p>루트(root) 디렉토리</p>
-
-        <ul>
-          <li>모든 디렉토리, 파일의 원조 및 시작</li>
-          <li>슬래시(/) 기호로 표시</li>
-        </ul>
-      </li>
+      <li>상위 개체 타입에 종속된 개체 타입</li>
+      <li>이중 직사각형으로 표현</li>
+      <li>예 : 직원의 가족 – 직원 개체 타입이 있어야 가족 개체 타입을 식별할 수 있다.</li>
     </ul>
-  </li>
-  <li>
-    <p>여러 가지 디렉토리</p>
 
-    <ul>
-      <li>상위 디렉토리는 기호 ..으로 표시</li>
-      <li>모든 디렉토리의 최상위는 루트 디렉토리(/)</li>
-      <li>루트 디렉토리 : 상위 디렉토리가 없는 유일한 디렉토리</li>
-      <li>
-        <p>작업 디렉토리(working directory), 현재 디렉토리(current directory)</p>
-
-        <ul>
-          <li>현재 작업을 하고 있는 디렉토리</li>
-          <li>기호 ‘.’로 표시</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <p>홈 디렉토리</p>
-
-    <ul>
-      <li>기호 틸드(~)로 표시</li>
-      <li>다중 사용자 시스템에서 각 사용자에게 할당된 작업 영역</li>
-      <li>파일의 생성, 삭제를 자유롭게 할 수 있는 디렉토리</li>
-    </ul>
-  </li>
-  <li>
-    <p>리눅스의 계층구조 디렉토리</p>
-
-    <p><img src="/assets/img/unix/2020-02-22-unix-06-01.png" alt="" />
+    <p><img src="/assets/img/database/2020-02-23-database-07-01.png" alt="" />
  <br />
  <br /></p>
   </li>
   <li>
-    <p>루트(/) 디렉토리</p>
+    <p>식별 관계 타입</p>
 
     <ul>
-      <li>리눅스 시스템의 최상위 디렉토리</li>
-      <li>디렉토리 구조의 시작</li>
-      <li>
-        <p>리눅스는 루트(/)를 기준으로 디렉토리를 생성</p>
-
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ cd /
-  $ ls
-  bin etc lost+found opt run sys var
-  boot home media proc sbin tmp
-  dev lib mnt root srv usr
-  $
-</code></pre></div>        </div>
-      </li>
+      <li>강한 개체 타입과 약한 개체 타입의 관계를 나타냄</li>
+      <li>강한 개체 타입의 기본키를 상속받아 사용함</li>
+      <li>이중 마름모꼴로 표현</li>
     </ul>
+
+    <p><img src="/assets/img/database/2020-02-23-database-07-02.png" alt="" />
+ <br />
+ <br /></p>
   </li>
   <li>
-    <p>기본 실행 명령어 디렉토리 (/bin)</p>
+    <p>식별자 (Discriminator) / 부분키 (Partial key)</p>
 
     <ul>
-      <li>‘binaries’, 리눅스 시스템에서 가장 많이 사용되는 디렉토리 중 하나</li>
-      <li>기본 명령어 파일들이 2진수의 형태로 모여 있는 디렉토리</li>
-      <li>대부분의 일반적인 명령어들 포함</li>
+      <li>약한 개체 타입은 자신의 기본키만으로 식별이 어려우므로, 상위의 강한 개체 타입의 기본키를 상속받아 결합하여 사용</li>
+      <li>약한 개체 타입은 식별자를 사용하여 개별 개체를 식별할 수 있다.</li>
     </ul>
+
+    <p><img src="/assets/img/database/2020-02-23-database-07-03.png" alt="" />
+ <br />
+ <br /></p>
   </li>
   <li>
-    <p>시스템 운영 명령어 디렉토리 (/sbin)</p>
+    <p>예</p>
 
     <ul>
-      <li>‘system binaries’, 시스템 관리(부팅, 복구, 보수 등)를 위한 명령어들</li>
-      <li>시스템 운영에 필요한 명령어들 포함</li>
-      <li>관리자 계정인 루트(root)만이 사용할 수 있는 명령어들로 구성</li>
+      <li>직원 개체 타입과 가족 개체 타입은 부양 관계를 가진다.</li>
+      <li>직원 – 자기 자신만으로 존재 가능, 사번을 키로 구분한다.</li>
+      <li>가족 – 어느 직원의 가족인지 알기 위하여 직원의 사번과 가족의 이름으로 식별이 가능하다</li>
     </ul>
+
+    <p><img src="/assets/img/database/2020-02-23-database-07-04.png" alt="" />
+ <br />
+ <br /></p>
   </li>
   <li>
-    <p>시스템 설정 파일 디렉토리 (/etc)</p>
+    <p>약한개체타입, 식별관계타입 및 식별자 정리</p>
 
-    <ul>
-      <li>리눅스 시스템에 대한 환경 설정과 관련된 파일 및 디렉토리</li>
-      <li>사용자 관리를 위한 암호 관련 파일, 네트워크 정보를 보유한 파일 등 시스템 관리에 전반적인 파일들 존재</li>
-    </ul>
-  </li>
-  <li>
-    <p>부팅 관련 파일 디렉토리 (/boot)</p>
-
-    <ul>
-      <li>리눅스 커널이 저장되어 있는 디렉토리</li>
-      <li>각종 리눅스 부트에 필요한 부팅 지원 파일들</li>
-    </ul>
-  </li>
-  <li>
-    <p>입출력 장치 연결 마운트 디렉토리 (/mnt)</p>
-
-    <ul>
-      <li>‘mount directory’, 각종 입출력 장치와 연결할 때 마운트하게 되면 해당 파일 시스템의 내용이 이 디렉토리에 저장됨</li>
-      <li>가상 머신으로 리눅스 설치시 비어있음</li>
-    </ul>
-  </li>
-  <li>
-    <p>임시 마운트 디렉토리 (/media)</p>
-
-    <ul>
-      <li>CD/DVD 또는 FDD, USB 등이 임시로 마운트되는 역할 수행</li>
-      <li>가상 머신으로 리눅스 설치시 비어있음</li>
-    </ul>
-  </li>
-  <li>
-    <p>응용 패키지 프로그램 설치 디렉토리 (/usr)</p>
-
-    <ul>
-      <li>사용자가 사용할 응용 패키지 프로그램 설치시 사용</li>
-      <li>윈도우 운영체제에서의 [Program Files]와 같은 역할</li>
-      <li>시스템에 사용되는 각종 응용 프로그램들이 설치되는 디렉토리</li>
-      <li>거의 모든 프로그램과 그에 관련된 명령어 및 라이브러리들 포함</li>
-      <li>X 윈도우 시스템 관련 파일들과 리눅스 커널 소스, 각종 C 언어 관련 헤더 파일 등 저장</li>
-    </ul>
-  </li>
-  <li>
-    <p>공유 라이브러리 디렉토리 (/lib)</p>
-
-    <ul>
-      <li>프로그램들의 각종 라이브러리들 존재, 대부분 공유 라이브러리</li>
-      <li>평소에는 파일 크기를 줄여서 존재, 라이브러리 실행시 풀어서 사용</li>
-    </ul>
-  </li>
-  <li>
-    <p>일반 사용자들의 홈 디렉토리 (/home)</p>
-
-    <ul>
-      <li>시스템 계정을 사용하는 사용자들의 홈 디렉토리</li>
-      <li>FTP, www 등과 같은 서비스 디렉토리들 저장</li>
-      <li>시스템에서 사용되지 않고, 원격지 상에서 시스템으로 접속을 시도하는 사용자들을 위한 공간으로 사용</li>
-    </ul>
-  </li>
-  <li>
-    <p>시스템 디바이스 장치 파일 디렉토리 (/dev)</p>
-
-    <ul>
-      <li>시스템의 각종 장치들을 사용할 수 있도록 장치 드라이버들 저장</li>
-      <li>리눅스에서는 각종 장치들을 하나의 파일로 취급</li>
-      <li>시스템은 각 장치를 설치하는데 필요한 정보를 이 디렉토리에서 가져옴</li>
-    </ul>
-  </li>
-  <li>
-    <p>가상 파일 시스템 디렉토리 (/proc)</p>
-
-    <ul>
-      <li>시스템의 각종 프로세스와 프로그램 정보 및 하드웨어적인 정보들 저장</li>
-      <li>물리적인 하드디스크 용량을 사용하지 않고 커널에 의해 메모리에 저장됨</li>
-    </ul>
-  </li>
-  <li>
-    <p>가변 자료 저장 디렉토리 (/var)</p>
-
-    <ul>
-      <li>시스템에서 사용되는 동적인 파일, 즉 변경되는 파일들 저장</li>
-      <li>각종 시스템 로그 파일, 사용자 로그인에 대한 보안 기록 등</li>
-    </ul>
-  </li>
-  <li>
-    <p>임시 파일 저장 디렉토리 (/tmp)</p>
-
-    <ul>
-      <li>프로그램 수행 과정에서의 임시 파일들 저장</li>
-    </ul>
-  </li>
-  <li>
-    <p>리눅스에 없는 프로그램 추가 설치 디렉토리 (/opt)</p>
-
-    <ul>
-      <li>리눅스에서 제공되지 않는 프로그램을 추가로 설치할 경우 사용</li>
-    </ul>
-  </li>
-  <li>
-    <p>복구 프로그램인 fsck에 의해 사용되는 디렉토리 (/lost+found)</p>
-
-    <ul>
-      <li>수행 중 파일시스템의 이상 유/무를 진단하고 복구하는 프로그램인 fsck(file system check)에 의해 사용되는 디렉토리</li>
-      <li>일반 사용자 계정으로 로그인한 상태에서는 접근 불가</li>
-      <li>
-        <p>관리자 계정인 root로 접속해야 디렉토리의 내용을 볼 수 있음</p>
-
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ cd /lost+found
-  -bash: cd: /lost+found: Permission denied
-  $
-</code></pre></div>        </div>
-      </li>
-    </ul>
+    <p><img src="/assets/img/database/2020-02-23-database-07-05.png" alt="" />
+ <br />
+ <br /></p>
   </li>
 </ol>
 
 <p><br />
 <br /></p>
 
-<h1 id="디렉토리-계층-구조-1">디렉토리 계층 구조</h1>
+<h1 id="약한-개체의-개체타입-식별관계타입-및-식별자-1">약한 개체의 개체타입, 식별관계타입 및 식별자</h1>
+
 <p><br />
 <br /></p>
+
+<p>IE란()Information Engineering Notation)</p>
+
+<p>새발 표기법(Crow-feet Notation) : 관계 대응수를 새발 모양의 기호로 표현</p>
 
 <ol>
   <li>
-    <p>디렉토리</p>
+    <p>피터첸 표기법과 IE표기법</p>
 
-    <ul>
-      <li>서로 연관이 있는 파일들을 하나의 그룹으로 만들어서 저장할 수 있도록 구분된 공간을 의미</li>
-      <li>각 디렉토리의 이름은 “/”로 구별</li>
-      <li>특정 파일을 지정할 때는 맨 마지막에 파일이름을 쓴다.</li>
-      <li>파일시스템의 맨 상위 디렉토리를 root 디렉토리</li>
-      <li>root 디렉토리는 “/”로 표기</li>
-    </ul>
+    <p><img src="/assets/img/database/2020-02-23-database-07-06.png" alt="" />
+ <br />
+ <br /></p>
   </li>
   <li>
-    <p>경로명(path name)</p>
+    <p>개체의 표현</p>
 
-    <ul>
-      <li>파일이나 디렉토리의 전체 이름</li>
-      <li>디렉토리 계층 구조에 있는 특정 파일이나 디렉토리의 위치를 나타내는 것</li>
-      <li>디렉토리와 디렉토리, 디렉토리와 파일을 구별하는 구별자로 “/”를 사용</li>
-      <li>경로명이 디렉토리 이름으로 끝나는 경우 제일 뒤에 “/”를 붙이거나 붙이지 않을 수 있음</li>
-      <li>절대경로명과 상대경로명이 있음</li>
-      <li>파일 이름이나 디렉토리 지정하는 방법도 절대경로명을 사용하거나 상대경로명을 사용하는 방법</li>
-      <li>파일을 명시할 때, 별도의 경로명을 써주지 않으면 현재 디렉토리를 가리킴</li>
-    </ul>
+    <p><img src="/assets/img/database/2020-02-23-database-07-07.png" alt="" />
+ <br />
+ <br /></p>
   </li>
   <li>
-    <p>절대경로명</p>
+    <p>속성의 표현</p>
 
-    <ul>
-      <li>루트 디렉토리를 기준으로 파일의 위치를 나타낸 것</li>
-      <li>루트 디렉토리부터 시작해서 특정 파일의 위치까지 이동하는데 거치는 모든 디렉토리의 이름 표시</li>
-      <li>항상 “/”로 시작</li>
-      <li>특정 파일을 가리키는 절대경로명은 항상 동일</li>
-    </ul>
+    <p><img src="/assets/img/database/2020-02-23-database-07-08.png" alt="" />
+ <br />
+ <br /></p>
   </li>
   <li>
-    <p>상대경로명</p>
+    <p>관계의 표현</p>
 
-    <ul>
-      <li>현재 디렉토리를 기준으로 파일의 위치를 나타낸 것</li>
-      <li>현재 디렉토리부터 시작해서 하위로 내려가면 디렉토리 이름 추가</li>
-      <li>루트를 향해 올라가면 “..”을 추가</li>
-      <li>“/” 이외의 문자로 시작</li>
-      <li>상대경로명은 현재 디렉토리의 위치에 따라 달라짐</li>
-    </ul>
+    <p><img src="/assets/img/database/2020-02-23-database-07-09.png" alt="" />
+ <br />
+ <br /></p>
   </li>
   <li>
-    <p>탐색 경로</p>
+    <p>관계대응수의 표현</p>
 
     <ul>
-      <li>명령어를 실행시키면 리눅스는 명령어의 실행 파일이 있는 위치를 찾음</li>
-      <li>탐색 경로 : 명령어를 어디에서 찾아야 할지 명시하는 것</li>
+      <li>1:N 관계 대응수</li>
+    </ul>
+
+    <p><img src="/assets/img/database/2020-02-23-database-07-10.png" alt="" />
+ <br />
+ <br /></p>
+
+    <p><img src="/assets/img/database/2020-02-23-database-07-11.png" alt="" />
+ <br />
+ <br /></p>
+
+    <ul>
+      <li>1:1 관계 대응수</li>
+    </ul>
+
+    <p><img src="/assets/img/database/2020-02-23-database-07-12.png" alt="" />
+ <br />
+ <br /></p>
+
+    <ul>
+      <li>M:N 관계대응수</li>
+    </ul>
+
+    <p><img src="/assets/img/database/2020-02-23-database-07-13.png" alt="" />
+ <br />
+ <br /></p>
+  </li>
+  <li>
+    <p>참여도의 표현</p>
+
+    <ul>
       <li>
-        <p>명령어가 존재하는 디렉토리가 탐색 경로에 없으면 명령어 이름만으로 실행시킬 수 없음</p>
+        <p>부분 참여
+ <img src="/assets/img/database/2020-02-23-database-07-14.png" alt="" />
+ <br />
+ <br /></p>
+      </li>
+      <li>
+        <p>전체 참여</p>
+      </li>
+    </ul>
+
+    <p><img src="/assets/img/database/2020-02-23-database-07-15.png" alt="" />
+ <br />
+ <br /></p>
+  </li>
+  <li>
+    <p>강한개체와 약한개체의 표현</p>
+
+    <ul>
+      <li>(강한 개체 : 약한 개체) 관계 대응수 = ( 1 : N )</li>
+      <li>(강한 개체 : 약한 개체) 참여도 = ( 전체 : 부분 )</li>
+    </ul>
+
+    <p><img src="/assets/img/database/2020-02-23-database-07-16.png" alt="" />
+ <br />
+ <br /></p>
+  </li>
+  <li>
+    <p>키와 식별자의 표현</p>
+
+    <ul>
+      <li>
+        <p>기본키</p>
 
         <ul>
-          <li>절대 경로명을 다 써주어 실행시키거나</li>
-          <li>현재 작업 디렉토리를 나타내는 “.”을 사용</li>
+          <li>속성 이름 앞에 ◆로 표기</li>
+          <li>속성 이름 뒤에 (PK)로 표기</li>
         </ul>
       </li>
     </ul>
-  </li>
-  <li>
-    <p>명령 실행시 탐색 경로의 예</p>
+
+    <p><img src="/assets/img/database/2020-02-23-database-07-17.png" alt="" />
+ <br />
+ <br /></p>
 
     <ul>
       <li>
-        <p>test 파일의 내용이 다음과 같은 경우</p>
+        <p>외래키</p>
 
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ cat test
-  ls
-  date
-  cat test
-  $
-</code></pre></div>        </div>
-      </li>
-      <li>
-        <p>현재 작업 디렉토리가 탐색 경로에 지정되지 않았으므로 실행되지 않음</p>
-
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ test
-  $
-</code></pre></div>        </div>
-      </li>
-      <li>
-        <p>현재 작업 디렉토리를 지정한 경우</p>
-
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ ./test
-  Desktop Downloads Music Public Videos
-  Documents examples.desktop Pictures Templates
-  2015. 06. 01. (월) 13:34:25 KST
-  ls
-  date
-  cat test
-  $
-</code></pre></div>        </div>
-      </li>
-      <li>
-        <p>또는 절대경로명을 다 써줄 수 있음</p>
-
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ /home/ksshin/test
-</code></pre></div>        </div>
+        <ul>
+          <li>속성의 이름 뒤에 (FK)로 표기</li>
+        </ul>
       </li>
     </ul>
-  </li>
-  <li>
-    <p>기호로 디렉토리 이동</p>
 
-    <ul>
-      <li>~ : 홈 디렉토리로 이동</li>
-      <li>. : 현재 디렉토리 지정</li>
-    </ul>
+    <p><img src="/assets/img/database/2020-02-23-database-07-18.png" alt="" />
+ <br />
+ <br /></p>
   </li>
 </ol>
+
 
     <br />
     <br />
@@ -680,12 +548,12 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 <div class="share">
   <h2>Share this post</h2>
   <div class="share-body">
-    <a href="http://twitter.com/share?text=[유닉스] 디렉토리 계층구조&amp;url=https://m-veloper.github.io/devlog/2020/02/22/unix-06/"
+    <a href="http://twitter.com/share?text=[Database] 약한 개체와 IE표기법&amp;url=https://m-veloper.github.io/devlog/2020/02/23/database-07/"
       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
       <span class="icon-twitter">
       </span>
     </a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://m-veloper.github.io/devlog/2020/02/22/unix-06/"
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://m-veloper.github.io/devlog/2020/02/23/database-07/"
       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
       <span class="icon-facebook">
       </span>
@@ -743,6 +611,9 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
       
       
         
+          
+          
+        
         
           
 
@@ -754,19 +625,16 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
   }
 </style>
 <li class="h4">
-  <a href="/devlog/2020/02/23/database-07/" data-flip="title">
-    <span>[Database] 약한 개체와 IE표기법</span>
+  <a href="/devlog/2020/02/22/unix-06/" data-flip="title">
+    <span>[유닉스] 디렉토리 계층구조</span>
   </a>
-  <small><time datetime="2020-02-23T00:00:00+09:00">
-    2020년 02월 23일
+  <small><time datetime="2020-02-22T00:00:00+09:00">
+    2020년 02월 22일
   </time></small>
 </li>
 
         
       
-        
-          
-          
         
         
           
@@ -833,9 +701,9 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
   }
 
   var d = function () {
-    this.page.title = "[유닉스] 디렉토리 계층구조",
-      this.page.identifier = "/devlog/2020/02/22/unix-06",
-      this.page.url = "https://m-veloper.github.io/devlog/2020/02/22/unix-06/"
+    this.page.title = "[Database] 약한 개체와 IE표기법",
+      this.page.identifier = "/devlog/2020/02/23/database-07",
+      this.page.url = "https://m-veloper.github.io/devlog/2020/02/23/database-07/"
   };
   s._disqusFirst = void 0 === s._disqusFirst || s._disqusFirst, s._disqusLoading = void 0 !== s._disqusLoading && s._disqusLoading, s._disqusThis = !1, s._disqusThreadOffsetTop = i.getElementById(
     "disqus_thread").offsetTop, s._disqusLoading ? s._disqusFirst = !1 : (s._disqusLoading = !0, loadJSDeferred(

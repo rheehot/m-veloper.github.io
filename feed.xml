@@ -5,9 +5,227 @@
     <description></description>
     <link>https://m-veloper.github.io/</link>
     <atom:link href="https://m-veloper.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 22 Feb 2020 17:11:01 +0900</pubDate>
-    <lastBuildDate>Sat, 22 Feb 2020 17:11:01 +0900</lastBuildDate>
+    <pubDate>Sun, 23 Feb 2020 20:46:12 +0900</pubDate>
+    <lastBuildDate>Sun, 23 Feb 2020 20:46:12 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>[Database] 약한 개체와 IE표기법</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-23-database-07.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;약한-개체의-개체타입-식별관계타입-및-식별자&quot;&gt;약한 개체의 개체타입, 식별관계타입 및 식별자&lt;/h1&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;약한 개체 타입&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;상위 개체 타입에 종속된 개체 타입&lt;/li&gt;
+      &lt;li&gt;이중 직사각형으로 표현&lt;/li&gt;
+      &lt;li&gt;예 : 직원의 가족 – 직원 개체 타입이 있어야 가족 개체 타입을 식별할 수 있다.&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-23-database-07-01.png&quot; alt=&quot;&quot; /&gt;
+ &lt;br /&gt;
+ &lt;br /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;식별 관계 타입&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;강한 개체 타입과 약한 개체 타입의 관계를 나타냄&lt;/li&gt;
+      &lt;li&gt;강한 개체 타입의 기본키를 상속받아 사용함&lt;/li&gt;
+      &lt;li&gt;이중 마름모꼴로 표현&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-23-database-07-02.png&quot; alt=&quot;&quot; /&gt;
+ &lt;br /&gt;
+ &lt;br /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;식별자 (Discriminator) / 부분키 (Partial key)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;약한 개체 타입은 자신의 기본키만으로 식별이 어려우므로, 상위의 강한 개체 타입의 기본키를 상속받아 결합하여 사용&lt;/li&gt;
+      &lt;li&gt;약한 개체 타입은 식별자를 사용하여 개별 개체를 식별할 수 있다.&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-23-database-07-03.png&quot; alt=&quot;&quot; /&gt;
+ &lt;br /&gt;
+ &lt;br /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;예&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;직원 개체 타입과 가족 개체 타입은 부양 관계를 가진다.&lt;/li&gt;
+      &lt;li&gt;직원 – 자기 자신만으로 존재 가능, 사번을 키로 구분한다.&lt;/li&gt;
+      &lt;li&gt;가족 – 어느 직원의 가족인지 알기 위하여 직원의 사번과 가족의 이름으로 식별이 가능하다&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-23-database-07-04.png&quot; alt=&quot;&quot; /&gt;
+ &lt;br /&gt;
+ &lt;br /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;약한개체타입, 식별관계타입 및 식별자 정리&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-23-database-07-05.png&quot; alt=&quot;&quot; /&gt;
+ &lt;br /&gt;
+ &lt;br /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;약한-개체의-개체타입-식별관계타입-및-식별자-1&quot;&gt;약한 개체의 개체타입, 식별관계타입 및 식별자&lt;/h1&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;IE란()Information Engineering Notation)&lt;/p&gt;
+
+&lt;p&gt;새발 표기법(Crow-feet Notation) : 관계 대응수를 새발 모양의 기호로 표현&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;피터첸 표기법과 IE표기법&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-23-database-07-06.png&quot; alt=&quot;&quot; /&gt;
+ &lt;br /&gt;
+ &lt;br /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;개체의 표현&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-23-database-07-07.png&quot; alt=&quot;&quot; /&gt;
+ &lt;br /&gt;
+ &lt;br /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;속성의 표현&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-23-database-07-08.png&quot; alt=&quot;&quot; /&gt;
+ &lt;br /&gt;
+ &lt;br /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;관계의 표현&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-23-database-07-09.png&quot; alt=&quot;&quot; /&gt;
+ &lt;br /&gt;
+ &lt;br /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;관계대응수의 표현&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;1:N 관계 대응수&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-23-database-07-10.png&quot; alt=&quot;&quot; /&gt;
+ &lt;br /&gt;
+ &lt;br /&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-23-database-07-11.png&quot; alt=&quot;&quot; /&gt;
+ &lt;br /&gt;
+ &lt;br /&gt;&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;1:1 관계 대응수&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-23-database-07-12.png&quot; alt=&quot;&quot; /&gt;
+ &lt;br /&gt;
+ &lt;br /&gt;&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;M:N 관계대응수&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-23-database-07-13.png&quot; alt=&quot;&quot; /&gt;
+ &lt;br /&gt;
+ &lt;br /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;참여도의 표현&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;부분 참여
+ &lt;img src=&quot;/assets/img/database/2020-02-23-database-07-14.png&quot; alt=&quot;&quot; /&gt;
+ &lt;br /&gt;
+ &lt;br /&gt;&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;전체 참여&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-23-database-07-15.png&quot; alt=&quot;&quot; /&gt;
+ &lt;br /&gt;
+ &lt;br /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;강한개체와 약한개체의 표현&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;(강한 개체 : 약한 개체) 관계 대응수 = ( 1 : N )&lt;/li&gt;
+      &lt;li&gt;(강한 개체 : 약한 개체) 참여도 = ( 전체 : 부분 )&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-23-database-07-16.png&quot; alt=&quot;&quot; /&gt;
+ &lt;br /&gt;
+ &lt;br /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;키와 식별자의 표현&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;기본키&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;속성 이름 앞에 ◆로 표기&lt;/li&gt;
+          &lt;li&gt;속성 이름 뒤에 (PK)로 표기&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-23-database-07-17.png&quot; alt=&quot;&quot; /&gt;
+ &lt;br /&gt;
+ &lt;br /&gt;&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;외래키&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;속성의 이름 뒤에 (FK)로 표기&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-23-database-07-18.png&quot; alt=&quot;&quot; /&gt;
+ &lt;br /&gt;
+ &lt;br /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+</description>
+        <pubDate>Sun, 23 Feb 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/devlog/2020/02/23/database-07/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/02/23/database-07/</guid>
+        
+        <category>database</category>
+        
+        
+        <category>devlog</category>
+        
+      </item>
     
       <item>
         <title>[유닉스] 디렉토리 계층구조</title>
