@@ -5,9 +5,551 @@
     <description></description>
     <link>https://m-veloper.github.io/</link>
     <atom:link href="https://m-veloper.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 23 Feb 2020 20:46:12 +0900</pubDate>
-    <lastBuildDate>Sun, 23 Feb 2020 20:46:12 +0900</lastBuildDate>
+    <pubDate>Mon, 24 Feb 2020 21:02:17 +0900</pubDate>
+    <lastBuildDate>Mon, 24 Feb 2020 21:02:17 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>[Database] 키 (Key)</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-24-database-09.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;키의-개요&quot;&gt;키의 개요&lt;/h1&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;키 (Key)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;키 란?&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;릴레이션에서 투플을 구별할 수 있게 하는 유일한 속성 (집합)&lt;/li&gt;
+          &lt;li&gt;릴레이션 간의 관계를 맺는데 사용&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;키의 특성&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;한 릴레이션에서 투플의 키는 같은 값을 가질 수 없다 (유일성)&lt;/li&gt;
+          &lt;li&gt;최소한의 속성들로만 키를 구성해야 한다 (최소성)&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;키의 종류&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;수퍼키 (Super Key)&lt;/li&gt;
+          &lt;li&gt;후보키 (Candidate Key)&lt;/li&gt;
+          &lt;li&gt;기본키 (Primary Key)&lt;/li&gt;
+          &lt;li&gt;대체키 (Alternate Key)&lt;/li&gt;
+          &lt;li&gt;외래키 (Foreign Key)&lt;/li&gt;
+          &lt;li&gt;대리키 (Surrogate Key)&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;키의 종류&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;수퍼키 (Super Key)&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;
+            &lt;p&gt;투플을 유일하게 식별할 수 있는 속성들의 집합 (유일성)&lt;/p&gt;
+
+            &lt;ul&gt;
+              &lt;li&gt;하나의 릴레이션에서 키로 지정된 속성의 값은 투플마다 달라야 한다.&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;투플을 유일하게 식별할 수 있는 값이면 모두 수퍼키가 될 수 있다&lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;예 : 사원 명부&lt;/p&gt;
+
+            &lt;ul&gt;
+              &lt;li&gt;사번 : 사원별로 유일한 값으로 부여되므로, 투플을 구별할 수 있다&lt;/li&gt;
+              &lt;li&gt;직책 : 같은 직책이 존재할 수 있으므로, 투플을 구별할 수 없다&lt;/li&gt;
+              &lt;li&gt;이름 : 같은 이름이 존재할 수 있으므로, 투플을 구별할 수 없다&lt;/li&gt;
+              &lt;li&gt;생년월일 : 생일이 같을 수 있으므로, 투플을 구별할 수 없다&lt;/li&gt;
+              &lt;li&gt;주소 : 주소가 같을 수 있으므로, 투플을 구별할 수 없다&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;사원 명부의 슈퍼 키 : 사번을 포함하는 속성의 집합&lt;/p&gt;
+
+            &lt;ul&gt;
+              &lt;li&gt;(사번), (사번, 직책), (사번, 이름), (사번, 생년월일), (사번, 주소),
+(사번, 직책, 이름), (사번, 직책, 생년월일), (사번, 직책, 주소),
+(사번, 이름, 생년월일), (사번, 이름, 주소), (사번, 생년월일, 주소),
+(사번, 직책, 이름, 생년월일), (사번, 직책, 이름, 주소), (사번, 이름, 생년월일, 주소),
+(사번, 직책, 생년월일, 주소), (사번, 직책, 이름, 생년월일, 주소)&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;후보키 (Candidate Key)&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;투플을 식별할 수 있는 속성들의 최소 집합 (최소성)&lt;/li&gt;
+          &lt;li&gt;하나의 속성으로 구성된 키 : 최소성을 만족하여 후보키로 가장 좋다.&lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;수퍼키 중에서 최소성을 만족하는 키&lt;/p&gt;
+
+            &lt;ul&gt;
+              &lt;li&gt;후보키는 유일성과 최소성을 만족하여야 한다.&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;후보키의 특성은 투플이 삽입, 수정되어도 유지되어야 한다.&lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;예 : 사원 릴레이션&lt;/p&gt;
+
+            &lt;ul&gt;
+              &lt;li&gt;사번 : 후보키로 가장 좋다.&lt;/li&gt;
+              &lt;li&gt;(직책, 이름), (직책, 이름, 생년월일) - 유일성을 만족 못하는 경우 발생하므로 후보키가 될 수 없다.&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;기본키 (Primary Key)&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;
+            &lt;p&gt;후보키 중에서 하나를 선정하여 사용하는 대표키&lt;/p&gt;
+
+            &lt;ul&gt;
+              &lt;li&gt;후보키가 하나일 경우 : 기본키&lt;/li&gt;
+              &lt;li&gt;후보키가 여러 개 일 경우 : 릴레이션의 특성을 반영하여 하나를 선택&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;기본 키 선정시 주의 사항&lt;/p&gt;
+
+            &lt;ul&gt;
+              &lt;li&gt;유일성과 최소성을 만족하여야 한다.&lt;/li&gt;
+              &lt;li&gt;NULL 값을 가질 수 있는 속성은 부적합하다.&lt;/li&gt;
+              &lt;li&gt;값이 바뀌지 말아야 한다.&lt;/li&gt;
+              &lt;li&gt;가장 단순한 후보키를 선택한다.&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;릴레이션 스키마를 표현할 때, 기본키는 속성에 밑줄로 표시한다.&lt;/p&gt;
+
+            &lt;ul&gt;
+              &lt;li&gt;릴레이션이름( 속성1, 속성2, … , 속성N )&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;예 : 사원 릴레이션&lt;/p&gt;
+
+            &lt;ul&gt;
+              &lt;li&gt;사원( 사번, 직책, 이름, 생년월일, 주소 )&lt;/li&gt;
+              &lt;li&gt;사원( 사번, 직책, 이름, 생년월일, 주소 ) : 대부분의 경우, 이름+주소는 기본키로 가능하지만, 투플을 구별할 수 없는 경우가 발생될 수도 있다.&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+
+        &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-24-database-09-01.png&quot; alt=&quot;&quot; /&gt;
+  &lt;br /&gt;
+  &lt;br /&gt;&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;대체키 (Alternate Key)&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;기본키로 선택되지 못한 후보키&lt;/li&gt;
+        &lt;/ul&gt;
+
+        &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-24-database-09-02.png&quot; alt=&quot;&quot; /&gt;
+  &lt;br /&gt;
+  &lt;br /&gt;&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;외래키&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;다른 릴레이션의 기본키를 참조하는 속성(집합)&lt;/li&gt;
+          &lt;li&gt;관계 데이터 모델의 특징인 릴레이션간의 관계(Relationship)을 표현&lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;특징&lt;/p&gt;
+
+            &lt;ul&gt;
+              &lt;li&gt;관계 데이터 모델의 릴레이션 간의 관계를 표현&lt;/li&gt;
+              &lt;li&gt;다른 릴레이션의 기본키를 참조하는 속성&lt;/li&gt;
+              &lt;li&gt;외래키와 기본키의 도메인은 같아야 한다.&lt;/li&gt;
+              &lt;li&gt;NULL 값이 허용되며, 중복되어도 된다.&lt;/li&gt;
+              &lt;li&gt;외래키가 기본키의 일부가 될 수 있다.&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+
+        &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-24-database-09-03.png&quot; alt=&quot;&quot; /&gt;
+  &lt;br /&gt;
+  &lt;br /&gt;&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;
+            &lt;p&gt;외래키가 참조되는 릴레이션의 기본키가 아닐 경우&lt;/p&gt;
+
+            &lt;ul&gt;
+              &lt;li&gt;외래키는 다른 릴레이션에서 하나의 투플을 구별하여야 함&lt;/li&gt;
+              &lt;li&gt;참조되는 릴레이션의 투플을 구별할 수 없는 경우가 발생&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;외래키가 자신이 속한 릴레이션의 기본키를 참조하도록 외래키를 정의할 수 있다.&lt;/p&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+
+        &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-24-database-09-04.png&quot; alt=&quot;&quot; /&gt;
+  &lt;br /&gt;
+  &lt;br /&gt;&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;대리키 (Surrogate Key) / 인조키 (Artificial Key)&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;일련번호와 같은 가상의 속성을 만들어 기본키로 사용하는 키&lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;대리키를 사용하는 경우&lt;/p&gt;
+
+            &lt;ul&gt;
+              &lt;li&gt;기본키가 유출되어서는 안될 경우&lt;/li&gt;
+              &lt;li&gt;여러 개의 속성으로 구성되어 복잡할 경우&lt;/li&gt;
+              &lt;li&gt;마땅한 기본키가 없을 경우&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;대리키는 DBMS가 임의로 생성하는 값으로 사용자가 직관적으로 알 수 없다.&lt;/li&gt;
+        &lt;/ul&gt;
+
+        &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-24-database-09-05.png&quot; alt=&quot;&quot; /&gt;
+  &lt;br /&gt;
+  &lt;br /&gt;&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Mon, 24 Feb 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/devlog/2020/02/24/database-09/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/02/24/database-09/</guid>
+        
+        <category>database</category>
+        
+        
+        <category>devlog</category>
+        
+      </item>
+    
+      <item>
+        <title>[Database] 관계 데이터 모델의 기본용어와 릴레이션 구성요소</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-24-database-08.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;관계-데이터-모델의-개요&quot;&gt;관계 데이터 모델의 개요&lt;/h1&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;관계 데이터 모델이란?&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;관계 데이터 모델&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;개념적 구조를 논리적 구조로 표현한 모델&lt;/li&gt;
+          &lt;li&gt;개체에 관한 데이터를 행과 열로 구성된 데이블(릴레이션)에 저장&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;관계 데이터 모델의 기본 용어&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;릴레이션 (Relation)
+        &lt;ul&gt;
+          &lt;li&gt;개체에 대한 데이터를 2차원 테이블의 구조로 저장한 것&lt;/li&gt;
+          &lt;li&gt;파일 관리 시스템의 파일(File)에 대응&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-24-database-08-01.png&quot; alt=&quot;&quot; /&gt;
+ &lt;br /&gt;
+ &lt;br /&gt;&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;속성 (Attribute)&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;릴레이션의 열&lt;/li&gt;
+          &lt;li&gt;파일 관리 시스템 파일의 필드(Field)에 대응&lt;/li&gt;
+          &lt;li&gt;예&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-24-database-08-02.png&quot; alt=&quot;&quot; /&gt;
+ &lt;br /&gt;
+ &lt;br /&gt;&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;투플 (Tuple)&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;릴레이션의 행&lt;/li&gt;
+          &lt;li&gt;개체 인스턴스&lt;/li&gt;
+          &lt;li&gt;파일 관리 시스템의 레코드(Record)에 대응&lt;/li&gt;
+          &lt;li&gt;예 : 회사 사원 개체 집합에 5개의 사원 정보가 있을 경우, 5개의 투플 또는 5개의 개체 인스턴스가 있다고 한다.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-24-database-08-03.png&quot; alt=&quot;&quot; /&gt;
+ &lt;br /&gt;
+ &lt;br /&gt;&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;도메인 (Domain)&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;
+            &lt;p&gt;하나의 속성이 가질 수 있는 모든 값의 집합&lt;/p&gt;
+
+            &lt;ul&gt;
+              &lt;li&gt;예: 회사의 직급 - 대표이사, 전무, 상무, 부장, 차장, 과장, 대리, 사원&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;속성의 특성을 고려한 데이터 타입으로 정의&lt;/li&gt;
+          &lt;li&gt;속성 값을 입력 및 수정할 때 적합성의 판단 기준이 됨&lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;도메인을 속성의 특성을 고려한 데이터 타입으로 정의&lt;/p&gt;
+
+            &lt;ul&gt;
+              &lt;li&gt;예 : 이름 속성의 도메인 : CHAR(20), 나이 속성의 도메인 : INT&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-24-database-08-04.png&quot; alt=&quot;&quot; /&gt;
+ &lt;br /&gt;
+ &lt;br /&gt;&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;널 (Null)&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;속성 값을 모르거나 적합한 값이 없는 경우 사용되는 값&lt;/li&gt;
+          &lt;li&gt;해당되는 값이 없음을 의미&lt;/li&gt;
+          &lt;li&gt;숫자 0 이나, 공백 문자와 다름&lt;/li&gt;
+          &lt;li&gt;널 값은 DBMS마다 표시하는 기호가 다르다.&lt;/li&gt;
+          &lt;li&gt;예
+            &lt;ul&gt;
+              &lt;li&gt;쇼핑몰의 회원 가입시 직장정보 입력 칸에 입력을 하지 않은 경우&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;차수 (Degree)&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;한 릴레이션에서 속성의 수, 즉 열의 수&lt;/li&gt;
+          &lt;li&gt;모든 릴레이션은 최소 1 이상의 차수를 가지고 있다&lt;/li&gt;
+          &lt;li&gt;릴레이션의 차수는 변화가 별로 없다&lt;/li&gt;
+          &lt;li&gt;예 : 5개의 속성을 가진 릴레이션의 차수는 5이다.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;카디널리티 (Cardinality)&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;한 릴레이션에서 투플의 개수, 즉 행의 수&lt;/li&gt;
+          &lt;li&gt;카디널리티가 0 (투플이 없는 릴레이션)인 릴레이션도 있다&lt;/li&gt;
+          &lt;li&gt;릴레이션의 카디널리티는 자주 변한다&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-24-database-08-05.png&quot; alt=&quot;&quot; /&gt;
+ &lt;br /&gt;
+ &lt;br /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;릴레이션의-구성-및-특징&quot;&gt;릴레이션의 구성 및 특징&lt;/h1&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;릴레이션 구성&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;릴레이션 스키마 (Relation Schema) / 릴레이션 내포 (Relation Intension)&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;릴레이션의 이름과 릴레이션에 포함된 속성의 이름으로 정의한 릴레이션의 논리적 구조&lt;/li&gt;
+          &lt;li&gt;릴레이션의 논리적 구조&lt;/li&gt;
+          &lt;li&gt;릴레이션의 전체구조를 파악할 수 있다&lt;/li&gt;
+          &lt;li&gt;자주 바뀌지 않는다.&lt;/li&gt;
+          &lt;li&gt;일반적인 표현&lt;/li&gt;
+        &lt;/ul&gt;
+
+        &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-24-database-08-06.png&quot; alt=&quot;&quot; /&gt;
+  &lt;br /&gt;
+  &lt;br /&gt;&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;
+            &lt;p&gt;예&lt;/p&gt;
+
+            &lt;ul&gt;
+              &lt;li&gt;사원(사번, 직책, 이름, 생년월일)&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;릴레이션 인스턴스 (Relation Instance) / 릴레이션 외연 (Relation Extension)&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;한 시점에 릴레이션에 존재하는 투플의 집합&lt;/li&gt;
+          &lt;li&gt;릴레이션 인스턴스에 포함된 투플은 릴레이션 스키마에서 정의하는 각 속성의 실제 값으로 구성&lt;/li&gt;
+          &lt;li&gt;DBMS의 데이터 조작어를 이용하여 투플의 삽입, 삭제, 수정, 검색을 수행&lt;/li&gt;
+          &lt;li&gt;릴레이션 인스턴스는 자주 바뀐다.&lt;/li&gt;
+          &lt;li&gt;간단히 릴레이션이라고 부르기도 한다.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-24-database-08-07.png&quot; alt=&quot;&quot; /&gt;
+ &lt;br /&gt;
+ &lt;br /&gt;&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;데이터베이스 스키마와 릴레이션 스키마&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;데이터베이스는 여러 개의 릴레이션으로 구성&lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;데이터베이스 스키마&lt;/p&gt;
+
+            &lt;ul&gt;
+              &lt;li&gt;데이터베이스의 전체 구조&lt;/li&gt;
+              &lt;li&gt;릴레시션 스키마를 모아 놓은 것&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;데이터베이스 스키마를 설계한다 = 모든 릴레이션 스키마를 정의한다.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;데이터베이스 인스턴스와 릴레이션 인스턴스&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;
+            &lt;p&gt;데이터베이스 인스턴스&lt;/p&gt;
+
+            &lt;ul&gt;
+              &lt;li&gt;어느 시점에 데이터베이스에 저장된 데이터 내용 전체&lt;/li&gt;
+              &lt;li&gt;데이터베이스를 구성하는 모든 릴레이션 인스턴스를 모아 놓은 것&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-24-database-08-08.png&quot; alt=&quot;&quot; /&gt;
+ &lt;br /&gt;
+ &lt;br /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;릴레이션의 특징&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;속성의 이름은 중복될 수 없다&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;한 릴레이션의 속성은 다른 이름을 가져야 한다&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;속성은 단일 값을 가진다.&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;여러 개의 값을 가져야만 하는 경우, 투플을 여러 개 만들어, 속성 값이 단일 값이 되도록 나눈다.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;한 속성의 값은 해당 도메인의 값만 가질 수 있다&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;속성은 순서를 갖지 않는다&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;속성의 순서가 달라도 스키마는 동일하다.&lt;/li&gt;
+          &lt;li&gt;속성의 순서와 상관없이 같은 속성들로 구성되어 있어야 같은 릴레이션이다.&lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;예 : 속성 순서가 다른 두 릴레이션&lt;/p&gt;
+
+            &lt;ul&gt;
+              &lt;li&gt;사원(사번, 직책, 이름, 생년월일)&lt;/li&gt;
+              &lt;li&gt;사원(사번, 이름, 생년월일, 직책)&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;릴레이션 내의 중복된 투플은 허용되지 않는다&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;동일한 투플은 같은 릴레이션에 존재할 수 없다.&lt;/li&gt;
+          &lt;li&gt;모든 투플에는 자신을 식별할 수 있는 속성을 가지고 있으므로, 동일한 투플이 존재하지 않는다.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;하나의 릴레이션에서 투플의 순서는 무의미하다.&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;투플의 순서가 빠뀐다고 다른 릴레이션이 될 수 없다.&lt;/li&gt;
+          &lt;li&gt;릴레이션에 투플이 삽입된 순서대로 저장된다.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Mon, 24 Feb 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/devlog/2020/02/24/database-08/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/02/24/database-08/</guid>
+        
+        <category>database</category>
+        
+        
+        <category>devlog</category>
+        
+      </item>
     
       <item>
         <title>[Database] 약한 개체와 IE표기법</title>
