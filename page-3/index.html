@@ -31,7 +31,7 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="naver-site-verification" content="fa37cbf8ce41948de6e94c01991ffa04cea9b093"/>
 <meta name="google-site-verification" content="5M4Zw9wg_UqQkvlayfb5Mc_ogvJdc013w_zLUkxgO-Y" />
-<meta property="og:title" content="[Database] 관계 데이터 모델의 기본용어와 릴레이션 구성요소">
+<meta property="og:title" content="Home">
 <meta property="og:type" content="article">
 
 
@@ -46,15 +46,13 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 
 
 
-  <title>[Database] 관계 데이터 모델의 기본용어와 릴레이션 구성요소 &middot; m_veloper</title>
+  <title>Home &middot; m_veloper</title>
 
 
 
 <meta name="description" content="
-
 ">
 <meta property="og:description" content="
-
 ">
 
 
@@ -62,17 +60,13 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 <!-- =============== -->
 <!-- LINKS           -->
 <!-- =============== -->
-<link rel="canonical" href="https://m-veloper.github.io/devlog/2020/02/24/database-08/">
-<meta property="og:url" content="https://m-veloper.github.io/devlog/2020/02/24/database-08/">
+<link rel="canonical" href="https://m-veloper.github.io/page-3/">
+<meta property="og:url" content="https://m-veloper.github.io/page-3/">
 
 <link rel="alternate" type="application/atom+xml" title="m_veloper Feed" href="https://m-veloper.github.io/feed.xml">
 
 
-  <link rel="prev" href="https://m-veloper.github.io/devlog/2020/02/23/database-07/">
 
-
-
-  <link rel="next" href="https://m-veloper.github.io/devlog/2020/02/24/database-09/">
 
 
 <link rel="apple-touch-icon" href="https://m-veloper.github.io/apple-touch-icon.png">
@@ -198,45 +192,8 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 <div id="_yPushState">
   <div class="fade-in">
     <main id="_main" class="content" role="main" data-color="#e2adfd" data-image="/assets/img/nap.jpg">
-      <style>
-  .myAd1190 {
-    width: 48%;
-    height: 280px;
-  }
-
-  .myAd1290 {
-    width: 48%;
-    height: 280px;
-  }
-
-  @media(max-width: 800px) {
-    .myAd1190 {
-      display: none;
-    }
-
-    .myAd1290 {
-      width: 98%;
-    }
-  }
-  /*광고 붙을떄 까지 안보이게*/
-  .row {
-    /*display: flex;*/
-    display: none;
-    justify-content: space-between;
-    align-items: center;
-    height: 300px;
-  }
-
-  .row-center {
-    display: flex;
-    justify-content: center;
-    height: 258px;
-  }
-  /*광고 붙을떄 까지 안보이게*/
-  .right-side{
-    display: none;
-  }
-
+      
+  <style>
   #tag{
     margin-bottom: 0.875rem;
     padding-left: 1rem;
@@ -252,37 +209,50 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
     border-radius: 1rem;
     text-decoration: none;
   }
+  .post-title{
+    font-size: 1.3rem;
+  }
+  .post-title a{
+    color: #999 !important;
+  }
+
   .post-date{
     font-size: 0.9rem;
     font-weight: 400;
   }
 
-  .markdown-body h1 {
-    border-bottom: 1px solid lightgray;
-    padding-bottom: 8px;
-    margin-bottom: 8px;
-    margin-top: 56px;
+  .read-more {
+    margin-top: 0;
+  }
+  .mb6 {
+    margin-bottom: 8rem;
   }
 
 </style>
 
 
 
-
-
-<article id="post-devlog/2020/02/24/database-08" class="post this" role="article">
+<article id="post-devlog/2020/02/13/database-02" class="post mb6 this" role="article">
   <header>
+    <!--post 내용중 이미지 영역-->
+    <p><img src="/assets/img/database/2020-02-13-database-02.png" alt="" /></p>
 
+
+
+    <!--제목-->
     <h1 class="post-title">
-      
-        [Database] 관계 데이터 모델의 기본용어와 릴레이션 구성요소
-        
+      <a href="/devlog/2020/02/13/database-02/" data-flip="title">
+      [Database] 데이터베이스 모델
+      </a>
     </h1>
 
+    <!--날짜-->
     <p class="post-date heading">
-      <!--<time datetime="2020-02-24T00:00:00+09:00">24 Feb 2020</time>-->
-      <time datetime="2020-02-24T00:00:00+09:00">2020년 02월 24일</time>
+      <!--<time datetime="2020-02-13T00:00:00+09:00">13 Feb 2020</time>-->
+      <time datetime="2020-02-13T00:00:00+09:00">2020년 02월 13일</time>
     </p>
+
+    <!--카테고리영역-->
     
 
 
@@ -312,498 +282,139 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
   <div class="hr" style="padding-bottom:0"></div>
 
 
+
   </header>
   
 
-  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   
-  <div class="markdown-body">
-
-    <!--  -->
-
-    <div class='row'>
-      <ins class="adsbygoogle myAd1190" data-ad-client="ca-pub-9134477021095729" data-ad-slot="6559875097"></ins>
-      <ins class="adsbygoogle myAd1290" data-ad-client="ca-pub-9134477021095729" data-ad-slot="6559875097"></ins>
-    </div>
-
-    <script>
-      (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-
-    <br />
-    <p><img src="/assets/img/database/2020-02-24-database-08.png" alt="" /></p>
-
-<h1 id="관계-데이터-모델의-개요">관계 데이터 모델의 개요</h1>
-<p><br />
-<br /></p>
-
-<ol>
-  <li>
-    <p>관계 데이터 모델이란?</p>
-
-    <ul>
-      <li>
-        <p>관계 데이터 모델</p>
-
-        <ul>
-          <li>개념적 구조를 논리적 구조로 표현한 모델</li>
-          <li>개체에 관한 데이터를 행과 열로 구성된 데이블(릴레이션)에 저장</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <p>관계 데이터 모델의 기본 용어</p>
-
-    <ul>
-      <li>릴레이션 (Relation)
-        <ul>
-          <li>개체에 대한 데이터를 2차원 테이블의 구조로 저장한 것</li>
-          <li>파일 관리 시스템의 파일(File)에 대응</li>
-        </ul>
-      </li>
-    </ul>
-
-    <p><img src="/assets/img/database/2020-02-24-database-08-01.png" alt="" />
- <br />
- <br /></p>
-
-    <ul>
-      <li>
-        <p>속성 (Attribute)</p>
-
-        <ul>
-          <li>릴레이션의 열</li>
-          <li>파일 관리 시스템 파일의 필드(Field)에 대응</li>
-          <li>예</li>
-        </ul>
-      </li>
-    </ul>
-
-    <p><img src="/assets/img/database/2020-02-24-database-08-02.png" alt="" />
- <br />
- <br /></p>
-
-    <ul>
-      <li>
-        <p>투플 (Tuple)</p>
-
-        <ul>
-          <li>릴레이션의 행</li>
-          <li>개체 인스턴스</li>
-          <li>파일 관리 시스템의 레코드(Record)에 대응</li>
-          <li>예 : 회사 사원 개체 집합에 5개의 사원 정보가 있을 경우, 5개의 투플 또는 5개의 개체 인스턴스가 있다고 한다.</li>
-        </ul>
-      </li>
-    </ul>
-
-    <p><img src="/assets/img/database/2020-02-24-database-08-03.png" alt="" />
- <br />
- <br /></p>
-
-    <ul>
-      <li>
-        <p>도메인 (Domain)</p>
-
-        <ul>
-          <li>
-            <p>하나의 속성이 가질 수 있는 모든 값의 집합</p>
-
-            <ul>
-              <li>예: 회사의 직급 - 대표이사, 전무, 상무, 부장, 차장, 과장, 대리, 사원</li>
-            </ul>
-          </li>
-          <li>속성의 특성을 고려한 데이터 타입으로 정의</li>
-          <li>속성 값을 입력 및 수정할 때 적합성의 판단 기준이 됨</li>
-          <li>
-            <p>도메인을 속성의 특성을 고려한 데이터 타입으로 정의</p>
-
-            <ul>
-              <li>예 : 이름 속성의 도메인 : CHAR(20), 나이 속성의 도메인 : INT</li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-    </ul>
-
-    <p><img src="/assets/img/database/2020-02-24-database-08-04.png" alt="" />
- <br />
- <br /></p>
-
-    <ul>
-      <li>
-        <p>널 (Null)</p>
-
-        <ul>
-          <li>속성 값을 모르거나 적합한 값이 없는 경우 사용되는 값</li>
-          <li>해당되는 값이 없음을 의미</li>
-          <li>숫자 0 이나, 공백 문자와 다름</li>
-          <li>널 값은 DBMS마다 표시하는 기호가 다르다.</li>
-          <li>예
-            <ul>
-              <li>쇼핑몰의 회원 가입시 직장정보 입력 칸에 입력을 하지 않은 경우</li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <p>차수 (Degree)</p>
-
-        <ul>
-          <li>한 릴레이션에서 속성의 수, 즉 열의 수</li>
-          <li>모든 릴레이션은 최소 1 이상의 차수를 가지고 있다</li>
-          <li>릴레이션의 차수는 변화가 별로 없다</li>
-          <li>예 : 5개의 속성을 가진 릴레이션의 차수는 5이다.</li>
-        </ul>
-      </li>
-      <li>
-        <p>카디널리티 (Cardinality)</p>
-
-        <ul>
-          <li>한 릴레이션에서 투플의 개수, 즉 행의 수</li>
-          <li>카디널리티가 0 (투플이 없는 릴레이션)인 릴레이션도 있다</li>
-          <li>릴레이션의 카디널리티는 자주 변한다</li>
-        </ul>
-      </li>
-    </ul>
-
-    <p><img src="/assets/img/database/2020-02-24-database-08-05.png" alt="" />
- <br />
- <br /></p>
-  </li>
-</ol>
-
-<p><br />
-<br /></p>
-
-<h1 id="릴레이션의-구성-및-특징">릴레이션의 구성 및 특징</h1>
-
-<p><br />
-<br /></p>
-
-<ol>
-  <li>
-    <p>릴레이션 구성</p>
-
-    <ul>
-      <li>
-        <p>릴레이션 스키마 (Relation Schema) / 릴레이션 내포 (Relation Intension)</p>
-
-        <ul>
-          <li>릴레이션의 이름과 릴레이션에 포함된 속성의 이름으로 정의한 릴레이션의 논리적 구조</li>
-          <li>릴레이션의 논리적 구조</li>
-          <li>릴레이션의 전체구조를 파악할 수 있다</li>
-          <li>자주 바뀌지 않는다.</li>
-          <li>일반적인 표현</li>
-        </ul>
-
-        <p><img src="/assets/img/database/2020-02-24-database-08-06.png" alt="" />
-  <br />
-  <br /></p>
-
-        <ul>
-          <li>
-            <p>예</p>
-
-            <ul>
-              <li>사원(사번, 직책, 이름, 생년월일)</li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <p>릴레이션 인스턴스 (Relation Instance) / 릴레이션 외연 (Relation Extension)</p>
-
-        <ul>
-          <li>한 시점에 릴레이션에 존재하는 투플의 집합</li>
-          <li>릴레이션 인스턴스에 포함된 투플은 릴레이션 스키마에서 정의하는 각 속성의 실제 값으로 구성</li>
-          <li>DBMS의 데이터 조작어를 이용하여 투플의 삽입, 삭제, 수정, 검색을 수행</li>
-          <li>릴레이션 인스턴스는 자주 바뀐다.</li>
-          <li>간단히 릴레이션이라고 부르기도 한다.</li>
-        </ul>
-      </li>
-    </ul>
-
-    <p><img src="/assets/img/database/2020-02-24-database-08-07.png" alt="" />
- <br />
- <br /></p>
-
-    <ul>
-      <li>
-        <p>데이터베이스 스키마와 릴레이션 스키마</p>
-
-        <ul>
-          <li>데이터베이스는 여러 개의 릴레이션으로 구성</li>
-          <li>
-            <p>데이터베이스 스키마</p>
-
-            <ul>
-              <li>데이터베이스의 전체 구조</li>
-              <li>릴레시션 스키마를 모아 놓은 것</li>
-            </ul>
-          </li>
-          <li>데이터베이스 스키마를 설계한다 = 모든 릴레이션 스키마를 정의한다.</li>
-        </ul>
-      </li>
-      <li>
-        <p>데이터베이스 인스턴스와 릴레이션 인스턴스</p>
-
-        <ul>
-          <li>
-            <p>데이터베이스 인스턴스</p>
-
-            <ul>
-              <li>어느 시점에 데이터베이스에 저장된 데이터 내용 전체</li>
-              <li>데이터베이스를 구성하는 모든 릴레이션 인스턴스를 모아 놓은 것</li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-    </ul>
-
-    <p><img src="/assets/img/database/2020-02-24-database-08-08.png" alt="" />
- <br />
- <br /></p>
-  </li>
-  <li>
-    <p>릴레이션의 특징</p>
-
-    <ul>
-      <li>
-        <p>속성의 이름은 중복될 수 없다</p>
-
-        <ul>
-          <li>한 릴레이션의 속성은 다른 이름을 가져야 한다</li>
-        </ul>
-      </li>
-      <li>
-        <p>속성은 단일 값을 가진다.</p>
-
-        <ul>
-          <li>여러 개의 값을 가져야만 하는 경우, 투플을 여러 개 만들어, 속성 값이 단일 값이 되도록 나눈다.</li>
-        </ul>
-      </li>
-      <li>
-        <p>한 속성의 값은 해당 도메인의 값만 가질 수 있다</p>
-      </li>
-      <li>
-        <p>속성은 순서를 갖지 않는다</p>
-
-        <ul>
-          <li>속성의 순서가 달라도 스키마는 동일하다.</li>
-          <li>속성의 순서와 상관없이 같은 속성들로 구성되어 있어야 같은 릴레이션이다.</li>
-          <li>
-            <p>예 : 속성 순서가 다른 두 릴레이션</p>
-
-            <ul>
-              <li>사원(사번, 직책, 이름, 생년월일)</li>
-              <li>사원(사번, 이름, 생년월일, 직책)</li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <p>릴레이션 내의 중복된 투플은 허용되지 않는다</p>
-
-        <ul>
-          <li>동일한 투플은 같은 릴레이션에 존재할 수 없다.</li>
-          <li>모든 투플에는 자신을 식별할 수 있는 속성을 가지고 있으므로, 동일한 투플이 존재하지 않는다.</li>
-        </ul>
-      </li>
-      <li>
-        <p>하나의 릴레이션에서 투플의 순서는 무의미하다.</p>
-
-        <ul>
-          <li>투플의 순서가 빠뀐다고 다른 릴레이션이 될 수 없다.</li>
-          <li>릴레이션에 투플이 삽입된 순서대로 저장된다.</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-</ol>
-
-    <br />
-    <br />
-  </div>
-  <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
+  <p class="read-more"><a class="heading" href="/devlog/2020/02/13/database-02/" data-flip="title">바로가기 </a>
+  </p>
   
 
 </article>
 
 
-<div class="share">
-  <h2>Share this post</h2>
-  <div class="share-body">
-    <a href="http://twitter.com/share?text=[Database] 관계 데이터 모델의 기본용어와 릴레이션 구성요소&amp;url=https://m-veloper.github.io/devlog/2020/02/24/database-08/"
-      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
-      <span class="icon-twitter">
-      </span>
-    </a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://m-veloper.github.io/devlog/2020/02/24/database-08/"
-      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
-      <span class="icon-facebook">
-      </span>
-    </a>
-  </div>
-</div>
-<br />
 
-
-
-<!--
-
-
-  <aside class="author" role="complementary">
-    <div class="author">
-  <h2 class="page-title hr">
-    About
-  </h2>
-<div class="author-body">
-  
-    
-  
-
-  
-
-  <img
-    src="/assets/img/me.jpeg"
-    class="me"
-    alt="m_veloper"
-    srcset="/assets/img/me.jpeg 1x,/assets/img/me.jpeg 2x"
-    
-  />
-
-
-  
-  <div class="author-body-description">
-    
-
-  </div>
-</div>
-</div>
-
-  </aside>
-
--->
-
-
-
-<aside class="related" role="complementary">
-  <h2 class="hr">Related Posts</h2>
-
-  <ul class="related-posts">
-    
-      
-      
-      
-        
-        
-          
-
-
-
-<style>
-  .related-posts>li>small{
-    margin-left: 10px;
+  <style>
+  #tag{
+    margin-bottom: 0.875rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    height: 2rem;
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    margin-right: 0.875rem;
+    color: rgb(12, 166, 120);
+    font-size: 0.9rem;
+    background: rgb(241, 243, 245);
+    border-radius: 1rem;
+    text-decoration: none;
   }
-</style>
-<li class="h4">
-  <a href="/devlog/2020/02/25/unix-07/" data-flip="title">
-    <span>[유닉스] 디렉토리 이동</span>
-  </a>
-  <small><time datetime="2020-02-25T00:00:00+09:00">
-    2020년 02월 25일
-  </time></small>
-</li>
-
-        
-      
-        
-        
-          
-
-
-
-<style>
-  .related-posts>li>small{
-    margin-left: 10px;
+  .post-title{
+    font-size: 1.3rem;
   }
-</style>
-<li class="h4">
-  <a href="/devlog/2020/02/24/database-09/" data-flip="title">
-    <span>[Database] 키 (Key)</span>
-  </a>
-  <small><time datetime="2020-02-24T00:00:00+09:00">
-    2020년 02월 24일
-  </time></small>
-</li>
-
-        
-      
-        
-          
-          
-        
-        
-          
-
-
-
-<style>
-  .related-posts>li>small{
-    margin-left: 10px;
+  .post-title a{
+    color: #999 !important;
   }
-</style>
-<li class="h4">
-  <a href="/devlog/2020/02/23/database-07/" data-flip="title">
-    <span>[Database] 약한 개체와 IE표기법</span>
-  </a>
-  <small><time datetime="2020-02-23T00:00:00+09:00">
-    2020년 02월 23일
-  </time></small>
-</li>
 
-        
-      
+  .post-date{
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+
+  .read-more {
+    margin-top: 0;
+  }
+  .mb6 {
+    margin-bottom: 8rem;
+  }
+
+</style>
+
+
+
+<article id="post-devlog/2020/02/12/database-01" class="post mb6 this" role="article">
+  <header>
+    <!--post 내용중 이미지 영역-->
+    <p><img src="/assets/img/database/2020-02-12-database-01.png" alt="" /></p>
+
+
+
+    <!--제목-->
+    <h1 class="post-title">
+      <a href="/devlog/2020/02/12/database-01/" data-flip="title">
+      [Database] 데이터베이스
+      </a>
+    </h1>
+
+    <!--날짜-->
+    <p class="post-date heading">
+      <!--<time datetime="2020-02-12T00:00:00+09:00">12 Feb 2020</time>-->
+      <time datetime="2020-02-12T00:00:00+09:00">2020년 02월 12일</time>
+    </p>
+
+    <!--카테고리영역-->
     
+
+
+
+
+
+
+
+
+
+<a href="/category/devlog/" data-flip="title" id="tag">Devlog</a>
+
+    
+
+
+
+
+
+
+
+
+
+<a href="/tag/devlog-database/" data-flip="title" id="tag">Database</a>
+
+
+    
+  <div class="hr" style="padding-bottom:0"></div>
+
+
+
+  </header>
+  
+
+  
+  <p class="read-more"><a class="heading" href="/devlog/2020/02/12/database-01/" data-flip="title">바로가기 </a>
+  </p>
+  
+
+</article>
+
+
+
+
+<h2 class="sr-only">Pagination</h2>
+<nav class="pagination heading" role="navigation">
+  <ul>
+    <li class="pagination-item older" >
+      
+        <span>이전</span>
+      
+    </li>
+    <li class="pagination-item newer" >
+      
+        <a rel="prev" href="/page-2/">다음</a>
+      
+    </li>
   </ul>
-</aside>
+</nav>
 
 
-
-      
-        <aside class="comments" role="complementary">
-  <h2>Comments</h2>
-  <hr/>
-
-  <div id="disqus_thread"></div>
-
-  <script>
-    !function (s, i) {
-  function e(e) {
-    var t = s.pageYOffset || i.body.scrollTop;
-    s.DISQUS && !s._disqusThis && !s._disqusFirst && t + s.innerHeight >= s._disqusThreadOffsetTop && (s._disqusThis = !0, s.DISQUS.reset(
-      { reload: !0, config: d }))
-  }
-
-  var d = function () {
-    this.page.title = "[Database] 관계 데이터 모델의 기본용어와 릴레이션 구성요소",
-      this.page.identifier = "/devlog/2020/02/24/database-08",
-      this.page.url = "https://m-veloper.github.io/devlog/2020/02/24/database-08/"
-  };
-  s._disqusFirst = void 0 === s._disqusFirst || s._disqusFirst, s._disqusLoading = void 0 !== s._disqusLoading && s._disqusLoading, s._disqusThis = !1, s._disqusThreadOffsetTop = i.getElementById(
-    "disqus_thread").offsetTop, s._disqusLoading ? s._disqusFirst = !1 : (s._disqusLoading = !0, loadJSDeferred(
-    "//m-veloper.disqus.com/embed.js"), s.addEventListener ? s.addEventListener(
-    "scroll",
-    e,
-    { passive: !0 }) : s.attachEvent ? s.attachEvent("onscroll", e) : s.onscroll = e)
-}(window, document);
-
-  </script>
-  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-</aside>
 
       
 

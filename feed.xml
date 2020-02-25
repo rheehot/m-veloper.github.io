@@ -5,9 +5,536 @@
     <description></description>
     <link>https://m-veloper.github.io/</link>
     <atom:link href="https://m-veloper.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 24 Feb 2020 21:02:17 +0900</pubDate>
-    <lastBuildDate>Mon, 24 Feb 2020 21:02:17 +0900</lastBuildDate>
+    <pubDate>Tue, 25 Feb 2020 21:40:47 +0900</pubDate>
+    <lastBuildDate>Tue, 25 Feb 2020 21:40:47 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>[유닉스] 디렉토리 이동</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-02-25-unix-07.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;현재-디렉토리-확인&quot;&gt;현재 디렉토리 확인&lt;/h1&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;홈 디렉토리&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;로그인을 한 후, 사용자가 기본으로 놓이게 되는 디렉토리 위치를 홈 디렉토리(home directory)라고 함&lt;/li&gt;
+      &lt;li&gt;시스템 관리자가 계정을 만들 때 정함&lt;/li&gt;
+      &lt;li&gt;해당 사용자가 모든 권한을 가짐&lt;/li&gt;
+      &lt;li&gt;어느 작업 디렉토리에서든 인수 없이 cd 명령을 입력하면 홈 디렉토리로 이동&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;pwd(print working directory) 명령&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;사용자의 현재 디렉토리 위치를 확인&lt;/li&gt;
+      &lt;li&gt;현재 작업 디렉토리의 절대 경로를 출력&lt;/li&gt;
+      &lt;li&gt;로그인한 직후의 현재 디렉토리는 사용자의 홈 디렉토리&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;형식 : pwd&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ pwd
+  /home/ksshin
+  $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;디렉토리-이동&quot;&gt;디렉토리 이동&lt;/h1&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;cd(change directory) 명령&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;현재 작업 디렉토리를 변경&lt;/li&gt;
+      &lt;li&gt;형식 : cd [디렉토리명]&lt;/li&gt;
+      &lt;li&gt;디렉토리 이름을 주지 않으면 홈 디렉토리로 이동&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;‘..’를 사용하면 부모(상위) 디렉토리로 이동&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ cd lecture
+  $ pwd
+  /home/ksshin/lecture
+  $ cd ..
+  $ pwd
+  /home/ksshin
+  $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;/home/ksshin/lecture 위치에서 /home/ksshin/temp&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;/home/ksshin/lecture 위치에서 /home/ksshin/temp 디렉토리로 이동하는 방법&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;
+            &lt;p&gt;절대 경로명 사용&lt;/p&gt;
+
+            &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ cd /home/ksshin/temp
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;            &lt;/div&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;상대 경로명 사용&lt;/p&gt;
+
+            &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ cd ../temp
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;            &lt;/div&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;/home/ksshin/lecture 위치에서 바로 위의 부모 디렉토리로 이동하는 방법&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;
+            &lt;p&gt;절대 경로명 사용&lt;/p&gt;
+
+            &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ cd /home/ksshin
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;            &lt;/div&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;상대 경로명 사용&lt;/p&gt;
+
+            &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ cd ../
+  또는
+  $ cd ..
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;            &lt;/div&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;바로 위가 아니라 그 이전의 부모 디렉토리로 이동하는 방법&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ cd ../../
+  또는
+  $ cd ../..
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;홈 디렉토리로 이동하는 방법&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;cd /home/ksshin&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;절대 경로를 사용해 홈 디렉토리로 이동&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;cd ../home/ksshin&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;상대 경로를 사용해 홈 디렉토리로 이동&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;cd ~&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;홈 디렉토리를 나타내는 특수 기호 ~를 사용해 홈 디렉토리로 이동&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;cd&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;목적지를 지정하지 않고 홈 디렉토리로 이동&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;예)&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ cd
+  $ pwd
+  /home/ksshin
+  $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;디렉토리-파일-목록-확인&quot;&gt;디렉토리 파일 목록 확인&lt;/h1&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;ls(list) 명령&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;디렉토리의 내용을 출력&lt;/li&gt;
+      &lt;li&gt;형식 : ls [옵션] [파일 또는 디렉토리명]&lt;/li&gt;
+      &lt;li&gt;옵션&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-02-25-unix-07-01.png&quot; alt=&quot;&quot; /&gt;
+ &lt;br /&gt;
+ &lt;br /&gt;&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;사용 예&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;ls&lt;/li&gt;
+          &lt;li&gt;ls –al /tmp&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;현재 디렉토리 목록 확인&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;디렉토리 이름을 지정하지 않고 ls 명령만 사용&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ ls
+  $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;현재 디렉토리에 파일이 없음을 나타냄&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;‘.’으로 시작하는 숨김 파일을 포함한 모든 파일 목록 보여주기&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ ls –a
+  . .. .bash_history .bach_rc
+  $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;지정한 디렉토리 목록 확인&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;디렉토리 이름을 지정하면 위치 변경 없이 지정한 디렉토리 아래의 파일 목록 확인 가능&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ ls /
+  bin cdrom etc initrd.img sbin
+  boot dev home lib usr
+  $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;파일의 종류 표시&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;
+            &lt;p&gt;/가 붙으면 디렉토리, @는 심볼릭 링크 파일, *는 실행 가능한 파일&lt;/p&gt;
+
+            &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ ls –F /
+  bin/ cdrom/ etc/ initrd.img@ sbin/
+  boot/ dev/ home/ lib/ usr/
+  $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;            &lt;/div&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;파일 정보 확인&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;디렉토리 이름 대신 파일 이름 지정하면 해당 파일이 존재하는지 확인 가능&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;파일이 존재하면 파일 이름 출력&lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;파일이 없으면 없다는 메시지 출력&lt;/p&gt;
+
+            &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ ls .profile
+  .profile
+  $ ls test
+  test : No such file or directory
+  $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;            &lt;/div&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;상세 정보 보기&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;파일의 상세 정보는 –l 옵션(long) 사용&lt;/li&gt;
+      &lt;li&gt;인자가 디렉토리이면 디렉토리가 포함한 파일의 상세한 정보를 출력&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;인자가 파일이면 파일의 상세한 정보 출력&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ ls –l
+  total 48
+  drwxr-xr-x 2 ksshin ksshin 4096 5월 30 13:20 Desktop
+  drwxr-xr-x 2 ksshin ksshin 4096 5월 30 13:20 Documents
+  drwxr-xr-x 2 ksshin ksshin 4096 5월 30 13:20 Downloads
+  -rwxr—r-- 1 ksshin ksshin 8980 5월 30 13:20 examples.desktop
+  drwxr-xr-x 2 ksshin ksshin 4096 5월 30 13:20 Music
+  drwxr-xr-x 2 ksshin ksshin 4096 5월 30 13:20 Pictures
+  drwxr-xr-x 2 ksshin ksshin 4096 5월 30 13:20 Public
+  drwxr-xr-x 2 ksshin ksshin 4096 5월 30 13:20 Templates
+  drwxr-xr-x 2 ksshin ksshin 4096 5월 30 13:20 Videos
+  $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-02-25-unix-07-02.png&quot; alt=&quot;&quot; /&gt;
+ &lt;br /&gt;
+ &lt;br /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;디렉토리 자체 정보 확인&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;디렉토리의 마지막 수정 시간 등 자체 정보는 –d 옵션으로 확인&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;상세한 내용을 보여주는 –l 옵션과 함께 사용&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ ls –ld /
+  drwxr-xr-x root root 4096 5월 30 13:20 /
+  $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;와일드카드&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;다수의 파일을 지정하는데 사용&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-02-25-unix-07-03.png&quot; alt=&quot;&quot; /&gt;
+ &lt;br /&gt;
+ &lt;br /&gt;&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;“p”로 시작하는 모든 파일을 보고자 할 때&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ ls p*
+  print_file print_txt ps_tool
+  $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;“c”로 시작하는 세 개의 문자로 된 파일을 보고자 할 때&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ ls
+  apropos bin can.mpeg cnn copy.txt corn_head man work
+  $ ls c??
+  cnn
+  $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;“a”에서부터 “c”까지의 문자로 시작되는 파일을 보고자 할 때&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ ls [a-c]*
+  audio_file ac_dc character configure_file
+  $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;“a” 또는 “ch” 패턴이 들어간 파일을 보고자 할 때&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ ls {a,ch}*
+  audio_file ac_dc character
+  $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+</description>
+        <pubDate>Tue, 25 Feb 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/devlog/2020/02/25/unix-07/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/02/25/unix-07/</guid>
+        
+        <category>unix</category>
+        
+        
+        <category>devlog</category>
+        
+      </item>
+    
+      <item>
+        <title>[자바스크립트] 문자열 자르기 (split, substring, substr)</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/javascript/2020-02-25-javascript-02.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;문자열-자르기-split-substring-substr&quot;&gt;문자열 자르기 (split, substring, substr)&lt;/h1&gt;
+&lt;h3 id=&quot;how-to-divide-string-in-javascript&quot;&gt;How to divide string in Javascript&lt;/h3&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;문자열의 일부만 잘라 사용할 경우 사용&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//특정 문자를 기준으로 문자열을 자를려면 split을 사용하면 된다.
+    
+var string='2020-02-25';
+var strArray = string.split('-');
+    
+console.log(strArray[0]);
+console.log(strArray[1]);
+console.log(strArray[2]);
+    
+    
+// 다음으로 문자열에서 기준없이 사용하고 싶은 
+// 문자열만 골라 가져오고 싶다면 substring함수를 사용하면 된다.
+// substring함수는 문자열의 길이를 기준으로 자른다고 표현하기보다 일정 문자열을 반환한다.
+// substring(시작인덱스, 종료인덱스);
+    
+var year=string.substring(0,4) //2013
+var month=string.substring(5,7) //06
+var day=string.substring(8,10) //11
+    
+    
+//위와 비슷하지만 조금 다른 함수 substr이 있다.
+//substr(시작인덱스, 길이)
+    
+var year=string.substr(0,4) //2013
+var month=string.substr(5,2) //06
+var day=string.substr(8,2) //11
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+</description>
+        <pubDate>Tue, 25 Feb 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/tip/2020/02/25/javascript-02/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/02/25/javascript-02/</guid>
+        
+        <category>javascript</category>
+        
+        
+        <category>tip</category>
+        
+      </item>
+    
+      <item>
+        <title>[자바스크립트] 문자를 숫자로 바꾸기(String to int)</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/javascript/2020-02-25-javascript-01.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;자바스크립트-문자를-숫자로-바꾸기string-to-int&quot;&gt;자바스크립트 문자를 숫자로 바꾸기(String to int)&lt;/h1&gt;
+&lt;h3 id=&quot;how-to-convert-string-to-number-in-javascript&quot;&gt;How to convert String to number in javascript&lt;/h3&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;함수를 활용한 예제&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;읽기 좋은 코드와 가장 좋은 방법은 “Number” 함수를 사용하는 것.&lt;/li&gt;
+      &lt;li&gt;parseInt 함수를 사용하면 소수점을 포함하는 숫자나 문자열도 정수로 변환됨&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;Number 함수는 자바스크립트에서 형변환을 위해 제공하는 함수이기 때문에 가장 의도를 잘 나타내는 코드 작성 가능하다는 장점&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  //parseInt()
+  var num = parseInt(&quot;111&quot;)
+        
+  //parseFloat()
+  var num = parseFloat(&quot;111&quot;)
+        
+  //Number() - 이 방법이 제일 베스트 방법
+  var num = Number(&quot;111&quot;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;비트 연산을 활용한 예제&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;비트 연산을 하게 될 경우 “123.001”과 같이 소수점이 있는 숫자는 모두 정수로 변환됨&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  //Bitwise Bitwise Right Shift
+  var num = &quot;111&quot; &amp;gt;&amp;gt;&amp;gt; 0
+        
+  //Bitwise Right Shift
+  var num = &quot;111&quot; &amp;gt;&amp;gt; 0
+        
+  //Bitwise Left Shift
+  var num = &quot;111&quot; &amp;lt;&amp;lt; 0
+        
+  //Bitwise OR
+  var num = 0 | &quot;111&quot;
+        
+  //Bitwise XOR
+  var num = 0 ^ &quot;111&quot;
+        
+  //Bitwise NOT NOT
+  var num = ~~&quot;111&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;연산을 통한 활용&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;더하기, 곱하기, 나누기 등의 연산을 시도하면 자동으로 형변환이됨&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; var num = +&quot;111&quot;
+        
+ var num = 1 * &quot;111&quot;
+        
+ var num = &quot;111&quot; / 1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;br /&gt;
+참고 : https://programmingsummaries.tistory.com/355&lt;/p&gt;
+</description>
+        <pubDate>Tue, 25 Feb 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/tip/2020/02/25/javascript-01/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/02/25/javascript-01/</guid>
+        
+        <category>javascript</category>
+        
+        
+        <category>tip</category>
+        
+      </item>
     
       <item>
         <title>[Database] 키 (Key)</title>
