@@ -31,14 +31,15 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="naver-site-verification" content="fa37cbf8ce41948de6e94c01991ffa04cea9b093"/>
 <meta name="google-site-verification" content="5M4Zw9wg_UqQkvlayfb5Mc_ogvJdc013w_zLUkxgO-Y" />
-<meta property="og:title" content="[Database] 약한 개체와 IE표기법">
+<meta property="og:title" content="[유닉스] 디렉토리 이름 변경 및 검색">
 <meta property="og:type" content="article">
 
 
 
 
 
-  <meta property="og:image" content="https://m-veloper.github.io/assets/img/logo.png">
+  <meta property="og:image" content="https://m-veloper.github.io/assets//img/linux-logo.png">
+  <br/>
 
 
 <meta property="og:image:width" content="640" />
@@ -46,7 +47,7 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 
 
 
-  <title>[Database] 약한 개체와 IE표기법 &middot; m_veloper</title>
+  <title>[유닉스] 디렉토리 이름 변경 및 검색 &middot; m_veloper</title>
 
 
 
@@ -62,17 +63,15 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 <!-- =============== -->
 <!-- LINKS           -->
 <!-- =============== -->
-<link rel="canonical" href="https://m-veloper.github.io/devlog/2020/02/23/database-07/">
-<meta property="og:url" content="https://m-veloper.github.io/devlog/2020/02/23/database-07/">
+<link rel="canonical" href="https://m-veloper.github.io/devlog/2020/02/26/unix-09/">
+<meta property="og:url" content="https://m-veloper.github.io/devlog/2020/02/26/unix-09/">
 
 <link rel="alternate" type="application/atom+xml" title="m_veloper Feed" href="https://m-veloper.github.io/feed.xml">
 
 
-  <link rel="prev" href="https://m-veloper.github.io/devlog/2020/02/22/unix-06/">
+  <link rel="prev" href="https://m-veloper.github.io/devlog/2020/02/26/unix-08/">
 
 
-
-  <link rel="next" href="https://m-veloper.github.io/devlog/2020/02/24/database-08/">
 
 
 <link rel="apple-touch-icon" href="https://m-veloper.github.io/apple-touch-icon.png">
@@ -270,18 +269,18 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 
 
 
-<article id="post-devlog/2020/02/23/database-07" class="post this" role="article">
+<article id="post-devlog/2020/02/26/unix-09" class="post this" role="article">
   <header>
 
     <h1 class="post-title">
       
-        [Database] 약한 개체와 IE표기법
+        [유닉스] 디렉토리 이름 변경 및 검색
         
     </h1>
 
     <p class="post-date heading">
-      <!--<time datetime="2020-02-23T00:00:00+09:00">23 Feb 2020</time>-->
-      <time datetime="2020-02-23T00:00:00+09:00">2020년 02월 23일</time>
+      <!--<time datetime="2020-02-26T00:00:00+09:00">26 Feb 2020</time>-->
+      <time datetime="2020-02-26T00:00:00+09:00">2020년 02월 26일</time>
     </p>
     
 
@@ -305,7 +304,7 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 
 
 
-<a href="/tag/devlog-database/" data-flip="title" id="tag">Database</a>
+<a href="/tag/devlog-unix/" data-flip="title" id="tag">Unix</a>
 
 
     
@@ -319,7 +318,9 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
   
   <div class="markdown-body">
 
-    <!--  -->
+    <!-- 
+    <div class="head-image"><img src="https://m-veloper.github.io/assets//img/linux-logo.png" /></div>
+    <br /> -->
 
     <div class='row'>
       <ins class="adsbygoogle myAd1190" data-ad-client="ca-pub-9134477021095729" data-ad-slot="6559875097"></ins>
@@ -331,209 +332,422 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
     </script>
 
     <br />
-    <p><img src="/assets/img/database/2020-02-23-database-07.png" alt="" /></p>
+    <p><img src="/assets/img/unix/2020-02-26-unix-09.png" alt="" /></p>
 
-<h1 id="약한-개체의-개체타입-식별관계타입-및-식별자">약한 개체의 개체타입, 식별관계타입 및 식별자</h1>
+<h1 id="디렉토리-이동과-이름-변경">디렉토리 이동과 이름 변경</h1>
 <p><br />
 <br /></p>
 
-<ol>
+<blockquote>
+  <h4 id="1-mv">1. mv</h4>
+</blockquote>
+
+<ul>
+  <li>디렉토리를 옮기거나 이름을 변경</li>
+  <li>형식 : mv [directory] [target directory]</li>
+  <li>[directory]는 옮기거나 이름을 바꿀 디렉토리, [target directory]는 목적하고자 하는 디렉토리의 이름</li>
+</ul>
+
+<p><br /><br /></p>
+<blockquote>
+  <h4 id="2-디렉토리-이름-변경">2. 디렉토리 이름 변경</h4>
+</blockquote>
+
+<ul>
   <li>
-    <p>약한 개체 타입</p>
+    <p>source 디렉토리를 source_file로 이름 변경</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   $ mv source source_file
+   $
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p><br /><br /></p>
+<blockquote>
+  <h4 id="3-디렉토리-이동">3. 디렉토리 이동</h4>
+</blockquote>
+
+<ul>
+  <li>[target directory]가 존재하지 않을 때</li>
+  <li>
+    <p>디렉토리를 옮기는 기능과 이름을 바꾸는 두 가지 기능</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   $ ls
+   document source_file
+   $ mv source_file source
+   $ ls
+   document source
+   $
+</code></pre></div>    </div>
 
     <ul>
-      <li>상위 개체 타입에 종속된 개체 타입</li>
-      <li>이중 직사각형으로 표현</li>
-      <li>예 : 직원의 가족 – 직원 개체 타입이 있어야 가족 개체 타입을 식별할 수 있다.</li>
+      <li>현재 작업 디렉토리에 source 디렉토리가 없었으므로, mv 명령에 의해 source_file이 source로 디렉토리 이름이 바뀜</li>
     </ul>
-
-    <p><img src="/assets/img/database/2020-02-23-database-07-01.png" alt="" />
- <br />
- <br /></p>
   </li>
-  <li>
-    <p>식별 관계 타입</p>
-
+  <li>[target_directory]가 존재할 때
     <ul>
-      <li>강한 개체 타입과 약한 개체 타입의 관계를 나타냄</li>
-      <li>강한 개체 타입의 기본키를 상속받아 사용함</li>
-      <li>이중 마름모꼴로 표현</li>
+      <li>
+        <p>[directory] 자체를 [target_directory]로 옮기는 기능</p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ pwd
+  /home/ksshin/Unix
+  $ ls
+  document source
+  $ mkdir backup
+  backup document source
+  $ mv document backup
+  $ ls
+  backup source
+  $ ls backup
+  document
+</code></pre></div>        </div>
+      </li>
+      <li>backup이라는 디렉토리 생성 후 mv 명령어를 사용</li>
+      <li>document 디렉토리가 backup 디렉토리의 하위 디렉토리로 이동한 것</li>
+      <li>즉, document 디렉토리는 “~/Unix/document”라는 경로에서 “~/Unix/backup/document”로 이동된 것</li>
+      <li>만약 document 디렉토리 내에 doc1, doc2라는 두 개의 서브디렉토리를 가지고 있다면, 서브디렉토리까지 모두 옮겨지게 됨</li>
     </ul>
-
-    <p><img src="/assets/img/database/2020-02-23-database-07-02.png" alt="" />
- <br />
- <br /></p>
   </li>
-  <li>
-    <p>식별자 (Discriminator) / 부분키 (Partial key)</p>
+</ul>
 
-    <ul>
-      <li>약한 개체 타입은 자신의 기본키만으로 식별이 어려우므로, 상위의 강한 개체 타입의 기본키를 상속받아 결합하여 사용</li>
-      <li>약한 개체 타입은 식별자를 사용하여 개별 개체를 식별할 수 있다.</li>
-    </ul>
+<p><br /><br /></p>
+<h1 id="파일과-디렉토리-검색">파일과 디렉토리 검색</h1>
+<p><br /></p>
 
-    <p><img src="/assets/img/database/2020-02-23-database-07-03.png" alt="" />
- <br />
- <br /></p>
-  </li>
-  <li>
-    <p>예</p>
+<blockquote>
+  <h4 id="1-find-명령">1. find 명령</h4>
+</blockquote>
 
-    <ul>
-      <li>직원 개체 타입과 가족 개체 타입은 부양 관계를 가진다.</li>
-      <li>직원 – 자기 자신만으로 존재 가능, 사번을 키로 구분한다.</li>
-      <li>가족 – 어느 직원의 가족인지 알기 위하여 직원의 사번과 가족의 이름으로 식별이 가능하다</li>
-    </ul>
+<ul>
+  <li>디렉토리에서 원하는 파일을 찾아줌</li>
+  <li>형식 : find [path] [expression]</li>
+  <li>[path]는 검색을 시작할 위치를 지정하는 경로</li>
+  <li>[expression]은 검색 조건과 동작</li>
+  <li>[path]에 지정된 디렉토리에서 시작하여 서브디렉토리까지 검색</li>
+</ul>
 
-    <p><img src="/assets/img/database/2020-02-23-database-07-04.png" alt="" />
- <br />
- <br /></p>
-  </li>
-  <li>
-    <p>약한개체타입, 식별관계타입 및 식별자 정리</p>
-
-    <p><img src="/assets/img/database/2020-02-23-database-07-05.png" alt="" />
- <br />
- <br /></p>
-  </li>
-</ol>
-
-<p><br />
+<p><img src="/assets/img/unix/2020-02-26-unix-09-01.png" alt="" />
+<br />
 <br /></p>
 
-<h1 id="약한-개체의-개체타입-식별관계타입-및-식별자-1">약한 개체의 개체타입, 식별관계타입 및 식별자</h1>
+<blockquote>
+  <h4 id="2-파일-검색">2. 파일 검색</h4>
+</blockquote>
 
-<p><br />
-<br /></p>
-
-<p>IE란()Information Engineering Notation)</p>
-
-<p>새발 표기법(Crow-feet Notation) : 관계 대응수를 새발 모양의 기호로 표현</p>
-
-<ol>
+<ul>
   <li>
-    <p>피터첸 표기법과 IE표기법</p>
+    <p>파일 검색 결과를 화면에 출력하므로 –print 옵션은 생략해도 됨</p>
 
-    <p><img src="/assets/img/database/2020-02-23-database-07-06.png" alt="" />
- <br />
- <br /></p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ find . -name mynote.txt
+./temp/mynote.txt
+$
+</code></pre></div>    </div>
   </li>
-  <li>
-    <p>개체의 표현</p>
+</ul>
 
-    <p><img src="/assets/img/database/2020-02-23-database-07-07.png" alt="" />
- <br />
- <br /></p>
-  </li>
-  <li>
-    <p>속성의 표현</p>
+<p><br /><br /></p>
+<blockquote>
+  <h4 id="3-와일드카드-사용">3. 와일드카드 사용</h4>
+</blockquote>
 
-    <p><img src="/assets/img/database/2020-02-23-database-07-08.png" alt="" />
- <br />
- <br /></p>
-  </li>
+<ul>
+  <li>와일드카드 사용시 작은따옴표로 묶어 주어야 파일명으로 인식</li>
   <li>
-    <p>관계의 표현</p>
+    <p>현재 디렉토리 내에서 원하는 my로 시작되는 모든 파일을 찾는 명령</p>
 
-    <p><img src="/assets/img/database/2020-02-23-database-07-09.png" alt="" />
- <br />
- <br /></p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ find . -name ‘my*.*’ -print
+  ./temp/mynote.txt
+  ./temp/work/prog/myprog.txt
+  ./ksshin/Unix/ch2/source/mysource.c
+  $
+</code></pre></div>    </div>
   </li>
+</ul>
+
+<p><br /><br /></p>
+<blockquote>
+  <h4 id="4-파일-크기로-검색">4. 파일 크기로 검색</h4>
+</blockquote>
+
+<ul>
+  <li>-size 옵션 사용</li>
   <li>
-    <p>관계대응수의 표현</p>
+    <p>현재 디렉토리 내에서 my로 시작하는 파일 중 2000바이트 이하인 것을 찾는 명령</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ find . -name ‘my*.*’ -print -size -2000c
+  ./temp/mynote.txt
+  $
+</code></pre></div>    </div>
 
     <ul>
-      <li>1:N 관계 대응수</li>
+      <li>-2000c에서 –2000은 2000보다 적은 수</li>
+      <li>“c“는 바이트(byte) 단위로 계산하라는 의미</li>
+      <li>킬로바이트(KB) 단위는 “k”, “-2000c“는 “–2k“와 같은 의미</li>
     </ul>
+  </li>
+</ul>
 
-    <p><img src="/assets/img/database/2020-02-23-database-07-10.png" alt="" />
- <br />
- <br /></p>
+<p><br /><br /></p>
+<blockquote>
+  <h4 id="5-비어있는-파일-검색">5. 비어있는 파일 검색</h4>
+</blockquote>
 
-    <p><img src="/assets/img/database/2020-02-23-database-07-11.png" alt="" />
- <br />
- <br /></p>
+<ul>
+  <li>-empty 옵션 사용</li>
+  <li>
+    <p>현재 디렉토리에서 ‘.txt’로 끝나는 비어 있는 파일 검색</p>
 
-    <ul>
-      <li>1:1 관계 대응수</li>
-    </ul>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ find . -type f -name ‘*.txt’ -empty
+  ./temp/mynote.txt
+  $
+</code></pre></div>    </div>
+  </li>
+</ul>
 
-    <p><img src="/assets/img/database/2020-02-23-database-07-12.png" alt="" />
- <br />
- <br /></p>
+<p><br /><br /></p>
+<blockquote>
+  <h4 id="6-찾아낸-파일을-자동으로-삭제">6. 찾아낸 파일을 자동으로 삭제</h4>
+</blockquote>
 
-    <ul>
-      <li>M:N 관계대응수</li>
-    </ul>
+<ul>
+  <li>-exec 옵션 사용</li>
+  <li>
+    <p>비어 있는 파일을 찾아내고 자동 삭제</p>
 
-    <p><img src="/assets/img/database/2020-02-23-database-07-13.png" alt="" />
- <br />
- <br /></p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ ls temp
+  mynote.txt work
+  $ find . -type f -name ‘*.txt’ -empty -exec rm -f {} \;
+  $ ls temp
+  work
+  $
+</code></pre></div>    </div>
+  </li>
+  <li>-exec와 \; 사이에 기술된 부분이 검색된 파일에 적용될 명령</li>
+  <li>삭제하기 전에 파일을 하나씩 확인하고 싶으면 –exec 대신 –ok를 사용</li>
+  <li>이후 물어볼 때 y 입력하면 파일이 삭제됨</li>
+</ul>
+
+<p><br /><br /></p>
+<blockquote>
+  <h4 id="7-find-결과를-파일로-저장">7. find 결과를 파일로 저장</h4>
+</blockquote>
+
+<ul>
+  <li>서브디렉토리가 많을 경우 find 명령은 실행 시간이 오래 걸림</li>
+  <li>
+    <p>find 명령의 실행 결과를 화면에 출력하지 않고 파일로 저장하면 편리</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ find . -name mynote.txt &gt; find_result
+$
+</code></pre></div>    </div>
   </li>
   <li>
-    <p>참여도의 표현</p>
+    <p>결과 파일 확인</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cat find_result
+./temp/mynote.txt
+$
+</code></pre></div>    </div>
+  </li>
+  <li>와일드카드를 사용하여 특정 문자를 포함한 파일 여러 개를 검색할 경우 실행 결과가 보이지 않고 커서만 깜박임.</li>
+  <li>오래 기다리면 프롬프트가 뜨고 명령의 실행이 끝났음을 알려줌</li>
+</ul>
+
+<p><br /><br /></p>
+<blockquote>
+  <h4 id="8-출력-재지정-리다이렉션-output-redirection">8. 출력 재지정 (리다이렉션, output redirection)</h4>
+</blockquote>
+
+<ul>
+  <li>출력의 방향을 바꾸는 것</li>
+  <li>
+    <p>형식 : 명령 1&gt; 파일명, 명령 &gt; 파일명, 명령 » 파일명</p>
 
     <ul>
-      <li>
-        <p>부분 참여
- <img src="/assets/img/database/2020-02-23-database-07-14.png" alt="" />
- <br />
- <br /></p>
-      </li>
-      <li>
-        <p>전체 참여</p>
-      </li>
+      <li>1은 표준 출력을 나타내는 파일 디스크립터이며 생략할 수 있음</li>
     </ul>
+  </li>
+  <li>명령의 결과를 화면에 보여주는 대신 파일로 저장할 때 사용</li>
+  <li>파일이 존재하지 않을 경우 새로 생성</li>
+  <li>
+    <p>파일이 존재할 경우</p>
 
-    <p><img src="/assets/img/database/2020-02-23-database-07-15.png" alt="" />
- <br />
- <br /></p>
+    <ul>
+      <li>기존 파일의 내용을 없앨 때는 &gt; 기호 사용</li>
+      <li>기존 파일 뒤에 내용을 추가할 때는 » 기호 사용</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /><br /></p>
+<blockquote>
+  <h4 id="9-출력-재지정-사용-예">9. 출력 재지정 사용 예</h4>
+</blockquote>
+
+<ul>
+  <li>
+    <p>일반 명령의 결과를 파일에 저장</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ date &gt; test
+  $ cat test
+  2015. 06. 01. (월) 10:11:56 KST
+  $
+</code></pre></div>    </div>
   </li>
   <li>
-    <p>강한개체와 약한개체의 표현</p>
+    <p>편집기를 사용하지 않고 명령어 라인에서 간단한 텍스트 파일 만들기</p>
 
-    <ul>
-      <li>(강한 개체 : 약한 개체) 관계 대응수 = ( 1 : N )</li>
-      <li>(강한 개체 : 약한 개체) 참여도 = ( 전체 : 부분 )</li>
-    </ul>
-
-    <p><img src="/assets/img/database/2020-02-23-database-07-16.png" alt="" />
- <br />
- <br /></p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ cat &gt; list1.txt
+  Hi !
+  This is the first list.
+  ^D
+    
+    
+    
+  $ cat &gt; list2.txt
+  Hi !
+  This is the second list.
+  ^D
+    
+    
+  $ cat list1.txt list2.txt &gt; list3.txt
+  $ cat list3.txt
+  Hi !
+  This is the first list.
+  Hi !
+  This is the second list.
+  $
+</code></pre></div>    </div>
   </li>
   <li>
-    <p>키와 식별자의 표현</p>
+    <p>파일이 존재할 때 출력 추가</p>
 
-    <ul>
-      <li>
-        <p>기본키</p>
-
-        <ul>
-          <li>속성 이름 앞에 ◆로 표기</li>
-          <li>속성 이름 뒤에 (PK)로 표기</li>
-        </ul>
-      </li>
-    </ul>
-
-    <p><img src="/assets/img/database/2020-02-23-database-07-17.png" alt="" />
- <br />
- <br /></p>
-
-    <ul>
-      <li>
-        <p>외래키</p>
-
-        <ul>
-          <li>속성의 이름 뒤에 (FK)로 표기</li>
-        </ul>
-      </li>
-    </ul>
-
-    <p><img src="/assets/img/database/2020-02-23-database-07-18.png" alt="" />
- <br />
- <br /></p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ cat &gt;&gt; list1.txt
+ Bye !
+ This is the end of the first list.
+ ^D
+   
+   
+ $ cat list1.txt
+ Hi !
+ This is the first list.
+ Bye !
+ This is the end of the first list.
+ $
+</code></pre></div>    </div>
   </li>
-</ol>
+</ul>
+
+<p><br /><br /></p>
+<blockquote>
+  <h4 id="10-오류-재지정-error-redirection">10. 오류 재지정 (error redirection)</h4>
+</blockquote>
+
+<ul>
+  <li>표준 오류 메시지를 파일에 저장</li>
+  <li>형식 : 명령 2&gt; 파일명</li>
+  <li>2는 표준 오류를 나타내는 파일 디스크립터이며 생략할 수 없음</li>
+</ul>
+
+<p><br /><br /></p>
+<blockquote>
+  <h4 id="11-오류-재지정-사용-예">11. 오류 재지정 사용 예</h4>
+</blockquote>
+
+<ul>
+  <li>
+    <p>ls 명령을 통해 /ttt 디렉토리가 존재하지 않는다는 오류 메시지 화면에 나타남</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ ls
+  list1.txt list2.txt list3.txt test
+  $ ls /ttt
+  ls: cannot access /ttt : No such file or directory
+  $
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>출력 재지정 사용해도 오류 메시지는 화면에 출력됨</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ ls &gt; ls.out
+  $ ls /ttt &gt; ls.err
+  ls: cannot access /ttt : No such file or directory
+  $ cat ls.out
+  list1.txt
+  list2.txt
+  list3.txt
+  ls.out
+  test
+  $ cat ls.err
+  $
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>오류 재지정을 하면 정상 결과는 화면에 출력, 오류 메시지만 파일로 저장됨</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ ls 2&gt; ls.out
+  list1.txt list2.txt list3.txt ls.err ls.out test
+  $ ls /ttt 2&gt; ls.err
+  $ cat ls.err
+  ls: cannot access /ttt : No such file or directory
+  $ cat ls.out
+  $
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p><br /><br /></p>
+<blockquote>
+  <h4 id="12-find-결과-오류-메시지-처리">12. find 결과 오류 메시지 처리</h4>
+</blockquote>
+
+<ul>
+  <li>
+    <p>결과를 리다이렉션 했어도 화면에 출력되는 내용은 오류 메시지</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ cp mynote.txt /tmp
+  $ find /tmp –user $LOGNAME &gt; my_tmp_file
+  find: ‘/tmp/ssh-BsH53yjociBb’ : Permission denied
+  $
+</code></pre></div>    </div>
+
+    <ul>
+      <li>find 명령의 올바른 결과는 my_tmp_file 파일에 저장됨</li>
+    </ul>
+  </li>
+  <li>
+    <p>오류 메시지만 파일에 저장</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ find /tmp –user $LOGNAME 2&gt; error
+  /tmp/mynote.txt
+  $
+</code></pre></div>    </div>
+
+    <ul>
+      <li>오류 메시지만 error 파일에 저장됨</li>
+      <li>‘2&gt;’에서 두 문자 사이에 공백 있으면 안 됨</li>
+    </ul>
+  </li>
+  <li>
+    <p>오류 메시지를 나중에 검토할 필요가 없고 화면에서 지워버리려고 하면, 저장 파일을 /dev/null로 지정</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ find /tmp –user $LOGNAME 2&gt; /dev/null
+  /tmp/mynote.txt
+  $
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>오류 메시지와 정상적인 검색 결과를 서로 다른 파일에 저장</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ find /tmp –user $LOGNAME 2&gt; error &gt; my_tmp_file
+  $ cat error
+  find: ‘/tmp/ssh-BsH53yjociBb’ : Permission denied
+  $ cat my_tmp_file
+  /tmp/mynote.txt
+  $
+</code></pre></div>    </div>
+  </li>
+</ul>
 
 
     <br />
@@ -550,12 +764,12 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 <div class="share">
   <h2>Share this post</h2>
   <div class="share-body">
-    <a href="http://twitter.com/share?text=[Database] 약한 개체와 IE표기법&amp;url=https://m-veloper.github.io/devlog/2020/02/23/database-07/"
+    <a href="http://twitter.com/share?text=[유닉스] 디렉토리 이름 변경 및 검색&amp;url=https://m-veloper.github.io/devlog/2020/02/26/unix-09/"
       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
       <span class="icon-twitter">
       </span>
     </a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://m-veloper.github.io/devlog/2020/02/23/database-07/"
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://m-veloper.github.io/devlog/2020/02/26/unix-09/"
       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
       <span class="icon-facebook">
       </span>
@@ -613,27 +827,8 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
       
       
         
-        
           
-
-
-
-<style>
-  .related-posts>li>small{
-    margin-left: 10px;
-  }
-</style>
-<li class="h4">
-  <a href="/devlog/2020/02/26/unix-09/" data-flip="title">
-    <span>[유닉스] 디렉토리 이름 변경 및 검색</span>
-  </a>
-  <small><time datetime="2020-02-26T00:00:00+09:00">
-    2020년 02월 26일
-  </time></small>
-</li>
-
-        
-      
+          
         
         
           
@@ -680,6 +875,25 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
       
         
         
+          
+
+
+
+<style>
+  .related-posts>li>small{
+    margin-left: 10px;
+  }
+</style>
+<li class="h4">
+  <a href="/devlog/2020/02/24/database-09/" data-flip="title">
+    <span>[Database] 키 (Key)</span>
+  </a>
+  <small><time datetime="2020-02-24T00:00:00+09:00">
+    2020년 02월 24일
+  </time></small>
+</li>
+
+        
       
     
   </ul>
@@ -703,9 +917,9 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
   }
 
   var d = function () {
-    this.page.title = "[Database] 약한 개체와 IE표기법",
-      this.page.identifier = "/devlog/2020/02/23/database-07",
-      this.page.url = "https://m-veloper.github.io/devlog/2020/02/23/database-07/"
+    this.page.title = "[유닉스] 디렉토리 이름 변경 및 검색",
+      this.page.identifier = "/devlog/2020/02/26/unix-09",
+      this.page.url = "https://m-veloper.github.io/devlog/2020/02/26/unix-09/"
   };
   s._disqusFirst = void 0 === s._disqusFirst || s._disqusFirst, s._disqusLoading = void 0 !== s._disqusLoading && s._disqusLoading, s._disqusThis = !1, s._disqusThreadOffsetTop = i.getElementById(
     "disqus_thread").offsetTop, s._disqusLoading ? s._disqusFirst = !1 : (s._disqusLoading = !0, loadJSDeferred(

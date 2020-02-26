@@ -31,14 +31,15 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="naver-site-verification" content="fa37cbf8ce41948de6e94c01991ffa04cea9b093"/>
 <meta name="google-site-verification" content="5M4Zw9wg_UqQkvlayfb5Mc_ogvJdc013w_zLUkxgO-Y" />
-<meta property="og:title" content="[Database] 약한 개체와 IE표기법">
+<meta property="og:title" content="[유닉스] 디렉토리 생성, 삭제">
 <meta property="og:type" content="article">
 
 
 
 
 
-  <meta property="og:image" content="https://m-veloper.github.io/assets/img/logo.png">
+  <meta property="og:image" content="https://m-veloper.github.io/assets//img/linux-logo.png">
+  <br/>
 
 
 <meta property="og:image:width" content="640" />
@@ -46,7 +47,7 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 
 
 
-  <title>[Database] 약한 개체와 IE표기법 &middot; m_veloper</title>
+  <title>[유닉스] 디렉토리 생성, 삭제 &middot; m_veloper</title>
 
 
 
@@ -62,17 +63,17 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 <!-- =============== -->
 <!-- LINKS           -->
 <!-- =============== -->
-<link rel="canonical" href="https://m-veloper.github.io/devlog/2020/02/23/database-07/">
-<meta property="og:url" content="https://m-veloper.github.io/devlog/2020/02/23/database-07/">
+<link rel="canonical" href="https://m-veloper.github.io/devlog/2020/02/26/unix-08/">
+<meta property="og:url" content="https://m-veloper.github.io/devlog/2020/02/26/unix-08/">
 
 <link rel="alternate" type="application/atom+xml" title="m_veloper Feed" href="https://m-veloper.github.io/feed.xml">
 
 
-  <link rel="prev" href="https://m-veloper.github.io/devlog/2020/02/22/unix-06/">
+  <link rel="prev" href="https://m-veloper.github.io/devlog/2020/02/25/unix-07/">
 
 
 
-  <link rel="next" href="https://m-veloper.github.io/devlog/2020/02/24/database-08/">
+  <link rel="next" href="https://m-veloper.github.io/devlog/2020/02/26/unix-09/">
 
 
 <link rel="apple-touch-icon" href="https://m-veloper.github.io/apple-touch-icon.png">
@@ -270,18 +271,18 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 
 
 
-<article id="post-devlog/2020/02/23/database-07" class="post this" role="article">
+<article id="post-devlog/2020/02/26/unix-08" class="post this" role="article">
   <header>
 
     <h1 class="post-title">
       
-        [Database] 약한 개체와 IE표기법
+        [유닉스] 디렉토리 생성, 삭제
         
     </h1>
 
     <p class="post-date heading">
-      <!--<time datetime="2020-02-23T00:00:00+09:00">23 Feb 2020</time>-->
-      <time datetime="2020-02-23T00:00:00+09:00">2020년 02월 23일</time>
+      <!--<time datetime="2020-02-26T00:00:00+09:00">26 Feb 2020</time>-->
+      <time datetime="2020-02-26T00:00:00+09:00">2020년 02월 26일</time>
     </p>
     
 
@@ -305,7 +306,7 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 
 
 
-<a href="/tag/devlog-database/" data-flip="title" id="tag">Database</a>
+<a href="/tag/devlog-unix/" data-flip="title" id="tag">Unix</a>
 
 
     
@@ -319,7 +320,9 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
   
   <div class="markdown-body">
 
-    <!--  -->
+    <!-- 
+    <div class="head-image"><img src="https://m-veloper.github.io/assets//img/linux-logo.png" /></div>
+    <br /> -->
 
     <div class='row'>
       <ins class="adsbygoogle myAd1190" data-ad-client="ca-pub-9134477021095729" data-ad-slot="6559875097"></ins>
@@ -331,209 +334,258 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
     </script>
 
     <br />
-    <p><img src="/assets/img/database/2020-02-23-database-07.png" alt="" /></p>
+    <p><img src="/assets/img/unix/2020-02-26-unix-08.png" alt="" /></p>
 
-<h1 id="약한-개체의-개체타입-식별관계타입-및-식별자">약한 개체의 개체타입, 식별관계타입 및 식별자</h1>
+<h1 id="디렉토리-생성">디렉토리 생성</h1>
 <p><br />
 <br /></p>
 
-<ol>
+<blockquote>
+  <h4 id="1-홈-디렉토리">1. 홈 디렉토리</h4>
+</blockquote>
+
+<ul>
+  <li>새로운 디렉토리를 생성</li>
+  <li>시스템은 자동으로 “.”과 “..” 엔트리를 만들며, 일반 사용자는 이 두 엔트리를 삭제할 수 없음</li>
+  <li>형식 : mkdir [옵션] 디렉토리명</li>
+  <li>옵션
+    <ul>
+      <li>-p : 하위 디렉토리를 계층적으로 생성할 때 중간의 디렉토리가 없으면, 생성하면서 전체 디렉토리를 생성</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /><br /></p>
+<blockquote>
+  <h4 id="2-디렉토리-한-개-생성">2. 디렉토리 한 개 생성</h4>
+</blockquote>
+
+<ul>
   <li>
-    <p>약한 개체 타입</p>
+    <p>mkdir 다음에 디렉토리 이름을 지정하면 현재 디렉토리 아래에 디렉토리 생성</p>
 
     <ul>
-      <li>상위 개체 타입에 종속된 개체 타입</li>
-      <li>이중 직사각형으로 표현</li>
-      <li>예 : 직원의 가족 – 직원 개체 타입이 있어야 가족 개체 타입을 식별할 수 있다.</li>
+      <li>예) mkdir Unix</li>
     </ul>
-
-    <p><img src="/assets/img/database/2020-02-23-database-07-01.png" alt="" />
- <br />
- <br /></p>
   </li>
   <li>
-    <p>식별 관계 타입</p>
+    <p>mkdir 다음에 디렉토리 이름을 절대 경로로 지정하면 절대 경로 상에 디렉토리 생성</p>
 
     <ul>
-      <li>강한 개체 타입과 약한 개체 타입의 관계를 나타냄</li>
-      <li>강한 개체 타입의 기본키를 상속받아 사용함</li>
-      <li>이중 마름모꼴로 표현</li>
-    </ul>
+      <li>
+        <p>예) mkdir /home/ksshin/Unix/ch2</p>
 
-    <p><img src="/assets/img/database/2020-02-23-database-07-02.png" alt="" />
- <br />
- <br /></p>
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ mkdir Unix
+  $ ls Unix
+  $ ls -a Unix
+  . ..
+  $ mkdir /home/ksshin/Unix/ch2
+  $ ls Unix
+  ch3
+  $
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /><br /></p>
+<blockquote>
+  <h4 id="3-디렉토리-여러-개를-동시에-생성">3. 디렉토리 여러 개를 동시에 생성</h4>
+</blockquote>
+
+<ul>
+  <li>
+    <p>mkdir 다음에 공백으로 구분되는 이름이 여러 개일 경우 각각을 디렉토리 이름으로 하여 여러 개의 디렉토리 생성</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ mkdir temp dir1
+$ ls –l
+total 9
+drwxr-xr-x 2 ksshin ksshin 4096 30 May 21:12 temp
+drwxr-xr-x 2 ksshin ksshin 4096 30 May 21:12 dir1
+$
+</code></pre></div>    </div>
   </li>
   <li>
-    <p>식별자 (Discriminator) / 부분키 (Partial key)</p>
+    <p>홈디렉토리로 이동하지 않고 생성</p>
 
     <ul>
-      <li>약한 개체 타입은 자신의 기본키만으로 식별이 어려우므로, 상위의 강한 개체 타입의 기본키를 상속받아 결합하여 사용</li>
-      <li>약한 개체 타입은 식별자를 사용하여 개별 개체를 식별할 수 있다.</li>
-    </ul>
+      <li>
+        <p>명령어 라인이 길어질 때는 줄 끝에 백슬래시() 문자 사용</p>
 
-    <p><img src="/assets/img/database/2020-02-23-database-07-03.png" alt="" />
- <br />
- <br /></p>
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ mkdir /home/ksshin/Unix/ch1 \
+  /home/ksshin/Unix/ch2/document \
+  /home/ksshin/Unix/ch2/source
+  $
+</code></pre></div>        </div>
+      </li>
+    </ul>
   </li>
+</ul>
+
+<p><br /><br /></p>
+<blockquote>
+  <h4 id="4-중간-디렉토리-자동-생성">4. 중간 디렉토리 자동 생성</h4>
+</blockquote>
+
+<ul>
   <li>
-    <p>예</p>
+    <p>mkdir 명령 다음에 –p 옵션 사용</p>
 
     <ul>
-      <li>직원 개체 타입과 가족 개체 타입은 부양 관계를 가진다.</li>
-      <li>직원 – 자기 자신만으로 존재 가능, 사번을 키로 구분한다.</li>
-      <li>가족 – 어느 직원의 가족인지 알기 위하여 직원의 사번과 가족의 이름으로 식별이 가능하다</li>
+      <li>
+        <p>디렉토리 이름으로 지정한 경로 중 중간 단계의 디렉토리가 존재하지 않으면 중간 단계 디렉토리도 자동으로 생성한 뒤 해당 디렉토리 생성</p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ mkdir –p temp/work/prog
+  $ ls –lR temp
+  temp:
+  total 1
+  drwxr-xr-x 2 ksshin ksshin 4096 30 May 21:12 work
+  temp/work:
+  total 1
+  drwxr-xr-x 2 ksshin ksshin 4096 30 May 21:12 prog
+  temp/work/prog:
+  total 0
+  $
+</code></pre></div>        </div>
+      </li>
     </ul>
-
-    <p><img src="/assets/img/database/2020-02-23-database-07-04.png" alt="" />
- <br />
- <br /></p>
   </li>
-  <li>
-    <p>약한개체타입, 식별관계타입 및 식별자 정리</p>
+</ul>
 
-    <p><img src="/assets/img/database/2020-02-23-database-07-05.png" alt="" />
- <br />
- <br /></p>
-  </li>
-</ol>
+<p><br /><br /></p>
+<blockquote>
+  <h4 id="5-서브디렉토리-생성-후의-구조">5. 서브디렉토리 생성 후의 구조</h4>
+</blockquote>
 
+<p><img src="/assets/img/unix/2020-02-26-unix-08-01.png" alt="" />
+<br />
+<br /></p>
+
+<h1 id="디렉토리-생성-1">디렉토리 생성</h1>
 <p><br />
 <br /></p>
 
-<h1 id="약한-개체의-개체타입-식별관계타입-및-식별자-1">약한 개체의 개체타입, 식별관계타입 및 식별자</h1>
+<blockquote>
+  <h4 id="1-rmdirremove-directory">1. rmdir(remove directory)</h4>
+</blockquote>
 
-<p><br />
-<br /></p>
+<ul>
+  <li>디렉토리를 삭제</li>
+  <li>형식 : rmdir [옵션] 디렉토리명</li>
+  <li>옵션
+    <ul>
+      <li>-p : 지정한 디렉토리를 삭제한 뒤, 그 디렉토리의 부모 디렉토리가 빈 디렉토리일 경우 부모 디렉토리도 자동으로 삭제</li>
+    </ul>
+  </li>
+  <li>사용 예
+    <ul>
+      <li>rmdir temp</li>
+    </ul>
+  </li>
+</ul>
 
-<p>IE란()Information Engineering Notation)</p>
+<p><br /><br /></p>
+<blockquote>
+  <h4 id="2-디렉토리-삭제할-때-규칙">2. 디렉토리 삭제할 때 규칙</h4>
+</blockquote>
 
-<p>새발 표기법(Crow-feet Notation) : 관계 대응수를 새발 모양의 기호로 표현</p>
-
-<ol>
+<ul>
+  <li>비어 있지 않은 디렉토리는 삭제할 수 없다.</li>
+  <li>작업 디렉토리와 루트 디렉토리 사이에 있는 디렉토리는 어떤 것도 지울 수 없다.</li>
+  <li>비어 있지 않은 디렉토리를 한 번에 지우려면 ‘rm –r’ 명령 사용</li>
+  <li>디렉토리를 지울 때마다 사용자에게 질문하게 하려면 ‘rm –ir’ 명령 사용</li>
   <li>
-    <p>피터첸 표기법과 IE표기법</p>
+    <p>비어 있지 않은 디렉토리를 삭제하려고 하면 오류 메시지 출력</p>
 
-    <p><img src="/assets/img/database/2020-02-23-database-07-06.png" alt="" />
- <br />
- <br /></p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ rmdir temp
+  rmdir: failed to remove ‘temp’ : Directory not empty
+  $ &lt;br&gt;&lt;br&gt;             &gt; #### 3. 디렉토리 한 개 삭제
+</code></pre></div>    </div>
   </li>
   <li>
-    <p>개체의 표현</p>
-
-    <p><img src="/assets/img/database/2020-02-23-database-07-07.png" alt="" />
- <br />
- <br /></p>
-  </li>
-  <li>
-    <p>속성의 표현</p>
-
-    <p><img src="/assets/img/database/2020-02-23-database-07-08.png" alt="" />
- <br />
- <br /></p>
-  </li>
-  <li>
-    <p>관계의 표현</p>
-
-    <p><img src="/assets/img/database/2020-02-23-database-07-09.png" alt="" />
- <br />
- <br /></p>
-  </li>
-  <li>
-    <p>관계대응수의 표현</p>
+    <p>rmdir 다음에 디렉토리 이름 지정하면 현재 디렉토리 내에 있는 해당 디렉토리 삭제</p>
 
     <ul>
-      <li>1:N 관계 대응수</li>
+      <li>예) rmdir dir</li>
     </ul>
-
-    <p><img src="/assets/img/database/2020-02-23-database-07-10.png" alt="" />
- <br />
- <br /></p>
-
-    <p><img src="/assets/img/database/2020-02-23-database-07-11.png" alt="" />
- <br />
- <br /></p>
-
-    <ul>
-      <li>1:1 관계 대응수</li>
-    </ul>
-
-    <p><img src="/assets/img/database/2020-02-23-database-07-12.png" alt="" />
- <br />
- <br /></p>
-
-    <ul>
-      <li>M:N 관계대응수</li>
-    </ul>
-
-    <p><img src="/assets/img/database/2020-02-23-database-07-13.png" alt="" />
- <br />
- <br /></p>
   </li>
   <li>
-    <p>참여도의 표현</p>
+    <p>rmdir 다음에 디렉토리 이름을 절대경로로 지정하면 절대 경로 상에 있는 해당 디렉토리 삭제</p>
 
     <ul>
-      <li>
-        <p>부분 참여
- <img src="/assets/img/database/2020-02-23-database-07-14.png" alt="" />
- <br />
- <br /></p>
-      </li>
-      <li>
-        <p>전체 참여</p>
-      </li>
+      <li>예) rmdir /home/ksshin/test</li>
     </ul>
+  </li>
+</ul>
 
-    <p><img src="/assets/img/database/2020-02-23-database-07-15.png" alt="" />
- <br />
- <br /></p>
+<p><br /><br /></p>
+<blockquote>
+  <h4 id="4-디렉토리-여러-개-삭제">4. 디렉토리 여러 개 삭제</h4>
+</blockquote>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ rmdir temp/work/prog test
+$ cd ~/Unix/ch2
+$ rmdir document source
+$
+</code></pre></div></div>
+
+<p><br /><br /></p>
+<blockquote>
+  <h4 id="5-가장-단순한-디렉토리-삭제-방법">5. 가장 단순한 디렉토리 삭제 방법</h4>
+</blockquote>
+
+<ul>
+  <li>
+    <p>가장 낮은 곳에 있는 디렉토리 삭제</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ cd ~/Unix/ch2
+  $ rmdir document source
+</code></pre></div>    </div>
   </li>
   <li>
-    <p>강한개체와 약한개체의 표현</p>
+    <p>ch1, ch2 디렉토리 삭제</p>
 
-    <ul>
-      <li>(강한 개체 : 약한 개체) 관계 대응수 = ( 1 : N )</li>
-      <li>(강한 개체 : 약한 개체) 참여도 = ( 전체 : 부분 )</li>
-    </ul>
-
-    <p><img src="/assets/img/database/2020-02-23-database-07-16.png" alt="" />
- <br />
- <br /></p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ cd ..
+  $ rmdir ch1 ch2
+</code></pre></div>    </div>
   </li>
   <li>
-    <p>키와 식별자의 표현</p>
-
-    <ul>
-      <li>
-        <p>기본키</p>
-
-        <ul>
-          <li>속성 이름 앞에 ◆로 표기</li>
-          <li>속성 이름 뒤에 (PK)로 표기</li>
-        </ul>
-      </li>
-    </ul>
-
-    <p><img src="/assets/img/database/2020-02-23-database-07-17.png" alt="" />
- <br />
- <br /></p>
-
-    <ul>
-      <li>
-        <p>외래키</p>
-
-        <ul>
-          <li>속성의 이름 뒤에 (FK)로 표기</li>
-        </ul>
-      </li>
-    </ul>
-
-    <p><img src="/assets/img/database/2020-02-23-database-07-18.png" alt="" />
- <br />
- <br /></p>
+    <p>삭제 후 디렉토리 구조</p>
   </li>
-</ol>
+</ul>
+
+<p><img src="/assets/img/unix/2020-02-26-unix-08-02.png" alt="" />
+  <br />
+  <br /></p>
+
+<p><br /><br /></p>
+<blockquote>
+  <h4 id="6-가장-단순한-디렉토리-삭제-방법">6. 가장 단순한 디렉토리 삭제 방법</h4>
+</blockquote>
+
+<ul>
+  <li>
+    <p>절대 경로명으로 디렉토리 삭제</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ rmdir /home/ksshin/Unix/ch2/document \
+  /home/ksshin/Unix/ch2/source \
+  /home/ksshin/Unix/ch1 \
+  /home/ksshin/Unix/ch2
+  $
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>“~” 기호를 사용하여 디렉토리 삭제</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ rmdir ~/Unix/ch2/document \
+  ~/Unix/ch2/source \
+  ~/Unix/ch1 \
+  ~/Unix/ch2
+  $
+</code></pre></div>    </div>
+  </li>
+</ul>
 
 
     <br />
@@ -550,12 +602,12 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 <div class="share">
   <h2>Share this post</h2>
   <div class="share-body">
-    <a href="http://twitter.com/share?text=[Database] 약한 개체와 IE표기법&amp;url=https://m-veloper.github.io/devlog/2020/02/23/database-07/"
+    <a href="http://twitter.com/share?text=[유닉스] 디렉토리 생성, 삭제&amp;url=https://m-veloper.github.io/devlog/2020/02/26/unix-08/"
       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
       <span class="icon-twitter">
       </span>
     </a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://m-veloper.github.io/devlog/2020/02/23/database-07/"
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://m-veloper.github.io/devlog/2020/02/26/unix-08/"
       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
       <span class="icon-facebook">
       </span>
@@ -635,27 +687,8 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
         
       
         
-        
           
-
-
-
-<style>
-  .related-posts>li>small{
-    margin-left: 10px;
-  }
-</style>
-<li class="h4">
-  <a href="/devlog/2020/02/26/unix-08/" data-flip="title">
-    <span>[유닉스] 디렉토리 생성, 삭제</span>
-  </a>
-  <small><time datetime="2020-02-26T00:00:00+09:00">
-    2020년 02월 26일
-  </time></small>
-</li>
-
-        
-      
+          
         
         
           
@@ -680,6 +713,25 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
       
         
         
+          
+
+
+
+<style>
+  .related-posts>li>small{
+    margin-left: 10px;
+  }
+</style>
+<li class="h4">
+  <a href="/devlog/2020/02/24/database-09/" data-flip="title">
+    <span>[Database] 키 (Key)</span>
+  </a>
+  <small><time datetime="2020-02-24T00:00:00+09:00">
+    2020년 02월 24일
+  </time></small>
+</li>
+
+        
       
     
   </ul>
@@ -703,9 +755,9 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
   }
 
   var d = function () {
-    this.page.title = "[Database] 약한 개체와 IE표기법",
-      this.page.identifier = "/devlog/2020/02/23/database-07",
-      this.page.url = "https://m-veloper.github.io/devlog/2020/02/23/database-07/"
+    this.page.title = "[유닉스] 디렉토리 생성, 삭제",
+      this.page.identifier = "/devlog/2020/02/26/unix-08",
+      this.page.url = "https://m-veloper.github.io/devlog/2020/02/26/unix-08/"
   };
   s._disqusFirst = void 0 === s._disqusFirst || s._disqusFirst, s._disqusLoading = void 0 !== s._disqusLoading && s._disqusLoading, s._disqusThis = !1, s._disqusThreadOffsetTop = i.getElementById(
     "disqus_thread").offsetTop, s._disqusLoading ? s._disqusFirst = !1 : (s._disqusLoading = !0, loadJSDeferred(
