@@ -5,9 +5,124 @@
     <description></description>
     <link>https://m-veloper.github.io/</link>
     <atom:link href="https://m-veloper.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 26 Feb 2020 21:45:10 +0900</pubDate>
-    <lastBuildDate>Wed, 26 Feb 2020 21:45:10 +0900</lastBuildDate>
+    <pubDate>Thu, 27 Feb 2020 22:18:49 +0900</pubDate>
+    <lastBuildDate>Thu, 27 Feb 2020 22:18:49 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>[자바스크립트] Null check, 빈 값 체크, 공백 체크</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/javascript/2020-02-27-javascript-04.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;자바스크립트로-null-check-빈-값-체크-공백-체크&quot;&gt;자바스크립트로 Null check, 빈 값 체크, 공백 체크&lt;/h1&gt;
+&lt;h3 id=&quot;how-do-i-check-for-null-values-in-javascript&quot;&gt;How do I check for null values in JavaScript?&lt;/h3&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;데이터타입&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  var value = 1; //  Number 형 1
+  console.log(value, typeof value); // 1 number
+     
+  value = &quot;1&quot; // String 형 1
+  console.log(value, typeof value); // 1 string
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;권장하지 않는 방법&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  var value2 = &quot;&quot;
+  if( value2 == &quot;&quot;){
+    console.log(&quot;비어 있음&quot;);
+  }else{
+    console.log(&quot;값이 있음&quot;);
+  }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;권장하는 방법&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; var value2 = &quot;&quot;
+ if( !value2 ){
+   console.log(&quot;비어 있음&quot;);
+ }else{
+   console.log(&quot;값이 있음&quot;);
+ }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;2 번 처럼 사용하지 말고 3번 처럼  not 연산을 권장함.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;어떤 값이 자료형에 상관없이 빈 값인지 알고 싶을 때&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; // 넘어온 값이 빈값인지 체크합니다. 
+ // !value 하면 생기는 논리적 오류를 제거하기 위해  
+ // [], {} 도 빈값으로 처리
+     
+ var isEmpty = function(value){ 
+ if( value == &quot;&quot; || value == null || value == undefined || ( value != null &amp;amp;&amp;amp; typeof value == &quot;object&quot; &amp;amp;&amp;amp; !Object.keys(value).length ) ){ 
+     return true 
+ } else { 
+     return false 
+ }};
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+</description>
+        <pubDate>Thu, 27 Feb 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/tip/2020/02/27/javascript-04/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/02/27/javascript-04/</guid>
+        
+        <category>javascript</category>
+        
+        
+        <category>tip</category>
+        
+      </item>
+    
+      <item>
+        <title>[자바스크립트] 왼쪽 숫자 0, 첫자리 0 제거하기(정규식)</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/javascript/2020-02-27-javascript-03.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;왼쪽-숫자-0-첫자리-0-제거하기정규식&quot;&gt;왼쪽 숫자 0, 첫자리 0 제거하기(정규식)&lt;/h1&gt;
+&lt;h3 id=&quot;how-to-remove-leading-zeros-from-a-number-in-javascript&quot;&gt;How to remove leading zeros from a number in JavaScript?&lt;/h3&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;자바스크립트&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   let number = &quot;0909123&quot;;
+   let formatNum = number.replace(/(^0+)/, &quot;&quot;);
+    // 909123로 치환됨
+   console.log(formatNum);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;자바&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; String testNum = &quot;0909123&quot;;
+ String checkNum = testNum.replaceAll(&quot;^0+&quot;, &quot;&quot;);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+</description>
+        <pubDate>Thu, 27 Feb 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/tip/2020/02/27/javascript-03/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/02/27/javascript-03/</guid>
+        
+        <category>javascript</category>
+        
+        
+        <category>tip</category>
+        
+      </item>
     
       <item>
         <title>[유닉스] 디렉토리 이름 변경 및 검색</title>
