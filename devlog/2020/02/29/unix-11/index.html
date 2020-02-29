@@ -31,14 +31,15 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="naver-site-verification" content="fa37cbf8ce41948de6e94c01991ffa04cea9b093"/>
 <meta name="google-site-verification" content="5M4Zw9wg_UqQkvlayfb5Mc_ogvJdc013w_zLUkxgO-Y" />
-<meta property="og:title" content="[Database] 순수관계연산자 (1/3)">
+<meta property="og:title" content="[유닉스] 복사, 삭제, 이동">
 <meta property="og:type" content="article">
 
 
 
 
 
-  <meta property="og:image" content="https://m-veloper.github.io/assets/img/logo.png">
+  <meta property="og:image" content="https://m-veloper.github.io/assets//img/linux-logo.png">
+  <br/>
 
 
 <meta property="og:image:width" content="640" />
@@ -46,7 +47,7 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 
 
 
-  <title>[Database] 순수관계연산자 (1/3) &middot; m_veloper</title>
+  <title>[유닉스] 복사, 삭제, 이동 &middot; m_veloper</title>
 
 
 
@@ -62,17 +63,17 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 <!-- =============== -->
 <!-- LINKS           -->
 <!-- =============== -->
-<link rel="canonical" href="https://m-veloper.github.io/devlog/2020/02/28/database-12/">
-<meta property="og:url" content="https://m-veloper.github.io/devlog/2020/02/28/database-12/">
+<link rel="canonical" href="https://m-veloper.github.io/devlog/2020/02/29/unix-11/">
+<meta property="og:url" content="https://m-veloper.github.io/devlog/2020/02/29/unix-11/">
 
 <link rel="alternate" type="application/atom+xml" title="m_veloper Feed" href="https://m-veloper.github.io/feed.xml">
 
 
-  <link rel="prev" href="https://m-veloper.github.io/devlog/2020/02/28/database-11/">
+  <link rel="prev" href="https://m-veloper.github.io/devlog/2020/02/29/unix-10/">
 
 
 
-  <link rel="next" href="https://m-veloper.github.io/devlog/2020/02/29/unix-10/">
+  <link rel="next" href="https://m-veloper.github.io/devlog/2020/02/29/unix-12/">
 
 
 <link rel="apple-touch-icon" href="https://m-veloper.github.io/apple-touch-icon.png">
@@ -270,18 +271,18 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 
 
 
-<article id="post-devlog/2020/02/28/database-12" class="post this" role="article">
+<article id="post-devlog/2020/02/29/unix-11" class="post this" role="article">
   <header>
 
     <h1 class="post-title">
       
-        [Database] 순수관계연산자 (1/3)
+        [유닉스] 복사, 삭제, 이동
         
     </h1>
 
     <p class="post-date heading">
-      <!--<time datetime="2020-02-28T00:00:00+09:00">28 Feb 2020</time>-->
-      <time datetime="2020-02-28T00:00:00+09:00">2020년 02월 28일</time>
+      <!--<time datetime="2020-02-29T00:00:00+09:00">29 Feb 2020</time>-->
+      <time datetime="2020-02-29T00:00:00+09:00">2020년 02월 29일</time>
     </p>
     
 
@@ -305,7 +306,7 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 
 
 
-<a href="/tag/devlog-database/" data-flip="title" id="tag">Database</a>
+<a href="/tag/devlog-unix/" data-flip="title" id="tag">Unix</a>
 
 
     
@@ -319,7 +320,9 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
   
   <div class="markdown-body">
 
-    <!--  -->
+    <!-- 
+    <div class="head-image"><img src="https://m-veloper.github.io/assets//img/linux-logo.png" /></div>
+    <br /> -->
 
     <div class='row'>
       <ins class="adsbygoogle myAd1190" data-ad-client="ca-pub-9134477021095729" data-ad-slot="6559875097"></ins>
@@ -331,226 +334,395 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
     </script>
 
     <br />
-    <p><img src="/assets/img/database/2020-02-28-database-12.png" alt="" /></p>
+    <p><img src="/assets/img/unix/2020-02-29-unix-11.png" alt="" /></p>
 
-<h1 id="순수-관계-연산자-개요">순수 관계 연산자 개요</h1>
-<p><br /></p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- 릴레이션의 구조와 특성을 이용하는 연산자
-- 관계 데이터 모델에서 새로 제시된 연산자
-- 릴레이션에 저장되어 있는 데이터를 다양하게 처리하는데 사용
-</code></pre></div></div>
-
-<ol>
-  <li>
-    <p>순수 관계 연산자의 종류와 의미</p>
-
-    <p><img src="/assets/img/database/2020-02-28-database-12-01.png" alt="" />
- <br />
- <br /></p>
-  </li>
-</ol>
-
-<h1 id="순수-관계-연산자의-종류-및-기능">순수 관계 연산자의 종류 및 기능</h1>
+<h1 id="파일-복사">파일 복사</h1>
 <p><br />
 <br /></p>
 
-<ol>
+<blockquote>
+  <h3 id="1-cp-명령">1. cp 명령</h3>
+</blockquote>
+
+<ul>
+  <li>파일이나 디렉토리를 복사</li>
+  <li>형식 : cp [옵션] 파일명1/디렉토리명1 파일명2/디렉토리명2</li>
   <li>
-    <p>셀렉트 (Select) 연산자</p>
+    <p>옵션</p>
 
     <ul>
-      <li>결과 릴레이션 : 릴레이션에서 조건을 만족하는 투플만 선택</li>
-      <li>하나의 릴레이션을 대상으로 연산을 수행하는 단항연산자</li>
-      <li>연산자</li>
+      <li>-i : 파일명2가 존재할 경우 덮어쓸 것인지 물어봄</li>
+      <li>-r :디렉토리를 복사할 때 지정</li>
     </ul>
+  </li>
+  <li>사용 예 :<br /> 
+   p file1 file2<br />
+   cp f1 f2 f3 dir1<br />
+   cp –r dir1 dir2</li>
+</ul>
 
-    <p><img src="/assets/img/database/2020-02-28-database-12-02.png" alt="" />
- <br /></p>
+<blockquote>
+  <h3 id="2-파일을-파일로-복사">2. 파일을 파일로 복사</h3>
+</blockquote>
 
-    <ul>
-      <li>수학적 표현법</li>
-    </ul>
+<ul>
+  <li>첫 번째 인자와 두 번째 인자 모두 파일명 사용</li>
+  <li>두 번째 인자의 파일명이 존재하지 않으면 새로 생성됨</li>
+  <li>이미 존재하면 원래의 파일에 덮어 씌워짐</li>
+  <li>
+    <p>/etc 디렉토리에 있는 파일을 현재 디렉토리의 etc_hosts라는 파일로 복사</p>
 
-    <p><img src="/assets/img/database/2020-02-28-database-12-03.png" alt="" />
- <br /></p>
-
-    <ul>
-      <li>데이터 언어적 표현법</li>
-    </ul>
-
-    <p><img src="/assets/img/database/2020-02-28-database-12-04.png" alt="" />
- <br /></p>
-
-    <ul>
-      <li>
-        <p>조건식</p>
-
-        <ul>
-          <li>비교식, 프레디킷 (Predicate)이라고도 함</li>
-          <li>
-            <p>속성과 상수의 비교나 속성들 간의 비교로 표현</p>
-
-            <ul>
-              <li>속성과 상수의 비교 – 상수의 데이터 타입이 속성의 도메인과 일치해야 함</li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-    </ul>
-
-    <p><img src="/assets/img/database/2020-02-28-database-12-05.png" alt="" />
- <br /></p>
-
-    <ul>
-      <li>
-        <p>비교 연산자 ( &gt;, ≥, &lt;, ≤, =, ≠ )와 논리 연산자( ∧, ∨, ¬ )를 이용해 작성</p>
-
-        <ul>
-          <li>논리 연산자 ∧ : AND – 여러 개의 조건을 모두 만족해야함</li>
-          <li>논리 연산자 ∨ : OR – 여러 개의 조건 중 하나만 만족하면 됨</li>
-          <li>논리 연산자 ¬ : NOT – 조건을 만족하지 않은 경우</li>
-        </ul>
-      </li>
-      <li>
-        <p>교환적 특징</p>
-      </li>
-    </ul>
-
-    <p><img src="/assets/img/database/2020-02-28-database-12-06.png" alt="" />
- <br /></p>
-
-    <ul>
-      <li>질의 1 : 등급이 Gold인 고객을 검색하시오</li>
-    </ul>
-
-    <p><img src="/assets/img/database/2020-02-28-database-12-07.png" alt="" />
- <br /></p>
-
-    <p><img src="/assets/img/database/2020-02-28-database-12-08.png" alt="" />
- <br /></p>
-
-    <ul>
-      <li>질의 2 : 고객의 등급이 Gold이고, 적립금이 10000원 이상인 고객을 검색하시오</li>
-    </ul>
-
-    <p><img src="/assets/img/database/2020-02-28-database-12-09.png" alt="" />
- <br /></p>
-
-    <ul>
-      <li>질의 3 : 고객의 등급이 Gold이거나, 적립금이 10000원 이상인 고객을 모두 검색하시오</li>
-    </ul>
-
-    <p><img src="/assets/img/database/2020-02-28-database-12-10.png" alt="" />
- <br />
- <br /></p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ cp /etc/hosts etc_hosts
+  $ ls
+  etc_hosts
+  $
+</code></pre></div>    </div>
   </li>
   <li>
-    <p>프로젝트 (Project) 연산자</p>
+    <p>현재 디렉토리에서 파일 복사</p>
 
-    <ul>
-      <li>릴레이션에서 선택한 속성의 값으로 결과 릴레이션을 구성</li>
-      <li>하나의 릴레이션을 대상으로 연산을 수행</li>
-      <li>결과 릴레이션은 해당 릴레이션의 일부 열로만 구성됨 (수직적 부분 집합)</li>
-      <li>연산자</li>
-    </ul>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   $ cp etc_hosts tmp_hosts
+   $ ls
+   etc_hosts tmp_hosts
+   $
+</code></pre></div>    </div>
+  </li>
+</ul>
 
-    <p><img src="/assets/img/database/2020-02-28-database-12-11.png" alt="" />
- <br /></p>
+<blockquote>
+  <h3 id="3-파일을-디렉토리로-복사">3. 파일을 디렉토리로 복사</h3>
+</blockquote>
 
-    <ul>
-      <li>수학적 표현법</li>
-    </ul>
+<ul>
+  <li>첫 번째 인자는 파일명, 두 번째 인자는 디렉토리명 사용</li>
+  <li>
+    <p>파일을 현재 디렉토리에 복사</p>
 
-    <p><img src="/assets/img/database/2020-02-28-database-12-12.png" alt="" />
- <br /></p>
-
-    <ul>
-      <li>데이터 언어적 표현법</li>
-    </ul>
-
-    <p><img src="/assets/img/database/2020-02-28-database-12-13.png" alt="" />
- <br /></p>
-
-    <ul>
-      <li>질의 1 – 고객의 이름을 검색하시오</li>
-    </ul>
-
-    <p><img src="/assets/img/database/2020-02-28-database-12-14.png" alt="" />
- <br /></p>
-
-    <ul>
-      <li>질의 2 – 고객별로 적립금의 액수를 파악하시오</li>
-    </ul>
-
-    <p><img src="/assets/img/database/2020-02-28-database-12-15.png" alt="" />
- <br /></p>
-
-    <p><img src="/assets/img/database/2020-02-28-database-12-16.png" alt="" />
- <br /></p>
-
-    <ul>
-      <li>
-        <p>질의 3 – 현재 고객에게 부여된 등급의 종류를 파악하시오</p>
-
-        <ul>
-          <li>주의 사항 : 결과 릴레이션도 릴레이션의 기본 특성을 유지하여야 함</li>
-        </ul>
-
-        <p>( 릴레이션에는 중복되는 투플이 존재할 수 없다 )</p>
-      </li>
-    </ul>
-
-    <p><img src="/assets/img/database/2020-02-28-database-12-17.png" alt="" />
- <br /></p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ cp /etc/hosts .
+  $ ls
+  etc_hosts hosts tmp_hosts
+  $
+</code></pre></div>    </div>
   </li>
   <li>
-    <p>디비전 (Division) 연산자</p>
+    <p>현재 디렉토리가 아닌 다른 디렉토리로 복사</p>
 
-    <ul>
-      <li>릴레이션의 속성 값이 집합으로 연산을 수행</li>
-      <li>표현법</li>
-    </ul>
-
-    <p><img src="/assets/img/database/2020-02-28-database-12-18.png" alt="" />
- <br /></p>
-
-    <ul>
-      <li>
-        <p>릴레이션S의 모든 투플과 관련이 있는 릴레이션R의 투플로 결과 릴레이션을 구성</p>
-
-        <p>. 단, 릴레이션R이 릴레이션S의 모든 속성을 포함하고 있어야 연산이 가능함</p>
-      </li>
-      <li>
-        <p>디비전의 예 - 1</p>
-      </li>
-    </ul>
-
-    <p><img src="/assets/img/database/2020-02-28-database-12-19.png" alt="" />
- <br /></p>
-
-    <ul>
-      <li>디비전의 예 - 2</li>
-    </ul>
-
-    <p><img src="/assets/img/database/2020-02-28-database-12-20.png" alt="" />
- <br /></p>
-
-    <ul>
-      <li>디비전의 예 - 3</li>
-    </ul>
-
-    <p><img src="/assets/img/database/2020-02-28-database-12-21.png" alt="" />
- <br /></p>
-
-    <ul>
-      <li>질의 : Gold 등급의 고객에 대한 정보를 추출하시오.</li>
-    </ul>
-
-    <p><img src="/assets/img/database/2020-02-28-database-12-22.png" alt="" />
- <br /></p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ mkdir temp
+  $ cp hosts temp
+  $ ls temp
+  hosts
+  $
+</code></pre></div>    </div>
   </li>
-</ol>
+  <li>
+    <p>파일명을 바꿔서 복사</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ cp hosts temp/hosts1
+  $ ls temp
+  hosts hosts1
+  $
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<blockquote>
+  <h3 id="4-여러-개의-파일을-디렉토리에-복사">4. 여러 개의 파일을 디렉토리에 복사</h3>
+</blockquote>
+
+<ul>
+  <li>첫 번째 인자의 자리에 파일명 여러 개 사용</li>
+  <li>
+    <p>마지막 인자는 반드시 디렉토리명이어야 함</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ cp etc_hosts tmp_hosts temp
+  $ ls temp
+  etc_hosts hosts hosts1 tmp_hosts
+  $
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<blockquote>
+  <h3 id="5--i-옵션-사용">5. -i 옵션 사용</h3>
+</blockquote>
+
+<ul>
+  <li>두 번째 인자에 지정한 파일명이 이미 존재하면 겹쳐서 복사할 것인지 물어봄</li>
+  <li>
+    <p>“y”나 “n”으로 대답</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ cp –i tmp_hosts hosts
+  cp: overwrite hosts? n
+  $
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<blockquote>
+  <h3 id="6-디렉토리를-복사">6. 디렉토리를 복사</h3>
+</blockquote>
+
+<ul>
+  <li>
+    <p>-r 옵션 사용하지 않을 경우 오류 발생</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ cp temp tmp
+  cp: omitting directory ‘temp’
+  $
+</code></pre></div>    </div>
+
+    <ul>
+      <li>유닉스 버전에 따라 오류 메시지는 다르게 출력됨</li>
+      <li>“cp: temp: is a directory“라는 오류 메시지가 출력되기도 함</li>
+    </ul>
+  </li>
+  <li>
+    <p>-r 옵션 사용하여 복사할 경우 디렉토리 내에 있던 파일이나 하위 디렉토리 모두 복사</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ cp –r temp tmp
+  $ ls –F
+  etc_hosts hosts temp/ tmp/ tmp_hosts
+  $ ls tmp
+  hosts hosts1
+  $
+</code></pre></div>    </div>
+  </li>
+  <li>두 번째 인자인 tmp 디렉토리가 원래 없었으므로 원본 디렉토리와 같은 위치에 새로 생성됨</li>
+  <li>두 번째 인자가 기존에 있던 디렉토리 이름이면 원본 디렉토리는 두 번째 인자로 지정한 디렉토리 아래에 같은 이름으로 복사됨</li>
+</ul>
+
+<p><br /><br /></p>
+<h1 id="파일-삭제">파일 삭제</h1>
+<p><br /><br /></p>
+
+<blockquote>
+  <h3 id="1-rm-명령">1. rm 명령</h3>
+</blockquote>
+
+<ul>
+  <li>파일을 삭제</li>
+  <li>형식 : rm [옵션] 파일명/디렉토리명</li>
+  <li>옵션
+    <ul>
+      <li>-i : 지정한 파일을 정말 삭제할 것인지 확인</li>
+      <li>-r : 디렉토리를 삭제할 때 지정</li>
+    </ul>
+  </li>
+  <li>사용 예 : <br />
+   rm file<br />
+   rm –r dir</li>
+</ul>
+
+<blockquote>
+  <h3 id="2-기본-삭제">2. 기본 삭제</h3>
+</blockquote>
+
+<ul>
+  <li>인자를 파일로 지정하면 해당파일 삭제</li>
+  <li>
+    <p>유닉스에는 ‘휴지통’ 기능이 없어, 삭제된 파일은 복구할 수 없음</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ rm hosts
+  $
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<blockquote>
+  <h3 id="3--i-옵션을-사용한-파일-삭제">3. -i 옵션을 사용한 파일 삭제</h3>
+</blockquote>
+
+<ul>
+  <li>
+    <p>지정한 파일을 정말 삭제할 것인지 물어봄</p>
+
+    <ul>
+      <li>
+        <p>y를 입력하면 삭제되고, n을 입력하면 삭제되지 않음</p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ rm –i hosts1
+  rm: remove regular file hosts1? y
+  $
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<blockquote>
+  <h3 id="4-디렉토리-삭제">4. 디렉토리 삭제</h3>
+</blockquote>
+
+<ul>
+  <li>-r 옵션을 사용하면 디렉토리가 비어 있는지 여부와 상관없이 디렉토리 및 그 아래 모든 파일 삭제</li>
+  <li>
+    <p>-r 옵션 없이 삭제</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ rm tmp
+  rm: cannot remove ‘tmp’: Is a directory
+  $
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>rmdir 명령으로 삭제</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ rmdir tmp
+  rmdir: failed to remove ‘tmp’: Directory not empty
+  $ ls tmp
+  hosts hosts1 text
+  $
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>-r 옵션으로 삭제</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ rm –r tmp
+  $ ls –F
+  etc_hosts hosts temp/ tmp_hosts
+  $
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>-ri 옵션으로 삭제</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   $ rm –ri temp
+   rm: descend into directory temp? y
+   rm: descend into directory temp/tmp? y
+   rm: remove regular file temp/tmp/text1? y
+   rm: remove directory temp/tmp? y
+   rm: remove regular file temp/hosts1? y
+   rm: remove regular file temp/text? y
+   rm: remove regular file temp/hosts? y
+   rm: remove directory temp? n
+   $
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p><br /><br /></p>
+<h1 id="파일-이동">파일 이동</h1>
+<p><br /><br /></p>
+
+<blockquote>
+  <h3 id="1-mvmove-명령">1. mv(move) 명령</h3>
+</blockquote>
+
+<ul>
+  <li>파일의 이름을 바꾸거나 다른 디렉토리로 이동</li>
+  <li>형식 : mv [옵션] 파일명1/디렉토리명1 파일명2/디렉토리명2</li>
+  <li>
+    <p>옵션</p>
+
+    <ul>
+      <li>-i : 파일명2/디렉토리명2가 존재하면 덮어쓸 것인지 물어봄</li>
+    </ul>
+  </li>
+  <li>사용 예 : <br />
+   mv file1 file2<br />
+   mv file1 dir1<br />
+   mv file1 file2 file3 dir1</li>
+</ul>
+
+<blockquote>
+  <h3 id="2-파일을-파일로-이동">2. 파일을 파일로 이동</h3>
+</blockquote>
+
+<ul>
+  <li>첫 번째 인자와 두 번째 인자를 모두 파일명으로 지정</li>
+  <li>결과적으로는 이름 변경</li>
+  <li>
+    <p>두 번째 인자로 지정한 파일이 존재하면 내용 덮어씀</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ mv hosts text
+  $ ls –F
+  etc_hosts temp/ text tmp_hosts
+  $
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<blockquote>
+  <h3 id="3-파일을-디렉토리로-이동">3. 파일을 디렉토리로 이동</h3>
+</blockquote>
+
+<ul>
+  <li>
+    <p>두 번째 인자로 디렉토리 지정</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ mv text temp
+  $ ls –F
+  etc_hosts temp/ tmp_hosts
+  $
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>두 번째 인자로 디렉토리명과 파일명을 모두 지정하면 지정한 디렉토리로 파일명 바꿔서 이동</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ mv tmp_hosts temp/hosts
+  $ ls –F
+  etc_hosts temp/
+  $ ls temp
+  hosts text
+  $
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<blockquote>
+  <h3 id="4-여러-개의-파일을-디렉토리로-이동">4. 여러 개의 파일을 디렉토리로 이동</h3>
+</blockquote>
+
+<ul>
+  <li>첫 번째 인자의 자리에 파일명 여러 개 지정하면 두 번째 인자를 반드시 디렉토리로 해야 함</li>
+  <li>
+    <p>마지막 지정한 디렉토리로 파일이 모두 이동</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   $ mv temp/hosts temp/text .
+   $ ls –F
+   etc_hosts hosts temp/ text
+   $
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<blockquote>
+  <h3 id="5--i-옵션을-사용한-이동">5. -i 옵션을 사용한 이동</h3>
+</blockquote>
+
+<ul>
+  <li>
+    <p>두 번째 인자에 지정한 파일명이 기존에 있는 파일일 경우 덮어쓸 것인지 물어봄</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   $ mv –i etc_hosts hosts
+   mv: overwrite ‘hosts’? n
+   $
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<blockquote>
+  <h3 id="6-디렉토리를-디렉토리로-이동">6. 디렉토리를 디렉토리로 이동</h3>
+</blockquote>
+
+<ul>
+  <li>두 인자 모두 디렉토리명으로 지정</li>
+  <li>첫 번째 인자인 디렉토리가 두 번째 인자 디렉토리 아래로 이동</li>
+  <li>
+    <p>두 번째 인자가 새로운 이름이면 디렉토리 이름 변경</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   $ cp –r temp tmp
+   $ ls –F
+   etc_hosts hosts temp/ text tmp/
+   $ mv tmp temp
+   $ ls -F
+   etc_hosts hosts temp/ text
+   $ ls –F temp
+   etc_hosts hosts text tmp/
+   $
+</code></pre></div>    </div>
+  </li>
+</ul>
+
 
     <br />
     <br />
@@ -566,12 +738,12 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 <div class="share">
   <h2>Share this post</h2>
   <div class="share-body">
-    <a href="http://twitter.com/share?text=[Database] 순수관계연산자 (1/3)&amp;url=https://m-veloper.github.io/devlog/2020/02/28/database-12/"
+    <a href="http://twitter.com/share?text=[유닉스] 복사, 삭제, 이동&amp;url=https://m-veloper.github.io/devlog/2020/02/29/unix-11/"
       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
       <span class="icon-twitter">
       </span>
     </a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://m-veloper.github.io/devlog/2020/02/28/database-12/"
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://m-veloper.github.io/devlog/2020/02/29/unix-11/"
       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
       <span class="icon-facebook">
       </span>
@@ -651,27 +823,8 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
         
       
         
-        
           
-
-
-
-<style>
-  .related-posts>li>small{
-    margin-left: 10px;
-  }
-</style>
-<li class="h4">
-  <a href="/devlog/2020/02/29/unix-11/" data-flip="title">
-    <span>[유닉스] 복사, 삭제, 이동</span>
-  </a>
-  <small><time datetime="2020-02-29T00:00:00+09:00">
-    2020년 02월 29일
-  </time></small>
-</li>
-
-        
-      
+          
         
         
           
@@ -695,8 +848,27 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
         
       
         
+        
           
-          
+
+
+
+<style>
+  .related-posts>li>small{
+    margin-left: 10px;
+  }
+</style>
+<li class="h4">
+  <a href="/devlog/2020/02/28/database-12/" data-flip="title">
+    <span>[Database] 순수관계연산자 (1/3)</span>
+  </a>
+  <small><time datetime="2020-02-28T00:00:00+09:00">
+    2020년 02월 28일
+  </time></small>
+</li>
+
+        
+      
     
   </ul>
 </aside>
@@ -719,9 +891,9 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
   }
 
   var d = function () {
-    this.page.title = "[Database] 순수관계연산자 (1/3)",
-      this.page.identifier = "/devlog/2020/02/28/database-12",
-      this.page.url = "https://m-veloper.github.io/devlog/2020/02/28/database-12/"
+    this.page.title = "[유닉스] 복사, 삭제, 이동",
+      this.page.identifier = "/devlog/2020/02/29/unix-11",
+      this.page.url = "https://m-veloper.github.io/devlog/2020/02/29/unix-11/"
   };
   s._disqusFirst = void 0 === s._disqusFirst || s._disqusFirst, s._disqusLoading = void 0 !== s._disqusLoading && s._disqusLoading, s._disqusThis = !1, s._disqusThreadOffsetTop = i.getElementById(
     "disqus_thread").offsetTop, s._disqusLoading ? s._disqusFirst = !1 : (s._disqusLoading = !0, loadJSDeferred(
