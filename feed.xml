@@ -5,9 +5,96 @@
     <description></description>
     <link>https://m-veloper.github.io/</link>
     <atom:link href="https://m-veloper.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 29 Feb 2020 18:11:13 +0900</pubDate>
-    <lastBuildDate>Sat, 29 Feb 2020 18:11:13 +0900</lastBuildDate>
+    <pubDate>Sun, 01 Mar 2020 17:33:07 +0900</pubDate>
+    <lastBuildDate>Sun, 01 Mar 2020 17:33:07 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>[자바스크립트] 절대값 구하기[ Math.abs() ] </title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/javascript/2020-03-01-javascript-06.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;바스크립트-절대값--mathabs-&quot;&gt;바스크립트 절대값 [ Math.abs() ]&lt;/h1&gt;
+&lt;h3 id=&quot;how-to-use-mathabs-in-javascript&quot;&gt;How to use math.abs in javascript&lt;/h3&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;사용법&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;빈 객체, 하나 이상의 요소를 가진 배열, 숫자가 아닌 문자열, undefined나 빈 매개변수를 받으면 NaN을 반환합니다. null, 빈 문자열이나 빈 배열을 제공하면 0을 반환합&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; function difference(a, b) {
+   return Math.abs(a - b);
+ }
+    
+ console.log(difference(3, 5));
+ // expected output: 2
+    
+ console.log(difference(5, 3));
+ // expected output: 2
+    
+ console.log(difference(1.23456, 7.89012));
+ // expected output: 6.6555599999999995
+    
+    
+    
+ Math.abs('-1');     // 1
+ Math.abs(-2);       // 2
+ Math.abs(null);     // 0
+ Math.abs('');       // 0
+ Math.abs([]);       // 0
+ Math.abs([2]);      // 2
+ Math.abs([1,2]);    // NaN
+ Math.abs({});       // NaN
+ Math.abs('string'); // NaN
+ Math.abs();         // NaN
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Sun, 01 Mar 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/tip/2020/03/01/javascript-06/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/03/01/javascript-06/</guid>
+        
+        <category>javascript</category>
+        
+        
+        <category>tip</category>
+        
+      </item>
+    
+      <item>
+        <title>[자바스크립트] 문자열 길이(문자열 수) 확인</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/javascript/2020-03-01-javascript-05.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;자바스크립트-문자열-길이문자열-수-확인&quot;&gt;자바스크립트 문자열 길이(문자열 수) 확인&lt;/h1&gt;
+&lt;h3 id=&quot;how-to-check-string-length-in-javascript&quot;&gt;How to check String length in JavaScript&lt;/h3&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    // 정말 단순이 변수에 담긴 문자의 길이를 알고 싶을 뿐.
+    // length 함수를 사용하면 된다.
+    
+    let str = &quot;이렇게 쉬운걸 왜 몰랐을까 나는 똥멍청이 입니다.&quot;;
+    let testString = str.length;
+    console.log(testString);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+</description>
+        <pubDate>Sun, 01 Mar 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/tip/2020/03/01/javascript-05/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/03/01/javascript-05/</guid>
+        
+        <category>javascript</category>
+        
+        
+        <category>tip</category>
+        
+      </item>
     
       <item>
         <title>[유닉스] 링크, 수정 시각 변경</title>
