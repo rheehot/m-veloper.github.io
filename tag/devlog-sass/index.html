@@ -31,14 +31,15 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="naver-site-verification" content="fa37cbf8ce41948de6e94c01991ffa04cea9b093"/>
 <meta name="google-site-verification" content="5M4Zw9wg_UqQkvlayfb5Mc_ogvJdc013w_zLUkxgO-Y" />
-<meta property="og:title" content="[Database] 관계 데이터 모델의 제약 조건">
+<meta property="og:title" content="SASS">
 <meta property="og:type" content="article">
 
 
 
 
 
-  <meta property="og:image" content="https://m-veloper.github.io/assets/img/logo.png">
+  <meta property="og:image" content="https://m-veloper.github.io/assets//img/linux-logo.png">
+  <br/>
 
 
 <meta property="og:image:width" content="640" />
@@ -46,15 +47,13 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 
 
 
-  <title>[Database] 관계 데이터 모델의 제약 조건 &middot; m_veloper</title>
+  <title>SASS &middot; m_veloper</title>
 
 
 
 <meta name="description" content="
-
 ">
 <meta property="og:description" content="
-
 ">
 
 
@@ -62,17 +61,17 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 <!-- =============== -->
 <!-- LINKS           -->
 <!-- =============== -->
-<link rel="canonical" href="https://m-veloper.github.io/devlog/2020/02/28/database-10/">
-<meta property="og:url" content="https://m-veloper.github.io/devlog/2020/02/28/database-10/">
+<link rel="canonical" href="https://m-veloper.github.io/tag/devlog-sass/">
+<meta property="og:url" content="https://m-veloper.github.io/tag/devlog-sass/">
 
 <link rel="alternate" type="application/atom+xml" title="m_veloper Feed" href="https://m-veloper.github.io/feed.xml">
 
 
-  <link rel="prev" href="https://m-veloper.github.io/tip/2020/02/27/javascript-04/">
+  <link rel="prev" href="https://m-veloper.github.io/tag/devlog-react/">
 
 
 
-  <link rel="next" href="https://m-veloper.github.io/devlog/2020/02/28/database-11/">
+  <link rel="next" href="https://m-veloper.github.io/tag/devlog-unix/">
 
 
 <link rel="apple-touch-icon" href="https://m-veloper.github.io/apple-touch-icon.png">
@@ -198,528 +197,27 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 <div id="_yPushState">
   <div class="fade-in">
     <main id="_main" class="content" role="main" data-color="#e2adfd" data-image="/assets/img/nap.jpg">
-      <style>
-  .myAd1190 {
-    width: 48%;
-    height: 280px;
-  }
-
-  .myAd1290 {
-    width: 48%;
-    height: 280px;
-  }
-
-  @media(max-width: 800px) {
-    .myAd1190 {
-      display: none;
-    }
-
-    .myAd1290 {
-      width: 98%;
-    }
-  }
-  /*광고 붙을떄 까지 안보이게*/
-  .row {
-    /*display: flex;*/
-    display: none;
-    justify-content: space-between;
-    align-items: center;
-    height: 300px;
-  }
-
-  .row-center {
-    display: flex;
-    justify-content: center;
-    height: 258px;
-  }
-  /*광고 붙을떄 까지 안보이게*/
-  .right-side{
-    display: none;
-  }
-
-  #tag{
-    margin-bottom: 0.875rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    height: 2rem;
-    display: inline-flex;
-    -webkit-box-align: center;
-    align-items: center;
-    margin-right: 0.875rem;
-    color: rgb(12, 166, 120);
-    font-size: 0.9rem;
-    background: rgb(241, 243, 245);
-    border-radius: 1rem;
-    text-decoration: none;
-  }
-  .post-date{
-    font-size: 0.9rem;
-    font-weight: 400;
-  }
-
-  .markdown-body h1 {
-    border-bottom: 1px solid lightgray;
-    padding-bottom: 8px;
-    margin-bottom: 8px;
-    margin-top: 56px;
-  }
-
-</style>
-
-
-
-
-
-<article id="post-devlog/2020/02/28/database-10" class="post this" role="article">
-  <header>
-
-    <h1 class="post-title">
       
-        [Database] 관계 데이터 모델의 제약 조건
-        
-    </h1>
 
-    <p class="post-date heading">
-      <!--<time datetime="2020-02-28T00:00:00+09:00">28 Feb 2020</time>-->
-      <time datetime="2020-02-28T00:00:00+09:00">2020년 02월 28일</time>
-    </p>
-    
 
 
-
-
-
-
-
-
-
-<a href="/category/devlog/" data-flip="title" id="tag">Devlog</a>
-
-    
-
-
-
-
-
-
-
-
-
-<a href="/tag/devlog-database/" data-flip="title" id="tag">Database</a>
-
-
-    
-  <div class="hr" style="padding-bottom:0"></div>
-
-
-  </header>
-  
-
-  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  
-  <div class="markdown-body">
-
-    <!--  -->
-
-    <div class='row'>
-      <ins class="adsbygoogle myAd1190" data-ad-client="ca-pub-9134477021095729" data-ad-slot="6559875097"></ins>
-      <ins class="adsbygoogle myAd1290" data-ad-client="ca-pub-9134477021095729" data-ad-slot="6559875097"></ins>
-    </div>
-
-    <script>
-      (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-
-    <br />
-    <p><img src="/assets/img/database/2020-02-28-database-10.png" alt="" /></p>
-
-<h1 id="데이터-무결성">데이터 무결성</h1>
-<p><br />
-<br /></p>
-
-<ol>
-  <li>데이터베이스의 장점
-    <ul>
-      <li>데이터 공유 및 용이한 접근</li>
-      <li>데이터 중복 최소화, 일관성, 무결성, 보안성 유지</li>
-      <li>데이터의 표준화 가능</li>
-      <li>데이터의 저장 공간 절약 및 집중화</li>
-    </ul>
-  </li>
-  <li>
-    <p>데이터 무결성</p>
-
-    <ul>
-      <li>데이터베이스에 저장된 데이터의 일관성과 정확성을 유지하는 것</li>
-      <li>일관성과 정확성이 없는 데이터베이스는 정보로서 부적격하다.</li>
-      <li>
-        <p>유지 방법</p>
-
-        <ul>
-          <li>투플의 삽입, 삭제, 수정시 데이터의 제약 조건을 준수하는지 확인하여야 한다.</li>
-        </ul>
-      </li>
-      <li>
-        <p>예 : 쇼핑몰에서 회원이 탈퇴한 경우</p>
-
-        <ul>
-          <li>탈퇴한 회원 정보를 삭제하면, 회원이 구매한 정보에 문제가 발생</li>
-          <li>구매내역까지 삭제하면, 쇼핑몰의 총 매출에 문제가 발생</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <p>데이터베이스 관리시스템의 데이터 무결성 유지</p>
-
-    <ul>
-      <li>무결성을 위반하는 데이터 저장 거절</li>
-    </ul>
-  </li>
-</ol>
-
-<p><br />
-<br /></p>
-
-<h1 id="무결성-제약-조건">무결성 제약 조건</h1>
-<p><br />
-<br /></p>
-
-<ol>
-  <li>
-    <p>도메인 무결성 제약 조건 (Domain Integrity Constraint)</p>
-
-    <ul>
-      <li>도메인 제약(Domain Constraint)</li>
-      <li>릴레이션 내의 투플들이 각 속성의 도메인에 지정된 값만 가져야 한다는 조건</li>
-      <li>
-        <p>예 : 주문 릴레이션의 주문일자 속성</p>
-
-        <ul>
-          <li>날짜 데이터만 사용하여야 함.</li>
-          <li>문자 등의 다른 자료형을 사용하면 안됨</li>
-        </ul>
-      </li>
-      <li>
-        <p>구현 방법</p>
-      </li>
-      <li>SQL 문에서 데이터 형식(Type), 널(NULL / NOT NULL), 기본 값(Default), 체크(Check)등을 사용하여 지정 (일반 프로그래밍 언어에서 변수형 선언과 유사)</li>
-    </ul>
-  </li>
-  <li>
-    <p>개체 무결성 제약조건 (Entity Integrity Constraint)</p>
-
-    <ul>
-      <li>기본키 제약 (Primary Key Constraint)라고도 함.</li>
-      <li>기본키의 무결성을 위한 제약 조건</li>
-      <li>기본키의 특징을 유지하기 위한 조건
-        <ul>
-          <li>NULL 값을 가져서는 안된다.</li>
-          <li>릴레이션 내에 오직 하나의 값만 존재하여야 한다.</li>
-        </ul>
-      </li>
-      <li>관계 데이터 모델의 핵심 개념</li>
-      <li>투플 삽입시 개체 무결성 제약 조건 수행</li>
-    </ul>
-
-    <p><img src="/assets/img/database/2020-02-28-database-10-01.png" alt="" /></p>
-
-    <p><img src="/assets/img/database/2020-02-28-database-10-02.png" alt="" />
- <br />
- <br /></p>
-
-    <ul>
-      <li>
-        <p>투플 수정시 개체 무결성 제약 조건 수행</p>
-
-        <ul>
-          <li>삽입 연산과 동일하게 제약에 따라 처리된다.</li>
-          <li>동일한 값으로 수정시 제약을 검색한 후 위배되면 수정이 거부된다.</li>
-        </ul>
-      </li>
-      <li>
-        <p>투플 삭제시 개체 무결성 제약 조건 수행</p>
-
-        <ul>
-          <li>특별한 확인이 필요하지 않으며 즉시 수행된다.</li>
-          <li>단, 참조 무결성 제약 조건에 의하여 다른 릴레이션에서 기본키를 참조하고 있으면, 바로 삭제하지 않는다.</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <p>참조 무결성 제약조건 (Referential Integrity Constraint)</p>
-
-    <ul>
-      <li>외래키 제약 (Foreign Key Constraint) 라고도 함.</li>
-      <li>릴레이션 간의 참조 관계를 선언하는 제약조건</li>
-      <li>
-        <p>부모(Parent) 릴레이션과 자식(Child) 릴레이션 관계</p>
-
-        <ul>
-          <li>부모 릴레이션 : 참조를 제공하는 릴레이션 (기본키)</li>
-          <li>자식 릴레이션 : 참조를 제공받는 릴레이션 (외래키)</li>
-        </ul>
-      </li>
-      <li>
-        <p>자식 릴레이션의 값은 부모 릴레이션의 제약을 받는다.</p>
-
-        <ul>
-          <li>자식 릴레이션의 값이 부모 릴레이션의 도메인과 다른 값으로 삽입, 수정될 경우 거부</li>
-          <li>자식 릴레이션에서 참조하고 있는 값을 부모 릴레이션에서 삭제하거나 다른 값으로 변경할 경우 거부</li>
-        </ul>
-      </li>
-      <li>
-        <p>투플 삽입시 참조 무결성 제약 조건 수행</p>
-
-        <p><img src="/assets/img/database/2020-02-28-database-10-03.png" alt="" />
-  <br />
-  <br /></p>
-      </li>
-      <li>
-        <p>투플 삭제시 참조 무결성 제약 조건 수행</p>
-
-        <ul>
-          <li>자식 릴레이션에서 투플이 삭제되는 경우 : 부모 릴레이션에는 영향이 없으므로 바로 삭제</li>
-          <li>
-            <p>부모 릴레이션에서 투플이 삭제되는 경우 : 문제 발생되며 조치 방법</p>
-
-            <p>(가) 즉시 작업 중지
-  (나) 자식 릴레이션의 관련 투플을 삭제
-  (다) 자식 릴레이션의 관련 투플을 설정된 다른 값으로 변경
-  (라) 자식 릴레이션의 관련 투플을 NULL 값으로 설정</p>
-          </li>
-        </ul>
-
-        <p><img src="/assets/img/database/2020-02-28-database-10-04.png" alt="" />
-  <br />
-  <br /></p>
-      </li>
-      <li>
-        <p>투플 수정시 참조 무결성 제약 조건 수행</p>
-
-        <ul>
-          <li>
-            <p>부모 릴레이션의 투플이 수정되는 경우</p>
-
-            <p>(가) 삭제 옵션에 따라 처리
-  (나) 문제가 없으면 삽입 제약 조건에 따라 처리</p>
-          </li>
-        </ul>
-
-        <p><img src="/assets/img/database/2020-02-28-database-10-05.png" alt="" />
-  <br />
-  <br /></p>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <p>기타 제약 조건</p>
-
-    <p>(1) 고유성 제약조건 (Unique Constraint)</p>
-
-    <ul>
-      <li>키 제약(Key Constraint)라고도 함.</li>
-      <li>
-        <p>키 속성을 유지하기 위한 제약</p>
-
-        <ul>
-          <li>키의 모든 값은 달라야 한다.</li>
-        </ul>
-      </li>
-      <li>
-        <p>단, NULL 값을 허용한다.</p>
-
-        <ul>
-          <li>키는 NULL 값을 허용하지 않는다.</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-</ol>
-
-    <br />
-    <br />
-  </div>
-  <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
-  
-
-</article>
-
-
-<div class="share">
-  <h2>Share this post</h2>
-  <div class="share-body">
-    <a href="http://twitter.com/share?text=[Database] 관계 데이터 모델의 제약 조건&amp;url=https://m-veloper.github.io/devlog/2020/02/28/database-10/"
-      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
-      <span class="icon-twitter">
-      </span>
-    </a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://m-veloper.github.io/devlog/2020/02/28/database-10/"
-      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
-      <span class="icon-facebook">
-      </span>
-    </a>
-  </div>
-</div>
-<br />
-
-
-
-<!--
-
-
-  <aside class="author" role="complementary">
-    <div class="author">
-  <h2 class="page-title hr">
-    About
-  </h2>
-<div class="author-body">
-  
-    
-  
-
-  
-
-  <img
-    src="/assets/img/me.jpeg"
-    class="me"
-    alt="m_veloper"
-    srcset="/assets/img/me.jpeg 1x,/assets/img/me.jpeg 2x"
-    
-  />
-
-
-  
-  <div class="author-body-description">
-    
-
-  </div>
-</div>
-</div>
-
-  </aside>
-
--->
-
-
-
-<aside class="related" role="complementary">
-  <h2 class="hr">Related Posts</h2>
-
-  <ul class="related-posts">
-    
+<h2 class="sr-only">Pagination</h2>
+<nav class="pagination heading" role="navigation">
+  <ul>
+    <li class="pagination-item older" >
       
+        <span>이전</span>
       
+    </li>
+    <li class="pagination-item newer" >
       
-        
-        
-          
-
-
-
-<style>
-  .related-posts>li>small{
-    margin-left: 10px;
-  }
-</style>
-<li class="h4">
-  <a href="/devlog/2020/02/29/unix-12/" data-flip="title">
-    <span>[유닉스] 링크, 수정 시각 변경</span>
-  </a>
-  <small><time datetime="2020-02-29T00:00:00+09:00">
-    2020년 02월 29일
-  </time></small>
-</li>
-
-        
+        <span>다음</span>
       
-        
-        
-          
-
-
-
-<style>
-  .related-posts>li>small{
-    margin-left: 10px;
-  }
-</style>
-<li class="h4">
-  <a href="/devlog/2020/02/29/unix-11/" data-flip="title">
-    <span>[유닉스] 복사, 삭제, 이동</span>
-  </a>
-  <small><time datetime="2020-02-29T00:00:00+09:00">
-    2020년 02월 29일
-  </time></small>
-</li>
-
-        
-      
-        
-        
-          
-
-
-
-<style>
-  .related-posts>li>small{
-    margin-left: 10px;
-  }
-</style>
-<li class="h4">
-  <a href="/devlog/2020/02/29/unix-10/" data-flip="title">
-    <span>[유닉스] 파일 내용 보기</span>
-  </a>
-  <small><time datetime="2020-02-29T00:00:00+09:00">
-    2020년 02월 29일
-  </time></small>
-</li>
-
-        
-      
-        
-        
-      
-    
+    </li>
   </ul>
-</aside>
+</nav>
 
 
-
-      
-        <aside class="comments" role="complementary">
-  <h2>Comments</h2>
-  <hr/>
-
-  <div id="disqus_thread"></div>
-
-  <script>
-    !function (s, i) {
-  function e(e) {
-    var t = s.pageYOffset || i.body.scrollTop;
-    s.DISQUS && !s._disqusThis && !s._disqusFirst && t + s.innerHeight >= s._disqusThreadOffsetTop && (s._disqusThis = !0, s.DISQUS.reset(
-      { reload: !0, config: d }))
-  }
-
-  var d = function () {
-    this.page.title = "[Database] 관계 데이터 모델의 제약 조건",
-      this.page.identifier = "/devlog/2020/02/28/database-10",
-      this.page.url = "https://m-veloper.github.io/devlog/2020/02/28/database-10/"
-  };
-  s._disqusFirst = void 0 === s._disqusFirst || s._disqusFirst, s._disqusLoading = void 0 !== s._disqusLoading && s._disqusLoading, s._disqusThis = !1, s._disqusThreadOffsetTop = i.getElementById(
-    "disqus_thread").offsetTop, s._disqusLoading ? s._disqusFirst = !1 : (s._disqusLoading = !0, loadJSDeferred(
-    "//m-veloper.disqus.com/embed.js"), s.addEventListener ? s.addEventListener(
-    "scroll",
-    e,
-    { passive: !0 }) : s.attachEvent ? s.attachEvent("onscroll", e) : s.onscroll = e)
-}(window, document);
-
-  </script>
-  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-</aside>
 
       
 
@@ -1113,7 +611,7 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
          
            
              <li>
-               <a class="sidebar-nav-subitem" href="/tag/devlog-sass/">SASS</a>
+               <a class="sidebar-nav-subitem active" href="/tag/devlog-sass/">SASS</a>
              </li>
            
          
