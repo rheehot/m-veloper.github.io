@@ -5,15 +5,15 @@
     <description></description>
     <link>https://m-veloper.github.io/</link>
     <atom:link href="https://m-veloper.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 02 Mar 2020 23:18:04 +0900</pubDate>
-    <lastBuildDate>Mon, 02 Mar 2020 23:18:04 +0900</lastBuildDate>
+    <pubDate>Tue, 03 Mar 2020 23:49:23 +0900</pubDate>
+    <lastBuildDate>Tue, 03 Mar 2020 23:49:23 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
         <title>[자바스크립트] 절대값 구하기[ Math.abs() ] </title>
         <description>&lt;p&gt;&lt;img src=&quot;/assets/img/javascript/2020-03-01-javascript-06.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;h1 id=&quot;바스크립트-절대값--mathabs-&quot;&gt;바스크립트 절대값 [ Math.abs() ]&lt;/h1&gt;
+&lt;h1 id=&quot;자바스크립트-절대값--mathabs-&quot;&gt;자바스크립트 절대값 [ Math.abs() ]&lt;/h1&gt;
 &lt;h3 id=&quot;how-to-use-mathabs-in-javascript&quot;&gt;How to use math.abs in javascript&lt;/h3&gt;
 &lt;p&gt;&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
