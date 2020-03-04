@@ -2,7 +2,23 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
     <url>
-      <loc>https://m-veloper.github.io/tip/2020/03/01/javascript-06/</loc>
+      <loc>https://m-veloper.github.io/tip/2020/03/04/tip-jstl-01/</loc>
+      
+        <lastmod>2020-03-04T00:00:00+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>1.0</priority>
+      
+
+    </url>
+  
+    <url>
+      <loc>https://m-veloper.github.io/tip/2020/03/01/tip-javascript-06/</loc>
       
         <lastmod>2020-03-01T00:00:00+09:00</lastmod>
       
@@ -18,7 +34,7 @@
     </url>
   
     <url>
-      <loc>https://m-veloper.github.io/tip/2020/03/01/javascript-05/</loc>
+      <loc>https://m-veloper.github.io/tip/2020/03/01/tip-javascript-05/</loc>
       
         <lastmod>2020-03-01T00:00:00+09:00</lastmod>
       
@@ -130,7 +146,7 @@
     </url>
   
     <url>
-      <loc>https://m-veloper.github.io/tip/2020/02/27/javascript-04/</loc>
+      <loc>https://m-veloper.github.io/tip/2020/02/27/tip-javascript-04/</loc>
       
         <lastmod>2020-02-27T00:00:00+09:00</lastmod>
       
@@ -146,7 +162,7 @@
     </url>
   
     <url>
-      <loc>https://m-veloper.github.io/tip/2020/02/27/javascript-03/</loc>
+      <loc>https://m-veloper.github.io/tip/2020/02/27/tip-javascript-03/</loc>
       
         <lastmod>2020-02-27T00:00:00+09:00</lastmod>
       
@@ -210,7 +226,7 @@
     </url>
   
     <url>
-      <loc>https://m-veloper.github.io/tip/2020/02/25/javascript-02/</loc>
+      <loc>https://m-veloper.github.io/tip/2020/02/25/tip-javascript-02/</loc>
       
         <lastmod>2020-02-25T00:00:00+09:00</lastmod>
       
@@ -226,7 +242,7 @@
     </url>
   
     <url>
-      <loc>https://m-veloper.github.io/tip/2020/02/25/javascript-01/</loc>
+      <loc>https://m-veloper.github.io/tip/2020/02/25/tip-javascript-01/</loc>
       
         <lastmod>2020-02-25T00:00:00+09:00</lastmod>
       

@@ -5,13 +5,203 @@
     <description></description>
     <link>https://m-veloper.github.io/</link>
     <atom:link href="https://m-veloper.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 03 Mar 2020 23:49:23 +0900</pubDate>
-    <lastBuildDate>Tue, 03 Mar 2020 23:49:23 +0900</lastBuildDate>
+    <pubDate>Wed, 04 Mar 2020 23:13:48 +0900</pubDate>
+    <lastBuildDate>Wed, 04 Mar 2020 23:13:48 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
+        <title>[JSTL] &lt; c:if &gt;, &lt; c:choose &gt; 태그 사용법</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/jstl/2020-03-04-tip-jstl-01.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;jstl---태그-사용법&quot;&gt;[JSTL] &lt;c:if&gt;, &lt;c:choose&gt; 태그 사용법&lt;/c:choose&gt;&lt;/c:if&gt;&lt;/h1&gt;
+&lt;h3 id=&quot;how-to-use-if-else-option-in-jstl&quot;&gt;How to use if-else option in JSTL&lt;/h3&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;조건&quot;&gt;조건&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;jsp 페이지  상단에 아래의 코드를 선언 하고 사용한다.&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   &amp;lt;%@ taglib uri=&quot;http://java.sun.com/sjp/jstl/core&quot; prefix=&quot;c&quot; %&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;-cif-&quot;&gt;&amp;lt; c:if &amp;gt;&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;jstl에서 조건에 따른 분기를 처리할 수 있는 태그로 &lt;c:if&gt;와 &lt;c:choose&gt;가 있습니다.&lt;/c:choose&gt;&lt;/c:if&gt;&lt;/li&gt;
+  &lt;li&gt;태그 - test 속성내의 EL 의 결과가 참이면 실행됩니다. else 구문은 없습니다.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;예제&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   &amp;lt;c:set var=&quot;name&quot; value=&quot;홍길동&quot; /&amp;gt;
+      &amp;lt;c:if test=&quot;${nae eq '홍길동'}&quot;&amp;gt;
+          &amp;lt;c:out value=&quot;${str}&quot; /&amp;gt;
+      &amp;lt;/c:if&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;위의 코드는 변수 name의 값이 “홍길동” 이면 출력합니다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&amp;lt; c:if &amp;gt; 태그에 사용될 수 있는 속성은 다음 세 가지 입니다.&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;test : 필수 속성으로 속성값으로 EL 비교식을 가집니다.&lt;/li&gt;
+      &lt;li&gt;var : 조건 결과를 저장할 변수를 지정합니다.&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;scope : 조건 결과를 저장할 변수의 저장 scope을 지정합니다.&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &amp;lt;c:if test=&quot;${name eq '홍길동'}&quot; var=&quot;nameHong&quot; scope=&quot;session&quot;&amp;gt;
+      ....
+  &amp;lt;/c:if&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;위 코드는 test 속성의 결과를 nameHong 변수 이름으로 session 영역에 저장합니다. 동일 세션의 다른 페이지에서 결과를 찾을 수 있습니다.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;test속성에-사용될-비교-연산자&quot;&gt;test속성에 사용될 비교 연산자&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;eq(==) : 문자열 또는 숫자가 같으면 참입니다. null 또는 빈 문자열 인지도 확인할 수 있습니다.&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; ﻿&amp;lt;c:if test=&quot;${name == '홍길동'}&quot;&amp;gt;
+      
+ &amp;lt;c:if test=&quot;${name eq '홍길동'}&quot;&amp;gt;
+      
+ &amp;lt;c:if test=&quot;${name == null}&quot;&amp;gt;
+      
+ &amp;lt;c:if test=&quot;${name eq null}&quot;&amp;gt;
+      
+ &amp;lt;c:if test=&quot;${num == 5}&quot;&amp;gt;
+      
+ &amp;lt;c:if test=&quot;${num eq 5}&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;ne(!=) : 문자열 또는 숫자가 다르면 참입니다.&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &amp;lt;c:if test=&quot;${name != '홍길동'}&quot;&amp;gt;
+       
+  &amp;lt;c:if test=&quot;${name ne '홍길동'}&quot;&amp;gt;
+       
+  &amp;lt;c:if test=&quot;${num != 5}&quot;&amp;gt;
+       
+  &amp;lt;c:if test=&quot;${num ne 5}&quot;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;empty : List 또는 배열이 비어있거나, 문자열이 null 또는 빈 문자열이면 참을 반환합니다. 숫자 0은 eq(==) 로 비교해야 합니다.&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   ﻿&amp;lt;c:if test=&quot;${empty name}&quot;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;not empty : List 또는 배열이 비어 있지 않을 경우, 문자열이 값이 있을 경우 참을 반환합니다.&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   ﻿&amp;lt;c:if test=&quot;${not empty name}&quot;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;논리연산자&quot;&gt;논리연산자&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;비교연산자의 조합으로 논리 연산을 할 수 있는 논리연산자 입니다.&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;and (&amp;amp;&amp;amp;) : 모두 참일때 참이 됩니다.&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  ﻿&amp;lt;c:if test=&quot;${a &amp;gt; b and c &amp;lt; d}&quot;&amp;gt;
+            
+  &amp;lt;c:if test=&quot;${a &amp;gt; b &amp;amp;&amp;amp; c &amp;lt; d}&quot;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;or (II) : 둘중 하나라도 참이면 참이 됩니다.&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  ﻿&amp;lt;c:if test=&quot;${a &amp;gt; b or c &amp;lt; d}&quot;&amp;gt;
+            
+  &amp;lt;c:if test=&quot;${a &amp;gt; b || c &amp;lt; d}&quot;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;not (!) : 논리를 반전합니다.&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  ﻿&amp;lt;c:if test=&quot;${not a == ''}&quot;&amp;gt;
+            
+  &amp;lt;c:if test=&quot;${! a == ''}&quot;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;괄호를 사용하여 논리연산의 우선 순위를 지정할 수 있습니다.&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  ﻿&amp;lt;c:if test=&quot;${a &amp;gt; b &amp;amp;&amp;amp; (b &amp;gt; c || d &amp;lt; e)}&quot;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;-cchoose--태그&quot;&gt;&amp;lt; c:choose &amp;gt; 태그&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&amp;lt; c:choose &amp;gt; 태그는 조건에 따른 여러곳으로 분기 가능하고, 조건이 맞은 것이 없을 경우 기본 분기를 제공할 수 있습니다.&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &amp;lt;c:choose&amp;gt;
+      &amp;lt;c:when test=&quot;${name eq '김철수'}&quot;&amp;gt; 
+          ... 
+      &amp;lt;/c:when&amp;gt;
+       
+      &amp;lt;c:when test=&quot;${name eq '박영희'}&quot;&amp;gt; 
+          ... 
+      &amp;lt;/c:when&amp;gt;
+       
+      &amp;lt;c:otherwise&amp;gt; ... &amp;lt;/c:otherwise&amp;gt;
+  &amp;lt;/c:choose&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;위 코드는 이름이 “김철수”, “박영희” 일 경우 분기 하고 그 외의 경우에는 &amp;lt; c:otherwise &amp;gt; 로 분기 합니다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;참고 : https://offbyone.tistory.com/367&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 04 Mar 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/tip/2020/03/04/tip-jstl-01/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/03/04/tip-jstl-01/</guid>
+        
+        <category>jstl</category>
+        
+        
+        <category>tip</category>
+        
+      </item>
+    
+      <item>
         <title>[자바스크립트] 절대값 구하기[ Math.abs() ] </title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/javascript/2020-03-01-javascript-06.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/javascript/2020-03-01-tip-javascript-06.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;자바스크립트-절대값--mathabs-&quot;&gt;자바스크립트 절대값 [ Math.abs() ]&lt;/h1&gt;
 &lt;h3 id=&quot;how-to-use-mathabs-in-javascript&quot;&gt;How to use math.abs in javascript&lt;/h3&gt;
@@ -57,8 +247,8 @@
 
 </description>
         <pubDate>Sun, 01 Mar 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/tip/2020/03/01/javascript-06/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/03/01/javascript-06/</guid>
+        <link>https://m-veloper.github.io/tip/2020/03/01/tip-javascript-06/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/03/01/tip-javascript-06/</guid>
         
         <category>javascript</category>
         
@@ -69,7 +259,7 @@
     
       <item>
         <title>[자바스크립트] 문자열 길이(문자열 수) 확인</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/javascript/2020-03-01-javascript-05.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/javascript/2020-03-01-tip-javascript-05.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;자바스크립트-문자열-길이문자열-수-확인&quot;&gt;자바스크립트 문자열 길이(문자열 수) 확인&lt;/h1&gt;
 &lt;h3 id=&quot;how-to-check-string-length-in-javascript&quot;&gt;How to check String length in JavaScript&lt;/h3&gt;
@@ -86,8 +276,8 @@
 
 </description>
         <pubDate>Sun, 01 Mar 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/tip/2020/03/01/javascript-05/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/03/01/javascript-05/</guid>
+        <link>https://m-veloper.github.io/tip/2020/03/01/tip-javascript-05/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/03/01/tip-javascript-05/</guid>
         
         <category>javascript</category>
         
@@ -2148,7 +2338,7 @@
     
       <item>
         <title>[자바스크립트] Null check, 빈 값 체크, 공백 체크</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/javascript/2020-02-27-javascript-04.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/javascript/2020-02-27-tip-javascript-04.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;자바스크립트로-null-check-빈-값-체크-공백-체크&quot;&gt;자바스크립트로 Null check, 빈 값 체크, 공백 체크&lt;/h1&gt;
 &lt;h3 id=&quot;how-do-i-check-for-null-values-in-javascript&quot;&gt;How do I check for null values in JavaScript?&lt;/h3&gt;
@@ -2211,8 +2401,8 @@
 
 </description>
         <pubDate>Thu, 27 Feb 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/tip/2020/02/27/javascript-04/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/02/27/javascript-04/</guid>
+        <link>https://m-veloper.github.io/tip/2020/02/27/tip-javascript-04/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/02/27/tip-javascript-04/</guid>
         
         <category>javascript</category>
         
@@ -2223,7 +2413,7 @@
     
       <item>
         <title>[자바스크립트] 왼쪽 숫자 0, 첫자리 0 제거하기(정규식)</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/javascript/2020-02-27-javascript-03.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/javascript/2020-02-27-tip-javascript-03.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;왼쪽-숫자-0-첫자리-0-제거하기정규식&quot;&gt;왼쪽 숫자 0, 첫자리 0 제거하기(정규식)&lt;/h1&gt;
 &lt;h3 id=&quot;how-to-remove-leading-zeros-from-a-number-in-javascript&quot;&gt;How to remove leading zeros from a number in JavaScript?&lt;/h3&gt;
@@ -2251,8 +2441,8 @@
 
 </description>
         <pubDate>Thu, 27 Feb 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/tip/2020/02/27/javascript-03/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/02/27/javascript-03/</guid>
+        <link>https://m-veloper.github.io/tip/2020/02/27/tip-javascript-03/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/02/27/tip-javascript-03/</guid>
         
         <category>javascript</category>
         
@@ -3341,7 +3531,7 @@ $
     
       <item>
         <title>[자바스크립트] 문자열 자르기 (split, substring, substr)</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/javascript/2020-02-25-javascript-02.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/javascript/2020-02-25-tip-javascript-02.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;문자열-자르기-split-substring-substr&quot;&gt;문자열 자르기 (split, substring, substr)&lt;/h1&gt;
 &lt;h3 id=&quot;how-to-divide-string-in-javascript&quot;&gt;How to divide string in Javascript&lt;/h3&gt;
@@ -3384,8 +3574,8 @@ var day=string.substr(8,2) //11
 
 </description>
         <pubDate>Tue, 25 Feb 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/tip/2020/02/25/javascript-02/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/02/25/javascript-02/</guid>
+        <link>https://m-veloper.github.io/tip/2020/02/25/tip-javascript-02/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/02/25/tip-javascript-02/</guid>
         
         <category>javascript</category>
         
@@ -3396,7 +3586,7 @@ var day=string.substr(8,2) //11
     
       <item>
         <title>[자바스크립트] 문자를 숫자로 바꾸기(String to int)</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/javascript/2020-02-25-javascript-01.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/javascript/2020-02-25-tip-javascript-01.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;자바스크립트-문자를-숫자로-바꾸기string-to-int&quot;&gt;자바스크립트 문자를 숫자로 바꾸기(String to int)&lt;/h1&gt;
 &lt;h3 id=&quot;how-to-convert-string-to-number-in-javascript&quot;&gt;How to convert String to number in javascript&lt;/h3&gt;
@@ -3476,8 +3666,8 @@ var day=string.substr(8,2) //11
 참고 : https://programmingsummaries.tistory.com/355&lt;/p&gt;
 </description>
         <pubDate>Tue, 25 Feb 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/tip/2020/02/25/javascript-01/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/02/25/javascript-01/</guid>
+        <link>https://m-veloper.github.io/tip/2020/02/25/tip-javascript-01/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/02/25/tip-javascript-01/</guid>
         
         <category>javascript</category>
         
@@ -6872,145 +7062,6 @@ var day=string.substr(8,2) //11
         <pubDate>Thu, 13 Feb 2020 00:00:00 +0900</pubDate>
         <link>https://m-veloper.github.io/devlog/2020/02/13/database-02/</link>
         <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/02/13/database-02/</guid>
-        
-        <category>database</category>
-        
-        
-        <category>devlog</category>
-        
-      </item>
-    
-      <item>
-        <title>[Database] 데이터베이스</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-12-database-01.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;데이터와-정보&quot;&gt;데이터와 정보&lt;/h1&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;데이터&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;일련의 작업을 목적으로 수집된 의미있는 값&lt;/li&gt;
-      &lt;li&gt;연구나 조사 등의 바탕이 되는 재료&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;정보&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;뜻을 가지는 자료&lt;/li&gt;
-      &lt;li&gt;특정한 목적의 의사결정을 위하여 가공한 형태&lt;/li&gt;
-      &lt;li&gt;일정한 형식으로 표현한 모든 종류의 자료 또는 지식&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;파일시스템&quot;&gt;파일시스템&lt;/h1&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;정의&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;데이터를 파일에 저장하고, 파일을 수정, 삭제, 검색하는 기능을 제공하여 사용자가 파일을 손쉽게 이용할 수 있도록 지원하는 프로그램.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;특징
-    &lt;ul&gt;
-      &lt;li&gt;각각의 응용 프로그램은 데이터를 고유의 형식에 맞추어 관리&lt;/li&gt;
-      &lt;li&gt;응용 프로그램마다 독립적인 파일을 관리&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;단점
-    &lt;ul&gt;
-      &lt;li&gt;데이터가 중복되어 저장된다.&lt;/li&gt;
-      &lt;li&gt;여러 파일에 중복되어 저장된 데이터가 변동될 때, 일치시키기 어렵다.&lt;/li&gt;
-      &lt;li&gt;프로그램에 종속된 데이터를 다른 목적의 프로그램에서 사용하기 어렵다.&lt;/li&gt;
-      &lt;li&gt;데이터 보안을 유지하기 어렵다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;데이터베이스&quot;&gt;데이터베이스&lt;/h1&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;도입 배경&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;파일 시스템의 단점 극복&lt;/li&gt;
-      &lt;li&gt;다수 사용자의 정보 공유&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;개념&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;다수의 사용자가 데이터를 공유하여 사용할 수 있도록 통합하여 저장한 데이터 집합&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;장점&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;데이터 공유 및 용이한 접근&lt;/li&gt;
-      &lt;li&gt;데이터 중복 최소화, 일관성, 무결성, 보안성 유지&lt;/li&gt;
-      &lt;li&gt;데이터의 표준화 가능&lt;/li&gt;
-      &lt;li&gt;데이터의 저장 공간 절약 및 집중화&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;단점&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;전문가가 필요&lt;/li&gt;
-      &lt;li&gt;데이터 백업과 복구의 어려움&lt;/li&gt;
-      &lt;li&gt;비용 부담&lt;/li&gt;
-      &lt;li&gt;다수의 사용자가 동시 사용시 집중된 데이터 사용에 과부하 발생 가능&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;데이터베이스-관리-시스템&quot;&gt;데이터베이스 관리 시스템&lt;/h1&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;정의&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;DBMS(DataBase Management System)&lt;/li&gt;
-      &lt;li&gt;데이터베이스에 저장된 데이터를 관리하고, 필요한 정보를 생성해주는 시스템&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;특징&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;데이터의 중복 및 불일치 최소화시킬 수 있다.&lt;/li&gt;
-      &lt;li&gt;데이터 독립성을 유지할 수 있다.&lt;/li&gt;
-      &lt;li&gt;DBMS를 통하여 데이터에 접근하고, 데이터베이스내의 데이터 변화가 응용프로그램에게 영향을 끼치지 않도록 하여 데이터의 독립성을 지원&lt;/li&gt;
-      &lt;li&gt;데이터 무결성 유지할 수 있다.&lt;/li&gt;
-      &lt;li&gt;무결성을 위반하는 데이터 저장 거절&lt;/li&gt;
-      &lt;li&gt;데이터를 표준화시킬 수 있다.  · 데이터의 보안이 향상된다.&lt;/li&gt;
-      &lt;li&gt;데이터베이스에 접근할 수 있는 권한을 사용자부여하여 접근을 제한할 수 있다.&lt;/li&gt;
-      &lt;li&gt;데이터 공유가 쉽다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-</description>
-        <pubDate>Wed, 12 Feb 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/02/12/database-01/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/02/12/database-01/</guid>
         
         <category>database</category>
         
