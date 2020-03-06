@@ -5,9 +5,1393 @@
     <description></description>
     <link>https://m-veloper.github.io/</link>
     <atom:link href="https://m-veloper.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 04 Mar 2020 23:13:48 +0900</pubDate>
-    <lastBuildDate>Wed, 04 Mar 2020 23:13:48 +0900</lastBuildDate>
+    <pubDate>Fri, 06 Mar 2020 18:36:27 +0900</pubDate>
+    <lastBuildDate>Fri, 06 Mar 2020 18:36:27 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>[유닉스] vi 환경 설정</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-06-unix-15.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;환경설정-명령어&quot;&gt;환경설정 명령어&lt;/h1&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;1-파일-읽어오기여러-파일-편집하기&quot;&gt;1. 파일 읽어오기/여러 파일 편집하기&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;파일 중간에 다른 파일 내용 삽입하거나 작업 중이던 파일을 종료하고 다른 파일로 작업 전환하기 위한 명령키들은 마지막 행 모드에서 실행&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-06-unix-15-01.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;파일 읽어들이기&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;:r 파일명&lt;/li&gt;
+      &lt;li&gt;현재 작업 중인 파일에서 다른 파일을 읽어들이면 현재 커서 위치 다음 행에 삽입됨&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;다른 파일 편집하기&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;:e 파일명&lt;/li&gt;
+      &lt;li&gt;현재 작업 중인 파일을 종료하고 다른 파일을 편집하려고 할 때 사용&lt;/li&gt;
+      &lt;li&gt;:w 명령을 이용하여 현재 작업 중인 파일 저장 후 실행&lt;/li&gt;
+      &lt;li&gt;작업 중이 내용 저장하지 않고 다른 파일 편집하려고 할 때는 “:e! 파일명“ 입력&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;여러 파일 편집하기&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;vi 시작할 때 파일명 여러 개 지정&lt;/li&gt;
+      &lt;li&gt;지정한 순서대로 파일이 열림&lt;/li&gt;
+      &lt;li&gt;편집 후 다음 파일로 이동시 :n 명령키 사용&lt;/li&gt;
+      &lt;li&gt;다시 처음 파일로 이동하려면 “:e 파일명” 사용&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;2-vi에서-쉘-명령-사용하기&quot;&gt;2. vi에서 쉘 명령 사용하기&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;vi 작업 도중 디렉토리의 파일 목록 확인, 프로그램 컴파일 등 쉘 명령 실행할 경우&lt;/li&gt;
+  &lt;li&gt;vi를 종료하지 않고 쉘 명령 실행 가능&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-06-unix-15-02.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;:! 기능 이용&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;하나의 명령만 실행할 경우 가장 간단한 방법&lt;/li&gt;
+      &lt;li&gt;형식 : :! 쉘 명령&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;사용 예 : :! date&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  ~
+  ~
+  :! date
+  2015. 06. 10. (수) 16:24:06 KST
+  Press ENTER or type command to continue
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;:sh 기능 이용&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;쉘 명령 여러 개를 실행할 경우&lt;/li&gt;
+      &lt;li&gt;vi를 잠시 빠져나가 작업 수행 후 돌아옴&lt;/li&gt;
+      &lt;li&gt;vi로 다시 돌아오려면 exit 입력&lt;/li&gt;
+      &lt;li&gt;형식 : :sh&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;3-기타-명령&quot;&gt;3. 기타 명령&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-06-unix-15-03.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;화면 다시 출력&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;vi 작업 중 시스템 메시지 출력 등 화면이 정상이 아닐 때 Ctrl+L 명령키 입력하면 메시지들 사라지고 원래 작업 중인 내용만 남음&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;행 연결&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;J(대문자 j) 키 사용&lt;/li&gt;
+      &lt;li&gt;커서가 위치한 행과 다음 행을 하나의 행으로 만들어줌&lt;/li&gt;
+      &lt;li&gt;현재 커서가 unix의 ‘x’위치에 있고, 현재 위치에서 J 명령키 입력&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-06-unix-15-04.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;이전 명령 반복&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;.(점) 명령키&lt;/li&gt;
+      &lt;li&gt;바로 앞에 했던 명령을 반복적으로 수행&lt;/li&gt;
+      &lt;li&gt;현재 커서가 editor의 ‘e’에 있고, 현재 위치에서 . 명령키 입력&lt;/li&gt;
+      &lt;li&gt;바로 전 명령이 J 명령이었으므로 같은 명령을 반복&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-06-unix-15-05.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;대소문자 전환&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;~(틸드) 명령키&lt;/li&gt;
+      &lt;li&gt;커서가 위치한 글자를 소문자는 대문자로, 대문자는 소문자로 바꿈&lt;/li&gt;
+      &lt;li&gt;현재 커서가 test의 ‘t’에 있고, 현재 위치에서 ~ 명령키 입력&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-06-unix-15-06.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;4-읽기-전용-편집&quot;&gt;4. 읽기 전용 편집&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;파일을 읽기 전용으로 불러와 원본의 손상을 막을 수 있는 기능&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;vi –R 옵션 사용&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ vi –R hosts
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;view 명령 사용&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ view hosts
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;5-데이터-복구&quot;&gt;5. 데이터 복구&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;컴퓨터를 사용하다 갑자기 정전이 되거나 실수로 전원 코드를 뽑게 되어 시스템이 갑자가 다운되었을 때&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;vi 에디터는 실제 파일을 편집하는게 아니라 편집 버퍼에 편집 내용이 복사됨&lt;/li&gt;
+      &lt;li&gt;시스템이 갑자기 다운되어도 편집 버퍼는 자동 저장&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;편집하던 파일 복구 방법&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;vi –r [파일 명] : 파일명은 생략 가능, 생략하면 되살릴 수 있는 모든 파일을 보여줌&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ vi –r text
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;vi-환경-설정&quot;&gt;vi 환경 설정&lt;/h1&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;1-vi-환경-설정&quot;&gt;1. vi 환경 설정&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;vi 사용할 때 사용자 자신에게 맞는 환경 설정&lt;/li&gt;
+  &lt;li&gt;마지막 행 모드에서 실행&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-06-unix-15-07.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/img/unix/2020-03-06-unix-15-08.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;2-행-번호-표시&quot;&gt;2. 행 번호 표시&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;:set nu 명령&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-06-unix-15-09.png&quot; alt=&quot;&quot; /&gt;
+  &lt;br /&gt;&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;행 번호는 사용자의 편의를 위해 보이는 것, 파일에 저장되지 않음&lt;/li&gt;
+      &lt;li&gt;행 번호 없애려면 :set nonu 명령키 사용&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;3-특수-문자-표시&quot;&gt;3. 특수 문자 표시&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;:set list 명령&lt;/li&gt;
+  &lt;li&gt;vi에서 보이지 않는 행의 끝이나 탭 같은 특수 문자들을 보여줌&lt;/li&gt;
+  &lt;li&gt;한글(HWP)의 조판 부호 보기 기능과 비슷&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;4-현재-모드-표시&quot;&gt;4. 현재 모드 표시&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;:set showmode 명령&lt;/li&gt;
+  &lt;li&gt;vi 작업 도중 명령 모드인지 입력 모드인지 알고자 할 때&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;명령 모드인 경우 아무 표시 없고, 입력 모드인 경우 화면 하단에 “–INSERT–”라고 표시됨&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  ~
+  ~
+  --INSERT--
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;5-환경-설정-값-표시&quot;&gt;5. 환경 설정 값 표시&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;:set 명령&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;현재 사용 중인 vi의 환경 설정 상태를 보여줌&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  ~
+  ~
+  :set
+  --- Options ---
+  background=dark scroll=14
+  fileencodings=ucs-bom,utf-8,default,latin1
+  Press ENTER or type command to continue
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;6-모든-환경-변수-표시&quot;&gt;6. 모든 환경 변수 표시&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;:set all 명령&lt;/li&gt;
+  &lt;li&gt;vi 환경 설정에 사용되는 모든 환경 변수와 현재 설정 값을 보여줌&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;7-관련-파일-exrc&quot;&gt;7. 관련 파일 .exrc&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;vi 편집기의 환경 설정을 등록하여 실행시 계속적으로 지정한 설정을 이용하도록 해주는 파일&lt;/li&gt;
+  &lt;li&gt;set 명령과 환경 변수를 이용하여 홈 디렉토리에 .exrc (또는 .vimrc) 안에 적어 놓으면 vi가 실행될 때 기본으로
+설정되어 시작하게 됨&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Fri, 06 Mar 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/devlog/2020/03/06/unix-15/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/03/06/unix-15/</guid>
+        
+        <category>unix</category>
+        
+        
+        <category>devlog</category>
+        
+      </item>
+    
+      <item>
+        <title>[유닉스] 편집기 (vi) - 내용 수정 및 삭제</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-06-unix-14.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;내용-수정-및-삭제&quot;&gt;내용 수정 및 삭제&lt;/h1&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;1-내용-수정하기&quot;&gt;1. 내용 수정하기&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;한 글자만 수정, 단어별로 수정, 수정할 글자 수 지정해서 수정&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-06-unix-14-01.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;2-내용-삭제취소하기&quot;&gt;2. 내용 삭제/취소하기&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;입력 모드에서 입력 중에 틀린 글자 삭제할 때는 Backspace 키나 Delete 키를 이용하면 됨&lt;/li&gt;
+  &lt;li&gt;명령 모드에서는 문자를 삭제하거나 행을 삭제하기 위해 별도의 명령키 존재&lt;/li&gt;
+  &lt;li&gt;삭제할 문자 수나 행 수를 지정하려면 명령키 앞에 숫자를 지정&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-06-unix-14-02.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;편집-기능&quot;&gt;편집 기능&lt;/h1&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;1-복사하기-붙이기-잘라내기&quot;&gt;1. 복사하기, 붙이기, 잘라내기&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;소문자 yy 명령키 : 해당 행을 복사&lt;/li&gt;
+  &lt;li&gt;커서를 원하는 위치로 이동 후 p 명령키 : 붙이기&lt;/li&gt;
+  &lt;li&gt;dd 명령키로 행 삭제 후 p 명령키 입력하면 “잘라내서 붙이기”&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-06-unix-14-03.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;커서 위치에서 1행과 2행 복사하기&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  Hello, World!
+  ============
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;1행에서 2yy 명령키 입력 후 2행에서 p 명령키 입력&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  Hello, World!
+  ============
+  Hello, World!
+  ============
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;2-버퍼의-사용&quot;&gt;2. 버퍼의 사용&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;버퍼 : 복사하거나 잘라낸 내용을 저장해두는 임시 저장 공간&lt;/li&gt;
+  &lt;li&gt;윈도우의 클립보드와 같은 기능&lt;/li&gt;
+  &lt;li&gt;yy 명령키를 사용해 복사할 경우 복사된 내용은 버퍼에 저장&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;언네임드(unnamed) 버퍼&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;이름 붙이지 않은 버퍼&lt;/li&gt;
+      &lt;li&gt;한 번에 하나의 내용만 저장&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;네임드(named) 버퍼&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;이름 붙인 버퍼&lt;/li&gt;
+      &lt;li&gt;각기 다른 이름을 붙인 버퍼에 별도로 저장할 수 있는 내용을 모두 저장하고 사용 가능&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;네임드 버퍼 사용&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;버퍼 이름 붙이기 : “(따옴표) + 문자, 또는 ”+숫자(숫자 버퍼라고도 함)&lt;/li&gt;
+      &lt;li&gt;네임드 버퍼 : “a, ”b, “c, ……, ”z&lt;/li&gt;
+      &lt;li&gt;숫자 버퍼 : “1, ”2, “3, …… ”9&lt;/li&gt;
+      &lt;li&gt;네임드 버퍼에 커서 위치한 행 저장 : “ayy, 붙이기 : ”ap&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;네임드 버퍼 사용하여 1행과 2행을 따로 복사하여 붙이기&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  Hello, World!
+  ============
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;커서를 1행에 위치하고 “ayy 입력&lt;/li&gt;
+      &lt;li&gt;커서를 2행으로 이동 후 “byy 입력&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;2행 다음에 b 버퍼 먼저 붙이기 하려면, “bp, ”ap를 차례로 입력&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  Hello, World!
+  ============
+  ============
+  Hello, World!
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;3-마지막-행-모드에서-복사하기와-잘라내기&quot;&gt;3. 마지막 행 모드에서 복사하기와 잘라내기&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;마지막 행 모드에서 행을 복사하고 잘라내기 할 때는 범위를 지정한 후 수행&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;범위 지정하기&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;vi에서 범위 지정은 마지막 행 모드에서만 가능&lt;/li&gt;
+      &lt;li&gt;행번호와 특수 문자 사용&lt;/li&gt;
+      &lt;li&gt;특수문자 : 현재 커서가 있는 행을 나타내는 .(마침표), 마지막 행을 나타내는 $, %&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-06-unix-14-04.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;
+&lt;img src=&quot;/assets/img/unix/2020-03-06-unix-14-05.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;복사하기/잘라내기&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;:은 마지막 행 모드로 이동하기 위한 기호&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-06-unix-14-06.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;4-검색하기&quot;&gt;4. 검색하기&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;vi에서 특정 단어를 검색하거나 검색한 단어를 다른 단어로 바꾸기 위한 명령은 마지막 행 모드에서 제공&lt;/li&gt;
+  &lt;li&gt;검색하기 위해 마지막 행 모드로 가려면 “/”나 “?”를 입력&lt;/li&gt;
+  &lt;li&gt;“/”는 커서의 위치에서 아래 방향으로 검색&lt;/li&gt;
+  &lt;li&gt;“?”는 커서의 위치에서 위 방향으로 검색&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-06-unix-14-07.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;5-바꾸기&quot;&gt;5. 바꾸기&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;기존의 문자열을 다른 문자열로 바꾸려면 :를 입력해 마지막 행 모드로 이동&lt;/li&gt;
+  &lt;li&gt;바꾸기 명령은 파일 전체를 대상으로 할 수도 있고 특정 범위만 지정해 실행할 수도 있음&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-06-unix-14-08.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;문서 전체에서 and를 or로 바꾸기 예제&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;and 패턴을 찾아 or로 바꿀 때 수정할지 여부를 묻는 명령 사용&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  :%s/and/or/gc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;and를 or로 바꿀 때마다 아래와 같은 질문을 함&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  Starry, starry night
+  Paint your palette blue and gray
+  Look out on a summer’s day
+  With eyes that know the darkness in my soul
+  Shadows on the hills
+  Sketch the trees and the daffodils;
+  Catch the breeze and the winter chills
+  In colors on the snowy linen land.
+  ~
+  replace with or(y/n/a/q/l/^E/^Y)?
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;패턴에 대한 옵션의 의미&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-06-unix-14-09.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 06 Mar 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/devlog/2020/03/06/unix-14/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/03/06/unix-14/</guid>
+        
+        <category>unix</category>
+        
+        
+        <category>devlog</category>
+        
+      </item>
+    
+      <item>
+        <title>[유닉스] 편집기 (vi)</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-06-unix-13.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;유닉스-편집기의-종류&quot;&gt;유닉스 편집기의 종류&lt;/h1&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;1-편집기의-종류&quot;&gt;1. 편집기의 종류&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;행 단위 편집기와 화면 단위 편집기로 구분&lt;/li&gt;
+  &lt;li&gt;행 단위 편집기 : 한 번에 한 행씩만 작성하거나 수정&lt;/li&gt;
+  &lt;li&gt;화면 단위 편집기 : 전체 내용을 화면 단위로 보면서 커서를 이동하며 작업&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-06-unix-13-01.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;ed&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;유닉스 초기의 표준 편집기&lt;/li&gt;
+      &lt;li&gt;사용이 불편해 지금은 거의 사용하지 않음&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;ex&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;ed의 발전된 버전&lt;/li&gt;
+      &lt;li&gt;행 단위 편집기로 시작하여 화면 단위 편집기로 발전&lt;/li&gt;
+      &lt;li&gt;현재는 vi에 내장되어 명령행 명령 모드를 제공&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;sed&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;비대화식 행 단위 편집기&lt;/li&gt;
+      &lt;li&gt;조건에 맞는 행에 지정한 편집 명령을 실행, 결과를 화면에 출력&lt;/li&gt;
+      &lt;li&gt;크기가 큰 파일에 간단한 편집을 반복 수행할 때 많이 사용&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;emacs&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;화면 단위 편집기&lt;/li&gt;
+      &lt;li&gt;종류가 다양, GNU 이맥스가 유명&lt;/li&gt;
+      &lt;li&gt;기본 설치가 되지 않아 별도로 설치해야 함&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;가장 큰 장점 : 파일 편집하면서, 유닉스의 여러 기능들을 그냥 사용할 수 있음&lt;/p&gt;
+
+        &lt;p&gt;예) 편집 도중 이메일 주고받을 수 있고, 쉘 실행, 파일 복사, 삭제 등 작업 가능&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;vi&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;유닉스에서 기본으로 제공되는 화면 편집기&lt;/li&gt;
+      &lt;li&gt;ex 편집기의 명령을 그대로 사용 가능&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;2-모드형과-비모드형-편집기&quot;&gt;2. 모드형과 비모드형 편집기&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;윈도우 시스템에서 사용하는 한글 워드는 비모드형 편집기&lt;/li&gt;
+  &lt;li&gt;vi는 모드형 편집기&lt;/li&gt;
+  &lt;li&gt;비모드형에서 a는 항상 a라는 글자를 의미&lt;/li&gt;
+  &lt;li&gt;모드형에서 a는 글자 자체가 되기도 하고 명령을 나타내는 키가 되기도 함&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;vi-동작-모드&quot;&gt;vi 동작 모드&lt;/h1&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;1-vi-동작-구조&quot;&gt;1. vi 동작 구조&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;vi에서 편집한 파일은 저장할 파일을 지정하기 전에 하드디스크에 저장되지 않고, 버퍼에만 존재&lt;/li&gt;
+  &lt;li&gt;사용자가 파일 저장 명령을 주어야 하드디스크에 저장됨&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-06-unix-13-02.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;2-vi-동작-모드&quot;&gt;2. vi 동작 모드&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;입력 모드 : 실제로 내용을 입력할 수 있는 모드&lt;/li&gt;
+  &lt;li&gt;명령 모드, 마지막 행 모드(명령 모드에 포함시키기도 함) : 글자와 행의 삭제, 검색, 저장 등의 기능 수행&lt;/li&gt;
+  &lt;li&gt;vi를 시작하면 바로 명령 모드&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-06-unix-13-03.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;vi 명령의 분류&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;원하는 위치로 이동하는 명령&lt;/li&gt;
+      &lt;li&gt;입력 모드로 전환하는 명령&lt;/li&gt;
+      &lt;li&gt;수정 혹은 삭제 명령&lt;/li&gt;
+      &lt;li&gt;복사 및 붙이기&lt;/li&gt;
+      &lt;li&gt;기타 명령&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;3-vi-시작과-종료&quot;&gt;3. vi 시작과 종료&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;vi의 기본 기능&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;지정한 파일을 편집&lt;/li&gt;
+      &lt;li&gt;파일명을 지정하지 않으면 빈 파일이 열리고 파일명은 저장할 때 지정 가능&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;형식 : vi [파일명…]&lt;/li&gt;
+  &lt;li&gt;사용 예 : vi hello.c&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;4-vi-시작하기&quot;&gt;4. vi 시작하기&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;파일명을 지정하거나 지정하지 않을 수도 있음&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-06-unix-13-04.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;5-vi-종료하고-파일-저장하기&quot;&gt;5. vi 종료하고 파일 저장하기&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;명령 모드에서 파일 저장과 종료를 동시 수행 : ZZ(Shift+zz), 파일 저장 후 바로 종료함&lt;/li&gt;
+  &lt;li&gt;다른 명령키들은 마지막 행 모드에서 실행할 수 있음&lt;/li&gt;
+  &lt;li&gt;마지막 행 모드로 가려면 콜론(“:”) 키를 먼저 입력&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-06-unix-13-05.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;6-입력-모드로의-전환&quot;&gt;6. 입력 모드로의 전환&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;vi는 명령 모드에서 시작&lt;/li&gt;
+  &lt;li&gt;내용을 입력하거나 편집하려면 명령 모드에서 입력 모드로 전환&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-06-unix-13-06.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;명령키를 사용한 입력 모드 전환&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;명령 모드에서 i 명령키를 입력하면 내용 입력 가능&lt;/li&gt;
+      &lt;li&gt;명령 모드에서 o 명령키를 입력하면 현재 커서 위치 다음 행에 글자 입력 가능&lt;/li&gt;
+      &lt;li&gt;명령 모드에서 a 명령키를 입력하면 현재 커서 위치 오른쪽에 글자 입력 가능&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;내용 모두 입력한 뒤 명령 모드로 돌아가려면 Esc 키를 누름&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  vi Insert Mode Test
+  unix linux vi-editor
+  ~
+  ~
+  ~
+  ~
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;7-커서-이동&quot;&gt;7. 커서 이동&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;vi에서 커서 이동은 키보드를 이용&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-06-unix-13-07.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/img/unix/2020-03-06-unix-13-08.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;8-화면-이동&quot;&gt;8. 화면 이동&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;파일 크기가 터미널 화면 크기보다 클 경우 화면 이동&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;화면 이동 명령키&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;Ctrl + f 명령키는 현재 보이는 부분의 아래 부분으로 한 화면 이동&lt;/li&gt;
+      &lt;li&gt;Ctrl + b 명령키는 현재 보이는 부분의 윗부분으로 한 화면 이동&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-06-unix-13-09.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;마지막 행 모드에서 커서 이동&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;:을 입력해 마지막 행으로 전환한 뒤 이동하려는 행 번호 입력&lt;/li&gt;
+      &lt;li&gt;행 번호 대신 $를 입력하면 파일의 마지막 행으로 이동&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-06-unix-13-10.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 06 Mar 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/devlog/2020/03/06/unix-13/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/03/06/unix-13/</guid>
+        
+        <category>unix</category>
+        
+        
+        <category>devlog</category>
+        
+      </item>
+    
+      <item>
+        <title>[Database] Windows(윈도우)에 MySQL 설치방법</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-15.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;dbms&quot;&gt;DBMS&lt;/h1&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;1-대표적인-dbms&quot;&gt;1. 대표적인 DBMS&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-15-01.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;2-mysql&quot;&gt;2. MySQL&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;공개 소프트웨어 제공
+    &lt;ul&gt;
+      &lt;li&gt;Community Edition – GPL (General Public License)&lt;/li&gt;
+      &lt;li&gt;상업적인 목적으로 사용시 구매하여야 함&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;기종과 운영체제에 관계없이 사용 가능&lt;/li&gt;
+  &lt;li&gt;설치가 쉽고 사용하기 쉬워서 초보자도 빠른 시일 내에 사용법을 익힐 수 있다.&lt;/li&gt;
+  &lt;li&gt;대용량 처리도 가능&lt;/li&gt;
+  &lt;li&gt;처리 속도가 빠름&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;windows윈도우에-mysql-설치&quot;&gt;Windows(윈도우)에 MySQL 설치&lt;/h1&gt;
+
+&lt;h3 id=&quot;mysql-다운로드&quot;&gt;MySQL 다운로드&lt;/h3&gt;
+
+&lt;p&gt;(A) http://www.mysql.com/downloads 다운로드&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-15-02.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;(B) MySQL Community Edition (GPL) 의 Community (GPL) Downloads 선택&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-15-03.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;(C) MySQL Community Server의 DOWNLOAD 선택&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-15-04.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;(D) MySQL Community Server에 대한 온라인 설명서&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-15-05.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;(E) MySQL Community Server의 플랫폼 (Microsoft Windows) 선택&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-15-06.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;(F) Microsoft Windows 용 MySQL Community Server&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-15-07.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;(G) Windows 32bit 용 MySQL Download 시작 화면&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;32bit 와 64bit 운영체제 확인하기&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;“제어판 &amp;gt; 시스템” 의 시스템 종류에 “xx비트 운영 체제”와 같이 표시되어 있음&lt;/li&gt;
+      &lt;li&gt;운영체제가 설치된 드라이브의 Windows 폴더에 “Program Files”와 “Program Files (x86)”과 같이 두 개의 폴더가 있는 경우, 64bit 운영체제 임&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;소프트웨어 실행시 주의 점&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;64bit 운영체제에서 32bit용 소프트웨어 실행에 문제 없음&lt;/li&gt;
+      &lt;li&gt;32bit 운영체제에서 64bit용 소프트웨어 실행 불가능&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;MySQL Installer는 32bit 용이지만, 32bit와 64bit MySQL을 설치한다&lt;/li&gt;
+  &lt;li&gt;Web Installer는 설치시 인터넷을 통하여 필요한 파일을 다운로드 함.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-15-08.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;(H) 다른 이름으로 저장 &amp;gt; 저장할 폴더 선택하여 저장&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;파일 이름은 “mysql-installer-community-5.6.25.0.msi”으로 저장 됨&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-15-09.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;mysql-설치하기&quot;&gt;MySQL 설치하기&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;저장한 “mysql-installer-community-5.6.25.0.msi”를 더블 클릭하여 실행&lt;/p&gt;
+
+    &lt;p&gt;(A) .NET Framework 4.0이 설치되지 않은 시스템&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;오류 메시지 발생하며 설치가 되지 않음&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-15-10.png&quot; alt=&quot;&quot; /&gt;
+  &lt;br /&gt;&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;웹브라우저에 http://go.Microsoft.com/fwlink/?Linkid=181012 로 이동&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-15-11.png&quot; alt=&quot;&quot; /&gt;
+  &lt;br /&gt;&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;.NET Framework 4(웹 설치 관리자) 다운로드
+        &lt;ul&gt;
+          &lt;li&gt;dotNetFx40_Full_setup.exe 저장됨&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-15-12.png&quot; alt=&quot;&quot; /&gt;
+  &lt;br /&gt;&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;dotNetFx40_Full_setup.exe 실행&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-15-13.png&quot; alt=&quot;&quot; /&gt;
+  &lt;br /&gt;&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;.NET Framework 4 설치&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-15-14.png&quot; alt=&quot;&quot; /&gt;
+  &lt;br /&gt;&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;.NET Framework 4 설치 완료
+        &lt;ul&gt;
+          &lt;li&gt;컴퓨터 다시 시작
+  &lt;img src=&quot;/assets/img/database/2020-03-06-database-15-15.png&quot; alt=&quot;&quot; /&gt;
+  &lt;br /&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;.NET Framework 4.0이 설치된 시스템&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;“mysql-installer-community-5.6.25.0.msi” 실행&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-15-16.png&quot; alt=&quot;&quot; /&gt;
+  &lt;br /&gt;
+  &lt;img src=&quot;/assets/img/database/2020-03-06-database-15-17.png&quot; alt=&quot;&quot; /&gt;
+  &lt;br /&gt;&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;MySQL 설치 초기화 작업 화면&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-15-18.png&quot; alt=&quot;&quot; /&gt;
+  &lt;br /&gt;&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;Setup Type 선택하기
+        &lt;ul&gt;
+          &lt;li&gt;“Developer Default” 선택&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-15-19.png&quot; alt=&quot;&quot; /&gt;
+  &lt;br /&gt;&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;필요사항 체크&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-15-20.png&quot; alt=&quot;&quot; /&gt;
+  &lt;br /&gt;&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;설치
+  &lt;img src=&quot;/assets/img/database/2020-03-06-database-15-21.png&quot; alt=&quot;&quot; /&gt;
+  &lt;img src=&quot;/assets/img/database/2020-03-06-database-15-22.png&quot; alt=&quot;&quot; /&gt;
+  &lt;br /&gt;&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;환경 설정&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-15-23.png&quot; alt=&quot;&quot; /&gt;
+  &lt;br /&gt;&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;MySQL Server - 환경설정 타입과 네트워크 설정&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-15-24.png&quot; alt=&quot;&quot; /&gt;
+  &lt;br /&gt;&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;MySQL Server - Root 계정 설정 및 사용자 추가&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-15-25.png&quot; alt=&quot;&quot; /&gt;
+  &lt;br /&gt;&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;MySQL Server - 윈도우 서비스 등록 설정
+        &lt;ul&gt;
+          &lt;li&gt;서비스명 등록&lt;/li&gt;
+          &lt;li&gt;시스템 시작시 MySQL Server 실행 등록&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-15-26.png&quot; alt=&quot;&quot; /&gt;
+  &lt;br /&gt;&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;MySQL Server - 선택한 환경 설정 적용하기&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-15-27.png&quot; alt=&quot;&quot; /&gt;
+  &lt;br /&gt;
+  &lt;img src=&quot;/assets/img/database/2020-03-06-database-15-28.png&quot; alt=&quot;&quot; /&gt;
+  &lt;br /&gt;
+  &lt;img src=&quot;/assets/img/database/2020-03-06-database-15-29.png&quot; alt=&quot;&quot; /&gt;
+  &lt;br /&gt;&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;샘플과 예제 – 서버로 연결 설정&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-15-30.png&quot; alt=&quot;&quot; /&gt;
+  &lt;br /&gt;&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;샘플과 예제 – 서버 환경 설정에 적용하기&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-15-31.png&quot; alt=&quot;&quot; /&gt;
+  &lt;br /&gt;&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;환경 설정 완료&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-15-32.png&quot; alt=&quot;&quot; /&gt;
+  &lt;br /&gt;&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;MySQL 설치 완료&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-15-33.png&quot; alt=&quot;&quot; /&gt;
+  &lt;br /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;mysql-테스트&quot;&gt;MySQL 테스트&lt;/h3&gt;
+
+&lt;p&gt;(A) 설치된 폴더 확인하기&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;실치 폴더 : C:\Program Files\MySQL&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;mysql.exe 가 있는 폴더 : C:\Program Files\MySQL\MySQL Server 5.6\bin&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;MySQL의 모든 실행 파일들이 있는 곳&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;(B) MySQL 실행하기&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;명령어 : mysql –uroot –p&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;패스워드 : 설치시 입력한 패스워드&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-15-34.png&quot; alt=&quot;&quot; /&gt;
+  &lt;br /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;(C) 기본 시스템 데이터베이스 확인하기&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;명령어 : show databases;&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-15-35.png&quot; alt=&quot;&quot; /&gt;
+  &lt;br /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;(D) MySQL 종료하기&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;명령어 : quit&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-15-36.png&quot; alt=&quot;&quot; /&gt;
+  &lt;br /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Fri, 06 Mar 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/devlog/2020/03/06/database-15/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/03/06/database-15/</guid>
+        
+        <category>database</category>
+        
+        
+        <category>devlog</category>
+        
+      </item>
+    
+      <item>
+        <title>[Database] 순수관계연산자 (3/3)</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-14.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;확장-조인-연산&quot;&gt;확장 조인 연산&lt;/h1&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;1-외부조인-outer-join&quot;&gt;1. 외부조인 (Outer Join)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;자연조인의 확장된 형태&lt;/li&gt;
+  &lt;li&gt;자연조인시 조인에 실패한 투플을 모두 보여주되, 값이 없는 대응 속성에는 NULL값을 채워서 반환&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;모든 속성을 보여주는 기준 릴레이션의 위치에 따른 분류&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-14-01.png&quot; alt=&quot;&quot; /&gt;
+  &lt;br /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;왼쪽 외부조인&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-14-02.png&quot; alt=&quot;&quot; /&gt;
+  &lt;br /&gt;&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;질의 1 : 주문내역을 고객 기준으로 작성하되 주문내역이 없는 고객도 표시하시오&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-14-03.png&quot; alt=&quot;&quot; /&gt;
+  &lt;br /&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-14-04.png&quot; alt=&quot;&quot; /&gt;
+  &lt;br /&gt;&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;질의 2 : 주문내역을 기준으로 현황을 파악하되 고객릴레이션에 고객아이디가 없는 주문도 모두 표시하시오.&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-14-05.png&quot; alt=&quot;&quot; /&gt;
+  &lt;br /&gt;&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;질의 3 : 주문내역이 없는 고객과 주문의 고객아이디가 고객 릴레이션에 없는 경우도 모두 표시하시오&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-14-06.png&quot; alt=&quot;&quot; /&gt;
+  &lt;br /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;2-세미조인-semi-join&quot;&gt;2. 세미조인 (Semi Join)&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;자연조인을 한 후 두 릴레이션 중 한쪽 릴레이션의 결과만 반환&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;기호에서 닫힌 쪽 릴레이션의 투플만 반환&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;세미조인 종류&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-14-07.png&quot; alt=&quot;&quot; /&gt;
+  &lt;br /&gt;&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;질의 1 : 고객중에서 주문 내역이 있는 고객의 정보를 찾으시오.&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-14-08.png&quot; alt=&quot;&quot; /&gt;
+  &lt;br /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;관계대수의-복합사용-예&quot;&gt;관계대수의 복합사용 예&lt;/h1&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;관계대수식은 여러 연산자들을 복합하여 사용하는 경우가 많다
+    &lt;ul&gt;
+      &lt;li&gt;카디션 프로덕트 단독으로 사용하면 의미 없는 결과를 반환 =&amp;gt; 프로젝트과 셀렉트 연산과 조합&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;연산의 우선 순위
+    &lt;ul&gt;
+      &lt;li&gt;왼쪽에서 오른쪽으로 순차적으로 처리&lt;/li&gt;
+      &lt;li&gt;우선 처리하여야 하는 연산은 ( )를 사용&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;1-셀렉트--프로젝트--집합-연산&quot;&gt;1. 셀렉트 + 프로젝트 + 집합 연산&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;질의 : 서점의 도서 중 가격이 10,000원 이하인 도서이름과 출판사를 찾으시오&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-14-09.png&quot; alt=&quot;&quot; /&gt;
+  &lt;br /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;질의 : 두 서점의 도서 중 가격이 10,000원 이하인 도서이름과 출판사를 찾으시오&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-14-10.png&quot; alt=&quot;&quot; /&gt;
+  &lt;br /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;2-카디션-프로덕트와-조인을-사용한-연산-비교&quot;&gt;2. 카디션 프로덕트와 조인을 사용한 연산 비교&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;질의 : 홍길동 고객의 거래 내역중, 주문번호와 제품코드, 가격을 추출하시오&lt;/p&gt;
+
+    &lt;p&gt;(1) 카디션 프로덕트를 사용한 연산&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-14-11.png&quot; alt=&quot;&quot; /&gt;
+  &lt;br /&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-14-12.png&quot; alt=&quot;&quot; /&gt;
+  &lt;br /&gt;&lt;/p&gt;
+
+    &lt;p&gt;(2)조인을 사용한 연산&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-14-13.png&quot; alt=&quot;&quot; /&gt;
+  &lt;br /&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-14-14.png&quot; alt=&quot;&quot; /&gt;
+  &lt;br /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Fri, 06 Mar 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/devlog/2020/03/06/database-14/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/03/06/database-14/</guid>
+        
+        <category>database</category>
+        
+        
+        <category>devlog</category>
+        
+      </item>
+    
+      <item>
+        <title>[Database] 순수관계연산자 (2/3)</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-13.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;조인연산자-개요&quot;&gt;조인연산자 개요&lt;/h1&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;1-조인-join-연산자&quot;&gt;1. 조인 (Join) 연산자&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;이용 시기&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;하나의 릴레이션으로 원하는 데이터를 얻을 수 없어 관계가 있는 여러 릴레이션을 함께 사용하여야 하는 경우&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;조인 속성을 이용해 두 릴레이션을 조합하여 하나의 결과 릴레이션 만듬&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;조인 속성 : 두 릴레이션이 공통으로 가지고 있는 속성&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;조인 연산자 : ▷◁&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-13-01.png&quot; alt=&quot;&quot; /&gt;
+  &lt;br /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;결과 릴레이션&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;조인 속성의 값이 같은 투플만 수평으로 결합&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-13-02.png&quot; alt=&quot;&quot; /&gt;
+  &lt;br /&gt;&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;셀렉트(σ,Sigma)연산 : σ조건식(릴레이션)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;제한 사항
+    &lt;ul&gt;
+      &lt;li&gt;두 릴레이션의 조인에 참여하는 속성이 동일한 도메인으로 구성되어야 함&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;조인 연산의 종류&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-13-03.png&quot; alt=&quot;&quot; /&gt;
+  &lt;br /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;조인연산자-개요-1&quot;&gt;조인연산자 개요&lt;/h1&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;1-세타조인-theta-join-θ-join&quot;&gt;1. 세타조인 (Theta Join, θ Join)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;조인에 참여하는 두 릴레이션의 속성 값을 비교하여 조건을 만족하는 투플만 반환&lt;/li&gt;
+  &lt;li&gt;결과 릴레이션의 차수 = 릴레이션R의 차수 + 릴레이션S의 차수&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;표현법&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-13-04.png&quot; alt=&quot;&quot; /&gt;
+  &lt;br /&gt;&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;θ 는 비교 연산자( &amp;gt;, ≥, &amp;lt;, ≤, =, ≠ )를 의미&lt;/li&gt;
+      &lt;li&gt;r은 R의 속성&lt;/li&gt;
+      &lt;li&gt;s는 S의 속성&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;2-동등조인-equi-join&quot;&gt;2. 동등조인 (Equi Join)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;세타조인에서 = 연산자를 사용한 조인&lt;/li&gt;
+  &lt;li&gt;일반적인 조인연산은 동등조인을 지칭함&lt;/li&gt;
+  &lt;li&gt;내부조인 (Inner Join)이라고도 함&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;표현법&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-13-05.png&quot; alt=&quot;&quot; /&gt;
+  &lt;br /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;질의 – 고객과 고객의 주문 사항을 모두 보이시오&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-13-06.png&quot; alt=&quot;&quot; /&gt;
+  &lt;br /&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-13-07.png&quot; alt=&quot;&quot; /&gt;
+  &lt;br /&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-13-08.png&quot; alt=&quot;&quot; /&gt;
+  &lt;br /&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-13-09.png&quot; alt=&quot;&quot; /&gt;
+  &lt;br /&gt;&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;결과 릴레이션&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;두 릴레이션에서 조인 속성 값이 같은 투플끼리만 수평으로 연결하여 생성된 새로운 투플로 구성&lt;/li&gt;
+          &lt;li&gt;결과 릴레이션 차수 = 고객릴레이션 차수 + 주문릴레이션 차수&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;2-동등조인-equi-join-1&quot;&gt;2. 동등조인 (Equi Join)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;동등조인에서 조인에 참여한 속성이 두 번 나오지 않도록 두 번째 속성을 제거한 결과를 반환&lt;/li&gt;
+  &lt;li&gt;연산자 : ▷◁N&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;표현법&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-13-10.png&quot; alt=&quot;&quot; /&gt;
+  &lt;br /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;결과 릴레이션의 차수 = 릴레이션R의 차수 + 릴레이션S의 차수 – 1&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;질의 : 고객과 고객의 주문 사항을 모두 보이시오&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-13-11.png&quot; alt=&quot;&quot; /&gt;
+  &lt;br /&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-13-12.png&quot; alt=&quot;&quot; /&gt;
+  &lt;br /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Fri, 06 Mar 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/devlog/2020/03/06/database-13/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/03/06/database-13/</guid>
+        
+        <category>database</category>
+        
+        
+        <category>devlog</category>
+        
+      </item>
     
       <item>
         <title>[JSTL] &lt; c:if &gt;, &lt; c:choose &gt; 태그 사용법</title>
@@ -32,7 +1416,7 @@
 &lt;h2 id=&quot;-cif-&quot;&gt;&amp;lt; c:if &amp;gt;&lt;/h2&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;jstl에서 조건에 따른 분기를 처리할 수 있는 태그로 &lt;c:if&gt;와 &lt;c:choose&gt;가 있습니다.&lt;/c:choose&gt;&lt;/c:if&gt;&lt;/li&gt;
+  &lt;li&gt;jstl에서 조건에 따른 분기를 처리할 수 있는 태그로 &amp;lt; c:if &amp;gt;와 &amp;lt; c:choose &amp;gt;가 있습니다.&lt;/li&gt;
   &lt;li&gt;태그 - test 속성내의 EL 의 결과가 참이면 실행됩니다. else 구문은 없습니다.&lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;예제&lt;/p&gt;
@@ -5783,1287 +7167,6 @@ var day=string.substr(8,2) //11
         <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/02/18/unix-02/</guid>
         
         <category>unix</category>
-        
-        
-        <category>devlog</category>
-        
-      </item>
-    
-      <item>
-        <title>[유닉스] 역사와 발전</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-02-18-unix-01.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;유닉스와-리눅스의-탄생&quot;&gt;유닉스와 리눅스의 탄생&lt;/h1&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;운영체제란&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;컴퓨터 시스템을 제어하는 프로그램들의 집합&lt;/li&gt;
-      &lt;li&gt;하드웨어와 사용자 또는 응용 프로그램 사이에 위치&lt;/li&gt;
-      &lt;li&gt;하드웨어와 사용자 또는 응용 프로그램이 쉽고 편리하게 컴퓨터 시스템을 이용할 수 있도록 컴퓨터 시스템을 제어하고 관리&lt;/li&gt;
-      &lt;li&gt;초기 운영체제는 단일 사용자 형태&lt;/li&gt;
-      &lt;li&gt;유닉스를 시작으로 다중 사용자, 다중 작업 운영체제로 발전&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;유닉스(UNIX)의 탄생&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;1969년 벨연구소의 켄 톰슨(Ken Thompson)과 데니스 리치(Dennis Ritchie)가 개발&lt;/li&gt;
-      &lt;li&gt;1973년 어셈블리 언어에서 C 언어로 변경&lt;/li&gt;
-      &lt;li&gt;대학을 중심으로 유닉스를 많이 이용하여 무료로 제공&lt;/li&gt;
-      &lt;li&gt;AT&amp;amp;T가 벨연구소를 인수하게 되면서 유닉스를 상용으로 공급&lt;/li&gt;
-      &lt;li&gt;AT&amp;amp;T 유닉스 버전과 BSD(Berkeley Software Distribution) UNIX 버전 발표&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;리눅스(Linux)의 탄생&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;1991년 핀란드 헬싱키 대학의 리누스 토발즈(Linus Torvalds)가 개발&lt;/li&gt;
-      &lt;li&gt;PC에서도 사용할 수 있는 UNIX와 같은 운영체제 개발&lt;/li&gt;
-      &lt;li&gt;뉴스그룹 구성원들과 전세게 네티즌들에게 리눅스 커널(kernel) 부분의 소스 파일을 공개하여 아이디어를 공유, 문제점 개선 등으로 만들어짐&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;유닉스와-리눅스의-탄생-1&quot;&gt;유닉스와 리눅스의 탄생&lt;/h1&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;유닉스의 발전 과정&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-02-18-unix-01-01.png&quot; alt=&quot;&quot; /&gt;
- &lt;br /&gt;
- &lt;br /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;유닉스의 종류&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;시스템 V&lt;/p&gt;
-
-        &lt;ul&gt;
-          &lt;li&gt;AT&amp;amp;T 벨연구소에서 개발한 UNIX&lt;/li&gt;
-          &lt;li&gt;상업 제품으로, IBM의 AIX, Sun(2009년 Oracle에 합병됨)의 Solaris, HP의 HP-UX&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;BSD 유닉스&lt;/p&gt;
-
-        &lt;ul&gt;
-          &lt;li&gt;버클리 대학교에서 발전됨&lt;/li&gt;
-          &lt;li&gt;메모리 관리 기능 향상&lt;/li&gt;
-          &lt;li&gt;TCP/IP, 소켓(Socket) 등 네트워킹 기능 추가&lt;/li&gt;
-          &lt;li&gt;HP나 Sun Microsystems 같은 회사에서 많이 사용&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;솔라리스
-        &lt;ul&gt;
-          &lt;li&gt;Sun 사에 의해 출시됨&lt;/li&gt;
-          &lt;li&gt;Sparc CPU 전용 운영체제에서 인텔용 솔라리스도 출시&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;리눅스&lt;/p&gt;
-
-        &lt;ul&gt;
-          &lt;li&gt;레드햇(RedHat) 사의 레드햇(RedHat)과 페도라(Fedora), 캐노니컬(Canonical) 사의 우분투(Ubuntu), 그리고, 데비안(Debian), CentOS 등&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;맥 OS
-        &lt;ul&gt;
-          &lt;li&gt;1984년 애플 컴퓨터의 매킨토시 컴퓨터용 운영체제로 개발&lt;/li&gt;
-          &lt;li&gt;NexTSTEP 운영체제와 BSD 유닉스 기반으로 맥 OS X (맥 오에스 텐으로 발음함) 개발&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;모바일 기기용 운영체제&lt;/p&gt;
-
-        &lt;ul&gt;
-          &lt;li&gt;안드로이드 : 리눅스 기반, 소스 코드 공개&lt;/li&gt;
-          &lt;li&gt;iOS : 맥 OS X 기반, 소스 코드 비공개, 애플사의 모바일 기기(iphone, iPad, iPod)에서 사용&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;리눅스 커널&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;커널은 리눅스 운영체제의 핵심이 되는 부분&lt;/li&gt;
-      &lt;li&gt;커널의 버전
- – 안정 버전(Stable Version)과 개발 버전(Development Version)으로 구분
- – 안정 버전 : 개발 완료된 코드로 구성된 버전
- – 개발 버전 : 현재 개발 중인 버전, 상대적으로 불안정&lt;/li&gt;
-      &lt;li&gt;파일 이름에서 커널 표시
- – 파일 이름 : linux-3.7.1.tar
- – ‘3’은 주 버전 (Major Version)
- – ‘7’은 부 버전 (Minor Version)
- – ‘1’은 패치 버전 (Patch Version)
- – ‘linux-3.7.1.xx’의 경우 ‘xx’는 사소한 개정이 있을 경우&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;배포판(Distribution)&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;커널을 기반으로 GNU 프로젝트의 라이브러리와 도구들을 패키지화시킨 것&lt;/li&gt;
-      &lt;li&gt;사용 목적에 따라 무수히 많은 종류의 배포판 존재&lt;/li&gt;
-      &lt;li&gt;국외 리눅스 배포판&lt;/li&gt;
-      &lt;li&gt;국내 리눅스 배포판&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;슬랙웨어(Slackware)&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;1993년 패트릭 폴커딩(Patrick Volkerding)에 의해 처음 릴리즈됨&lt;/li&gt;
-      &lt;li&gt;높은 수준의 안전성과 보안성&lt;/li&gt;
-      &lt;li&gt;사용자 인터페이스 환경이 화려하지 않고 텍스트 기반&lt;/li&gt;
-      &lt;li&gt;리눅스를 좀더 깊이 공부하고 싶은 사람에게 추천&lt;/li&gt;
-      &lt;li&gt;홈페이지 : http://www.slackware.com 미국&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;레드햇(RedHat)
-    &lt;ul&gt;
-      &lt;li&gt;가장 인기 있는 배포판&lt;/li&gt;
-      &lt;li&gt;RedHat Linux 9 버전까지만 소스 공개&lt;/li&gt;
-      &lt;li&gt;RedHat Enterprise Linux는 유료 배포판&lt;/li&gt;
-      &lt;li&gt;홈페이지 : http://www.redhat.com 미국&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;페도라(Fedora)&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;레드햇 회사에서 후원하고 Fedora 커뮤니티에서 개발하는 무료 배포판&lt;/li&gt;
-      &lt;li&gt;국내에서 가장 인기 있는 배포판&lt;/li&gt;
-      &lt;li&gt;빠르고, 안정적이고, 강력한 운영체제&lt;/li&gt;
-      &lt;li&gt;홈페이지 : http://fedoraproject.org 미국&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;데비안(Debian GNU/Linux)&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;자원 봉사 모임인 데비안 프로젝트(Debian Project)에서 만들어 배포하는 공개 운영체제&lt;/li&gt;
-      &lt;li&gt;가장 강력한 패키지 관리 시스템&lt;/li&gt;
-      &lt;li&gt;Intel, Alpha, Sparc, PowerPC 등 다양한 아키텍처 지원&lt;/li&gt;
-      &lt;li&gt;100% 자유 소프트웨어를 유지&lt;/li&gt;
-      &lt;li&gt;데비안으로 작성된 프로그램을 무료로 라이선스 공개&lt;/li&gt;
-      &lt;li&gt;홈페이지 : http://www.debian,.org&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;우분투(Ubuntu)&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;데스크탑에서 쉬운 리눅스를 사용하기 위해 만들어짐&lt;/li&gt;
-      &lt;li&gt;데비안 리눅스를 기반으로 사용자가 손쉽게 사용할 수 있도록 함&lt;/li&gt;
-      &lt;li&gt;개인용 컴퓨터 사용자와 개발자에게 가장 인기&lt;/li&gt;
-      &lt;li&gt;우분투 : 남아프리카 줄루족의 말, “네가 있으니 내가 있다”는 뜻&lt;/li&gt;
-      &lt;li&gt;홈페이지 : http://www.ubuntu.com&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;수세 리눅스(SuSE-Linux)&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;독일업체 수세(S.u.S.E)에서 개발된 배포판&lt;/li&gt;
-      &lt;li&gt;레드햇 리눅스와 함께 인기 있는 상용 배포판&lt;/li&gt;
-      &lt;li&gt;2003년 수세는 노벨(Novell)에 인수됨&lt;/li&gt;
-      &lt;li&gt;홈페이지 : http://www.novell.com/linux 독일&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;CentOS(Community ENTerprise Operating System)&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;레드햇 엔터프라이즈 배포판을 기반으로 하는 무료 운영체제&lt;/li&gt;
-      &lt;li&gt;웹 서버용으로 가장 많이 사용&lt;/li&gt;
-      &lt;li&gt;홈페이지 : http://www.centos.org&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;국내 리눅스 배포판&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;레드햇 리눅스를 기반으로 한글 인터페이스를 제공한 배포판
-– 파워 리눅스, K-리눅스, 알짜 리눅스, 미지 리눅스, 와우 리눅스 등
-– 현재는 제공되지 않음&lt;/li&gt;
-      &lt;li&gt;아시아눅스(Asianux)
-– 한국, 중국, 일본의 아시아 기업들이 협력하여 만들었음
-– 한컴 리눅스, 홍기 리눅스(중국), 미라클 리눅스(일본)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;유닉스와-리눅스의-탄생-2&quot;&gt;유닉스와 리눅스의 탄생&lt;/h1&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;GNU, GNU 프로젝트&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;GNU’s Not Unix, 즉 ‘GNU는 유닉스가 아니다’라는 뜻&lt;/li&gt;
-      &lt;li&gt;1984년 리처드 스톨먼(Richard Matthew Stallman)을 주축으로 유닉스와 호환되면서 더 강력한 운영체제를 만들고자 하는 프로젝트 시작&lt;/li&gt;
-      &lt;li&gt;‘모두가 공유할 수 있는 소프트웨어’를 만드는 것을 모티브로 출발&lt;/li&gt;
-      &lt;li&gt;GNU C 컴파일러인 gcc, 문서편집기인 emacs, X 윈도우 데스크탑 환경인 GNOME, tar를 개조한 GNU tar 등 응용 프로그램을 만듦&lt;/li&gt;
-      &lt;li&gt;소프트웨어의 상업화에 반대해 소프트웨어를 자유롭게 사용하도록 하는 것이 목적&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;자유 소프트웨어 재단 FSF(Free Software Foundation)&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;1985년 리처드 스톨먼이 세운 비영리 조직&lt;/li&gt;
-      &lt;li&gt;‘구속되지 않는다‘는 관점에서 프로그램의 변경이나 수정의 자유를 의미&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Copyleft와 GNU GPL(General Public License)&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;Copyleft
- – 저작권(Copyright)의 반대를 뜻하는 의미로 사용
- – 프로그램의 제작, 배포에 대한 권리를 모든 사람에게 허용&lt;/li&gt;
-      &lt;li&gt;GNU GPL
- – GNU 소프트웨어에서 Copyleft를 실제로 구현한 라이선스를 의미
- – GNU 정신에 입각하여 자유 소프트웨어를 보호, 실제로 Copyleft를 담보할 수 있는 법률적 허가권&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;커널(kernel)&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;운영체제의 핵심으로, 시스템이 부팅될 때 로드&lt;/li&gt;
-      &lt;li&gt;시스템의 하드웨어 제어&lt;/li&gt;
-      &lt;li&gt;자원 스케줄링, 실행중인 프로그램 관리, 자료 관리&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-</description>
-        <pubDate>Tue, 18 Feb 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/02/18/unix-01/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/02/18/unix-01/</guid>
-        
-        <category>unix</category>
-        
-        
-        <category>devlog</category>
-        
-      </item>
-    
-      <item>
-        <title>[Database] 개체, 개체 타입과 속성</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-17-database-06.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;개체와-개체타입&quot;&gt;개체와 개체타입&lt;/h1&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;개체 타입 (Entity Type)&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;비슷한 속성을 가진 개체&lt;/li&gt;
-      &lt;li&gt;개체를 이름과 속성으로 정의한 것&lt;/li&gt;
-      &lt;li&gt;파일시스템이나 데이터베이스의 레코드 타입 (Record Type)&lt;/li&gt;
-      &lt;li&gt;프로그래밍언어의 데이터타입과 유사&lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;유형&lt;/p&gt;
-
-        &lt;ul&gt;
-          &lt;li&gt;강한 개체 (Strong Entity) : 다른 개체의 도움 없이 독자적으로 존재하는 개체&lt;/li&gt;
-          &lt;li&gt;
-            &lt;p&gt;약한 개체 (Weak Entity) :&lt;/p&gt;
-
-            &lt;p&gt;독자적으로 존재하지 않고, 상위 개체 타입을 가짐&lt;br /&gt;
-  상위 개체 타입이 결정되지 않으면 개별 개체를 식별할 수 없음&lt;/p&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;예 : 회사의 직원&lt;/p&gt;
-
-        &lt;ul&gt;
-          &lt;li&gt;직원의 부양가족은 직원 개체가 존재해야 존재할 수 있다&lt;/li&gt;
-          &lt;li&gt;강한 개체 : 직원&lt;/li&gt;
-          &lt;li&gt;약한 개체 : 부양 가족
-  · 개체타입의 ER 다이어그램 표현&lt;/li&gt;
-          &lt;li&gt;직사각형으로 표현&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-17-database-06-01.png&quot; alt=&quot;&quot; /&gt;
- &lt;br /&gt;
- &lt;br /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;개체 인스턴스 (Entity Instance)&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;개체의 속성에 실제 값을 주어 실체화된 개체&lt;/li&gt;
-      &lt;li&gt;파일시스템이나 데이터베이스의 레코드 인스턴스 (Record Instance)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;개체 집합 (Entity Set)&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;개체 인스턴스를 모아 놓은 것.&lt;/li&gt;
-      &lt;li&gt;데이터베이스의 테이블.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;개체 (Entity)&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-17-database-06-02.png&quot; alt=&quot;&quot; /&gt;
- &lt;br /&gt;
- &lt;br /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&quot;속성&quot;&gt;속성&lt;/h1&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;속성/애트리뷰트 (Attribute)&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;사물의 본질적인 고유의 성질(특성)로, 의미 있는 데이터의 가장 작은 단위&lt;/li&gt;
-      &lt;li&gt;파일시스템이나 데이터베이스에서 하나의 필드로 표현됨&lt;/li&gt;
-      &lt;li&gt;예시 : 사람의 속성 - 이름, 출생일, 성별, 국적 등&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;속성의 ER 다이어그램 표현&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;타원으로 표현&lt;/li&gt;
-      &lt;li&gt;개체 타입과 실선으로 연결&lt;/li&gt;
-    &lt;/ul&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-17-database-06-03.png&quot; alt=&quot;&quot; /&gt;
- &lt;br /&gt;
- &lt;br /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&quot;속성의-유형&quot;&gt;속성의 유형&lt;/h1&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;키 속성 (Key Attribute)&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;개체 인스턴스를 식별하는데 사용되는 속성&lt;/p&gt;
-
-        &lt;ul&gt;
-          &lt;li&gt;모든 개체 인스턴스의 키 속성 값은 달라야 함.&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;둘 이상의 속성으로 구성할 수 있음&lt;/li&gt;
-      &lt;li&gt;예: 쇼핑몰의 고객 개체의 계정, 회사의 직원 사번&lt;/li&gt;
-    &lt;/ul&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-17-database-06-04.png&quot; alt=&quot;&quot; /&gt;
- &lt;br /&gt;
- &lt;br /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;속성 값의 개수에 따른 분류&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;단일 값 속성 (Single-valued Attribute)&lt;/p&gt;
-
-        &lt;ul&gt;
-          &lt;li&gt;예: 책의 이름, 회사내 팀의 팀장&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;다중 값 속성 (Multi-valued Attribute)&lt;/p&gt;
-
-        &lt;ul&gt;
-          &lt;li&gt;예: 책의 저자, 회사내 팀의 팀원번&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-17-database-06-05.png&quot; alt=&quot;&quot; /&gt;
- &lt;br /&gt;
- &lt;br /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;의미의 세분화에 따른 분류&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;단순 속성 (Simple Attribute)&lt;/p&gt;
-
-        &lt;ul&gt;
-          &lt;li&gt;의미를 세분화할 수 없는 경우&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;예: 개체의 이름&lt;/p&gt;
-
-        &lt;ul&gt;
-          &lt;li&gt;복합 속성 (Composite Attribute)&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;의미를 세분화할 수 있는 경우&lt;/p&gt;
-
-        &lt;ul&gt;
-          &lt;li&gt;예: 전화번호, 생년월일&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-17-database-06-06.png&quot; alt=&quot;&quot; /&gt;
- &lt;br /&gt;
- &lt;br /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;저장 속성 (Stored Attribute)과 유도 속성 (Derived Attribute)&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;저장속성&lt;/p&gt;
-
-        &lt;ul&gt;
-          &lt;li&gt;다른 속성의 영향 없이 단독으로 저장되는 속성&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;유도 속성&lt;/p&gt;
-
-        &lt;ul&gt;
-          &lt;li&gt;다른 속성을 사용하여 만들 수 있는 속성&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;예: 판매물건의 부가세 금액, 나이(생년월일로부터 계산)&lt;/p&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-17-database-06-07.png&quot; alt=&quot;&quot; /&gt;
- &lt;br /&gt;
- &lt;br /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;널 속성 (Null Attribute)&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;값이 없어도 되는 속성&lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;예: 회원 가입시 선택항목&lt;/p&gt;
-
-        &lt;ul&gt;
-          &lt;li&gt;데이터를 입력하지 않아도 데이터베이스에 개체를 저장하는데 문제가 없다
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;개체와 속성의 ER 다이어그램 표현&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-17-database-06-08.png&quot; alt=&quot;&quot; /&gt;
- &lt;br /&gt;
- &lt;br /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-</description>
-        <pubDate>Mon, 17 Feb 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/02/17/database-06/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/02/17/database-06/</guid>
-        
-        <category>database</category>
-        
-        
-        <category>devlog</category>
-        
-      </item>
-    
-      <item>
-        <title>[Database] 모델링과 개체-관계 모델 및 다이어그램</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-16-database-05.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;데이터베이스-구축의-의미&quot;&gt;데이터베이스 구축의 의미&lt;/h1&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;의미&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;현실 세계의 대상물을 컴퓨터 세계의 데이터로 변환하기 위한 일련의 과정&lt;/li&gt;
-      &lt;li&gt;현실 세계의 대상물에서 데이터베이스에 저장할 가치가 있는 데이터만 찾아야 함&lt;/li&gt;
-      &lt;li&gt;컴퓨터에서 다루기 쉬운 구조로 변환하여 저장
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&quot;모델-모델링-modeling-및-추상화&quot;&gt;모델, 모델링 (Modeling) 및 추상화&lt;/h1&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;모델&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;복잡한 상황을 이해하기 쉽게 표현하기 위하여 개념적으로 단순화하여 표현한 것&lt;/li&gt;
-      &lt;li&gt;데이터베이스에 저장할 가치가 있는 데이터를 내포&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;모델링&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;현실 세계에 존재하는 데이터를 컴퓨터 세계의 데이터로 옮기는 변환 과정&lt;/li&gt;
-      &lt;li&gt;데이터베이스 설계의 핵심 과정&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;추상화&lt;/p&gt;
-
-    &lt;p&gt;-현실세계에서 발생되는 상황을 모델링하는 것을 추상화라 함
- -현실의 반복적인 작업(계산)을 프로그램 개발하는 것도 추상화 과&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;데이터-모델&quot;&gt;데이터 모델&lt;/h1&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;데이터의 관계, 접근, 처리과정에 관한 추상화된 모형&lt;/li&gt;
-  &lt;li&gt;데이터 모델은 데이터 구조를 결정&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;개념적 데이터 모델 (CDM, Conceptual Data Model)&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;대상물의 의미를 표현&lt;/li&gt;
-      &lt;li&gt;데이터베이스에서 사용될 개념과 관계를 표현&lt;/li&gt;
-      &lt;li&gt;가장 많이 사용되는 모델 : 개체-관계모델 (E-R Model, Entity-Relationship Model)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;논리적 데이터 모델 (LDM, Logical Data Model)&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;세부적으로 표현된 대상물의 데이터 표현&lt;/li&gt;
-      &lt;li&gt;사람, 장소, 사물, 규칙, 관계 등의 대상물과 이들 사이의 이벤트를 표준화한다.&lt;/li&gt;
-      &lt;li&gt;사용하는 이유
-  &lt;br /&gt;
-  &lt;br /&gt;
-        &lt;ul&gt;
-          &lt;li&gt;데이터 요소과 요구에 대한 일반적인 이해에 도움이 된다.&lt;/li&gt;
-          &lt;li&gt;데이터베이스 설계의 기초를 제공한다.&lt;/li&gt;
-          &lt;li&gt;데이터를 재사용하거나 공유할 수 있다.&lt;/li&gt;
-          &lt;li&gt;개발 및 유지보수 시간과 비용을 줄일 수 있다.
-  &lt;br /&gt;
-  &lt;br /&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;가장 많이 사용되는 모델 : 관계 데이터 모델(Relational Data Model)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;물리적 데이터 모델 (PDM, Physical Data Model)&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;데이터베이스 관리 시스템의 기능과 제약을 고려한 데이터 설계를 표현&lt;/li&gt;
-      &lt;li&gt;테이블간의 관계, 성능 향상을 위한 인덱스, 제약사항 정의, 링크 테이블, 파티션 테이블 등의 데이터베이스 구조를
-포함하여야 한다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;데이터-모델링&quot;&gt;데이터 모델링&lt;/h1&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;데이터 모델링 과정&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;요구사항 수집 및 분석&lt;/li&gt;
-      &lt;li&gt;중요 개념을 추출 (개념적 모델링)&lt;/li&gt;
-      &lt;li&gt;각 개념을 구체화 (논리적 모델링)&lt;/li&gt;
-      &lt;li&gt;데이터베이스 생성 (물리적 모델링)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-16-database-05-01.png&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;요구사항 수집 및 분석&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;데이터베이스로 구현할 대상과 사용자의 요구 사항에 대한 정보를 수집하고 분석&lt;/li&gt;
-      &lt;li&gt;구축할 데이터베이스에 대한 전문적인 지식이 필요함&lt;/li&gt;
-      &lt;li&gt;각 개념을 구체화 (논리적 모델링)&lt;/li&gt;
-      &lt;li&gt;요구사항 수집 방법
-  &lt;br /&gt;
-  &lt;br /&gt;
-        &lt;ul&gt;
-          &lt;li&gt;실제 문서를 수집하고 분석&lt;/li&gt;
-          &lt;li&gt;데이터베이스를 사용할 담당자의 의도를 정확하게 파악하고 요구사항을 수렴&lt;/li&gt;
-          &lt;li&gt;비슷한 업무를 처리하는 기존의 데이터베이스를 분석&lt;/li&gt;
-          &lt;li&gt;연관성 있는 업무를 참고하여 요구사항을 분석&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;개념적 모델링 (Conceptual Modeling)&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;데이터베이스로 구현할 대상에 대한 데이터를 추출하고 각 데이터들 간의 관계를 정의&lt;/li&gt;
-      &lt;li&gt;건물의 기본 골조를 만드는 과정과 같이 데이터베이스의 골격을 만드는 과정&lt;/li&gt;
-      &lt;li&gt;사용자의 요구사항을 분석하여 가장 핵심적인 개체와 개별 개체를 식별할 수 있는 핵심 속성, 각 개체간의 관계를
-정의하여 일반적인 개념으로 표현&lt;/li&gt;
-      &lt;li&gt;개체-관계 다이어그램 (ERD, Entity Relationship Diagram) : 간단하게 작성&lt;/li&gt;
-      &lt;li&gt;예 : 회사의 프로젝트 관리
-  &lt;br /&gt; 
-              &lt;br /&gt;
-        &lt;ul&gt;
-          &lt;li&gt;연구원 – 사번, 이름, 직위&lt;/li&gt;
-          &lt;li&gt;프로젝트 – 과제명, 예산, 기간&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-16-database-05-02.png&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;논리적 모델링 (Logical Modeling)&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;개념을 구체화하여 데이터베이스로 구현하기 위한 모델을 만드는 과정&lt;/li&gt;
-      &lt;li&gt;예 : 동물에 대한 모델
- &lt;br /&gt;
- &lt;br /&gt;
-        &lt;ul&gt;
-          &lt;li&gt;추상화 과정을 통하여 동물에 대한 정보를 모델링하여 데이터베이스에 저장한다.&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;논리적 데이터 모델링 과정
- &lt;br /&gt;
- &lt;br /&gt;
-        &lt;ul&gt;
-          &lt;li&gt;개념적 데이터모델링에서 추출하지 않은 모든 상세정보를 추출한다.&lt;/li&gt;
-          &lt;li&gt;데이터의 표준화를 수행한다. (용어 정리, 데이터의 형태 및 크기 등을 확정)&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-16-database-05-03.png&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;물리적 모델링 (Physical Modeling)&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;작성된 논리적 모델을 실제 컴퓨터의 저장 장치에 저장하기 위한 물리적 구조를 정의하고 구현하는 과정&lt;/li&gt;
-      &lt;li&gt;고려 사항
-  &lt;br /&gt;
-  &lt;br /&gt;
-        &lt;ul&gt;
-          &lt;li&gt;응답시간을 최소화해야 한다(응답시간 : 트랜잭션이 시작되어 종료될 때까지 걸리는 시간)&lt;/li&gt;
-          &lt;li&gt;데이터가 저장될 공간을 효율적으로 배치해야 한다.&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-16-database-05-04.png&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;개체-관계-모델&quot;&gt;개체-관계 모델&lt;/h1&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;개체-관계 모델 (ERM, ER Model, Entity Relationship Model)&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;모델링하고자하는 대상물 또는 처리과정에서의 요구사항에 대하여 데이터나 정보를 묘사하기 위한 데이터 모델&lt;/li&gt;
-      &lt;li&gt;개체와 개체간의 관계&lt;/li&gt;
-      &lt;li&gt;관계형 데이터베이스에서 궁극적으로 구현되어지는 추상적인 방법&lt;/li&gt;
-      &lt;li&gt;1976년, 피터 첸 (Peter Chen)이 제안&lt;/li&gt;
-      &lt;li&gt;구성 요소 : 개체(Entity), 속성(Attribute), 관계(Relationship)
-  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;개체/엔티티 (Entity)&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;정보의 세계에서 의미있는 하나의 정보 단위&lt;/li&gt;
-      &lt;li&gt;저장할 가치가 있는 중요 데이터를 가지고 있는 대상물(사람, 사물, 개념 등)&lt;/li&gt;
-      &lt;li&gt;특징
- &lt;br /&gt;
- &lt;br /&gt;
-        &lt;ul&gt;
-          &lt;li&gt;유일한 식별자(이름)으로 구별될 수 있어야 한다.&lt;/li&gt;
-          &lt;li&gt;속성(고유한 특성, 상태)을 가지고 있어야 함&lt;/li&gt;
-          &lt;li&gt;다른 개체와 한 개 이상의 관계를 가지고 있음
- &lt;br /&gt;
- &lt;br /&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;파일시스템이나 데이터베이스에서 하나의 레코드로 표현됨
- &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;속성/애트리뷰트 (Attribute)&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;사물의 본질적인 고유의 성질(특성)으로, 의미 있는 데이터의 가장 작은 단위&lt;/li&gt;
-      &lt;li&gt;파일시스템이나 데이터베이스에서 하나의 필드로 표현됨&lt;/li&gt;
-      &lt;li&gt;예: 사람의 속성 - 이름, 출생일, 성별, 국적 등
- &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;관계 (Relationship)&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;개체들 사이의 연관성을 정의&lt;/li&gt;
-      &lt;li&gt;“두 개체가 관계가 있다” - 상호 공유하는 속성이 있다&lt;/li&gt;
-      &lt;li&gt;예
-        &lt;ul&gt;
-          &lt;li&gt;구매 (관계) - 고객/물품&lt;/li&gt;
-          &lt;li&gt;수강 (관계) - 학생/수강과목
-  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;개체-관계 다이어그램 (ERD, Entity Relationship Diagram)&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;ER 모델을 표준화된 그림으로 표현한 것&lt;/li&gt;
-      &lt;li&gt;E-R 다이어그래밍 도구 : ER 모델과 SQL을 해석하고 만들 수 있다.&lt;/li&gt;
-      &lt;li&gt;다이어그램 종류
- &lt;br /&gt;&lt;br /&gt;
-        &lt;ul&gt;
-          &lt;li&gt;피터첸 표기법 : ER 모델의 기본적인 표기법&lt;/li&gt;
-          &lt;li&gt;IE 표기법 (Information Engineering Notation) / 새발 표기법 (Crow-feet Notation)&lt;/li&gt;
-          &lt;li&gt;바커 표기법 (Baker Notation)&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-16-database-05-05.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-</description>
-        <pubDate>Sun, 16 Feb 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/02/16/database-05/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/02/16/database-05/</guid>
-        
-        <category>database</category>
-        
-        
-        <category>devlog</category>
-        
-      </item>
-    
-      <item>
-        <title>[Database] 데이터베이스 스키마</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-15-database-04.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;dbms의-구성&quot;&gt;DBMS의 구성&lt;/h1&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-15-database-04-01.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;DDL 컴파일러&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;데이터 정의어로 작성된 스키마의 정의를 해석&lt;/li&gt;
-      &lt;li&gt;저장 데이터 관리자의 도움을 받아 새로운 DB 구축&lt;/li&gt;
-      &lt;li&gt;스키마의 정의를 데이터 사전에 저장&lt;/li&gt;
-      &lt;li&gt;DDL로 작성된 기존 스키마의 삭제나 수정 요청도 처리하여 변경된 내용을 데이터 사전에 저장&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;DML 프리 컴파일러&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;응용 프로그램에 삽입된 데이터 조작어를 추출하여 DML 컴파일러에게 전달&lt;/li&gt;
-      &lt;li&gt;데이터 조작어와 관련이 없는 코드는 해당 언어의 컴파일러에 전달&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;DML 컴파일러&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;데이터 조작어로 작성된 데이터의 처리(삽입, 수정, 삭제, 검색) 요구를 분석하여 런타임 데이터베이스 처리기가 이해할 수 있도록 해석&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;런타임 데이터베이스 처리기&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;저장 데이터 관리자를 통해 데이터베이스에 접근&lt;/li&gt;
-      &lt;li&gt;DML 컴파일러로부터 전달받은 데이터 처리 요구를 데이터베이스에서 실제로 실행&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;트랜잭션 관리자&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;DB 접근을 위한 사용자의 접근 권한이 유효한지 검사&lt;/li&gt;
-      &lt;li&gt;DB 무결성을 유지하기 위한 제약조건 위반 여부를 확인&lt;/li&gt;
-      &lt;li&gt;회복, 병행 수행&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;저장 데이터 관리자&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;사용자 DB와 데이터 사전을 관리&lt;/li&gt;
-      &lt;li&gt;운영체제의 도움을 받아 DB에 접근&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&quot;데이터베이스-스키마-3단계&quot;&gt;데이터베이스 스키마 (3단계)&lt;/h1&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;데이터베이스에서 자료의 구조, 자료의 표현 방법, 자료 간의 관계를 형식 언어로 정의한 구조&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;외부 스키마&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;일반사용자나 응용프로그래머가 접근하는 계층&lt;/li&gt;
-      &lt;li&gt;사용자에게 필요한 데이터베이스를 정의&lt;/li&gt;
-      &lt;li&gt;하나의 데이터베이스에 여러 개의 외부 스키마가 존재할 수 있음&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;개념 스키마&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;데이터베이스의 전체적인 논리적 구조를 정의&lt;/li&gt;
-      &lt;li&gt;하나의 데이터베이스에 하나의 개념 스키마만 존재함&lt;/li&gt;
-      &lt;li&gt;데이터의 관계, 제약조건, 무결성에 대한 내용이 포함&lt;/li&gt;
-      &lt;li&gt;데이터에 대한 보안 정책이나 접근 권한에 대한 정의 포함&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;내부 스키마&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;DBMS가 보는 데이터&lt;/li&gt;
-      &lt;li&gt;물리적 저장 장치에 데이터베이스가 실제로 저장되는 방법&lt;/li&gt;
-      &lt;li&gt;레코드 구조, 필드 크기, 레코드 접근 경로, 데이터 압축 등 물리적 저장 구조를 정의&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&quot;매핑사상-및-데이터-독립성-1&quot;&gt;매핑/사상 및 데이터 독립성 1&lt;/h1&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;매핑(Mapping) / 사상&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;외부/개념 매핑&lt;/p&gt;
-
-        &lt;ul&gt;
-          &lt;li&gt;외부 스키마의 데이터가 개념 스키마의 어느 부분에 해당되는지 대응시킴&lt;/li&gt;
-          &lt;li&gt;응용 인터페이스 (Application Interface)라고도 함&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;개념/내부 매핑&lt;/p&gt;
-
-        &lt;ul&gt;
-          &lt;li&gt;개념 스키마의 데이터가 내부 스키마의 물리적 장치 어디에 어떤 방법으로 저장되는지 대응&lt;/li&gt;
-          &lt;li&gt;저장 인터페이스 (Storage Interface)라고도 함&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;데이터 독립성 (Data Independency)&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;논리적 데이터 독립성 (Logical Data Independency)&lt;/p&gt;
-
-        &lt;ul&gt;
-          &lt;li&gt;외부 단계와 개념 단계 사이의 독립성&lt;/li&gt;
-          &lt;li&gt;개념 스키마가 변경되어도 외부 스키마에는 영향이 없도록 하는 개념&lt;/li&gt;
-          &lt;li&gt;예, 개념 스키마의 테이블을 생성하거나 변경할 경우, 외부 스키마가 직접 다루는 테이블이 아니면 영향을 없다.&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;물리적 데이터 독립성 (Physical Data Independency)&lt;/p&gt;
-
-        &lt;ul&gt;
-          &lt;li&gt;개념 단계와 내부 단계 사이의 독립성&lt;/li&gt;
-          &lt;li&gt;저장 장치 구조 변경과 같이 내부 스키마가 변경되어도 개념스키마에 영향이 없도록 하는 개념&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&quot;매핑사상-및-데이터-독립성-2&quot;&gt;매핑/사상 및 데이터 독립성 2&lt;/h1&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;데이터베이스 스키마 구성도&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-15-database-04-02.png&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;데이터베이스 스키마 예&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-15-database-04-03.png&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;
-&lt;br /&gt;
-&lt;img src=&quot;/assets/img/database/2020-02-15-database-04-04.png&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-</description>
-        <pubDate>Sat, 15 Feb 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/02/15/database-04/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/02/15/database-04/</guid>
-        
-        <category>database</category>
-        
-        
-        <category>devlog</category>
-        
-      </item>
-    
-      <item>
-        <title>[Database] 데이터베이스 시스템</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-14-database-03.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;데이터베이스-시스템-dbs-database-system&quot;&gt;데이터베이스 시스템 (DBS, DataBase System)&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;데이터를 데이터베이스에 저장하고, 관리하여 사용자의 요청에 따라 필요한 정보를 생성해주는 시스템&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;구성요소&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;데이터베이스 관리 시스템 : 사용자와 데이터베이스를 연결시켜주는 소프트웨어&lt;/li&gt;
-      &lt;li&gt;데이터베이스 : 데이터를 저장하는 곳&lt;/li&gt;
-      &lt;li&gt;데이터 모델 : 연관된 데이터를 저장하는 방식&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-14-database-03-01.png&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;데이터베이스-사용자&quot;&gt;데이터베이스 사용자&lt;/h1&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;일반사용자&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;프로그래머가 개발한 응용프로그램을 사용하여 데이터베이스에 접근&lt;/li&gt;
-      &lt;li&gt;DBMS 사용에 관심이 없고, 요청하여 받은 데이터의 내용에만 관심을 가짐&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;응용프로그래머 / 데이터베이스 프로그래머&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;일반 사용자가 사용할 수 있는 응용 프로그램을 개발&lt;/li&gt;
-      &lt;li&gt;자바, JSP, PHP, ASP, C 등의 프로그래밍 언어를 사용하여 일반 사용자를 위한 인터페이스(GUI)와 데이터 관리 프로그램을 개발&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;데이터베이스 관리자&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;데이터베이스 시스템을 관리하는 사람&lt;/li&gt;
-      &lt;li&gt;데이터 설계, 구현, 유지보수 등을 담당&lt;/li&gt;
-      &lt;li&gt;데이터베이스 사용자, 보안, 접근 권한, 백업, 회복 등을 관리&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&quot;dbms의-기능&quot;&gt;DBMS의 기능&lt;/h1&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;데이터 정의 (Definition)&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;데이터의 구조를 정의, 수정 및 삭제하는 기능&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;데이터 조작 (Manipulation)&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;응용프로그램의 요청으로 데이터의 삽입, 수정, 삭제하는 기능&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;데이터 추출 (Retrieval)&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;응용프로그램의 요청에 따라 필요한 데이터를 추출하는 기능&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;데이터 제어 (Control)&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;사용자를 관리 (계정 생성, 접근 제한)하는 기능&lt;/li&gt;
-      &lt;li&gt;백업, 회복, 동시성 제어 등의 기능&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&quot;데이터-언어-data-language&quot;&gt;데이터 언어 (Data Language)&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;사용자가 데이터베이스 관리 시스템을 사용하기 위한 언어&lt;/li&gt;
-  &lt;li&gt;사용 목적에 따라 구분&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;데이터 정의어 (DDL, Data Definition Language)&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;데이터의 구조를 정의, 수정, 삭제하기 위해 사용하는 언어&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;데이터 조작어(DML, Data Manupulation Language)&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;데이터의 삽입, 수정, 삭제, 검색 등의 요청을 위해 사용하는 언어&lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;절차적 데이터 조작어와 비절차적 데이터 조작어로 구분&lt;/p&gt;
-
-        &lt;ul&gt;
-          &lt;li&gt;
-            &lt;p&gt;절차적 데이터 조작어 (Procedural DML) : 사용자가 원하는 데이터와 데이터를 얻는 처리 방법을 설명하는 조작어&lt;/p&gt;
-          &lt;/li&gt;
-          &lt;li&gt;
-            &lt;p&gt;비절차적 데이터 조작어 (Nonprocedural DML) : 사용자가 원하는 데이터만 설명하는 조작어&lt;/p&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;데이터 제어어(DCL, Data Control Language)&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;내부적으로 필요한 규칙이나 기법을 정의하기 위해 사용하는 언어&lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;규칙이나 기법을 정의하는 이유&lt;/p&gt;
-
-        &lt;ul&gt;
-          &lt;li&gt;
-            &lt;p&gt;무결성 : 데이터베이스에 정확하고 유효한 데이터만 유지한다.&lt;/p&gt;
-          &lt;/li&gt;
-          &lt;li&gt;
-            &lt;p&gt;보안 : 허가받지 않은 사용자의 데이터 접근 차단 및 허가된 사용자가 접근 허용된 데이터만 접근하도록 제어&lt;/p&gt;
-          &lt;/li&gt;
-          &lt;li&gt;
-            &lt;p&gt;회복 : 장애 발생시 데이터의 일관성을 유지&lt;/p&gt;
-          &lt;/li&gt;
-          &lt;li&gt;
-            &lt;p&gt;동시성 : 다수의 사용자가 같은 데이터에 동시에 접근하여 데이터를 조작할 수 있도록 제어&lt;/p&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-14-database-03-02.png&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-</description>
-        <pubDate>Fri, 14 Feb 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/02/14/database-03/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/02/14/database-03/</guid>
-        
-        <category>database</category>
-        
-        
-        <category>devlog</category>
-        
-      </item>
-    
-      <item>
-        <title>[Database] 데이터베이스 모델</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-13-database-02.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;데이테베이스-모델&quot;&gt;데이테베이스 모델&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;연관된 데이터를 사용하기 쉽고, 연관 관계를 잘 표현할 수 있도록 구조적으로 표현한 방식이다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;1-계층형-데이터베이스-모델&quot;&gt;1. 계층형 데이터베이스 모델&lt;/h4&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;- 트리 형태의 구조를 가진 데이터베이스 
-- 반복적인 부모-자식 관계 정보를 표현 
-- 현재 거의 사용되지 않고 있다
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-13-database-02-01.png&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;2-네트워크형-데이터베이스-모델&quot;&gt;2. 네트워크형 데이터베이스 모델&lt;/h4&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;- 그래프 형태의 데이터베이스  
-- 예) IDS(Integrated Data Store), Univac DMS-1100 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-13-database-02-02.png&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;3-관계-데이터베이스&quot;&gt;3. 관계 데이터베이스&lt;/h4&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;- 모든 데이터 사이의 관계를 2차원 테이블 형태로 구현  
-- 현재 대부분의 데이터베이스에서 사용 
-- 예) 오라클, MySQL, MS-SQL, Informix, Access 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-13-database-02-03.png&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;4-객체형-데이터베이스&quot;&gt;4. 객체형 데이터베이스&lt;/h4&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;- 객체지향 프로그래밍에서 사용되는 객체의 형태로 정보를 저장하는 데이터베이스  
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-13-database-02-04.png&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;5-객체관계형-데이터베이스&quot;&gt;5. 객체관계형 데이터베이스&lt;/h4&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;- 객체지향 데이터베이스와 관계 데이터베이스를 결합한 데이터베이스  
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-</description>
-        <pubDate>Thu, 13 Feb 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/02/13/database-02/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/02/13/database-02/</guid>
-        
-        <category>database</category>
         
         
         <category>devlog</category>
