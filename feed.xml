@@ -5,13 +5,13 @@
     <description></description>
     <link>https://m-veloper.github.io/</link>
     <atom:link href="https://m-veloper.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 07 Mar 2020 21:14:32 +0900</pubDate>
-    <lastBuildDate>Sat, 07 Mar 2020 21:14:32 +0900</lastBuildDate>
+    <pubDate>Sat, 07 Mar 2020 21:21:09 +0900</pubDate>
+    <lastBuildDate>Sat, 07 Mar 2020 21:21:09 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
         <title>[JAVA] Java에서 백분율(퍼센트) 계산하기</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/java/2020-03-07-tip-javal-01.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/java/2020-03-07-tip-java-01.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;java에서-백분율퍼센트-계산하기&quot;&gt;Java에서 백분율(퍼센트) 계산하기&lt;/h1&gt;
 &lt;h3 id=&quot;how-to-calculate-percentage-in-java&quot;&gt;How to calculate percentage in java&lt;/h3&gt;
@@ -106,8 +106,8 @@ System.out.format(&quot;%.2f%n&quot;, 1560000.0 * 0.0 / 100.0);
 
 </description>
         <pubDate>Sat, 07 Mar 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/tip/2020/03/07/tip-javal-01/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/03/07/tip-javal-01/</guid>
+        <link>https://m-veloper.github.io/tip/2020/03/07/tip-java-01/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/03/07/tip-java-01/</guid>
         
         <category>java</category>
         
