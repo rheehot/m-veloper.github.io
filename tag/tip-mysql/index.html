@@ -31,15 +31,14 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="naver-site-verification" content="fa37cbf8ce41948de6e94c01991ffa04cea9b093"/>
 <meta name="google-site-verification" content="5M4Zw9wg_UqQkvlayfb5Mc_ogvJdc013w_zLUkxgO-Y" />
-<meta property="og:title" content="[유닉스] 링크, 수정 시각 변경">
+<meta property="og:title" content="MySQL">
 <meta property="og:type" content="article">
 
 
 
 
 
-  <meta property="og:image" content="https://m-veloper.github.io/assets//img/linux-logo.png">
-  <br/>
+  <meta property="og:image" content="https://m-veloper.github.io/assets/img/logo.png">
 
 
 <meta property="og:image:width" content="640" />
@@ -47,15 +46,13 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 
 
 
-  <title>[유닉스] 링크, 수정 시각 변경 &middot; m_veloper</title>
+  <title>MySQL &middot; m_veloper</title>
 
 
 
 <meta name="description" content="
-
 ">
 <meta property="og:description" content="
-
 ">
 
 
@@ -63,17 +60,17 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 <!-- =============== -->
 <!-- LINKS           -->
 <!-- =============== -->
-<link rel="canonical" href="https://m-veloper.github.io/devlog/2020/02/29/unix-12/">
-<meta property="og:url" content="https://m-veloper.github.io/devlog/2020/02/29/unix-12/">
+<link rel="canonical" href="https://m-veloper.github.io/tag/tip-mysql/">
+<meta property="og:url" content="https://m-veloper.github.io/tag/tip-mysql/">
 
 <link rel="alternate" type="application/atom+xml" title="m_veloper Feed" href="https://m-veloper.github.io/feed.xml">
 
 
-  <link rel="prev" href="https://m-veloper.github.io/devlog/2020/02/29/unix-11/">
+  <link rel="prev" href="https://m-veloper.github.io/tag/tip-jstl/">
 
 
 
-  <link rel="next" href="https://m-veloper.github.io/tip/2020/03/01/tip-javascript-05/">
+  <link rel="next" href="https://m-veloper.github.io/tag/travel-korea/">
 
 
 <link rel="apple-touch-icon" href="https://m-veloper.github.io/apple-touch-icon.png">
@@ -199,45 +196,10 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 <div id="_yPushState">
   <div class="fade-in">
     <main id="_main" class="content" role="main" data-color="#e2adfd" data-image="/assets/img/nap.jpg">
-      <style>
-  .myAd1190 {
-    width: 48%;
-    height: 280px;
-  }
+      
 
-  .myAd1290 {
-    width: 48%;
-    height: 280px;
-  }
 
-  @media(max-width: 800px) {
-    .myAd1190 {
-      display: none;
-    }
-
-    .myAd1290 {
-      width: 98%;
-    }
-  }
-  /*광고 붙을떄 까지 안보이게*/
-  .row {
-    /*display: flex;*/
-    display: none;
-    justify-content: space-between;
-    align-items: center;
-    height: 300px;
-  }
-
-  .row-center {
-    display: flex;
-    justify-content: center;
-    height: 258px;
-  }
-  /*광고 붙을떄 까지 안보이게*/
-  .right-side{
-    display: none;
-  }
-
+  <style>
   #tag{
     margin-bottom: 0.875rem;
     padding-left: 1rem;
@@ -253,37 +215,51 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
     border-radius: 1rem;
     text-decoration: none;
   }
+  .post-title{
+    font-size: 1.3rem;
+  }
+  .post-title a{
+    color: #999 !important;
+  }
+
   .post-date{
     font-size: 0.9rem;
     font-weight: 400;
   }
 
-  .markdown-body h1 {
-    border-bottom: 1px solid lightgray;
-    padding-bottom: 8px;
-    margin-bottom: 8px;
-    margin-top: 56px;
+  .read-more {
+    margin-top: 0;
   }
+  .mb6 {
+    margin-bottom: 8rem;
+  }
+
 
 </style>
 
 
 
-
-
-<article id="post-devlog/2020/02/29/unix-12" class="post this" role="article">
+<article id="post-tip/2020/03/08/tip-mysql-01" class="post mb6 this" role="article">
   <header>
+    <!--post 내용중 이미지 영역-->
+    <p><img src="/assets/img/mysql/2020-03-08-tip-mysql-01.png" alt="" /></p>
 
+
+
+    <!--제목-->
     <h1 class="post-title">
-      
-        [유닉스] 링크, 수정 시각 변경
-        
+      <a href="/tip/2020/03/08/tip-mysql-01/" data-flip="title">
+      [MySQL/MariaDB] REPLACE 사용법(콤마제거, 치환하기)
+      </a>
     </h1>
 
+    <!--날짜-->
     <p class="post-date heading">
-      <!--<time datetime="2020-02-29T00:00:00+09:00">29 Feb 2020</time>-->
-      <time datetime="2020-02-29T00:00:00+09:00">2020년 02월 29일</time>
+      <!--<time datetime="2020-03-08T00:00:00+09:00">08 Mar 2020</time>-->
+      <time datetime="2020-03-08T00:00:00+09:00">2020년 03월 08일</time>
     </p>
+
+    <!--카테고리영역-->
     
 
 
@@ -294,7 +270,7 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 
 
 
-<a href="/category/devlog/" data-flip="title" id="tag">Devlog</a>
+<a href="/category/tip/" data-flip="title" id="tag">Tip</a>
 
     
 
@@ -306,663 +282,44 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 
 
 
-<a href="/tag/devlog-unix/" data-flip="title" id="tag">Unix</a>
+<a href="/tag/tip-mysql/" data-flip="title" id="tag">MySQL</a>
 
 
     
   <div class="hr" style="padding-bottom:0"></div>
 
 
+
   </header>
   
 
   
-  <div class="markdown-body">
-
-    <!-- 
-    <div class="head-image"><img src="https://m-veloper.github.io/assets//img/linux-logo.png" /></div>
-    <br /> -->
-
-    <div class='row'>
-    </div>
-
-    <br />
-    <p><img src="/assets/img/unix/2020-02-29-unix-12.png" alt="" /></p>
-
-<h1 id="파일-링크">파일 링크</h1>
-<p><br />
-<br /></p>
-
-<blockquote>
-  <h3 id="1-ln-명령">1. ln 명령</h3>
-</blockquote>
-
-<ul>
-  <li>파일의 링크를 생성</li>
-  <li>형식 : ln [옵션] 원본파일명 링크파일명</li>
-  <li>
-    <p>옵션</p>
-
-    <ul>
-      <li>-s : 심볼릭 링크 파일 생성</li>
-    </ul>
-  </li>
-  <li>사용 예 : ln test lntest, ln –s test lntest</li>
-</ul>
-
-<blockquote>
-  <h3 id="2-하드-링크">2. 하드 링크</h3>
-</blockquote>
-
-<ul>
-  <li>하나의 파일에 둘 이상의 다른 이름을 붙일 수 있음</li>
-  <li>파일에 붙인 이름을 하드 링크, 이름이 붙여진 파일을 하드 링크 파일</li>
-  <li>
-    <p>예제</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ cat &gt; ln.txt
-  This is the first ln test.
-  ^D
-  $ ls –l ln.txt
-  -rw--r--r-- 1 ksshin ksshin 27 6월 12 16:56 ln.txt
-  $
-</code></pre></div>    </div>
-
-    <ul>
-      <li>파일의 종류는 일반 파일</li>
-      <li>하드 링크 수는 1</li>
-      <li>원본 파일이 한 개이고 파일 이름의 개수가 1이므로 하드 링크 수가 1</li>
-    </ul>
-  </li>
-</ul>
-
-<blockquote>
-  <h3 id="3-하드-링크-파일">3. 하드 링크 파일</h3>
-</blockquote>
-
-<ul>
-  <li>
-    <p>ln 명령 사용하여 기존 파일에 새로운 이름 부여</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ ln ln.txt ln.hd
-  $ ls –l ln.*
-  -rw--r--r-- 2 ksshin ksshin 27 6월 12 16:56 ln.hd
-  -rw--r--r-- 2 ksshin ksshin 27 6월 12 16:56 ln.txt
-  $
-</code></pre></div>    </div>
-
-    <ul>
-      <li>두 파일 모두 하드 링크 수가 2</li>
-      <li>하나의 파일에 두 개의 이름이 붙여졌으므로 링크 수 증가</li>
-      <li>
-        <p>ln.txt와 ln.hd 파일이 동일한 파일임을 확인 (파일 내용으로 확인)</p>
-
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ cat ln.txt
-  This is the first ln test.
-  $ cat ln.hd
-  This is the first ln test.
-  $
-</code></pre></div>        </div>
-      </li>
-    </ul>
-  </li>
-</ul>
-
-<blockquote>
-  <h3 id="4-하드-링크와-파일-복사의-차이">4. 하드 링크와 파일 복사의 차이</h3>
-</blockquote>
-
-<ul>
-  <li>
-    <p>파일을 복사해도 내용은 같지만 다른 파일임</p>
-
-    <ul>
-      <li>같은 파일인지 알 수 있는 방법은 inode를 확인하는 것</li>
-    </ul>
-  </li>
-  <li>
-    <p>하드 링크의 경우 inode 값이 같음</p>
-
-    <ul>
-      <li>
-        <p>ls –i 옵션으로 inode 확인 가능</p>
-
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ ls –i ln*
-  133938 ln.hd 133938 ln.txt
-  $
-</code></pre></div>        </div>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <p>파일을 복사한 경우 inode 값이 다름</p>
-
-    <ul>
-      <li>
-        <p>파일 복사한 경우의 하드 링크 수와 inode 값 확인</p>
-
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ cp ln.txt ln1.txt
-  $ ls –l ln*
-  -rw--r--r-- 1 ksshin ksshin 27 6월 12 17:07 ln1.txt
-  -rw--r--r-- 2 ksshin ksshin 27 6월 12 16:56 ln.hd
-  -rw--r--r-- 2 ksshin ksshin 27 6월 12 16:56 ln.txt
-  $ ls –i ln*
-  134032 ln1.txt 133938 ln.hd 133938 ln.txt
-  $
-</code></pre></div>        </div>
-      </li>
-    </ul>
-  </li>
-</ul>
-
-<blockquote>
-  <h3 id="5-하드-링크-파일과-원본-파일의-변경">5. 하드 링크 파일과 원본 파일의 변경</h3>
-</blockquote>
-
-<ul>
-  <li>
-    <p>ln.hd 파일의 내용을 변경하면 ln.txt의 내용도 같이 변경됨</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ ls –i ln.* &gt;&gt; ln.hd
-  $ cat ln.txt
-  This is the first ln test.
-  133938 ln.hd
-  133938 ln.txt
-  $
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>ln.txt 파일을 삭제한 후 ln.hd 파일의 변화</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ rm ln.txt
-  $ ls –l ln.*
-  -rw--r--r-- 1 ksshin ksshin 27 6월 12 16:56 ln.hd
-  $ cat ln.hd
-  This is the first ln test.
-  133938 ln.hd
-  133938 ln.txt
-  $
-</code></pre></div>    </div>
-
-    <ul>
-      <li>하드 링크 수가 1로 바뀌고 내용은 변화 없음</li>
-    </ul>
-  </li>
-</ul>
-
-<blockquote>
-  <h3 id="6-심볼릭-링크">6. 심볼릭 링크</h3>
-</blockquote>
-
-<ul>
-  <li>윈도우의 바로가기 아이콘과 같음</li>
-  <li>원본 파일에 쉽게 접근하기 위해 생성한 특수 파일</li>
-  <li>파일의 내용은 원본 파일의 경로</li>
-  <li>링크 파일을 복사하거나 내용을 출력하면 모든 작업이 원본 파일에 대해 수행됨</li>
-  <li>원본 파일이 삭제되면 심볼릭 링크 파일이 남아있어도 그 파일을 사용할 수 없음</li>
-</ul>
-
-<blockquote>
-  <h3 id="7-심볼릭-링크-파일">7. 심볼릭 링크 파일</h3>
-</blockquote>
-
-<ul>
-  <li>ln 명령에 –s 옵션을 사용하여 만듦</li>
-  <li>
-    <p>특징</p>
-
-    <ul>
-      <li>파일 종류 : l, 심볼릭 링크로 표시됨</li>
-      <li>하드 링크 수 : 1, 이름 추가가 아님</li>
-      <li>파일 이름 : 파일 이름 뒤에 원본 파일의 이름이 표시됨 (-&gt;ln.hd)</li>
-      <li>
-        <p>inode 번호 : inode 번호가 다른 별개의 파일임</p>
-
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ ln –s ln.hd ln.sl
-  $ ls –l ln.*
-  -rw--r--r-- 1 ksshin ksshin 27 6월 12 16:56 ln.hd
-  lrwxrwxrwx 1 ksshin ksshin 5 6월 12 17:25 ln.sl -&gt; ln.hd
-  $ ls –i ln.*
-  133938 ln.hd 134106 ln.sl
-  $
-</code></pre></div>        </div>
-      </li>
-    </ul>
-  </li>
-</ul>
-
-<blockquote>
-  <h3 id="8-하드-링크-파일과-심볼릭-링크-파일">8. 하드 링크 파일과 심볼릭 링크 파일</h3>
-</blockquote>
-
-<ul>
-  <li>
-    <p>공통점</p>
-
-    <ul>
-      <li>
-        <p>심볼릭 링크 파일을 수정하면 원본이 수정됨</p>
-
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ pwd &gt;&gt; ln.sl
- $ cat ln.hd
- This is the first ln test.
- 133938 ln.hd
- 133938 ln.txt
- /home/ksshin
- $
-</code></pre></div>        </div>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <p>차이점</p>
-
-    <ul>
-      <li>원본 삭제하면 하드 링크는 새로운 이름 사용 가능, 심볼릭 링크는 사용 불가</li>
-      <li>
-        <p>하드 링크는 디렉토리 설정할 수 없지만 심볼릭 링크는 설정 가능</p>
-
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ rm ln.hd
-  $ cat ln.sl
-  cat: ln.sl: No such file or directory
-  $
-</code></pre></div>        </div>
-      </li>
-    </ul>
-  </li>
-</ul>
-
-<p><br /><br /></p>
-<h1 id="파일-생성-및-수정-시각-변경">파일 생성 및 수정 시각 변경</h1>
-<p><br /><br /></p>
-
-<blockquote>
-  <h3 id="1-touch-명령">1. touch 명령</h3>
-</blockquote>
-
-<ul>
-  <li>빈 파일을 생성하거나 파일 수정 시각을 변경</li>
-  <li>형식 : touch [-acm] [-r ref_file] [-t time] 파일</li>
-  <li>
-    <p>옵션</p>
-
-    <ul>
-      <li>-a : 접근 시간만 변경</li>
-      <li>-c : 지정된 파일이 없는 경우 새로 생성하지 않음</li>
-      <li>-m : 수정 시간만 변경</li>
-      <li>-r ref_file : 시각을 파일에서 읽음</li>
-      <li>-t [[CC]YY]MMDDhhmm[.ss] : 시각을 직접 입력</li>
-    </ul>
-  </li>
-  <li>사용 예 : touch test</li>
-</ul>
-
-<blockquote>
-  <h3 id="2-파일-생성">2. 파일 생성</h3>
-</blockquote>
-
-<ul>
-  <li>지정한 파일이 존재하지 않으면 내용 없는 빈 파일 생성</li>
-  <li>
-    <p>touch 명령 실습을 위해 디렉토리 생성</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ mkdir Touch
- $ cd Touch
- $ ls test
- ls: cannot access test: No such file or directory
- $    
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>touch 명령 입력</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ touch test
-  $ ls –l test
-  -rw-rw-r-- 1 ksshin ksshin 0 6월 8 21:18 test
-  $
-</code></pre></div>    </div>
-
-    <ul>
-      <li>기존에 없던 test 파일 생성, 파일 크기 0으로 내용 없이 파일 정보만 존재</li>
-    </ul>
-  </li>
-  <li>
-    <p>여러 파일을 한꺼번에 생성</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    $ touch t1 t2
-    $ ls
-    t1 t2 test
-    $     
-</code></pre></div>    </div>
-
-    <ul>
-      <li>생성된 파일의 종류는 일반 파일이므로 vi 에디터를 이용해 내용 편집 가능</li>
-    </ul>
-  </li>
-  <li>
-    <p>touch 명령 이용해 빈 파일 생성하는 이유</p>
-
-    <ul>
-      <li>
-        <p>테스트를 위해 내용에 상관없이 파일만 필요한 경우</p>
-
-        <p>i. 유닉스의 파일 명령 연습할 때<br />
-   ii. 쉘 특수 문자 테스트를 위해 다양한 이름의 파일 생성</p>
-      </li>
-      <li>
-        <p>유닉스 시스템 관리를 할 때 필요에 의해</p>
-      </li>
-    </ul>
-  </li>
-</ul>
-
-<blockquote>
-  <h3 id="3-파일-접근-및-수정-시각-변경">3. 파일 접근 및 수정 시각 변경</h3>
-</blockquote>
-
-<ul>
-  <li>인자로 지정한 파일이 존재하면 해당 파일의 접근 및 수정 시각 변경</li>
-</ul>
-
-<blockquote>
-  <h3 id="4-현재-시각으로-변경하기">4. 현재 시각으로 변경하기</h3>
-</blockquote>
-
-<ul>
-  <li>
-    <p>touch 명령을 옵션 없이 사용</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   $ ls –l
-   total 4
-   -rw-rw-r-- 1 ksshin ksshin 0 6월 8 21:20 t1
-   -rw-rw-r-- 1 ksshin ksshin 0 6월 8 21:20 t2
-   -rw-rw-r-- 1 ksshin ksshin 0 6월 8 21:18 test
-   $ touch t1
-   $ ls –l t1
-   -rw-rw-r-- 1 ksshin ksshin 0 6월 8 21:35 t1
-   $
-</code></pre></div>    </div>
-  </li>
-</ul>
-
-<blockquote>
-  <h3 id="5-지정한-시각으로-변경하기">5. 지정한 시각으로 변경하기</h3>
-</blockquote>
-
-<ul>
-  <li>-t 옵션 사용</li>
-  <li>시각 표시 형식
-    <ul>
-      <li>형식 : [[CC]YY]MMDDhhmm[ss]</li>
-      <li>
-        <p>옵션</p>
-
-        <p>i. CC : 연도의 첫 두 자리<br />
-  ii. YY : 연도의 마지막 두 자리<br />
-  iii. MM : 달(01~12 범위내 지정)<br />
-  iv. DD : 날짜(01~31 범위내 지정)<br />
-  v. hh : 시각(00~23 범위내 지정)<br />
-  vi. mm : 분(00~59 범위내 지정)<br />
-  vii. ss : 초(00~59 범위내 지정)</p>
-      </li>
-      <li>CC를 지정하지 않으면 YY 값에 따라 CC를 자동으로 인식</li>
-    </ul>
-
-    <p><img src="/assets/img/unix/2020-02-29-unix-12-01.png" alt="" />
-   <br />
-   <br /></p>
-  </li>
-  <li>
-    <p>연도를 지정하지 않고 월, 일, 시각만 지정한 예</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ touch –t 05311830 test
-  $ ls –l
-  total 4
-  -rw-rw-r-- 1 ksshin ksshin 0 6월 8 21:20 t1
-  -rw-rw-r-- 1 ksshin ksshin 0 6월 8 21:20 t2
-  -rw-rw-r-- 1 ksshin ksshin 0 5월 31 18:30 test
-  $
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>연도 네 자리를 모두 지정한 예</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   $ touch –t 200501010000 test
-   $ ls –l
-   total 4
-   -rw-rw-r-- 1 ksshin ksshin 0 6월 8 21:20 t1
-   -rw-rw-r-- 1 ksshin ksshin 0 6월 8 21:20 t2
-   -rw-rw-r-- 1 ksshin ksshin 0 1월 1 2005 test
-   $      
-</code></pre></div>    </div>
-  </li>
-</ul>
-
-<blockquote>
-  <h3 id="6-특정-파일-기준으로-변경하기">6. 특정 파일 기준으로 변경하기</h3>
-</blockquote>
-
-<ul>
-  <li>
-    <p>특정 파일과 접근, 수정 시각을 일치시키고 싶을 때 –r 옵션 사용</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ touch –r t1 test
-  $ ls –l
-  total 4
-  -rw-rw-r-- 1 ksshin ksshin 0 6월 8 21:20 t1
-  -rw-rw-r-- 1 ksshin ksshin 0 6월 8 21:20 t2
-  -rw-rw-r-- 1 ksshin ksshin 0 6월 8 21:20 test
-  $
-</code></pre></div>    </div>
-  </li>
-</ul>
-
-<blockquote>
-  <h3 id="7-수정-접근-시각-선택-변경하기">7. 수정, 접근 시각 선택 변경하기</h3>
-</blockquote>
-
-<ul>
-  <li>수정 시각만 변경하고 싶으면 –m 옵션 사용</li>
-  <li>접근 시각만 변경하고 싶으면 –a 옵션 사용</li>
-  <li>
-    <p>접근 시각만 변경한 경우 ls –ul 옵션을 사용해야 결과 확인 가능</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ touch –a –t 05311830 test
-  $ ls –l
-  total 4
-  -rw-rw-r-- 1 ksshin ksshin 0 6월 8 21:20 t1
-  -rw-rw-r-- 1 ksshin ksshin 0 6월 8 21:20 t2
-  -rw-rw-r-- 1 ksshin ksshin 0 6월 8 21:18 test
-  $ ls –ul
-  total 4
-  -rw-rw-r-- 1 ksshin ksshin 0 6월 8 21:20 t1
-  -rw-rw-r-- 1 ksshin ksshin 0 6월 8 21:20 t2
-  -rw-rw-r-- 1 ksshin ksshin 0 5월 31 18:30 test
-  $
-</code></pre></div>    </div>
-  </li>
-</ul>
-
-
-    <br />
-    <br />
-  </div>
+  <p class="read-more"><a class="heading" href="/tip/2020/03/08/tip-mysql-01/" data-flip="title">바로가기 </a>
+  </p>
   
 
 </article>
 
 
-<div class="share">
-  <h2>Share this post</h2>
-  <div class="share-body">
-    <a href="http://twitter.com/share?text=[유닉스] 링크, 수정 시각 변경&amp;url=https://m-veloper.github.io/devlog/2020/02/29/unix-12/"
-      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
-      <span class="icon-twitter">
-      </span>
-    </a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://m-veloper.github.io/devlog/2020/02/29/unix-12/"
-      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
-      <span class="icon-facebook">
-      </span>
-    </a>
-  </div>
-</div>
-<br />
 
 
-
-<!--
-
-
-  <aside class="author" role="complementary">
-    <div class="author">
-  <h2 class="page-title hr">
-    About
-  </h2>
-<div class="author-body">
-  
-    
-  
-
-  
-
-  <img
-    src="/assets/img/me.jpeg"
-    class="me"
-    alt="m_veloper"
-    srcset="/assets/img/me.jpeg 1x,/assets/img/me.jpeg 2x"
-    
-  />
-
-
-  
-  <div class="author-body-description">
-    
-
-  </div>
-</div>
-</div>
-
-  </aside>
-
--->
-
-
-
-<aside class="related" role="complementary">
-  <h2 class="hr">Related Posts</h2>
-
-  <ul class="related-posts">
-    
+<h2 class="sr-only">Pagination</h2>
+<nav class="pagination heading" role="navigation">
+  <ul>
+    <li class="pagination-item older" >
       
+        <span>이전</span>
       
+    </li>
+    <li class="pagination-item newer" >
       
-        
-        
-          
-
-
-
-<style>
-  .related-posts>li>small{
-    margin-left: 10px;
-  }
-</style>
-<li class="h4">
-  <a href="/devlog/2020/03/06/unix-15/" data-flip="title">
-    <span>[유닉스] vi 환경 설정</span>
-  </a>
-  <small><time datetime="2020-03-06T00:00:00+09:00">
-    2020년 03월 06일
-  </time></small>
-</li>
-
-        
+        <span>다음</span>
       
-        
-        
-          
-
-
-
-<style>
-  .related-posts>li>small{
-    margin-left: 10px;
-  }
-</style>
-<li class="h4">
-  <a href="/devlog/2020/03/06/unix-14/" data-flip="title">
-    <span>[유닉스] 편집기 (vi) - 내용 수정 및 삭제</span>
-  </a>
-  <small><time datetime="2020-03-06T00:00:00+09:00">
-    2020년 03월 06일
-  </time></small>
-</li>
-
-        
-      
-        
-        
-          
-
-
-
-<style>
-  .related-posts>li>small{
-    margin-left: 10px;
-  }
-</style>
-<li class="h4">
-  <a href="/devlog/2020/03/06/unix-13/" data-flip="title">
-    <span>[유닉스] 편집기 (vi)</span>
-  </a>
-  <small><time datetime="2020-03-06T00:00:00+09:00">
-    2020년 03월 06일
-  </time></small>
-</li>
-
-        
-      
-        
-        
-      
-    
+    </li>
   </ul>
-</aside>
+</nav>
 
 
-
-      
-        <aside class="comments" role="complementary">
-  <h2>Comments</h2>
-  <hr/>
-
-  <div id="disqus_thread"></div>
-
-  <script>
-    !function (s, i) {
-  function e(e) {
-    var t = s.pageYOffset || i.body.scrollTop;
-    s.DISQUS && !s._disqusThis && !s._disqusFirst && t + s.innerHeight >= s._disqusThreadOffsetTop && (s._disqusThis = !0, s.DISQUS.reset(
-      { reload: !0, config: d }))
-  }
-
-  var d = function () {
-    this.page.title = "[유닉스] 링크, 수정 시각 변경",
-      this.page.identifier = "/devlog/2020/02/29/unix-12",
-      this.page.url = "https://m-veloper.github.io/devlog/2020/02/29/unix-12/"
-  };
-  s._disqusFirst = void 0 === s._disqusFirst || s._disqusFirst, s._disqusLoading = void 0 !== s._disqusLoading && s._disqusLoading, s._disqusThis = !1, s._disqusThreadOffsetTop = i.getElementById(
-    "disqus_thread").offsetTop, s._disqusLoading ? s._disqusFirst = !1 : (s._disqusLoading = !0, loadJSDeferred(
-    "//m-veloper.disqus.com/embed.js"), s.addEventListener ? s.addEventListener(
-    "scroll",
-    e,
-    { passive: !0 }) : s.attachEvent ? s.attachEvent("onscroll", e) : s.onscroll = e)
-}(window, document);
-
-  </script>
-  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-</aside>
 
       
 
@@ -1071,7 +428,7 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
          
            
              <li>
-               <a class="sidebar-nav-subitem" href="/tag/tip-mysql/">MySQL</a>
+               <a class="sidebar-nav-subitem active" href="/tag/tip-mysql/">MySQL</a>
              </li>
            
          
