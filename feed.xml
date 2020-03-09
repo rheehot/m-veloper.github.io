@@ -5,12 +5,12 @@
     <description></description>
     <link>https://m-veloper.github.io/</link>
     <atom:link href="https://m-veloper.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 09 Mar 2020 23:54:39 +0900</pubDate>
-    <lastBuildDate>Mon, 09 Mar 2020 23:54:39 +0900</lastBuildDate>
+    <pubDate>Tue, 10 Mar 2020 00:13:41 +0900</pubDate>
+    <lastBuildDate>Tue, 10 Mar 2020 00:13:41 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
-        <title>[SASS/SCSS] CSS Preprocessor 란?</title>
+        <title>[Sass/SCSS] CSS Preprocessor(전처리기) 란?</title>
         <description>&lt;p&gt;&lt;img src=&quot;/assets/img/sass/2020-03-09-sass-01.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;css-preprocessor-란&quot;&gt;CSS Preprocessor 란?&lt;/h1&gt;
@@ -49,12 +49,13 @@
   &lt;li&gt;
     &lt;p&gt;그렇다면 어떻게 사용할 수 있을까?&lt;/p&gt;
 
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  CSS는 불편하니 일단 배제하고 우선 전처리기로 작성(코딩)합니다.
+    &lt;ul&gt;
+      &lt;li&gt;CSS는 불편하니 일단 배제하고 우선 전처리기로 작성(코딩)합니다.
   전처리기는 CSS 문법과 굉장히 유사하지만 선택자의 중첩(Nesting)이나 조건문, 반복문, 다양한 단위(Unit)의 연산 등… 
   표준 CSS 보다 훨씬 많은 기능을 사용해서 편리하게 작성할 수 있습니다.
   단, 웹에서는 직접 동작하지 않으니 이렇게 작성한 전처리기를 웹에서 동작 가능한 표준의 CSS로 컴파일(Compile)합니다.
-  전처리기로 작성하고 CSS로 컴파일해서 동작시키는 거죠.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  전처리기로 작성하고 CSS로 컴파일해서 동작시키는 거죠.&lt;/li&gt;
+    &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
@@ -101,7 +102,7 @@
 &lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    본 포스팅은 HEROPY님의 영상과 블로그를 보고 정리한 내용입니다.
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    본본 포스팅은 HEROPY 님의 영상과 블로그를 보고 공부한 내용을 정리한 것입니다.
     https://heropy.blog/2018/01/31/sass/
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
