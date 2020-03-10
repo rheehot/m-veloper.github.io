@@ -31,14 +31,15 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="naver-site-verification" content="fa37cbf8ce41948de6e94c01991ffa04cea9b093"/>
 <meta name="google-site-verification" content="5M4Zw9wg_UqQkvlayfb5Mc_ogvJdc013w_zLUkxgO-Y" />
-<meta property="og:title" content="Home">
+<meta property="og:title" content="[Sass/SCSS] Sass와 SCSS는 차이점">
 <meta property="og:type" content="article">
 
 
 
 
 
-  <meta property="og:image" content="https://m-veloper.github.io/assets/img/logo.png">
+  <meta property="og:image" content="https://m-veloper.github.io/assets//img/linux-logo.png">
+  <br/>
 
 
 <meta property="og:image:width" content="640" />
@@ -46,13 +47,15 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 
 
 
-  <title>m_veloper &middot; 느리지만 가고있어요..</title>
+  <title>[Sass/SCSS] Sass와 SCSS는 차이점 &middot; m_veloper</title>
 
 
 
 <meta name="description" content="
+
 ">
 <meta property="og:description" content="
+
 ">
 
 
@@ -60,11 +63,13 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 <!-- =============== -->
 <!-- LINKS           -->
 <!-- =============== -->
-<link rel="canonical" href="https://m-veloper.github.io/">
-<meta property="og:url" content="https://m-veloper.github.io/">
+<link rel="canonical" href="https://m-veloper.github.io/devlog/2020/03/10/sass-02/">
+<meta property="og:url" content="https://m-veloper.github.io/devlog/2020/03/10/sass-02/">
 
 <link rel="alternate" type="application/atom+xml" title="m_veloper Feed" href="https://m-veloper.github.io/feed.xml">
 
+
+  <link rel="prev" href="https://m-veloper.github.io/devlog/2020/03/09/sass-01/">
 
 
 
@@ -192,8 +197,45 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 <div id="_yPushState">
   <div class="fade-in">
     <main id="_main" class="content" role="main" data-color="#e2adfd" data-image="/assets/img/nap.jpg">
-      
-  <style>
+      <style>
+  .myAd1190 {
+    width: 48%;
+    height: 280px;
+  }
+
+  .myAd1290 {
+    width: 48%;
+    height: 280px;
+  }
+
+  @media(max-width: 800px) {
+    .myAd1190 {
+      display: none;
+    }
+
+    .myAd1290 {
+      width: 98%;
+    }
+  }
+  /*광고 붙을떄 까지 안보이게*/
+  .row {
+    /*display: flex;*/
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    height: 300px;
+  }
+
+  .row-center {
+    display: flex;
+    justify-content: center;
+    height: 258px;
+  }
+  /*광고 붙을떄 까지 안보이게*/
+  .right-side{
+    display: none;
+  }
+
   #tag{
     margin-bottom: 0.875rem;
     padding-left: 1rem;
@@ -209,50 +251,37 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
     border-radius: 1rem;
     text-decoration: none;
   }
-  .post-title{
-    font-size: 1.3rem;
-  }
-  .post-title a{
-    color: #999 !important;
-  }
-
   .post-date{
     font-size: 0.9rem;
     font-weight: 400;
   }
 
-  .read-more {
-    margin-top: 0;
-  }
-  .mb6 {
-    margin-bottom: 8rem;
+  .markdown-body h1 {
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+    margin-top: 56px;
   }
 
 </style>
 
 
 
-<article id="post-devlog/2020/03/10/sass-02" class="post mb6 this" role="article">
+
+
+<article id="post-devlog/2020/03/10/sass-02" class="post this" role="article">
   <header>
-    <!--post 내용중 이미지 영역-->
-    <p><img src="/assets/img/sass/2020-03-10-sass-02.png" alt="" /></p>
 
-
-
-    <!--제목-->
     <h1 class="post-title">
-      <a href="/devlog/2020/03/10/sass-02/" data-flip="title">
-      [Sass/SCSS] Sass와 SCSS는 차이점
-      </a>
+      
+        [Sass/SCSS] Sass와 SCSS는 차이점
+        
     </h1>
 
-    <!--날짜-->
     <p class="post-date heading">
       <!--<time datetime="2020-03-10T00:00:00+09:00">10 Mar 2020</time>-->
       <time datetime="2020-03-10T00:00:00+09:00">2020년 03월 10일</time>
     </p>
-
-    <!--카테고리영역-->
     
 
 
@@ -282,751 +311,335 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
   <div class="hr" style="padding-bottom:0"></div>
 
 
-
   </header>
   
 
   
-  <p class="read-more"><a class="heading" href="/devlog/2020/03/10/sass-02/" data-flip="title">바로가기 </a>
-  </p>
+  <div class="markdown-body">
+
+    <!-- 
+    <div class="head-image"><img src="https://m-veloper.github.io/assets//img/linux-logo.png" /></div>
+    <br /> -->
+
+    <div class='row'>
+    </div>
+
+    <br />
+    <p><img src="/assets/img/sass/2020-03-10-sass-02.png" alt="" /></p>
+
+<h1 id="sass와-scss는-차이점">Sass와 SCSS는 차이점</h1>
+<p><br />
+<br /></p>
+
+<ul>
+  <li>
+    <p>Sass(Syntactically Awesome Style Sheets)의 3버전에서 새롭게 등장한 SCSS는 CSS 구문과 완전히 호환되도록 
+  새로운 구문을 도입해 만든 Sass의 모든 기능을 지원하는 CSS의 상위집합(Superset) 이다.</p>
+  </li>
+  <li>
+    <p>SCSS는 CSS와 거의 같은 문법으로 Sass 기능을 지원한다</p>
+  </li>
+  <li>
+    <p>더 쉽고 간단한 차이는 {}(중괄호)와 ;(세미콜론)의 유무 이다</p>
+
+    <ul>
+      <li>
+        <p>Sass:</p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  .list
+    width: 100px
+    float: left
+    li
+      color: red
+      background: url("./image.jpg")
+      &amp;:last-child
+        margin-right: -10px
+</code></pre></div>        </div>
+
+        <ul>
+          <li>Sass는 선택자의 유효범위를 ‘들여쓰기’로 구분</li>
+        </ul>
+
+        <p><br /></p>
+      </li>
+      <li>
+        <p>SCSS:</p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  .list {
+    width: 100px;
+    float: left;
+    li {
+      color: red;
+      background: url("./image.jpg");
+      &amp;:last-child {
+        margin-right: -10px;
+      }
+    }
+  }
+</code></pre></div>        </div>
+
+        <ul>
+          <li>SCSS는 {}로 범위를 구분</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><br />
+<br /></p>
+
+<ul>
+  <li>
+    <p>Sass 와 SCSS의 차는 Mixins(‘믹스인’은 재사용 가능한 기능을 만드는 방식의 의미) 사용 방식에도 차이가 있다.</p>
+
+    <ul>
+      <li>
+        <p>Sass:</p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  =border-radius($radius)
+    -webkit-border-radius: $radius
+    -moz-border-radius:    $radius
+    -ms-border-radius:     $radius
+    border-radius:         $radius
+        
+  .box
+    +border-radius(10px)
+</code></pre></div>        </div>
+
+        <ul>
+          <li>Sass는 =와 + 기호로 Mixins 기능을 사용</li>
+        </ul>
+
+        <p><br /></p>
+      </li>
+      <li>
+        <p>SCSS:</p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> @mixin border-radius($radius) {
+   -webkit-border-radius: $radius;
+      -moz-border-radius: $radius;
+       -ms-border-radius: $radius;
+           border-radius: $radius;
+ }
+       
+ .box { @include border-radius(10px); }
+</code></pre></div>        </div>
+
+        <ul>
+          <li>SCSS는 @mixin과 @include로 기능을 사용</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><br />
+<br /></p>
+
+<ul>
+  <li>
+    <p>Sass는 좀 더 간결하고 작성하기 편리하며, {}나 ;를 사용하지 않아도 되니 코드가 훨씬 깔끔해짐</p>
+  </li>
+  <li>
+    <p>SCSS는 인라인 코드(한 줄 작성)를 작성할 수 있고, CSS와 유사한 문법을 가지기 때문에 코드 통합이 훨씬 수월</p>
+  </li>
+  <li>
+    <p>장단점이 있기 때문에 회사나 팀에서 원하는 방식을 사용해야 하거나, 개인 취향에 따라서 선택</p>
+  </li>
+  <li>
+    <p>보통의 경우 SCSS를 추천</p>
+  </li>
+</ul>
+
+<p><br />
+<br />
+<br /></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    본본 포스팅은 HEROPY 님의 영상과 블로그를 보고 공부한 내용을 정리한 것입니다.
+    https://heropy.blog/2018/01/31/sass/
+</code></pre></div></div>
+
+
+    <br />
+    <br />
+  </div>
   
 
 </article>
 
 
-
-  <style>
-  #tag{
-    margin-bottom: 0.875rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    height: 2rem;
-    display: inline-flex;
-    -webkit-box-align: center;
-    align-items: center;
-    margin-right: 0.875rem;
-    color: rgb(12, 166, 120);
-    font-size: 0.9rem;
-    background: rgb(241, 243, 245);
-    border-radius: 1rem;
-    text-decoration: none;
-  }
-  .post-title{
-    font-size: 1.3rem;
-  }
-  .post-title a{
-    color: #999 !important;
-  }
-
-  .post-date{
-    font-size: 0.9rem;
-    font-weight: 400;
-  }
-
-  .read-more {
-    margin-top: 0;
-  }
-  .mb6 {
-    margin-bottom: 8rem;
-  }
-
-</style>
+<div class="share">
+  <h2>Share this post</h2>
+  <div class="share-body">
+    <a href="http://twitter.com/share?text=[Sass/SCSS] Sass와 SCSS는 차이점&amp;url=https://m-veloper.github.io/devlog/2020/03/10/sass-02/"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="icon-twitter">
+      </span>
+    </a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://m-veloper.github.io/devlog/2020/03/10/sass-02/"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="icon-facebook">
+      </span>
+    </a>
+  </div>
+</div>
+<br />
 
 
 
-<article id="post-devlog/2020/03/09/sass-01" class="post mb6 this" role="article">
-  <header>
-    <!--post 내용중 이미지 영역-->
-    <p><img src="/assets/img/sass/2020-03-09-sass-01.png" alt="" /></p>
+<!--
 
 
-
-    <!--제목-->
-    <h1 class="post-title">
-      <a href="/devlog/2020/03/09/sass-01/" data-flip="title">
-      [Sass/SCSS] CSS Preprocessor(전처리기) 란?
-      </a>
-    </h1>
-
-    <!--날짜-->
-    <p class="post-date heading">
-      <!--<time datetime="2020-03-09T00:00:00+09:00">09 Mar 2020</time>-->
-      <time datetime="2020-03-09T00:00:00+09:00">2020년 03월 09일</time>
-    </p>
-
-    <!--카테고리영역-->
+  <aside class="author" role="complementary">
+    <div class="author">
+  <h2 class="page-title hr">
+    About
+  </h2>
+<div class="author-body">
+  
     
-
-
-
-
-
-
-
-
-
-<a href="/category/devlog/" data-flip="title" id="tag">Devlog</a>
-
-    
-
-
-
-
-
-
-
-
-
-<a href="/tag/devlog-sass/" data-flip="title" id="tag">Sass</a>
-
-
-    
-  <div class="hr" style="padding-bottom:0"></div>
-
-
-
-  </header>
   
 
   
-  <p class="read-more"><a class="heading" href="/devlog/2020/03/09/sass-01/" data-flip="title">바로가기 </a>
-  </p>
+
+  <img
+    src="/assets/img/me.jpeg"
+    class="me"
+    alt="m_veloper"
+    srcset="/assets/img/me.jpeg 1x,/assets/img/me.jpeg 2x"
+    
+  />
+
+
   
-
-</article>
-
-
-
-  <style>
-  #tag{
-    margin-bottom: 0.875rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    height: 2rem;
-    display: inline-flex;
-    -webkit-box-align: center;
-    align-items: center;
-    margin-right: 0.875rem;
-    color: rgb(12, 166, 120);
-    font-size: 0.9rem;
-    background: rgb(241, 243, 245);
-    border-radius: 1rem;
-    text-decoration: none;
-  }
-  .post-title{
-    font-size: 1.3rem;
-  }
-  .post-title a{
-    color: #999 !important;
-  }
-
-  .post-date{
-    font-size: 0.9rem;
-    font-weight: 400;
-  }
-
-  .read-more {
-    margin-top: 0;
-  }
-  .mb6 {
-    margin-bottom: 8rem;
-  }
-
-</style>
-
-
-
-<article id="post-tip/2020/03/08/tip-mysql-01" class="post mb6 this" role="article">
-  <header>
-    <!--post 내용중 이미지 영역-->
-    <p><img src="/assets/img/mysql/2020-03-08-tip-mysql-01.png" alt="" /></p>
-
-
-
-    <!--제목-->
-    <h1 class="post-title">
-      <a href="/tip/2020/03/08/tip-mysql-01/" data-flip="title">
-      [MySQL/MariaDB] REPLACE 사용법(콤마제거, 치환하기)
-      </a>
-    </h1>
-
-    <!--날짜-->
-    <p class="post-date heading">
-      <!--<time datetime="2020-03-08T00:00:00+09:00">08 Mar 2020</time>-->
-      <time datetime="2020-03-08T00:00:00+09:00">2020년 03월 08일</time>
-    </p>
-
-    <!--카테고리영역-->
+  <div class="author-body-description">
     
 
+  </div>
+</div>
+</div>
+
+  </aside>
+
+-->
 
 
 
+<aside class="related" role="complementary">
+  <h2 class="hr">Related Posts</h2>
 
-
-
-
-
-<a href="/category/tip/" data-flip="title" id="tag">Tip</a>
-
+  <ul class="related-posts">
     
-
-
-
-
-
-
-
-
-
-<a href="/tag/tip-mysql/" data-flip="title" id="tag">MySQL</a>
-
-
-    
-  <div class="hr" style="padding-bottom:0"></div>
-
-
-
-  </header>
-  
-
-  
-  <p class="read-more"><a class="heading" href="/tip/2020/03/08/tip-mysql-01/" data-flip="title">바로가기 </a>
-  </p>
-  
-
-</article>
-
-
-
-  <style>
-  #tag{
-    margin-bottom: 0.875rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    height: 2rem;
-    display: inline-flex;
-    -webkit-box-align: center;
-    align-items: center;
-    margin-right: 0.875rem;
-    color: rgb(12, 166, 120);
-    font-size: 0.9rem;
-    background: rgb(241, 243, 245);
-    border-radius: 1rem;
-    text-decoration: none;
-  }
-  .post-title{
-    font-size: 1.3rem;
-  }
-  .post-title a{
-    color: #999 !important;
-  }
-
-  .post-date{
-    font-size: 0.9rem;
-    font-weight: 400;
-  }
-
-  .read-more {
-    margin-top: 0;
-  }
-  .mb6 {
-    margin-bottom: 8rem;
-  }
-
-</style>
-
-
-
-<article id="post-tip/2020/03/07/tip-java-01" class="post mb6 this" role="article">
-  <header>
-    <!--post 내용중 이미지 영역-->
-    <p><img src="/assets/img/java/2020-03-07-tip-java-01.png" alt="" /></p>
-
-
-
-    <!--제목-->
-    <h1 class="post-title">
-      <a href="/tip/2020/03/07/tip-java-01/" data-flip="title">
-      [JAVA] Java에서 백분율(퍼센트) 계산하기
-      </a>
-    </h1>
-
-    <!--날짜-->
-    <p class="post-date heading">
-      <!--<time datetime="2020-03-07T00:00:00+09:00">07 Mar 2020</time>-->
-      <time datetime="2020-03-07T00:00:00+09:00">2020년 03월 07일</time>
-    </p>
-
-    <!--카테고리영역-->
-    
-
-
-
-
-
-
-
-
-
-<a href="/category/tip/" data-flip="title" id="tag">Tip</a>
-
-    
-
-
-
-
-
-
-
-
-
-<a href="/tag/tip-java/" data-flip="title" id="tag">Java</a>
-
-
-    
-  <div class="hr" style="padding-bottom:0"></div>
-
-
-
-  </header>
-  
-
-  
-  <p class="read-more"><a class="heading" href="/tip/2020/03/07/tip-java-01/" data-flip="title">바로가기 </a>
-  </p>
-  
-
-</article>
-
-
-
-  <style>
-  #tag{
-    margin-bottom: 0.875rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    height: 2rem;
-    display: inline-flex;
-    -webkit-box-align: center;
-    align-items: center;
-    margin-right: 0.875rem;
-    color: rgb(12, 166, 120);
-    font-size: 0.9rem;
-    background: rgb(241, 243, 245);
-    border-radius: 1rem;
-    text-decoration: none;
-  }
-  .post-title{
-    font-size: 1.3rem;
-  }
-  .post-title a{
-    color: #999 !important;
-  }
-
-  .post-date{
-    font-size: 0.9rem;
-    font-weight: 400;
-  }
-
-  .read-more {
-    margin-top: 0;
-  }
-  .mb6 {
-    margin-bottom: 8rem;
-  }
-
-</style>
-
-
-
-<article id="post-devlog/2020/03/06/unix-15" class="post mb6 this" role="article">
-  <header>
-    <!--post 내용중 이미지 영역-->
-    <p><img src="/assets/img/unix/2020-03-06-unix-15.png" alt="" /></p>
-
-
-
-    <!--제목-->
-    <h1 class="post-title">
-      <a href="/devlog/2020/03/06/unix-15/" data-flip="title">
-      [유닉스] vi 환경 설정
-      </a>
-    </h1>
-
-    <!--날짜-->
-    <p class="post-date heading">
-      <!--<time datetime="2020-03-06T00:00:00+09:00">06 Mar 2020</time>-->
-      <time datetime="2020-03-06T00:00:00+09:00">2020년 03월 06일</time>
-    </p>
-
-    <!--카테고리영역-->
-    
-
-
-
-
-
-
-
-
-
-<a href="/category/devlog/" data-flip="title" id="tag">Devlog</a>
-
-    
-
-
-
-
-
-
-
-
-
-<a href="/tag/devlog-unix/" data-flip="title" id="tag">Unix</a>
-
-
-    
-  <div class="hr" style="padding-bottom:0"></div>
-
-
-
-  </header>
-  
-
-  
-  <p class="read-more"><a class="heading" href="/devlog/2020/03/06/unix-15/" data-flip="title">바로가기 </a>
-  </p>
-  
-
-</article>
-
-
-
-  <style>
-  #tag{
-    margin-bottom: 0.875rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    height: 2rem;
-    display: inline-flex;
-    -webkit-box-align: center;
-    align-items: center;
-    margin-right: 0.875rem;
-    color: rgb(12, 166, 120);
-    font-size: 0.9rem;
-    background: rgb(241, 243, 245);
-    border-radius: 1rem;
-    text-decoration: none;
-  }
-  .post-title{
-    font-size: 1.3rem;
-  }
-  .post-title a{
-    color: #999 !important;
-  }
-
-  .post-date{
-    font-size: 0.9rem;
-    font-weight: 400;
-  }
-
-  .read-more {
-    margin-top: 0;
-  }
-  .mb6 {
-    margin-bottom: 8rem;
-  }
-
-</style>
-
-
-
-<article id="post-devlog/2020/03/06/unix-14" class="post mb6 this" role="article">
-  <header>
-    <!--post 내용중 이미지 영역-->
-    <p><img src="/assets/img/unix/2020-03-06-unix-14.png" alt="" /></p>
-
-
-
-    <!--제목-->
-    <h1 class="post-title">
-      <a href="/devlog/2020/03/06/unix-14/" data-flip="title">
-      [유닉스] 편집기 (vi) - 내용 수정 및 삭제
-      </a>
-    </h1>
-
-    <!--날짜-->
-    <p class="post-date heading">
-      <!--<time datetime="2020-03-06T00:00:00+09:00">06 Mar 2020</time>-->
-      <time datetime="2020-03-06T00:00:00+09:00">2020년 03월 06일</time>
-    </p>
-
-    <!--카테고리영역-->
-    
-
-
-
-
-
-
-
-
-
-<a href="/category/devlog/" data-flip="title" id="tag">Devlog</a>
-
-    
-
-
-
-
-
-
-
-
-
-<a href="/tag/devlog-unix/" data-flip="title" id="tag">Unix</a>
-
-
-    
-  <div class="hr" style="padding-bottom:0"></div>
-
-
-
-  </header>
-  
-
-  
-  <p class="read-more"><a class="heading" href="/devlog/2020/03/06/unix-14/" data-flip="title">바로가기 </a>
-  </p>
-  
-
-</article>
-
-
-
-  <style>
-  #tag{
-    margin-bottom: 0.875rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    height: 2rem;
-    display: inline-flex;
-    -webkit-box-align: center;
-    align-items: center;
-    margin-right: 0.875rem;
-    color: rgb(12, 166, 120);
-    font-size: 0.9rem;
-    background: rgb(241, 243, 245);
-    border-radius: 1rem;
-    text-decoration: none;
-  }
-  .post-title{
-    font-size: 1.3rem;
-  }
-  .post-title a{
-    color: #999 !important;
-  }
-
-  .post-date{
-    font-size: 0.9rem;
-    font-weight: 400;
-  }
-
-  .read-more {
-    margin-top: 0;
-  }
-  .mb6 {
-    margin-bottom: 8rem;
-  }
-
-</style>
-
-
-
-<article id="post-devlog/2020/03/06/unix-13" class="post mb6 this" role="article">
-  <header>
-    <!--post 내용중 이미지 영역-->
-    <p><img src="/assets/img/unix/2020-03-06-unix-13.png" alt="" /></p>
-
-
-
-    <!--제목-->
-    <h1 class="post-title">
-      <a href="/devlog/2020/03/06/unix-13/" data-flip="title">
-      [유닉스] 편집기 (vi)
-      </a>
-    </h1>
-
-    <!--날짜-->
-    <p class="post-date heading">
-      <!--<time datetime="2020-03-06T00:00:00+09:00">06 Mar 2020</time>-->
-      <time datetime="2020-03-06T00:00:00+09:00">2020년 03월 06일</time>
-    </p>
-
-    <!--카테고리영역-->
-    
-
-
-
-
-
-
-
-
-
-<a href="/category/devlog/" data-flip="title" id="tag">Devlog</a>
-
-    
-
-
-
-
-
-
-
-
-
-<a href="/tag/devlog-unix/" data-flip="title" id="tag">Unix</a>
-
-
-    
-  <div class="hr" style="padding-bottom:0"></div>
-
-
-
-  </header>
-  
-
-  
-  <p class="read-more"><a class="heading" href="/devlog/2020/03/06/unix-13/" data-flip="title">바로가기 </a>
-  </p>
-  
-
-</article>
-
-
-
-  <style>
-  #tag{
-    margin-bottom: 0.875rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    height: 2rem;
-    display: inline-flex;
-    -webkit-box-align: center;
-    align-items: center;
-    margin-right: 0.875rem;
-    color: rgb(12, 166, 120);
-    font-size: 0.9rem;
-    background: rgb(241, 243, 245);
-    border-radius: 1rem;
-    text-decoration: none;
-  }
-  .post-title{
-    font-size: 1.3rem;
-  }
-  .post-title a{
-    color: #999 !important;
-  }
-
-  .post-date{
-    font-size: 0.9rem;
-    font-weight: 400;
-  }
-
-  .read-more {
-    margin-top: 0;
-  }
-  .mb6 {
-    margin-bottom: 8rem;
-  }
-
-</style>
-
-
-
-<article id="post-devlog/2020/03/06/database-15" class="post mb6 this" role="article">
-  <header>
-    <!--post 내용중 이미지 영역-->
-    <p><img src="/assets/img/database/2020-03-06-database-15.png" alt="" /></p>
-
-
-
-    <!--제목-->
-    <h1 class="post-title">
-      <a href="/devlog/2020/03/06/database-15/" data-flip="title">
-      [Database] Windows(윈도우)에 MySQL 설치방법
-      </a>
-    </h1>
-
-    <!--날짜-->
-    <p class="post-date heading">
-      <!--<time datetime="2020-03-06T00:00:00+09:00">06 Mar 2020</time>-->
-      <time datetime="2020-03-06T00:00:00+09:00">2020년 03월 06일</time>
-    </p>
-
-    <!--카테고리영역-->
-    
-
-
-
-
-
-
-
-
-
-<a href="/category/devlog/" data-flip="title" id="tag">Devlog</a>
-
-    
-
-
-
-
-
-
-
-
-
-<a href="/tag/devlog-database/" data-flip="title" id="tag">Database</a>
-
-
-    
-  <div class="hr" style="padding-bottom:0"></div>
-
-
-
-  </header>
-  
-
-  
-  <p class="read-more"><a class="heading" href="/devlog/2020/03/06/database-15/" data-flip="title">바로가기 </a>
-  </p>
-  
-
-</article>
-
-
-
-
-<h2 class="sr-only">Pagination</h2>
-<nav class="pagination heading" role="navigation">
-  <ul>
-    <li class="pagination-item older" >
       
-        <a rel="next" href="/page-2/">이전</a>
       
-    </li>
-    <li class="pagination-item newer" >
       
-        <span>다음</span>
+        
+          
+          
+        
+        
+          
+
+
+
+<style>
+  .related-posts>li>small{
+    margin-left: 10px;
+  }
+</style>
+<li class="h4">
+  <a href="/devlog/2020/03/09/sass-01/" data-flip="title">
+    <span>[Sass/SCSS] CSS Preprocessor(전처리기) 란?</span>
+  </a>
+  <small><time datetime="2020-03-09T00:00:00+09:00">
+    2020년 03월 09일
+  </time></small>
+</li>
+
+        
       
-    </li>
+        
+        
+          
+
+
+
+<style>
+  .related-posts>li>small{
+    margin-left: 10px;
+  }
+</style>
+<li class="h4">
+  <a href="/devlog/2020/03/06/unix-15/" data-flip="title">
+    <span>[유닉스] vi 환경 설정</span>
+  </a>
+  <small><time datetime="2020-03-06T00:00:00+09:00">
+    2020년 03월 06일
+  </time></small>
+</li>
+
+        
+      
+        
+        
+          
+
+
+
+<style>
+  .related-posts>li>small{
+    margin-left: 10px;
+  }
+</style>
+<li class="h4">
+  <a href="/devlog/2020/03/06/unix-14/" data-flip="title">
+    <span>[유닉스] 편집기 (vi) - 내용 수정 및 삭제</span>
+  </a>
+  <small><time datetime="2020-03-06T00:00:00+09:00">
+    2020년 03월 06일
+  </time></small>
+</li>
+
+        
+      
+    
   </ul>
-</nav>
+</aside>
 
 
+
+      
+        <aside class="comments" role="complementary">
+  <h2>Comments</h2>
+  <hr/>
+
+  <div id="disqus_thread"></div>
+
+  <script>
+    !function (s, i) {
+  function e(e) {
+    var t = s.pageYOffset || i.body.scrollTop;
+    s.DISQUS && !s._disqusThis && !s._disqusFirst && t + s.innerHeight >= s._disqusThreadOffsetTop && (s._disqusThis = !0, s.DISQUS.reset(
+      { reload: !0, config: d }))
+  }
+
+  var d = function () {
+    this.page.title = "[Sass/SCSS] Sass와 SCSS는 차이점",
+      this.page.identifier = "/devlog/2020/03/10/sass-02",
+      this.page.url = "https://m-veloper.github.io/devlog/2020/03/10/sass-02/"
+  };
+  s._disqusFirst = void 0 === s._disqusFirst || s._disqusFirst, s._disqusLoading = void 0 !== s._disqusLoading && s._disqusLoading, s._disqusThis = !1, s._disqusThreadOffsetTop = i.getElementById(
+    "disqus_thread").offsetTop, s._disqusLoading ? s._disqusFirst = !1 : (s._disqusLoading = !0, loadJSDeferred(
+    "//m-veloper.disqus.com/embed.js"), s.addEventListener ? s.addEventListener(
+    "scroll",
+    e,
+    { passive: !0 }) : s.attachEvent ? s.attachEvent("onscroll", e) : s.onscroll = e)
+}(window, document);
+
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</aside>
 
       
 
