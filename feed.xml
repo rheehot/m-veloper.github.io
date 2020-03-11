@@ -5,9 +5,322 @@
     <description></description>
     <link>https://m-veloper.github.io/</link>
     <atom:link href="https://m-veloper.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 10 Mar 2020 20:50:30 +0900</pubDate>
-    <lastBuildDate>Tue, 10 Mar 2020 20:50:30 +0900</lastBuildDate>
+    <pubDate>Wed, 11 Mar 2020 19:43:09 +0900</pubDate>
+    <lastBuildDate>Wed, 11 Mar 2020 19:43:09 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>[Sass/SCSS] 문법 - 주석</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/sass/2020-03-11-sass-04.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;sassscss-문법---주석&quot;&gt;Sass(SCSS) 문법 - 주석&lt;/h1&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;위의 ‘Sass와 SCSS의 차이점’에서 설명한대로 Sass와 SCSS의 기능은 동일하니,&lt;br /&gt;
+편의를 위해 SCSS 문법으로 설명을 진행합니다. 단, Sass와 SCSS의 차이점이 있다면 나눠 설명합니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;주석comment&quot;&gt;주석(Comment)&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;CSS 주석은 /* … */ 입니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Sass(SCSS)는 JavaScript처럼 두 가지 스타일의 주석을 사용합니다.&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  // 컴파일되지 않는 주석
+  /* 컴파일되는 주석 */
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Sass:&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  /* 컴파일되는
+   * 여러 줄
+   * 주석 */
+    
+  // Error
+  /* 컴파일되는
+  * 여러 줄
+      * 주석 */
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;Sass의 경우 컴파일되는 여러 줄 주석을 사용할 때 각 줄 앞에 * 을 붙여야 하고, &lt;br /&gt;
+  중요한 것은 * 의 라인을 맞춰줘야 합니다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;SCSS:&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  /*
+  컴파일되는
+  여러 줄
+  주석
+  */
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;SCSS는 각 줄에 * 이 없어도 문제되지 않습니다. 따라서 기존 CSS와 호환이 쉽습니다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    본본 포스팅은 HEROPY 님의 영상과 블로그를 보고 공부한 내용을 정리한 것입니다.
+    https://heropy.blog/2018/01/31/sass/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+</description>
+        <pubDate>Wed, 11 Mar 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/devlog/2020/03/11/sass-04/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/03/11/sass-04/</guid>
+        
+        <category>sass</category>
+        
+        
+        <category>devlog</category>
+        
+      </item>
+    
+      <item>
+        <title>[Sass/SCSS] Sass(SCSS) 컴파일 방법</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/sass/2020-03-11-sass-03.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;sassscss-컴파일-방법&quot;&gt;Sass(SCSS) 컴파일 방법&lt;/h1&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Sass(SCSS)는 웹에서 직접 동작할 수 없습니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;어디까지나 최종에는 표준 CSS로 동작해야 하며, 우리는 전처리기로 작성 후 CSS로 컴파일해야 합니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;다양한 방법으로 컴파일이 가능하지만 자바스크립트 개발 환경(Node.js)에서 추천하는 몇가지 방법을 소개합니다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;sassmeister&quot;&gt;SassMeister&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;https://www.sassmeister.com&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;간단한 Sass 코드는 컴파일러를 설치하는게 부담될 수 있습니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;그럴 경우 SassMeister를 사용할 수 있습니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;페이지 접속 후 바로 Sass나 SCSS 문법으로 코딩하면 CSS로 실시간 변환됩니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;HTML를 작성하여 적용된 결과를 보거나 Sass 버전 설정 등 여러 환경 설정들을 지원하니 학습에 도움이 될 것입니다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;node-sass&quot;&gt;node-sass&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;https://github.com/sass/node-sass&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;https://sass-lang.com/libsass&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;npm이 설치되어있다고 생각하고 작성된 코드입니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;node-sass는 Node.js를 컴파일러인 LibSass에 바인딩한 라이브러리 입니다.
+NPM으로 전역 설치하여 사용합니다.&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ npm install -g node-sass
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;컴파일하려는 파일의 경로와 컴파일된 파일이 저장될 경로를 설정합니다. [ ] 는 선택사항입니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;$ node-sass [옵션] &lt;입력파일경로&gt; [출력파일경로]&lt;/입력파일경로&gt;&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ node-sass scss/main.scss public/main.css
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;여러 출력 경로를 설정할 수 있습니다.&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ node-sass scss/main.scss public/main.css dist/style.css
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;옵션을 적용할 수도 있습니다.&lt;br /&gt;
+옵션으로 –watch 혹은 -w를 입력하면, 런타임 중 파일을 감시하여 저장 시 자동으로 변경 사항을 컴파일합니다.&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ node-sass --watch scss/main.scss public/main.css
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;기타 옵션&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;https://github.com/sass/node-sass#command-line-interface&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;gulp&quot;&gt;Gulp&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;npm이 설치되어있다고 생각하고 작성된 코드입니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Gulp : https://gulpjs.com/&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;빌드 자동화 도구(JavaScript Task Runner)인 Gulp에서는 gulpfile.js을 만들어 아래와 같이 설정할 수 있습니다.
+먼저 gulp 명령을 사용하기 위해서는 전역 설치가 필요합니다.&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ npm install -g gulp    
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Gulp와 함께 Sass 컴파일러인 gulp-sass를 개발 의존성(devDependency) 모드로 설치합니다.
+gulp-sass는 위에서 살펴본 node-sass를 Gulp에서 사용할 수 있도록 만들어진 플러그인입니다.&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;https://github.com/dlmanning/gulp-sass&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ npm install --save-dev gulp gulp-sass
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;환경설정&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; // 자바스크립트
+ // gulpfile.js
+   
+ var gulp = require('gulp')
+ var sass = require('gulp-sass')
+   
+ // 일반 컴파일
+ gulp.task('sass', function () {
+   return gulp.src('./src/scss/*.scss')  // 입력 경로
+     .pipe(sass().on('error', sass.logError))
+     .pipe(gulp.dest('./dist/css'));  // 출력 경로
+ });
+   
+ // 런타임 중 파일 감시
+ gulp.task('sass:watch', function () {
+   gulp.watch('./src/scss/*.scss', ['sass']);  
+   // 입력 경로와 파일 변경 감지 시 실행할 Actions(Task Name)
+ });
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;컴파일&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ gulp sass
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;런타임 중 파일 감시 모드로 실행할 수도 있습니다.&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ gulp sass:watch
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;parcel&quot;&gt;Parcel&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;https://parceljs.org/&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;npm이 설치되어있다고 생각하고 작성된 코드입니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;우선 Parcel를 전역으로 설치합니다.&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ npm install -g parcel-bundler
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;프로젝트에 Sass 컴파일러(node-sass)를 설치합니다.&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ npm install --save-dev node-sass
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;이제 HTML에 &lt;link /&gt;로 Sass 파일만 연결하면 됩니다. 다른 설정은 필요하지 않습니다.&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &amp;lt;link rel=&quot;stylesheet&quot; href=&quot;scss/main.scss&quot;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;컴파일&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ parcel index.html
+  # 혹은
+  $ parcel build index.html
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;dist/에서 컴파일된 Sass 파일을 볼 수 있고,&lt;br /&gt;
+별도의 포트 번호를 설정하지 않았다면 http://localhost:1234에 접속하여 적용 상태를 확인할 수 있습니다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    본본 포스팅은 HEROPY 님의 영상과 블로그를 보고 공부한 내용을 정리한 것입니다.
+    https://heropy.blog/2018/01/31/sass/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+</description>
+        <pubDate>Wed, 11 Mar 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/devlog/2020/03/11/sass-03/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/03/11/sass-03/</guid>
+        
+        <category>sass</category>
+        
+        
+        <category>devlog</category>
+        
+      </item>
     
       <item>
         <title>[Sass/SCSS] Sass와 SCSS는 차이점</title>
@@ -6006,569 +6319,6 @@ var day=string.substr(8,2) //11
         <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/02/24/database-08/</guid>
         
         <category>database</category>
-        
-        
-        <category>devlog</category>
-        
-      </item>
-    
-      <item>
-        <title>[Database] 약한 개체와 IE표기법</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-23-database-07.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;약한-개체의-개체타입-식별관계타입-및-식별자&quot;&gt;약한 개체의 개체타입, 식별관계타입 및 식별자&lt;/h1&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;약한 개체 타입&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;상위 개체 타입에 종속된 개체 타입&lt;/li&gt;
-      &lt;li&gt;이중 직사각형으로 표현&lt;/li&gt;
-      &lt;li&gt;예 : 직원의 가족 – 직원 개체 타입이 있어야 가족 개체 타입을 식별할 수 있다.&lt;/li&gt;
-    &lt;/ul&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-23-database-07-01.png&quot; alt=&quot;&quot; /&gt;
- &lt;br /&gt;
- &lt;br /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;식별 관계 타입&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;강한 개체 타입과 약한 개체 타입의 관계를 나타냄&lt;/li&gt;
-      &lt;li&gt;강한 개체 타입의 기본키를 상속받아 사용함&lt;/li&gt;
-      &lt;li&gt;이중 마름모꼴로 표현&lt;/li&gt;
-    &lt;/ul&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-23-database-07-02.png&quot; alt=&quot;&quot; /&gt;
- &lt;br /&gt;
- &lt;br /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;식별자 (Discriminator) / 부분키 (Partial key)&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;약한 개체 타입은 자신의 기본키만으로 식별이 어려우므로, 상위의 강한 개체 타입의 기본키를 상속받아 결합하여 사용&lt;/li&gt;
-      &lt;li&gt;약한 개체 타입은 식별자를 사용하여 개별 개체를 식별할 수 있다.&lt;/li&gt;
-    &lt;/ul&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-23-database-07-03.png&quot; alt=&quot;&quot; /&gt;
- &lt;br /&gt;
- &lt;br /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;예&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;직원 개체 타입과 가족 개체 타입은 부양 관계를 가진다.&lt;/li&gt;
-      &lt;li&gt;직원 – 자기 자신만으로 존재 가능, 사번을 키로 구분한다.&lt;/li&gt;
-      &lt;li&gt;가족 – 어느 직원의 가족인지 알기 위하여 직원의 사번과 가족의 이름으로 식별이 가능하다&lt;/li&gt;
-    &lt;/ul&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-23-database-07-04.png&quot; alt=&quot;&quot; /&gt;
- &lt;br /&gt;
- &lt;br /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;약한개체타입, 식별관계타입 및 식별자 정리&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-23-database-07-05.png&quot; alt=&quot;&quot; /&gt;
- &lt;br /&gt;
- &lt;br /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;약한-개체의-개체타입-식별관계타입-및-식별자-1&quot;&gt;약한 개체의 개체타입, 식별관계타입 및 식별자&lt;/h1&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;IE란()Information Engineering Notation)&lt;/p&gt;
-
-&lt;p&gt;새발 표기법(Crow-feet Notation) : 관계 대응수를 새발 모양의 기호로 표현&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;피터첸 표기법과 IE표기법&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-23-database-07-06.png&quot; alt=&quot;&quot; /&gt;
- &lt;br /&gt;
- &lt;br /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;개체의 표현&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-23-database-07-07.png&quot; alt=&quot;&quot; /&gt;
- &lt;br /&gt;
- &lt;br /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;속성의 표현&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-23-database-07-08.png&quot; alt=&quot;&quot; /&gt;
- &lt;br /&gt;
- &lt;br /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;관계의 표현&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-23-database-07-09.png&quot; alt=&quot;&quot; /&gt;
- &lt;br /&gt;
- &lt;br /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;관계대응수의 표현&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;1:N 관계 대응수&lt;/li&gt;
-    &lt;/ul&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-23-database-07-10.png&quot; alt=&quot;&quot; /&gt;
- &lt;br /&gt;
- &lt;br /&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-23-database-07-11.png&quot; alt=&quot;&quot; /&gt;
- &lt;br /&gt;
- &lt;br /&gt;&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;1:1 관계 대응수&lt;/li&gt;
-    &lt;/ul&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-23-database-07-12.png&quot; alt=&quot;&quot; /&gt;
- &lt;br /&gt;
- &lt;br /&gt;&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;M:N 관계대응수&lt;/li&gt;
-    &lt;/ul&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-23-database-07-13.png&quot; alt=&quot;&quot; /&gt;
- &lt;br /&gt;
- &lt;br /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;참여도의 표현&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;부분 참여
- &lt;img src=&quot;/assets/img/database/2020-02-23-database-07-14.png&quot; alt=&quot;&quot; /&gt;
- &lt;br /&gt;
- &lt;br /&gt;&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;전체 참여&lt;/p&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-23-database-07-15.png&quot; alt=&quot;&quot; /&gt;
- &lt;br /&gt;
- &lt;br /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;강한개체와 약한개체의 표현&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;(강한 개체 : 약한 개체) 관계 대응수 = ( 1 : N )&lt;/li&gt;
-      &lt;li&gt;(강한 개체 : 약한 개체) 참여도 = ( 전체 : 부분 )&lt;/li&gt;
-    &lt;/ul&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-23-database-07-16.png&quot; alt=&quot;&quot; /&gt;
- &lt;br /&gt;
- &lt;br /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;키와 식별자의 표현&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;기본키&lt;/p&gt;
-
-        &lt;ul&gt;
-          &lt;li&gt;속성 이름 앞에 ◆로 표기&lt;/li&gt;
-          &lt;li&gt;속성 이름 뒤에 (PK)로 표기&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-23-database-07-17.png&quot; alt=&quot;&quot; /&gt;
- &lt;br /&gt;
- &lt;br /&gt;&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;외래키&lt;/p&gt;
-
-        &lt;ul&gt;
-          &lt;li&gt;속성의 이름 뒤에 (FK)로 표기&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-02-23-database-07-18.png&quot; alt=&quot;&quot; /&gt;
- &lt;br /&gt;
- &lt;br /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-</description>
-        <pubDate>Sun, 23 Feb 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/02/23/database-07/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/02/23/database-07/</guid>
-        
-        <category>database</category>
-        
-        
-        <category>devlog</category>
-        
-      </item>
-    
-      <item>
-        <title>[유닉스] 디렉토리 계층구조</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-02-22-unix-06.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;디렉토리-계층-구조&quot;&gt;디렉토리 계층 구조&lt;/h1&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;디렉토리 계층 구조&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;데이터를 효율적으로 관리하기 위해 시스템을 계층적인 트리 구조로 구성&lt;/li&gt;
-      &lt;li&gt;트리 구조 : 모양이 나무를 거꾸로 한 것과 유사&lt;/li&gt;
-      &lt;li&gt;파일이 나무의 잎에, 디렉토리가 나뭇가지에 해당&lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;루트(root) 디렉토리&lt;/p&gt;
-
-        &lt;ul&gt;
-          &lt;li&gt;모든 디렉토리, 파일의 원조 및 시작&lt;/li&gt;
-          &lt;li&gt;슬래시(/) 기호로 표시&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;여러 가지 디렉토리&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;상위 디렉토리는 기호 ..으로 표시&lt;/li&gt;
-      &lt;li&gt;모든 디렉토리의 최상위는 루트 디렉토리(/)&lt;/li&gt;
-      &lt;li&gt;루트 디렉토리 : 상위 디렉토리가 없는 유일한 디렉토리&lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;작업 디렉토리(working directory), 현재 디렉토리(current directory)&lt;/p&gt;
-
-        &lt;ul&gt;
-          &lt;li&gt;현재 작업을 하고 있는 디렉토리&lt;/li&gt;
-          &lt;li&gt;기호 ‘.’로 표시&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;홈 디렉토리&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;기호 틸드(~)로 표시&lt;/li&gt;
-      &lt;li&gt;다중 사용자 시스템에서 각 사용자에게 할당된 작업 영역&lt;/li&gt;
-      &lt;li&gt;파일의 생성, 삭제를 자유롭게 할 수 있는 디렉토리&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;리눅스의 계층구조 디렉토리&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-02-22-unix-06-01.png&quot; alt=&quot;&quot; /&gt;
- &lt;br /&gt;
- &lt;br /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;루트(/) 디렉토리&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;리눅스 시스템의 최상위 디렉토리&lt;/li&gt;
-      &lt;li&gt;디렉토리 구조의 시작&lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;리눅스는 루트(/)를 기준으로 디렉토리를 생성&lt;/p&gt;
-
-        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ cd /
-  $ ls
-  bin etc lost+found opt run sys var
-  boot home media proc sbin tmp
-  dev lib mnt root srv usr
-  $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;기본 실행 명령어 디렉토리 (/bin)&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;‘binaries’, 리눅스 시스템에서 가장 많이 사용되는 디렉토리 중 하나&lt;/li&gt;
-      &lt;li&gt;기본 명령어 파일들이 2진수의 형태로 모여 있는 디렉토리&lt;/li&gt;
-      &lt;li&gt;대부분의 일반적인 명령어들 포함&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;시스템 운영 명령어 디렉토리 (/sbin)&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;‘system binaries’, 시스템 관리(부팅, 복구, 보수 등)를 위한 명령어들&lt;/li&gt;
-      &lt;li&gt;시스템 운영에 필요한 명령어들 포함&lt;/li&gt;
-      &lt;li&gt;관리자 계정인 루트(root)만이 사용할 수 있는 명령어들로 구성&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;시스템 설정 파일 디렉토리 (/etc)&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;리눅스 시스템에 대한 환경 설정과 관련된 파일 및 디렉토리&lt;/li&gt;
-      &lt;li&gt;사용자 관리를 위한 암호 관련 파일, 네트워크 정보를 보유한 파일 등 시스템 관리에 전반적인 파일들 존재&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;부팅 관련 파일 디렉토리 (/boot)&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;리눅스 커널이 저장되어 있는 디렉토리&lt;/li&gt;
-      &lt;li&gt;각종 리눅스 부트에 필요한 부팅 지원 파일들&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;입출력 장치 연결 마운트 디렉토리 (/mnt)&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;‘mount directory’, 각종 입출력 장치와 연결할 때 마운트하게 되면 해당 파일 시스템의 내용이 이 디렉토리에 저장됨&lt;/li&gt;
-      &lt;li&gt;가상 머신으로 리눅스 설치시 비어있음&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;임시 마운트 디렉토리 (/media)&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;CD/DVD 또는 FDD, USB 등이 임시로 마운트되는 역할 수행&lt;/li&gt;
-      &lt;li&gt;가상 머신으로 리눅스 설치시 비어있음&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;응용 패키지 프로그램 설치 디렉토리 (/usr)&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;사용자가 사용할 응용 패키지 프로그램 설치시 사용&lt;/li&gt;
-      &lt;li&gt;윈도우 운영체제에서의 [Program Files]와 같은 역할&lt;/li&gt;
-      &lt;li&gt;시스템에 사용되는 각종 응용 프로그램들이 설치되는 디렉토리&lt;/li&gt;
-      &lt;li&gt;거의 모든 프로그램과 그에 관련된 명령어 및 라이브러리들 포함&lt;/li&gt;
-      &lt;li&gt;X 윈도우 시스템 관련 파일들과 리눅스 커널 소스, 각종 C 언어 관련 헤더 파일 등 저장&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;공유 라이브러리 디렉토리 (/lib)&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;프로그램들의 각종 라이브러리들 존재, 대부분 공유 라이브러리&lt;/li&gt;
-      &lt;li&gt;평소에는 파일 크기를 줄여서 존재, 라이브러리 실행시 풀어서 사용&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;일반 사용자들의 홈 디렉토리 (/home)&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;시스템 계정을 사용하는 사용자들의 홈 디렉토리&lt;/li&gt;
-      &lt;li&gt;FTP, www 등과 같은 서비스 디렉토리들 저장&lt;/li&gt;
-      &lt;li&gt;시스템에서 사용되지 않고, 원격지 상에서 시스템으로 접속을 시도하는 사용자들을 위한 공간으로 사용&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;시스템 디바이스 장치 파일 디렉토리 (/dev)&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;시스템의 각종 장치들을 사용할 수 있도록 장치 드라이버들 저장&lt;/li&gt;
-      &lt;li&gt;리눅스에서는 각종 장치들을 하나의 파일로 취급&lt;/li&gt;
-      &lt;li&gt;시스템은 각 장치를 설치하는데 필요한 정보를 이 디렉토리에서 가져옴&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;가상 파일 시스템 디렉토리 (/proc)&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;시스템의 각종 프로세스와 프로그램 정보 및 하드웨어적인 정보들 저장&lt;/li&gt;
-      &lt;li&gt;물리적인 하드디스크 용량을 사용하지 않고 커널에 의해 메모리에 저장됨&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;가변 자료 저장 디렉토리 (/var)&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;시스템에서 사용되는 동적인 파일, 즉 변경되는 파일들 저장&lt;/li&gt;
-      &lt;li&gt;각종 시스템 로그 파일, 사용자 로그인에 대한 보안 기록 등&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;임시 파일 저장 디렉토리 (/tmp)&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;프로그램 수행 과정에서의 임시 파일들 저장&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;리눅스에 없는 프로그램 추가 설치 디렉토리 (/opt)&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;리눅스에서 제공되지 않는 프로그램을 추가로 설치할 경우 사용&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;복구 프로그램인 fsck에 의해 사용되는 디렉토리 (/lost+found)&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;수행 중 파일시스템의 이상 유/무를 진단하고 복구하는 프로그램인 fsck(file system check)에 의해 사용되는 디렉토리&lt;/li&gt;
-      &lt;li&gt;일반 사용자 계정으로 로그인한 상태에서는 접근 불가&lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;관리자 계정인 root로 접속해야 디렉토리의 내용을 볼 수 있음&lt;/p&gt;
-
-        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ cd /lost+found
-  -bash: cd: /lost+found: Permission denied
-  $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;디렉토리-계층-구조-1&quot;&gt;디렉토리 계층 구조&lt;/h1&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;디렉토리&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;서로 연관이 있는 파일들을 하나의 그룹으로 만들어서 저장할 수 있도록 구분된 공간을 의미&lt;/li&gt;
-      &lt;li&gt;각 디렉토리의 이름은 “/”로 구별&lt;/li&gt;
-      &lt;li&gt;특정 파일을 지정할 때는 맨 마지막에 파일이름을 쓴다.&lt;/li&gt;
-      &lt;li&gt;파일시스템의 맨 상위 디렉토리를 root 디렉토리&lt;/li&gt;
-      &lt;li&gt;root 디렉토리는 “/”로 표기&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;경로명(path name)&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;파일이나 디렉토리의 전체 이름&lt;/li&gt;
-      &lt;li&gt;디렉토리 계층 구조에 있는 특정 파일이나 디렉토리의 위치를 나타내는 것&lt;/li&gt;
-      &lt;li&gt;디렉토리와 디렉토리, 디렉토리와 파일을 구별하는 구별자로 “/”를 사용&lt;/li&gt;
-      &lt;li&gt;경로명이 디렉토리 이름으로 끝나는 경우 제일 뒤에 “/”를 붙이거나 붙이지 않을 수 있음&lt;/li&gt;
-      &lt;li&gt;절대경로명과 상대경로명이 있음&lt;/li&gt;
-      &lt;li&gt;파일 이름이나 디렉토리 지정하는 방법도 절대경로명을 사용하거나 상대경로명을 사용하는 방법&lt;/li&gt;
-      &lt;li&gt;파일을 명시할 때, 별도의 경로명을 써주지 않으면 현재 디렉토리를 가리킴&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;절대경로명&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;루트 디렉토리를 기준으로 파일의 위치를 나타낸 것&lt;/li&gt;
-      &lt;li&gt;루트 디렉토리부터 시작해서 특정 파일의 위치까지 이동하는데 거치는 모든 디렉토리의 이름 표시&lt;/li&gt;
-      &lt;li&gt;항상 “/”로 시작&lt;/li&gt;
-      &lt;li&gt;특정 파일을 가리키는 절대경로명은 항상 동일&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;상대경로명&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;현재 디렉토리를 기준으로 파일의 위치를 나타낸 것&lt;/li&gt;
-      &lt;li&gt;현재 디렉토리부터 시작해서 하위로 내려가면 디렉토리 이름 추가&lt;/li&gt;
-      &lt;li&gt;루트를 향해 올라가면 “..”을 추가&lt;/li&gt;
-      &lt;li&gt;“/” 이외의 문자로 시작&lt;/li&gt;
-      &lt;li&gt;상대경로명은 현재 디렉토리의 위치에 따라 달라짐&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;탐색 경로&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;명령어를 실행시키면 리눅스는 명령어의 실행 파일이 있는 위치를 찾음&lt;/li&gt;
-      &lt;li&gt;탐색 경로 : 명령어를 어디에서 찾아야 할지 명시하는 것&lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;명령어가 존재하는 디렉토리가 탐색 경로에 없으면 명령어 이름만으로 실행시킬 수 없음&lt;/p&gt;
-
-        &lt;ul&gt;
-          &lt;li&gt;절대 경로명을 다 써주어 실행시키거나&lt;/li&gt;
-          &lt;li&gt;현재 작업 디렉토리를 나타내는 “.”을 사용&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;명령 실행시 탐색 경로의 예&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;test 파일의 내용이 다음과 같은 경우&lt;/p&gt;
-
-        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ cat test
-  ls
-  date
-  cat test
-  $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;현재 작업 디렉토리가 탐색 경로에 지정되지 않았으므로 실행되지 않음&lt;/p&gt;
-
-        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ test
-  $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;현재 작업 디렉토리를 지정한 경우&lt;/p&gt;
-
-        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ ./test
-  Desktop Downloads Music Public Videos
-  Documents examples.desktop Pictures Templates
-  2015. 06. 01. (월) 13:34:25 KST
-  ls
-  date
-  cat test
-  $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;또는 절대경로명을 다 써줄 수 있음&lt;/p&gt;
-
-        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ /home/ksshin/test
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;기호로 디렉토리 이동&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;~ : 홈 디렉토리로 이동&lt;/li&gt;
-      &lt;li&gt;. : 현재 디렉토리 지정&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-</description>
-        <pubDate>Sat, 22 Feb 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/02/22/unix-06/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/02/22/unix-06/</guid>
-        
-        <category>unix</category>
         
         
         <category>devlog</category>
