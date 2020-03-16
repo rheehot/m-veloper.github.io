@@ -5,9 +5,320 @@
     <description></description>
     <link>https://m-veloper.github.io/</link>
     <atom:link href="https://m-veloper.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 15 Mar 2020 00:13:31 +0900</pubDate>
-    <lastBuildDate>Sun, 15 Mar 2020 00:13:31 +0900</lastBuildDate>
+    <pubDate>Mon, 16 Mar 2020 21:03:51 +0900</pubDate>
+    <lastBuildDate>Mon, 16 Mar 2020 21:03:51 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>[Sass/SCSS] 확장(Extend) -  @extend</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/sass/2020-03-16-sass-11.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;sassscss-확장extend----extend&quot;&gt;Sass(SCSS) 확장(Extend) -  @extend&lt;/h1&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;특정 선택자가 다른 선택자의 모든 스타일을 가져야하는 경우가 종종 있습니다.&lt;/li&gt;
+  &lt;li&gt;이럴 경우 선택자의 확장 기능을 사용할 수 있습니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;extend&quot;&gt;@extend&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;@extend 선택자;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;SCSS:&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  .btn {
+    padding: 10px;
+    margin: 10px;
+    background: blue;
+  }
+    
+  .btn-danger {
+    @extend .btn;
+    background: red;
+  }  
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Compiled to:&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; .btn, .btn-danger {
+   padding: 10px;
+   margin: 10px;
+   background: blue;
+ }
+   
+ .btn-danger {
+   background: red;
+ }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;컴파일된 결과가 마음에 드시나요?&lt;/li&gt;
+      &lt;li&gt;결과를 보면 ,로 구분하는 다중 선택자(Multiple Selector)가 만들어졌습니다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;사실 @extend는 다음과 같은 문제를 고려해야 합니다.&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;내 현재 선택자(위 예제의 .btn-danger)가 어디에 첨부될 것인가?&lt;/li&gt;
+      &lt;li&gt;원치 않는 부작용이 초래될 수도 있는가?&lt;/li&gt;
+      &lt;li&gt;이 한 번의 확장으로 얼마나 큰 CSS가 생성되는가?&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;결과적으로 확장(Extend) 기능은 무해하거나 혹은 유익할 수도 있지만 그만큼 부작용을 가지고 있을 수 있습니다.
+따라서 확장은 사용을 권장하지 않으며, 위에서 살펴본 Mixin을 대체 기능으로 사용하세요.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;사용을 권장하지 않는 이유에 대해서 좀 더 자세한 정보를 원하면 &lt;a href=&quot;https://sass-guidelin.es/ko/#extend&quot;&gt;Sass Guidelines Extend&lt;/a&gt;를 참고하세요.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    본 포스팅은 HEROPY 님의 영상과 블로그를 보고 공부한 내용을 정리한 것입니다.
+    https://heropy.blog/2018/01/31/sass/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+</description>
+        <pubDate>Mon, 16 Mar 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/devlog/2020/03/16/sass-11/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/03/16/sass-11/</guid>
+        
+        <category>sass</category>
+        
+        
+        <category>devlog</category>
+        
+      </item>
+    
+      <item>
+        <title>[MySQL/MariaDB] JOIN에서 ON 과 WHERE의 차이점</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/mysql/2020-03-16-tip-mysql-02.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;mysql-join에서-on-과-where의-차이점&quot;&gt;MySQL JOIN에서 ON 과 WHERE의 차이점&lt;/h1&gt;
+&lt;h3 id=&quot;what-is-the-difference-between-on-and-where-in-a-join-statement&quot;&gt;what is the difference between “ON” and “WHERE” in a JOIN statement?&lt;/h3&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;SQL의 JOIN에서 ON과 WHERE의 차이점은 JOIN하는 범위가 다르다&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;아래 test1, test2 테이블을 참조.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/mysql/2020-03-16-tip-mysql-02-01.png&quot; alt=&quot;&quot; /&gt;
+  &lt;br /&gt;&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;예제1&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  ﻿SELECT
+   *
+  FROM test1 AS a 
+  LEFT JOIN test2 AS b
+  ON (a.aa = b.aa)
+  WHERE b.cc = 7;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;위의 경우는 a와 b 테이블의 OUTER JOIN을 수행한 후에 b.cc = 7인 데이터들을 추출&lt;/li&gt;
+          &lt;li&gt;따라서 위의 의 결과는 b.cc = 7인 데이터만 존재&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;예제1 결과 :&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/mysql/2020-03-16-tip-mysql-02-02.png&quot; alt=&quot;&quot; /&gt;
+  &lt;br /&gt;&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;예제2&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  ﻿SELECT 
+  *
+  FROM test1 AS a 
+  LEFT JOIN test2 AS b
+  ON (a.aa = b.aa AND b.cc = 7);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;위의 경우는 (a 테이블)과 (b 테이블 중 b.cc = 7인 경우)를 OUTER JOIN 한 결과가 나온다.&lt;/li&gt;
+          &lt;li&gt;따라서 위의 결과는 b.cc = 7이 아닌 데이터도 존재&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;예제2 결과 :&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/mysql/2020-03-16-tip-mysql-02-03.png&quot; alt=&quot;&quot; /&gt;
+  &lt;br /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;한마디로 ON과 WHERE의 경우는 JOIN을 할 대상(범위)이 달라진다는 것이다.&lt;/p&gt;
+
+    &lt;p&gt;이 점을 이용해서 LEFT OUTER JOIN으로 차집합을 구현할 수 있다.&lt;/p&gt;
+
+    &lt;p&gt;오라클이나 MSSQL과 같은 경우는 EXCEPT 혹은 MINUS 등을 사용하면 되겠지만,&lt;/p&gt;
+
+    &lt;p&gt;MySQL은 버전에 따라 지원하는 경우도 있고 아닌 경우도 있다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;​&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;test1 테이블의 데이터 중 test2 테이블에 있는 데이터를 제외하고 가져오고 싶은 경우.&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  ﻿SELECT *
+  FROM test1 AS a 
+  LEFT JOIN test2 AS b
+  ON (a.aa = b.aa)
+  WHERE b.aa IS NULL;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;위의 경우 JOIN하는 column을 기준으로 1, 2는 test2 테이블에도 있으니 제외하고, 3, 6만을 가져오고 싶은 경우이다.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;결과 : 
+  &lt;img src=&quot;/assets/img/mysql/2020-03-16-tip-mysql-02-04.png&quot; alt=&quot;&quot; /&gt;
+  &lt;br /&gt;&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;WHERE절 이전까지 실행했을 경우&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  SELECT *
+  FROM test1 AS a 
+  LEFT JOIN test2 AS b
+  ON (a.aa = b.aa);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;여기에서 test2 테이블에 존재하지 않아서 test2 테이블의 column이 null인 부분만을 가지고 오게 된다.&lt;/li&gt;
+      &lt;li&gt;WHERE절을 달아주면!! 차집합이 된다는 것이다.&lt;/li&gt;
+      &lt;li&gt;결과 : 
+  &lt;img src=&quot;/assets/img/mysql/2020-03-16-tip-mysql-02-05.png&quot; alt=&quot;&quot; /&gt;
+  &lt;br /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;참고 : https://blog.leocat.kr/notes/2017/07/28/sql-join-on-vs-where
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+</description>
+        <pubDate>Mon, 16 Mar 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/tip/2020/03/16/tip-mysql-02/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/03/16/tip-mysql-02/</guid>
+        
+        <category>mysql</category>
+        
+        
+        <category>tip</category>
+        
+      </item>
+    
+      <item>
+        <title>[자바스크립트] 자동 실행 함수 (window.onload, $(document).ready())</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/javascript/2020-03-16-tip-javascript-07.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;자동-실행-함수-windowonload-documentready&quot;&gt;자동 실행 함수 (window.onload, $(document).ready())&lt;/h1&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;window.onload 와 $(document).ready() 중에 어느 한 쪽이 좋다고 할 수 없다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;아래와 같은 특징들을 파악하여 경우에 따라 적절히 골라서 쓰자.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;windowonload&quot;&gt;window.onload&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;window.onload 는 페이지의 모든 요소들이 로드된 이후에 호출.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;window.onload 는 한 페이지에 하나의 함수만 호출.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Javascript에서 페이지가 로드되면 자동으로 실행되는 함수를 구현할 때엔 전역 콜백함수인 window.onload 함수를 사용.&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  window.onload = function () {
+      console.log(&quot;실행&quot;);
+  }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;documentready&quot;&gt;$(document).ready()&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;jQuery는 자바스크립트의 window.onload 함수의 문제점을 해결하기 위해 $(document).ready() 함수를 제공&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;$(document).ready() 는 DOM 요소들만 모두 로드되면 호출.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;외부 리소스 및 이미지 로딩과 상관없이 DOM만 로드되면 바로 실행된다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;중복 사용해도 순서대로 모두 실행된다.&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $(document).ready(function(){
+       console.log(&quot;실행&quot;);
+  });
+    
+  or 생략하면..
+    
+  $().ready(function(){
+       console.log(&quot;실행&quot;);
+  });
+    
+  or 더 생략하면..
+    
+  $(function(){
+       console.log(&quot;실행&quot;);
+  });
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Mon, 16 Mar 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/tip/2020/03/16/tip-javascript-07/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/03/16/tip-javascript-07/</guid>
+        
+        <category>javascript</category>
+        
+        
+        <category>tip</category>
+        
+      </item>
     
       <item>
         <title>[fuji/후지필름] x100v 어댑터링, 후드 사용법 과 ND필터 끼우기</title>
@@ -5261,908 +5572,6 @@ System.out.format(&quot;%.2f%n&quot;, 1560000.0 * 0.0 / 100.0);
         
         
         <category>tip</category>
-        
-      </item>
-    
-      <item>
-        <title>[자바스크립트] 문자열 길이(문자열 수) 확인</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/javascript/2020-03-01-tip-javascript-05.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;자바스크립트-문자열-길이문자열-수-확인&quot;&gt;자바스크립트 문자열 길이(문자열 수) 확인&lt;/h1&gt;
-&lt;h3 id=&quot;how-to-check-string-length-in-javascript&quot;&gt;How to check String length in JavaScript&lt;/h3&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    // 정말 단순이 변수에 담긴 문자의 길이를 알고 싶을 뿐.
-    // length 함수를 사용하면 된다.
-    
-    let str = &quot;이렇게 쉬운걸 왜 몰랐을까 나는 똥멍청이 입니다.&quot;;
-    let testString = str.length;
-    console.log(testString);
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-</description>
-        <pubDate>Sun, 01 Mar 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/tip/2020/03/01/tip-javascript-05/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/03/01/tip-javascript-05/</guid>
-        
-        <category>javascript</category>
-        
-        
-        <category>tip</category>
-        
-      </item>
-    
-      <item>
-        <title>[유닉스] 링크, 수정 시각 변경</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-02-29-unix-12.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;파일-링크&quot;&gt;파일 링크&lt;/h1&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;h3 id=&quot;1-ln-명령&quot;&gt;1. ln 명령&lt;/h3&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;파일의 링크를 생성&lt;/li&gt;
-  &lt;li&gt;형식 : ln [옵션] 원본파일명 링크파일명&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;옵션&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;-s : 심볼릭 링크 파일 생성&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;사용 예 : ln test lntest, ln –s test lntest&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;h3 id=&quot;2-하드-링크&quot;&gt;2. 하드 링크&lt;/h3&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;하나의 파일에 둘 이상의 다른 이름을 붙일 수 있음&lt;/li&gt;
-  &lt;li&gt;파일에 붙인 이름을 하드 링크, 이름이 붙여진 파일을 하드 링크 파일&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;예제&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ cat &amp;gt; ln.txt
-  This is the first ln test.
-  ^D
-  $ ls –l ln.txt
-  -rw--r--r-- 1 ksshin ksshin 27 6월 12 16:56 ln.txt
-  $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;파일의 종류는 일반 파일&lt;/li&gt;
-      &lt;li&gt;하드 링크 수는 1&lt;/li&gt;
-      &lt;li&gt;원본 파일이 한 개이고 파일 이름의 개수가 1이므로 하드 링크 수가 1&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;h3 id=&quot;3-하드-링크-파일&quot;&gt;3. 하드 링크 파일&lt;/h3&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;ln 명령 사용하여 기존 파일에 새로운 이름 부여&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ ln ln.txt ln.hd
-  $ ls –l ln.*
-  -rw--r--r-- 2 ksshin ksshin 27 6월 12 16:56 ln.hd
-  -rw--r--r-- 2 ksshin ksshin 27 6월 12 16:56 ln.txt
-  $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;두 파일 모두 하드 링크 수가 2&lt;/li&gt;
-      &lt;li&gt;하나의 파일에 두 개의 이름이 붙여졌으므로 링크 수 증가&lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;ln.txt와 ln.hd 파일이 동일한 파일임을 확인 (파일 내용으로 확인)&lt;/p&gt;
-
-        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ cat ln.txt
-  This is the first ln test.
-  $ cat ln.hd
-  This is the first ln test.
-  $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;h3 id=&quot;4-하드-링크와-파일-복사의-차이&quot;&gt;4. 하드 링크와 파일 복사의 차이&lt;/h3&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;파일을 복사해도 내용은 같지만 다른 파일임&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;같은 파일인지 알 수 있는 방법은 inode를 확인하는 것&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;하드 링크의 경우 inode 값이 같음&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;ls –i 옵션으로 inode 확인 가능&lt;/p&gt;
-
-        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ ls –i ln*
-  133938 ln.hd 133938 ln.txt
-  $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;파일을 복사한 경우 inode 값이 다름&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;파일 복사한 경우의 하드 링크 수와 inode 값 확인&lt;/p&gt;
-
-        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ cp ln.txt ln1.txt
-  $ ls –l ln*
-  -rw--r--r-- 1 ksshin ksshin 27 6월 12 17:07 ln1.txt
-  -rw--r--r-- 2 ksshin ksshin 27 6월 12 16:56 ln.hd
-  -rw--r--r-- 2 ksshin ksshin 27 6월 12 16:56 ln.txt
-  $ ls –i ln*
-  134032 ln1.txt 133938 ln.hd 133938 ln.txt
-  $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;h3 id=&quot;5-하드-링크-파일과-원본-파일의-변경&quot;&gt;5. 하드 링크 파일과 원본 파일의 변경&lt;/h3&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;ln.hd 파일의 내용을 변경하면 ln.txt의 내용도 같이 변경됨&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ ls –i ln.* &amp;gt;&amp;gt; ln.hd
-  $ cat ln.txt
-  This is the first ln test.
-  133938 ln.hd
-  133938 ln.txt
-  $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;ln.txt 파일을 삭제한 후 ln.hd 파일의 변화&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ rm ln.txt
-  $ ls –l ln.*
-  -rw--r--r-- 1 ksshin ksshin 27 6월 12 16:56 ln.hd
-  $ cat ln.hd
-  This is the first ln test.
-  133938 ln.hd
-  133938 ln.txt
-  $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;하드 링크 수가 1로 바뀌고 내용은 변화 없음&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;h3 id=&quot;6-심볼릭-링크&quot;&gt;6. 심볼릭 링크&lt;/h3&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;윈도우의 바로가기 아이콘과 같음&lt;/li&gt;
-  &lt;li&gt;원본 파일에 쉽게 접근하기 위해 생성한 특수 파일&lt;/li&gt;
-  &lt;li&gt;파일의 내용은 원본 파일의 경로&lt;/li&gt;
-  &lt;li&gt;링크 파일을 복사하거나 내용을 출력하면 모든 작업이 원본 파일에 대해 수행됨&lt;/li&gt;
-  &lt;li&gt;원본 파일이 삭제되면 심볼릭 링크 파일이 남아있어도 그 파일을 사용할 수 없음&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;h3 id=&quot;7-심볼릭-링크-파일&quot;&gt;7. 심볼릭 링크 파일&lt;/h3&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;ln 명령에 –s 옵션을 사용하여 만듦&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;특징&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;파일 종류 : l, 심볼릭 링크로 표시됨&lt;/li&gt;
-      &lt;li&gt;하드 링크 수 : 1, 이름 추가가 아님&lt;/li&gt;
-      &lt;li&gt;파일 이름 : 파일 이름 뒤에 원본 파일의 이름이 표시됨 (-&amp;gt;ln.hd)&lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;inode 번호 : inode 번호가 다른 별개의 파일임&lt;/p&gt;
-
-        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ ln –s ln.hd ln.sl
-  $ ls –l ln.*
-  -rw--r--r-- 1 ksshin ksshin 27 6월 12 16:56 ln.hd
-  lrwxrwxrwx 1 ksshin ksshin 5 6월 12 17:25 ln.sl -&amp;gt; ln.hd
-  $ ls –i ln.*
-  133938 ln.hd 134106 ln.sl
-  $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;h3 id=&quot;8-하드-링크-파일과-심볼릭-링크-파일&quot;&gt;8. 하드 링크 파일과 심볼릭 링크 파일&lt;/h3&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;공통점&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;심볼릭 링크 파일을 수정하면 원본이 수정됨&lt;/p&gt;
-
-        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; $ pwd &amp;gt;&amp;gt; ln.sl
- $ cat ln.hd
- This is the first ln test.
- 133938 ln.hd
- 133938 ln.txt
- /home/ksshin
- $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;차이점&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;원본 삭제하면 하드 링크는 새로운 이름 사용 가능, 심볼릭 링크는 사용 불가&lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;하드 링크는 디렉토리 설정할 수 없지만 심볼릭 링크는 설정 가능&lt;/p&gt;
-
-        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ rm ln.hd
-  $ cat ln.sl
-  cat: ln.sl: No such file or directory
-  $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h1 id=&quot;파일-생성-및-수정-시각-변경&quot;&gt;파일 생성 및 수정 시각 변경&lt;/h1&gt;
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;h3 id=&quot;1-touch-명령&quot;&gt;1. touch 명령&lt;/h3&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;빈 파일을 생성하거나 파일 수정 시각을 변경&lt;/li&gt;
-  &lt;li&gt;형식 : touch [-acm] [-r ref_file] [-t time] 파일&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;옵션&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;-a : 접근 시간만 변경&lt;/li&gt;
-      &lt;li&gt;-c : 지정된 파일이 없는 경우 새로 생성하지 않음&lt;/li&gt;
-      &lt;li&gt;-m : 수정 시간만 변경&lt;/li&gt;
-      &lt;li&gt;-r ref_file : 시각을 파일에서 읽음&lt;/li&gt;
-      &lt;li&gt;-t [[CC]YY]MMDDhhmm[.ss] : 시각을 직접 입력&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;사용 예 : touch test&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;h3 id=&quot;2-파일-생성&quot;&gt;2. 파일 생성&lt;/h3&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;지정한 파일이 존재하지 않으면 내용 없는 빈 파일 생성&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;touch 명령 실습을 위해 디렉토리 생성&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; $ mkdir Touch
- $ cd Touch
- $ ls test
- ls: cannot access test: No such file or directory
- $    
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;touch 명령 입력&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ touch test
-  $ ls –l test
-  -rw-rw-r-- 1 ksshin ksshin 0 6월 8 21:18 test
-  $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;기존에 없던 test 파일 생성, 파일 크기 0으로 내용 없이 파일 정보만 존재&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;여러 파일을 한꺼번에 생성&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    $ touch t1 t2
-    $ ls
-    t1 t2 test
-    $     
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;생성된 파일의 종류는 일반 파일이므로 vi 에디터를 이용해 내용 편집 가능&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;touch 명령 이용해 빈 파일 생성하는 이유&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;테스트를 위해 내용에 상관없이 파일만 필요한 경우&lt;/p&gt;
-
-        &lt;p&gt;i. 유닉스의 파일 명령 연습할 때&lt;br /&gt;
-   ii. 쉘 특수 문자 테스트를 위해 다양한 이름의 파일 생성&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;유닉스 시스템 관리를 할 때 필요에 의해&lt;/p&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;h3 id=&quot;3-파일-접근-및-수정-시각-변경&quot;&gt;3. 파일 접근 및 수정 시각 변경&lt;/h3&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;인자로 지정한 파일이 존재하면 해당 파일의 접근 및 수정 시각 변경&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;h3 id=&quot;4-현재-시각으로-변경하기&quot;&gt;4. 현재 시각으로 변경하기&lt;/h3&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;touch 명령을 옵션 없이 사용&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   $ ls –l
-   total 4
-   -rw-rw-r-- 1 ksshin ksshin 0 6월 8 21:20 t1
-   -rw-rw-r-- 1 ksshin ksshin 0 6월 8 21:20 t2
-   -rw-rw-r-- 1 ksshin ksshin 0 6월 8 21:18 test
-   $ touch t1
-   $ ls –l t1
-   -rw-rw-r-- 1 ksshin ksshin 0 6월 8 21:35 t1
-   $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;h3 id=&quot;5-지정한-시각으로-변경하기&quot;&gt;5. 지정한 시각으로 변경하기&lt;/h3&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;-t 옵션 사용&lt;/li&gt;
-  &lt;li&gt;시각 표시 형식
-    &lt;ul&gt;
-      &lt;li&gt;형식 : [[CC]YY]MMDDhhmm[ss]&lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;옵션&lt;/p&gt;
-
-        &lt;p&gt;i. CC : 연도의 첫 두 자리&lt;br /&gt;
-  ii. YY : 연도의 마지막 두 자리&lt;br /&gt;
-  iii. MM : 달(01~12 범위내 지정)&lt;br /&gt;
-  iv. DD : 날짜(01~31 범위내 지정)&lt;br /&gt;
-  v. hh : 시각(00~23 범위내 지정)&lt;br /&gt;
-  vi. mm : 분(00~59 범위내 지정)&lt;br /&gt;
-  vii. ss : 초(00~59 범위내 지정)&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;CC를 지정하지 않으면 YY 값에 따라 CC를 자동으로 인식&lt;/li&gt;
-    &lt;/ul&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-02-29-unix-12-01.png&quot; alt=&quot;&quot; /&gt;
-   &lt;br /&gt;
-   &lt;br /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;연도를 지정하지 않고 월, 일, 시각만 지정한 예&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ touch –t 05311830 test
-  $ ls –l
-  total 4
-  -rw-rw-r-- 1 ksshin ksshin 0 6월 8 21:20 t1
-  -rw-rw-r-- 1 ksshin ksshin 0 6월 8 21:20 t2
-  -rw-rw-r-- 1 ksshin ksshin 0 5월 31 18:30 test
-  $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;연도 네 자리를 모두 지정한 예&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   $ touch –t 200501010000 test
-   $ ls –l
-   total 4
-   -rw-rw-r-- 1 ksshin ksshin 0 6월 8 21:20 t1
-   -rw-rw-r-- 1 ksshin ksshin 0 6월 8 21:20 t2
-   -rw-rw-r-- 1 ksshin ksshin 0 1월 1 2005 test
-   $      
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;h3 id=&quot;6-특정-파일-기준으로-변경하기&quot;&gt;6. 특정 파일 기준으로 변경하기&lt;/h3&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;특정 파일과 접근, 수정 시각을 일치시키고 싶을 때 –r 옵션 사용&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ touch –r t1 test
-  $ ls –l
-  total 4
-  -rw-rw-r-- 1 ksshin ksshin 0 6월 8 21:20 t1
-  -rw-rw-r-- 1 ksshin ksshin 0 6월 8 21:20 t2
-  -rw-rw-r-- 1 ksshin ksshin 0 6월 8 21:20 test
-  $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;h3 id=&quot;7-수정-접근-시각-선택-변경하기&quot;&gt;7. 수정, 접근 시각 선택 변경하기&lt;/h3&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;수정 시각만 변경하고 싶으면 –m 옵션 사용&lt;/li&gt;
-  &lt;li&gt;접근 시각만 변경하고 싶으면 –a 옵션 사용&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;접근 시각만 변경한 경우 ls –ul 옵션을 사용해야 결과 확인 가능&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ touch –a –t 05311830 test
-  $ ls –l
-  total 4
-  -rw-rw-r-- 1 ksshin ksshin 0 6월 8 21:20 t1
-  -rw-rw-r-- 1 ksshin ksshin 0 6월 8 21:20 t2
-  -rw-rw-r-- 1 ksshin ksshin 0 6월 8 21:18 test
-  $ ls –ul
-  total 4
-  -rw-rw-r-- 1 ksshin ksshin 0 6월 8 21:20 t1
-  -rw-rw-r-- 1 ksshin ksshin 0 6월 8 21:20 t2
-  -rw-rw-r-- 1 ksshin ksshin 0 5월 31 18:30 test
-  $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-</description>
-        <pubDate>Sat, 29 Feb 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/02/29/unix-12/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/02/29/unix-12/</guid>
-        
-        <category>unix</category>
-        
-        
-        <category>devlog</category>
-        
-      </item>
-    
-      <item>
-        <title>[유닉스] 복사, 삭제, 이동</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-02-29-unix-11.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;파일-복사&quot;&gt;파일 복사&lt;/h1&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;h3 id=&quot;1-cp-명령&quot;&gt;1. cp 명령&lt;/h3&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;파일이나 디렉토리를 복사&lt;/li&gt;
-  &lt;li&gt;형식 : cp [옵션] 파일명1/디렉토리명1 파일명2/디렉토리명2&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;옵션&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;-i : 파일명2가 존재할 경우 덮어쓸 것인지 물어봄&lt;/li&gt;
-      &lt;li&gt;-r :디렉토리를 복사할 때 지정&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;사용 예 :&lt;br /&gt; 
-   p file1 file2&lt;br /&gt;
-   cp f1 f2 f3 dir1&lt;br /&gt;
-   cp –r dir1 dir2&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;h3 id=&quot;2-파일을-파일로-복사&quot;&gt;2. 파일을 파일로 복사&lt;/h3&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;첫 번째 인자와 두 번째 인자 모두 파일명 사용&lt;/li&gt;
-  &lt;li&gt;두 번째 인자의 파일명이 존재하지 않으면 새로 생성됨&lt;/li&gt;
-  &lt;li&gt;이미 존재하면 원래의 파일에 덮어 씌워짐&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;/etc 디렉토리에 있는 파일을 현재 디렉토리의 etc_hosts라는 파일로 복사&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ cp /etc/hosts etc_hosts
-  $ ls
-  etc_hosts
-  $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;현재 디렉토리에서 파일 복사&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   $ cp etc_hosts tmp_hosts
-   $ ls
-   etc_hosts tmp_hosts
-   $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;h3 id=&quot;3-파일을-디렉토리로-복사&quot;&gt;3. 파일을 디렉토리로 복사&lt;/h3&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;첫 번째 인자는 파일명, 두 번째 인자는 디렉토리명 사용&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;파일을 현재 디렉토리에 복사&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ cp /etc/hosts .
-  $ ls
-  etc_hosts hosts tmp_hosts
-  $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;현재 디렉토리가 아닌 다른 디렉토리로 복사&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ mkdir temp
-  $ cp hosts temp
-  $ ls temp
-  hosts
-  $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;파일명을 바꿔서 복사&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ cp hosts temp/hosts1
-  $ ls temp
-  hosts hosts1
-  $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;h3 id=&quot;4-여러-개의-파일을-디렉토리에-복사&quot;&gt;4. 여러 개의 파일을 디렉토리에 복사&lt;/h3&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;첫 번째 인자의 자리에 파일명 여러 개 사용&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;마지막 인자는 반드시 디렉토리명이어야 함&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ cp etc_hosts tmp_hosts temp
-  $ ls temp
-  etc_hosts hosts hosts1 tmp_hosts
-  $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;h3 id=&quot;5--i-옵션-사용&quot;&gt;5. -i 옵션 사용&lt;/h3&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;두 번째 인자에 지정한 파일명이 이미 존재하면 겹쳐서 복사할 것인지 물어봄&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;“y”나 “n”으로 대답&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ cp –i tmp_hosts hosts
-  cp: overwrite hosts? n
-  $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;h3 id=&quot;6-디렉토리를-복사&quot;&gt;6. 디렉토리를 복사&lt;/h3&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;-r 옵션 사용하지 않을 경우 오류 발생&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ cp temp tmp
-  cp: omitting directory ‘temp’
-  $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;유닉스 버전에 따라 오류 메시지는 다르게 출력됨&lt;/li&gt;
-      &lt;li&gt;“cp: temp: is a directory“라는 오류 메시지가 출력되기도 함&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;-r 옵션 사용하여 복사할 경우 디렉토리 내에 있던 파일이나 하위 디렉토리 모두 복사&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ cp –r temp tmp
-  $ ls –F
-  etc_hosts hosts temp/ tmp/ tmp_hosts
-  $ ls tmp
-  hosts hosts1
-  $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;두 번째 인자인 tmp 디렉토리가 원래 없었으므로 원본 디렉토리와 같은 위치에 새로 생성됨&lt;/li&gt;
-  &lt;li&gt;두 번째 인자가 기존에 있던 디렉토리 이름이면 원본 디렉토리는 두 번째 인자로 지정한 디렉토리 아래에 같은 이름으로 복사됨&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h1 id=&quot;파일-삭제&quot;&gt;파일 삭제&lt;/h1&gt;
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;h3 id=&quot;1-rm-명령&quot;&gt;1. rm 명령&lt;/h3&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;파일을 삭제&lt;/li&gt;
-  &lt;li&gt;형식 : rm [옵션] 파일명/디렉토리명&lt;/li&gt;
-  &lt;li&gt;옵션
-    &lt;ul&gt;
-      &lt;li&gt;-i : 지정한 파일을 정말 삭제할 것인지 확인&lt;/li&gt;
-      &lt;li&gt;-r : 디렉토리를 삭제할 때 지정&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;사용 예 : &lt;br /&gt;
-   rm file&lt;br /&gt;
-   rm –r dir&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;h3 id=&quot;2-기본-삭제&quot;&gt;2. 기본 삭제&lt;/h3&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;인자를 파일로 지정하면 해당파일 삭제&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;유닉스에는 ‘휴지통’ 기능이 없어, 삭제된 파일은 복구할 수 없음&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ rm hosts
-  $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;h3 id=&quot;3--i-옵션을-사용한-파일-삭제&quot;&gt;3. -i 옵션을 사용한 파일 삭제&lt;/h3&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;지정한 파일을 정말 삭제할 것인지 물어봄&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;y를 입력하면 삭제되고, n을 입력하면 삭제되지 않음&lt;/p&gt;
-
-        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ rm –i hosts1
-  rm: remove regular file hosts1? y
-  $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;h3 id=&quot;4-디렉토리-삭제&quot;&gt;4. 디렉토리 삭제&lt;/h3&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;-r 옵션을 사용하면 디렉토리가 비어 있는지 여부와 상관없이 디렉토리 및 그 아래 모든 파일 삭제&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;-r 옵션 없이 삭제&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ rm tmp
-  rm: cannot remove ‘tmp’: Is a directory
-  $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;rmdir 명령으로 삭제&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ rmdir tmp
-  rmdir: failed to remove ‘tmp’: Directory not empty
-  $ ls tmp
-  hosts hosts1 text
-  $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;-r 옵션으로 삭제&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ rm –r tmp
-  $ ls –F
-  etc_hosts hosts temp/ tmp_hosts
-  $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;-ri 옵션으로 삭제&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   $ rm –ri temp
-   rm: descend into directory temp? y
-   rm: descend into directory temp/tmp? y
-   rm: remove regular file temp/tmp/text1? y
-   rm: remove directory temp/tmp? y
-   rm: remove regular file temp/hosts1? y
-   rm: remove regular file temp/text? y
-   rm: remove regular file temp/hosts? y
-   rm: remove directory temp? n
-   $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h1 id=&quot;파일-이동&quot;&gt;파일 이동&lt;/h1&gt;
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;h3 id=&quot;1-mvmove-명령&quot;&gt;1. mv(move) 명령&lt;/h3&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;파일의 이름을 바꾸거나 다른 디렉토리로 이동&lt;/li&gt;
-  &lt;li&gt;형식 : mv [옵션] 파일명1/디렉토리명1 파일명2/디렉토리명2&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;옵션&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;-i : 파일명2/디렉토리명2가 존재하면 덮어쓸 것인지 물어봄&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;사용 예 : &lt;br /&gt;
-   mv file1 file2&lt;br /&gt;
-   mv file1 dir1&lt;br /&gt;
-   mv file1 file2 file3 dir1&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;h3 id=&quot;2-파일을-파일로-이동&quot;&gt;2. 파일을 파일로 이동&lt;/h3&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;첫 번째 인자와 두 번째 인자를 모두 파일명으로 지정&lt;/li&gt;
-  &lt;li&gt;결과적으로는 이름 변경&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;두 번째 인자로 지정한 파일이 존재하면 내용 덮어씀&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ mv hosts text
-  $ ls –F
-  etc_hosts temp/ text tmp_hosts
-  $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;h3 id=&quot;3-파일을-디렉토리로-이동&quot;&gt;3. 파일을 디렉토리로 이동&lt;/h3&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;두 번째 인자로 디렉토리 지정&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ mv text temp
-  $ ls –F
-  etc_hosts temp/ tmp_hosts
-  $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;두 번째 인자로 디렉토리명과 파일명을 모두 지정하면 지정한 디렉토리로 파일명 바꿔서 이동&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ mv tmp_hosts temp/hosts
-  $ ls –F
-  etc_hosts temp/
-  $ ls temp
-  hosts text
-  $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;h3 id=&quot;4-여러-개의-파일을-디렉토리로-이동&quot;&gt;4. 여러 개의 파일을 디렉토리로 이동&lt;/h3&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;첫 번째 인자의 자리에 파일명 여러 개 지정하면 두 번째 인자를 반드시 디렉토리로 해야 함&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;마지막 지정한 디렉토리로 파일이 모두 이동&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   $ mv temp/hosts temp/text .
-   $ ls –F
-   etc_hosts hosts temp/ text
-   $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;h3 id=&quot;5--i-옵션을-사용한-이동&quot;&gt;5. -i 옵션을 사용한 이동&lt;/h3&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;두 번째 인자에 지정한 파일명이 기존에 있는 파일일 경우 덮어쓸 것인지 물어봄&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   $ mv –i etc_hosts hosts
-   mv: overwrite ‘hosts’? n
-   $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;h3 id=&quot;6-디렉토리를-디렉토리로-이동&quot;&gt;6. 디렉토리를 디렉토리로 이동&lt;/h3&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;두 인자 모두 디렉토리명으로 지정&lt;/li&gt;
-  &lt;li&gt;첫 번째 인자인 디렉토리가 두 번째 인자 디렉토리 아래로 이동&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;두 번째 인자가 새로운 이름이면 디렉토리 이름 변경&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   $ cp –r temp tmp
-   $ ls –F
-   etc_hosts hosts temp/ text tmp/
-   $ mv tmp temp
-   $ ls -F
-   etc_hosts hosts temp/ text
-   $ ls –F temp
-   etc_hosts hosts text tmp/
-   $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-</description>
-        <pubDate>Sat, 29 Feb 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/02/29/unix-11/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/02/29/unix-11/</guid>
-        
-        <category>unix</category>
-        
-        
-        <category>devlog</category>
         
       </item>
     
