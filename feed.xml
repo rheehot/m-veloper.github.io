@@ -5,9 +5,398 @@
     <description></description>
     <link>https://m-veloper.github.io/</link>
     <atom:link href="https://m-veloper.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 16 Mar 2020 21:03:51 +0900</pubDate>
-    <lastBuildDate>Mon, 16 Mar 2020 21:03:51 +0900</lastBuildDate>
+    <pubDate>Tue, 17 Mar 2020 23:45:16 +0900</pubDate>
+    <lastBuildDate>Tue, 17 Mar 2020 23:45:16 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>[Sass/SCSS] 조건문(if)</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/sass/2020-03-17-sass-13.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;if-함수&quot;&gt;if (함수)&lt;/h1&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;조건의 값(true, false)에 따라 두 개의 표현식 중 하나만 반환.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Conditional_Operator&quot;&gt;조건부 삼항 연산자(conditional ternary operator)&lt;/a&gt;와 비슷합니다&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;조건의 값이 true이면 표현식1을, 조건의 값이 false이면 표현식2를 실행합니다.&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  if(조건, 표현식1, 표현식2)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;SCSS:&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $width: 555px;
+  div {
+    width: if($width &amp;gt; 300px, $width, null);
+  }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Compiled to:&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  div {
+    width: 555px;
+  }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;위와 같이 함수는 @include 같은 별도의 지시어 없이 사용하기 때문에 내가 지정한 함수와 내장 함수(Built-in Functions)의 이름이 충돌할 수 있습니다.
+따라서 내가 지정한 함수에는 별도의 접두어를 붙여주는 것이 좋습니다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;if-지시어&quot;&gt;@if (지시어)&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;@if 지시어는 조건에 따른 분기 처리가 가능하며, if 문(if statements)과 유사합니다.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;같이 사용할 수 있는 지시어는 @else, if가 있습니다.&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  // @if
+  @if (조건) {
+    /* 조건이 참일 때 구문 */
+  }
+    
+  // @if @else
+  @if (조건) {
+    /* 조건이 참일 때 구문 */
+  } @else {
+    /* 조건이 거짓일 때 구문 */
+  }
+    
+  // @if @else if
+  @if (조건1) {
+    /* 조건1이 참일 때 구문 */
+  } @else if (조건2) {
+    /* 조건2가 참일 때 구문 */
+  } @else {
+    /* 모두 거짓일 때 구문 */
+  }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;조건에 ()는 생략이 가능하기 때문에, () 없이 작성하는 방법이 좀 더 편리할 수 있습니다.&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $bg: true;
+  div {
+    @if $bg {
+      background: url(&quot;/images/a.jpg&quot;);
+    }
+  }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;SCSS:&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $color: orange;
+  div {
+    @if $color == strawberry {
+      color: #FE2E2E;
+    } @else if $color == orange {
+      color: #FE9A2E;
+    } @else if $color == banana {
+      color: #FFFF00;
+    } @else {
+      color: #2A1B0A;
+    }
+  } 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Compiled to:&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  div {
+    color: #FE9A2E;
+  }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;조건에는 논리 연산자 and, or, not을 사용할 수 있습니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;SCSS:&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  @function limitSize($size) {
+    @if $size &amp;gt;= 0 and $size &amp;lt;= 200px {
+      @return 200px;
+    } @else {
+      @return 800px;
+    }
+  }
+    
+  div {
+    width: limitSize(180px);
+    height: limitSize(340px);
+  }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Compiled to:&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  div {
+    width: 200px;
+    height: 800px;
+  }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;좀 더 복잡하지만 실용적이게 사용 가능&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Sass의 내장 함수 unitless()는 숫자에 단위가 있는지 여부를 반환합니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;SCSS:&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  @mixin pCenter($w, $h, $p: absolute) {
+    @if
+      $p == absolute
+      or $p == fixed
+      or not $p == relative
+      or not $p == static
+    {
+      width: if(unitless($w), #{$w}px, $w);
+      height: if(unitless($h), #{$h}px, $h);
+      position: $p;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+  }
+    
+  .box1 {
+    @include pCenter(10px, 20px);
+  }
+  .box2 {
+    @include pCenter(50, 50, fixed);
+  }
+  .box3 {
+    @include pCenter(100, 200, relative);
+  }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Compiled to:&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  .box1 {
+    width: 10px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+    
+  .box2 {
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    본 포스팅은 HEROPY 님의 영상과 블로그를 보고 공부한 내용을 정리한 것입니다.
+    https://heropy.blog/2018/01/31/sass/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+</description>
+        <pubDate>Tue, 17 Mar 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/devlog/2020/03/17/sass-13/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/03/17/sass-13/</guid>
+        
+        <category>sass</category>
+        
+        
+        <category>devlog</category>
+        
+      </item>
+    
+      <item>
+        <title>[Sass/SCSS] 함수(Functions)</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/sass/2020-03-17-sass-12.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;함수functions&quot;&gt;함수(Functions)&lt;/h1&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;자신의 함수를 정의하여 사용할 수 있습니다.&lt;/li&gt;
+  &lt;li&gt;함수와 Mixins은 거의 유사하지만 반환되는 내용이 다릅니다.
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;반환-값의-차이&quot;&gt;반환 값의 차이&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;@Mixin :&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;지정한 스타일(Style)을 반환&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  // Mixins
+  @mixin 믹스인이름($매개변수) {
+    스타일;
+  }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;함수(Functions):&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;연산된(Computed) 특정 값을 @return 지시어를 통해 반환&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  // Functions
+  @function 함수이름($매개변수) {
+    @return 값
+  } 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;사용하는-방법의-차이&quot;&gt;사용하는 방법의 차이&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;@Mixin :&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;@include 지시어를 사용&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  // Mixin
+  @include 믹스인이름(인수);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;함수(Functions):&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;수이름으로 바로 사용&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  // Functions
+  함수이름(인수)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;SCSS:&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $max-width: 980px;
+    
+  @function columns($number: 1, $columns: 12) {
+    @return $max-width * ($number / $columns)
+  }
+    
+  .box_group {
+    width: $max-width;
+    
+    .box1 {
+      width: columns();  // 1
+    }
+    .box2 {
+      width: columns(8);
+    }
+    .box3 {
+      width: columns(3);
+    }
+  }  
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Compiled to:&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;.box_group {
+  /* 총 너비 */
+  width: 980px;
+}
+.box_group .box1 {
+  /* 총 너비의 약 8.3% */
+  width: 81.66667px;
+}
+.box_group .box2 {
+  /* 총 너비의 약 66.7% */
+  width: 653.33333px;
+}
+.box_group .box3 {
+  /* 총 너비의 25% */
+  width: 245px;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;위와 같이 함수는 @include 같은 별도의 지시어 없이 사용하기 때문에 내가 지정한 함수와 내장 함수(Built-in Functions)의 이름이 충돌할 수 있습니다.
+따라서 내가 지정한 함수에는 별도의 접두어를 붙여주는 것이 좋습니다&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;내장-함수&quot;&gt;내장 함수&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;응용 프로그램에 내장되어 있으며 최종 사용자가 액세스 할 수 있는 기능.&lt;/li&gt;
+  &lt;li&gt;예를 들어, 대부분의 스프레드 시트 응용 프로그램은 행이나 열의 모든 셀을 추가하는 내장 SUM 함수를 지원합니다.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;예를 들어, 색의 빨강 성분을 가져오는 내장 함수로 이미 red()가 있습니다.
+같은 이름을 사용하여 함수를 정의하면 이름이 충돌하기 때문에 별도의 접두어를 붙여 extract-red() 같은 이름을 만들 수 있습니다.&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// 내가 정의한 함수
+@function extract-red($color) {
+  // 내장 함수
+  @return rgb(red($color), 0, 0);
+}
+  
+div {
+  color: extract-red(#D55A93);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;혹은 모든 내장 함수의 이름을 다 알고 있을 수 없기 때문에 특별한 이름을 접두어로 사용할 수도 있습니다.
+my-custom-func-red()&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    본 포스팅은 HEROPY 님의 영상과 블로그를 보고 공부한 내용을 정리한 것입니다.
+    https://heropy.blog/2018/01/31/sass/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+        <pubDate>Tue, 17 Mar 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/devlog/2020/03/17/sass-12/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/03/17/sass-12/</guid>
+        
+        <category>sass</category>
+        
+        
+        <category>devlog</category>
+        
+      </item>
     
       <item>
         <title>[Sass/SCSS] 확장(Extend) -  @extend</title>
@@ -5324,254 +5713,6 @@ System.out.format(&quot;%.2f%n&quot;, 1560000.0 * 0.0 / 100.0);
         
         
         <category>devlog</category>
-        
-      </item>
-    
-      <item>
-        <title>[JSTL] &lt; c:if &gt;, &lt; c:choose &gt; 태그 사용법</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/jstl/2020-03-04-tip-jstl-01.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;jstl---태그-사용법&quot;&gt;[JSTL] &lt;c:if&gt;, &lt;c:choose&gt; 태그 사용법&lt;/c:choose&gt;&lt;/c:if&gt;&lt;/h1&gt;
-&lt;h3 id=&quot;how-to-use-if-else-option-in-jstl&quot;&gt;How to use if-else option in JSTL&lt;/h3&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;조건&quot;&gt;조건&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;jsp 페이지  상단에 아래의 코드를 선언 하고 사용한다.&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   &amp;lt;%@ taglib uri=&quot;http://java.sun.com/sjp/jstl/core&quot; prefix=&quot;c&quot; %&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;-cif-&quot;&gt;&amp;lt; c:if &amp;gt;&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;jstl에서 조건에 따른 분기를 처리할 수 있는 태그로 &amp;lt; c:if &amp;gt;와 &amp;lt; c:choose &amp;gt;가 있습니다.&lt;/li&gt;
-  &lt;li&gt;태그 - test 속성내의 EL 의 결과가 참이면 실행됩니다. else 구문은 없습니다.&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;예제&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   &amp;lt;c:set var=&quot;name&quot; value=&quot;홍길동&quot; /&amp;gt;
-      &amp;lt;c:if test=&quot;${nae eq '홍길동'}&quot;&amp;gt;
-          &amp;lt;c:out value=&quot;${str}&quot; /&amp;gt;
-      &amp;lt;/c:if&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;위의 코드는 변수 name의 값이 “홍길동” 이면 출력합니다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&amp;lt; c:if &amp;gt; 태그에 사용될 수 있는 속성은 다음 세 가지 입니다.&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;test : 필수 속성으로 속성값으로 EL 비교식을 가집니다.&lt;/li&gt;
-      &lt;li&gt;var : 조건 결과를 저장할 변수를 지정합니다.&lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;scope : 조건 결과를 저장할 변수의 저장 scope을 지정합니다.&lt;/p&gt;
-
-        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &amp;lt;c:if test=&quot;${name eq '홍길동'}&quot; var=&quot;nameHong&quot; scope=&quot;session&quot;&amp;gt;
-      ....
-  &amp;lt;/c:if&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-
-        &lt;ul&gt;
-          &lt;li&gt;위 코드는 test 속성의 결과를 nameHong 변수 이름으로 session 영역에 저장합니다. 동일 세션의 다른 페이지에서 결과를 찾을 수 있습니다.&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;test속성에-사용될-비교-연산자&quot;&gt;test속성에 사용될 비교 연산자&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;eq(==) : 문자열 또는 숫자가 같으면 참입니다. null 또는 빈 문자열 인지도 확인할 수 있습니다.&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; ﻿&amp;lt;c:if test=&quot;${name == '홍길동'}&quot;&amp;gt;
-      
- &amp;lt;c:if test=&quot;${name eq '홍길동'}&quot;&amp;gt;
-      
- &amp;lt;c:if test=&quot;${name == null}&quot;&amp;gt;
-      
- &amp;lt;c:if test=&quot;${name eq null}&quot;&amp;gt;
-      
- &amp;lt;c:if test=&quot;${num == 5}&quot;&amp;gt;
-      
- &amp;lt;c:if test=&quot;${num eq 5}&quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;ne(!=) : 문자열 또는 숫자가 다르면 참입니다.&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &amp;lt;c:if test=&quot;${name != '홍길동'}&quot;&amp;gt;
-       
-  &amp;lt;c:if test=&quot;${name ne '홍길동'}&quot;&amp;gt;
-       
-  &amp;lt;c:if test=&quot;${num != 5}&quot;&amp;gt;
-       
-  &amp;lt;c:if test=&quot;${num ne 5}&quot;&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;empty : List 또는 배열이 비어있거나, 문자열이 null 또는 빈 문자열이면 참을 반환합니다. 숫자 0은 eq(==) 로 비교해야 합니다.&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   ﻿&amp;lt;c:if test=&quot;${empty name}&quot;&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;not empty : List 또는 배열이 비어 있지 않을 경우, 문자열이 값이 있을 경우 참을 반환합니다.&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   ﻿&amp;lt;c:if test=&quot;${not empty name}&quot;&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h3 id=&quot;논리연산자&quot;&gt;논리연산자&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;비교연산자의 조합으로 논리 연산을 할 수 있는 논리연산자 입니다.&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;and (&amp;amp;&amp;amp;) : 모두 참일때 참이 됩니다.&lt;/p&gt;
-
-        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  ﻿&amp;lt;c:if test=&quot;${a &amp;gt; b and c &amp;lt; d}&quot;&amp;gt;
-            
-  &amp;lt;c:if test=&quot;${a &amp;gt; b &amp;amp;&amp;amp; c &amp;lt; d}&quot;&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;or (II) : 둘중 하나라도 참이면 참이 됩니다.&lt;/p&gt;
-
-        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  ﻿&amp;lt;c:if test=&quot;${a &amp;gt; b or c &amp;lt; d}&quot;&amp;gt;
-            
-  &amp;lt;c:if test=&quot;${a &amp;gt; b || c &amp;lt; d}&quot;&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;not (!) : 논리를 반전합니다.&lt;/p&gt;
-
-        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  ﻿&amp;lt;c:if test=&quot;${not a == ''}&quot;&amp;gt;
-            
-  &amp;lt;c:if test=&quot;${! a == ''}&quot;&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;괄호를 사용하여 논리연산의 우선 순위를 지정할 수 있습니다.&lt;/p&gt;
-
-        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  ﻿&amp;lt;c:if test=&quot;${a &amp;gt; b &amp;amp;&amp;amp; (b &amp;gt; c || d &amp;lt; e)}&quot;&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;-cchoose--태그&quot;&gt;&amp;lt; c:choose &amp;gt; 태그&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&amp;lt; c:choose &amp;gt; 태그는 조건에 따른 여러곳으로 분기 가능하고, 조건이 맞은 것이 없을 경우 기본 분기를 제공할 수 있습니다.&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &amp;lt;c:choose&amp;gt;
-      &amp;lt;c:when test=&quot;${name eq '김철수'}&quot;&amp;gt; 
-          ... 
-      &amp;lt;/c:when&amp;gt;
-       
-      &amp;lt;c:when test=&quot;${name eq '박영희'}&quot;&amp;gt; 
-          ... 
-      &amp;lt;/c:when&amp;gt;
-       
-      &amp;lt;c:otherwise&amp;gt; ... &amp;lt;/c:otherwise&amp;gt;
-  &amp;lt;/c:choose&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;위 코드는 이름이 “김철수”, “박영희” 일 경우 분기 하고 그 외의 경우에는 &amp;lt; c:otherwise &amp;gt; 로 분기 합니다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;참고 : https://offbyone.tistory.com/367&lt;/p&gt;
-
-</description>
-        <pubDate>Wed, 04 Mar 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/tip/2020/03/04/tip-jstl-01/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/03/04/tip-jstl-01/</guid>
-        
-        <category>jstl</category>
-        
-        
-        <category>tip</category>
-        
-      </item>
-    
-      <item>
-        <title>[자바스크립트] 절대값 구하기[ Math.abs() ] </title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/javascript/2020-03-01-tip-javascript-06.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;자바스크립트-절대값--mathabs-&quot;&gt;자바스크립트 절대값 [ Math.abs() ]&lt;/h1&gt;
-&lt;h3 id=&quot;how-to-use-mathabs-in-javascript&quot;&gt;How to use math.abs in javascript&lt;/h3&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;사용법&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;빈 객체, 하나 이상의 요소를 가진 배열, 숫자가 아닌 문자열, undefined나 빈 매개변수를 받으면 NaN을 반환합니다. null, 빈 문자열이나 빈 배열을 제공하면 0을 반환합&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; function difference(a, b) {
-   return Math.abs(a - b);
- }
-    
- console.log(difference(3, 5));
- // expected output: 2
-    
- console.log(difference(5, 3));
- // expected output: 2
-    
- console.log(difference(1.23456, 7.89012));
- // expected output: 6.6555599999999995
-    
-    
-    
- Math.abs('-1');     // 1
- Math.abs(-2);       // 2
- Math.abs(null);     // 0
- Math.abs('');       // 0
- Math.abs([]);       // 0
- Math.abs([2]);      // 2
- Math.abs([1,2]);    // NaN
- Math.abs({});       // NaN
- Math.abs('string'); // NaN
- Math.abs();         // NaN
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-</description>
-        <pubDate>Sun, 01 Mar 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/tip/2020/03/01/tip-javascript-06/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/03/01/tip-javascript-06/</guid>
-        
-        <category>javascript</category>
-        
-        
-        <category>tip</category>
         
       </item>
     
