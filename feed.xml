@@ -5,8 +5,8 @@
     <description></description>
     <link>https://m-veloper.github.io/</link>
     <atom:link href="https://m-veloper.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 18 Mar 2020 13:19:05 +0900</pubDate>
-    <lastBuildDate>Wed, 18 Mar 2020 13:19:05 +0900</lastBuildDate>
+    <pubDate>Wed, 18 Mar 2020 18:02:50 +0900</pubDate>
+    <lastBuildDate>Wed, 18 Mar 2020 18:02:50 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
@@ -324,7 +324,6 @@
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    본 포스팅은 HEROPY 님의 영상과 블로그를 보고 공부한 내용을 정리한 것입니다.
@@ -499,7 +498,6 @@ my-custom-func-red()&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    본 포스팅은 HEROPY 님의 영상과 블로그를 보고 공부한 내용을 정리한 것입니다.
@@ -591,7 +589,6 @@ my-custom-func-red()&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    본 포스팅은 HEROPY 님의 영상과 블로그를 보고 공부한 내용을 정리한 것입니다.
@@ -722,8 +719,7 @@ my-custom-func-red()&lt;/li&gt;
       &lt;li&gt;여기에서 test2 테이블에 존재하지 않아서 test2 테이블의 column이 null인 부분만을 가지고 오게 된다.&lt;/li&gt;
       &lt;li&gt;WHERE절을 달아주면!! 차집합이 된다는 것이다.&lt;/li&gt;
       &lt;li&gt;결과 : 
-  &lt;img src=&quot;/assets/img/mysql/2020-03-16-tip-mysql-02-05.png&quot; alt=&quot;&quot; /&gt;
-  &lt;br /&gt;&lt;/li&gt;
+  &lt;img src=&quot;/assets/img/mysql/2020-03-16-tip-mysql-02-05.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
@@ -923,11 +919,7 @@ ND필터는 49mm 입니다.
 넓은 쪽이 앞을 보게 끼우셔야 해요.
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://1.bp.blogspot.com/-n7WsilzcXpE/XmzjW74VG3I/AAAAAAAAAIg/ppYqE4Mnv7MTLl87xRc76znuLfHyzC_kQCEwYBhgL/s1600/09.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;
+&lt;p&gt;&lt;img src=&quot;https://1.bp.blogspot.com/-n7WsilzcXpE/XmzjW74VG3I/AAAAAAAAAIg/ppYqE4Mnv7MTLl87xRc76znuLfHyzC_kQCEwYBhgL/s1600/09.jpg&quot; alt=&quot;&quot; /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;x100v-unboxing-바로-보기&quot;&gt;&lt;a href=&quot;https://m-veloper.github.io/devlog/2020/03/14/review-goods-fuji-x100v-01/&quot;&gt;x100v Unboxing 바로 보기&lt;/a&gt;&lt;/h3&gt;
@@ -1099,8 +1091,9 @@ ND필터는 49mm 입니다.
 &lt;p&gt;&lt;img src=&quot;https://1.bp.blogspot.com/-6RiWf3Z9Uew/XmycM5yu33I/AAAAAAAAAHM/3gmjue-LPb4M990tSvpgnYV34zvbZHCfQCEwYBhgL/s1600/2020-03-14-review-goods-fuji-x100v-11.JPG&quot; alt=&quot;&quot; /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h3 id=&quot;x100v-어댑터링-사용법&quot;&gt;&lt;a href=&quot;http://127.0.0.1:4000/review/2020/03/14/review-goods-fuji-x100v-02/&quot;&gt;x100v 어댑터링 사용법&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://127.0.0.1:4000/review/2020/03/14/review-goods-fuji-x100v-02/&quot;&gt;x100v 어댑터링 사용법&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 </description>
         <pubDate>Sat, 14 Mar 2020 00:00:00 +0900</pubDate>
@@ -1531,8 +1524,7 @@ ND필터는 49mm 입니다.
   &lt;li&gt;숫자의 각 위치가 사용자 카테고리를 표시하므로, 사용자 카테고리를 따로 지정할 필요 없음&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-13-unix-17-05.png&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-13-unix-17-05.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 </description>
         <pubDate>Fri, 13 Mar 2020 00:00:00 +0900</pubDate>
@@ -1737,8 +1729,7 @@ ND필터는 49mm 입니다.
   &lt;li&gt;소유자의 권한은 rw-, 그룹의 권한은 가운데의 r–, 기타 사용자의 권한은 마지막의 r–&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-13-unix-16-07.png&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-13-unix-16-07.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 </description>
         <pubDate>Fri, 13 Mar 2020 00:00:00 +0900</pubDate>
@@ -1853,7 +1844,6 @@ ND필터는 49mm 입니다.
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    본 포스팅은 HEROPY 님의 영상과 블로그를 보고 공부한 내용을 정리한 것입니다.
@@ -2140,7 +2130,6 @@ ND필터는 49mm 입니다.
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    본 포스팅은 HEROPY 님의 영상과 블로그를 보고 공부한 내용을 정리한 것입니다.
@@ -2297,7 +2286,6 @@ div span.icon {
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    본 포스팅은 HEROPY 님의 영상과 블로그를 보고 공부한 내용을 정리한 것입니다.
@@ -2461,7 +2449,6 @@ div span.icon {
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    본 포스팅은 HEROPY 님의 영상과 블로그를 보고 공부한 내용을 정리한 것입니다.
@@ -2698,7 +2685,6 @@ div span.icon {
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    본 포스팅은 HEROPY 님의 영상과 블로그를 보고 공부한 내용을 정리한 것입니다.
@@ -2945,7 +2931,6 @@ div span.icon {
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    본 포스팅은 HEROPY 님의 영상과 블로그를 보고 공부한 내용을 정리한 것입니다.
@@ -3302,8 +3287,7 @@ div span.icon {
 
 &lt;ul&gt;
   &lt;li&gt;Orders 테이블
-&lt;img src=&quot;/assets/img/database/2020-03-12-database-17-19.png&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;img src=&quot;/assets/img/database/2020-03-12-database-17-19.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 </description>
@@ -3715,7 +3699,6 @@ div span.icon {
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
-
 </description>
         <pubDate>Thu, 12 Mar 2020 00:00:00 +0900</pubDate>
         <link>https://m-veloper.github.io/devlog/2020/03/12/database-16/</link>
@@ -3792,7 +3775,6 @@ div span.icon {
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    본 포스팅은 HEROPY 님의 영상과 블로그를 보고 공부한 내용을 정리한 것입니다.
@@ -4022,7 +4004,6 @@ gulp-sass는 위에서 살펴본 node-sass를 Gulp에서 사용할 수 있도록
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    본 포스팅은 HEROPY 님의 영상과 블로그를 보고 공부한 내용을 정리한 것입니다.
@@ -4171,7 +4152,6 @@ gulp-sass는 위에서 살펴본 node-sass를 Gulp에서 사용할 수 있도록
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    본 포스팅은 HEROPY 님의 영상과 블로그를 보고 공부한 내용을 정리한 것입니다.
@@ -4280,7 +4260,6 @@ gulp-sass는 위에서 살펴본 node-sass를 Gulp에서 사용할 수 있도록
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    본 포스팅은 HEROPY 님의 영상과 블로그를 보고 공부한 내용을 정리한 것입니다.
@@ -4948,9 +4927,7 @@ System.out.format(&quot;%.2f%n&quot;, 1560000.0 * 0.0 / 100.0);
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-06-unix-14-09.png&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-06-unix-14-09.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Fri, 06 Mar 2020 00:00:00 +0900</pubDate>
         <link>https://m-veloper.github.io/devlog/2020/03/06/unix-14/</link>
@@ -5186,8 +5163,7 @@ System.out.format(&quot;%.2f%n&quot;, 1560000.0 * 0.0 / 100.0);
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-06-unix-13-10.png&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-06-unix-13-10.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 </description>
         <pubDate>Fri, 06 Mar 2020 00:00:00 +0900</pubDate>
@@ -5514,8 +5490,7 @@ System.out.format(&quot;%.2f%n&quot;, 1560000.0 * 0.0 / 100.0);
   &lt;li&gt;
     &lt;p&gt;명령어 : quit&lt;/p&gt;
 
-    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-15-36.png&quot; alt=&quot;&quot; /&gt;
-  &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-15-36.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
