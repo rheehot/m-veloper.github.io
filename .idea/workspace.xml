@@ -1,7 +1,106 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="383bdea2-0c4b-4353-84c5-af5fcbec588c" name="Default" comment="" />
+    <list default="true" id="383bdea2-0c4b-4353-84c5-af5fcbec588c" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/404.html" afterPath="$PROJECT_DIR$/404.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/about/index.html" afterPath="$PROJECT_DIR$/about/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/category/artwork/index.html" afterPath="$PROJECT_DIR$/category/artwork/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/category/devlog/index.html" afterPath="$PROJECT_DIR$/category/devlog/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/category/essay/index.html" afterPath="$PROJECT_DIR$/category/essay/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/category/review/index.html" afterPath="$PROJECT_DIR$/category/review/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/category/tip/index.html" afterPath="$PROJECT_DIR$/category/tip/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/category/travel/index.html" afterPath="$PROJECT_DIR$/category/travel/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2020/02/12/database-01/index.html" afterPath="$PROJECT_DIR$/devlog/2020/02/12/database-01/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2020/02/13/database-02/index.html" afterPath="$PROJECT_DIR$/devlog/2020/02/13/database-02/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2020/02/14/database-03/index.html" afterPath="$PROJECT_DIR$/devlog/2020/02/14/database-03/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2020/02/15/database-04/index.html" afterPath="$PROJECT_DIR$/devlog/2020/02/15/database-04/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2020/02/16/database-05/index.html" afterPath="$PROJECT_DIR$/devlog/2020/02/16/database-05/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2020/02/17/database-06/index.html" afterPath="$PROJECT_DIR$/devlog/2020/02/17/database-06/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2020/02/18/unix-01/index.html" afterPath="$PROJECT_DIR$/devlog/2020/02/18/unix-01/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2020/02/18/unix-02/index.html" afterPath="$PROJECT_DIR$/devlog/2020/02/18/unix-02/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2020/02/18/unix-03/index.html" afterPath="$PROJECT_DIR$/devlog/2020/02/18/unix-03/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2020/02/19/unix-04/index.html" afterPath="$PROJECT_DIR$/devlog/2020/02/19/unix-04/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2020/02/20/unix-05/index.html" afterPath="$PROJECT_DIR$/devlog/2020/02/20/unix-05/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2020/02/22/unix-06/index.html" afterPath="$PROJECT_DIR$/devlog/2020/02/22/unix-06/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2020/02/23/database-07/index.html" afterPath="$PROJECT_DIR$/devlog/2020/02/23/database-07/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2020/02/24/database-08/index.html" afterPath="$PROJECT_DIR$/devlog/2020/02/24/database-08/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2020/02/24/database-09/index.html" afterPath="$PROJECT_DIR$/devlog/2020/02/24/database-09/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2020/02/25/unix-07/index.html" afterPath="$PROJECT_DIR$/devlog/2020/02/25/unix-07/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2020/02/26/unix-08/index.html" afterPath="$PROJECT_DIR$/devlog/2020/02/26/unix-08/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2020/02/26/unix-09/index.html" afterPath="$PROJECT_DIR$/devlog/2020/02/26/unix-09/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2020/02/28/database-10/index.html" afterPath="$PROJECT_DIR$/devlog/2020/02/28/database-10/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2020/02/28/database-11/index.html" afterPath="$PROJECT_DIR$/devlog/2020/02/28/database-11/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2020/02/28/database-12/index.html" afterPath="$PROJECT_DIR$/devlog/2020/02/28/database-12/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2020/02/29/unix-10/index.html" afterPath="$PROJECT_DIR$/devlog/2020/02/29/unix-10/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2020/02/29/unix-11/index.html" afterPath="$PROJECT_DIR$/devlog/2020/02/29/unix-11/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2020/02/29/unix-12/index.html" afterPath="$PROJECT_DIR$/devlog/2020/02/29/unix-12/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2020/03/06/database-13/index.html" afterPath="$PROJECT_DIR$/devlog/2020/03/06/database-13/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2020/03/06/database-14/index.html" afterPath="$PROJECT_DIR$/devlog/2020/03/06/database-14/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2020/03/06/database-15/index.html" afterPath="$PROJECT_DIR$/devlog/2020/03/06/database-15/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2020/03/06/unix-13/index.html" afterPath="$PROJECT_DIR$/devlog/2020/03/06/unix-13/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2020/03/06/unix-14/index.html" afterPath="$PROJECT_DIR$/devlog/2020/03/06/unix-14/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2020/03/06/unix-15/index.html" afterPath="$PROJECT_DIR$/devlog/2020/03/06/unix-15/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2020/03/09/sass-01/index.html" afterPath="$PROJECT_DIR$/devlog/2020/03/09/sass-01/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2020/03/10/sass-02/index.html" afterPath="$PROJECT_DIR$/devlog/2020/03/10/sass-02/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2020/03/11/sass-03/index.html" afterPath="$PROJECT_DIR$/devlog/2020/03/11/sass-03/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2020/03/11/sass-04/index.html" afterPath="$PROJECT_DIR$/devlog/2020/03/11/sass-04/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2020/03/12/database-16/index.html" afterPath="$PROJECT_DIR$/devlog/2020/03/12/database-16/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2020/03/12/database-17/index.html" afterPath="$PROJECT_DIR$/devlog/2020/03/12/database-17/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2020/03/12/sass-05/index.html" afterPath="$PROJECT_DIR$/devlog/2020/03/12/sass-05/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2020/03/12/sass-06/index.html" afterPath="$PROJECT_DIR$/devlog/2020/03/12/sass-06/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2020/03/13/sass-07/index.html" afterPath="$PROJECT_DIR$/devlog/2020/03/13/sass-07/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2020/03/13/sass-08/index.html" afterPath="$PROJECT_DIR$/devlog/2020/03/13/sass-08/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2020/03/13/sass-09/index.html" afterPath="$PROJECT_DIR$/devlog/2020/03/13/sass-09/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2020/03/13/sass-10/index.html" afterPath="$PROJECT_DIR$/devlog/2020/03/13/sass-10/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2020/03/13/unix-16/index.html" afterPath="$PROJECT_DIR$/devlog/2020/03/13/unix-16/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2020/03/13/unix-17/index.html" afterPath="$PROJECT_DIR$/devlog/2020/03/13/unix-17/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2020/03/13/unix-18/index.html" afterPath="$PROJECT_DIR$/devlog/2020/03/13/unix-18/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2020/03/16/sass-11/index.html" afterPath="$PROJECT_DIR$/devlog/2020/03/16/sass-11/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2020/03/17/sass-12/index.html" afterPath="$PROJECT_DIR$/devlog/2020/03/17/sass-12/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devlog/2020/03/17/sass-13/index.html" afterPath="$PROJECT_DIR$/devlog/2020/03/17/sass-13/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/feed.xml" afterPath="$PROJECT_DIR$/feed.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page-2/index.html" afterPath="$PROJECT_DIR$/page-2/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page-3/index.html" afterPath="$PROJECT_DIR$/page-3/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page-4/index.html" afterPath="$PROJECT_DIR$/page-4/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page-5/index.html" afterPath="$PROJECT_DIR$/page-5/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page-6/index.html" afterPath="$PROJECT_DIR$/page-6/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page-7/index.html" afterPath="$PROJECT_DIR$/page-7/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page-8/index.html" afterPath="$PROJECT_DIR$/page-8/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/posts/index.html" afterPath="$PROJECT_DIR$/posts/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2020/03/14/review-goods-fuji-x100v-01/index.html" afterPath="$PROJECT_DIR$/review/2020/03/14/review-goods-fuji-x100v-01/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/review/2020/03/14/review-goods-fuji-x100v-02/index.html" afterPath="$PROJECT_DIR$/review/2020/03/14/review-goods-fuji-x100v-02/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sitemap.xml" afterPath="$PROJECT_DIR$/sitemap.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tag/devlog-css/index.html" afterPath="$PROJECT_DIR$/tag/devlog-css/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tag/devlog-database/index.html" afterPath="$PROJECT_DIR$/tag/devlog-database/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tag/devlog-javascript/index.html" afterPath="$PROJECT_DIR$/tag/devlog-javascript/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tag/devlog-react/index.html" afterPath="$PROJECT_DIR$/tag/devlog-react/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tag/devlog-sass/index.html" afterPath="$PROJECT_DIR$/tag/devlog-sass/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tag/devlog-unix/index.html" afterPath="$PROJECT_DIR$/tag/devlog-unix/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tag/essay-essay/index.html" afterPath="$PROJECT_DIR$/tag/essay-essay/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tag/essay-startup/index.html" afterPath="$PROJECT_DIR$/tag/essay-startup/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tag/review-book/index.html" afterPath="$PROJECT_DIR$/tag/review-book/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tag/review-food/index.html" afterPath="$PROJECT_DIR$/tag/review-food/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tag/review-goods/index.html" afterPath="$PROJECT_DIR$/tag/review-goods/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tag/tip-css/index.html" afterPath="$PROJECT_DIR$/tag/tip-css/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tag/tip-java/index.html" afterPath="$PROJECT_DIR$/tag/tip-java/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tag/tip-javascript/index.html" afterPath="$PROJECT_DIR$/tag/tip-javascript/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tag/tip-jstl/index.html" afterPath="$PROJECT_DIR$/tag/tip-jstl/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tag/tip-mysql/index.html" afterPath="$PROJECT_DIR$/tag/tip-mysql/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tag/travel-korea/index.html" afterPath="$PROJECT_DIR$/tag/travel-korea/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tip/2020/02/25/tip-javascript-01/index.html" afterPath="$PROJECT_DIR$/tip/2020/02/25/tip-javascript-01/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tip/2020/02/25/tip-javascript-02/index.html" afterPath="$PROJECT_DIR$/tip/2020/02/25/tip-javascript-02/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tip/2020/02/27/tip-javascript-03/index.html" afterPath="$PROJECT_DIR$/tip/2020/02/27/tip-javascript-03/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tip/2020/02/27/tip-javascript-04/index.html" afterPath="$PROJECT_DIR$/tip/2020/02/27/tip-javascript-04/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tip/2020/03/01/tip-javascript-05/index.html" afterPath="$PROJECT_DIR$/tip/2020/03/01/tip-javascript-05/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tip/2020/03/01/tip-javascript-06/index.html" afterPath="$PROJECT_DIR$/tip/2020/03/01/tip-javascript-06/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tip/2020/03/04/tip-jstl-01/index.html" afterPath="$PROJECT_DIR$/tip/2020/03/04/tip-jstl-01/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tip/2020/03/07/tip-java-01/index.html" afterPath="$PROJECT_DIR$/tip/2020/03/07/tip-java-01/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tip/2020/03/08/tip-mysql-01/index.html" afterPath="$PROJECT_DIR$/tip/2020/03/08/tip-mysql-01/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tip/2020/03/16/tip-javascript-07/index.html" afterPath="$PROJECT_DIR$/tip/2020/03/16/tip-javascript-07/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tip/2020/03/16/tip-mysql-02/index.html" afterPath="$PROJECT_DIR$/tip/2020/03/16/tip-mysql-02/index.html" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,10 +115,10 @@
       <file leaf-file-name="sitemap.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sitemap.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="13034">
-              <caret line="686" column="34" lean-forward="false" selection-start-line="686" selection-start-column="34" selection-end-line="686" selection-end-column="34" />
+            <state relative-caret-position="1600">
+              <caret line="1012" column="0" lean-forward="false" selection-start-line="1012" selection-start-column="0" selection-end-line="1012" selection-end-column="0" />
               <folding>
-                <marker date="1584456512682" expanded="true" signature="16623:16843" ph="..." />
+                <marker date="1584505312886" expanded="true" signature="17163:17383" ph="..." />
               </folding>
             </state>
           </provider>
@@ -28,12 +127,9 @@
       <file leaf-file-name="404.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/404.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="52" column="34" lean-forward="true" selection-start-line="52" selection-start-column="34" selection-end-line="52" selection-end-column="34" />
-              <folding>
-                <element signature="e#1487#1495#0" expanded="true" />
-                <element signature="n#style#0;n#ins#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="462">
+              <caret line="57" column="0" lean-forward="true" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -636,11 +732,12 @@
       <workItem from="1584201911620" duration="24000" />
       <workItem from="1584358315164" duration="663000" />
       <workItem from="1584449859674" duration="805000" />
+      <workItem from="1584505256595" duration="52000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20695000" />
+    <option name="totallyTimeSpent" value="20747000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -662,18 +759,18 @@
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3236559" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3227513" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -707,7 +804,7 @@
         <state relative-caret-position="969">
           <caret line="51" column="9" lean-forward="false" selection-start-line="51" selection-start-column="9" selection-end-line="51" selection-end-column="9" />
           <folding>
-            <marker date="1584456512682" expanded="true" signature="16623:16843" ph="..." />
+            <marker date="1584505312886" expanded="true" signature="17163:17383" ph="..." />
           </folding>
         </state>
       </provider>
@@ -724,7 +821,7 @@
         <state relative-caret-position="969">
           <caret line="51" column="9" lean-forward="false" selection-start-line="51" selection-start-column="9" selection-end-line="51" selection-end-column="9" />
           <folding>
-            <marker date="1584456512682" expanded="true" signature="16623:16843" ph="..." />
+            <marker date="1584505312886" expanded="true" signature="17163:17383" ph="..." />
           </folding>
         </state>
       </provider>
@@ -741,7 +838,7 @@
         <state relative-caret-position="361">
           <caret line="19" column="9" lean-forward="false" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
           <folding>
-            <marker date="1584456512682" expanded="true" signature="16623:16843" ph="..." />
+            <marker date="1584505312886" expanded="true" signature="17163:17383" ph="..." />
           </folding>
         </state>
       </provider>
@@ -758,7 +855,7 @@
         <state relative-caret-position="361">
           <caret line="19" column="9" lean-forward="false" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
           <folding>
-            <marker date="1584456512682" expanded="true" signature="16623:16843" ph="..." />
+            <marker date="1584505312886" expanded="true" signature="17163:17383" ph="..." />
           </folding>
         </state>
       </provider>
@@ -775,7 +872,7 @@
         <state relative-caret-position="171">
           <caret line="9" column="6" lean-forward="false" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
           <folding>
-            <marker date="1584456512682" expanded="true" signature="16623:16843" ph="..." />
+            <marker date="1584505312886" expanded="true" signature="17163:17383" ph="..." />
           </folding>
         </state>
       </provider>
@@ -792,7 +889,7 @@
         <state relative-caret-position="171">
           <caret line="9" column="6" lean-forward="false" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
           <folding>
-            <marker date="1584456512682" expanded="true" signature="16623:16843" ph="..." />
+            <marker date="1584505312886" expanded="true" signature="17163:17383" ph="..." />
           </folding>
         </state>
       </provider>
@@ -809,7 +906,7 @@
         <state relative-caret-position="380">
           <caret line="20" column="38" lean-forward="false" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="38" />
           <folding>
-            <marker date="1584456512682" expanded="true" signature="16623:16843" ph="..." />
+            <marker date="1584505312886" expanded="true" signature="17163:17383" ph="..." />
           </folding>
         </state>
       </provider>
@@ -826,7 +923,7 @@
         <state relative-caret-position="380">
           <caret line="20" column="38" lean-forward="false" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="38" />
           <folding>
-            <marker date="1584456512682" expanded="true" signature="16623:16843" ph="..." />
+            <marker date="1584505312886" expanded="true" signature="17163:17383" ph="..." />
           </folding>
         </state>
       </provider>
@@ -843,7 +940,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1584456512682" expanded="true" signature="16623:16843" ph="..." />
+            <marker date="1584505312886" expanded="true" signature="17163:17383" ph="..." />
           </folding>
         </state>
       </provider>
@@ -853,7 +950,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1584456512682" expanded="true" signature="16623:16843" ph="..." />
+            <marker date="1584505312886" expanded="true" signature="17163:17383" ph="..." />
           </folding>
         </state>
       </provider>
@@ -863,7 +960,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1584456512682" expanded="true" signature="16623:16843" ph="..." />
+            <marker date="1584505312886" expanded="true" signature="17163:17383" ph="..." />
           </folding>
         </state>
       </provider>
@@ -880,7 +977,7 @@
         <state relative-caret-position="76">
           <caret line="4" column="38" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="38" />
           <folding>
-            <marker date="1584456512682" expanded="true" signature="16623:16843" ph="..." />
+            <marker date="1584505312886" expanded="true" signature="17163:17383" ph="..." />
           </folding>
         </state>
       </provider>
@@ -904,7 +1001,7 @@
         <state relative-caret-position="76">
           <caret line="4" column="38" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="38" />
           <folding>
-            <marker date="1584456512682" expanded="true" signature="16623:16843" ph="..." />
+            <marker date="1584505312886" expanded="true" signature="17163:17383" ph="..." />
           </folding>
         </state>
       </provider>
@@ -935,7 +1032,7 @@
         <state relative-caret-position="114">
           <caret line="22" column="42" lean-forward="false" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
           <folding>
-            <marker date="1584456512682" expanded="true" signature="16623:16843" ph="..." />
+            <marker date="1584505312886" expanded="true" signature="17163:17383" ph="..." />
           </folding>
         </state>
       </provider>
@@ -952,7 +1049,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1584456512682" expanded="true" signature="16623:16843" ph="..." />
+            <marker date="1584505312886" expanded="true" signature="17163:17383" ph="..." />
           </folding>
         </state>
       </provider>
@@ -962,7 +1059,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1584456512682" expanded="true" signature="16623:16843" ph="..." />
+            <marker date="1584505312886" expanded="true" signature="17163:17383" ph="..." />
           </folding>
         </state>
       </provider>
@@ -972,7 +1069,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1584456512682" expanded="true" signature="16623:16843" ph="..." />
+            <marker date="1584505312886" expanded="true" signature="17163:17383" ph="..." />
           </folding>
         </state>
       </provider>
@@ -989,7 +1086,7 @@
         <state relative-caret-position="76">
           <caret line="4" column="38" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="38" />
           <folding>
-            <marker date="1584456512682" expanded="true" signature="16623:16843" ph="..." />
+            <marker date="1584505312886" expanded="true" signature="17163:17383" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1013,7 +1110,7 @@
         <state relative-caret-position="76">
           <caret line="4" column="38" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="38" />
           <folding>
-            <marker date="1584456512682" expanded="true" signature="16623:16843" ph="..." />
+            <marker date="1584505312886" expanded="true" signature="17163:17383" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1076,11 +1173,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/img/unix/2020-02-18-unix-03-01.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/img/unix/2020-02-18-unix-03-01.png" />
     <entry file="file://$PROJECT_DIR$/robots.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1091,22 +1184,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sitemap.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="13034">
-          <caret line="686" column="34" lean-forward="false" selection-start-line="686" selection-start-column="34" selection-end-line="686" selection-end-column="34" />
+        <state relative-caret-position="1600">
+          <caret line="1012" column="0" lean-forward="false" selection-start-line="1012" selection-start-column="0" selection-end-line="1012" selection-end-column="0" />
           <folding>
-            <marker date="1584456512682" expanded="true" signature="16623:16843" ph="..." />
+            <marker date="1584505312886" expanded="true" signature="17163:17383" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/404.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="52" column="34" lean-forward="true" selection-start-line="52" selection-start-column="34" selection-end-line="52" selection-end-column="34" />
-          <folding>
-            <element signature="e#1487#1495#0" expanded="true" />
-            <element signature="n#style#0;n#ins#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="462">
+          <caret line="57" column="0" lean-forward="true" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

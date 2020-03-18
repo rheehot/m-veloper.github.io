@@ -31,7 +31,7 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="naver-site-verification" content="fa37cbf8ce41948de6e94c01991ffa04cea9b093"/>
 <meta name="google-site-verification" content="5M4Zw9wg_UqQkvlayfb5Mc_ogvJdc013w_zLUkxgO-Y" />
-<meta property="og:title" content="[Database] 데이터베이스 시스템">
+<meta property="og:title" content="[JAVA] 자바 날짜 구하기(특정 월의 첫째 날짜, 마지막 날짜)">
 <meta property="og:type" content="article">
 
 
@@ -46,7 +46,7 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 
 
 
-  <title>[Database] 데이터베이스 시스템 &middot; m_veloper</title>
+  <title>[JAVA] 자바 날짜 구하기(특정 월의 첫째 날짜, 마지막 날짜) &middot; m_veloper</title>
 
 
 
@@ -62,17 +62,17 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 <!-- =============== -->
 <!-- LINKS           -->
 <!-- =============== -->
-<link rel="canonical" href="https://m-veloper.github.io/devlog/2020/02/14/database-03/">
-<meta property="og:url" content="https://m-veloper.github.io/devlog/2020/02/14/database-03/">
+<link rel="canonical" href="https://m-veloper.github.io/tip/2020/03/18/tip-java-02/">
+<meta property="og:url" content="https://m-veloper.github.io/tip/2020/03/18/tip-java-02/">
 
 <link rel="alternate" type="application/atom+xml" title="m_veloper Feed" href="https://m-veloper.github.io/feed.xml">
 
 
-  <link rel="prev" href="https://m-veloper.github.io/devlog/2020/02/13/database-02/">
+  <link rel="prev" href="https://m-veloper.github.io/devlog/2020/03/17/sass-13/">
 
 
 
-  <link rel="next" href="https://m-veloper.github.io/devlog/2020/02/15/database-04/">
+  <link rel="next" href="https://m-veloper.github.io/tip/2020/03/18/tip-jstl-02/">
 
 
 <link rel="apple-touch-icon" href="https://m-veloper.github.io/apple-touch-icon.png">
@@ -252,18 +252,18 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 
 
 
-<article id="post-devlog/2020/02/14/database-03" class="post this" role="article">
+<article id="post-tip/2020/03/18/tip-java-02" class="post this" role="article">
   <header>
 
     <h1 class="post-title">
       
-        [Database] 데이터베이스 시스템
+        [JAVA] 자바 날짜 구하기(특정 월의 첫째 날짜, 마지막 날짜)
         
     </h1>
 
     <p class="post-date heading">
-      <!--<time datetime="2020-02-14T00:00:00+09:00">14 Feb 2020</time>-->
-      <time datetime="2020-02-14T00:00:00+09:00">2020년 02월 14일</time>
+      <!--<time datetime="2020-03-18T00:00:00+09:00">18 Mar 2020</time>-->
+      <time datetime="2020-03-18T00:00:00+09:00">2020년 03월 18일</time>
     </p>
     
 
@@ -275,7 +275,7 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 
 
 
-<a href="/category/devlog/" data-flip="title" id="tag">Devlog</a>
+<a href="/category/tip/" data-flip="title" id="tag">Tip</a>
 
     
 
@@ -287,7 +287,7 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 
 
 
-<a href="/tag/devlog-database/" data-flip="title" id="tag">Database</a>
+<a href="/tag/tip-java/" data-flip="title" id="tag">Java</a>
 
 
     
@@ -312,158 +312,47 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
     </div>
 
     <br />
-    <p><img src="/assets/img/database/2020-02-14-database-03.png" alt="" /></p>
+    <p><img src="/assets/img/java/2020-03-18-tip-java-02.png" alt="" /></p>
 
-<h1 id="데이터베이스-시스템-dbs-database-system">데이터베이스 시스템 (DBS, DataBase System)</h1>
-
-<ul>
-  <li>데이터를 데이터베이스에 저장하고, 관리하여 사용자의 요청에 따라 필요한 정보를 생성해주는 시스템</li>
-</ul>
-
-<ol>
-  <li>
-    <p>구성요소</p>
-
-    <ul>
-      <li>데이터베이스 관리 시스템 : 사용자와 데이터베이스를 연결시켜주는 소프트웨어</li>
-      <li>데이터베이스 : 데이터를 저장하는 곳</li>
-      <li>데이터 모델 : 연관된 데이터를 저장하는 방식</li>
-    </ul>
-  </li>
-</ol>
-
-<p><img src="/assets/img/database/2020-02-14-database-03-01.png" alt="" />
-<br />
-<br /></p>
-
-<h1 id="데이터베이스-사용자">데이터베이스 사용자</h1>
-
-<ol>
-  <li>
-    <p>일반사용자</p>
-
-    <ul>
-      <li>프로그래머가 개발한 응용프로그램을 사용하여 데이터베이스에 접근</li>
-      <li>DBMS 사용에 관심이 없고, 요청하여 받은 데이터의 내용에만 관심을 가짐</li>
-    </ul>
-  </li>
-  <li>
-    <p>응용프로그래머 / 데이터베이스 프로그래머</p>
-
-    <ul>
-      <li>일반 사용자가 사용할 수 있는 응용 프로그램을 개발</li>
-      <li>자바, JSP, PHP, ASP, C 등의 프로그래밍 언어를 사용하여 일반 사용자를 위한 인터페이스(GUI)와 데이터 관리 프로그램을 개발</li>
-    </ul>
-  </li>
-  <li>
-    <p>데이터베이스 관리자</p>
-
-    <ul>
-      <li>데이터베이스 시스템을 관리하는 사람</li>
-      <li>데이터 설계, 구현, 유지보수 등을 담당</li>
-      <li>데이터베이스 사용자, 보안, 접근 권한, 백업, 회복 등을 관리</li>
-    </ul>
-  </li>
-</ol>
-
-<h1 id="dbms의-기능">DBMS의 기능</h1>
-
-<ol>
-  <li>
-    <p>데이터 정의 (Definition)</p>
-
-    <ul>
-      <li>데이터의 구조를 정의, 수정 및 삭제하는 기능</li>
-    </ul>
-  </li>
-  <li>
-    <p>데이터 조작 (Manipulation)</p>
-
-    <ul>
-      <li>응용프로그램의 요청으로 데이터의 삽입, 수정, 삭제하는 기능</li>
-    </ul>
-  </li>
-  <li>
-    <p>데이터 추출 (Retrieval)</p>
-
-    <ul>
-      <li>응용프로그램의 요청에 따라 필요한 데이터를 추출하는 기능</li>
-    </ul>
-  </li>
-  <li>
-    <p>데이터 제어 (Control)</p>
-
-    <ul>
-      <li>사용자를 관리 (계정 생성, 접근 제한)하는 기능</li>
-      <li>백업, 회복, 동시성 제어 등의 기능</li>
-    </ul>
-  </li>
-</ol>
-
-<h1 id="데이터-언어-data-language">데이터 언어 (Data Language)</h1>
+<h1 id="자바-날짜-구하기">자바 날짜 구하기</h1>
+<h3 id="how-to-get-first-day-or-last-day-of-month-in-java">How to get first day or last day of month in Java</h3>
+<p><br /></p>
 
 <ul>
-  <li>사용자가 데이터베이스 관리 시스템을 사용하기 위한 언어</li>
-  <li>사용 목적에 따라 구분</li>
+  <li>Calendar 의 getActualMaximum 함수를 이용</li>
+  <li>getMaximum 는 Calender 자체가 최대로 가질수 있는 값.</li>
+  <li>
+    <p>getActualMaximum 는 실제로 날짜가 셋팅 된 Calender 가 가질수 있는 값</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  import java.text.SimpleDateFormat;
+  import java.util.Calendar;
+     
+  public class MaximumOfMonth {
+      public static void main(String[] args) {
+     
+          int year = 2020;
+          int month = 1;
+          int day = 1;
+     
+          SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+     
+          Calendar cal = Calendar.getInstance();
+     
+          cal.set(year, month-1, day); //월은 -1해줘야 해당월로 인식
+     
+          System.out.println(dateFormat.format(cal.getTime()));
+     
+          System.out.println("해당년도: "+cal.get(Calendar.YEAR));
+          System.out.println("해당월: "+(cal.get(Calendar.MONTH)+1)); //보여줄때 +1로 하여 사람기준으로 설정
+          System.out.println("첫번째 일: "+cal.getMinimum(Calendar.DAY_OF_MONTH));
+     
+          System.out.println("마지막 일(현재 날짜 기준 최대수): "+cal.getActualMaximum(Calendar.DAY_OF_MONTH)); //기본적으로 이걸 사용
+          System.out.println("마지막 일(Calender이 가진 최대수): "+cal.getMaximum(Calendar.DAY_OF_MONTH));
+      }
+  }
+</code></pre></div>    </div>
+  </li>
 </ul>
-
-<ol>
-  <li>
-    <p>데이터 정의어 (DDL, Data Definition Language)</p>
-
-    <ul>
-      <li>데이터의 구조를 정의, 수정, 삭제하기 위해 사용하는 언어</li>
-    </ul>
-  </li>
-  <li>
-    <p>데이터 조작어(DML, Data Manupulation Language)</p>
-
-    <ul>
-      <li>데이터의 삽입, 수정, 삭제, 검색 등의 요청을 위해 사용하는 언어</li>
-      <li>
-        <p>절차적 데이터 조작어와 비절차적 데이터 조작어로 구분</p>
-
-        <ul>
-          <li>
-            <p>절차적 데이터 조작어 (Procedural DML) : 사용자가 원하는 데이터와 데이터를 얻는 처리 방법을 설명하는 조작어</p>
-          </li>
-          <li>
-            <p>비절차적 데이터 조작어 (Nonprocedural DML) : 사용자가 원하는 데이터만 설명하는 조작어</p>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <p>데이터 제어어(DCL, Data Control Language)</p>
-
-    <ul>
-      <li>내부적으로 필요한 규칙이나 기법을 정의하기 위해 사용하는 언어</li>
-      <li>
-        <p>규칙이나 기법을 정의하는 이유</p>
-
-        <ul>
-          <li>
-            <p>무결성 : 데이터베이스에 정확하고 유효한 데이터만 유지한다.</p>
-          </li>
-          <li>
-            <p>보안 : 허가받지 않은 사용자의 데이터 접근 차단 및 허가된 사용자가 접근 허용된 데이터만 접근하도록 제어</p>
-          </li>
-          <li>
-            <p>회복 : 장애 발생시 데이터의 일관성을 유지</p>
-          </li>
-          <li>
-            <p>동시성 : 다수의 사용자가 같은 데이터에 동시에 접근하여 데이터를 조작할 수 있도록 제어</p>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-</ol>
-
-<p><img src="/assets/img/database/2020-02-14-database-03-02.png" alt="" />
-<br />
-<br /></p>
 
     <br />
     <br />
@@ -481,12 +370,12 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 <div class="share">
   <h2>Share this post</h2>
   <div class="share-body">
-    <a href="http://twitter.com/share?text=[Database] 데이터베이스 시스템&amp;url=https://m-veloper.github.io/devlog/2020/02/14/database-03/"
+    <a href="http://twitter.com/share?text=[JAVA] 자바 날짜 구하기(특정 월의 첫째 날짜, 마지막 날짜)&amp;url=https://m-veloper.github.io/tip/2020/03/18/tip-java-02/"
       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
       <span class="icon-twitter">
       </span>
     </a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://m-veloper.github.io/devlog/2020/02/14/database-03/"
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://m-veloper.github.io/tip/2020/03/18/tip-java-02/"
       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
       <span class="icon-facebook">
       </span>
@@ -561,16 +450,19 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
   }
 </style>
 <li class="h4">
-  <a href="/devlog/2020/03/17/sass-13/" data-flip="title">
-    <span>[Sass/SCSS] 조건문(if)</span>
+  <a href="/tip/2020/03/18/tip-jstl-02/" data-flip="title">
+    <span>[JSTL] < c:choose >< c:when > 다중(중복, 여러번) 사용 하기 (< c:choose >< c:when >안에 < c:choose ><c:when >)</span>
   </a>
-  <small><time datetime="2020-03-17T00:00:00+09:00">
-    2020년 03월 17일
+  <small><time datetime="2020-03-18T00:00:00+09:00">
+    2020년 03월 18일
   </time></small>
 </li>
 
         
       
+        
+          
+          
         
         
           
@@ -583,30 +475,8 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
   }
 </style>
 <li class="h4">
-  <a href="/devlog/2020/03/17/sass-12/" data-flip="title">
-    <span>[Sass/SCSS] 함수(Functions)</span>
-  </a>
-  <small><time datetime="2020-03-17T00:00:00+09:00">
-    2020년 03월 17일
-  </time></small>
-</li>
-
-        
-      
-        
-        
-          
-
-
-
-<style>
-  .related-posts>li>small{
-    margin-left: 10px;
-  }
-</style>
-<li class="h4">
-  <a href="/devlog/2020/03/16/sass-11/" data-flip="title">
-    <span>[Sass/SCSS] 확장(Extend) -  @extend</span>
+  <a href="/tip/2020/03/16/tip-mysql-02/" data-flip="title">
+    <span>[MySQL/MariaDB] JOIN에서 ON 과 WHERE의 차이점</span>
   </a>
   <small><time datetime="2020-03-16T00:00:00+09:00">
     2020년 03월 16일
@@ -616,6 +486,25 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
         
       
         
+        
+          
+
+
+
+<style>
+  .related-posts>li>small{
+    margin-left: 10px;
+  }
+</style>
+<li class="h4">
+  <a href="/tip/2020/03/16/tip-javascript-07/" data-flip="title">
+    <span>[자바스크립트] 자동 실행 함수 (window.onload, $(document).ready())</span>
+  </a>
+  <small><time datetime="2020-03-16T00:00:00+09:00">
+    2020년 03월 16일
+  </time></small>
+</li>
+
         
       
     
@@ -647,9 +536,9 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
   }
 
   var d = function () {
-    this.page.title = "[Database] 데이터베이스 시스템",
-      this.page.identifier = "/devlog/2020/02/14/database-03",
-      this.page.url = "https://m-veloper.github.io/devlog/2020/02/14/database-03/"
+    this.page.title = "[JAVA] 자바 날짜 구하기(특정 월의 첫째 날짜, 마지막 날짜)",
+      this.page.identifier = "/tip/2020/03/18/tip-java-02",
+      this.page.url = "https://m-veloper.github.io/tip/2020/03/18/tip-java-02/"
   };
   s._disqusFirst = void 0 === s._disqusFirst || s._disqusFirst, s._disqusLoading = void 0 !== s._disqusLoading && s._disqusLoading, s._disqusThis = !1, s._disqusThreadOffsetTop = i.getElementById(
     "disqus_thread").offsetTop, s._disqusLoading ? s._disqusFirst = !1 : (s._disqusLoading = !0, loadJSDeferred(

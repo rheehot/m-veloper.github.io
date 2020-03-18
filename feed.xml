@@ -5,9 +5,128 @@
     <description></description>
     <link>https://m-veloper.github.io/</link>
     <atom:link href="https://m-veloper.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 17 Mar 2020 23:45:16 +0900</pubDate>
-    <lastBuildDate>Tue, 17 Mar 2020 23:45:16 +0900</lastBuildDate>
+    <pubDate>Wed, 18 Mar 2020 13:19:05 +0900</pubDate>
+    <lastBuildDate>Wed, 18 Mar 2020 13:19:05 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>[JSTL] &lt; c:choose &gt;&lt; c:when &gt; 다중(중복, 여러번) 사용 하기 (&lt; c:choose &gt;&lt; c:when &gt;안에 &lt; c:choose &gt;&lt;c:when &gt;)</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/jstl/2020-03-18-tip-jstl-02.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;-cchoose--cwhen--다중중복-여러번-사용-하기--cchoose--cwhen-안에--cchoose-&quot;&gt;&amp;lt; c:choose &amp;gt;&amp;lt; c:when &amp;gt; 다중(중복, 여러번) 사용 하기 (&amp;lt; c:choose &amp;gt;&amp;lt; c:when &amp;gt;안에 &amp;lt; c:choose &amp;gt;&lt;c:when&gt;)&lt;/c:when&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&amp;lt; c:choose &amp;gt;&amp;lt; c:when &amp;gt; 을 사용하는데, 그 조건 안에 또 다른 조건을 줘야할 경우가 생김.&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &amp;lt;c:choose&amp;gt;
+    &amp;lt;c:when&amp;gt;
+      &amp;lt;c:if&amp;gt; 실행 &amp;lt;/c:if&amp;gt;
+      &amp;lt;c:if&amp;gt; 실행 &amp;lt;/c:if&amp;gt;
+    &amp;lt;/c:when&amp;gt;
+     &amp;lt;c:otherwise&amp;gt;
+          실행
+     &amp;lt;/c:otherwise&amp;gt;
+  &amp;lt;/c:choose&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;위와 같이 생각을 하고 코드를 작성했더니 에러가 발생.&lt;/li&gt;
+      &lt;li&gt;위 코드와 같이 생각하는 사람이 많을거라 판단됨.&lt;/li&gt;
+      &lt;li&gt;위 코드처럼 생각하신분 링크 : https://okky.kr/article/432948&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;다중일경우는-choose문-단일조건이면-if문&quot;&gt;다중일경우는 choose문. 단일조건이면 if문&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;다중일경우는 choose문. 단일조건이면 if문&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &amp;lt;c:choose&amp;gt;
+      &amp;lt;c:when&amp;gt;
+          &amp;lt;c:choose&amp;gt;
+                &amp;lt;c:when&amp;gt; 실행 &amp;lt;/c:when&amp;gt;
+                &amp;lt;c:when&amp;gt; 실행 &amp;lt;/c:when&amp;gt;
+                &amp;lt;c:otherwise&amp;gt; 실행 &amp;lt;/c:otherwise&amp;gt;
+          &amp;lt;/c:choose&amp;gt;
+      &amp;lt;/c:when&amp;gt;
+      &amp;lt;c:otherwise&amp;gt;
+            &amp;lt;c:if&amp;gt;단일 조건 실행&amp;lt;/c:if&amp;gt;
+      &amp;lt;/c:otherwise&amp;gt;
+  &amp;lt;/c:choose&amp;gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Wed, 18 Mar 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/tip/2020/03/18/tip-jstl-02/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/03/18/tip-jstl-02/</guid>
+        
+        <category>jstl</category>
+        
+        
+        <category>tip</category>
+        
+      </item>
+    
+      <item>
+        <title>[JAVA] 자바 날짜 구하기(특정 월의 첫째 날짜, 마지막 날짜)</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/java/2020-03-18-tip-java-02.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;자바-날짜-구하기&quot;&gt;자바 날짜 구하기&lt;/h1&gt;
+&lt;h3 id=&quot;how-to-get-first-day-or-last-day-of-month-in-java&quot;&gt;How to get first day or last day of month in Java&lt;/h3&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Calendar 의 getActualMaximum 함수를 이용&lt;/li&gt;
+  &lt;li&gt;getMaximum 는 Calender 자체가 최대로 가질수 있는 값.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;getActualMaximum 는 실제로 날짜가 셋팅 된 Calender 가 가질수 있는 값&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  import java.text.SimpleDateFormat;
+  import java.util.Calendar;
+     
+  public class MaximumOfMonth {
+      public static void main(String[] args) {
+     
+          int year = 2020;
+          int month = 1;
+          int day = 1;
+     
+          SimpleDateFormat dateFormat = new SimpleDateFormat(&quot;yyyy-MM-dd&quot;);
+     
+          Calendar cal = Calendar.getInstance();
+     
+          cal.set(year, month-1, day); //월은 -1해줘야 해당월로 인식
+     
+          System.out.println(dateFormat.format(cal.getTime()));
+     
+          System.out.println(&quot;해당년도: &quot;+cal.get(Calendar.YEAR));
+          System.out.println(&quot;해당월: &quot;+(cal.get(Calendar.MONTH)+1)); //보여줄때 +1로 하여 사람기준으로 설정
+          System.out.println(&quot;첫번째 일: &quot;+cal.getMinimum(Calendar.DAY_OF_MONTH));
+     
+          System.out.println(&quot;마지막 일(현재 날짜 기준 최대수): &quot;+cal.getActualMaximum(Calendar.DAY_OF_MONTH)); //기본적으로 이걸 사용
+          System.out.println(&quot;마지막 일(Calender이 가진 최대수): &quot;+cal.getMaximum(Calendar.DAY_OF_MONTH));
+      }
+  }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 18 Mar 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/tip/2020/03/18/tip-java-02/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/03/18/tip-java-02/</guid>
+        
+        <category>java</category>
+        
+        
+        <category>tip</category>
+        
+      </item>
     
       <item>
         <title>[Sass/SCSS] 조건문(if)</title>
@@ -5404,310 +5523,6 @@ System.out.format(&quot;%.2f%n&quot;, 1560000.0 * 0.0 / 100.0);
         <pubDate>Fri, 06 Mar 2020 00:00:00 +0900</pubDate>
         <link>https://m-veloper.github.io/devlog/2020/03/06/database-15/</link>
         <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/03/06/database-15/</guid>
-        
-        <category>database</category>
-        
-        
-        <category>devlog</category>
-        
-      </item>
-    
-      <item>
-        <title>[Database] 순수관계연산자 (3/3)</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-14.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;확장-조인-연산&quot;&gt;확장 조인 연산&lt;/h1&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;1-외부조인-outer-join&quot;&gt;1. 외부조인 (Outer Join)&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;자연조인의 확장된 형태&lt;/li&gt;
-  &lt;li&gt;자연조인시 조인에 실패한 투플을 모두 보여주되, 값이 없는 대응 속성에는 NULL값을 채워서 반환&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;모든 속성을 보여주는 기준 릴레이션의 위치에 따른 분류&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-14-01.png&quot; alt=&quot;&quot; /&gt;
-  &lt;br /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;왼쪽 외부조인&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-14-02.png&quot; alt=&quot;&quot; /&gt;
-  &lt;br /&gt;&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;질의 1 : 주문내역을 고객 기준으로 작성하되 주문내역이 없는 고객도 표시하시오&lt;/li&gt;
-    &lt;/ul&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-14-03.png&quot; alt=&quot;&quot; /&gt;
-  &lt;br /&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-14-04.png&quot; alt=&quot;&quot; /&gt;
-  &lt;br /&gt;&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;질의 2 : 주문내역을 기준으로 현황을 파악하되 고객릴레이션에 고객아이디가 없는 주문도 모두 표시하시오.&lt;/li&gt;
-    &lt;/ul&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-14-05.png&quot; alt=&quot;&quot; /&gt;
-  &lt;br /&gt;&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;질의 3 : 주문내역이 없는 고객과 주문의 고객아이디가 고객 릴레이션에 없는 경우도 모두 표시하시오&lt;/li&gt;
-    &lt;/ul&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-14-06.png&quot; alt=&quot;&quot; /&gt;
-  &lt;br /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;2-세미조인-semi-join&quot;&gt;2. 세미조인 (Semi Join)&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;자연조인을 한 후 두 릴레이션 중 한쪽 릴레이션의 결과만 반환&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;기호에서 닫힌 쪽 릴레이션의 투플만 반환&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;세미조인 종류&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-14-07.png&quot; alt=&quot;&quot; /&gt;
-  &lt;br /&gt;&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;질의 1 : 고객중에서 주문 내역이 있는 고객의 정보를 찾으시오.&lt;/li&gt;
-    &lt;/ul&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-14-08.png&quot; alt=&quot;&quot; /&gt;
-  &lt;br /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;관계대수의-복합사용-예&quot;&gt;관계대수의 복합사용 예&lt;/h1&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;관계대수식은 여러 연산자들을 복합하여 사용하는 경우가 많다
-    &lt;ul&gt;
-      &lt;li&gt;카디션 프로덕트 단독으로 사용하면 의미 없는 결과를 반환 =&amp;gt; 프로젝트과 셀렉트 연산과 조합&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;연산의 우선 순위
-    &lt;ul&gt;
-      &lt;li&gt;왼쪽에서 오른쪽으로 순차적으로 처리&lt;/li&gt;
-      &lt;li&gt;우선 처리하여야 하는 연산은 ( )를 사용&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;1-셀렉트--프로젝트--집합-연산&quot;&gt;1. 셀렉트 + 프로젝트 + 집합 연산&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;질의 : 서점의 도서 중 가격이 10,000원 이하인 도서이름과 출판사를 찾으시오&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-14-09.png&quot; alt=&quot;&quot; /&gt;
-  &lt;br /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;질의 : 두 서점의 도서 중 가격이 10,000원 이하인 도서이름과 출판사를 찾으시오&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-14-10.png&quot; alt=&quot;&quot; /&gt;
-  &lt;br /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;2-카디션-프로덕트와-조인을-사용한-연산-비교&quot;&gt;2. 카디션 프로덕트와 조인을 사용한 연산 비교&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;질의 : 홍길동 고객의 거래 내역중, 주문번호와 제품코드, 가격을 추출하시오&lt;/p&gt;
-
-    &lt;p&gt;(1) 카디션 프로덕트를 사용한 연산&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-14-11.png&quot; alt=&quot;&quot; /&gt;
-  &lt;br /&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-14-12.png&quot; alt=&quot;&quot; /&gt;
-  &lt;br /&gt;&lt;/p&gt;
-
-    &lt;p&gt;(2)조인을 사용한 연산&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-14-13.png&quot; alt=&quot;&quot; /&gt;
-  &lt;br /&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-14-14.png&quot; alt=&quot;&quot; /&gt;
-  &lt;br /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-</description>
-        <pubDate>Fri, 06 Mar 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/03/06/database-14/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/03/06/database-14/</guid>
-        
-        <category>database</category>
-        
-        
-        <category>devlog</category>
-        
-      </item>
-    
-      <item>
-        <title>[Database] 순수관계연산자 (2/3)</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-13.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;조인연산자-개요&quot;&gt;조인연산자 개요&lt;/h1&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;1-조인-join-연산자&quot;&gt;1. 조인 (Join) 연산자&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;이용 시기&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;하나의 릴레이션으로 원하는 데이터를 얻을 수 없어 관계가 있는 여러 릴레이션을 함께 사용하여야 하는 경우&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;조인 속성을 이용해 두 릴레이션을 조합하여 하나의 결과 릴레이션 만듬&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;조인 속성 : 두 릴레이션이 공통으로 가지고 있는 속성&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;조인 연산자 : ▷◁&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-13-01.png&quot; alt=&quot;&quot; /&gt;
-  &lt;br /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;결과 릴레이션&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;조인 속성의 값이 같은 투플만 수평으로 결합&lt;/li&gt;
-    &lt;/ul&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-13-02.png&quot; alt=&quot;&quot; /&gt;
-  &lt;br /&gt;&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;셀렉트(σ,Sigma)연산 : σ조건식(릴레이션)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;제한 사항
-    &lt;ul&gt;
-      &lt;li&gt;두 릴레이션의 조인에 참여하는 속성이 동일한 도메인으로 구성되어야 함&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;조인 연산의 종류&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-13-03.png&quot; alt=&quot;&quot; /&gt;
-  &lt;br /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;조인연산자-개요-1&quot;&gt;조인연산자 개요&lt;/h1&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;1-세타조인-theta-join-θ-join&quot;&gt;1. 세타조인 (Theta Join, θ Join)&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;조인에 참여하는 두 릴레이션의 속성 값을 비교하여 조건을 만족하는 투플만 반환&lt;/li&gt;
-  &lt;li&gt;결과 릴레이션의 차수 = 릴레이션R의 차수 + 릴레이션S의 차수&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;표현법&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-13-04.png&quot; alt=&quot;&quot; /&gt;
-  &lt;br /&gt;&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;θ 는 비교 연산자( &amp;gt;, ≥, &amp;lt;, ≤, =, ≠ )를 의미&lt;/li&gt;
-      &lt;li&gt;r은 R의 속성&lt;/li&gt;
-      &lt;li&gt;s는 S의 속성&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;2-동등조인-equi-join&quot;&gt;2. 동등조인 (Equi Join)&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;세타조인에서 = 연산자를 사용한 조인&lt;/li&gt;
-  &lt;li&gt;일반적인 조인연산은 동등조인을 지칭함&lt;/li&gt;
-  &lt;li&gt;내부조인 (Inner Join)이라고도 함&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;표현법&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-13-05.png&quot; alt=&quot;&quot; /&gt;
-  &lt;br /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;질의 – 고객과 고객의 주문 사항을 모두 보이시오&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-13-06.png&quot; alt=&quot;&quot; /&gt;
-  &lt;br /&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-13-07.png&quot; alt=&quot;&quot; /&gt;
-  &lt;br /&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-13-08.png&quot; alt=&quot;&quot; /&gt;
-  &lt;br /&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-13-09.png&quot; alt=&quot;&quot; /&gt;
-  &lt;br /&gt;&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;결과 릴레이션&lt;/p&gt;
-
-        &lt;ul&gt;
-          &lt;li&gt;두 릴레이션에서 조인 속성 값이 같은 투플끼리만 수평으로 연결하여 생성된 새로운 투플로 구성&lt;/li&gt;
-          &lt;li&gt;결과 릴레이션 차수 = 고객릴레이션 차수 + 주문릴레이션 차수&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;2-동등조인-equi-join-1&quot;&gt;2. 동등조인 (Equi Join)&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;동등조인에서 조인에 참여한 속성이 두 번 나오지 않도록 두 번째 속성을 제거한 결과를 반환&lt;/li&gt;
-  &lt;li&gt;연산자 : ▷◁N&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;표현법&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-13-10.png&quot; alt=&quot;&quot; /&gt;
-  &lt;br /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;결과 릴레이션의 차수 = 릴레이션R의 차수 + 릴레이션S의 차수 – 1&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;질의 : 고객과 고객의 주문 사항을 모두 보이시오&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-13-11.png&quot; alt=&quot;&quot; /&gt;
-  &lt;br /&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-06-database-13-12.png&quot; alt=&quot;&quot; /&gt;
-  &lt;br /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-</description>
-        <pubDate>Fri, 06 Mar 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/03/06/database-13/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/03/06/database-13/</guid>
         
         <category>database</category>
         
