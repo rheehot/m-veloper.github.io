@@ -2,7 +2,6 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
     <url>
-<<<<<<< HEAD
       <loc>https://m-veloper.github.io/devlog/2020/03/19/database-18/</loc>
       
         <lastmod>2020-03-19T00:00:00+09:00</lastmod>
@@ -19,8 +18,6 @@
     </url>
   
     <url>
-=======
->>>>>>> 5fca3cb7f4a4c3da942b5e8fefada601b47f9651
       <loc>https://m-veloper.github.io/tip/2020/03/18/tip-jstl-02/</loc>
       
         <lastmod>2020-03-18T00:00:00+09:00</lastmod>
