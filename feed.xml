@@ -5,19 +5,1324 @@
     <description></description>
     <link>https://m-veloper.github.io/</link>
     <atom:link href="https://m-veloper.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 19 Mar 2020 23:32:43 +0900</pubDate>
-    <lastBuildDate>Thu, 19 Mar 2020 23:32:43 +0900</lastBuildDate>
+    <pubDate>Fri, 20 Mar 2020 20:52:21 +0900</pubDate>
+    <lastBuildDate>Fri, 20 Mar 2020 20:52:21 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
-        <title>[Database] SQL 실습 및 데이터 정의 (2/3)</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-19-database-18.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+        <title>[유닉스] 포그라운드(foreground), 백그라운드(background)</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-20-unix-21.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;포그라운드foreground-백그라운드background&quot;&gt;포그라운드(foreground), 백그라운드(background)&lt;/h1&gt;
+
+&lt;h3 id=&quot;포그라운드와-백그라운드-작업의-이해&quot;&gt;포그라운드와 백그라운드 작업의 이해&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;쉘은 프로세스를 작업(job) 단위로 관리&lt;/li&gt;
+  &lt;li&gt;유닉스는 동시에 여러 작업을 할 수 있는 다중 작업(Multitasking) 운영체제&lt;/li&gt;
+  &lt;li&gt;포그라운드(foreground, 전위) 처리와 백그라운드(background, 후위) 처리 방식으로 동작&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;포그라운드-처리&quot;&gt;포그라운드 처리&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;사용자가 입력한 명령이 실행되어 결과가 출력될 때까지 프롬프트가 출력되지 않아 다른 명령을 입력할 수 없어 기다려야 하는 경우&lt;/li&gt;
+  &lt;li&gt;사용자가 명령을 입력하면 쉘이 명령을 해석하여 실행한 결과를 화면에 출력&lt;/li&gt;
+  &lt;li&gt;사용자는 화면에 출력된 결과를 보고 다시 명령을 입력하여 대화식 작업을 함&lt;/li&gt;
+  &lt;li&gt;포그라운드 프로세스 : 포그라운드 처리로 실행되고 있는 프로세스, 포그라운드 작업&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;포그라운드 처리의 예&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ find / -name passwd
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;find 명령이 끝날 때까지 기다려야 함&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;백그라운드-처리&quot;&gt;백그라운드 처리&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;포그라운드 처리 방식은 한 번에 하나의 명령만 실행시키므로 여러 프로세스를 동시에 실행시킬 수 없음&lt;/li&gt;
+  &lt;li&gt;백그라운드 처리 방식은 여러 프로세스를 동시에 실행시킬 수 있음&lt;/li&gt;
+  &lt;li&gt;명령의 처리가 끝나는 것과 관계없이 곧바로 프롬프트가 출력되어 사용자가 다른 작업을 계속할 수 있음&lt;/li&gt;
+  &lt;li&gt;백그라운드 프로세스 : 백그라운드 방식으로 처리되는 프로세스, 백그라운드 작업&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;명령을 백그라운드로 실행하려면 명령의 마지막에 ＆(앰퍼샌드) 기호를 추가&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ find / -name text ＆
+  [1] 6715
+  $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;백그라운드 프로세스는 실행 결과와 오류 메시지를 화면에 그대로 출력&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;다른 작업할 때 방해받을 수 있으므로 출력 방향 전환하여 실행 결과를 파일로 저장&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ find / -name passwd &amp;gt; pw.dat ＆
+  [2] 6725
+  $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;오류 메시지를 출력 방향 전환하여 파일로 저장&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ find / -name passwd &amp;gt; pw.dat 2&amp;gt; pw.err ＆
+  [3] 6726
+  $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;다른 작업을 하는 도중 백그라운드 작업이 종료되면 Enter 키를 입력했을 때 백그라운드 작업 종료 메시지가 출력됨&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;포그라운드와-백그라운드-작업-제어&quot;&gt;포그라운드와 백그라운드 작업 제어&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;작업 제어 : 작업 전환, 실행 중지, 작업 종료&lt;/li&gt;
+  &lt;li&gt;작업 전환 : 포그라운드 작업을 백그라운드 작업으로 전환, 백그라운드 작업을 포그라운드 작업으로 전환&lt;/li&gt;
+  &lt;li&gt;실행 중지 : 작업을 잠시 중단시키는 것&lt;/li&gt;
+  &lt;li&gt;작업 종료 : 프로세스 종료처럼 작업을 종료시키는 것&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;작업-목록-보기&quot;&gt;작업 목록 보기&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;jobs 명령
+    &lt;ul&gt;
+      &lt;li&gt;백그라운드 작업을 모두 보여줌. 특정 작업 번호 지정하면 해당 작업의 정보만 보여줌&lt;/li&gt;
+      &lt;li&gt;형식 : jobs [%작업]&lt;/li&gt;
+      &lt;li&gt;%작업
+        &lt;ul&gt;
+          &lt;li&gt;%번호 : 해당 번호의 작업 정보 출력&lt;/li&gt;
+          &lt;li&gt;%+ 또는 %% : 작업 순서가 +인 작업 정보 출력&lt;/li&gt;
+          &lt;li&gt;%- : 작업 순서가 –인 작업 정보 출력&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;사용 예 : jobs %1, jobs&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ sleep 100＆
+  [1] 6751
+  $ sleep 200＆
+  [2] 6752
+  $ jobs
+  [1]- Running sleep 100 ＆
+  [2]+ Running sleep 200 ＆
+  $ jobs %1
+  [1]- Running sleep 100 ＆
+  $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-20-unix-21-01.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;작업-전환하기&quot;&gt;작업 전환하기&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;fg 명령&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;백그라운드 프로세스를 포그라운드 프로세스로 전환&lt;/li&gt;
+      &lt;li&gt;사용법 : fg [%작업번호]&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;백그라운드로 수행 중인 작업이 여러 개인 경우 가장 최근에 수행한 작업(보통 + 기호가 붙어 있는 작업)을 포그라운드로 전환&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ jobs
+  [3]+ Running sleep 150 ＆
+  $ fg
+  sleep 150
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;bg 명령&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;포그라운드 프로세스를 백그라운드 프로세스로 전환&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ sleep 150
+  ^Z
+  [3]+ Stopped sleep 150
+  $ bg
+  [3]+ sleep 150 ＆
+  $ jobs
+  [2]- Running sleep 200 ＆
+  [3]+ Running sleep 150 ＆
+  $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;작업-종료시키기&quot;&gt;작업 종료시키기&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;포그라운드 작업은 Ctrl+C를 입력하면 종료됨
+    &lt;ul&gt;
+      &lt;li&gt;Ctrl+C는 인터럽트 시그널을 포그라운드 프로세스에 전달&lt;/li&gt;
+      &lt;li&gt;프로세스는 인터럽트를 받으면 기본적으로 종료&lt;/li&gt;
+      &lt;li&gt;종료시키고자 하는 프로세스의 PID를 다른 터미널에서 찾아 강제로 종료시키는 방법도 있음&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;백그라운드 작업은 kill 명령으로 종료&lt;/li&gt;
+  &lt;li&gt;kill 명령의 인자로 PID 대신 ‘%작업 번호’도 가능&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;로그아웃-후에도-백그라운드-작업-계속-실행하기&quot;&gt;로그아웃 후에도 백그라운드 작업 계속 실행하기&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;nohup 명령&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;로그아웃 후에도 백그라운드 작업을 계속 실행시킴&lt;/li&gt;
+      &lt;li&gt;실행 중인 프로세스의 표준 출력과 표준 에러는 ‘nohup.out’이라는 파일을 생성하여 기록,&lt;/li&gt;
+      &lt;li&gt;nohup 명령행 뒤에 ‘＆’를 명시해야 함&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;형식 : nohup 명령＆&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ nohup find / -name passwd ＆
+  [1] 7050
+  $ nohup: ignoring input and appending output to ‘nohup.out’
+  $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;사용자-전환하기&quot;&gt;사용자 전환하기&lt;/h1&gt;
+
+&lt;h3 id=&quot;로그인한-모든-사용자-정보-보기&quot;&gt;로그인한 모든 사용자 정보 보기&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;users 명령&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;현재 시스템에 로그인하고 있는 사용자명 출력&lt;/li&gt;
+      &lt;li&gt;명령의 결과를 한 행으로 출력&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;형식 : users&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ users
+  ksshin ksshin
+  $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;who 명령&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;시스템을 사용하고 있는 사용자의 자세한 정보 출력&lt;/li&gt;
+      &lt;li&gt;사용자명, 사용자가 접속한 단말기 번호, 사용자가 로그인한 시간, 외부 컴퓨터 이름이나 IP 주소 등&lt;/li&gt;
+      &lt;li&gt;형식 : who [옵션]&lt;/li&gt;
+      &lt;li&gt;옵션
+        &lt;ul&gt;
+          &lt;li&gt;-q : 사용자명만 출력&lt;/li&gt;
+          &lt;li&gt;-H : 출력 항목의 제목도 함께 출력&lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;-b : 마지막으로 재부팅한 날짜와 시간 출력&lt;/p&gt;
+
+            &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ who
+  ksshin tty1 2015-06-10 14:42
+  ksshin :0 2015-06-10 14:38 (:0)
+  $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;            &lt;/div&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;w 명령&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;로그인한 사용자 정보와 현재 작업의 정보 출력&lt;/li&gt;
+      &lt;li&gt;사용자 정보 외에 시스템 정보도 출력&lt;/li&gt;
+      &lt;li&gt;시스템 정보 : 현재 시간, 시스템이 부팅된 후 현재까지 경과된 기간, 로그인하고 있는 사용자 수, 실행 대기 중인 작업의 수&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;사용자 정보 : 사용자명, 단말기 번호, 로그인한 시간, 휴지(idle) 시간, JCPU, PCPU, 실행하고 있는 명령&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;휴지 시간 : 마지막 명령 실행 후부터 현재까지 작업하지 않고 있는 시간&lt;/li&gt;
+          &lt;li&gt;JCPU : 로그인한 후 실행했던 전체 프로세스에서 사용한 CPU 시간&lt;/li&gt;
+          &lt;li&gt;PCPU : 현재 실행 중인 프로세스가 사용한 CPU 시간&lt;/li&gt;
+          &lt;li&gt;what : 현재 실행 중인 명령&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;형식 : w [사용자명]&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ w
+  17:05:24 up 1 day, 15:41, 2 users, load average: 0.22, 0.16, 0.15
+  USER TTY FROM LOGIN@ IDLE JCPU PCPU WHAT
+  ksshin tty1 10 6월 15 4.00s 11.93s 0.09s w
+  ksshin :0 :0 10 6월 15 ?xdm? 4:40m 5.36s init --user
+  $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;자신의-정보-보기&quot;&gt;자신의 정보 보기&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;who am i 명령&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;로그인 정보 출력&lt;/li&gt;
+      &lt;li&gt;who 명령에 인자로 am i를 지정한 것&lt;/li&gt;
+      &lt;li&gt;who 명령의 결과 중 자신에 대한 정보만 출력&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;whoami보다 상세한 사용자 정보 확인할 때 사용&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ who am i
+  ksshin tty1 2015-06-10 14:42
+  $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;whoami 명령&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;자신의 로그인 사용자명 출력&lt;/li&gt;
+      &lt;li&gt;가상콘솔을 사용하거나 여러 계정으로 동시에 로그인하고 있는 경우 현재 시스템을 사용하고 있는 사용자를확인할 때&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;형식 : whoami&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ whoami
+  ksshin
+  $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;id 명령&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;현재 사용자의 로그인 ID와 그룹 정보 출력&lt;/li&gt;
+      &lt;li&gt;사용자명, uid(사용자를 구분하는 번호), gid(그룹을 구분하는 번호) 정보 출력&lt;/li&gt;
+      &lt;li&gt;형식 : id [옵션]&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;옵션 : -a : 모든 그룹 정보 출력&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ id
+  uid=1001(user1) gid=1001(user1) groups=1001(user1)
+  $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;사용자-전환하기-1&quot;&gt;사용자 전환하기&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;su 명령&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;다른 사용자로 전환&lt;/li&gt;
+      &lt;li&gt;전환하려는 사용자의 비밀번호를 알고 있어야 함&lt;/li&gt;
+      &lt;li&gt;형식 : su [-] [사용자명]&lt;/li&gt;
+      &lt;li&gt;사용 예 : su, su – user1&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;다시 돌아가려면 exit 명령 사용&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ su user1
+  Password:
+  $ whoami
+  user1
+  $ pwd
+  /home/ksshin
+  $ exit
+  $ whoami
+  ksshin
+  $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;사용자가 ksshin에서 user1으로 전환하였지만 현재 디렉토리는 /home/ksshin&lt;/li&gt;
+          &lt;li&gt;su 명령만 사용하면, 사용자는 전환되지만 디렉토리는 변하지 않음&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;‘-’ 옵션을 사용하면 사용자의 초기화 파일을 실행시켜 작업 디렉토리도 변경&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ su - user1
+  Password:
+  $ pwd
+  /home/user1
+  $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;su 명령을 사용자 이름 지정 없이 사용하여 root로 전환&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ su
+  Password:
+  # whoami
+  root
+  #
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Fri, 20 Mar 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/devlog/2020/03/20/unix-21/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/03/20/unix-21/</guid>
+        
+        <category>unix</category>
+        
+        
+        <category>devlog</category>
+        
+      </item>
+    
+      <item>
+        <title>[유닉스] 프로세스 관리 명령</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-20-unix-20.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;프로세스-목록-보기&quot;&gt;프로세스 목록 보기&lt;/h1&gt;
+
+&lt;h3 id=&quot;ps-명령&quot;&gt;ps 명령&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;현재 실행 중인 프로세스의 정보를 출력&lt;/li&gt;
+  &lt;li&gt;형식 : ps [옵션]&lt;/li&gt;
+  &lt;li&gt;옵션
+    &lt;ul&gt;
+      &lt;li&gt;-e : 시스템에서 실행 중인 모든 프로세스 정보 출력&lt;/li&gt;
+      &lt;li&gt;-f : 프로세스에 대한 자세한 정보 출력&lt;/li&gt;
+      &lt;li&gt;-u uid : 특정 사용자에 대한 모든 프로세스 출력&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;사용 예 : ps, ps –ef, ps aux&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-20-unix-20-01.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;현재-단말기의-프로세스-목록-출력&quot;&gt;현재 단말기의 프로세스 목록 출력&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;ps 명령을 옵션 없이 사용하면 현재 쉘이나 단말기 창에서 실행시킨 사용자 프로세스의 정보 출력&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ ps
+  PID TTY TIME CMD
+  2570 tty1 00:00:12 bash
+  6710 tty1 00:00:00 ps
+  $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;프로세스의-상세-정보-출력&quot;&gt;프로세스의 상세 정보 출력&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;-f 옵션은 프로세스의 상세 정보 출력&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ ps –f
+  UID PID PPID C STIME TTY TIME CMD
+  ksshin 2570 1189 0 6월 16 tty1 00:00:12 -bash
+  ksshin 7174 2570 0 17:42 tty1 00:00:00 ps -f
+  $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-20-unix-20-02.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;전체-프로세스-목록-출력-system-v-계열&quot;&gt;전체 프로세스 목록 출력 (System V 계열)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;-e 옵션은 시스템에서 실행 중인 모든 프로세스 출력&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;TTY 값이 ‘?’인 것은 특정 터미널에서 실행되지 않은 프로세스로, 대부분 데몬&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ ps –e
+  PID TTY TIME CMD
+  1 ? 00:00:09 init
+  2 ? 00:00:00 kthreadd
+  3 ? 00:00:26 ksoftirqd/0
+  5 ? 00:00:00 kworker/0:0H
+  7 ? 00:00:24 rcu_sched
+  ......
+  $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;전체 프로세스의 상세 정보 확인은 –e 옵션과 –f 옵션을 함께 사용&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ ps –ef
+  UID PID PPID C STIME TTY TIME CMD
+  root 1 0 0 6월 16 ? 00:00:09 /sbin/init
+  root 2 0 0 6월 16 ? 00:00:00 [kthreadd]
+  root 3 2 0 6월 16 ? 00:00:26 [ksoftirqd/0]
+  root 5 2 0 6월 16 ? 00:00:00 [kworker/0:0H]
+  root 7 2 0 6월 16 ? 00:00:24 [rcu_sched]
+  ......
+  $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;전체-프로세스-목록-출력-bsd-계열&quot;&gt;전체 프로세스 목록 출력 (BSD 계열)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;ps aux 명령&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ ps aux | more
+  UID PID %CPU %MEM VSZ RSS TTY STAT START TIME COMMAND
+  root 1 0.0 0.3 4572 1804 ? Ss 6월 25 0:14 /sbin/init
+  root 2 0.0 0.0 0 0 ? S 6월 25 0:00 [kthread]
+  root 3 0.0 0.0 0 0 ? S 6월 25 0:46 [ksoftirqd/0]
+  root 5 0.0 0.0 0 0 ? S&amp;lt; 6월 25 0:00 [kworker/0:0H]
+  root 7 0.0 0.0 0 0 ? S 6월 25 0:43 [rcu_sched]
+  ......
+  $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-20-unix-20-03.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;특정-사용자의-프로세스-목록-출력&quot;&gt;특정 사용자의 프로세스 목록 출력&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;-u 옵션은 특정 사용자가 실행시킨 프로세스의 목록 확인&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ ps –u ksshin
+  PID TTY TIME CMD
+  1693 ? 00:00:05 gnome-keyring-d
+  1695 ? 00:00:05 init
+  1767 ? 00:00:00 ssh-agent
+  1772 ? 00:00:47 dbus-daemon
+  1780 ? 00:00:00 upstart-event-b
+  ......
+  $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;특정-프로세스-정보-검색-명령&quot;&gt;특정 프로세스 정보 검색 명령&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;ps 명령 이용&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ ps –ef | grep bash
+  ksshin 2570 1189 0 6월 16 tty1 00:00:12 –bash
+  ksshin 7205 2570 0 18:01 tty1 00:00:00 grep--color=auto bash
+  $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;pgrep 명령 이용&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;지정한 패턴과 일치하는 프로세스의 정보를 출력&lt;/li&gt;
+      &lt;li&gt;형식 : pgrep [옵션] [패턴]&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;사용 예 : pgrep bash, pgrep –l –u ksshin&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ pgrep –l bash
+  2570 bash
+  $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-20-unix-20-04.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;프로세스의-종료&quot;&gt;프로세스의 종료&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;응답 없는 프로세스나 불필요한 프로세스를 강제로 종료시키려면 해당 프로세스의 PID를 알아야 함&lt;/li&gt;
+  &lt;li&gt;ps –ef 명령으로 프로세스의 PID와 PPID 확인 가능&lt;/li&gt;
+  &lt;li&gt;PPID로 부모 프로세스를 종료시켜야 할 때도 있음&lt;/li&gt;
+  &lt;li&gt;프로세스 종료시키는 명령 : kill, pkill&lt;/li&gt;
+  &lt;li&gt;프로세스에 시그널을 보내 프로세스가 종료되게 함&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;kill-명령-이용해-프로세스-종료&quot;&gt;kill 명령 이용해 프로세스 종료&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;kill 명령
+    &lt;ul&gt;
+      &lt;li&gt;지정한 시그널을 프로세스에 보냄&lt;/li&gt;
+      &lt;li&gt;9번(SIGKILL)은 강제 종료, 15번(SIGTERM)은 프로세스 종료, 2번(SIGINT)은 인터럽트&lt;/li&gt;
+      &lt;li&gt;시그널을 지정하지 않으면 15번(SIGTERM) 시그널을 보냄&lt;/li&gt;
+      &lt;li&gt;형식 : kill [시그널] PID …&lt;/li&gt;
+      &lt;li&gt;시그널
+        &lt;ul&gt;
+          &lt;li&gt;-9 : 프로세스 강제 종료&lt;/li&gt;
+          &lt;li&gt;-15 : 프로세스 종료. 프로세스가 관련 파일을 정리 후 종료. 종료되지 않는 프로세스가 있을 수 있음&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;pkill-명령-이용해-프로세스-종료&quot;&gt;pkill 명령 이용해 프로세스 종료&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;프로세스 번호 대신 프로세스의 명령 이름(CMD)으로 프로세스를 찾아 종료시킴&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ sleep 100&amp;amp;
+  [1] 7386
+  $ sleep 200&amp;amp;
+  [2] 7387
+  $ ps –f
+  UID PID PPID C STIME TTY TIME CMD
+  ksshin 2570 1189 0 6월 16 tty1 00:00:12 -bash
+  ksshin 7386 2570 0 17:42 tty1 00:00:00 sleep 100
+  ksshin 7387 2570 0 17:42 tty1 00:00:00 sleep 200
+  ksshin 7174 2570 0 17:42 tty1 00:00:00 ps -f
+  $
+    
+    
+    
+  $ pkill sleep
+  [1]- Terminated sleep 100
+  [2]+ Terminated sleep 200
+  $ ps –f
+  UID PID PPID C STIME TTY TIME CMD
+  ksshin 2570 1189 0 6월 16 tty1 00:00:12 -bash
+  ksshin 7393 2570 0 17:42 tty1 00:00:00 ps -f
+  $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;프로세스-관리-도구&quot;&gt;프로세스 관리 도구&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;ps 명령으로는 현재 프로세스 목록을 확인만 할 수 있음&lt;/li&gt;
+  &lt;li&gt;이 정보를 가공하여 사용자가 보기 편하게 다양한 기능을 제공하는 도구&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;pstree-명령&quot;&gt;pstree 명령&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;프로세스의 상태를 트리(Tree) 구조로 출력해 주는 명령&lt;/li&gt;
+  &lt;li&gt;왼쪽이 부모 프로세스, 오른쪽이 자식 프로세스&lt;/li&gt;
+  &lt;li&gt;형식 : pstree [옵션]&lt;/li&gt;
+  &lt;li&gt;사용 예 : pstree -h&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-20-unix-20-05.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;top-명령&quot;&gt;top 명령&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;주기적으로 현재 실행 중인 프로세스에 대한 정보 출력&lt;/li&gt;
+  &lt;li&gt;자세한 요약 정보를 상단에 출력, 각 프로세스 정보를 하단에 출력&lt;/li&gt;
+  &lt;li&gt;형식 : top [옵션]&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-20-unix-20-06.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 20 Mar 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/devlog/2020/03/20/unix-20/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/03/20/unix-20/</guid>
+        
+        <category>unix</category>
+        
+        
+        <category>devlog</category>
+        
+      </item>
+    
+      <item>
+        <title>[유닉스] 프로세스의 개념과 종류</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-20-unix-19.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;데몬-프로세스&quot;&gt;데몬 프로세스&lt;/h1&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;프로세스process란&quot;&gt;프로세스(process)란&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;현재 실행 중인 프로그램&lt;/li&gt;
+  &lt;li&gt;프로그램 : 어떤 문제를 해결하기 위해 사용되는 명령어나 유틸리티의 집합&lt;/li&gt;
+  &lt;li&gt;프로그램을 실행하면 메모리(RAM, 주기억장치)에 상주. 이 때의 프로그램을 프로세스라고 함&lt;/li&gt;
+  &lt;li&gt;시스템 운영에 필요한 기능을 수행하는 시스템 프로세스, 사용자들이 실행시킨 사용자 프로세스&lt;/li&gt;
+  &lt;li&gt;사용자의 입력에 관계없이 실행되는 백그라운드(Background) 프로세스, 명령 입력 후 수행종료까지 기다려야 하는
+포그라운드(Foreground) 프로세스&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;멀티태스킹multitasking과-작업-전환&quot;&gt;멀티태스킹(Multitasking)과 작업 전환&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;멀티태스킹이란 동시에 하나 이상의 프로그램을 실행하는 것&lt;/li&gt;
+  &lt;li&gt;사용자 기준에서는, 다수의 프로그램들을 백그라운드 프로세스로 실행시킨 상태에서 추가로 포그라운드 프로세스로 다른 작업 수행 가능&lt;/li&gt;
+  &lt;li&gt;사용자가 실행한 프로세스는 중간에 중지시킬 수 있음&lt;/li&gt;
+  &lt;li&gt;백그라운드 프로세스를 포그라운드 프로세스로 전환하거나, 포그라운드 프로세스를 백그라운드 프로세스로 전환 가능&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;부모-프로세스와-자식-프로세스&quot;&gt;부모 프로세스와 자식 프로세스&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;프로세스는 부모-자식 관계가 있음&lt;/li&gt;
+  &lt;li&gt;부모 프로세스가 자식 프로세스를 생성, 자식 프로세스는 다른 자식 프로세스를 생성&lt;/li&gt;
+  &lt;li&gt;사용자가 실행시키는 명령도 프로세스로 실행됨.&lt;/li&gt;
+  &lt;li&gt;사용자 명령은 쉘의 자식 프로세스가 됨&lt;/li&gt;
+  &lt;li&gt;프로세스들은 각기 고유한 번호 PID(Process Identification Number)를 가짐&lt;/li&gt;
+  &lt;li&gt;부모 프로세스는 고유 번호 PPID (Parent Process Identification Number)를 가짐&lt;/li&gt;
+  &lt;li&gt;유닉스 부팅할 때 모든 프로세스의 조상인, PID가 1번인 init 프로세스 실행&lt;/li&gt;
+  &lt;li&gt;1번 프로세스가 fork 방식으로 다른 프로세스들 생성&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;프로세스의-생성&quot;&gt;프로세스의 생성&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;하나의 프로세스가 다른 프로세스를 실행하기 위한 시스템 호출 방법 : fork, exec&lt;/li&gt;
+  &lt;li&gt;fork
+    &lt;ul&gt;
+      &lt;li&gt;새로운 프로세스를 위해 메모리를 할당받아 복사본 형태의 프로세스를 실행하는 형태&lt;/li&gt;
+      &lt;li&gt;기존의 프로세스는 그대로 실행&lt;/li&gt;
+      &lt;li&gt;새롭게 생성된 프로세스는 원래의 프로세스와 똑같은 코드를 기반으로 실행&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;exec
+    &lt;ul&gt;
+      &lt;li&gt;원래의 프로세스를 새로운 프로세스로 대체하는 형태&lt;/li&gt;
+      &lt;li&gt;호출한 프로세스의 메모리에 새로운 프로세스의 코드를 덮어씌워 버림&lt;/li&gt;
+      &lt;li&gt;호출된 프로세스만 메모리에 남김&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;프로세스-초기화&quot;&gt;프로세스 초기화&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;프로그램을 사용하여 어떤 작업을 하기 위해서는 프로그램과 데이터가 메모리에 적재되어 있어야 함&lt;/li&gt;
+  &lt;li&gt;프로그램과 데이터가 메모리에 적재되어 CPU의 연산 과정을 통해 실행될 수 있는 것을 프로세스라 함&lt;/li&gt;
+  &lt;li&gt;메모리의 각 프로세스들은 모두 init 프로세스로부터 상속을 받아 생성됨&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;init-프로세스&quot;&gt;init 프로세스&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;init 프로세스는 PID가 1번인 프로세스임&lt;/li&gt;
+  &lt;li&gt;부팅 과정에서 커널이 PID 0번인 swapper 프로세스를 생성하고, swapper 프로세스가 init 프로세스를 생성&lt;/li&gt;
+  &lt;li&gt;init 프로세스는 /etc/inittab 파일을 읽어들여 실행됨&lt;/li&gt;
+  &lt;li&gt;init 프로세스가 사용자 환경에 필요한 스크립트를 실행시켜 사용자 환경이 구축되고 나면, 로그인 화면이 사용자에게나타남&lt;/li&gt;
+  &lt;li&gt;init 프로세스가 하는 일
+    &lt;ul&gt;
+      &lt;li&gt;파일 시스템의 구조 검사&lt;/li&gt;
+      &lt;li&gt;파일 시스템 마운트&lt;/li&gt;
+      &lt;li&gt;서버 데몬을 띄움&lt;/li&gt;
+      &lt;li&gt;사용자 로그인을 기다림&lt;/li&gt;
+      &lt;li&gt;사용자가 로그인하면 사용자를 위한 쉘을 띄움&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;시그널signal&quot;&gt;시그널(Signal)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;‘신호’라는 의미, 프로세스끼리 서로 통신할 때 사용&lt;/li&gt;
+  &lt;li&gt;특정 프로세스가 다른 프로세스에게 메시지 보낼 때 시그널 이용&lt;/li&gt;
+  &lt;li&gt;사용자가 인터럽트 키를 통해 발생하는 시그널, 프로세스가 발생하는 시그널, 하드웨어가 발생하는 시그널&lt;/li&gt;
+  &lt;li&gt;시그널 목록은 ‘kill –l’ 명령으로 확인&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-20-unix-19-01.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;데몬daemon&quot;&gt;데몬(daemon)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;주기적이고 지속적으로 서비스 요청을 처리하기 위해 계속 실행되는 프로세스&lt;/li&gt;
+  &lt;li&gt;백그라운드로 실행&lt;/li&gt;
+  &lt;li&gt;서버 역할을 하는 프로그램들이 해당되고 보통 이름 뒤에 데몬을 뜻하는 d를 붙임&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;데몬-프로세스-실행-방식&quot;&gt;데몬 프로세스 실행 방식&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;standalone 방식
+    &lt;ul&gt;
+      &lt;li&gt;부팅 시 실행되어 메모리에 계속 상주하면서 클라이언트의 서비스 요청을 처리하는 방식&lt;/li&gt;
+      &lt;li&gt;웹, 메일 등 빈번한 요청이 들어오는 서비스&lt;/li&gt;
+      &lt;li&gt;프로세스의 상태를 확인하는 ps 명령으로 확인해보면 항상 동작 중임&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;inet 방식
+    &lt;ul&gt;
+      &lt;li&gt;클라이언트의 서비스 요청이 들어왔을 때 관련 프로세스를 실행시키고 접속 종료 후 자동으로 프로세스 종료시키는 방식&lt;/li&gt;
+      &lt;li&gt;자주 사용하지 않는 서비스들에 대한 효율적인 메모리 관리에 유용함&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;프로세스의-종류&quot;&gt;프로세스의 종류&lt;/h1&gt;
+
+&lt;h3 id=&quot;데몬-프로세스-daemon-process&quot;&gt;데몬 프로세스 (daemon process)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;커널에 의해 실행되고 특정 서비스를 제공하기 위해 존재&lt;/li&gt;
+  &lt;li&gt;웹 서비스를 제공하기 위해서는 httpd 프로세스가 동작하고 있어야 함&lt;/li&gt;
+  &lt;li&gt;httpd를 웹 서버 데몬이라 함&lt;/li&gt;
+  &lt;li&gt;평소 대기 상태로 서비스 요청을 기다리다가 서비스 요청이 들어오면 해당 서비스 제공&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;부모-프로세스-parent-process&quot;&gt;부모 프로세스 (parent process)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;다른 프로세스를 만드는 프로세스&lt;/li&gt;
+  &lt;li&gt;부팅할 때 실행되는 1번 프로세스를 제외한 모든 프로세스는 부모 프로세스를 가지고 있음&lt;/li&gt;
+  &lt;li&gt;PPID(Parent Process ID)를 가짐&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;자식-프로세스-child-process&quot;&gt;자식 프로세스 (child process)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;부모 프로세스에 의해 만들어지는 프로세스&lt;/li&gt;
+  &lt;li&gt;할 일이 끝나면 부모 프로세스에게 결과를 돌려주고 종료&lt;/li&gt;
+  &lt;li&gt;vi를 실행시키면 쉘이 vi 프로세스 생성&lt;/li&gt;
+  &lt;li&gt;쉘이 부모 프로세스, vi가 자식 프로세스&lt;/li&gt;
+  &lt;li&gt;사용자가 vi 종료하면 다시 부모 프로세스인 쉘로 돌아감&lt;/li&gt;
+  &lt;li&gt;PID(Process ID)를 가짐&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;고아-프로세스-orphan-process&quot;&gt;고아 프로세스 (orphan process)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;자식 프로세스가 아직 실행 중인데 부모 프로세스가 먼저 종료되면 자식 프로세스는 고아 프로세스가 됨&lt;/li&gt;
+  &lt;li&gt;1번 프로세스가 새로운 부모 프로세스가 되어 고아 프로세스가 작업을 마치고 종료할 수 있도록 함&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;좀비-프로세스-zombie-process&quot;&gt;좀비 프로세스 (zombie process)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;자식 프로세스가 실행 종료 후에도 프로세스 테이블 목록에 남아있는 경우
+    &lt;ul&gt;
+      &lt;li&gt;일반적으로, 자식 프로세스가 종료할 때 부모 프로세스에게 종료 정보(exit status) 보내고, 부모 프로세스가 이 정보 받으면 프로세스 테이블 목록에서 자식 프로세스 삭제됨&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;부모 프로세스가 자식 프로세스의 종료 정보를 읽어가기를 기다림&lt;/li&gt;
+  &lt;li&gt;프로세스 목록에 defunct 프로세스라고 나오기도 함&lt;/li&gt;
+  &lt;li&gt;실제로 실행되고 있지 않지만 동작 중인 프로세스 테이블 목록을 차지&lt;/li&gt;
+  &lt;li&gt;부모 프로세스에게 SIGCHILD 시그널을 보내서 부모 프로세스가 자식 프로세스를 정리하게 하거나, 부모 프로세스 자체를 종료시킴&lt;/li&gt;
+  &lt;li&gt;부모 프로세스가 종료되면 좀비 프로세스는 고아 프로세스가 됨&lt;/li&gt;
+  &lt;li&gt;새로운 부모인 init 프로세스가 자식 프로세스의 종료 정보를 주기적으로 확인, 정리&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Fri, 20 Mar 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/devlog/2020/03/20/unix-19/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/03/20/unix-19/</guid>
+        
+        <category>unix</category>
+        
+        
+        <category>devlog</category>
+        
+      </item>
+    
+      <item>
+        <title>[Database] MySQL 뷰(View)</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-22.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;mysql-뷰view&quot;&gt;MySQL 뷰(View)&lt;/h1&gt;
+
+&lt;h3 id=&quot;뷰-view-개념&quot;&gt;뷰 (View) 개념&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;다른 테이블을 기반으로 만들어진 가상 테이블&lt;/li&gt;
+  &lt;li&gt;데이터를 실제로 저장하지 않음&lt;/li&gt;
+  &lt;li&gt;논리적으로만 존재하는 테이블&lt;/li&gt;
+  &lt;li&gt;일반 테이블과 동일한 방법으로 사용&lt;/li&gt;
+  &lt;li&gt;다른 뷰를 기반으로 새로운 뷰를 만들 수 있음&lt;/li&gt;
+  &lt;li&gt;뷰를 통해 기본 테이블의 내용을 쉽게 검색할 수 있음&lt;/li&gt;
+  &lt;li&gt;기본 테이블의 내용을 변화시키는 작업은 제한적임&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;뷰-생성&quot;&gt;뷰 생성&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;명령어 : CREATE VIEW&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-22-01.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;속성리스트 : 뷰를 구성하는 속성의 이름&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;생략 가능 – SELECT 문에서 사용한 속성의 이름을 뷰에서 사용&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;SELECT 문 : 기본 테이블에 대한 SELECT 문&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;ORDER BY를 사용할 수 없음&lt;/li&gt;
+      &lt;li&gt;일반적인 SELECT 문과 동일&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;WITH CHECK OPTION&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;생성한 뷰에 삽입이나 수정 연산을 할 때, SELECT 문에서 제시한 뷰의 정의 조건을 위반하면 수행되지 않도록 하는 제약조건을 제시&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;예제 : Customer 테이블에서 등급이 VIP이거나 Gold 인 고객의 account, name, credit 으로 구성된 뷰를 GoodCustomer 이름으로 생성하고- 뷰의 내용을 검색하시오.&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;기본 테이블의 데이터
+&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-22-02.png&quot; alt=&quot;&quot; /&gt;
+        &lt;ul&gt;
+          &lt;li&gt;뷰 생성 명령어 및 테이블 내용 조회
+&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-22-03.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+          &lt;li&gt;뷰의 구조 보기
+&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-22-04.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+          &lt;li&gt;뷰의 속성리스트가 SELECT 문의 속성리스트와 이름이 동일하므로 지정하지 않고 사용
+&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-22-05.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;예제 : GoodCustomer 뷰에서 Credit이 10000 이상인 고객의 account와 credit로 구성된 GoodCustomerBigCredit 뷰를 생성하시오.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-22-06.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-22-07.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;예제 : 주문 테이블에서 고객별 주문 건수로 구성된 뷰를 OrderByCustomer 라는 이름으로 생성하고, 내용을 조회하시오.&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;주문 테이블의 데이터 조회
+&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-22-08.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;OrderByCustomer 뷰를 생성하고 조회하기 위한 명령어
+&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-22-09.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;OrderByCustomer 뷰의 데이터 조회
+&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-22-10.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;OrderByCustomer 뷰의 구조
+&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-22-11.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;뷰의-활용&quot;&gt;뷰의 활용&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;뷰의 삽입, 수정, 삭제 연산&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;기본 테이블에서 수행됨&lt;/li&gt;
+      &lt;li&gt;제한적으로 수행됨&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;변경 불가능한 뷰&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;기본 테이블에 있는 내용이 아니고, 집계 함수로 계산된 내용을 포함하는 뷰&lt;/li&gt;
+      &lt;li&gt;DISTINCT 키위드를 포함하여 정의한 뷰&lt;/li&gt;
+      &lt;li&gt;GROUP BY 절을 포함하여 정의한 뷰&lt;/li&gt;
+      &lt;li&gt;여러 개의 테이블을 조인하여 정의한 뷰 – 변경이 불가능한 경우가 많음&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-22-12.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;뷰 삽입 (WITH CHECK OPTION)
+    &lt;ul&gt;
+      &lt;li&gt;제약 조건 : SELECT 문에서 제시한 정의 조건&lt;/li&gt;
+      &lt;li&gt;정의 조건을 위배하면 수행 안 됨&lt;/li&gt;
+      &lt;li&gt;예제 : 고객 테이블에서 등급(Grade)이 ‘VIP’ 이거나 ‘Gold’인 고객의 계정과, 이름, 등급을 가진 GoodCustomer4 뷰를 만드시오.
+&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-22-13.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-22-14.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;기본 테이블의 데이터가 삭제되거나 변경되면 뷰의 내용도 같이 변경됨
+    &lt;ul&gt;
+      &lt;li&gt;기본 테이블의 데이터를 삭제하기전 데이터
+&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-22-15.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;customer 테이블의 bank 계정 레코드를 삭제 후
+&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-22-16.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;뷰의-장점&quot;&gt;뷰의 장점&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;질의문을 쉽게 작성할 수 있다.&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;특정 조건을 만족하는 레코드들로 뷰를 미리 만들어 놓을 경우 ==&amp;gt; 사용자가 WHERE 절에 특정 조건을 넣지 않아도 된다.&lt;/li&gt;
+      &lt;li&gt;GROUP BY, 집계함수, 조인 등을 이용해 뷰를 미리 만들 경우 ==&amp;gt; 복잡한 질의문을 만들지 않고 SELECT절과 FROM 절만으로 데이터 검색이 가능&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;데이터의 보안 유지에 도움이 된다.
+    &lt;ul&gt;
+      &lt;li&gt;여러 사용자의 요구에 맞는 다양한 뷰를 미리 정의&lt;/li&gt;
+      &lt;li&gt;사용자에게 제공된 뷰를 통해서만 데이터에 접근하도록 권한 설정 ==&amp;gt; 뷰에 포함되지 않은 데이터를 사용자로부터 보호할 수 있음.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;데이터를 편리하게 관리할 수 있다.
+    &lt;ul&gt;
+      &lt;li&gt;제공된 뷰에 포함되지 않은 기본 테이블의 다른 속성은 사용자가 신경 쓸 필요가 없음&lt;/li&gt;
+      &lt;li&gt;제공된 뷰와 관련이 없는 다른 테이블의 변화에도 영향을 받지 않음.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;뷰-삭제&quot;&gt;뷰 삭제&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;뷰를 삭제해도 기본 테이블은 영향을 받지 않음&lt;/li&gt;
+  &lt;li&gt;명령어 : DROP VIEW 뷰이름 CASCADE ㅣ RESTRICT;&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;삭제할 뷰를 이용해 만들어진 다른 뷰가 존재할 경우 처리 방법&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;RESTRICT : 다른 뷰가 삭제되지 않음&lt;/li&gt;
+      &lt;li&gt;CASCADE : 다른 뷰도 같이 삭제&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Fri, 20 Mar 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/devlog/2020/03/20/database-22/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/03/20/database-22/</guid>
+        
+        <category>database</category>
+        
+        
+        <category>devlog</category>
+        
+      </item>
+    
+      <item>
+        <title>[Database] MySQL 일괄 실행, 백업, 복원</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-21.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;일괄-실행-백업-복원&quot;&gt;일괄 실행, 백업, 복원&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;MySQL Server 내에서 사용하는 명령어를 파일에 저장하여 일괄 처리&lt;/li&gt;
+  &lt;li&gt;파일의 확장자는 .sql 로 지정&lt;/li&gt;
+  &lt;li&gt;모든 명령을 파일에 저장하여 일괄처리함.&lt;/li&gt;
+  &lt;li&gt;데이터베이스를 백업한 후 복원하기 위하여 일괄처리함.&lt;/li&gt;
+  &lt;li&gt;Windows의 명령 프롬프트 창에서 실행한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;테이블-생성-일괄처리&quot;&gt;테이블 생성 일괄처리&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;편집기를 사용하여 CREATE TABLE 명령을 파일에 저장&lt;/li&gt;
+  &lt;li&gt;명령어 : mysql –u계정 –p비밀번호 데이터베이스명 &amp;lt; 일괄처리파일명&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-21-01.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-21-02.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;데이터베이스-백업&quot;&gt;데이터베이스 백업&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;DBMS 내의 데이터 백업은 데이터베이스 별로 한다.&lt;/li&gt;
+  &lt;li&gt;테이블 별로 백업 할 수 없다.&lt;/li&gt;
+  &lt;li&gt;명령어 : mysqldump –u계정 –p비밀번호 데이터베이스명 &amp;gt; 백업파일명&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-21-03.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-21-04.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;백업된-파일-살펴보기&quot;&gt;백업된 파일 살펴보기&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;복원할 데이터베이스에는 복원할 동일한 이름의 테이블이 있어도 된다.
+    &lt;ul&gt;
+      &lt;li&gt;테이블이 있을 경우, 테이블이 자동 삭제되고 백업된 데이터로 테이블이 생성됨&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-21-05.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;테이블을 사용할 동안 다른 사람의 접근을 제한한다.&lt;/li&gt;
+  &lt;li&gt;READ
+    &lt;ul&gt;
+      &lt;li&gt;LOCK 한 사람이 테이블을 읽을 수 만 있고 기록할 수는 없다.&lt;/li&gt;
+      &lt;li&gt;다른 사람은 테이블을 읽거나 쓰기를 할 수 없다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;READ LOCAL
+    &lt;ul&gt;
+      &lt;li&gt;LOCK한 사람은 읽기만 가능하다.&lt;/li&gt;
+      &lt;li&gt;다른 사람은 쓰기와 읽기가 가능하다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;WRITE
+    &lt;ul&gt;
+      &lt;li&gt;LOCK한 사람만 읽고 쓸수 있다.&lt;/li&gt;
+      &lt;li&gt;다른 사람은 읽고 쓰기가 불가능하다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;UNLOCK TABLES
+    &lt;ul&gt;
+      &lt;li&gt;LOCK 한 테이블을 해제한다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-21-06.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;데이터베이스-복원&quot;&gt;데이터베이스 복원&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;DBMS 내의 데이터 복원은 데이터베이스 별로 한다.&lt;/li&gt;
+  &lt;li&gt;테이블 별로 복원할 수 없다.&lt;/li&gt;
+  &lt;li&gt;복원할 데이터베이스는 DBMS내에 만들어져 있어야 한다.&lt;/li&gt;
+  &lt;li&gt;복원할 때 사용하는 계정은 해당 데이터베이스에 접근할 권한을 가지고 있어야 한다.&lt;/li&gt;
+  &lt;li&gt;명령어 : mysql –u계정 –p비밀번호 데이터베이스명 &amp;lt; 백업파일명&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Fri, 20 Mar 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/devlog/2020/03/20/database-21/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/03/20/database-21/</guid>
+        
+        <category>database</category>
+        
+        
+        <category>devlog</category>
+        
+      </item>
+    
+      <item>
+        <title>[Database] MySQL 테이블 이름변경 및 삭제</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-20.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;테이블-이름변경-및-삭제&quot;&gt;테이블 이름변경 및 삭제&lt;/h1&gt;
+
+&lt;h3 id=&quot;테이블-이름변경&quot;&gt;테이블 이름변경&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;명령어 : ALTER TABLE 구_테이블명 RENAME 신_테이블명&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;이름이 변경된 테이블을 참조하는 외래키가 있는 경우&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;외래키 선언 부분에 테이블 이름 변경이 반영됨&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-20-01.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-20-02.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;테이블-삭제&quot;&gt;테이블 삭제&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;명령어 : DROP TABLE 테이블명 [, 테이블명] [ CASCADE ㅣ RESTRICT ];&lt;/li&gt;
+  &lt;li&gt;삭제하는 테이블을 참조하는 테이블이 있는 경우
+    &lt;ul&gt;
+      &lt;li&gt;CASCADE : 같이 삭제&lt;/li&gt;
+      &lt;li&gt;RESTRICT : 삭제 취소&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-20-03.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-20-04.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 20 Mar 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/devlog/2020/03/20/database-20/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/03/20/database-20/</guid>
+        
+        <category>database</category>
+        
+        
+        <category>devlog</category>
+        
+      </item>
+    
+      <item>
+        <title>[Database] MySQL 테이블 변경</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-19.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;mysql-테이블-변경&quot;&gt;MySQL 테이블 변경&lt;/h1&gt;
+
+&lt;h3 id=&quot;alter-table를-사용하여-변경&quot;&gt;ALTER TABLE를 사용하여 변경&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;변경 내용
+    &lt;ul&gt;
+      &lt;li&gt;새로운 속성 추가&lt;/li&gt;
+      &lt;li&gt;기존 속성 삭제&lt;/li&gt;
+      &lt;li&gt;기존 속성 수정&lt;/li&gt;
+      &lt;li&gt;새로운 제약조건 추가&lt;/li&gt;
+      &lt;li&gt;기존 제약조건 삭제&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;alter-table-기본-형식&quot;&gt;ALTER TABLE 기본 형식&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-19-01.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;새로운-속성-추가--add-&quot;&gt;새로운 속성 추가 ( ADD )&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-19-02.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-19-03.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-19-04.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-19-05.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-19-06.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;속성-삭제--drop-&quot;&gt;속성 삭제 ( DROP )&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-19-07.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;속성-변경--change--modify-&quot;&gt;속성 변경 ( CHANGE / MODIFY )&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;(1) 속성 수정 (CHANGE)
+    &lt;ul&gt;
+      &lt;li&gt;속성의 이름과 데이터 타입을 수정함&lt;/li&gt;
+      &lt;li&gt;명령어 : ALTER TABLE 테이블명 CHANGE 이전필드명 새로운필드명 데이터타입;
+&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-19-08.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-19-09.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;(2) 속성의 데이터타입 수정 (MODIFY)
+    &lt;ul&gt;
+      &lt;li&gt;속성의 데이터타입만 수정함&lt;/li&gt;
+      &lt;li&gt;명령어 : ALTER TABLE 테이블명 MODIFY 필드명 새로운데이터타입;
+&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-19-10.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;제약-조건의-추가-및-삭제--add--drop-&quot;&gt;제약 조건의 추가 및 삭제 ( ADD / DROP )&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;(1) 기존의 제약 조건 확인하기
+    &lt;ul&gt;
+      &lt;li&gt;CREATE TABLE을 사용하여 테이블 생성시 적용된 모든 속성, 제약조건 확인&lt;/li&gt;
+      &lt;li&gt;CREATE TABLE의 SQL에서 선언되지 않은 제약조건이름을 확인할 수 있음&lt;/li&gt;
+      &lt;li&gt;명령어 : SHOW CREATE TABLE 테이블이름&lt;/li&gt;
+      &lt;li&gt;외래키 제약조건 : MySQL 내부에서 사용된 제약조건이름 확인
+        &lt;ul&gt;
+          &lt;li&gt;제약조건을 삭제하기 위하여 확인한 제약조건이름을 사용하여야 함&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-19-11.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-19-12.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;(2) 기존의 외래키 제약 조건 삭제하기
+    &lt;ul&gt;
+      &lt;li&gt;“SHOW CREATE TABLE 테이블명” 질의로 확인한 제약조건이름을 사용하여 삭제&lt;/li&gt;
+      &lt;li&gt;명령어 : ALTER TABLE 테이블명 DROP FOREIGN KEY 제약조건이름&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-19-13.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-19-14.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;(3) 새로운 외래키 제약 조건 추가
+    &lt;ul&gt;
+      &lt;li&gt;새로운 외래키 제약 조건을 테이블에 추가하기 위하여 사용&lt;/li&gt;
+      &lt;li&gt;명령어 : ALTER TABLE 테이블명 ADD 외래키제약조건
+&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-19-15.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-19-16.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;e-테이블-관련-기타-질의&quot;&gt;E. 테이블 관련 기타 질의&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;(1) 데이터베이스내의 모든 테이블 상태 확인하기
+    &lt;ul&gt;
+      &lt;li&gt;명령어 : SHOW TABLE STATUS FROM 데이터베이스명&lt;/li&gt;
+      &lt;li&gt;확인 가능 정보
+        &lt;ul&gt;
+          &lt;li&gt;레코드 수&lt;/li&gt;
+          &lt;li&gt;평균 레코드 길이&lt;/li&gt;
+          &lt;li&gt;전체 데이터 길이&lt;/li&gt;
+          &lt;li&gt;AUTO_INCREMENT 값&lt;/li&gt;
+          &lt;li&gt;생성 날짜&lt;/li&gt;
+          &lt;li&gt;사용언어
+&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-19-17.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Fri, 20 Mar 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/devlog/2020/03/20/database-19/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/03/20/database-19/</guid>
+        
+        <category>database</category>
+        
+        
+        <category>devlog</category>
+        
+      </item>
+    
+      <item>
+        <title>[Database] 기본키, 대체키, 외래키, 테이블 제약 조건</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/03/2020-03-19-database-18.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;테이블-생성---키-정의&quot;&gt;테이블 생성 - 키 정의&lt;/h1&gt;
 
 &lt;ul&gt;
   &lt;li&gt;기본키, 대체키, 외래키를 지정
-&lt;img src=&quot;/assets/img/database/2020-03-19-database-18-01.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/img/database/2020/03/2020-03-19-database-18-01.png&quot; alt=&quot;&quot; /&gt;
 &lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -41,9 +1346,9 @@
   &lt;li&gt;기본키는 하나의 투플을 선택할 수 있음&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-19-database-18-02.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/03/2020-03-19-database-18-02.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-19-database-18-03.png&quot; alt=&quot;&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/03/2020-03-19-database-18-03.png&quot; alt=&quot;&quot; /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;대체키&quot;&gt;대체키&lt;/h3&gt;
@@ -58,13 +1363,13 @@
   &lt;li&gt;예 : UNIQUE ( customer, item ) &amp;lt;== 기본키의 값은 주문을 한 고객(customer)과 주문제품 (item)으로 구성됨&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-19-database-18-04.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/03/2020-03-19-database-18-04.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-19-database-18-05.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/03/2020-03-19-database-18-05.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-19-database-18-06.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/03/2020-03-19-database-18-06.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-19-database-18-07.png&quot; alt=&quot;&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/03/2020-03-19-database-18-07.png&quot; alt=&quot;&quot; /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;외래키&quot;&gt;외래키&lt;/h3&gt;
@@ -81,7 +1386,7 @@
   &lt;li&gt;참조 무결성 제약 조건 옵션&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-19-database-18-08.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/03/2020-03-19-database-18-08.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;참조 무결성 제약 조건 옵션을 선택하지 않은 경우
@@ -92,34 +1397,34 @@
   &lt;li&gt;ON DELETE NO ACTION 실행&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-19-database-18-09.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/03/2020-03-19-database-18-09.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-19-database-18-10.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/03/2020-03-19-database-18-10.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-19-database-18-11.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/03/2020-03-19-database-18-11.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;ON DELETE CASCADE 실행&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-19-database-18-12.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/03/2020-03-19-database-18-12.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-19-database-18-13.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/03/2020-03-19-database-18-13.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-19-database-18-14.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/03/2020-03-19-database-18-14.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;ON DELETE SET NULL 실행
-&lt;img src=&quot;/assets/img/database/2020-03-19-database-18-15.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+&lt;img src=&quot;/assets/img/database/2020/03/2020-03-19-database-18-15.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-19-database-18-16.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/03/2020-03-19-database-18-16.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-19-database-18-17.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/03/2020-03-19-database-18-17.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;ON DELETE SET DEFAULT
     &lt;ul&gt;
       &lt;li&gt;MySQL 에서는 Parser는 인식하지만, 데이블 정의는 거절됨
-&lt;img src=&quot;/assets/img/database/2020-03-19-database-18-18.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/img/database/2020/03/2020-03-19-database-18-18.png&quot; alt=&quot;&quot; /&gt;
 &lt;br /&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
@@ -145,9 +1450,9 @@
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-19-database-18-19.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/03/2020-03-19-database-18-19.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-19-database-18-20.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/03/2020-03-19-database-18-20.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 </description>
         <pubDate>Thu, 19 Mar 2020 00:00:00 +0900</pubDate>
@@ -3102,8 +4407,8 @@ div span.icon {
       </item>
     
       <item>
-        <title>[Database] SQL 개요와 SQL 실습 및 데이터 정의 (1/3)</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-12-database-17.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+        <title>[Database] SQL 개요와 MySQL 테이블 생성, AUTO_INCREMENT(자동증가)</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/03/2020-03-12-database-17.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;sql-개요&quot;&gt;SQL 개요&lt;/h1&gt;
 &lt;p&gt;&lt;br /&gt;
@@ -3208,7 +4513,7 @@ div span.icon {
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h1 id=&quot;데이터의-정의&quot;&gt;데이터의 정의&lt;/h1&gt;
+&lt;h1 id=&quot;mysql-테이블-생성-auto_increment자동증가&quot;&gt;MySQL 테이블 생성, AUTO_INCREMENT(자동증가)&lt;/h1&gt;
 &lt;p&gt;&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
@@ -3217,23 +4522,23 @@ div span.icon {
 &lt;ul&gt;
   &lt;li&gt;
     &lt;p&gt;A. Customer 테이블
-&lt;img src=&quot;/assets/img/database/2020-03-12-database-17-01.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/img/database/2020/03/2020-03-12-database-17-01.png&quot; alt=&quot;&quot; /&gt;
 &lt;br /&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;B. Items 테이블
-&lt;img src=&quot;/assets/img/database/2020-03-12-database-17-02.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/img/database/2020/03/2020-03-12-database-17-02.png&quot; alt=&quot;&quot; /&gt;
 &lt;br /&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;C. Orders 테이블
-&lt;img src=&quot;/assets/img/database/2020-03-12-database-17-03.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/img/database/2020/03/2020-03-12-database-17-03.png&quot; alt=&quot;&quot; /&gt;
 &lt;br /&gt;&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;테이블-생성--속성-정의&quot;&gt;테이블 생성 – 속성 정의&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-12-database-17-04.png&quot; alt=&quot;&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/03/2020-03-12-database-17-04.png&quot; alt=&quot;&quot; /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
@@ -3249,7 +4554,7 @@ div span.icon {
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-12-database-17-05.png&quot; alt=&quot;&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/03/2020-03-12-database-17-05.png&quot; alt=&quot;&quot; /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
@@ -3288,9 +4593,9 @@ div span.icon {
 &lt;ul&gt;
   &lt;li&gt;
     &lt;p&gt;C. 속성의 데이터 타입
-&lt;img src=&quot;/assets/img/database/2020-03-12-database-17-06.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/img/database/2020/03/2020-03-12-database-17-06.png&quot; alt=&quot;&quot; /&gt;
 &lt;br /&gt;
-&lt;img src=&quot;/assets/img/database/2020-03-12-database-17-07.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/img/database/2020/03/2020-03-12-database-17-07.png&quot; alt=&quot;&quot; /&gt;
 &lt;br /&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
@@ -3380,22 +4685,22 @@ div span.icon {
 &lt;ul&gt;
   &lt;li&gt;
     &lt;p&gt;기본 테이블 생성
-&lt;img src=&quot;/assets/img/database/2020-03-12-database-17-08.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/img/database/2020/03/2020-03-12-database-17-08.png&quot; alt=&quot;&quot; /&gt;
 &lt;br /&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;데이터 입력
-&lt;img src=&quot;/assets/img/database/2020-03-12-database-17-09.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/img/database/2020/03/2020-03-12-database-17-09.png&quot; alt=&quot;&quot; /&gt;
 &lt;br /&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;데이터입력 : NOT NULL 속성 데이터만 입력시
-&lt;img src=&quot;/assets/img/database/2020-03-12-database-17-10.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/img/database/2020/03/2020-03-12-database-17-10.png&quot; alt=&quot;&quot; /&gt;
 &lt;br /&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;AUTO_INCREMENT 적용시
-&lt;img src=&quot;/assets/img/database/2020-03-12-database-17-11.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/img/database/2020/03/2020-03-12-database-17-11.png&quot; alt=&quot;&quot; /&gt;
 &lt;br /&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
@@ -3403,13 +4708,13 @@ div span.icon {
 
     &lt;ul&gt;
       &lt;li&gt;테이블 생성 직후에 설정
-&lt;img src=&quot;/assets/img/database/2020-03-12-database-17-12.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/img/database/2020/03/2020-03-12-database-17-12.png&quot; alt=&quot;&quot; /&gt;
 &lt;br /&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;AUTO_INCREMENT 적용시 INSERT 오류
-&lt;img src=&quot;/assets/img/database/2020-03-12-database-17-13.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/img/database/2020/03/2020-03-12-database-17-13.png&quot; alt=&quot;&quot; /&gt;
 &lt;br /&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
@@ -3421,25 +4726,25 @@ div span.icon {
       &lt;/li&gt;
       &lt;li&gt;
         &lt;p&gt;AUTO_INCREMENT 속성 값 = 숫자를 사용하면, 입력한 숫자로 값이 지정됨&lt;br /&gt;
-&lt;img src=&quot;/assets/img/database/2020-03-12-database-17-15.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/img/database/2020/03/2020-03-12-database-17-15.png&quot; alt=&quot;&quot; /&gt;
 &lt;br /&gt;&lt;/p&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-12-database-17-16.png&quot; alt=&quot;&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/03/2020-03-12-database-17-16.png&quot; alt=&quot;&quot; /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;실습용-데이터베이스-데이터-정의-items-테이블&quot;&gt;실습용 데이터베이스 데이터 정의 (Items 테이블)&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-12-database-17-17.png&quot; alt=&quot;&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/03/2020-03-12-database-17-17.png&quot; alt=&quot;&quot; /&gt;
 &lt;br /&gt;
-&lt;img src=&quot;/assets/img/database/2020-03-12-database-17-18.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/img/database/2020/03/2020-03-12-database-17-18.png&quot; alt=&quot;&quot; /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Orders 테이블
-&lt;img src=&quot;/assets/img/database/2020-03-12-database-17-19.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+&lt;img src=&quot;/assets/img/database/2020/03/2020-03-12-database-17-19.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 </description>
@@ -3456,7 +4761,7 @@ div span.icon {
     
       <item>
         <title>[Database] MySQL 기본 명령어 - 데이터베이스 및 사용자 계정</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020-03-12-database-16.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/03/2020-03-12-database-16.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;mysql-기본-명령어---데이터베이스&quot;&gt;MySQL 기본 명령어 - 데이터베이스&lt;/h1&gt;
 &lt;ul&gt;
@@ -4168,1161 +5473,6 @@ gulp-sass는 위에서 살펴본 node-sass를 Gulp에서 사용할 수 있도록
         <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/03/11/sass-03/</guid>
         
         <category>sass</category>
-        
-        
-        <category>devlog</category>
-        
-      </item>
-    
-      <item>
-        <title>[Sass/SCSS] Sass와 SCSS는 차이점</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/sass/2020-03-10-sass-02.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;sass와-scss는-차이점&quot;&gt;Sass와 SCSS는 차이점&lt;/h1&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Sass(Syntactically Awesome Style Sheets)의 3버전에서 새롭게 등장한 SCSS는 CSS 구문과 완전히 호환되도록 
-  새로운 구문을 도입해 만든 Sass의 모든 기능을 지원하는 CSS의 상위집합(Superset) 이다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;SCSS는 CSS와 거의 같은 문법으로 Sass 기능을 지원한다&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;더 쉽고 간단한 차이는 {}(중괄호)와 ;(세미콜론)의 유무 이다&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;Sass:&lt;/p&gt;
-
-        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  .list
-    width: 100px
-    float: left
-    li
-      color: red
-      background: url(&quot;./image.jpg&quot;)
-      &amp;amp;:last-child
-        margin-right: -10px
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-
-        &lt;ul&gt;
-          &lt;li&gt;Sass는 선택자의 유효범위를 ‘들여쓰기’로 구분&lt;/li&gt;
-        &lt;/ul&gt;
-
-        &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;SCSS:&lt;/p&gt;
-
-        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  .list {
-    width: 100px;
-    float: left;
-    li {
-      color: red;
-      background: url(&quot;./image.jpg&quot;);
-      &amp;amp;:last-child {
-        margin-right: -10px;
-      }
-    }
-  }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-
-        &lt;ul&gt;
-          &lt;li&gt;SCSS는 {}로 범위를 구분&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Sass 와 SCSS의 차는 Mixins(‘믹스인’은 재사용 가능한 기능을 만드는 방식의 의미) 사용 방식에도 차이가 있다.&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;Sass:&lt;/p&gt;
-
-        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  =border-radius($radius)
-    -webkit-border-radius: $radius
-    -moz-border-radius:    $radius
-    -ms-border-radius:     $radius
-    border-radius:         $radius
-        
-  .box
-    +border-radius(10px)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-
-        &lt;ul&gt;
-          &lt;li&gt;Sass는 =와 + 기호로 Mixins 기능을 사용&lt;/li&gt;
-        &lt;/ul&gt;
-
-        &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;SCSS:&lt;/p&gt;
-
-        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; @mixin border-radius($radius) {
-   -webkit-border-radius: $radius;
-      -moz-border-radius: $radius;
-       -ms-border-radius: $radius;
-           border-radius: $radius;
- }
-       
- .box { @include border-radius(10px); }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-
-        &lt;ul&gt;
-          &lt;li&gt;SCSS는 @mixin과 @include로 기능을 사용&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Sass는 좀 더 간결하고 작성하기 편리하며, {}나 ;를 사용하지 않아도 되니 코드가 훨씬 깔끔해짐&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;SCSS는 인라인 코드(한 줄 작성)를 작성할 수 있고, CSS와 유사한 문법을 가지기 때문에 코드 통합이 훨씬 수월&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;장단점이 있기 때문에 회사나 팀에서 원하는 방식을 사용해야 하거나, 개인 취향에 따라서 선택&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;보통의 경우 SCSS를 추천&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    본 포스팅은 HEROPY 님의 영상과 블로그를 보고 공부한 내용을 정리한 것입니다.
-    https://heropy.blog/2018/01/31/sass/
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-</description>
-        <pubDate>Tue, 10 Mar 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/03/10/sass-02/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/03/10/sass-02/</guid>
-        
-        <category>sass</category>
-        
-        
-        <category>devlog</category>
-        
-      </item>
-    
-      <item>
-        <title>[Sass/SCSS] CSS Preprocessor(전처리기) 란?</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/sass/2020-03-09-sass-01.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;css-preprocessor-란&quot;&gt;CSS Preprocessor 란?&lt;/h1&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Sass, Less 등이 있습니다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;이 친구들은 CSS 전(예비)처리기 입니다. 보통 CSS Preprocessor 라고 부릅니다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;CSS가 동작하기 전에 사용하는 기능으로, 웹에서는 분명 CSS가 동작하지만 우리는 CSS의 불편함을 이런 확장 기능으로 상쇄할 수 있습니다.&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  사스는 기초 언어에 힘과 우아함을 더해주는 CSS의 확장이다.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;어떻게-사용할까&quot;&gt;어떻게 사용할까?&lt;/h1&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;위에서 언급한 것처럼 웹에서는 CSS만 동작합니다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Sass, Less, Stylus 같은 전처리기(이하 ‘전처리기’로 표기)는 직접 동작시킬 수 없습니다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;그렇다면 어떻게 사용할 수 있을까?&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;CSS는 불편하니 일단 배제하고 우선 전처리기로 작성(코딩)합니다.
-  전처리기는 CSS 문법과 굉장히 유사하지만 선택자의 중첩(Nesting)이나 조건문, 반복문, 다양한 단위(Unit)의 연산 등… 
-  표준 CSS 보다 훨씬 많은 기능을 사용해서 편리하게 작성할 수 있습니다.
-  단, 웹에서는 직접 동작하지 않으니 이렇게 작성한 전처리기를 웹에서 동작 가능한 표준의 CSS로 컴파일(Compile)합니다.
-  전처리기로 작성하고 CSS로 컴파일해서 동작시키는 거죠.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;왜-sassscss인가&quot;&gt;왜 Sass(SCSS)인가?&lt;/h1&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;보통 언급되는 전처리기 3대장으로 Less, Sass(SCSS), Stylus가 있습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Less&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;Less에서 제공하는 기능의 한계.&lt;/li&gt;
-      &lt;li&gt;기능이 Sass나 Stylus에는 있음.&lt;/li&gt;
-      &lt;li&gt;하지만 진입장벽이 낮기 때문에 접하기 쉽고 그만큼 많이 사용&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Stylus&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;깔끔하고 좀 더 세련됐으며 기능&lt;/li&gt;
-      &lt;li&gt;하지만 덜 사용되며(덜 유명하며) 비교적 늦게 나왔기 때문에 성숙도는 떨어짐&lt;/li&gt;
-      &lt;li&gt;그 때문인지 컴파일 후 사소한 버그가 몇몇&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Sass(SCSS)&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;위에 언급한 두 가지 전처리기의 장점을 모두 가지고있음.&lt;/li&gt;
-      &lt;li&gt;문법은 Sass가 Stylus와 비슷하고, SCSS는 Less와 비슷하며, Sass와 SCSS는 하나의 컴파일러로 모두 컴파일 가능&lt;/li&gt;
-      &lt;li&gt;2006년부터 시작하여 가장 오래된 CSS 확장 언어이며 그만큼 높은 성숙도와 많은 커뮤니티를 가지고 있고 기능도 훌륭&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    본 포스팅은 HEROPY 님의 영상과 블로그를 보고 공부한 내용을 정리한 것입니다.
-    https://heropy.blog/2018/01/31/sass/
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-</description>
-        <pubDate>Mon, 09 Mar 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/03/09/sass-01/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/03/09/sass-01/</guid>
-        
-        <category>sass</category>
-        
-        
-        <category>devlog</category>
-        
-      </item>
-    
-      <item>
-        <title>[MySQL/MariaDB] REPLACE 사용법(콤마제거, 치환하기)</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/mysql/2020-03-08-tip-mysql-01.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;mysql-replace-콤마제거-치환하기&quot;&gt;MySQL REPLACE (콤마제거, 치환하기)&lt;/h1&gt;
-&lt;h3 id=&quot;how-to-using-select-replace-with-mysql&quot;&gt;How to Using SELECT REPLACE with MySQL&lt;/h3&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;SELECT문 사용시 컬럼에 콤마(,) 또는 치환해야할 문자가 있을 때 콤마를 제거하거나 문자를 치환해서 출력 하기 위해 사용&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;1-select-시-그냥-replace-만을-사용해서-콤마를-제거하는-경우&quot;&gt;1. SELECT 시 그냥 REPLACE 만을 사용해서 콤마를 제거하는 경우&lt;/h2&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    ﻿SELECT ﻿REPLACE(컬럼, '컬럼 안에 바꿔야할 문자','바꿔서 출력될 문자') FROM 테이블 
-    
-    ﻿﻿SELECT ﻿REPLACE(price, ',','') FROM FOODS
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;푸드 테이블의 price컬럼에서 콤마를 제거해서 출력하라&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h2 id=&quot;2-select-시--replace를사용해서-콤마를-제거-후-sum-을-하는-경우&quot;&gt;2. SELECT 시  REPLACE를사용해서 콤마를 제거 후 SUM 을 하는 경우&lt;/h2&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    ﻿SELECT SUM(REPLACE(price, ',','')) AS totalPrice FROM FOODS 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;푸드 테이블의 price컬럼에서 콤마를 제거하고 price 컬럼을 모두 더해서 tatalPrice라는 이름으로 출력하라&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Sun, 08 Mar 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/tip/2020/03/08/tip-mysql-01/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/03/08/tip-mysql-01/</guid>
-        
-        <category>mysql</category>
-        
-        
-        <category>tip</category>
-        
-      </item>
-    
-      <item>
-        <title>[JAVA] Java에서 백분율(퍼센트) 계산하기</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/java/2020-03-07-tip-java-01.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;java에서-백분율퍼센트-계산하기&quot;&gt;Java에서 백분율(퍼센트) 계산하기&lt;/h1&gt;
-&lt;h3 id=&quot;how-to-calculate-percentage-in-java&quot;&gt;How to calculate percentage in java&lt;/h3&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;1-전체값에서-일부값은-몇-퍼센트&quot;&gt;1. 전체값에서 일부값은 몇 퍼센트?&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;일부값 / 전체값 *100&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// 10은 100에서 몇 퍼센트?
-System.out.format(&quot;%.2f%%%n&quot;, 10.0 / 100.0 * 100.0);
-// 출력 결과: 10.00%
-
-
-// 33은 100에서 몇 퍼센트?
-int x = 33;
-int y = 100;
-System.out.println( (double) x / (double) y * 100.0 + &quot;%&quot;);
-// 출력 결과: 33.0%
-// 정수의 경우에는 (double) 로 실수화시키지 않으면
-// 0.0 이라는 엉뚱한 값이 나옴
-// 맨 끝의 + &quot;%&quot; 이 부분은 공식의 일부가 아니라 퍼센트 기호 출력
-
-
-// 105는 300의 몇퍼센트?
-double x2 = 105.0;
-double y2 = 300.0;
-System.out.format(&quot;%.2f%%%n&quot;, x2 / y2 * 100.0);
-// 출력 결과: 35.00%
-// 실수형 변수에 값을 넣어두는 것이 좋음
-
-
-// 한달 봉급 156만원인 사람이, 음식 값으로 21만원을 쓰면,
-// 그 음식값은 한 달 봉급의 몇 퍼센트?
-System.out.format(&quot;%.2f%%%n&quot;, 210000.0 / 1560000.0 * 100.0);
-// 출력 결과: 13.46%
-
-
-// 만약 봉급 156만원으로 모두 먹는 데 사용했다면
-// 100% 가 나와야겠지요.
-System.out.format(&quot;%.2f%%%n&quot;, 1560000.0 / 1560000.0 * 100.0);
-// 출력 결과: 100.00%
-
-// 만약 아무것도 먹지 않았면 0% 가 나와야합니다.
-System.out.format(&quot;%.2f%%%n&quot;, 0.0 / 1560000.0 * 100.0);
-// 출력 결과: 0.00%
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h3 id=&quot;1-전체값의-몇-퍼센트는-얼마&quot;&gt;1. 전체값의 몇 퍼센트는 얼마?&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;전체값 * 퍼센트 /100&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// 100의 10퍼센트는 얼마?
-System.out.format(&quot;%.2f%n&quot;, 100.0 * 10.0 / 100.0);
-// 출력 결과: 10.00
-
-
-// 100의 33퍼센트는 얼마?
-System.out.format(&quot;%.2f%n&quot;, 100.0 * 33.0 / 100.0);
-// 출력 결과: 33.00
-
-
-// 300의 35퍼센트는 얼마?
-System.out.format(&quot;%.2f%n&quot;, 300.0 * 35.0 / 100.0);
-// 출력 결과: 105.00
-
-
-// 156만원의 13.46퍼센트는 얼마?
-System.out.format(&quot;%.2f%n&quot;, 1560000.0 * 13.46 / 100.0);
-// 출력 결과 (21만원에 가까운 값): 209976.00
-
-
-// 156만원의 100퍼센트는 얼마?
-System.out.format(&quot;%.2f%n&quot;, 1560000.0 * 100.0 / 100.0);
-// 출력 결과: 1560000.00
-
-
-// 156만원의 0퍼센트는 얼마?
-System.out.format(&quot;%.2f%n&quot;, 1560000.0 * 0.0 / 100.0);
-// 출력 결과: 0.00
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-</description>
-        <pubDate>Sat, 07 Mar 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/tip/2020/03/07/tip-java-01/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/03/07/tip-java-01/</guid>
-        
-        <category>java</category>
-        
-        
-        <category>tip</category>
-        
-      </item>
-    
-      <item>
-        <title>[유닉스] vi 환경 설정</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-06-unix-15.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;환경설정-명령어&quot;&gt;환경설정 명령어&lt;/h1&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;1-파일-읽어오기여러-파일-편집하기&quot;&gt;1. 파일 읽어오기/여러 파일 편집하기&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;파일 중간에 다른 파일 내용 삽입하거나 작업 중이던 파일을 종료하고 다른 파일로 작업 전환하기 위한 명령키들은 마지막 행 모드에서 실행&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-06-unix-15-01.png&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;파일 읽어들이기&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;:r 파일명&lt;/li&gt;
-      &lt;li&gt;현재 작업 중인 파일에서 다른 파일을 읽어들이면 현재 커서 위치 다음 행에 삽입됨&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;다른 파일 편집하기&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;:e 파일명&lt;/li&gt;
-      &lt;li&gt;현재 작업 중인 파일을 종료하고 다른 파일을 편집하려고 할 때 사용&lt;/li&gt;
-      &lt;li&gt;:w 명령을 이용하여 현재 작업 중인 파일 저장 후 실행&lt;/li&gt;
-      &lt;li&gt;작업 중이 내용 저장하지 않고 다른 파일 편집하려고 할 때는 “:e! 파일명“ 입력&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;여러 파일 편집하기&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;vi 시작할 때 파일명 여러 개 지정&lt;/li&gt;
-      &lt;li&gt;지정한 순서대로 파일이 열림&lt;/li&gt;
-      &lt;li&gt;편집 후 다음 파일로 이동시 :n 명령키 사용&lt;/li&gt;
-      &lt;li&gt;다시 처음 파일로 이동하려면 “:e 파일명” 사용&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;2-vi에서-쉘-명령-사용하기&quot;&gt;2. vi에서 쉘 명령 사용하기&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;vi 작업 도중 디렉토리의 파일 목록 확인, 프로그램 컴파일 등 쉘 명령 실행할 경우&lt;/li&gt;
-  &lt;li&gt;vi를 종료하지 않고 쉘 명령 실행 가능&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-06-unix-15-02.png&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;:! 기능 이용&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;하나의 명령만 실행할 경우 가장 간단한 방법&lt;/li&gt;
-      &lt;li&gt;형식 : :! 쉘 명령&lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;사용 예 : :! date&lt;/p&gt;
-
-        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  ~
-  ~
-  :! date
-  2015. 06. 10. (수) 16:24:06 KST
-  Press ENTER or type command to continue
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;:sh 기능 이용&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;쉘 명령 여러 개를 실행할 경우&lt;/li&gt;
-      &lt;li&gt;vi를 잠시 빠져나가 작업 수행 후 돌아옴&lt;/li&gt;
-      &lt;li&gt;vi로 다시 돌아오려면 exit 입력&lt;/li&gt;
-      &lt;li&gt;형식 : :sh&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;3-기타-명령&quot;&gt;3. 기타 명령&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-06-unix-15-03.png&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;화면 다시 출력&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;vi 작업 중 시스템 메시지 출력 등 화면이 정상이 아닐 때 Ctrl+L 명령키 입력하면 메시지들 사라지고 원래 작업 중인 내용만 남음&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;행 연결&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;J(대문자 j) 키 사용&lt;/li&gt;
-      &lt;li&gt;커서가 위치한 행과 다음 행을 하나의 행으로 만들어줌&lt;/li&gt;
-      &lt;li&gt;현재 커서가 unix의 ‘x’위치에 있고, 현재 위치에서 J 명령키 입력&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-06-unix-15-04.png&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;이전 명령 반복&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;.(점) 명령키&lt;/li&gt;
-      &lt;li&gt;바로 앞에 했던 명령을 반복적으로 수행&lt;/li&gt;
-      &lt;li&gt;현재 커서가 editor의 ‘e’에 있고, 현재 위치에서 . 명령키 입력&lt;/li&gt;
-      &lt;li&gt;바로 전 명령이 J 명령이었으므로 같은 명령을 반복&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-06-unix-15-05.png&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;대소문자 전환&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;~(틸드) 명령키&lt;/li&gt;
-      &lt;li&gt;커서가 위치한 글자를 소문자는 대문자로, 대문자는 소문자로 바꿈&lt;/li&gt;
-      &lt;li&gt;현재 커서가 test의 ‘t’에 있고, 현재 위치에서 ~ 명령키 입력&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-06-unix-15-06.png&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;4-읽기-전용-편집&quot;&gt;4. 읽기 전용 편집&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;파일을 읽기 전용으로 불러와 원본의 손상을 막을 수 있는 기능&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;vi –R 옵션 사용&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ vi –R hosts
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;view 명령 사용&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ view hosts
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;5-데이터-복구&quot;&gt;5. 데이터 복구&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;컴퓨터를 사용하다 갑자기 정전이 되거나 실수로 전원 코드를 뽑게 되어 시스템이 갑자가 다운되었을 때&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;vi 에디터는 실제 파일을 편집하는게 아니라 편집 버퍼에 편집 내용이 복사됨&lt;/li&gt;
-      &lt;li&gt;시스템이 갑자기 다운되어도 편집 버퍼는 자동 저장&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;편집하던 파일 복구 방법&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;vi –r [파일 명] : 파일명은 생략 가능, 생략하면 되살릴 수 있는 모든 파일을 보여줌&lt;/p&gt;
-
-        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ vi –r text
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;vi-환경-설정&quot;&gt;vi 환경 설정&lt;/h1&gt;
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;1-vi-환경-설정&quot;&gt;1. vi 환경 설정&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;vi 사용할 때 사용자 자신에게 맞는 환경 설정&lt;/li&gt;
-  &lt;li&gt;마지막 행 모드에서 실행&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-06-unix-15-07.png&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/img/unix/2020-03-06-unix-15-08.png&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;2-행-번호-표시&quot;&gt;2. 행 번호 표시&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;:set nu 명령&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-06-unix-15-09.png&quot; alt=&quot;&quot; /&gt;
-  &lt;br /&gt;&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;행 번호는 사용자의 편의를 위해 보이는 것, 파일에 저장되지 않음&lt;/li&gt;
-      &lt;li&gt;행 번호 없애려면 :set nonu 명령키 사용&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;3-특수-문자-표시&quot;&gt;3. 특수 문자 표시&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;:set list 명령&lt;/li&gt;
-  &lt;li&gt;vi에서 보이지 않는 행의 끝이나 탭 같은 특수 문자들을 보여줌&lt;/li&gt;
-  &lt;li&gt;한글(HWP)의 조판 부호 보기 기능과 비슷&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;4-현재-모드-표시&quot;&gt;4. 현재 모드 표시&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;:set showmode 명령&lt;/li&gt;
-  &lt;li&gt;vi 작업 도중 명령 모드인지 입력 모드인지 알고자 할 때&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;명령 모드인 경우 아무 표시 없고, 입력 모드인 경우 화면 하단에 “–INSERT–”라고 표시됨&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  ~
-  ~
-  --INSERT--
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;5-환경-설정-값-표시&quot;&gt;5. 환경 설정 값 표시&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;:set 명령&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;현재 사용 중인 vi의 환경 설정 상태를 보여줌&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  ~
-  ~
-  :set
-  --- Options ---
-  background=dark scroll=14
-  fileencodings=ucs-bom,utf-8,default,latin1
-  Press ENTER or type command to continue
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;6-모든-환경-변수-표시&quot;&gt;6. 모든 환경 변수 표시&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;:set all 명령&lt;/li&gt;
-  &lt;li&gt;vi 환경 설정에 사용되는 모든 환경 변수와 현재 설정 값을 보여줌&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;7-관련-파일-exrc&quot;&gt;7. 관련 파일 .exrc&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;vi 편집기의 환경 설정을 등록하여 실행시 계속적으로 지정한 설정을 이용하도록 해주는 파일&lt;/li&gt;
-  &lt;li&gt;set 명령과 환경 변수를 이용하여 홈 디렉토리에 .exrc (또는 .vimrc) 안에 적어 놓으면 vi가 실행될 때 기본으로
-설정되어 시작하게 됨&lt;/li&gt;
-&lt;/ul&gt;
-
-</description>
-        <pubDate>Fri, 06 Mar 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/03/06/unix-15/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/03/06/unix-15/</guid>
-        
-        <category>unix</category>
-        
-        
-        <category>devlog</category>
-        
-      </item>
-    
-      <item>
-        <title>[유닉스] 편집기 (vi) - 내용 수정 및 삭제</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-06-unix-14.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;내용-수정-및-삭제&quot;&gt;내용 수정 및 삭제&lt;/h1&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;1-내용-수정하기&quot;&gt;1. 내용 수정하기&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;한 글자만 수정, 단어별로 수정, 수정할 글자 수 지정해서 수정&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-06-unix-14-01.png&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;2-내용-삭제취소하기&quot;&gt;2. 내용 삭제/취소하기&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;입력 모드에서 입력 중에 틀린 글자 삭제할 때는 Backspace 키나 Delete 키를 이용하면 됨&lt;/li&gt;
-  &lt;li&gt;명령 모드에서는 문자를 삭제하거나 행을 삭제하기 위해 별도의 명령키 존재&lt;/li&gt;
-  &lt;li&gt;삭제할 문자 수나 행 수를 지정하려면 명령키 앞에 숫자를 지정&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-06-unix-14-02.png&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;편집-기능&quot;&gt;편집 기능&lt;/h1&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;1-복사하기-붙이기-잘라내기&quot;&gt;1. 복사하기, 붙이기, 잘라내기&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;소문자 yy 명령키 : 해당 행을 복사&lt;/li&gt;
-  &lt;li&gt;커서를 원하는 위치로 이동 후 p 명령키 : 붙이기&lt;/li&gt;
-  &lt;li&gt;dd 명령키로 행 삭제 후 p 명령키 입력하면 “잘라내서 붙이기”&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-06-unix-14-03.png&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;커서 위치에서 1행과 2행 복사하기&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  Hello, World!
-  ============
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;1행에서 2yy 명령키 입력 후 2행에서 p 명령키 입력&lt;/p&gt;
-
-        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  Hello, World!
-  ============
-  Hello, World!
-  ============
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;2-버퍼의-사용&quot;&gt;2. 버퍼의 사용&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;버퍼 : 복사하거나 잘라낸 내용을 저장해두는 임시 저장 공간&lt;/li&gt;
-  &lt;li&gt;윈도우의 클립보드와 같은 기능&lt;/li&gt;
-  &lt;li&gt;yy 명령키를 사용해 복사할 경우 복사된 내용은 버퍼에 저장&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;언네임드(unnamed) 버퍼&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;이름 붙이지 않은 버퍼&lt;/li&gt;
-      &lt;li&gt;한 번에 하나의 내용만 저장&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;네임드(named) 버퍼&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;이름 붙인 버퍼&lt;/li&gt;
-      &lt;li&gt;각기 다른 이름을 붙인 버퍼에 별도로 저장할 수 있는 내용을 모두 저장하고 사용 가능&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;네임드 버퍼 사용&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;버퍼 이름 붙이기 : “(따옴표) + 문자, 또는 ”+숫자(숫자 버퍼라고도 함)&lt;/li&gt;
-      &lt;li&gt;네임드 버퍼 : “a, ”b, “c, ……, ”z&lt;/li&gt;
-      &lt;li&gt;숫자 버퍼 : “1, ”2, “3, …… ”9&lt;/li&gt;
-      &lt;li&gt;네임드 버퍼에 커서 위치한 행 저장 : “ayy, 붙이기 : ”ap&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;네임드 버퍼 사용하여 1행과 2행을 따로 복사하여 붙이기&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  Hello, World!
-  ============
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;커서를 1행에 위치하고 “ayy 입력&lt;/li&gt;
-      &lt;li&gt;커서를 2행으로 이동 후 “byy 입력&lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;2행 다음에 b 버퍼 먼저 붙이기 하려면, “bp, ”ap를 차례로 입력&lt;/p&gt;
-
-        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  Hello, World!
-  ============
-  ============
-  Hello, World!
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;3-마지막-행-모드에서-복사하기와-잘라내기&quot;&gt;3. 마지막 행 모드에서 복사하기와 잘라내기&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;마지막 행 모드에서 행을 복사하고 잘라내기 할 때는 범위를 지정한 후 수행&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;범위 지정하기&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;vi에서 범위 지정은 마지막 행 모드에서만 가능&lt;/li&gt;
-      &lt;li&gt;행번호와 특수 문자 사용&lt;/li&gt;
-      &lt;li&gt;특수문자 : 현재 커서가 있는 행을 나타내는 .(마침표), 마지막 행을 나타내는 $, %&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-06-unix-14-04.png&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;
-&lt;img src=&quot;/assets/img/unix/2020-03-06-unix-14-05.png&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;복사하기/잘라내기&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;:은 마지막 행 모드로 이동하기 위한 기호&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-06-unix-14-06.png&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;4-검색하기&quot;&gt;4. 검색하기&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;vi에서 특정 단어를 검색하거나 검색한 단어를 다른 단어로 바꾸기 위한 명령은 마지막 행 모드에서 제공&lt;/li&gt;
-  &lt;li&gt;검색하기 위해 마지막 행 모드로 가려면 “/”나 “?”를 입력&lt;/li&gt;
-  &lt;li&gt;“/”는 커서의 위치에서 아래 방향으로 검색&lt;/li&gt;
-  &lt;li&gt;“?”는 커서의 위치에서 위 방향으로 검색&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-06-unix-14-07.png&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;5-바꾸기&quot;&gt;5. 바꾸기&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;기존의 문자열을 다른 문자열로 바꾸려면 :를 입력해 마지막 행 모드로 이동&lt;/li&gt;
-  &lt;li&gt;바꾸기 명령은 파일 전체를 대상으로 할 수도 있고 특정 범위만 지정해 실행할 수도 있음&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-06-unix-14-08.png&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;문서 전체에서 and를 or로 바꾸기 예제&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;and 패턴을 찾아 or로 바꿀 때 수정할지 여부를 묻는 명령 사용&lt;/p&gt;
-
-        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  :%s/and/or/gc
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;and를 or로 바꿀 때마다 아래와 같은 질문을 함&lt;/p&gt;
-
-        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  Starry, starry night
-  Paint your palette blue and gray
-  Look out on a summer’s day
-  With eyes that know the darkness in my soul
-  Shadows on the hills
-  Sketch the trees and the daffodils;
-  Catch the breeze and the winter chills
-  In colors on the snowy linen land.
-  ~
-  replace with or(y/n/a/q/l/^E/^Y)?
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;패턴에 대한 옵션의 의미&lt;/p&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-06-unix-14-09.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-</description>
-        <pubDate>Fri, 06 Mar 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/03/06/unix-14/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/03/06/unix-14/</guid>
-        
-        <category>unix</category>
-        
-        
-        <category>devlog</category>
-        
-      </item>
-    
-      <item>
-        <title>[유닉스] 편집기 (vi)</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-06-unix-13.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;유닉스-편집기의-종류&quot;&gt;유닉스 편집기의 종류&lt;/h1&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;1-편집기의-종류&quot;&gt;1. 편집기의 종류&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;행 단위 편집기와 화면 단위 편집기로 구분&lt;/li&gt;
-  &lt;li&gt;행 단위 편집기 : 한 번에 한 행씩만 작성하거나 수정&lt;/li&gt;
-  &lt;li&gt;화면 단위 편집기 : 전체 내용을 화면 단위로 보면서 커서를 이동하며 작업&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-06-unix-13-01.png&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;ed&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;유닉스 초기의 표준 편집기&lt;/li&gt;
-      &lt;li&gt;사용이 불편해 지금은 거의 사용하지 않음&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;ex&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;ed의 발전된 버전&lt;/li&gt;
-      &lt;li&gt;행 단위 편집기로 시작하여 화면 단위 편집기로 발전&lt;/li&gt;
-      &lt;li&gt;현재는 vi에 내장되어 명령행 명령 모드를 제공&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;sed&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;비대화식 행 단위 편집기&lt;/li&gt;
-      &lt;li&gt;조건에 맞는 행에 지정한 편집 명령을 실행, 결과를 화면에 출력&lt;/li&gt;
-      &lt;li&gt;크기가 큰 파일에 간단한 편집을 반복 수행할 때 많이 사용&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;emacs&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;화면 단위 편집기&lt;/li&gt;
-      &lt;li&gt;종류가 다양, GNU 이맥스가 유명&lt;/li&gt;
-      &lt;li&gt;기본 설치가 되지 않아 별도로 설치해야 함&lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;가장 큰 장점 : 파일 편집하면서, 유닉스의 여러 기능들을 그냥 사용할 수 있음&lt;/p&gt;
-
-        &lt;p&gt;예) 편집 도중 이메일 주고받을 수 있고, 쉘 실행, 파일 복사, 삭제 등 작업 가능&lt;/p&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;vi&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;유닉스에서 기본으로 제공되는 화면 편집기&lt;/li&gt;
-      &lt;li&gt;ex 편집기의 명령을 그대로 사용 가능&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;2-모드형과-비모드형-편집기&quot;&gt;2. 모드형과 비모드형 편집기&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;윈도우 시스템에서 사용하는 한글 워드는 비모드형 편집기&lt;/li&gt;
-  &lt;li&gt;vi는 모드형 편집기&lt;/li&gt;
-  &lt;li&gt;비모드형에서 a는 항상 a라는 글자를 의미&lt;/li&gt;
-  &lt;li&gt;모드형에서 a는 글자 자체가 되기도 하고 명령을 나타내는 키가 되기도 함&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;vi-동작-모드&quot;&gt;vi 동작 모드&lt;/h1&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;1-vi-동작-구조&quot;&gt;1. vi 동작 구조&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;vi에서 편집한 파일은 저장할 파일을 지정하기 전에 하드디스크에 저장되지 않고, 버퍼에만 존재&lt;/li&gt;
-  &lt;li&gt;사용자가 파일 저장 명령을 주어야 하드디스크에 저장됨&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-06-unix-13-02.png&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;2-vi-동작-모드&quot;&gt;2. vi 동작 모드&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;입력 모드 : 실제로 내용을 입력할 수 있는 모드&lt;/li&gt;
-  &lt;li&gt;명령 모드, 마지막 행 모드(명령 모드에 포함시키기도 함) : 글자와 행의 삭제, 검색, 저장 등의 기능 수행&lt;/li&gt;
-  &lt;li&gt;vi를 시작하면 바로 명령 모드&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-06-unix-13-03.png&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;vi 명령의 분류&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;원하는 위치로 이동하는 명령&lt;/li&gt;
-      &lt;li&gt;입력 모드로 전환하는 명령&lt;/li&gt;
-      &lt;li&gt;수정 혹은 삭제 명령&lt;/li&gt;
-      &lt;li&gt;복사 및 붙이기&lt;/li&gt;
-      &lt;li&gt;기타 명령&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;3-vi-시작과-종료&quot;&gt;3. vi 시작과 종료&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;vi의 기본 기능&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;지정한 파일을 편집&lt;/li&gt;
-      &lt;li&gt;파일명을 지정하지 않으면 빈 파일이 열리고 파일명은 저장할 때 지정 가능&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;형식 : vi [파일명…]&lt;/li&gt;
-  &lt;li&gt;사용 예 : vi hello.c&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;4-vi-시작하기&quot;&gt;4. vi 시작하기&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;파일명을 지정하거나 지정하지 않을 수도 있음&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-06-unix-13-04.png&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;5-vi-종료하고-파일-저장하기&quot;&gt;5. vi 종료하고 파일 저장하기&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;명령 모드에서 파일 저장과 종료를 동시 수행 : ZZ(Shift+zz), 파일 저장 후 바로 종료함&lt;/li&gt;
-  &lt;li&gt;다른 명령키들은 마지막 행 모드에서 실행할 수 있음&lt;/li&gt;
-  &lt;li&gt;마지막 행 모드로 가려면 콜론(“:”) 키를 먼저 입력&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-06-unix-13-05.png&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;6-입력-모드로의-전환&quot;&gt;6. 입력 모드로의 전환&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;vi는 명령 모드에서 시작&lt;/li&gt;
-  &lt;li&gt;내용을 입력하거나 편집하려면 명령 모드에서 입력 모드로 전환&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-06-unix-13-06.png&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;명령키를 사용한 입력 모드 전환&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;명령 모드에서 i 명령키를 입력하면 내용 입력 가능&lt;/li&gt;
-      &lt;li&gt;명령 모드에서 o 명령키를 입력하면 현재 커서 위치 다음 행에 글자 입력 가능&lt;/li&gt;
-      &lt;li&gt;명령 모드에서 a 명령키를 입력하면 현재 커서 위치 오른쪽에 글자 입력 가능&lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;내용 모두 입력한 뒤 명령 모드로 돌아가려면 Esc 키를 누름&lt;/p&gt;
-
-        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  vi Insert Mode Test
-  unix linux vi-editor
-  ~
-  ~
-  ~
-  ~
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;7-커서-이동&quot;&gt;7. 커서 이동&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;vi에서 커서 이동은 키보드를 이용&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-06-unix-13-07.png&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/img/unix/2020-03-06-unix-13-08.png&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;8-화면-이동&quot;&gt;8. 화면 이동&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;파일 크기가 터미널 화면 크기보다 클 경우 화면 이동&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;화면 이동 명령키&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;Ctrl + f 명령키는 현재 보이는 부분의 아래 부분으로 한 화면 이동&lt;/li&gt;
-      &lt;li&gt;Ctrl + b 명령키는 현재 보이는 부분의 윗부분으로 한 화면 이동&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-06-unix-13-09.png&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;마지막 행 모드에서 커서 이동&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;:을 입력해 마지막 행으로 전환한 뒤 이동하려는 행 번호 입력&lt;/li&gt;
-      &lt;li&gt;행 번호 대신 $를 입력하면 파일의 마지막 행으로 이동&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-06-unix-13-10.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-</description>
-        <pubDate>Fri, 06 Mar 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/03/06/unix-13/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/03/06/unix-13/</guid>
-        
-        <category>unix</category>
         
         
         <category>devlog</category>

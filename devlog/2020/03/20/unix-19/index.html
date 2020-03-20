@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="en"><!--
+ __  __                __                                     __
+/\ \/\ \              /\ \             __                    /\ \
+\ \ \_\ \   __  __    \_\ \      __   /\_\      __       ___ \ \ \/'\
+ \ \  _  \ /\ \/\ \   /'_` \   /'__`\ \/\ \   /'__`\    /'___\\ \ , <
+  \ \ \ \ \\ \ \_\ \ /\ \L\ \ /\  __/  \ \ \ /\ \L\.\_ /\ \__/ \ \ \\`\
+   \ \_\ \_\\/`____ \\ \___,_\\ \____\ _\ \ \\ \__/.\_\\ \____\ \ \_\ \_\
+    \/_/\/_/ `/___/> \\/__,_ / \/____//\ \_\ \\/__/\/_/ \/____/  \/_/\/_/
+                /\___/                \ \____/
+                \/__/                  \/___/
+
+Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
+-->
+
+
+
+
+
+
+
+
+
+<head>
+  <!-- =============== -->
+<!-- META            -->
+<!-- =============== -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="naver-site-verification" content="fa37cbf8ce41948de6e94c01991ffa04cea9b093"/>
+<meta name="google-site-verification" content="5M4Zw9wg_UqQkvlayfb5Mc_ogvJdc013w_zLUkxgO-Y" />
+<meta property="og:title" content="[유닉스] 프로세스의 개념과 종류">
+<meta property="og:type" content="article">
+
+
+
+
+
+  <meta property="og:image" content="https://m-veloper.github.io/assets//img/linux-logo.png">
+  <br/>
+
+
+<meta property="og:image:width" content="640" />
+<meta property="og:image:height" content="360" />
+
+
+
+  <title>[유닉스] 프로세스의 개념과 종류 &middot; m_veloper</title>
+
+
+
+<meta name="description" content="
+
+">
+<meta property="og:description" content="
+
+">
+
+
+
+<!-- =============== -->
+<!-- LINKS           -->
+<!-- =============== -->
+<link rel="canonical" href="https://m-veloper.github.io/devlog/2020/03/20/unix-19/">
+<meta property="og:url" content="https://m-veloper.github.io/devlog/2020/03/20/unix-19/">
+
+<link rel="alternate" type="application/atom+xml" title="m_veloper Feed" href="https://m-veloper.github.io/feed.xml">
+
+
+  <link rel="prev" href="https://m-veloper.github.io/devlog/2020/03/20/database-22/">
+
+
+
+  <link rel="next" href="https://m-veloper.github.io/devlog/2020/03/20/unix-20/">
+
+
+<link rel="apple-touch-icon" href="https://m-veloper.github.io/apple-touch-icon.png">
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
+<link href="https://fonts.googleapis.com/css?family=Fira+Mono&display=swap" rel="stylesheet">
+<!-- Place favicon.ico in the root directory -->
+
+<!-- =============== -->
+<!-- SCRIPTS         -->
+<!-- =============== -->
+<!-- m-veloper 구글애드 -->
+<script data-ad-client="ca-pub-9898399593070144" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<!-- m-veloper 네이버애널리틱스 -->
+<script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
+<script type="text/javascript">
+    if(!wcs_add) var wcs_add = {};
+    wcs_add["wa"] = "45688ef54680e0";
+    wcs_do();
+</script>
+
+<script>
+  !function(n,e){function t(n,e){n.onload=function(){this.onerror=this.onload=null,e(null,n)},n.onerror=function(){this.onerror=this.onload=null,e(new Error("Failed to load "+this.src),n)}}function o(n,e){n.onreadystatechange=function(){"complete"!=this.readyState&&"loaded"!=this.readyState||(this.onreadystatechange=null,e(null,n))}}n._loaded=!1,n.loadJSDeferred=function(a,d){function r(){n._loaded=!0;var r=e.createElement("script");r.src=a,d&&(("onload"in r?t:o)(r,d),r.onload||t(r,d));var l=e.getElementsByTagName("script")[0];l.parentNode.insertBefore(r,l)}n._loaded?r():n.addEventListener?n.addEventListener("load",r,!1):n.attachEvent?n.attachEvent("onload",r):n.onload=r}}(window,document);
+
+  !function(e){"use strict";var n=function(n,t,o){function i(e){if(a.body)return e();setTimeout(function(){i(e)})}function r(){l.addEventListener&&l.removeEventListener("load",r),l.media=o||"all"}var d,a=e.document,l=a.createElement("link");if(t)d=t;else{var f=(a.body||a.getElementsByTagName("head")[0]).childNodes;d=f[f.length-1]}var s=a.styleSheets;l.rel="stylesheet",l.href=n,l.media="only x",i(function(){d.parentNode.insertBefore(l,t?d:d.nextSibling)});var u=function(e){for(var n=l.href,t=s.length;t--;)if(s[t].href===n)return e();setTimeout(function(){u(e)})};return l.addEventListener&&l.addEventListener("load",r),l.onloadcssdefined=u,u(r),l};"undefined"!=typeof exports?exports.loadCSS=n:e.loadCSS=n}("undefined"!=typeof global?global:this);
+
+  !function (t) {
+  if (t.loadCSS) {
+    var e = loadCSS.relpreload = {};
+    if (e.support = function () {
+        try {
+          return t.document.createElement("link").relList.supports("preload")
+        }
+        catch (t) {
+          return !1
+        }
+      }, e.poly = function () {
+        for (var e = t.document.getElementsByTagName("link"), r = 0; r < e.length; r++) {
+          var n = e[r];
+          "preload" === n.rel && "style" === n.getAttribute("as") && (t.loadCSS(n.href,
+            n,
+            n.getAttribute("media")), n.rel = null)
+        }
+      }, !e.support()) {
+      e.poly();
+      var r = t.setInterval(e.poly, 300);
+      t.addEventListener && t.addEventListener("load", function () {
+        e.poly(), t.clearInterval(r)
+      }), t.attachEvent && t.attachEvent("onload", function () {
+        t.clearInterval(r)
+      })
+    }
+  }
+}(this);
+
+  window.disablePushState = false;
+  window.disableDrawer = false;
+</script>
+
+<!--[if lt IE 9]>
+<script src="https://unpkg.com/html5shiv/dist/html5shiv.min.js"></script>
+<![endif]-->
+
+<!-- =============== -->
+<!-- STYLES          -->
+<!-- =============== -->
+<!--[if gt IE 8]><!---->
+<style>
+  
+  article,aside,dialog,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}mark{background:#FF0;color:#000}*{box-sizing:border-box}html,body{margin:0;padding:0}html{font-size:16px;line-height:1.75}body{color:#333;background-color:#fff;overflow-y:scroll}a{text-decoration:none}.lead{margin-left:-1rem;margin-right:-1rem}img,.img{display:block;max-width:100%;margin-bottom:1rem;border:none}img.lead,.img.lead{max-width:calc(100% + 2rem);width:calc(100% + 2rem)}h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6,.heading{font-weight:bold;text-rendering:optimizeLegibility}h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{margin:1.6rem 0 1rem;line-height:1.6}h1,.h1{font-size:2rem;line-height:1.25}h2,.h2{font-size:1.5rem}h3,.h3{font-size:1.17em}p{margin-top:0;margin-bottom:1rem}p.lead{font-size:1.25rem;font-weight:300;padding:0 1rem}ul,ol,dl{margin-top:0;margin-bottom:1rem}ul,ol{padding-left:1.25rem}hr{position:relative;margin:1.5rem 0;border:0;border-top:1px solid #eee}.hr{padding-bottom:.5rem;border-bottom:1px solid #eee;margin-bottom:1.5rem}h4,h5,h6,.h4,.h5,.h6{margin-bottom:0.5rem;font-size:1rem}table{margin-bottom:1rem;width:100%;width:calc(100% + 2rem);margin-left:-1rem;border:1px solid #e5e5e5;border-collapse:collapse;border-spacing:0}td,th{padding:.25rem .5rem;border:1px solid #e5e5e5}td:first-child,th:first-child{padding-left:1rem}td:last-child,th:last-child{padding-right:1rem}thead+tbody,tbody+tbody,tfoot{border-top:3px double #e5e5e5}tbody tr:nth-child(odd) td,tbody tr:nth-child(odd) th{background-color:#f9f9f9}footer{margin-bottom:2rem}.page li+li,.post li+li{margin-top:.25rem}.page>header,.post>header{margin-bottom:2rem}.page-title,.post-title{margin-top:0}.post-date{display:block;margin-top:-0.5rem;margin-bottom:1rem;color:#9a9a9a}.related-posts{padding-left:0;list-style:none}.related-posts>li,.related-posts>li+li{margin-top:1rem}.related-posts>li>small,.related-posts>li+li>small{font-size:75%;color:#9a9a9a}.message{margin-bottom:1rem;padding:1rem;color:#787878;background-color:#f9f9f9;margin-left:-1rem;margin-right:-1rem}body,main{position:relative;overflow-x:hidden}@media screen{body::before{content:'';background:#e5e5e5;position:absolute;left:0;top:0;bottom:0}}@media screen and (min-width: 40em){html{font-size:17px}}@media screen and (min-width: 54em){html{font-size:16px}}@media screen and (min-width: 88em){html{font-size:17px}}@media screen and (min-width: 125em){html{font-size:18px}}.sr-only{display:none}.clearfix,.sidebar-social::after,.clearafter::after{content:"";display:table;clear:both}a,.a{position:relative;padding-bottom:.15rem;border-style:hidden}.img{overflow:hidden;background-color:#f9f9f9}.img>img{margin:0;width:100%;height:100%}.sixteen-nine{position:relative}.sixteen-nine::before{display:block;content:"";width:100%;padding-top:56.25%}.sixteen-nine>*{position:absolute;top:0;left:0;right:0;bottom:0}h1+hr,h2+hr,h3+hr,h4+hr,h5+hr,h6+hr{margin-top:0}.fade-in{animation-duration:500ms;animation-name:fade-in;animation-fill-mode:forwards}@keyframes fade-in{from{transform:translateY(-2rem);opacity:0}50%{transform:translateY(-2rem);opacity:0}to{transform:translateY(0);opacity:1}}.mb6{margin-bottom:10rem}.sidebar{color:#999;text-align:left}.sidebar::before{content:"";position:absolute;z-index:2;top:0;left:0;bottom:0;right:0}.sidebar a{color:#12b886;border-bottom-color:rgba(255,255,255,0.2)}.right-side{width:100%;margin-left:auto;margin-right:auto}.right-side .ad-first{text-align:center}@media screen{.right-side{max-width:38rem;min-height:100vh}.right-side .ad-second{display:none}}@media screen and (min-width: 54em){.right-side{margin-left:20rem;margin-right:1rem;padding:4rem 1rem 12rem}.right-side .ad-second{text-align:center;display:block}}@media screen and (min-width: 72em){.right-side{margin-left:22rem;max-width:42rem}}@media screen and (min-width: 88em){.right-side{width:162px;margin-left:0rem;margin-right:0rem;padding:0rem;margin-top:10rem;display:block;float:left}}@media screen and (min-width: 96em){.right-side{width:300px;margin-right:0rem}}#_yDrawer{position:relative}.sidebar-bg{position:absolute;height:100%;overflow:hidden;top:0;right:0;bottom:0;left:0}.sidebar-box{display:flex;justify-content:center}.sidebar-sticky{position:relative;z-index:3}@media screen{.sidebar-sticky{-ms-overflow-style:none;overflow:-moz-scrollbars-none;height:100%;overflow:auto;position:absolute;padding:3rem 0rem;right:2.5rem;left:2.5rem}}.sidebar-sticky::-webkit-scrollbar{display:none}.sidebar-about>h1{color:#e2adfd;font-size:2rem}.sidebar-nav>ul{list-style:none;padding-left:0;margin-bottom:.5rem}a.sidebar-nav-item{width:100%;font-weight:normal;display:block;line-height:1.75;padding:.25rem 0;border-bottom:1px solid rgba(255,255,255,0.2)}a.sidebar-nav-subitem{font-weight:normal;display:block;line-height:1.75;padding:.25rem 0;border-bottom:1px solid rgba(255,255,255,0.2)}@media screen{.y-drawer-scrim{z-index:2}.y-drawer-content{width:18rem;left:-18rem;z-index:3}}.sidebar-social{margin-bottom:.5rem}.sidebar-social>ul{list-style:none;padding-left:0;margin:0 -.25rem}.sidebar-social>ul>li{float:left}.sidebar-social>ul>li>a{display:inline-block;text-align:center;font-size:1.6rem;line-height:3rem;width:3.1249rem;height:4rem;padding:.5rem 0}.sidebar-social>ul li+li{margin-top:0}.fixed-top{position:fixed;top:0;left:0;width:100%;z-index:1}.navbar>.content{padding-top:0;padding-bottom:0;min-height:0;height:0}.menu{display:inline-block;padding:1.75rem 1.5rem;border-bottom:none;margin-left:-1.5rem;color:#9a9a9a !important}.menu::after{content:"\2630"}@media screen and (min-width: 54em){.menu{padding:1.25rem 1.5rem;position:absolute;left:-9999px}.menu:focus{position:static}}.animation-main{pointer-events:none}.loading{display:none}@media print{.menu{display:none}}.animation-main{opacity:0;will-change:opacity}.loading{position:absolute;top:0;right:0;padding:5.25rem 4.5rem;transform-origin:top right;transform:scale(0.33)}.content{position:relative;margin-left:auto;margin-right:auto;padding:5rem 1rem 12rem}@media screen{.content{min-height:100vh}}@media screen and (min-width: 54em){.content{padding:4rem 1rem 12rem;margin-left:19rem;margin-right:3rem}}@media screen and (min-width: 72em){.content{max-width:42rem;margin-left:21rem}}@media screen and (min-width: 88em){.content{float:left;width:100%;margin-left:22rem;margin-right:5rem}}@media screen and (min-width: 96em){.content{max-width:44rem}}@media screen and (min-width: 102em){.content{margin-left:25rem;margin-right:3rem}}.me{width:6.5rem;height:6.5rem;align-self:center;margin-right:20px;border-radius:100%;position:relative}@media screen and (min-width: 40em){.me{width:7rem;height:7rem}}@media screen and (min-width: 54em){.me{width:6.5rem;height:6.5rem}}@media screen and (min-width: 72em){.me{width:7rem;height:7rem}}main>footer{width:100%;position:absolute;bottom:0;left:0;right:0;padding:0 1rem;color:#9a9a9a;font-size:smaller;text-align:center}main>footer>p{margin-bottom:0}html{font-family:'Sans-serif'}h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6,.heading{font-family:'Sans-serif'}
+
+</style>
+
+
+<link rel="preload" href="https://m-veloper.github.io/assets/css/hydejack.css?v=6.4.0" as="style" onload="this.rel='stylesheet'">
+
+<style id="_pageStyle">
+
+.content a{color:#999;border-color:rgba(226,173,253,0.2)}.content a:hover{border-color:#e2adfd}:focus{outline-color:#e2adfd}::selection{color:#fff;background:#e2adfd}::-moz-selection{color:#fff;background:#e2adfd}
+
+</style>
+
+
+<noscript>
+  <link rel="stylesheet" href="https://m-veloper.github.io/assets/css/hydejack.css?v=6.4.0">
+  
+  
+  
+
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <style>
+      html { font-family: 'Lato', 'Sans-serif' }
+      h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .heading { font-family: 'Lato', 'Sans-serif' }
+    </style>
+  
+
+  
+  <link rel="stylesheet" href="https://m-veloper.github.io/assets/icomoon/style.css">
+</noscript>
+<!--<![endif]-->
+
+</head>
+
+<body>
+  <!-- =============== -->
+<!-- MENU            -->
+<!-- =============== -->
+
+
+<div class="navbar fixed-top">
+  <div class="content">
+    <span class="sr-only">Jump to:</span>
+    <a id="_menu" class="menu no-hover" href="#_title">
+      <span class="sr-only">Menu</span>
+    </a>
+  </div>
+</div>
+
+<!-- =============== -->
+<!-- CONTENT         -->
+<!-- =============== -->
+<div id="_yPushState">
+  <div class="fade-in">
+    <main id="_main" class="content" role="main" data-color="#e2adfd" data-image="/assets/img/nap.jpg">
+      <style>
+  /*광고 붙을떄 까지 안보이게*/
+  .row {
+    display: flex;
+    /*display: none;*/
+    justify-content: space-between;
+    align-items: center;
+    height: 300px;
+  }
+
+  .row-center {
+    display: flex;
+    justify-content: center;
+    height: 258px;
+  }
+  /*광고 붙을떄 까지 안보이게*/
+  /*.right-side{*/
+    /*display: none;*/
+  /*}*/
+
+  #tag{
+    margin-bottom: 0.875rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    height: 2rem;
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    margin-right: 0.875rem;
+    color: rgb(12, 166, 120);
+    font-size: 0.9rem;
+    background: rgb(241, 243, 245);
+    border-radius: 1rem;
+    text-decoration: none;
+  }
+  .post-date{
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+
+  .markdown-body h1 {
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+    margin-top: 56px;
+  }
+
+  .bmc-button img {
+    height: 34px !important;
+    width: 35px !important;
+    margin-bottom: 1px !important;
+    box-shadow: none !important;
+    border: none !important;
+    vertical-align: middle !important;
+  }
+
+  .bmc-button {
+    padding: 7px 10px 7px 10px !important;
+    line-height: 35px !important;
+    height: 51px !important;
+    min-width: 217px !important;
+    text-decoration: none !important;
+    display: inline-flex !important;
+    color: #ffffff !important;
+    background-color: #F471FF !important;
+    border-radius: 5px !important;
+    border: 1px solid transparent !important;
+    padding: 7px 10px 7px 10px !important;
+    font-size: 28px !important;
+    letter-spacing: 0.6px !important;
+    box-shadow: 0px 1px 2px rgba(190, 190, 190, 0.5) !important;
+    -webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;
+    margin: 0 auto !important;
+    font-family: 'Cookie', cursive !important;
+    -webkit-box-sizing: border-box !important;
+    box-sizing: border-box !important;
+    -o-transition: 0.3s all linear !important;
+    -webkit-transition: 0.3s all linear !important;
+    -moz-transition: 0.3s all linear !important;
+    -ms-transition: 0.3s all linear !important;
+    transition: 0.3s all linear !important;
+  }
+
+  .bmc-button:hover, .bmc-button:active, .bmc-button:focus {
+    -webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;
+    text-decoration: none !important;
+    box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;
+    opacity: 0.85 !important;
+    color: #ffffff !important;
+  }
+
+  #sponsor-button{
+    display: flex;
+    margin-bottom: 50px;
+  }
+
+  #sponsor-button h4{
+    margin: 12px;
+    color: red;
+  }
+
+</style>
+<link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
+<script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+
+
+
+
+
+<article id="post-devlog/2020/03/20/unix-19" class="post this" role="article">
+  <header>
+
+    <h1 class="post-title">
+      
+        [유닉스] 프로세스의 개념과 종류
+        
+    </h1>
+
+    <p class="post-date heading">
+      <!--<time datetime="2020-03-20T00:00:00+09:00">20 Mar 2020</time>-->
+      <time datetime="2020-03-20T00:00:00+09:00">2020년 03월 20일</time>
+    </p>
+    
+
+
+
+
+
+
+
+
+
+<a href="/category/devlog/" data-flip="title" id="tag">Devlog</a>
+
+    
+
+
+
+
+
+
+
+
+
+<a href="/tag/devlog-unix/" data-flip="title" id="tag">Unix</a>
+
+
+    
+  <div class="hr" style="padding-bottom:0"></div>
+
+
+  </header>
+  
+
+  
+  <div class="markdown-body">
+
+    <!-- 
+    <div class="head-image"><img src="https://m-veloper.github.io/assets//img/linux-logo.png" /></div>
+    <br /> -->
+
+    <div class='row'>
+      <div>
+        <ins class="kakao_ad_area" style="display:none;" data-ad-unit= "DAN-sksc2jl3lbhe" data-ad-width= "250" data-ad-height= "250"></ins>
+      </div>
+      <div>
+        <ins class="kakao_ad_area" style="display:none;" data-ad-unit= "DAN-s13c6ao56o2p" data-ad-width= "250" data-ad-height= "250"></ins>
+      </div>
+    </div>
+
+    <br />
+    <p><img src="/assets/img/unix/2020-03-20-unix-19.png" alt="" /></p>
+
+<h1 id="데몬-프로세스">데몬 프로세스</h1>
+<p><br /></p>
+
+<h3 id="프로세스process란">프로세스(process)란</h3>
+
+<ul>
+  <li>현재 실행 중인 프로그램</li>
+  <li>프로그램 : 어떤 문제를 해결하기 위해 사용되는 명령어나 유틸리티의 집합</li>
+  <li>프로그램을 실행하면 메모리(RAM, 주기억장치)에 상주. 이 때의 프로그램을 프로세스라고 함</li>
+  <li>시스템 운영에 필요한 기능을 수행하는 시스템 프로세스, 사용자들이 실행시킨 사용자 프로세스</li>
+  <li>사용자의 입력에 관계없이 실행되는 백그라운드(Background) 프로세스, 명령 입력 후 수행종료까지 기다려야 하는
+포그라운드(Foreground) 프로세스</li>
+</ul>
+
+<h3 id="멀티태스킹multitasking과-작업-전환">멀티태스킹(Multitasking)과 작업 전환</h3>
+
+<ul>
+  <li>멀티태스킹이란 동시에 하나 이상의 프로그램을 실행하는 것</li>
+  <li>사용자 기준에서는, 다수의 프로그램들을 백그라운드 프로세스로 실행시킨 상태에서 추가로 포그라운드 프로세스로 다른 작업 수행 가능</li>
+  <li>사용자가 실행한 프로세스는 중간에 중지시킬 수 있음</li>
+  <li>백그라운드 프로세스를 포그라운드 프로세스로 전환하거나, 포그라운드 프로세스를 백그라운드 프로세스로 전환 가능</li>
+</ul>
+
+<h3 id="부모-프로세스와-자식-프로세스">부모 프로세스와 자식 프로세스</h3>
+
+<ul>
+  <li>프로세스는 부모-자식 관계가 있음</li>
+  <li>부모 프로세스가 자식 프로세스를 생성, 자식 프로세스는 다른 자식 프로세스를 생성</li>
+  <li>사용자가 실행시키는 명령도 프로세스로 실행됨.</li>
+  <li>사용자 명령은 쉘의 자식 프로세스가 됨</li>
+  <li>프로세스들은 각기 고유한 번호 PID(Process Identification Number)를 가짐</li>
+  <li>부모 프로세스는 고유 번호 PPID (Parent Process Identification Number)를 가짐</li>
+  <li>유닉스 부팅할 때 모든 프로세스의 조상인, PID가 1번인 init 프로세스 실행</li>
+  <li>1번 프로세스가 fork 방식으로 다른 프로세스들 생성</li>
+</ul>
+
+<h3 id="프로세스의-생성">프로세스의 생성</h3>
+
+<ul>
+  <li>하나의 프로세스가 다른 프로세스를 실행하기 위한 시스템 호출 방법 : fork, exec</li>
+  <li>fork
+    <ul>
+      <li>새로운 프로세스를 위해 메모리를 할당받아 복사본 형태의 프로세스를 실행하는 형태</li>
+      <li>기존의 프로세스는 그대로 실행</li>
+      <li>새롭게 생성된 프로세스는 원래의 프로세스와 똑같은 코드를 기반으로 실행</li>
+    </ul>
+  </li>
+  <li>exec
+    <ul>
+      <li>원래의 프로세스를 새로운 프로세스로 대체하는 형태</li>
+      <li>호출한 프로세스의 메모리에 새로운 프로세스의 코드를 덮어씌워 버림</li>
+      <li>호출된 프로세스만 메모리에 남김</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="프로세스-초기화">프로세스 초기화</h3>
+
+<ul>
+  <li>프로그램을 사용하여 어떤 작업을 하기 위해서는 프로그램과 데이터가 메모리에 적재되어 있어야 함</li>
+  <li>프로그램과 데이터가 메모리에 적재되어 CPU의 연산 과정을 통해 실행될 수 있는 것을 프로세스라 함</li>
+  <li>메모리의 각 프로세스들은 모두 init 프로세스로부터 상속을 받아 생성됨</li>
+</ul>
+
+<h3 id="init-프로세스">init 프로세스</h3>
+
+<ul>
+  <li>init 프로세스는 PID가 1번인 프로세스임</li>
+  <li>부팅 과정에서 커널이 PID 0번인 swapper 프로세스를 생성하고, swapper 프로세스가 init 프로세스를 생성</li>
+  <li>init 프로세스는 /etc/inittab 파일을 읽어들여 실행됨</li>
+  <li>init 프로세스가 사용자 환경에 필요한 스크립트를 실행시켜 사용자 환경이 구축되고 나면, 로그인 화면이 사용자에게나타남</li>
+  <li>init 프로세스가 하는 일
+    <ul>
+      <li>파일 시스템의 구조 검사</li>
+      <li>파일 시스템 마운트</li>
+      <li>서버 데몬을 띄움</li>
+      <li>사용자 로그인을 기다림</li>
+      <li>사용자가 로그인하면 사용자를 위한 쉘을 띄움</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="시그널signal">시그널(Signal)</h3>
+
+<ul>
+  <li>‘신호’라는 의미, 프로세스끼리 서로 통신할 때 사용</li>
+  <li>특정 프로세스가 다른 프로세스에게 메시지 보낼 때 시그널 이용</li>
+  <li>사용자가 인터럽트 키를 통해 발생하는 시그널, 프로세스가 발생하는 시그널, 하드웨어가 발생하는 시그널</li>
+  <li>시그널 목록은 ‘kill –l’ 명령으로 확인</li>
+</ul>
+
+<p><img src="/assets/img/unix/2020-03-20-unix-19-01.png" alt="" /></p>
+
+<h3 id="데몬daemon">데몬(daemon)</h3>
+
+<ul>
+  <li>주기적이고 지속적으로 서비스 요청을 처리하기 위해 계속 실행되는 프로세스</li>
+  <li>백그라운드로 실행</li>
+  <li>서버 역할을 하는 프로그램들이 해당되고 보통 이름 뒤에 데몬을 뜻하는 d를 붙임</li>
+</ul>
+
+<h3 id="데몬-프로세스-실행-방식">데몬 프로세스 실행 방식</h3>
+
+<ul>
+  <li>standalone 방식
+    <ul>
+      <li>부팅 시 실행되어 메모리에 계속 상주하면서 클라이언트의 서비스 요청을 처리하는 방식</li>
+      <li>웹, 메일 등 빈번한 요청이 들어오는 서비스</li>
+      <li>프로세스의 상태를 확인하는 ps 명령으로 확인해보면 항상 동작 중임</li>
+    </ul>
+  </li>
+  <li>inet 방식
+    <ul>
+      <li>클라이언트의 서비스 요청이 들어왔을 때 관련 프로세스를 실행시키고 접속 종료 후 자동으로 프로세스 종료시키는 방식</li>
+      <li>자주 사용하지 않는 서비스들에 대한 효율적인 메모리 관리에 유용함</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h1 id="프로세스의-종류">프로세스의 종류</h1>
+
+<h3 id="데몬-프로세스-daemon-process">데몬 프로세스 (daemon process)</h3>
+
+<ul>
+  <li>커널에 의해 실행되고 특정 서비스를 제공하기 위해 존재</li>
+  <li>웹 서비스를 제공하기 위해서는 httpd 프로세스가 동작하고 있어야 함</li>
+  <li>httpd를 웹 서버 데몬이라 함</li>
+  <li>평소 대기 상태로 서비스 요청을 기다리다가 서비스 요청이 들어오면 해당 서비스 제공</li>
+</ul>
+
+<h3 id="부모-프로세스-parent-process">부모 프로세스 (parent process)</h3>
+
+<ul>
+  <li>다른 프로세스를 만드는 프로세스</li>
+  <li>부팅할 때 실행되는 1번 프로세스를 제외한 모든 프로세스는 부모 프로세스를 가지고 있음</li>
+  <li>PPID(Parent Process ID)를 가짐</li>
+</ul>
+
+<h3 id="자식-프로세스-child-process">자식 프로세스 (child process)</h3>
+
+<ul>
+  <li>부모 프로세스에 의해 만들어지는 프로세스</li>
+  <li>할 일이 끝나면 부모 프로세스에게 결과를 돌려주고 종료</li>
+  <li>vi를 실행시키면 쉘이 vi 프로세스 생성</li>
+  <li>쉘이 부모 프로세스, vi가 자식 프로세스</li>
+  <li>사용자가 vi 종료하면 다시 부모 프로세스인 쉘로 돌아감</li>
+  <li>PID(Process ID)를 가짐</li>
+</ul>
+
+<h3 id="고아-프로세스-orphan-process">고아 프로세스 (orphan process)</h3>
+
+<ul>
+  <li>자식 프로세스가 아직 실행 중인데 부모 프로세스가 먼저 종료되면 자식 프로세스는 고아 프로세스가 됨</li>
+  <li>1번 프로세스가 새로운 부모 프로세스가 되어 고아 프로세스가 작업을 마치고 종료할 수 있도록 함</li>
+</ul>
+
+<h3 id="좀비-프로세스-zombie-process">좀비 프로세스 (zombie process)</h3>
+
+<ul>
+  <li>자식 프로세스가 실행 종료 후에도 프로세스 테이블 목록에 남아있는 경우
+    <ul>
+      <li>일반적으로, 자식 프로세스가 종료할 때 부모 프로세스에게 종료 정보(exit status) 보내고, 부모 프로세스가 이 정보 받으면 프로세스 테이블 목록에서 자식 프로세스 삭제됨</li>
+    </ul>
+  </li>
+  <li>부모 프로세스가 자식 프로세스의 종료 정보를 읽어가기를 기다림</li>
+  <li>프로세스 목록에 defunct 프로세스라고 나오기도 함</li>
+  <li>실제로 실행되고 있지 않지만 동작 중인 프로세스 테이블 목록을 차지</li>
+  <li>부모 프로세스에게 SIGCHILD 시그널을 보내서 부모 프로세스가 자식 프로세스를 정리하게 하거나, 부모 프로세스 자체를 종료시킴</li>
+  <li>부모 프로세스가 종료되면 좀비 프로세스는 고아 프로세스가 됨</li>
+  <li>새로운 부모인 init 프로세스가 자식 프로세스의 종료 정보를 주기적으로 확인, 정리</li>
+</ul>
+
+    <br />
+  </div>
+  
+
+</article>
+
+
+<!-- buymeacoffee 버튼 -->
+
+<div id="sponsor-button">
+  <h4>좋은 정보였다 생각되시면 후원하기(sponsor) ==></h4>
+  <a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/TWYGPxs">
+    <img src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg" alt="Buy me a coffee">
+    <span style="margin-left:15px;font-size:28px !important;">Buy me a coffee</span>
+  </a>
+</div>
+
+<!--카카오애드핏-->
+<div>
+  <ins class="kakao_ad_area" style="display:none;" data-ad-unit    = "DAN-r1icduz054jb" data-ad-width   = "728" data-ad-height  = "90"></ins>
+</div>
+
+<div class="share">
+  <h2>Share this post</h2>
+  <div class="share-body">
+    <a href="http://twitter.com/share?text=[유닉스] 프로세스의 개념과 종류&amp;url=https://m-veloper.github.io/devlog/2020/03/20/unix-19/"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="icon-twitter">
+      </span>
+    </a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://m-veloper.github.io/devlog/2020/03/20/unix-19/"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="icon-facebook">
+      </span>
+    </a>
+  </div>
+  <div>
+    <ins class="kakao_ad_area" style="display:none;"
+         data-ad-unit    = "DAN-rhg23mrcvho4"
+         data-ad-width   = "728"
+         data-ad-height  = "90"></ins>
+  </div>
+</div>
+<br />
+
+
+
+<!--
+
+
+  <aside class="author" role="complementary">
+    <div class="author">
+  <h2 class="page-title hr">
+    About
+  </h2>
+<div class="author-body">
+  
+    
+  
+
+  
+
+  <img
+    src="/assets/img/me.jpeg"
+    class="me"
+    alt="m_veloper"
+    srcset="/assets/img/me.jpeg 1x,/assets/img/me.jpeg 2x"
+    
+  />
+
+
+  
+  <div class="author-body-description">
+    
+
+  </div>
+</div>
+</div>
+
+  </aside>
+
+-->
+
+
+
+<aside class="related" role="complementary">
+  <h2 class="hr">Related Posts</h2>
+
+  <ul class="related-posts">
+    
+      
+      
+      
+        
+        
+          
+
+
+
+<style>
+  .related-posts>li>small{
+    margin-left: 10px;
+  }
+</style>
+<li class="h4">
+  <a href="/devlog/2020/03/20/unix-21/" data-flip="title">
+    <span>[유닉스] 포그라운드(foreground), 백그라운드(background)</span>
+  </a>
+  <small><time datetime="2020-03-20T00:00:00+09:00">
+    2020년 03월 20일
+  </time></small>
+</li>
+
+        
+      
+        
+        
+          
+
+
+
+<style>
+  .related-posts>li>small{
+    margin-left: 10px;
+  }
+</style>
+<li class="h4">
+  <a href="/devlog/2020/03/20/unix-20/" data-flip="title">
+    <span>[유닉스] 프로세스 관리 명령</span>
+  </a>
+  <small><time datetime="2020-03-20T00:00:00+09:00">
+    2020년 03월 20일
+  </time></small>
+</li>
+
+        
+      
+        
+          
+          
+        
+        
+          
+
+
+
+<style>
+  .related-posts>li>small{
+    margin-left: 10px;
+  }
+</style>
+<li class="h4">
+  <a href="/devlog/2020/03/20/database-22/" data-flip="title">
+    <span>[Database] MySQL 뷰(View)</span>
+  </a>
+  <small><time datetime="2020-03-20T00:00:00+09:00">
+    2020년 03월 20일
+  </time></small>
+</li>
+
+        
+      
+    
+  </ul>
+</aside>
+
+
+
+      
+        <aside class="comments" role="complementary">
+  <h2>Comments</h2>
+  <div>
+    <ins class="kakao_ad_area" style="display:none;"
+         data-ad-unit    = "DAN-1jy7ort537t4o"
+         data-ad-width   = "728"
+         data-ad-height  = "90"></ins>
+    <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+  </div>
+  <hr/>
+
+  <div id="disqus_thread"></div>
+
+  <script>
+    !function (s, i) {
+  function e(e) {
+    var t = s.pageYOffset || i.body.scrollTop;
+    s.DISQUS && !s._disqusThis && !s._disqusFirst && t + s.innerHeight >= s._disqusThreadOffsetTop && (s._disqusThis = !0, s.DISQUS.reset(
+      { reload: !0, config: d }))
+  }
+
+  var d = function () {
+    this.page.title = "[유닉스] 프로세스의 개념과 종류",
+      this.page.identifier = "/devlog/2020/03/20/unix-19",
+      this.page.url = "https://m-veloper.github.io/devlog/2020/03/20/unix-19/"
+  };
+  s._disqusFirst = void 0 === s._disqusFirst || s._disqusFirst, s._disqusLoading = void 0 !== s._disqusLoading && s._disqusLoading, s._disqusThis = !1, s._disqusThreadOffsetTop = i.getElementById(
+    "disqus_thread").offsetTop, s._disqusLoading ? s._disqusFirst = !1 : (s._disqusLoading = !0, loadJSDeferred(
+    "//m-veloper.disqus.com/embed.js"), s.addEventListener ? s.addEventListener(
+    "scroll",
+    e,
+    { passive: !0 }) : s.attachEvent ? s.attachEvent("onscroll", e) : s.onscroll = e)
+}(window, document);
+
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</aside>
+
+      
+
+      <footer>
+  <hr/>
+  
+    <p>© 2020. by m-veloper</p>
+
+  
+  <!--<p>-->
+    <!--<code>Powered by <a href="https://m-veloper.github.io/">m-veloper</a></code>-->
+  <!--</p>-->
+</footer>
+
+    </main>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<div class="right-side">
+    <div class="ad-first">
+        <!-- 수직 -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-9898399593070144"
+             data-ad-slot="4781185980"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+    <div class="ad-second">
+        <!-- 수직2 -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-9898399593070144"
+             data-ad-slot="1150677138"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+    <br/>
+</div>
+
+  </div>
+  
+<style>
+  #_title{
+    font-family: 'Fira Mono', monospace;
+    font-size: 1.5rem;
+  }
+  #test-div{
+    border: 1px solid red;
+    width: 250px;
+    height: 250px;
+  }
+</style>
+
+<div id="_yDrawer">
+  <div id="_sidebar" class="sidebar">
+    <div class="sidebar-bg"></div>
+    <header class="sidebar-sticky" role="banner">
+      <br/>
+      <div class="sidebar-about">
+        <h1><a id="_title" href="/">m_veloper</a></h1>
+        <p>느리지만 가고있어요..</p>
+
+      </div>
+
+      <br/>
+      <br/>
+      <nav class="sidebar-nav heading" role="navigation">
+        <span class="sr-only">Navigation:</span>
+<ul>
+  
+
+  
+
+  
+  
+  
+  
+  
+    <li>
+      <input type="checkbox" id="list-item-1"/>
+      <div  class="list-wrapper">
+      <a class="sidebar-nav-item" href="/category/tip/">Tip</a>
+       <label class="folder" for="list-item-1">▾</label>
+    </div>
+     <ul class="list-body">
+       
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+             <li>
+               <a class="sidebar-nav-subitem" href="/tag/tip-java/">Java</a>
+             </li>
+           
+         
+           
+         
+           
+         
+           
+         
+           
+             <li>
+               <a class="sidebar-nav-subitem" href="/tag/tip-javascript/">Javascript</a>
+             </li>
+           
+         
+           
+             <li>
+               <a class="sidebar-nav-subitem" href="/tag/tip-css/">CSS</a>
+             </li>
+           
+         
+           
+             <li>
+               <a class="sidebar-nav-subitem" href="/tag/tip-jstl/">JSTL</a>
+             </li>
+           
+         
+           
+         
+           
+             <li>
+               <a class="sidebar-nav-subitem" href="/tag/tip-mysql/">MySQL</a>
+             </li>
+           
+         
+           
+         
+           
+         
+     </ul>
+    </li>
+
+  
+  
+    <li>
+      <input type="checkbox" id="list-item-2"/>
+      <div  class="list-wrapper">
+      <a class="sidebar-nav-item" href="/category/essay/">Essay</a>
+       
+    </div>
+     <ul class="list-body">
+       
+           
+         
+           
+         
+           
+         
+           
+         
+           
+             <li>
+               <a class="sidebar-nav-subitem" href="/tag/essay-startup/">Startup</a>
+             </li>
+           
+         
+           
+             <li>
+               <a class="sidebar-nav-subitem" href="/tag/essay-essay/">Essay</a>
+             </li>
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+     </ul>
+    </li>
+
+  
+  
+    <li>
+      <input type="checkbox" id="list-item-3"/>
+      <div  class="list-wrapper">
+      <a class="sidebar-nav-item" href="/category/travel/">Travel</a>
+       <label class="folder" for="list-item-3">▾</label>
+    </div>
+     <ul class="list-body">
+       
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+             <li>
+               <a class="sidebar-nav-subitem" href="/tag/travel-korea/">국내여행</a>
+             </li>
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+     </ul>
+    </li>
+
+  
+  
+    <li>
+      <input type="checkbox" id="list-item-4"/>
+      <div  class="list-wrapper">
+      <a class="sidebar-nav-item" href="/category/review/">Review</a>
+       <label class="folder" for="list-item-4">▾</label>
+    </div>
+     <ul class="list-body">
+       
+           
+         
+           
+         
+           
+             <li>
+               <a class="sidebar-nav-subitem" href="/tag/review-goods/">Goods</a>
+             </li>
+           
+         
+           
+             <li>
+               <a class="sidebar-nav-subitem" href="/tag/review-book/">Book</a>
+             </li>
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+             <li>
+               <a class="sidebar-nav-subitem" href="/tag/review-food/">Food</a>
+             </li>
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+     </ul>
+    </li>
+
+  
+  
+    <li>
+      <input type="checkbox" id="list-item-5"/>
+      <div  class="list-wrapper">
+      <a class="sidebar-nav-item" href="/category/devlog/">Devlog</a>
+       <label class="folder" for="list-item-5">▾</label>
+    </div>
+     <ul class="list-body">
+       
+           
+         
+           
+             <li>
+               <a class="sidebar-nav-subitem" href="/tag/devlog-css/">CSS</a>
+             </li>
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+             <li>
+               <a class="sidebar-nav-subitem" href="/tag/devlog-database/">Database</a>
+             </li>
+           
+         
+           
+             <li>
+               <a class="sidebar-nav-subitem" href="/tag/devlog-javascript/">JavaScript</a>
+             </li>
+           
+         
+           
+         
+           
+         
+           
+         
+           
+             <li>
+               <a class="sidebar-nav-subitem" href="/tag/devlog-sass/">Sass</a>
+             </li>
+           
+         
+           
+         
+           
+             <li>
+               <a class="sidebar-nav-subitem" href="/tag/devlog-unix/">Unix</a>
+             </li>
+           
+         
+           
+             <li>
+               <a class="sidebar-nav-subitem" href="/tag/devlog-react/">React</a>
+             </li>
+           
+         
+     </ul>
+    </li>
+
+  
+  
+    <li>
+      <input type="checkbox" id="list-item-6"/>
+      <div  class="list-wrapper">
+      <a class="sidebar-nav-item" href="/about/">About</a>
+       
+    </div>
+     <ul class="list-body">
+       
+           
+             <li>
+               <a class="sidebar-nav-subitem" href="/category/artwork/">Artwork</a>
+             </li>
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+     </ul>
+    </li>
+
+  
+</ul>
+
+      </nav>
+    <br/>
+    <br/>
+      
+
+      
+      
+        <div class="sidebar-social">
+          <span class="sr-only">Social:</span>
+<ul>
+  
+    
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="https://github.com/m-veloper">
+    <span class="icon-github" title="GitHub"></span>
+    <span class="sr-only">GitHub</span>
+  </a>
+</li>
+
+  
+    
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="mailto:m_veloper@naver.com">
+    <span class="icon-mail" title="Email"></span>
+    <span class="sr-only">Email</span>
+  </a>
+</li>
+
+  
+    
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="https://m-veloper.github.io/feed.xml">
+    <span class="icon-rss2" title="RSS"></span>
+    <span class="sr-only">RSS</span>
+  </a>
+</li>
+
+  
+</ul>
+
+        </div>
+      
+    </header>
+  </div>
+</div>
+
+</div>
+
+<!-- =============== -->
+<!-- SCRIPTS         -->
+<!-- =============== -->
+
+<script>
+  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+  ga('create', 'UA-158538042-1', 'auto');
+  ga('send', 'pageview');
+  loadJSDeferred('https://www.google-analytics.com/analytics.js');
+</script>
+
+
+
+
+
+<!--[if gt IE 8]><!---->
+<script src="//ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+<script>
+  WebFont.load({
+    
+    google: {
+      families: 'Lato'.split('|')
+    },
+    
+
+    custom: {
+      families: ['icomoon'],
+      urls: ['/assets/icomoon/style.css']
+    }
+  });
+</script>
+<!--<![endif]-->
+
+
+  <!--[if gt IE 9]><!---->
+  
+  <script>loadJSDeferred('/assets/js/hydejack.js?v=6.4.0');</script>
+
+  
+  <!--<![endif]-->
+
+
+
+</body>
+
+</html>
