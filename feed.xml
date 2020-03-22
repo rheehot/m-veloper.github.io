@@ -5,9 +5,511 @@
     <description></description>
     <link>https://m-veloper.github.io/</link>
     <atom:link href="https://m-veloper.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 22 Mar 2020 02:29:18 +0900</pubDate>
-    <lastBuildDate>Sun, 22 Mar 2020 02:29:18 +0900</lastBuildDate>
+    <pubDate>Sun, 22 Mar 2020 19:40:27 +0900</pubDate>
+    <lastBuildDate>Sun, 22 Mar 2020 19:40:27 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>[Sass/SCSS] 내장 함수(Built-in Functions)</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/sass/2020-03-22-sass-15.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;내장-함수built-in-functions&quot;&gt;내장 함수(Built-in Functions)&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Sass에서 기본적으로 제공하는 내장 함수에는 많은 종류가 있습니다.&lt;/li&gt;
+  &lt;li&gt;모두 소개하지 않고, 주관적 경험에 의거해 필요하거나 필요할 수 있는 함수만 정리했습니다.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://sass-lang.com/documentation/modules&quot;&gt;Sass Built-in Functions&lt;/a&gt;에서 모든 내장 함수를 확인할 수 있습니다.&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;[]는 선택 가능한 인수(argument)입니다.&lt;/li&gt;
+      &lt;li&gt;Zero-based numbering을 사용하지 않습니다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;색상rgb--hsl--opacity-함수&quot;&gt;색상(RGB / HSL / Opacity) 함수&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;mix($color1, $color2) : 두 개의 색을 섞습니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;lighten($color, $amount) : 더 밝은색을 만듭니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;darken($color, $amount) : 더 어두운색을 만듭니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;saturate($color, $amount) : 색상의 채도를 올립니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;desaturate($color, $amount) : 색상의 채도를 낮춥니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;grayscale($color) : 색상을 회색으로 변환합니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;invert($color) : 색상을 반전시킵니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;rgba($color, $alpha) : 색상의 투명도를 변경합니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;opacify($color, $amount) / fade-in($color, $amount) : 색상을 더 불투명하게 만듭니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;transparentize($color, $amount) / fade-out($color, $amount) : 색상을 더 투명하게 만듭니다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;문자string-함수&quot;&gt;문자(String) 함수&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;unquote($string) : 문자에서 따옴표를 제거합니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;quote($string) : 문자에 따옴표를 추가합니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;str-insert($string, $insert, $index) : 문자의 index번째에 특정 문자를 삽입합니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;str-index($string, $substring) : 문자에서 특정 문자의 첫 index를 반환합니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;str-slice($string, $start-at, [$end-at]) : 문자에서 특정 문자(몇 번째 글자부터 몇 번째 글자까지)를 추출합니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;to-upper-case($string) : 문자를 대문자를 변환합니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;to-lower-case($string) : 문자를 소문자로 변환합니다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;숫자number-함수&quot;&gt;숫자(Number) 함수&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;percentage($number) : 숫자(단위 무시)를 백분율로 변환합니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;round($number) : 정수로 반올림합니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;ceil($number) : 정수로 올림합니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;floor($number) : 정수로 내림(버림)합니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;abs($number) : 숫자의 절대 값을 반환합니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;min($numbers…) : 숫자 중 최소 값을 찾습니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;max($numbers…) : 숫자 중 최대 값을 찾습니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;random() : 0 부터 1 사이의 난수를 반환합니다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;list-함수&quot;&gt;List 함수&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;모든 List 내장 함수는 기존 List 데이터를 갱신하지 않고 새 List 데이터를 반환합니다.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;모든 List 내장 함수는 Map 데이터에서도 사용할 수 있습니다.&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;length($list) : List의 개수를 반환합니다.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;nth($list, $n) : List에서 n번째 값을 반환합니다.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;set-nth($list, $n, $value) : List에서 n번째 값을 다른 값으로 변경합니다.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;join($list1, $list2, [$separator]) : 두 개의 List를 하나로 결합합니다.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;zip($lists…) : 여러 List들을 하나의 다차원 List로 결합합니다.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;index($list, $value) : List에서 특정 값의 index를 반환합니다.&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;map-함수&quot;&gt;Map 함수&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;모든 Map 내장 함수는 기존 Map 데이터를 갱신하지 않고 새 Map 데이터를 반환합니다.&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;map-get($map, $key) : Map에서 특정 key의 value를 반환합니다.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;map-merge($map1, $map2) : 두 개의 Map을 병합하여 새로운 Map를 만듭니다.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;map-keys($map) : Map에서 모든 key를 List로 반환합니다.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;map-values($map) : Map에서 모든 value를 List로 반환합니다.&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;관리introspection-함수&quot;&gt;관리(Introspection) 함수&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;variable-exists(name) : 변수가 현재 범위에 존재하는지 여부를 반환합니다.(인수는 $없이 변수의 이름만 사용합니다.)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;unit($number) : 숫자의 단위를 반환합니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;unitless($number) : 숫자에 단위가 있는지 여부를 반환합니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;comparable($number1, $number2) : 두 개의 숫자가 연산 가능한지 여부를 반환합니다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;참고-자료references&quot;&gt;참고 자료(References)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;http://sass-lang.com/documentation&lt;/li&gt;
+  &lt;li&gt;https://sass-guidelin.es/ko/&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    본 포스팅은 HEROPY 님의 영상과 블로그를 보고 공부한 내용을 정리한 것입니다.
+    https://heropy.blog/2018/01/31/sass/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+</description>
+        <pubDate>Sun, 22 Mar 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/devlog/2020/03/22/sass-15/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/03/22/sass-15/</guid>
+        
+        <category>sass</category>
+        
+        
+        <category>devlog</category>
+        
+      </item>
+    
+      <item>
+        <title>[Sass/SCSS] 반복문(for,each, while)</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/sass/2020-03-22-sass-14.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;for-함수&quot;&gt;for (함수)&lt;/h1&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;@for는 스타일을 반복적으로 출력합니다.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;@for는 through를 사용하는 형식과 to를 사용하는 형식으로 나뉩니다.&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  // through
+  // 종료 만큼 반복
+  @for $변수 from 시작 through 종료 {
+    // 반복 내용
+  }
+    
+  // to
+  // 종료 직전까지 반복
+  @for $변수 from 시작 to 종료 {
+    // 반복 내용
+  }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;SCSS:&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  // 1부터 3번 반복
+  @for $i from 1 through 3 {
+    .through:nth-child(#{$i}) {
+      width : 20px * $i
+    }
+  }
+    
+  // 1부터 3 직전까지만 반복(2번 반복)
+  @for $i from 1 to 3 {
+    .to:nth-child(#{$i}) {
+      width : 20px * $i
+    }
+  }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Compiled to:&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; .through:nth-child(1) { width: 20px; }
+ .through:nth-child(2) { width: 40px; }
+ .through:nth-child(3) { width: 60px; }
+   
+ .to:nth-child(1) { width: 20px; }
+ .to:nth-child(2) { width: 40px; }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;to는 주어진 값 직전까지만 반복해야할 경우 유용할 수 있습니다.&lt;/li&gt;
+      &lt;li&gt;그러나 :nth-child()에서 특히 유용하게 사용되는 @for는 일반적으로 through를 사용하길 권장합니다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;each&quot;&gt;@each&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;@each는 List와 Map 데이터를 반복할 때 사용합니다.&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; @each $변수 in 데이터 {
+   // 반복 내용
+ }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;SCSS:&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; // List Data
+ $fruits: (apple, orange, banana, mango);
+   
+ .fruits {
+   @each $fruit in $fruits {
+     li.#{$fruit} {
+       background: url(&quot;/images/#{$fruit}.png&quot;);
+     }
+   }
+ }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Compiled to:&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  .fruits li.apple {
+    background: url(&quot;/images/apple.png&quot;);
+  }
+  .fruits li.orange {
+    background: url(&quot;/images/orange.png&quot;);
+  }
+  .fruits li.banana {
+    background: url(&quot;/images/banana.png&quot;);
+  }
+  .fruits li.mango {
+    background: url(&quot;/images/mango.png&quot;);
+  }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;조건에는 논리 연산자 and, or, not을 사용할 수 있습니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;SCSS:&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; $fruits: (apple, orange, banana, mango);
+   
+ .fruits {
+   @each $fruit in $fruits {
+     $i: index($fruits, $fruit);
+     li:nth-child(#{$i}) {
+       left: 50px * $i;
+     }
+   }
+ }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Compiled to:&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; .fruits li:nth-child(1) {
+   left: 50px;
+ }
+ .fruits li:nth-child(2) {
+   left: 100px;
+ }
+ .fruits li:nth-child(3) {
+   left: 150px;
+ }
+ .fruits li:nth-child(4) {
+   left: 200px;
+ }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;동시에 여러 개의 List 데이터를 반복 처리할 수도 있습니다.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;단, 각 데이터의 Length가 같아야 합니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;SCSS:&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $apple: (apple, korea);
+  $orange: (orange, china);
+  $banana: (banana, japan);
+    
+  @each $fruit, $country in $apple, $orange, $banana {
+    .box-#{$fruit} {
+      background: url(&quot;/images/#{$country}.png&quot;);
+    }
+  }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Compiled to:&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  .box-apple {
+    background: url(&quot;/images/korea.png&quot;);
+  }
+  .box-orange {
+    background: url(&quot;/images/china.png&quot;);
+  }
+  .box-banana {
+    background: url(&quot;/images/japan.png&quot;);
+  }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Map 데이터를 반복할 경우 하나의 데이터에 두 개의 변수가 필요합니다.&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  @each $key변수, $value변수 in 데이터 {
+    // 반복 내용
+  }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;SCSS:&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $fruits-data: (
+    apple: korea,
+    orange: china,
+    banana: japan
+  );
+    
+  @each $fruit, $country in $fruits-data {
+    .box-#{$fruit} {
+      background: url(&quot;/images/#{$country}.png&quot;);
+    }
+  }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Compiled to:&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  .box-apple {
+    background: url(&quot;/images/korea.png&quot;);
+  }
+  .box-orange {
+    background: url(&quot;/images/china.png&quot;);
+  }
+  .box-banana {
+    background: url(&quot;/images/japan.png&quot;);
+  }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;while&quot;&gt;@while&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;@while은 조건이 false로 평가될 때까지 내용을 반복합니다.&lt;/li&gt;
+  &lt;li&gt;잘못된 조건으로 인해 컴파일 중 무한 루프에 빠질 수 있습니다.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;사용을 권장하지 않습니다.&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  @while 조건 {
+    // 반복 내용
+  }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;SCSS:&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $i: 6;
+    
+  @while $i &amp;gt; 0 {
+    .item-#{$i} {
+      width: 2px * $i;
+    }
+    $i: $i - 2;
+  }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Compiled to:&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; .item-6 { width: 12px; }
+ .item-4 { width: 8px; }
+ .item-2 { width: 4px; }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    본 포스팅은 HEROPY 님의 영상과 블로그를 보고 공부한 내용을 정리한 것입니다.
+    https://heropy.blog/2018/01/31/sass/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+        <pubDate>Sun, 22 Mar 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/devlog/2020/03/22/sass-14/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/03/22/sass-14/</guid>
+        
+        <category>sass</category>
+        
+        
+        <category>devlog</category>
+        
+      </item>
     
       <item>
         <title>[자바스크립트] 제이쿼리(jQuery)로 selecte box 값 고정하기/ 변경하기</title>
@@ -4777,497 +5279,6 @@ div span.icon {
         <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/03/12/database-17/</guid>
         
         <category>database</category>
-        
-        
-        <category>devlog</category>
-        
-      </item>
-    
-      <item>
-        <title>[Database] MySQL 기본 명령어 - 데이터베이스 및 사용자 계정</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/03/2020-03-12-database-16.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;mysql-기본-명령어---데이터베이스&quot;&gt;MySQL 기본 명령어 - 데이터베이스&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;본 포스팅은 Windows를 기준으로 작성되었습니다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;사용할-데이터베이스-지정하기&quot;&gt;사용할 데이터베이스 지정하기&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;A. 로그인시 지정하기&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;Windows 프롬프트 상에서 사용&lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;명령어 : mysql –u계정 –p비밀번호 데이터베이스명&lt;/p&gt;
-
-        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    mysql -uroot -p mysql
-        
-    또는
-        
-    mysql -uroot -p1234 mysql
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;B. 로그인 후 지정하기&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;MySQL 내의 “mysql&amp;gt;” 프롬프트 상에서 사용&lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;명령어 : use 데이터베이스명&lt;/p&gt;
-
-        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  show databases;
-      
-  use mysql;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;데이터베이스-및-테이블-리스트-보기&quot;&gt;데이터베이스 및 테이블 리스트 보기&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;A. 데이터베이스 리스트 보기&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;명령어 : show databases;&lt;/p&gt;
-
-        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    show databases;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;B. 테이블 리스트 보기&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;데이터베이스를 선택한 후 사용&lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;명령어 : show tables;&lt;/p&gt;
-
-        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    use mysql;
-        
-    show tables; 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;C. 테이블 구조 살펴보기&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;데이터베이스를 선택한 후 사용&lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;명령어 : desc 데이블명;&lt;/p&gt;
-
-        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  use mysql;
-        
-  desc user;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;데이터베이스-생성-및-삭제&quot;&gt;데이터베이스 생성 및 삭제&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;A. 데이터베이스 생성&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;명령어 : create database 데이터베이스명;&lt;/p&gt;
-
-        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  show databases;
-         
-  create database testdatabase;
-        
-  show databases;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;B. 데이터베이스 삭제&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;명령어 : drop database 데이터베이스명;&lt;/p&gt;
-
-        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;     show databases;
-                      
-     drop database testdatabase;
-         
-     show databases;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;mysql-기본-명령어---사용자-계정&quot;&gt;MySQL 기본 명령어 - 사용자 계정&lt;/h1&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;사용자-계정-만들기&quot;&gt;사용자 계정 만들기&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;A. 현재 등록되어 있는 계정 확인하기&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;mysql내의 user 테이블의 투플 확인&lt;/li&gt;
-      &lt;li&gt;조회하고자하는 속성을 지정&lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;명령어 : select 속성1, … , 속성n from user;&lt;/p&gt;
-
-        &lt;ul&gt;
-          &lt;li&gt;
-            &lt;p&gt;전체 속성을 나타내기 위하여 * 사용&lt;/p&gt;
-
-            &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  use mysql;
-        
-  select host, user, password frm user;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;            &lt;/div&gt;
-
-            &lt;ul&gt;
-              &lt;li&gt;
-                &lt;p&gt;[참고]&lt;/p&gt;
-
-                &lt;ul&gt;
-                  &lt;li&gt;localhost : 자기 자신의 컴퓨터&lt;/li&gt;
-                  &lt;li&gt;password&lt;/li&gt;
-                  &lt;li&gt;암호화되어 저장됨&lt;/li&gt;
-                  &lt;li&gt;암호화된 것을 풀수 있는 방법은 제공되지 않음&lt;/li&gt;
-                &lt;/ul&gt;
-              &lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;B. 계정 만들기&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;계정을 등록하는데 사용되는 테이블 : mysql 데이터베이스 내의 user와 db&lt;/li&gt;
-      &lt;li&gt;명령어
-        &lt;ul&gt;
-          &lt;li&gt;
-            &lt;p&gt;비밀번호 없는 계정 만들기&lt;/p&gt;
-
-            &lt;ul&gt;
-              &lt;li&gt;
-                &lt;p&gt;CREATE USER ‘계정이름’@’localhost’;&lt;/p&gt;
-
-                &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  use mysql;
-           
-  select host, user, password frm user;
-           
-  create user 'kimc'@'localhost';
-           
-  select host, user, password frm user;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;                &lt;/div&gt;
-              &lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;C. 비밀번호를 가진 계정 만들기&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;CREATE USER ‘계정이름’@’localhost’ IDENTIFIED BY ‘비밀번호’;&lt;/p&gt;
-
-        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    use mysql;
-        
-    select host, user, password frm user;
-        
-    create user 'kimc'@'localhost' identified by '1234';
-        
-    select host, user, password frm user;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;사용자-계정에-권한-부여-및-삭제&quot;&gt;사용자 계정에 권한 부여 및 삭제&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;A. 지정한 계정에 특정 데이터베이스 접근 권한 주기&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;(1) 주의 사항&lt;/p&gt;
-
-        &lt;ul&gt;
-          &lt;li&gt;root 계정에서만 사용자 계정의 데이터베이스 접근 권한을 줄 수 있음&lt;/li&gt;
-          &lt;li&gt;접근권한을 설정하기 전에는 데이터베이스에 접근 불가능&lt;/li&gt;
-          &lt;li&gt;접근 권한을 부여하지 않은 데이터베이스에는 접근할 수 없음&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;(2) 접근 권한 부여 전&lt;/p&gt;
-
-        &lt;ul&gt;
-          &lt;li&gt;예
-            &lt;ul&gt;
-              &lt;li&gt;
-                &lt;p&gt;kimc 계정에 testdatabase 데이터베이스 접근 권한 부여 전&lt;/p&gt;
-
-                &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  show databases;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;                &lt;/div&gt;
-
-                &lt;ul&gt;
-                  &lt;li&gt;접근 가능한 데이터베이스 확인&lt;/li&gt;
-                &lt;/ul&gt;
-              &lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;(4) 접근 권한 부여 명령어&lt;/p&gt;
-
-        &lt;ul&gt;
-          &lt;li&gt;
-            &lt;p&gt;명령어&lt;/p&gt;
-
-            &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  insert into db values ( ‘localhost’, ‘데이터베이스명’, ‘계정’, ‘y’, ‘y’, ... ‘y’ );
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;            &lt;/div&gt;
-
-            &lt;ul&gt;
-              &lt;li&gt;총 19개의 ‘y’&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;(5) 시스템에 적용하기 전&lt;/p&gt;
-
-        &lt;ul&gt;
-          &lt;li&gt;kimc 계정에 로그인&lt;/li&gt;
-          &lt;li&gt;
-            &lt;p&gt;접근 가능한 데이터베이스 확인&lt;/p&gt;
-
-            &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  use testdatabase
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;            &lt;/div&gt;
-
-            &lt;ul&gt;
-              &lt;li&gt;데이터베이스 사용 시도&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;(6) 변경된 설정 시스템에 적용하기&lt;/p&gt;
-
-        &lt;ul&gt;
-          &lt;li&gt;db에 추가된 권한은 시스템에 자동으로 적용되지 않음&lt;/li&gt;
-          &lt;li&gt;
-            &lt;p&gt;명령어 : flush privileges;&lt;/p&gt;
-
-            &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  flush privileges;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;            &lt;/div&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;B. 계정의 권한 설정&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;user 테이블에 정의된 모든 권한을 계정에 부여&lt;/li&gt;
-      &lt;li&gt;모든 데이터베이스에 적용됨&lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;명령어&lt;/p&gt;
-
-        &lt;ul&gt;
-          &lt;li&gt;
-            &lt;p&gt;GRANT ALL PRIVILEGES ON * .* TO ‘계정’@‘localhost’ WITH GRANT OPTION;&lt;/p&gt;
-
-            &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  grant all privileges on * .* to 'kimc'@'localhost' with grant option;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;            &lt;/div&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;계정-비밀번호-변경하기&quot;&gt;계정 비밀번호 변경하기&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;계정 비밀번호는 user 테이블에 암호화되어 저장되어 있다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;비밀번호 변경은 user 테이블의 password 속성을 변경하는 것&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;암호화시키기 위하여 password( ) 함수를 사용&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;(1) 계정의 비밀번호 변경&lt;/p&gt;
-
-        &lt;ul&gt;
-          &lt;li&gt;명령어 : update user set password=password( ‘새비밀번호’ ) where user=’계정‘;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;(2) 변경된 비밀번호로 계정에 로그인하기&lt;/p&gt;
-
-        &lt;ul&gt;
-          &lt;li&gt;
-            &lt;p&gt;변경된 설정을 시스템에 적용하기&lt;/p&gt;
-
-            &lt;ul&gt;
-              &lt;li&gt;MySQL 내에서 flush privileges; 사용&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;계정-삭제하기&quot;&gt;계정 삭제하기&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;계정 정보는 user 테이블에 있으며, 삭제할 계정의 레코드(투플)을 삭제&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;명령어 : drop user ‘계정’@‘localhost’;&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  drop user 'kimc'@'localhost';
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Thu, 12 Mar 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/03/12/database-16/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/03/12/database-16/</guid>
-        
-        <category>database</category>
-        
-        
-        <category>devlog</category>
-        
-      </item>
-    
-      <item>
-        <title>[Sass/SCSS] 문법 - 주석</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/sass/2020-03-11-sass-04.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;sassscss-문법---주석&quot;&gt;Sass(SCSS) 문법 - 주석&lt;/h1&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;위의 ‘Sass와 SCSS의 차이점’에서 설명한대로 Sass와 SCSS의 기능은 동일하니,&lt;br /&gt;
-편의를 위해 SCSS 문법으로 설명을 진행합니다. 단, Sass와 SCSS의 차이점이 있다면 나눠 설명합니다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;주석comment&quot;&gt;주석(Comment)&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;CSS 주석은 /* … */ 입니다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Sass(SCSS)는 JavaScript처럼 두 가지 스타일의 주석을 사용합니다.&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  // 컴파일되지 않는 주석
-  /* 컴파일되는 주석 */
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Sass:&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  /* 컴파일되는
-   * 여러 줄
-   * 주석 */
-    
-  // Error
-  /* 컴파일되는
-  * 여러 줄
-      * 주석 */
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;Sass의 경우 컴파일되는 여러 줄 주석을 사용할 때 각 줄 앞에 * 을 붙여야 하고, &lt;br /&gt;
-  중요한 것은 * 의 라인을 맞춰줘야 합니다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;SCSS:&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  /*
-  컴파일되는
-  여러 줄
-  주석
-  */
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;SCSS는 각 줄에 * 이 없어도 문제되지 않습니다. 따라서 기존 CSS와 호환이 쉽습니다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    본 포스팅은 HEROPY 님의 영상과 블로그를 보고 공부한 내용을 정리한 것입니다.
-    https://heropy.blog/2018/01/31/sass/
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-</description>
-        <pubDate>Wed, 11 Mar 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/03/11/sass-04/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/03/11/sass-04/</guid>
-        
-        <category>sass</category>
         
         
         <category>devlog</category>
