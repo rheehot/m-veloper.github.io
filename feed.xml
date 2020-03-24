@@ -5,9 +5,83 @@
     <description></description>
     <link>https://m-veloper.github.io/</link>
     <atom:link href="https://m-veloper.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 23 Mar 2020 19:52:38 +0900</pubDate>
-    <lastBuildDate>Mon, 23 Mar 2020 19:52:38 +0900</lastBuildDate>
+    <pubDate>Tue, 24 Mar 2020 20:35:57 +0900</pubDate>
+    <lastBuildDate>Tue, 24 Mar 2020 20:35:57 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>[CSS] user agent stylesheet은 무엇일까?</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/css/2020-03-24-tip-css-01.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;user-agent-stylesheet&quot;&gt;user agent stylesheet?&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;margin 값을 정해두지 않아 브라우저 임의대로 설정한 것입니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;간혹 css 작업을 하고 결과물을 보는데 생각했던 모습하고 약간 다른 경우가 있습니다.&lt;/p&gt;
+
+&lt;p&gt;제대로 css를 작성한 거 같은데 “개발자 도구”로 살펴보면 이상한 문구와 같이 체크해제가 되지 않습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/css/2020-03-24-tip-css-01-01.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;원래는 각 옵션들을 체크 해제하면서 확인이 가능해야 하는데, “user agent stylesheet” 이란 문구와 함께 css로 설정하지 않은 margin이 들어가 있는 걸 볼 수 있습니다.
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/css/2020-03-24-tip-css-01-02.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;분명 저는 css로 정확히 파란색 사각형 안에 인증번호가 들어가도록 했는데, 결과물은 사뭇 다릅니다.&lt;/p&gt;
+
+&lt;p&gt;위의 이미지와 같이 margin이 들어가 있습니다. 제가 의도한 것도 아닌데 말이죠.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;해결방법&quot;&gt;해결방법&lt;/h1&gt;
+
+&lt;p&gt;간혹 브라우저마다, 혹은 해당 영역이 다르게 보일 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;저의 경우, 브라우저는 크롬을 사용했지만, 똑같은 메일을 “네이버 메일” 과 “Gmail”에서 열어보면 결과가 다른 걸 확인했었습니다. 네이버는 정상적으로 보였지만 Gmail에서는 위의 그림처럼&lt;/p&gt;
+
+&lt;p&gt;user agent stylesheet 문구와 함께 강제로 margin이 들어가는 현상이 발생했습니다.&lt;/p&gt;
+
+&lt;p&gt;하지만 해결 방법은 의외로 간단합니다.&lt;/p&gt;
+
+&lt;p&gt;작성한 html 태그의 css 작성 코드에 margin이 있는지 없는지 다시 확인해보시기 바랍니다.&lt;/p&gt;
+
+&lt;p&gt;margin이 없는 경우가 대부분일 겁니다. 이때 margin을 입력해 주시면 됩니다.&lt;/p&gt;
+
+&lt;p&gt;내부 스타일 시트(Internal Style Sheet)인 &lt;style&gt;&lt;/style&gt; 안에다가 정의를 하던, Inline Styles로 정의를 하던 margin을 입력해 주면 됩니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Inline Styles로 예를 들어보겠습니다.&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &amp;lt;ul class=&quot;slides&quot; style=&quot;margin:0;padding:0&quot;&amp;gt;
+    
+  &amp;lt;p style='color:#999; font-size: 2rem; font-weight: bold; margin:0; padding:0'&amp;gt;&amp;lt;/p&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Tue, 24 Mar 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/tip/2020/03/24/tip-css-01/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/03/24/tip-css-01/</guid>
+        
+        <category>css</category>
+        
+        
+        <category>tip</category>
+        
+      </item>
     
       <item>
         <title>[MySQL/MariaDB] CASE WHEN 사용법</title>
@@ -4297,162 +4371,6 @@ ND필터는 49mm 입니다.
         <pubDate>Fri, 13 Mar 2020 00:00:00 +0900</pubDate>
         <link>https://m-veloper.github.io/devlog/2020/03/13/sass-09/</link>
         <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/03/13/sass-09/</guid>
-        
-        <category>sass</category>
-        
-        
-        <category>devlog</category>
-        
-      </item>
-    
-      <item>
-        <title>[Sass/SCSS] 재활용(Mixins) - @include </title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/sass/2020-03-13-sass-08.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;sassscss-재활용mixins---include&quot;&gt;Sass(SCSS) 재활용(Mixins) - @include&lt;/h1&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Sass Mixins는 스타일 시트 전체에서 재사용 할 CSS 선언 그룹 을 정의하는 아주 훌륭한 기능입니다.&lt;/li&gt;
-  &lt;li&gt;약간의 Mixin(믹스인)으로 다양한 스타일을 만들어낼 수 있습니다.&lt;/li&gt;
-  &lt;li&gt;선언하기(@mixin)와 포함하기(@include)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;mixin&quot;&gt;@mixin&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;기본적인 Mixin 선언은 아주 간단합니다.&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;@mixin 지시어를 이용하여 스타일을 정의합니다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;SCSS:&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  @mixin 믹스인이름 {
-    스타일;
-  }
-    
-  @mixin large-text {
-    font-size: 22px;
-    font-weight: bold;
-    font-family: sans-serif;
-    color: orange;
-  }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Sass:&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  =믹스인이름
-    스타일
-      
-  =large-text
-    font-size: 22px
-    font-weight: bold
-    font-family: sans-serif
-    color: orange
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Mixin은 선택자를 포함 가능하고 상위(부모) 요소 참조(＆같은)도 할 수 있습니다.&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  @mixin large-text {
-    font: {
-      size: 22px;
-      weight: bold;
-      family: sans-serif;
-    }
-    color: orange;
-    
-    ＆::after {
-      content: &quot;!!&quot;;
-    }
-    
-    span.icon {
-      background: url(&quot;/images/icon.png&quot;);
-    }
-  }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;include&quot;&gt;@include&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;선언된 Mixin을 사용(포함)하기 위해서는 @include가 필요합니다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;SCSS:&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  @include 믹스인이름;
-    
-  h1 {
-    @include large-text;
-  }
-  div {
-    @include large-text;
-  }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Sass:&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  +믹스인이름
-    
-  h1
-    +large-text
-  div
-    +large-text
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Compiled to:&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;h1 {
-  font-size: 22px;
-  font-weight: bold;
-  font-family: sans-serif;
-  color: orange;
-}
-h1::after {
-  content: &quot;!!&quot;;
-}
-h1 span.icon {
-  background: url(&quot;/images/icon.png&quot;);
-}
-  
-div {
-  font-size: 22px;
-  font-weight: bold;
-  font-family: sans-serif;
-  color: orange;
-}
-div::after {
-  content: &quot;!!&quot;;
-}
-div span.icon {
-  background: url(&quot;/images/icon.png&quot;);
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    본 포스팅은 HEROPY 님의 영상과 블로그를 보고 공부한 내용을 정리한 것입니다.
-    https://heropy.blog/2018/01/31/sass/
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-</description>
-        <pubDate>Fri, 13 Mar 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/03/13/sass-08/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/03/13/sass-08/</guid>
         
         <category>sass</category>
         
