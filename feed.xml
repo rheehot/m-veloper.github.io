@@ -5,9 +5,45 @@
     <description></description>
     <link>https://m-veloper.github.io/</link>
     <atom:link href="https://m-veloper.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 24 Mar 2020 20:35:57 +0900</pubDate>
-    <lastBuildDate>Tue, 24 Mar 2020 20:35:57 +0900</lastBuildDate>
+    <pubDate>Wed, 25 Mar 2020 20:27:52 +0900</pubDate>
+    <lastBuildDate>Wed, 25 Mar 2020 20:27:52 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>[자바스크립트] 자바스크립트로 문자열 공백 제거하기</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/javascript/2020-03-25-tip-javascript-10.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;자바스크립트로-문자열-공백-제거하기&quot;&gt;자바스크립트로 문자열 공백 제거하기&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;콘솔창에서 확인할 때는 꼭 마우스로 드래그 해서 공백 제거 유무를 눈으로 확인하세요.&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  let str = &quot; 바보야, 바 보니? &quot;;
+    
+  console.log(str);
+    
+  console.log(str.replace(/(\s*)/g,&quot;&quot;)); // 문자열의 모든 공백 제거
+    
+  console.log(str.replace(/^\s*/,&quot;&quot;)); // 문자열의 제일 앞에 공백 제거
+    
+  console.log(str.replace(/\s*$/,&quot;&quot;)); // 문자열의 제일 뒤에 공백 제거
+    
+  console.log(str.trim());             // 문자열 제일 앞, 제일 뒤 공백 제거 (trim 함수 사용)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 25 Mar 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/tip/2020/03/25/tip-javascript-10/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/03/25/tip-javascript-10/</guid>
+        
+        <category>javascript</category>
+        
+        
+        <category>tip</category>
+        
+      </item>
     
       <item>
         <title>[CSS] user agent stylesheet은 무엇일까?</title>
@@ -4085,292 +4121,6 @@ ND필터는 49mm 입니다.
         <pubDate>Fri, 13 Mar 2020 00:00:00 +0900</pubDate>
         <link>https://m-veloper.github.io/devlog/2020/03/13/sass-10/</link>
         <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/03/13/sass-10/</guid>
-        
-        <category>sass</category>
-        
-        
-        <category>devlog</category>
-        
-      </item>
-    
-      <item>
-        <title>[Sass/SCSS] 재활용(Mixins) - 인수(Arguments)</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/sass/2020-03-13-sass-09.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;sassscss-재활용mixins---인수arguments&quot;&gt;Sass(SCSS) 재활용(Mixins) - 인수(Arguments)&lt;/h1&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Mixin은 함수(Functions)처럼 인수(Arguments)를 가질 수 있습니다.&lt;/li&gt;
-  &lt;li&gt;하나의 Mixin으로 다양한 결과를 만들 수 있습니다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;인수arguments&quot;&gt;인수(Arguments)&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;매개변수(Parameters)란 변수의 한 종류로, 제공되는 여러 데이터 중 하나를 가리키기 위해 사용된다.&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;제공되는 여러 데이터들을 전달인수(Arguments) 라고 부른다.&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; @mixin 믹스인이름($매개변수) {
-    스타일;
-  }
-  @include 믹스인이름(인수);
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;SCSS:&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  @mixin dash-line($width, $color) {
-    border: $width dashed $color;
-  }
-    
-  .box1 { @include dash-line(1px, red); }
-  .box2 { @include dash-line(4px, blue); }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Sass:&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  =믹스인이름($매개변수)
-    스타일
-    
-  +믹스인이름(인수)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Compiled to:&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  .box1 {
-    border: 1px dashed red;
-  }
-  .box2 {
-    border: 4px dashed blue;
-  }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;인수의-기본값-설정&quot;&gt;인수의 기본값 설정&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;인수(argument)는 기본값(default value)을 가질 수 있습니다.&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;@include 포함 단계에서 별도의 인수가 전달되지 않으면 기본값이 사용됩니다.&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  @mixin 믹스인이름($매개변수: 기본값) {
-    스타일;
-  }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;SCSS:&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  @mixin dash-line($width: 1px, $color: black) {
-    border: $width dashed $color;
-  }
-    
-  .box1 { @include dash-line; }
-  .box2 { @include dash-line(4px); }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Compiled to:&lt;/p&gt;
-
-    &lt;p&gt;.box1 {
-     border: 1px dashed black;
-   }
-   .box2 {
-     border: 4px dashed black;
-   }&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;키워드-인수keyword-arguments&quot;&gt;키워드 인수(Keyword Arguments)&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Mixin에 전달할 인수를 입력할 때 명시적으로 키워드(변수)를 입력하여 작성할 수 있습니다.&lt;/li&gt;
-  &lt;li&gt;별도의 인수 입력 순서를 필요로 하지 않아 편리하게 작성할 수 있습니다.&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;단, 작성하지 않은 인수가 적용될 수 있도록 기본값을 설정해 주는 것이 좋습니다.&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;      @mixin 믹스인이름($매개변수A: 기본값, $매개변수B: 기본값) {
-        스타일;
-      }
-        
-      @include 믹스인이름($매개변수B: 인수);
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;SCSS:&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;      @mixin position($p: absolute, $t: null, $b: null, $l: null,$r: null) {
-        position: $p;
-        top: $t;
-        bottom: $b;
-        left: $l;
-        right: $r;
-      }
-        
-      .absolute {
-        // 키워드 인수로 설정할 값만 전달
-        @include position($b: 10px, $r: 20px);
-      }
-      .fixed {
-        // 인수가 많아짐에 따라 가독성을 확보하기 위해 줄바꿈
-        @include position(
-          fixed,
-          $t: 30px,
-          $r: 40px
-        );
-      }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Compiled to:&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  .absolute {
-    position: absolute;
-    bottom: 10px;
-    right: 20px;
-  }
-  .fixed {
-    position: fixed;
-    top: 30px;
-    right: 40px;
-  }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;가변-인수variable-arguments&quot;&gt;가변 인수(Variable Arguments)&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;때때로 입력할 인수의 개수가 불확실한 경우가 있습니다.&lt;/li&gt;
-  &lt;li&gt;그럴 경우 가변 인수를 사용할 수 있습니다.&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;가변 인수는 매개변수 뒤에 …을 붙여줍니다.&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  @mixin 믹스인이름($매개변수...) {
-    스타일;
-  }
-    
-  @include 믹스인이름(인수A, 인수B, 인수C);
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;SCSS:&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  // 인수를 순서대로 하나씩 전달 받다가, 3번째 매개변수($bg-values)는 인수의 개수에 상관없이 받음
-  @mixin bg($width, $height, $bg-values...) {
-    width: $width;
-    height: $height;
-    background: $bg-values;
-  }
-    
-  div {
-    // 위의 Mixin(bg) 설정에 맞게 인수를 순서대로 전달하다가 3번째 이후부터는 개수에 상관없이 전달
-    @include bg(
-      100px,
-      200px,
-      url(&quot;/images/a.png&quot;) no-repeat 10px 20px,
-      url(&quot;/images/b.png&quot;) no-repeat,
-      url(&quot;/images/c.png&quot;)
-    );
-  }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Compiled to:&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  div {
-    width: 100px;
-    height: 200px;
-    background: url(&quot;/images/a.png&quot;) no-repeat 10px 20px,
-                url(&quot;/images/b.png&quot;) no-repeat,
-                url(&quot;/images/c.png&quot;);
-  }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;위에선 인수를 받는 매개변수에 …을 사용하여 가변 인수를 활용했습니다. 이번엔 반대로 가변 인수를 전달할 값으로 사용해 보겠습니다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;SCSS:&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  @mixin font(
-    $style: normal,
-    $weight: normal,
-    $size: 16px,
-    $family: sans-serif
-  ) {
-    font: {
-      style: $style;
-      weight: $weight;
-      size: $size;
-      family: $family;
-    }
-  }
-  div {
-    // 매개변수 순서와 개수에 맞게 전달
-    $font-values: italic, bold, 16px, sans-serif;
-    @include font($font-values...);
-  }
-  span {
-    // 필요한 값만 키워드 인수로 변수에 담아 전달
-    $font-values: (style: italic, size: 22px);
-    @include font($font-values...);
-  }
-  a {
-    // 필요한 값만 키워드 인수로 전달
-    @include font((weight: 900, family: monospace)...);
-  }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Compiled to:&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  div {
-    font-style: italic;
-    font-weight: bold;
-    font-size: 16px;
-    font-family: sans-serif;
-  }
-  span {
-    font-style: italic;
-    font-weight: normal;
-    font-size: 22px;
-    font-family: sans-serif;
-  }
-  a {
-    font-style: normal;
-    font-weight: 900;
-    font-size: 16px;
-    font-family: monospace;
-  }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    본 포스팅은 HEROPY 님의 영상과 블로그를 보고 공부한 내용을 정리한 것입니다.
-    https://heropy.blog/2018/01/31/sass/
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-</description>
-        <pubDate>Fri, 13 Mar 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/03/13/sass-09/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/03/13/sass-09/</guid>
         
         <category>sass</category>
         
