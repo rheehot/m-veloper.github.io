@@ -3,8 +3,8 @@
   <channel>
     <title>m_veloper</title>
     <description></description>
-    <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <link>https://m-veloper.github.io/</link>
+    <atom:link href="https://m-veloper.github.io/feed.xml" rel="self" type="application/rss+xml"/>
     <pubDate>Thu, 26 Mar 2020 20:32:47 +0900</pubDate>
     <lastBuildDate>Thu, 26 Mar 2020 20:32:47 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
@@ -51,8 +51,8 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Thu, 26 Mar 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/tip/2020/03/26/tip-java-03/</link>
-        <guid isPermaLink="true">http://localhost:4000/tip/2020/03/26/tip-java-03/</guid>
+        <link>https://m-veloper.github.io/tip/2020/03/26/tip-java-03/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/03/26/tip-java-03/</guid>
         
         <category>java</category>
         
@@ -87,8 +87,8 @@
 &lt;/ul&gt;
 </description>
         <pubDate>Wed, 25 Mar 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/tip/2020/03/25/tip-javascript-10/</link>
-        <guid isPermaLink="true">http://localhost:4000/tip/2020/03/25/tip-javascript-10/</guid>
+        <link>https://m-veloper.github.io/tip/2020/03/25/tip-javascript-10/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/03/25/tip-javascript-10/</guid>
         
         <category>javascript</category>
         
@@ -161,8 +161,8 @@
 
 </description>
         <pubDate>Tue, 24 Mar 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/tip/2020/03/24/tip-css-01/</link>
-        <guid isPermaLink="true">http://localhost:4000/tip/2020/03/24/tip-css-01/</guid>
+        <link>https://m-veloper.github.io/tip/2020/03/24/tip-css-01/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/03/24/tip-css-01/</guid>
         
         <category>css</category>
         
@@ -210,8 +210,8 @@
 
 </description>
         <pubDate>Mon, 23 Mar 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/tip/2020/03/23/tip-mysql-05/</link>
-        <guid isPermaLink="true">http://localhost:4000/tip/2020/03/23/tip-mysql-05/</guid>
+        <link>https://m-veloper.github.io/tip/2020/03/23/tip-mysql-05/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/03/23/tip-mysql-05/</guid>
         
         <category>mysql</category>
         
@@ -265,8 +265,8 @@
 
 </description>
         <pubDate>Mon, 23 Mar 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/tip/2020/03/23/tip-mysql-04/</link>
-        <guid isPermaLink="true">http://localhost:4000/tip/2020/03/23/tip-mysql-04/</guid>
+        <link>https://m-veloper.github.io/tip/2020/03/23/tip-mysql-04/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/03/23/tip-mysql-04/</guid>
         
         <category>mysql</category>
         
@@ -300,8 +300,8 @@
 
 </description>
         <pubDate>Mon, 23 Mar 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/tip/2020/03/23/tip-mysql-03/</link>
-        <guid isPermaLink="true">http://localhost:4000/tip/2020/03/23/tip-mysql-03/</guid>
+        <link>https://m-veloper.github.io/tip/2020/03/23/tip-mysql-03/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/03/23/tip-mysql-03/</guid>
         
         <category>mysql</category>
         
@@ -336,8 +336,8 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Mon, 23 Mar 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/tip/2020/03/23/tip-javascript-09/</link>
-        <guid isPermaLink="true">http://localhost:4000/tip/2020/03/23/tip-javascript-09/</guid>
+        <link>https://m-veloper.github.io/tip/2020/03/23/tip-javascript-09/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/03/23/tip-javascript-09/</guid>
         
         <category>javascript</category>
         
@@ -556,8 +556,8 @@
 
 </description>
         <pubDate>Sun, 22 Mar 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/devlog/2020/03/22/sass-15/</link>
-        <guid isPermaLink="true">http://localhost:4000/devlog/2020/03/22/sass-15/</guid>
+        <link>https://m-veloper.github.io/devlog/2020/03/22/sass-15/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/03/22/sass-15/</guid>
         
         <category>sass</category>
         
@@ -838,8 +838,8 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Sun, 22 Mar 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/devlog/2020/03/22/sass-14/</link>
-        <guid isPermaLink="true">http://localhost:4000/devlog/2020/03/22/sass-14/</guid>
+        <link>https://m-veloper.github.io/devlog/2020/03/22/sass-14/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/03/22/sass-14/</guid>
         
         <category>sass</category>
         
@@ -862,8 +862,8 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Sat, 21 Mar 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/tip/2020/03/21/tip-javascript-08/</link>
-        <guid isPermaLink="true">http://localhost:4000/tip/2020/03/21/tip-javascript-08/</guid>
+        <link>https://m-veloper.github.io/tip/2020/03/21/tip-javascript-08/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/03/21/tip-javascript-08/</guid>
         
         <category>javascript</category>
         
@@ -1253,8 +1253,8 @@
 
 </description>
         <pubDate>Fri, 20 Mar 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/devlog/2020/03/20/unix-21/</link>
-        <guid isPermaLink="true">http://localhost:4000/devlog/2020/03/20/unix-21/</guid>
+        <link>https://m-veloper.github.io/devlog/2020/03/20/unix-21/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/03/20/unix-21/</guid>
         
         <category>unix</category>
         
@@ -1516,8 +1516,8 @@
 &lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-20-unix-20-06.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Fri, 20 Mar 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/devlog/2020/03/20/unix-20/</link>
-        <guid isPermaLink="true">http://localhost:4000/devlog/2020/03/20/unix-20/</guid>
+        <link>https://m-veloper.github.io/devlog/2020/03/20/unix-20/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/03/20/unix-20/</guid>
         
         <category>unix</category>
         
@@ -1705,8 +1705,8 @@
 &lt;/ul&gt;
 </description>
         <pubDate>Fri, 20 Mar 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/devlog/2020/03/20/unix-19/</link>
-        <guid isPermaLink="true">http://localhost:4000/devlog/2020/03/20/unix-19/</guid>
+        <link>https://m-veloper.github.io/devlog/2020/03/20/unix-19/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/03/20/unix-19/</guid>
         
         <category>unix</category>
         
@@ -1896,8 +1896,8 @@
 &lt;/ul&gt;
 </description>
         <pubDate>Fri, 20 Mar 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/devlog/2020/03/20/database-22/</link>
-        <guid isPermaLink="true">http://localhost:4000/devlog/2020/03/20/database-22/</guid>
+        <link>https://m-veloper.github.io/devlog/2020/03/20/database-22/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/03/20/database-22/</guid>
         
         <category>database</category>
         
@@ -1993,8 +1993,8 @@
 &lt;/ul&gt;
 </description>
         <pubDate>Fri, 20 Mar 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/devlog/2020/03/20/database-21/</link>
-        <guid isPermaLink="true">http://localhost:4000/devlog/2020/03/20/database-21/</guid>
+        <link>https://m-veloper.github.io/devlog/2020/03/20/database-21/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/03/20/database-21/</guid>
         
         <category>database</category>
         
@@ -2039,8 +2039,8 @@
 &lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-20-04.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Fri, 20 Mar 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/devlog/2020/03/20/database-20/</link>
-        <guid isPermaLink="true">http://localhost:4000/devlog/2020/03/20/database-20/</guid>
+        <link>https://m-veloper.github.io/devlog/2020/03/20/database-20/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/03/20/database-20/</guid>
         
         <category>database</category>
         
@@ -2167,8 +2167,8 @@
 &lt;/ul&gt;
 </description>
         <pubDate>Fri, 20 Mar 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/devlog/2020/03/20/database-19/</link>
-        <guid isPermaLink="true">http://localhost:4000/devlog/2020/03/20/database-19/</guid>
+        <link>https://m-veloper.github.io/devlog/2020/03/20/database-19/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/03/20/database-19/</guid>
         
         <category>database</category>
         
@@ -2319,8 +2319,8 @@
 
 </description>
         <pubDate>Thu, 19 Mar 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/devlog/2020/03/19/database-18/</link>
-        <guid isPermaLink="true">http://localhost:4000/devlog/2020/03/19/database-18/</guid>
+        <link>https://m-veloper.github.io/devlog/2020/03/19/database-18/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/03/19/database-18/</guid>
         
         <category>database</category>
         
@@ -2383,8 +2383,8 @@
 
 </description>
         <pubDate>Wed, 18 Mar 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/tip/2020/03/18/tip-jstl-02/</link>
-        <guid isPermaLink="true">http://localhost:4000/tip/2020/03/18/tip-jstl-02/</guid>
+        <link>https://m-veloper.github.io/tip/2020/03/18/tip-jstl-02/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/03/18/tip-jstl-02/</guid>
         
         <category>jstl</category>
         
@@ -2438,8 +2438,8 @@
 &lt;/ul&gt;
 </description>
         <pubDate>Wed, 18 Mar 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/tip/2020/03/18/tip-java-02/</link>
-        <guid isPermaLink="true">http://localhost:4000/tip/2020/03/18/tip-java-02/</guid>
+        <link>https://m-veloper.github.io/tip/2020/03/18/tip-java-02/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/03/18/tip-java-02/</guid>
         
         <category>java</category>
         
@@ -2652,8 +2652,8 @@
 
 </description>
         <pubDate>Tue, 17 Mar 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/devlog/2020/03/17/sass-13/</link>
-        <guid isPermaLink="true">http://localhost:4000/devlog/2020/03/17/sass-13/</guid>
+        <link>https://m-veloper.github.io/devlog/2020/03/17/sass-13/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/03/17/sass-13/</guid>
         
         <category>sass</category>
         
@@ -2825,8 +2825,8 @@ my-custom-func-red()&lt;/li&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Tue, 17 Mar 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/devlog/2020/03/17/sass-12/</link>
-        <guid isPermaLink="true">http://localhost:4000/devlog/2020/03/17/sass-12/</guid>
+        <link>https://m-veloper.github.io/devlog/2020/03/17/sass-12/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/03/17/sass-12/</guid>
         
         <category>sass</category>
         
@@ -2917,8 +2917,8 @@ my-custom-func-red()&lt;/li&gt;
 
 </description>
         <pubDate>Mon, 16 Mar 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/devlog/2020/03/16/sass-11/</link>
-        <guid isPermaLink="true">http://localhost:4000/devlog/2020/03/16/sass-11/</guid>
+        <link>https://m-veloper.github.io/devlog/2020/03/16/sass-11/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/03/16/sass-11/</guid>
         
         <category>sass</category>
         
@@ -3051,8 +3051,8 @@ my-custom-func-red()&lt;/li&gt;
 
 </description>
         <pubDate>Mon, 16 Mar 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/tip/2020/03/16/tip-mysql-02/</link>
-        <guid isPermaLink="true">http://localhost:4000/tip/2020/03/16/tip-mysql-02/</guid>
+        <link>https://m-veloper.github.io/tip/2020/03/16/tip-mysql-02/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/03/16/tip-mysql-02/</guid>
         
         <category>mysql</category>
         
@@ -3134,8 +3134,8 @@ my-custom-func-red()&lt;/li&gt;
 
 </description>
         <pubDate>Mon, 16 Mar 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/tip/2020/03/16/tip-javascript-07/</link>
-        <guid isPermaLink="true">http://localhost:4000/tip/2020/03/16/tip-javascript-07/</guid>
+        <link>https://m-veloper.github.io/tip/2020/03/16/tip-javascript-07/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/03/16/tip-javascript-07/</guid>
         
         <category>javascript</category>
         
@@ -3246,8 +3246,8 @@ ND필터는 49mm 입니다.
 
 </description>
         <pubDate>Sat, 14 Mar 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/review/2020/03/14/review-goods-fuji-x100v-02/</link>
-        <guid isPermaLink="true">http://localhost:4000/review/2020/03/14/review-goods-fuji-x100v-02/</guid>
+        <link>https://m-veloper.github.io/review/2020/03/14/review-goods-fuji-x100v-02/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/review/2020/03/14/review-goods-fuji-x100v-02/</guid>
         
         <category>goods</category>
         
@@ -3417,8 +3417,8 @@ ND필터는 49mm 입니다.
 
 </description>
         <pubDate>Sat, 14 Mar 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/review/2020/03/14/review-goods-fuji-x100v-01/</link>
-        <guid isPermaLink="true">http://localhost:4000/review/2020/03/14/review-goods-fuji-x100v-01/</guid>
+        <link>https://m-veloper.github.io/review/2020/03/14/review-goods-fuji-x100v-01/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/review/2020/03/14/review-goods-fuji-x100v-01/</guid>
         
         <category>goods</category>
         
@@ -3655,8 +3655,8 @@ ND필터는 49mm 입니다.
 &lt;/ul&gt;
 </description>
         <pubDate>Fri, 13 Mar 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/devlog/2020/03/13/unix-18/</link>
-        <guid isPermaLink="true">http://localhost:4000/devlog/2020/03/13/unix-18/</guid>
+        <link>https://m-veloper.github.io/devlog/2020/03/13/unix-18/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/03/13/unix-18/</guid>
         
         <category>unix</category>
         
@@ -3848,8 +3848,8 @@ ND필터는 49mm 입니다.
 
 </description>
         <pubDate>Fri, 13 Mar 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/devlog/2020/03/13/unix-17/</link>
-        <guid isPermaLink="true">http://localhost:4000/devlog/2020/03/13/unix-17/</guid>
+        <link>https://m-veloper.github.io/devlog/2020/03/13/unix-17/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/03/13/unix-17/</guid>
         
         <category>unix</category>
         
@@ -4053,8 +4053,8 @@ ND필터는 49mm 입니다.
 
 </description>
         <pubDate>Fri, 13 Mar 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/devlog/2020/03/13/unix-16/</link>
-        <guid isPermaLink="true">http://localhost:4000/devlog/2020/03/13/unix-16/</guid>
+        <link>https://m-veloper.github.io/devlog/2020/03/13/unix-16/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/03/13/unix-16/</guid>
         
         <category>unix</category>
         
