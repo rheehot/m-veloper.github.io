@@ -31,7 +31,7 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="naver-site-verification" content="fa37cbf8ce41948de6e94c01991ffa04cea9b093"/>
 <meta name="google-site-verification" content="5M4Zw9wg_UqQkvlayfb5Mc_ogvJdc013w_zLUkxgO-Y" />
-<meta property="og:title" content="[Database] 관계 데이터 모델의 제약 조건">
+<meta property="og:title" content="[JAVA] 자바 날짜 차이구하기">
 <meta property="og:type" content="article">
 
 
@@ -46,7 +46,7 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 
 
 
-  <title>[Database] 관계 데이터 모델의 제약 조건 &middot; m_veloper</title>
+  <title>[JAVA] 자바 날짜 차이구하기 &middot; m_veloper</title>
 
 
 
@@ -62,17 +62,15 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 <!-- =============== -->
 <!-- LINKS           -->
 <!-- =============== -->
-<link rel="canonical" href="http://localhost:4000/devlog/2020/02/28/database-10/">
-<meta property="og:url" content="http://localhost:4000/devlog/2020/02/28/database-10/">
+<link rel="canonical" href="http://localhost:4000/tip/2020/03/26/tip-java-03/">
+<meta property="og:url" content="http://localhost:4000/tip/2020/03/26/tip-java-03/">
 
 <link rel="alternate" type="application/atom+xml" title="m_veloper Feed" href="http://localhost:4000/feed.xml">
 
 
-  <link rel="prev" href="http://localhost:4000/tip/2020/02/27/tip-javascript-04/">
+  <link rel="prev" href="http://localhost:4000/tip/2020/03/25/tip-javascript-10/">
 
 
-
-  <link rel="next" href="http://localhost:4000/devlog/2020/02/28/database-11/">
 
 
 <link rel="apple-touch-icon" href="http://localhost:4000/apple-touch-icon.png">
@@ -307,18 +305,18 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 
 
 
-<article id="post-devlog/2020/02/28/database-10" class="post this" role="article">
+<article id="post-tip/2020/03/26/tip-java-03" class="post this" role="article">
   <header>
 
     <h1 class="post-title">
       
-        [Database] 관계 데이터 모델의 제약 조건
+        [JAVA] 자바 날짜 차이구하기
         
     </h1>
 
     <p class="post-date heading">
-      <!--<time datetime="2020-02-28T00:00:00+09:00">28 Feb 2020</time>-->
-      <time datetime="2020-02-28T00:00:00+09:00">2020년 02월 28일</time>
+      <!--<time datetime="2020-03-26T00:00:00+09:00">26 Mar 2020</time>-->
+      <time datetime="2020-03-26T00:00:00+09:00">2020년 03월 26일</time>
     </p>
     
 
@@ -330,7 +328,7 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 
 
 
-<a href="/category/devlog/" data-flip="title" id="tag">Devlog</a>
+<a href="/category/tip/" data-flip="title" id="tag">Tip</a>
 
     
 
@@ -342,7 +340,7 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 
 
 
-<a href="/tag/devlog-database/" data-flip="title" id="tag">Database</a>
+<a href="/tag/tip-java/" data-flip="title" id="tag">Java</a>
 
 
     
@@ -370,212 +368,44 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
     </div>
 
     <br />
-    <p><img src="/assets/img/database/2020/02/2020-02-28-database-10.png" alt="" /></p>
+    <p><img src="/assets/img/java/2020-03-26-tip-java-03.png" alt="" /></p>
 
-<h1 id="데이터-무결성">데이터 무결성</h1>
-<p><br />
-<br /></p>
+<h1 id="자바-날짜-차이구하기">자바 날짜 차이구하기</h1>
+<p><br /></p>
 
-<ol>
-  <li>데이터베이스의 장점
-    <ul>
-      <li>데이터 공유 및 용이한 접근</li>
-      <li>데이터 중복 최소화, 일관성, 무결성, 보안성 유지</li>
-      <li>데이터의 표준화 가능</li>
-      <li>데이터의 저장 공간 절약 및 집중화</li>
-    </ul>
-  </li>
-  <li>
-    <p>데이터 무결성</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>public void calculateDateBetweenAandB(){
 
-    <ul>
-      <li>데이터베이스에 저장된 데이터의 일관성과 정확성을 유지하는 것</li>
-      <li>일관성과 정확성이 없는 데이터베이스는 정보로서 부적격하다.</li>
-      <li>
-        <p>유지 방법</p>
+    String dateA = "2019-08-27";
+    String dateB = "2019-09-09";
+ 
+    // String Type을 Date Type으로 캐스팅하면서 생기는 예외로 인해 여기서 
+    예외처리 해주지 않으면 컴파일러에서 에러가 발생해서 컴파일을 할 수 없다.
+    
+    try{ 
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 
-        <ul>
-          <li>투플의 삽입, 삭제, 수정시 데이터의 제약 조건을 준수하는지 확인하여야 한다.</li>
-        </ul>
-      </li>
-      <li>
-        <p>예 : 쇼핑몰에서 회원이 탈퇴한 경우</p>
-
-        <ul>
-          <li>탈퇴한 회원 정보를 삭제하면, 회원이 구매한 정보에 문제가 발생</li>
-          <li>구매내역까지 삭제하면, 쇼핑몰의 총 매출에 문제가 발생</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <p>데이터베이스 관리시스템의 데이터 무결성 유지</p>
-
-    <ul>
-      <li>무결성을 위반하는 데이터 저장 거절</li>
-    </ul>
-  </li>
-</ol>
-
-<p><br />
-<br /></p>
-
-<h1 id="무결성-제약-조건">무결성 제약 조건</h1>
-<p><br />
-<br /></p>
-
-<ol>
-  <li>
-    <p>도메인 무결성 제약 조건 (Domain Integrity Constraint)</p>
-
-    <ul>
-      <li>도메인 제약(Domain Constraint)</li>
-      <li>릴레이션 내의 투플들이 각 속성의 도메인에 지정된 값만 가져야 한다는 조건</li>
-      <li>
-        <p>예 : 주문 릴레이션의 주문일자 속성</p>
-
-        <ul>
-          <li>날짜 데이터만 사용하여야 함.</li>
-          <li>문자 등의 다른 자료형을 사용하면 안됨</li>
-        </ul>
-      </li>
-      <li>
-        <p>구현 방법</p>
-      </li>
-      <li>SQL 문에서 데이터 형식(Type), 널(NULL / NOT NULL), 기본 값(Default), 체크(Check)등을 사용하여 지정 (일반 프로그래밍 언어에서 변수형 선언과 유사)</li>
-    </ul>
-  </li>
-  <li>
-    <p>개체 무결성 제약조건 (Entity Integrity Constraint)</p>
-
-    <ul>
-      <li>기본키 제약 (Primary Key Constraint)라고도 함.</li>
-      <li>기본키의 무결성을 위한 제약 조건</li>
-      <li>기본키의 특징을 유지하기 위한 조건
-        <ul>
-          <li>NULL 값을 가져서는 안된다.</li>
-          <li>릴레이션 내에 오직 하나의 값만 존재하여야 한다.</li>
-        </ul>
-      </li>
-      <li>관계 데이터 모델의 핵심 개념</li>
-      <li>투플 삽입시 개체 무결성 제약 조건 수행</li>
-    </ul>
-
-    <p><img src="/assets/img/database/2020/02/2020-02-28-database-10-01.png" alt="" /></p>
-
-    <p><img src="/assets/img/database/2020/02/2020-02-28-database-10-02.png" alt="" />
- <br />
- <br /></p>
-
-    <ul>
-      <li>
-        <p>투플 수정시 개체 무결성 제약 조건 수행</p>
-
-        <ul>
-          <li>삽입 연산과 동일하게 제약에 따라 처리된다.</li>
-          <li>동일한 값으로 수정시 제약을 검색한 후 위배되면 수정이 거부된다.</li>
-        </ul>
-      </li>
-      <li>
-        <p>투플 삭제시 개체 무결성 제약 조건 수행</p>
-
-        <ul>
-          <li>특별한 확인이 필요하지 않으며 즉시 수행된다.</li>
-          <li>단, 참조 무결성 제약 조건에 의하여 다른 릴레이션에서 기본키를 참조하고 있으면, 바로 삭제하지 않는다.</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <p>참조 무결성 제약조건 (Referential Integrity Constraint)</p>
-
-    <ul>
-      <li>외래키 제약 (Foreign Key Constraint) 라고도 함.</li>
-      <li>릴레이션 간의 참조 관계를 선언하는 제약조건</li>
-      <li>
-        <p>부모(Parent) 릴레이션과 자식(Child) 릴레이션 관계</p>
-
-        <ul>
-          <li>부모 릴레이션 : 참조를 제공하는 릴레이션 (기본키)</li>
-          <li>자식 릴레이션 : 참조를 제공받는 릴레이션 (외래키)</li>
-        </ul>
-      </li>
-      <li>
-        <p>자식 릴레이션의 값은 부모 릴레이션의 제약을 받는다.</p>
-
-        <ul>
-          <li>자식 릴레이션의 값이 부모 릴레이션의 도메인과 다른 값으로 삽입, 수정될 경우 거부</li>
-          <li>자식 릴레이션에서 참조하고 있는 값을 부모 릴레이션에서 삭제하거나 다른 값으로 변경할 경우 거부</li>
-        </ul>
-      </li>
-      <li>
-        <p>투플 삽입시 참조 무결성 제약 조건 수행</p>
-
-        <p><img src="/assets/img/database/2020/02/2020-02-28-database-10-03.png" alt="" />
-  <br />
-  <br /></p>
-      </li>
-      <li>
-        <p>투플 삭제시 참조 무결성 제약 조건 수행</p>
-
-        <ul>
-          <li>자식 릴레이션에서 투플이 삭제되는 경우 : 부모 릴레이션에는 영향이 없으므로 바로 삭제</li>
-          <li>
-            <p>부모 릴레이션에서 투플이 삭제되는 경우 : 문제 발생되며 조치 방법</p>
-
-            <p>(가) 즉시 작업 중지
-  (나) 자식 릴레이션의 관련 투플을 삭제
-  (다) 자식 릴레이션의 관련 투플을 설정된 다른 값으로 변경
-  (라) 자식 릴레이션의 관련 투플을 NULL 값으로 설정</p>
-          </li>
-        </ul>
-
-        <p><img src="/assets/img/database/2020/02/2020-02-28-database-10-04.png" alt="" />
-  <br />
-  <br /></p>
-      </li>
-      <li>
-        <p>투플 수정시 참조 무결성 제약 조건 수행</p>
-
-        <ul>
-          <li>
-            <p>부모 릴레이션의 투플이 수정되는 경우</p>
-
-            <p>(가) 삭제 옵션에 따라 처리
-  (나) 문제가 없으면 삽입 제약 조건에 따라 처리</p>
-          </li>
-        </ul>
-
-        <p><img src="/assets/img/database/2020/02/2020-02-28-database-10-05.png" alt="" />
-  <br />
-  <br /></p>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <p>기타 제약 조건</p>
-
-    <p>(1) 고유성 제약조건 (Unique Constraint)</p>
-
-    <ul>
-      <li>키 제약(Key Constraint)라고도 함.</li>
-      <li>
-        <p>키 속성을 유지하기 위한 제약</p>
-
-        <ul>
-          <li>키의 모든 값은 달라야 한다.</li>
-        </ul>
-      </li>
-      <li>
-        <p>단, NULL 값을 허용한다.</p>
-
-        <ul>
-          <li>키는 NULL 값을 허용하지 않는다.</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-</ol>
+        // date1, date2 두 날짜를 parse()를 통해 Date형으로 변환.
+        Date FirstDate = format.parse(dateA);
+        Date SecondDate = format.parse(dateB);
+        
+        // Date로 변환된 두 날짜를 계산한 뒤 그 리턴값으로 long type 변수를 초기화 하고 있다.
+        // 연산결과 -950400000. long type 으로 return 된다.
+        long calDate = FirstDate.getTime() - SecondDate.getTime(); 
+        
+        // Date.getTime() 은 해당날짜를 기준으로1970년 00:00:00 부터 몇 초가 흘렀는지를 반환해준다. 
+        // 이제 24*60*60*1000(각 시간값에 따른 차이점) 을 나눠주면 일수가 나온다.
+        long calDateDays = calDate / ( 24*60*60*1000); 
+ 
+        calDateDays = Math.abs(calDateDays);//절대값으로 출력
+        
+        System.out.println("두 날짜의 날짜 차이: "+calDateDays);
+    }
+    catch(ParseException e){
+            // 예외 처리
+    }
+    
+}
+</code></pre></div></div>
 
     <br />
   </div>
@@ -596,12 +426,12 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 <div class="share">
   <h2>Share this post</h2>
   <div class="share-body">
-    <a href="http://twitter.com/share?text=[Database] 관계 데이터 모델의 제약 조건&amp;url=http://localhost:4000/devlog/2020/02/28/database-10/"
+    <a href="http://twitter.com/share?text=[JAVA] 자바 날짜 차이구하기&amp;url=http://localhost:4000/tip/2020/03/26/tip-java-03/"
       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
       <span class="icon-twitter">
       </span>
     </a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/devlog/2020/02/28/database-10/"
+    <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/tip/2020/03/26/tip-java-03/"
       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
       <span class="icon-facebook">
       </span>
@@ -697,6 +527,9 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
       
       
         
+          
+          
+        
         
           
 
@@ -708,11 +541,11 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
   }
 </style>
 <li class="h4">
-  <a href="/devlog/2020/03/22/sass-15/" data-flip="title">
-    <span>[Sass/SCSS] 내장 함수(Built-in Functions)</span>
+  <a href="/tip/2020/03/25/tip-javascript-10/" data-flip="title">
+    <span>[자바스크립트] 자바스크립트로 문자열 공백 제거하기</span>
   </a>
-  <small><time datetime="2020-03-22T00:00:00+09:00">
-    2020년 03월 22일
+  <small><time datetime="2020-03-25T00:00:00+09:00">
+    2020년 03월 25일
   </time></small>
 </li>
 
@@ -730,11 +563,11 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
   }
 </style>
 <li class="h4">
-  <a href="/devlog/2020/03/22/sass-14/" data-flip="title">
-    <span>[Sass/SCSS] 반복문(for,each, while)</span>
+  <a href="/tip/2020/03/24/tip-css-01/" data-flip="title">
+    <span>[CSS] user agent stylesheet은 무엇일까?</span>
   </a>
-  <small><time datetime="2020-03-22T00:00:00+09:00">
-    2020년 03월 22일
+  <small><time datetime="2020-03-24T00:00:00+09:00">
+    2020년 03월 24일
   </time></small>
 </li>
 
@@ -752,17 +585,14 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
   }
 </style>
 <li class="h4">
-  <a href="/devlog/2020/03/20/unix-21/" data-flip="title">
-    <span>[유닉스] 포그라운드(foreground), 백그라운드(background)</span>
+  <a href="/tip/2020/03/23/tip-mysql-05/" data-flip="title">
+    <span>[MySQL/MariaDB] CASE WHEN 사용법</span>
   </a>
-  <small><time datetime="2020-03-20T00:00:00+09:00">
-    2020년 03월 20일
+  <small><time datetime="2020-03-23T00:00:00+09:00">
+    2020년 03월 23일
   </time></small>
 </li>
 
-        
-      
-        
         
       
     
@@ -794,9 +624,9 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
   }
 
   var d = function () {
-    this.page.title = "[Database] 관계 데이터 모델의 제약 조건",
-      this.page.identifier = "/devlog/2020/02/28/database-10",
-      this.page.url = "http://localhost:4000/devlog/2020/02/28/database-10/"
+    this.page.title = "[JAVA] 자바 날짜 차이구하기",
+      this.page.identifier = "/tip/2020/03/26/tip-java-03",
+      this.page.url = "http://localhost:4000/tip/2020/03/26/tip-java-03/"
   };
   s._disqusFirst = void 0 === s._disqusFirst || s._disqusFirst, s._disqusLoading = void 0 !== s._disqusLoading && s._disqusLoading, s._disqusThis = !1, s._disqusThreadOffsetTop = i.getElementById(
     "disqus_thread").offsetTop, s._disqusLoading ? s._disqusFirst = !1 : (s._disqusLoading = !0, loadJSDeferred(
