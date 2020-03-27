@@ -5,9 +5,62 @@
     <description></description>
     <link>https://m-veloper.github.io/</link>
     <atom:link href="https://m-veloper.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 26 Mar 2020 23:29:38 +0900</pubDate>
-    <lastBuildDate>Thu, 26 Mar 2020 23:29:38 +0900</lastBuildDate>
+    <pubDate>Fri, 27 Mar 2020 23:20:18 +0900</pubDate>
+    <lastBuildDate>Fri, 27 Mar 2020 23:20:18 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>[Chart.js] 도넛차트 굵기 조절, 변경하기</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/chartjs/2020-03-27-tip-chartjs-01.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;chartjs-도넛차트-굵기-조절-변경하기&quot;&gt;Chart.js 도넛차트 굵기 조절, 변경하기&lt;/h1&gt;
+&lt;h3 id=&quot;how-to-vary-the-thickness-of-doughnut-chart-using-chartjs&quot;&gt;How to vary the thickness of doughnut chart, using Chart.Js&lt;/h3&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;cutoutPercentage 또는 percentageInnerCutout 를 사용하세요&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  // html
+  &amp;lt;canvas id=&quot;myChart&quot; width=&quot;400&quot; height=&quot;400&quot;&amp;gt;&amp;lt;/canvas&amp;gt;
+    
+  &amp;lt;script&amp;gt;
+    
+      var ctx = document.getElementById('myChart').getContext('2d');
+        
+      var myDoughnutChart = new Chart(ctx, {
+          type: 'doughnut',
+          data: data,
+          options: {
+             cutoutPercentage: 65
+          }
+      });
+        
+      // 또는
+        
+      var myDoughnutChart = new Chart(ctx, {
+          type: 'doughnut',
+          data: data,
+          options: {
+             percentageInnerCutout: 65
+          }
+      });
+    
+  &amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Fri, 27 Mar 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/tip/2020/03/27/tip-chartjs-01/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/03/27/tip-chartjs-01/</guid>
+        
+        <category>chart.js</category>
+        
+        
+        <category>tip</category>
+        
+      </item>
     
       <item>
         <title>[JAVA] 자바 날짜 차이구하기</title>
@@ -3850,211 +3903,6 @@ ND필터는 49mm 입니다.
         <pubDate>Fri, 13 Mar 2020 00:00:00 +0900</pubDate>
         <link>https://m-veloper.github.io/devlog/2020/03/13/unix-17/</link>
         <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/03/13/unix-17/</guid>
-        
-        <category>unix</category>
-        
-        
-        <category>devlog</category>
-        
-      </item>
-    
-      <item>
-        <title>[유닉스] 파일의 속성</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-13-unix-16.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;파일의-속성&quot;&gt;파일의 속성&lt;/h1&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;파일-접근-권한의-개요&quot;&gt;파일 접근 권한의 개요&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;다중 사용자 시스템인 유닉스에서 다른 사용자의 파일을 마음대로 사용할 수 없도록 하는 보안 기능 제공&lt;/li&gt;
-  &lt;li&gt;사용자가 자신의 파일에 접근 권한 부여&lt;/li&gt;
-  &lt;li&gt;부여된 권한만큼만 파일 사용 가능&lt;/li&gt;
-  &lt;li&gt;접근 권한은 파일이 가지고 있는 속성 중 하나&lt;/li&gt;
-  &lt;li&gt;권한 대상 : 파일의 사용자(소유자), 소유자가 속한 그룹, 그 밖의 사용자&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-13-unix-16-01.png&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;파일-모드&quot;&gt;파일 모드&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;숫자로 표현한 권한
-&lt;img src=&quot;/assets/img/unix/2020-03-13-unix-16-02.png&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;파일의-속성-1&quot;&gt;파일의 속성&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;파일의 속성을 알기 위해 ‘ls –l’ 명령 사용&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ ls –l
-  total 1
-  -rw-r--r-- 1 ksshin ksshin 221 6월 5 22:12 text
-  $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-13-unix-16-03.png&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;파일 종류&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;파일 속성의 첫 번째 항목&lt;/li&gt;
-      &lt;li&gt;-는 일반 파일, d는 디렉토리 파일, l은 심볼릭 링크 파일 등&lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;파일의 종류를 알려주는 명령 : file&lt;/p&gt;
-
-        &lt;ul&gt;
-          &lt;li&gt;i) 형식 : file 파일명&lt;/li&gt;
-          &lt;li&gt;
-            &lt;p&gt;ii) 사용 예 : file /etc/hosts&lt;/p&gt;
-
-            &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ file test Unix
-  test: ASCII text
-  Unix: directory
-  $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;            &lt;/div&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;파일 접근 권한&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;파일의 소유자와 그룹, 기타 사용자들이 파일에 대해 가지고 있는 접근 권한을 표시&lt;/li&gt;
-      &lt;li&gt;접근 권한은 파일 소유자가 chmod 명령을 사용해 변경 가능&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;하드 링크 수&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;하나의 file에 연결된 파일 이름의 개수&lt;/li&gt;
-      &lt;li&gt;하드 링크는 한 파일에 여러 개의 파일명을 가질 수 있도록 하는 기능&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;파일 소유자의 사용자 이름&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;유닉스에서는 모든 파일에 소유자가 있음&lt;/li&gt;
-      &lt;li&gt;시스템 관련된 파일들은 대부분 루트 계정이 소유자&lt;/li&gt;
-      &lt;li&gt;일반 파일들은 해당 파일을 생성한 사용자가 소유자&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;파일이 속한 그룹 이름&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;사용자는 기본적으로 하나 이상의 그룹에 속해 있음&lt;/li&gt;
-      &lt;li&gt;‘ls –l’ 명령의 결과에서 나온 그룹명은 파일이 속한 그룹 이름&lt;/li&gt;
-      &lt;li&gt;사용자가 속한 그룹은 시스템 관리자가 사용자 등록시 결정&lt;/li&gt;
-      &lt;li&gt;사용자가 임의로 자신의 그룹을 바꿀 수 없고 시스템 관리자에게 변경 요청&lt;/li&gt;
-      &lt;li&gt;그룹이 정의된 파일은 /etc/group으로 시스템 관리자만 수정 가능&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;파일 크기&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;파일의 크기를 바이트 단위로 알려줌&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;파일의 마지막 수정 일시&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;파일이 마지막으로 수정된 날짜와 시각을 표시&lt;/li&gt;
-      &lt;li&gt;연도가 표시되지 않으면 올해를 의미&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;파일의-접근-권한&quot;&gt;파일의 접근 권한&lt;/h1&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;개요&quot;&gt;개요&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;접근 권한은 사용자의 파일을 보호하는 가장 기본적인 보안 기능&lt;/li&gt;
-  &lt;li&gt;접근 권한을 부여하기 위해 사용자를 세 카테고리로 구분&lt;/li&gt;
-  &lt;li&gt;세 카테고리 : 파일의 소유자, 파일이 속한 그룹, 기타 사용자&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-13-unix-16-04.png&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;소유자&quot;&gt;소유자&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;파일을 생성한 사용자가 파일의 소유자임&lt;/li&gt;
-  &lt;li&gt;파일의 소유자나 시스템 관리자가 명령을 이용하여 소유자 변경 가능&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;그룹&quot;&gt;그룹&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;파일과 동일한 그룹에 속한 사용자들&lt;/li&gt;
-  &lt;li&gt;보통은 파일을 생성한 사용자의 기본 그룹으로 지정&lt;/li&gt;
-  &lt;li&gt;root가 명령을 이용해 강제로 변경 가능&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;기타-사용자&quot;&gt;기타 사용자&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;소유자나 그룹 카테고리에 속하지 않은 사용자&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;접근-권한의-종류&quot;&gt;접근 권한의 종류&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;읽기 권한, 쓰기 권한, 실행 권한 세 가지로 구성&lt;/li&gt;
-  &lt;li&gt;파일과 디렉토리에 대해 다른 의미로 해석됨&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-13-unix-16-05.png&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;접근-권한-표기&quot;&gt;접근 권한 표기&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;사용자 카테고리별로 누가 파일을 읽고 쓰고 실행할 수 있는지를 문자로 표현한 것&lt;/li&gt;
-  &lt;li&gt;사용자 카테고리별로 세가지 권한의 부여 여부를 rwx 세 문자를 이용해 그 순서대로 표시&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;해당 권한이 없을 경우 –로 표기&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ ls –l
-  total 1
-  -rw-r--r-- 1 ksshin ksshin 221 6월 5 22:12 text
-  $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-13-unix-16-06.png&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;소유자의 권한은 rw-, 그룹의 권한은 가운데의 r–, 기타 사용자의 권한은 마지막의 r–&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-13-unix-16-07.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-</description>
-        <pubDate>Fri, 13 Mar 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/03/13/unix-16/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/03/13/unix-16/</guid>
         
         <category>unix</category>
         
