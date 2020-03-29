@@ -31,15 +31,14 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="naver-site-verification" content="fa37cbf8ce41948de6e94c01991ffa04cea9b093"/>
 <meta name="google-site-verification" content="5M4Zw9wg_UqQkvlayfb5Mc_ogvJdc013w_zLUkxgO-Y" />
-<meta property="og:title" content="[자바스크립트] 자동 실행 함수 (window.onload, $(document).ready())">
+<meta property="og:title" content="[Chart.js] 툴팁 사이즈 변경하기">
 <meta property="og:type" content="article">
 
 
 
 
 
-  <meta property="og:image" content="https://m-veloper.github.io/assets//img/js-logo.png">
-  <br/>
+  <meta property="og:image" content="https://m-veloper.github.io/assets/img/logo.png">
 
 
 <meta property="og:image:width" content="640" />
@@ -47,7 +46,7 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 
 
 
-  <title>[자바스크립트] 자동 실행 함수 (window.onload, $(document).ready()) &middot; m_veloper</title>
+  <title>[Chart.js] 툴팁 사이즈 변경하기 &middot; m_veloper</title>
 
 
 
@@ -63,17 +62,15 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 <!-- =============== -->
 <!-- LINKS           -->
 <!-- =============== -->
-<link rel="canonical" href="https://m-veloper.github.io/tip/2020/03/16/tip-javascript-07/">
-<meta property="og:url" content="https://m-veloper.github.io/tip/2020/03/16/tip-javascript-07/">
+<link rel="canonical" href="https://m-veloper.github.io/tip/2020/03/29/tip-chartjs-02/">
+<meta property="og:url" content="https://m-veloper.github.io/tip/2020/03/29/tip-chartjs-02/">
 
 <link rel="alternate" type="application/atom+xml" title="m_veloper Feed" href="https://m-veloper.github.io/feed.xml">
 
 
-  <link rel="prev" href="https://m-veloper.github.io/review/2020/03/14/review-goods-fuji-x100v-02/">
+  <link rel="prev" href="https://m-veloper.github.io/tip/2020/03/27/tip-chartjs-01/">
 
 
-
-  <link rel="next" href="https://m-veloper.github.io/tip/2020/03/16/tip-mysql-02/">
 
 
 <link rel="apple-touch-icon" href="https://m-veloper.github.io/apple-touch-icon.png">
@@ -308,18 +305,18 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 
 
 
-<article id="post-tip/2020/03/16/tip-javascript-07" class="post this" role="article">
+<article id="post-tip/2020/03/29/tip-chartjs-02" class="post this" role="article">
   <header>
 
     <h1 class="post-title">
       
-        [자바스크립트] 자동 실행 함수 (window.onload, $(document).ready())
+        [Chart.js] 툴팁 사이즈 변경하기
         
     </h1>
 
     <p class="post-date heading">
-      <!--<time datetime="2020-03-16T00:00:00+09:00">16 Mar 2020</time>-->
-      <time datetime="2020-03-16T00:00:00+09:00">2020년 03월 16일</time>
+      <!--<time datetime="2020-03-29T00:00:00+09:00">29 Mar 2020</time>-->
+      <time datetime="2020-03-29T00:00:00+09:00">2020년 03월 29일</time>
     </p>
     
 
@@ -343,7 +340,7 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 
 
 
-<a href="/tag/devlog-javascript/" data-flip="title" id="tag">JavaScript</a>
+<a href="/tag/tip-chartjs/" data-flip="title" id="tag">Chart.js</a>
 
 
     
@@ -356,9 +353,7 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
   
   <div class="markdown-body">
 
-    <!-- 
-    <div class="head-image"><img src="https://m-veloper.github.io/assets//img/js-logo.png" /></div>
-    <br /> -->
+    <!--  -->
 
     <div class='row' style="text-align: center">
       <div>
@@ -373,75 +368,67 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
     </div>
 
     <br />
-    <p><img src="/assets/img/javascript/2020-03-16-tip-javascript-07.png" alt="" /></p>
+    <p><img src="/assets/img/chartjs/2020-03-29-tip-chartjs-02.png" alt="" /></p>
 
-<h1 id="자동-실행-함수-windowonload-documentready">자동 실행 함수 (window.onload, $(document).ready())</h1>
+<h1 id="chartjs-툴팁-사이즈-변경하기">Chart.js 툴팁 사이즈 변경하기</h1>
+<h3 id="how-to-change-font-size-for-tooltip-in-chartjs">How to change font size for tooltip in chart.js</h3>
 <p><br /></p>
 
 <ul>
   <li>
-    <p>window.onload 와 $(document).ready() 중에 어느 한 쪽이 좋다고 할 수 없다.</p>
-  </li>
-  <li>
-    <p>아래와 같은 특징들을 파악하여 경우에 따라 적절히 골라서 쓰자.</p>
-  </li>
-</ul>
+    <p>options 에 tooltips 을 선언하고 사용합니다.</p>
 
-<h2 id="windowonload">window.onload</h2>
-
-<ul>
-  <li>
-    <p>window.onload 는 페이지의 모든 요소들이 로드된 이후에 호출.</p>
-  </li>
-  <li>
-    <p>window.onload 는 한 페이지에 하나의 함수만 호출.</p>
-  </li>
-  <li>
-    <p>Javascript에서 페이지가 로드되면 자동으로 실행되는 함수를 구현할 때엔 전역 콜백함수인 window.onload 함수를 사용.</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  window.onload = function () {
-      console.log("실행");
-  }
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  // html
+  &lt;canvas id="myChart" width="400" height="400"&gt;&lt;/canvas&gt;
+    
+  &lt;script&gt;
+    
+      var ctx = document.getElementById('myChart').getContext('2d');
+      var myChart = new Chart(ctx, {
+          type: 'bar',
+          data: {
+              labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+              datasets: [{
+                  label: '# of Votes',
+                  data: [12, 19, 3, 5, 2, 3],
+                  backgroundColor: [
+                      'rgba(255, 99, 132, 0.2)',
+                      'rgba(54, 162, 235, 0.2)',
+                      'rgba(255, 206, 86, 0.2)',
+                      'rgba(75, 192, 192, 0.2)',
+                      'rgba(153, 102, 255, 0.2)',
+                      'rgba(255, 159, 64, 0.2)'
+                  ],
+                  borderColor: [
+                      'rgba(255, 99, 132, 1)',
+                      'rgba(54, 162, 235, 1)',
+                      'rgba(255, 206, 86, 1)',
+                      'rgba(75, 192, 192, 1)',
+                      'rgba(153, 102, 255, 1)',
+                      'rgba(255, 159, 64, 1)'
+                  ],
+                  borderWidth: 1
+              }]
+          },
+          options: {
+              scales: {
+                  yAxes: [{
+                      ticks: {
+                          beginAtZero: true
+                      }
+                  }]
+              }
+              tooltips: {
+                  titleFontSize: 10,
+                  bodyFontSize: 10
+              }
+          }
+      });
+        
+  &lt;/script&gt;
 </code></pre></div>    </div>
   </li>
 </ul>
-
-<p><br /></p>
-
-<h2 id="documentready">$(document).ready()</h2>
-
-<ul>
-  <li>
-    <p>jQuery는 자바스크립트의 window.onload 함수의 문제점을 해결하기 위해 $(document).ready() 함수를 제공</p>
-  </li>
-  <li>
-    <p>$(document).ready() 는 DOM 요소들만 모두 로드되면 호출.</p>
-  </li>
-  <li>
-    <p>외부 리소스 및 이미지 로딩과 상관없이 DOM만 로드되면 바로 실행된다.</p>
-  </li>
-  <li>
-    <p>중복 사용해도 순서대로 모두 실행된다.</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $(document).ready(function(){
-       console.log("실행");
-  });
-    
-  or 생략하면..
-    
-  $().ready(function(){
-       console.log("실행");
-  });
-    
-  or 더 생략하면..
-    
-  $(function(){
-       console.log("실행");
-  });
-</code></pre></div>    </div>
-  </li>
-</ul>
-
 
     <br />
   </div>
@@ -462,12 +449,12 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 <div class="share">
   <h2>Share this post</h2>
   <div class="share-body">
-    <a href="http://twitter.com/share?text=[자바스크립트] 자동 실행 함수 (window.onload, $(document).ready())&amp;url=https://m-veloper.github.io/tip/2020/03/16/tip-javascript-07/"
+    <a href="http://twitter.com/share?text=[Chart.js] 툴팁 사이즈 변경하기&amp;url=https://m-veloper.github.io/tip/2020/03/29/tip-chartjs-02/"
       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
       <span class="icon-twitter">
       </span>
     </a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://m-veloper.github.io/tip/2020/03/16/tip-javascript-07/"
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://m-veloper.github.io/tip/2020/03/29/tip-chartjs-02/"
       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
       <span class="icon-facebook">
       </span>
@@ -533,27 +520,8 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
       
       
         
-        
           
-
-
-
-<style>
-  .related-posts>li>small{
-    margin-left: 10px;
-  }
-</style>
-<li class="h4">
-  <a href="/tip/2020/03/29/tip-chartjs-02/" data-flip="title">
-    <span>[Chart.js] 툴팁 사이즈 변경하기</span>
-  </a>
-  <small><time datetime="2020-03-29T00:00:00+09:00">
-    2020년 03월 29일
-  </time></small>
-</li>
-
-        
-      
+          
         
         
           
@@ -600,6 +568,25 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
       
         
         
+          
+
+
+
+<style>
+  .related-posts>li>small{
+    margin-left: 10px;
+  }
+</style>
+<li class="h4">
+  <a href="/tip/2020/03/25/tip-javascript-10/" data-flip="title">
+    <span>[자바스크립트] 자바스크립트로 문자열 공백 제거하기</span>
+  </a>
+  <small><time datetime="2020-03-25T00:00:00+09:00">
+    2020년 03월 25일
+  </time></small>
+</li>
+
+        
       
     
   </ul>
@@ -628,9 +615,9 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
   }
 
   var d = function () {
-    this.page.title = "[자바스크립트] 자동 실행 함수 (window.onload, $(document).ready())",
-      this.page.identifier = "/tip/2020/03/16/tip-javascript-07",
-      this.page.url = "https://m-veloper.github.io/tip/2020/03/16/tip-javascript-07/"
+    this.page.title = "[Chart.js] 툴팁 사이즈 변경하기",
+      this.page.identifier = "/tip/2020/03/29/tip-chartjs-02",
+      this.page.url = "https://m-veloper.github.io/tip/2020/03/29/tip-chartjs-02/"
   };
   s._disqusFirst = void 0 === s._disqusFirst || s._disqusFirst, s._disqusLoading = void 0 !== s._disqusLoading && s._disqusLoading, s._disqusThis = !1, s._disqusThreadOffsetTop = i.getElementById(
     "disqus_thread").offsetTop, s._disqusLoading ? s._disqusFirst = !1 : (s._disqusLoading = !0, loadJSDeferred(
