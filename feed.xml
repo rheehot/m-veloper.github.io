@@ -5,9 +5,61 @@
     <description></description>
     <link>https://m-veloper.github.io/</link>
     <atom:link href="https://m-veloper.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 30 Mar 2020 22:21:29 +0900</pubDate>
-    <lastBuildDate>Mon, 30 Mar 2020 22:21:29 +0900</lastBuildDate>
+    <pubDate>Tue, 31 Mar 2020 20:54:32 +0900</pubDate>
+    <lastBuildDate>Tue, 31 Mar 2020 20:54:32 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>[자바스크립트] 아이디, 이메일 유효성 검사</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/javascript/2020-03-31-tip-javascript-11.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;자바스크립트로-아이디-이메일-유효성-검사&quot;&gt;자바스크립트로 아이디, 이메일 유효성 검사&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;아이디와 패스워드가 적합한지 검사하는 정규식 입니다.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;이메일이 적합한지 검사하는 정규식 입니다.&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  ﻿function validate() {
+    
+      // 아이디와 패스워드가 적합한지 검사할 정규식
+      // 4자~ 12자 사이
+      var regexIdAndPw = /^[a-zA-Z0-9]{4,12}$/ 
+    
+     // 이메일이 적합한지 검사할 정규식
+      var regexEmail = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i; 
+    
+      var id = document.getElementById(&quot;id&quot;);
+      var pw = document.getElementById(&quot;pw&quot;);
+      var email = document.getElementById(&quot;email&quot;);
+    
+      if(!check(regexIdAndPw ,id,&quot;아이디는 4~12자의 영문 대소문자와 숫자로만 입력&quot;)) {
+          return false;
+      }
+    
+      if(!check(regexIdAndPw ,pw,&quot;패스워드는 4~12자의 영문 대소문자와 숫자로만 입력&quot;)) {
+          return false;
+      }
+    
+      if(!check(regexEmail ,email,&quot;이메일에 적합한 주소가 아닙니다.&quot;)) {
+          return false;
+      }
+  }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Tue, 31 Mar 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/tip/2020/03/31/tip-javascript-11/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/03/31/tip-javascript-11/</guid>
+        
+        <category>javascript</category>
+        
+        
+        <category>tip</category>
+        
+      </item>
     
       <item>
         <title>[JSTL] 콤마(,) 또는 소수점 사용법</title>
@@ -3405,118 +3457,6 @@ my-custom-func-red()&lt;/li&gt;
         
         
         <category>tip</category>
-        
-      </item>
-    
-      <item>
-        <title>[fuji/후지필름] x100v 어댑터링, 후드 사용법 과 ND필터 끼우기</title>
-        <description>&lt;p&gt;&lt;img src=&quot;https://1.bp.blogspot.com/-LedfoXqEt4s/XmzujoDX2QI/AAAAAAAAAJU/KqJnJnd6AncliZm_P7UQgPeQaDzzy6Z4wCLcBGAsYHQ/s1600/x100v%2B%25EC%2596%25B4%25EB%258C%2591%25ED%2584%25B0%25EB%25A7%2581%2B%252B%2B%25ED%259B%2584%25EB%2593%259C%2BND%25ED%2595%2584%25ED%2584%25B0%2B%25EC%2582%25AC%25EC%259A%25A9%25EB%25B2%2595%2B%25EB%25B3%25B5%25EC%2582%25AC.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;x100v-어댑터링--후드--nd필터-사용법&quot;&gt;x100v 어댑터링 + 후드 + ND필터 사용법&lt;/h1&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;구입처&quot;&gt;구입처&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://smartstore.naver.com/cscamera&quot;&gt;디지털창신&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://1.bp.blogspot.com/-h3Rx4waFS4w/XmztLe0dMDI/AAAAAAAAAJE/Hsm4NfUE9TcEQZqlg24uaeDAr72Z5tfMwCLcBGAsYHQ/s1600/SE-1356d291-047d-48e8-8cfb-ff52601d97c8.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://1.bp.blogspot.com/-JEDcGXb0e5g/Xmzio4hOA5I/AAAAAAAAAH0/pt2T_cKPzzsGlRirvCX2we9U3kTVUPcNACLcBGAsYHQ/s1600/01.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;어댑터링+후드 세트 입니다.
-
-ND필터는 49mm 입니다.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://1.bp.blogspot.com/-BtREBRKXvFg/XmzioAirV1I/AAAAAAAAAHw/9h3EQjzWvWgDs6HoHS4nJY2dl4GPRFxSQCLcBGAsYHQ/s1600/02.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;어댑터 링과 후드는 이렇게 생겼습니다.
-
-실버 구매하신 분들은 실버로 사세요~
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://1.bp.blogspot.com/-t2d1Ka15nDo/XmzimguqUAI/AAAAAAAAAHs/EGbOlChoO9EB0yo8MkFWLX-hWy0R31TrACLcBGAsYHQ/s1600/03.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;nd필터란&quot;&gt;ND필터란?&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;색에 대해 중립적 성질을 갖는 차광 필터. 
-특정한 파장 범위 내에서 각 파장에 대해 비슷한 정도로 빛의 투과량을 감소시켜 
-색 균형을 알맞게 해주는 필터이다. 
-실제 사용되는 ND 필터는 재질에 따라 가시광선 대역의 각 파장에 대해 
-투과 특성이 다소 다르지만, 
-이 필터를 부착함으로써 투과량을 감소시켜  느린 셔터로 동적인 느낌이나 
-특수한 효과를 내고 싶을 때나 
-낮에 저녁 무렵의 효과를 내기 위해 사용된다.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;사용 방법에 따라 차이는 있지만, 저는 낮에 사진촬영을 많이 하기 때문에
-빛량이 너무 풍부한 낮에 촬영시 좀 빛이 균등한 사진을 찍고싶어서 사용합니다.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://1.bp.blogspot.com/-4uYa7EYgkhA/XmzipmZ92GI/AAAAAAAAAH8/wRvLLZTZY2Y30xbn9zzThXam6QBqQCuAQCLcBGAsYHQ/s1600/04.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;새제품이라 조심히 어댑터링을 끼울 곳을 찾았지만 못찾고 검색해서 알았습니다.
-
-렌즈 맨 앞 부분의 동그란 링을 왼쪽으로 돌려서 분리 시킵니다.
-
-살짝 힘을 주는데 안돌아가서 렌즈 부러지는거 아닌가 한 10분 고민했어요.
-
-조금더 힘을 주니까 돌아가더라구요.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;​
-&lt;img src=&quot;https://1.bp.blogspot.com/-ZZYB1bWgzpc/Xmziqd6Bh7I/AAAAAAAAAIA/21kaZORkVQQo8xVQKhUybUieF6MQFa6VgCLcBGAsYHQ/s1600/05.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;이렇게 앞 부분을 잡아서 왼쪽으로 돌려줍니다.
-
-렌즈 고장나는거 아니니까 적당히 힘을줘서 돌려주세요.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://1.bp.blogspot.com/-cfPyEtW-20Y/XmzjTmPEQHI/AAAAAAAAAIk/C2RXtRvnxb8WAVMMbGMm_M4GM4lWFUOfwCEwYBhgL/s1600/06.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;분리된 모습입니다. 진짜 한 10분 고민 했습니다...
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://1.bp.blogspot.com/-uuOrsofQmQk/XmzjUHx_HCI/AAAAAAAAAIc/oA7Pt3KQoiYWJVvMSxpHTacxteXLHePDACEwYBhgL/s1600/07.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;결합 순서는
-
-어댑터링 - 필터 후드 순서 입니다.
-
-어댑터링을 끼울 때 헷갈리실텐데
-
-넓은 쪽이 앞을 보게 끼우셔야 해요.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://1.bp.blogspot.com/-n7WsilzcXpE/XmzjW74VG3I/AAAAAAAAAIg/ppYqE4Mnv7MTLl87xRc76znuLfHyzC_kQCEwYBhgL/s1600/09.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;x100v-unboxing-바로-보기&quot;&gt;&lt;a href=&quot;https://m-veloper.github.io/devlog/2020/03/14/review-goods-fuji-x100v-01/&quot;&gt;x100v Unboxing 바로 보기&lt;/a&gt;&lt;/h3&gt;
-
-</description>
-        <pubDate>Sat, 14 Mar 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/review/2020/03/14/review-goods-fuji-x100v-02/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/review/2020/03/14/review-goods-fuji-x100v-02/</guid>
-        
-        <category>goods</category>
-        
-        
-        <category>review</category>
         
       </item>
     
