@@ -31,7 +31,7 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="naver-site-verification" content="fa37cbf8ce41948de6e94c01991ffa04cea9b093"/>
 <meta name="google-site-verification" content="5M4Zw9wg_UqQkvlayfb5Mc_ogvJdc013w_zLUkxgO-Y" />
-<meta property="og:title" content="Home">
+<meta property="og:title" content="[Chart.js] 차트 사이즈 고정하기">
 <meta property="og:type" content="article">
 
 
@@ -46,13 +46,15 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 
 
 
-  <title>Home &middot; m_veloper</title>
+  <title>[Chart.js] 차트 사이즈 고정하기 &middot; m_veloper</title>
 
 
 
 <meta name="description" content="
+
 ">
 <meta property="og:description" content="
+
 ">
 
 
@@ -60,13 +62,17 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 <!-- =============== -->
 <!-- LINKS           -->
 <!-- =============== -->
-<link rel="canonical" href="https://m-veloper.github.io/page-4/">
-<meta property="og:url" content="https://m-veloper.github.io/page-4/">
+<link rel="canonical" href="https://m-veloper.github.io/tip/2020/03/31/tip-chartjs-03/">
+<meta property="og:url" content="https://m-veloper.github.io/tip/2020/03/31/tip-chartjs-03/">
 
 <link rel="alternate" type="application/atom+xml" title="m_veloper Feed" href="https://m-veloper.github.io/feed.xml">
 
 
+  <link rel="prev" href="https://m-veloper.github.io/tip/2020/03/30/tip-jstl-03/">
 
+
+
+  <link rel="next" href="https://m-veloper.github.io/tip/2020/03/31/tip-javascript-11/">
 
 
 <link rel="apple-touch-icon" href="https://m-veloper.github.io/apple-touch-icon.png">
@@ -192,8 +198,26 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 <div id="_yPushState">
   <div class="fade-in">
     <main id="_main" class="content" role="main" data-color="#e2adfd" data-image="/assets/img/nap.jpg">
-      
-  <style>
+      <style>
+  /*광고 붙을떄 까지 안보이게*/
+  .row {
+    display: flex;
+    /*display: none;*/
+    justify-content: space-between;
+    align-items: center;
+    height: 300px;
+  }
+
+  .row-center {
+    display: flex;
+    justify-content: center;
+    height: 258px;
+  }
+  /*광고 붙을떄 까지 안보이게*/
+  /*.right-side{*/
+    /*display: none;*/
+  /*}*/
+
   #tag{
     margin-bottom: 0.875rem;
     padding-left: 1rem;
@@ -209,50 +233,93 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
     border-radius: 1rem;
     text-decoration: none;
   }
-  .post-title{
-    font-size: 1.3rem;
-  }
-  .post-title a{
-    color: #999 !important;
-  }
-
   .post-date{
     font-size: 0.9rem;
     font-weight: 400;
   }
 
-  .read-more {
-    margin-top: 0;
+  .markdown-body h1 {
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+    margin-top: 56px;
   }
-  .mb6 {
-    margin-bottom: 8rem;
+
+  .bmc-button img {
+    height: 34px !important;
+    width: 35px !important;
+    margin-bottom: 1px !important;
+    box-shadow: none !important;
+    border: none !important;
+    vertical-align: middle !important;
+  }
+
+  .bmc-button {
+    padding: 7px 10px 7px 10px !important;
+    line-height: 35px !important;
+    height: 51px !important;
+    min-width: 217px !important;
+    text-decoration: none !important;
+    display: inline-flex !important;
+    color: #ffffff !important;
+    background-color: #F471FF !important;
+    border-radius: 5px !important;
+    border: 1px solid transparent !important;
+    padding: 7px 10px 7px 10px !important;
+    font-size: 28px !important;
+    letter-spacing: 0.6px !important;
+    box-shadow: 0px 1px 2px rgba(190, 190, 190, 0.5) !important;
+    -webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;
+    margin: 0 auto !important;
+    font-family: 'Cookie', cursive !important;
+    -webkit-box-sizing: border-box !important;
+    box-sizing: border-box !important;
+    -o-transition: 0.3s all linear !important;
+    -webkit-transition: 0.3s all linear !important;
+    -moz-transition: 0.3s all linear !important;
+    -ms-transition: 0.3s all linear !important;
+    transition: 0.3s all linear !important;
+  }
+
+  .bmc-button:hover, .bmc-button:active, .bmc-button:focus {
+    -webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;
+    text-decoration: none !important;
+    box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;
+    opacity: 0.85 !important;
+    color: #ffffff !important;
+  }
+
+  #sponsor-button{
+    display: flex;
+    margin-bottom: 50px;
+  }
+
+  #sponsor-button h4{
+    margin: 12px;
+    color: red;
   }
 
 </style>
+<link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
+<script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
 
 
 
-<article id="post-tip/2020/03/18/tip-jstl-02" class="post mb6 this" role="article">
+
+
+<article id="post-tip/2020/03/31/tip-chartjs-03" class="post this" role="article">
   <header>
-    <!--post 내용중 이미지 영역-->
-    <p><img src="/assets/img/jstl/2020-03-18-tip-jstl-02.png" alt="" /></p>
 
-
-
-    <!--제목-->
     <h1 class="post-title">
-      <a href="/tip/2020/03/18/tip-jstl-02/" data-flip="title">
-      [JSTL] < c:choose >< c:when > 다중(중복, 여러번) 사용 하기 (< c:choose >< c:when >안에 < c:choose ><c:when >)
-      </a>
+      
+        [Chart.js] 차트 사이즈 고정하기
+        
     </h1>
 
-    <!--날짜-->
     <p class="post-date heading">
-      <!--<time datetime="2020-03-18T00:00:00+09:00">18 Mar 2020</time>-->
-      <time datetime="2020-03-18T00:00:00+09:00">2020년 03월 18일</time>
+      <!--<time datetime="2020-03-31T00:00:00+09:00">31 Mar 2020</time>-->
+      <time datetime="2020-03-31T00:00:00+09:00">2020년 03월 31일</time>
     </p>
-
-    <!--카테고리영역-->
     
 
 
@@ -275,758 +342,301 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 
 
 
-<a href="/tag/tip-jstl/" data-flip="title" id="tag">JSTL</a>
+<a href="/tag/tip-chartjs/" data-flip="title" id="tag">Chart.js</a>
 
 
     
   <div class="hr" style="padding-bottom:0"></div>
 
 
-
   </header>
   
 
   
-  <p class="read-more"><a class="heading" href="/tip/2020/03/18/tip-jstl-02/" data-flip="title">바로가기 </a>
-  </p>
+  <div class="markdown-body">
+
+    <!--  -->
+
+    <div class='row' style="text-align: center">
+      <div>
+        <ins class="kakao_ad_area" style="display:none;" data-ad-unit= "DAN-sksc2jl3lbhe" data-ad-width= "250" data-ad-height= "250"></ins>
+      </div>
+      <div>
+        <ins class="kakao_ad_area" style="display:none;" data-ad-unit= "DAN-s13c6ao56o2p" data-ad-width= "250" data-ad-height= "250"></ins>
+      </div>
+      <div>
+        <ins class="kakao_ad_area" style="display:none;" data-ad-unit= "DAN-to1sb755uomv" data-ad-width= "250" data-ad-height= "250"></ins>
+      </div>
+    </div>
+
+    <br />
+    <p><img src="/assets/img/chartjs/2020-03-31-tip-chartjs-03.png" alt="" /></p>
+
+<h1 id="chartjs-툴팁-사이즈-변경하기">Chart.js 툴팁 사이즈 변경하기</h1>
+<h3 id="how-to-setting-canvas-width-and-height-for-fixed-size-in-chartjs">How to setting canvas width and height for fixed size in chart.js</h3>
+<p><br /></p>
+
+<ul>
+  <li>
+    <p>responsive 옵션을 true 값을 주면 브라우저 사이즈가 바뀔 때 마다 사이즈가 비율에 맞게 변함.</p>
+  </li>
+  <li>
+    <p>responsive 옵션을 false 값을 주면 브라우저 사이즈가 바뀌어도 “&lt; style &gt;” 태그 안에 고정시킨 사이즈 대로 고정됨.</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  &lt;style&gt;
+      canvas{
+        width:1000px !important;
+        height:600px !important;
+      }
+  &lt;/style&gt;
+
+  // html
+  &lt;canvas id="myChart" width="400" height="400"&gt;&lt;/canvas&gt;
+    
+  &lt;script&gt;
+      var ctx = document.getElementById('myChart').getContext('2d');
+      var myChart = new Chart(ctx, {
+          type: 'bar',
+          data: {
+              labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+              datasets: [{
+                  label: '# of Votes',
+                  data: [12, 19, 3, 5, 2, 3],
+                  backgroundColor: [
+                      'rgba(255, 99, 132, 0.2)',
+                      'rgba(54, 162, 235, 0.2)',
+                      'rgba(255, 206, 86, 0.2)',
+                      'rgba(75, 192, 192, 0.2)',
+                      'rgba(153, 102, 255, 0.2)',
+                      'rgba(255, 159, 64, 0.2)'
+                  ],
+                  borderColor: [
+                      'rgba(255, 99, 132, 1)',
+                      'rgba(54, 162, 235, 1)',
+                      'rgba(255, 206, 86, 1)',
+                      'rgba(75, 192, 192, 1)',
+                      'rgba(153, 102, 255, 1)',
+                      'rgba(255, 159, 64, 1)'
+                  ],
+                  borderWidth: 1
+              }]
+          },
+          options: {
+              responsive: true,
+              maintainAspectRatio: false,
+                  scales: {
+                      yAxes: [{
+                          ticks: {
+                              beginAtZero:true
+                          }
+                      }]
+                  }
+              }
+          });
+  &lt;/script&gt;
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+    <br />
+  </div>
   
 
 </article>
 
 
+<!-- buymeacoffee 버튼 -->
+<div id="sponsor-button" style="text-align: center">
+  <a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/TWYGPxs">
+    <img src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg" alt="Buy me a coffee">
+    <span style="margin-left:15px;font-size:28px !important;">Buy me a coffee</span>
+  </a>
+</div>
 
-  <style>
-  #tag{
-    margin-bottom: 0.875rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    height: 2rem;
-    display: inline-flex;
-    -webkit-box-align: center;
-    align-items: center;
-    margin-right: 0.875rem;
-    color: rgb(12, 166, 120);
-    font-size: 0.9rem;
-    background: rgb(241, 243, 245);
-    border-radius: 1rem;
-    text-decoration: none;
-  }
-  .post-title{
-    font-size: 1.3rem;
-  }
-  .post-title a{
-    color: #999 !important;
-  }
-
-  .post-date{
-    font-size: 0.9rem;
-    font-weight: 400;
-  }
-
-  .read-more {
-    margin-top: 0;
-  }
-  .mb6 {
-    margin-bottom: 8rem;
-  }
-
-</style>
+<div class="share">
+  <h2>Share this post</h2>
+  <div class="share-body">
+    <a href="http://twitter.com/share?text=[Chart.js] 차트 사이즈 고정하기&amp;url=https://m-veloper.github.io/tip/2020/03/31/tip-chartjs-03/"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="icon-twitter">
+      </span>
+    </a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://m-veloper.github.io/tip/2020/03/31/tip-chartjs-03/"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="icon-facebook">
+      </span>
+    </a>
+  </div>
+</div>
+<!--카카오애드핏-->
+<br><br>
+<div style="text-align: center">
+  <ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-rhg23mrcvho4" data-ad-width= "728" data-ad-height= "90"></ins>
+</div>
+<div style="text-align: center">
+  <ins class="kakao_ad_area" style="display:none;" data-ad-unit    = "DAN-r1icduz054jb" data-ad-width   = "728" data-ad-height  = "90"></ins>
+</div>
+<br />
 
 
 
-<article id="post-tip/2020/03/18/tip-java-02" class="post mb6 this" role="article">
-  <header>
-    <!--post 내용중 이미지 영역-->
-    <p><img src="/assets/img/java/2020-03-18-tip-java-02.png" alt="" /></p>
+<!--
 
 
-
-    <!--제목-->
-    <h1 class="post-title">
-      <a href="/tip/2020/03/18/tip-java-02/" data-flip="title">
-      [JAVA] 자바 날짜 구하기(특정 월의 첫째 날짜, 마지막 날짜)
-      </a>
-    </h1>
-
-    <!--날짜-->
-    <p class="post-date heading">
-      <!--<time datetime="2020-03-18T00:00:00+09:00">18 Mar 2020</time>-->
-      <time datetime="2020-03-18T00:00:00+09:00">2020년 03월 18일</time>
-    </p>
-
-    <!--카테고리영역-->
+  <aside class="author" role="complementary">
+    <div class="author">
+  <h2 class="page-title hr">
+    About
+  </h2>
+<div class="author-body">
+  
     
-
-
-
-
-
-
-
-
-
-<a href="/category/tip/" data-flip="title" id="tag">Tip</a>
-
-    
-
-
-
-
-
-
-
-
-
-<a href="/tag/tip-java/" data-flip="title" id="tag">Java</a>
-
-
-    
-  <div class="hr" style="padding-bottom:0"></div>
-
-
-
-  </header>
   
 
   
-  <p class="read-more"><a class="heading" href="/tip/2020/03/18/tip-java-02/" data-flip="title">바로가기 </a>
-  </p>
+
+  <img
+    src="/assets/img/me.jpeg"
+    class="me"
+    alt="m_veloper"
+    srcset="/assets/img/me.jpeg 1x,/assets/img/me.jpeg 2x"
+    
+  />
+
+
   
-
-</article>
-
-
-
-  <style>
-  #tag{
-    margin-bottom: 0.875rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    height: 2rem;
-    display: inline-flex;
-    -webkit-box-align: center;
-    align-items: center;
-    margin-right: 0.875rem;
-    color: rgb(12, 166, 120);
-    font-size: 0.9rem;
-    background: rgb(241, 243, 245);
-    border-radius: 1rem;
-    text-decoration: none;
-  }
-  .post-title{
-    font-size: 1.3rem;
-  }
-  .post-title a{
-    color: #999 !important;
-  }
-
-  .post-date{
-    font-size: 0.9rem;
-    font-weight: 400;
-  }
-
-  .read-more {
-    margin-top: 0;
-  }
-  .mb6 {
-    margin-bottom: 8rem;
-  }
-
-</style>
-
-
-
-<article id="post-devlog/2020/03/17/sass-13" class="post mb6 this" role="article">
-  <header>
-    <!--post 내용중 이미지 영역-->
-    <p><img src="/assets/img/sass/2020-03-17-sass-13.png" alt="" /></p>
-
-
-
-    <!--제목-->
-    <h1 class="post-title">
-      <a href="/devlog/2020/03/17/sass-13/" data-flip="title">
-      [Sass/SCSS] 조건문(if)
-      </a>
-    </h1>
-
-    <!--날짜-->
-    <p class="post-date heading">
-      <!--<time datetime="2020-03-17T00:00:00+09:00">17 Mar 2020</time>-->
-      <time datetime="2020-03-17T00:00:00+09:00">2020년 03월 17일</time>
-    </p>
-
-    <!--카테고리영역-->
+  <div class="author-body-description">
     
 
+  </div>
+</div>
+</div>
+
+  </aside>
+
+-->
 
 
 
+<aside class="related" role="complementary">
+  <h2 class="hr">Related Posts</h2>
 
-
-
-
-
-<a href="/category/devlog/" data-flip="title" id="tag">Devlog</a>
-
+  <ul class="related-posts">
     
-
-
-
-
-
-
-
-
-
-<a href="/tag/devlog-sass/" data-flip="title" id="tag">Sass</a>
-
-
-    
-  <div class="hr" style="padding-bottom:0"></div>
-
-
-
-  </header>
-  
-
-  
-  <p class="read-more"><a class="heading" href="/devlog/2020/03/17/sass-13/" data-flip="title">바로가기 </a>
-  </p>
-  
-
-</article>
-
-
-
-  <style>
-  #tag{
-    margin-bottom: 0.875rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    height: 2rem;
-    display: inline-flex;
-    -webkit-box-align: center;
-    align-items: center;
-    margin-right: 0.875rem;
-    color: rgb(12, 166, 120);
-    font-size: 0.9rem;
-    background: rgb(241, 243, 245);
-    border-radius: 1rem;
-    text-decoration: none;
-  }
-  .post-title{
-    font-size: 1.3rem;
-  }
-  .post-title a{
-    color: #999 !important;
-  }
-
-  .post-date{
-    font-size: 0.9rem;
-    font-weight: 400;
-  }
-
-  .read-more {
-    margin-top: 0;
-  }
-  .mb6 {
-    margin-bottom: 8rem;
-  }
-
-</style>
-
-
-
-<article id="post-devlog/2020/03/17/sass-12" class="post mb6 this" role="article">
-  <header>
-    <!--post 내용중 이미지 영역-->
-    <p><img src="/assets/img/sass/2020-03-17-sass-12.png" alt="" /></p>
-
-
-
-    <!--제목-->
-    <h1 class="post-title">
-      <a href="/devlog/2020/03/17/sass-12/" data-flip="title">
-      [Sass/SCSS] 함수(Functions)
-      </a>
-    </h1>
-
-    <!--날짜-->
-    <p class="post-date heading">
-      <!--<time datetime="2020-03-17T00:00:00+09:00">17 Mar 2020</time>-->
-      <time datetime="2020-03-17T00:00:00+09:00">2020년 03월 17일</time>
-    </p>
-
-    <!--카테고리영역-->
-    
-
-
-
-
-
-
-
-
-
-<a href="/category/devlog/" data-flip="title" id="tag">Devlog</a>
-
-    
-
-
-
-
-
-
-
-
-
-<a href="/tag/devlog-sass/" data-flip="title" id="tag">Sass</a>
-
-
-    
-  <div class="hr" style="padding-bottom:0"></div>
-
-
-
-  </header>
-  
-
-  
-  <p class="read-more"><a class="heading" href="/devlog/2020/03/17/sass-12/" data-flip="title">바로가기 </a>
-  </p>
-  
-
-</article>
-
-
-
-  <style>
-  #tag{
-    margin-bottom: 0.875rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    height: 2rem;
-    display: inline-flex;
-    -webkit-box-align: center;
-    align-items: center;
-    margin-right: 0.875rem;
-    color: rgb(12, 166, 120);
-    font-size: 0.9rem;
-    background: rgb(241, 243, 245);
-    border-radius: 1rem;
-    text-decoration: none;
-  }
-  .post-title{
-    font-size: 1.3rem;
-  }
-  .post-title a{
-    color: #999 !important;
-  }
-
-  .post-date{
-    font-size: 0.9rem;
-    font-weight: 400;
-  }
-
-  .read-more {
-    margin-top: 0;
-  }
-  .mb6 {
-    margin-bottom: 8rem;
-  }
-
-</style>
-
-
-
-<article id="post-devlog/2020/03/16/sass-11" class="post mb6 this" role="article">
-  <header>
-    <!--post 내용중 이미지 영역-->
-    <p><img src="/assets/img/sass/2020-03-16-sass-11.png" alt="" /></p>
-
-
-
-    <!--제목-->
-    <h1 class="post-title">
-      <a href="/devlog/2020/03/16/sass-11/" data-flip="title">
-      [Sass/SCSS] 확장(Extend) -  @extend
-      </a>
-    </h1>
-
-    <!--날짜-->
-    <p class="post-date heading">
-      <!--<time datetime="2020-03-16T00:00:00+09:00">16 Mar 2020</time>-->
-      <time datetime="2020-03-16T00:00:00+09:00">2020년 03월 16일</time>
-    </p>
-
-    <!--카테고리영역-->
-    
-
-
-
-
-
-
-
-
-
-<a href="/category/devlog/" data-flip="title" id="tag">Devlog</a>
-
-    
-
-
-
-
-
-
-
-
-
-<a href="/tag/devlog-sass/" data-flip="title" id="tag">Sass</a>
-
-
-    
-  <div class="hr" style="padding-bottom:0"></div>
-
-
-
-  </header>
-  
-
-  
-  <p class="read-more"><a class="heading" href="/devlog/2020/03/16/sass-11/" data-flip="title">바로가기 </a>
-  </p>
-  
-
-</article>
-
-
-
-  <style>
-  #tag{
-    margin-bottom: 0.875rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    height: 2rem;
-    display: inline-flex;
-    -webkit-box-align: center;
-    align-items: center;
-    margin-right: 0.875rem;
-    color: rgb(12, 166, 120);
-    font-size: 0.9rem;
-    background: rgb(241, 243, 245);
-    border-radius: 1rem;
-    text-decoration: none;
-  }
-  .post-title{
-    font-size: 1.3rem;
-  }
-  .post-title a{
-    color: #999 !important;
-  }
-
-  .post-date{
-    font-size: 0.9rem;
-    font-weight: 400;
-  }
-
-  .read-more {
-    margin-top: 0;
-  }
-  .mb6 {
-    margin-bottom: 8rem;
-  }
-
-</style>
-
-
-
-<article id="post-tip/2020/03/16/tip-mysql-02" class="post mb6 this" role="article">
-  <header>
-    <!--post 내용중 이미지 영역-->
-    <p><img src="/assets/img/mysql/2020-03-16-tip-mysql-02.png" alt="" /></p>
-
-
-
-    <!--제목-->
-    <h1 class="post-title">
-      <a href="/tip/2020/03/16/tip-mysql-02/" data-flip="title">
-      [MySQL/MariaDB] JOIN에서 ON 과 WHERE의 차이점
-      </a>
-    </h1>
-
-    <!--날짜-->
-    <p class="post-date heading">
-      <!--<time datetime="2020-03-16T00:00:00+09:00">16 Mar 2020</time>-->
-      <time datetime="2020-03-16T00:00:00+09:00">2020년 03월 16일</time>
-    </p>
-
-    <!--카테고리영역-->
-    
-
-
-
-
-
-
-
-
-
-<a href="/category/tip/" data-flip="title" id="tag">Tip</a>
-
-    
-
-
-
-
-
-
-
-
-
-<a href="/tag/tip-mysql/" data-flip="title" id="tag">MySQL</a>
-
-
-    
-  <div class="hr" style="padding-bottom:0"></div>
-
-
-
-  </header>
-  
-
-  
-  <p class="read-more"><a class="heading" href="/tip/2020/03/16/tip-mysql-02/" data-flip="title">바로가기 </a>
-  </p>
-  
-
-</article>
-
-
-
-  <style>
-  #tag{
-    margin-bottom: 0.875rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    height: 2rem;
-    display: inline-flex;
-    -webkit-box-align: center;
-    align-items: center;
-    margin-right: 0.875rem;
-    color: rgb(12, 166, 120);
-    font-size: 0.9rem;
-    background: rgb(241, 243, 245);
-    border-radius: 1rem;
-    text-decoration: none;
-  }
-  .post-title{
-    font-size: 1.3rem;
-  }
-  .post-title a{
-    color: #999 !important;
-  }
-
-  .post-date{
-    font-size: 0.9rem;
-    font-weight: 400;
-  }
-
-  .read-more {
-    margin-top: 0;
-  }
-  .mb6 {
-    margin-bottom: 8rem;
-  }
-
-</style>
-
-
-
-<article id="post-tip/2020/03/16/tip-javascript-07" class="post mb6 this" role="article">
-  <header>
-    <!--post 내용중 이미지 영역-->
-    <p><img src="/assets/img/javascript/2020-03-16-tip-javascript-07.png" alt="" /></p>
-
-
-
-    <!--제목-->
-    <h1 class="post-title">
-      <a href="/tip/2020/03/16/tip-javascript-07/" data-flip="title">
-      [자바스크립트] 자동 실행 함수 (window.onload, $(document).ready())
-      </a>
-    </h1>
-
-    <!--날짜-->
-    <p class="post-date heading">
-      <!--<time datetime="2020-03-16T00:00:00+09:00">16 Mar 2020</time>-->
-      <time datetime="2020-03-16T00:00:00+09:00">2020년 03월 16일</time>
-    </p>
-
-    <!--카테고리영역-->
-    
-
-
-
-
-
-
-
-
-
-<a href="/category/tip/" data-flip="title" id="tag">Tip</a>
-
-    
-
-
-
-
-
-
-
-
-
-<a href="/tag/devlog-javascript/" data-flip="title" id="tag">JavaScript</a>
-
-
-    
-  <div class="hr" style="padding-bottom:0"></div>
-
-
-
-  </header>
-  
-
-  
-  <p class="read-more"><a class="heading" href="/tip/2020/03/16/tip-javascript-07/" data-flip="title">바로가기 </a>
-  </p>
-  
-
-</article>
-
-
-
-  <style>
-  #tag{
-    margin-bottom: 0.875rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    height: 2rem;
-    display: inline-flex;
-    -webkit-box-align: center;
-    align-items: center;
-    margin-right: 0.875rem;
-    color: rgb(12, 166, 120);
-    font-size: 0.9rem;
-    background: rgb(241, 243, 245);
-    border-radius: 1rem;
-    text-decoration: none;
-  }
-  .post-title{
-    font-size: 1.3rem;
-  }
-  .post-title a{
-    color: #999 !important;
-  }
-
-  .post-date{
-    font-size: 0.9rem;
-    font-weight: 400;
-  }
-
-  .read-more {
-    margin-top: 0;
-  }
-  .mb6 {
-    margin-bottom: 8rem;
-  }
-
-</style>
-
-
-
-<article id="post-review/2020/03/14/review-goods-fuji-x100v-02" class="post mb6 this" role="article">
-  <header>
-    <!--post 내용중 이미지 영역-->
-    <p><img src="https://1.bp.blogspot.com/-LedfoXqEt4s/XmzujoDX2QI/AAAAAAAAAJU/KqJnJnd6AncliZm_P7UQgPeQaDzzy6Z4wCLcBGAsYHQ/s1600/x100v%2B%25EC%2596%25B4%25EB%258C%2591%25ED%2584%25B0%25EB%25A7%2581%2B%252B%2B%25ED%259B%2584%25EB%2593%259C%2BND%25ED%2595%2584%25ED%2584%25B0%2B%25EC%2582%25AC%25EC%259A%25A9%25EB%25B2%2595%2B%25EB%25B3%25B5%25EC%2582%25AC.png" alt="" /></p>
-
-
-
-    <!--제목-->
-    <h1 class="post-title">
-      <a href="/review/2020/03/14/review-goods-fuji-x100v-02/" data-flip="title">
-      [fuji/후지필름] x100v 어댑터링, 후드 사용법 과 ND필터 끼우기
-      </a>
-    </h1>
-
-    <!--날짜-->
-    <p class="post-date heading">
-      <!--<time datetime="2020-03-14T00:00:00+09:00">14 Mar 2020</time>-->
-      <time datetime="2020-03-14T00:00:00+09:00">2020년 03월 14일</time>
-    </p>
-
-    <!--카테고리영역-->
-    
-
-
-
-
-
-
-
-
-
-<a href="/category/review/" data-flip="title" id="tag">Review</a>
-
-    
-
-
-
-
-
-
-
-
-
-<a href="/tag/review-goods/" data-flip="title" id="tag">Goods</a>
-
-
-    
-  <div class="hr" style="padding-bottom:0"></div>
-
-
-
-  </header>
-  
-
-  
-  <p class="read-more"><a class="heading" href="/review/2020/03/14/review-goods-fuji-x100v-02/" data-flip="title">바로가기 </a>
-  </p>
-  
-
-</article>
-
-
-
-
-<h2 class="sr-only">Pagination</h2>
-<nav class="pagination heading" role="navigation">
-  <ul>
-    <li class="pagination-item older" >
       
-        <a rel="next" href="/page-5/">이전</a>
       
-    </li>
-    <li class="pagination-item newer" >
       
-        <a rel="prev" href="/page-3/">다음</a>
+        
+        
+          
+
+
+
+<style>
+  .related-posts>li>small{
+    margin-left: 10px;
+  }
+</style>
+<li class="h4">
+  <a href="/tip/2020/03/31/tip-javascript-11/" data-flip="title">
+    <span>[자바스크립트] 아이디, 이메일 유효성 검사</span>
+  </a>
+  <small><time datetime="2020-03-31T00:00:00+09:00">
+    2020년 03월 31일
+  </time></small>
+</li>
+
+        
       
-    </li>
+        
+          
+          
+        
+        
+          
+
+
+
+<style>
+  .related-posts>li>small{
+    margin-left: 10px;
+  }
+</style>
+<li class="h4">
+  <a href="/tip/2020/03/30/tip-jstl-03/" data-flip="title">
+    <span>[JSTL] 콤마(,) 또는 소수점 사용법</span>
+  </a>
+  <small><time datetime="2020-03-30T00:00:00+09:00">
+    2020년 03월 30일
+  </time></small>
+</li>
+
+        
+      
+        
+        
+          
+
+
+
+<style>
+  .related-posts>li>small{
+    margin-left: 10px;
+  }
+</style>
+<li class="h4">
+  <a href="/tip/2020/03/30/tip-java-04/" data-flip="title">
+    <span>[JAVA] 자바 소수점 사용하기</span>
+  </a>
+  <small><time datetime="2020-03-30T00:00:00+09:00">
+    2020년 03월 30일
+  </time></small>
+</li>
+
+        
+      
+    
   </ul>
-</nav>
+</aside>
 
 
+
+      
+        <aside class="comments" role="complementary">
+  <div style="text-align: center">
+    <ins class="kakao_ad_area" style="display:none;"
+         data-ad-unit    = "DAN-1jy7ort537t4o"
+         data-ad-width   = "728"
+         data-ad-height  = "90"></ins>
+    <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+  </div>
+  <h2>Comments</h2>
+  <hr/>
+  <div id="disqus_thread"></div>
+  <script>
+    !function (s, i) {
+  function e(e) {
+    var t = s.pageYOffset || i.body.scrollTop;
+    s.DISQUS && !s._disqusThis && !s._disqusFirst && t + s.innerHeight >= s._disqusThreadOffsetTop && (s._disqusThis = !0, s.DISQUS.reset(
+      { reload: !0, config: d }))
+  }
+
+  var d = function () {
+    this.page.title = "[Chart.js] 차트 사이즈 고정하기",
+      this.page.identifier = "/tip/2020/03/31/tip-chartjs-03",
+      this.page.url = "https://m-veloper.github.io/tip/2020/03/31/tip-chartjs-03/"
+  };
+  s._disqusFirst = void 0 === s._disqusFirst || s._disqusFirst, s._disqusLoading = void 0 !== s._disqusLoading && s._disqusLoading, s._disqusThis = !1, s._disqusThreadOffsetTop = i.getElementById(
+    "disqus_thread").offsetTop, s._disqusLoading ? s._disqusFirst = !1 : (s._disqusLoading = !0, loadJSDeferred(
+    "//m-veloper.disqus.com/embed.js"), s.addEventListener ? s.addEventListener(
+    "scroll",
+    e,
+    { passive: !0 }) : s.attachEvent ? s.attachEvent("onscroll", e) : s.onscroll = e)
+}(window, document);
+
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</aside>
 
       
 

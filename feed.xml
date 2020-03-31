@@ -5,8 +5,8 @@
     <description></description>
     <link>https://m-veloper.github.io/</link>
     <atom:link href="https://m-veloper.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 31 Mar 2020 20:54:32 +0900</pubDate>
-    <lastBuildDate>Tue, 31 Mar 2020 20:54:32 +0900</lastBuildDate>
+    <pubDate>Tue, 31 Mar 2020 21:16:40 +0900</pubDate>
+    <lastBuildDate>Tue, 31 Mar 2020 21:16:40 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
@@ -55,6 +55,87 @@
         <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/03/31/tip-javascript-11/</guid>
         
         <category>javascript</category>
+        
+        
+        <category>tip</category>
+        
+      </item>
+    
+      <item>
+        <title>[Chart.js] 차트 사이즈 고정하기</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/chartjs/2020-03-31-tip-chartjs-03.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;chartjs-툴팁-사이즈-변경하기&quot;&gt;Chart.js 툴팁 사이즈 변경하기&lt;/h1&gt;
+&lt;h3 id=&quot;how-to-setting-canvas-width-and-height-for-fixed-size-in-chartjs&quot;&gt;How to setting canvas width and height for fixed size in chart.js&lt;/h3&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;responsive 옵션을 true 값을 주면 브라우저 사이즈가 바뀔 때 마다 사이즈가 비율에 맞게 변함.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;responsive 옵션을 false 값을 주면 브라우저 사이즈가 바뀌어도 “&amp;lt; style &amp;gt;” 태그 안에 고정시킨 사이즈 대로 고정됨.&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &amp;lt;style&amp;gt;
+      canvas{
+        width:1000px !important;
+        height:600px !important;
+      }
+  &amp;lt;/style&amp;gt;
+
+  // html
+  &amp;lt;canvas id=&quot;myChart&quot; width=&quot;400&quot; height=&quot;400&quot;&amp;gt;&amp;lt;/canvas&amp;gt;
+    
+  &amp;lt;script&amp;gt;
+      var ctx = document.getElementById('myChart').getContext('2d');
+      var myChart = new Chart(ctx, {
+          type: 'bar',
+          data: {
+              labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+              datasets: [{
+                  label: '# of Votes',
+                  data: [12, 19, 3, 5, 2, 3],
+                  backgroundColor: [
+                      'rgba(255, 99, 132, 0.2)',
+                      'rgba(54, 162, 235, 0.2)',
+                      'rgba(255, 206, 86, 0.2)',
+                      'rgba(75, 192, 192, 0.2)',
+                      'rgba(153, 102, 255, 0.2)',
+                      'rgba(255, 159, 64, 0.2)'
+                  ],
+                  borderColor: [
+                      'rgba(255, 99, 132, 1)',
+                      'rgba(54, 162, 235, 1)',
+                      'rgba(255, 206, 86, 1)',
+                      'rgba(75, 192, 192, 1)',
+                      'rgba(153, 102, 255, 1)',
+                      'rgba(255, 159, 64, 1)'
+                  ],
+                  borderWidth: 1
+              }]
+          },
+          options: {
+              responsive: true,
+              maintainAspectRatio: false,
+                  scales: {
+                      yAxes: [{
+                          ticks: {
+                              beginAtZero:true
+                          }
+                      }]
+                  }
+              }
+          });
+  &amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Tue, 31 Mar 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/tip/2020/03/31/tip-chartjs-03/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/03/31/tip-chartjs-03/</guid>
+        
+        <category>chart.js</category>
         
         
         <category>tip</category>
@@ -3371,89 +3452,6 @@ my-custom-func-red()&lt;/li&gt;
         <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/03/16/tip-mysql-02/</guid>
         
         <category>mysql</category>
-        
-        
-        <category>tip</category>
-        
-      </item>
-    
-      <item>
-        <title>[자바스크립트] 자동 실행 함수 (window.onload, $(document).ready())</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/javascript/2020-03-16-tip-javascript-07.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;자동-실행-함수-windowonload-documentready&quot;&gt;자동 실행 함수 (window.onload, $(document).ready())&lt;/h1&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;window.onload 와 $(document).ready() 중에 어느 한 쪽이 좋다고 할 수 없다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;아래와 같은 특징들을 파악하여 경우에 따라 적절히 골라서 쓰자.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;windowonload&quot;&gt;window.onload&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;window.onload 는 페이지의 모든 요소들이 로드된 이후에 호출.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;window.onload 는 한 페이지에 하나의 함수만 호출.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Javascript에서 페이지가 로드되면 자동으로 실행되는 함수를 구현할 때엔 전역 콜백함수인 window.onload 함수를 사용.&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  window.onload = function () {
-      console.log(&quot;실행&quot;);
-  }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;documentready&quot;&gt;$(document).ready()&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;jQuery는 자바스크립트의 window.onload 함수의 문제점을 해결하기 위해 $(document).ready() 함수를 제공&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;$(document).ready() 는 DOM 요소들만 모두 로드되면 호출.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;외부 리소스 및 이미지 로딩과 상관없이 DOM만 로드되면 바로 실행된다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;중복 사용해도 순서대로 모두 실행된다.&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $(document).ready(function(){
-       console.log(&quot;실행&quot;);
-  });
-    
-  or 생략하면..
-    
-  $().ready(function(){
-       console.log(&quot;실행&quot;);
-  });
-    
-  or 더 생략하면..
-    
-  $(function(){
-       console.log(&quot;실행&quot;);
-  });
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-</description>
-        <pubDate>Mon, 16 Mar 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/tip/2020/03/16/tip-javascript-07/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/03/16/tip-javascript-07/</guid>
-        
-        <category>javascript</category>
         
         
         <category>tip</category>
