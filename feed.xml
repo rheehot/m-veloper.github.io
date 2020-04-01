@@ -5,9 +5,67 @@
     <description></description>
     <link>https://m-veloper.github.io/</link>
     <atom:link href="https://m-veloper.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 31 Mar 2020 21:16:40 +0900</pubDate>
-    <lastBuildDate>Tue, 31 Mar 2020 21:16:40 +0900</lastBuildDate>
+    <pubDate>Wed, 01 Apr 2020 22:19:09 +0900</pubDate>
+    <lastBuildDate>Wed, 01 Apr 2020 22:19:09 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>[자바스크립트] 제이쿼리로 table td 또는 ul li 값 가져오기</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/javascript/2020-04-01-tip-javascript-14.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;제이쿼리로-table-td-또는-ul-li-값-가져오기&quot;&gt;제이쿼리로 table td 또는 ul li 값 가져오기&lt;/h1&gt;
+&lt;h3 id=&quot;how-to-get-the-text-value-of-td-or-lihtml&quot;&gt;How to get the text value of td or li(html)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;간단히 this 를 사용해서 가져옵니다.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;아이디를 직접 정의하기 보다는 클래스로 정의해서 사용합니다.&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  // html
+    
+  &amp;lt;table&amp;gt;
+      &amp;lt;tr class=&quot;test-td&quot;&amp;gt;
+          &amp;lt;td&amp;gt;값1&amp;lt;/td&amp;gt;
+          &amp;lt;td&amp;gt;값2&amp;lt;/td&amp;gt;
+          &amp;lt;td&amp;gt;값3&amp;lt;/td&amp;gt;
+          &amp;lt;td&amp;gt;값4&amp;lt;/td&amp;gt;
+      &amp;lt;/tr&amp;gt;
+  &amp;lt;/table&amp;gt;
+    
+    
+  &amp;lt;ul class=&quot;test-li&quot;&amp;gt;
+      &amp;lt;li&amp;gt;&amp;lt;span&amp;gt;여기1&amp;lt;/span&amp;gt;&amp;lt;/li&amp;gt;
+      &amp;lt;li&amp;gt;&amp;lt;span&amp;gt;여기2&amp;lt;/span&amp;gt;&amp;lt;/li&amp;gt;
+      &amp;lt;li&amp;gt;&amp;lt;span&amp;gt;여기3&amp;lt;/span&amp;gt;&amp;lt;/li&amp;gt;
+      &amp;lt;li&amp;gt;&amp;lt;span&amp;gt;여기4&amp;lt;/span&amp;gt;&amp;lt;/li&amp;gt;
+  &amp;lt;/ul&amp;gt;
+   
+   
+   
+  // script
+    
+  $(&quot;.test-td td&quot;).click(function(){
+      console.log($(this).text());
+  });
+    
+  $(&quot;.test-li li span&quot;).click(function(){
+      console.log($(this).text());
+  });
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Wed, 01 Apr 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/tip/2020/04/01/tip-javascript-12/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/04/01/tip-javascript-12/</guid>
+        
+        <category>javascript</category>
+        
+        
+        <category>tip</category>
+        
+      </item>
     
       <item>
         <title>[자바스크립트] 아이디, 이메일 유효성 검사</title>
@@ -3321,140 +3379,6 @@ my-custom-func-red()&lt;/li&gt;
         
         
         <category>devlog</category>
-        
-      </item>
-    
-      <item>
-        <title>[MySQL/MariaDB] JOIN에서 ON 과 WHERE의 차이점</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/mysql/2020-03-16-tip-mysql-02.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;mysql-join에서-on-과-where의-차이점&quot;&gt;MySQL JOIN에서 ON 과 WHERE의 차이점&lt;/h1&gt;
-&lt;h3 id=&quot;what-is-the-difference-between-on-and-where-in-a-join-statement&quot;&gt;what is the difference between “ON” and “WHERE” in a JOIN statement?&lt;/h3&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;SQL의 JOIN에서 ON과 WHERE의 차이점은 JOIN하는 범위가 다르다&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;아래 test1, test2 테이블을 참조.&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/img/mysql/2020-03-16-tip-mysql-02-01.png&quot; alt=&quot;&quot; /&gt;
-  &lt;br /&gt;&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;예제1&lt;/p&gt;
-
-        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  ﻿SELECT
-   *
-  FROM test1 AS a 
-  LEFT JOIN test2 AS b
-  ON (a.aa = b.aa)
-  WHERE b.cc = 7;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-
-        &lt;ul&gt;
-          &lt;li&gt;위의 경우는 a와 b 테이블의 OUTER JOIN을 수행한 후에 b.cc = 7인 데이터들을 추출&lt;/li&gt;
-          &lt;li&gt;따라서 위의 의 결과는 b.cc = 7인 데이터만 존재&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-
-    &lt;p&gt;예제1 결과 :&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/img/mysql/2020-03-16-tip-mysql-02-02.png&quot; alt=&quot;&quot; /&gt;
-  &lt;br /&gt;&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;예제2&lt;/p&gt;
-
-        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  ﻿SELECT 
-  *
-  FROM test1 AS a 
-  LEFT JOIN test2 AS b
-  ON (a.aa = b.aa AND b.cc = 7);
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-
-        &lt;ul&gt;
-          &lt;li&gt;위의 경우는 (a 테이블)과 (b 테이블 중 b.cc = 7인 경우)를 OUTER JOIN 한 결과가 나온다.&lt;/li&gt;
-          &lt;li&gt;따라서 위의 결과는 b.cc = 7이 아닌 데이터도 존재&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;예제2 결과 :&lt;/p&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/img/mysql/2020-03-16-tip-mysql-02-03.png&quot; alt=&quot;&quot; /&gt;
-  &lt;br /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;한마디로 ON과 WHERE의 경우는 JOIN을 할 대상(범위)이 달라진다는 것이다.&lt;/p&gt;
-
-    &lt;p&gt;이 점을 이용해서 LEFT OUTER JOIN으로 차집합을 구현할 수 있다.&lt;/p&gt;
-
-    &lt;p&gt;오라클이나 MSSQL과 같은 경우는 EXCEPT 혹은 MINUS 등을 사용하면 되겠지만,&lt;/p&gt;
-
-    &lt;p&gt;MySQL은 버전에 따라 지원하는 경우도 있고 아닌 경우도 있다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;​&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;test1 테이블의 데이터 중 test2 테이블에 있는 데이터를 제외하고 가져오고 싶은 경우.&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  ﻿SELECT *
-  FROM test1 AS a 
-  LEFT JOIN test2 AS b
-  ON (a.aa = b.aa)
-  WHERE b.aa IS NULL;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;위의 경우 JOIN하는 column을 기준으로 1, 2는 test2 테이블에도 있으니 제외하고, 3, 6만을 가져오고 싶은 경우이다.&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;결과 : 
-  &lt;img src=&quot;/assets/img/mysql/2020-03-16-tip-mysql-02-04.png&quot; alt=&quot;&quot; /&gt;
-  &lt;br /&gt;&lt;/p&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;WHERE절 이전까지 실행했을 경우&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  SELECT *
-  FROM test1 AS a 
-  LEFT JOIN test2 AS b
-  ON (a.aa = b.aa);
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;여기에서 test2 테이블에 존재하지 않아서 test2 테이블의 column이 null인 부분만을 가지고 오게 된다.&lt;/li&gt;
-      &lt;li&gt;WHERE절을 달아주면!! 차집합이 된다는 것이다.&lt;/li&gt;
-      &lt;li&gt;결과 : 
-  &lt;img src=&quot;/assets/img/mysql/2020-03-16-tip-mysql-02-05.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;참고 : https://blog.leocat.kr/notes/2017/07/28/sql-join-on-vs-where
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-</description>
-        <pubDate>Mon, 16 Mar 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/tip/2020/03/16/tip-mysql-02/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/03/16/tip-mysql-02/</guid>
-        
-        <category>mysql</category>
-        
-        
-        <category>tip</category>
         
       </item>
     
