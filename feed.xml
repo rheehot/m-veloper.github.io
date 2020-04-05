@@ -5,9 +5,220 @@
     <description></description>
     <link>https://m-veloper.github.io/</link>
     <atom:link href="https://m-veloper.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 03 Apr 2020 20:59:25 +0900</pubDate>
-    <lastBuildDate>Fri, 03 Apr 2020 20:59:25 +0900</lastBuildDate>
+    <pubDate>Sun, 05 Apr 2020 23:06:16 +0900</pubDate>
+    <lastBuildDate>Sun, 05 Apr 2020 23:06:16 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>[유닉스] 파일 시스템 마운트 와 복구</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-04-05-unix-23.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;파일-시스템-마운트&quot;&gt;파일 시스템 마운트&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;유닉스 시스템은 주변장치를 파일로 취급&lt;/li&gt;
+  &lt;li&gt;마이크로소프트의 윈도우즈에서는 장치들이 시스템 부팅 시 자동으로 인식되거나, 새로 연결한 하드웨어도 PnP(Plug and Play) 기능에 의해 자동 인식됨&lt;/li&gt;
+  &lt;li&gt;유닉스는 주변장치 사용을 위해 시스템 부팅 후 mount 명령을 이용해 수동으로 작업. 작업 후 umount시켜야 함&lt;/li&gt;
+  &lt;li&gt;마운트 : 특정 장치를 특정 디렉토리처럼 사용하기 위해 장치와 디렉토리를 연결하는 작업&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;mount 명령의 일반 형식&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  mount –a [-fnrvw] [-t 파일 시스템 타입] [-O optlist]
+  mount [-fnrvw] [-o options] device | directory
+  mount [-fnrvw] [-t 파일 시스템 타입] [-o options] device directory
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;-a 옵션은 /etc/fstab에 명시된 모든 파일 시스템을 마운트할 때 사용&lt;/li&gt;
+      &lt;li&gt;-o 옵션은 특별한 옵션들을 지정할 때 사용&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-04-05-unix-23-01.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;device directory는 마운트할 장치의 시스템 파일을 지정&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;플로피 디스크 장치는 /dev/fd&lt;/li&gt;
+      &lt;li&gt;CD-ROM은 /dev/cdrom&lt;/li&gt;
+      &lt;li&gt;테이프 장치는 /dev/st0&lt;/li&gt;
+      &lt;li&gt;하드디스크 장치는 /dev/hda&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;mount 명령만 입력하면 현재 시스템에 마운트되어 있는 파일 시스템들의 종류를 볼 수 있음&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;CD-ROM을 사용하기 위해 CD-ROM 장치를 마운트&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ mount –t iso9660 /dev/cdrom /media/cdrom
+  mount: block device /dev/sr0 is write-protected, mounting read-only
+  $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;시디롬 장치가 읽기만 가능하다는 메시지&lt;/li&gt;
+      &lt;li&gt;/media/cdrom 디렉토리에 가면 CD의 내용을 볼 수 있음&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;CD-ROM 장치를 모두 사용한 후에는 언마운트&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ umount /dev/cdrom
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;usb 장치를 사용하기 위한 마운트&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;usb 파일 시스템의 타입은 vfat&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   $ mount –t vfat /dev/sdb1 /mnt/usb
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;파일-시스템-복구&quot;&gt;파일 시스템 복구&lt;/h1&gt;
+
+&lt;h3 id=&quot;fsck-filesystem-check-명령&quot;&gt;fsck (filesystem check) 명령&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;파일 시스템을 검사하고 수리&lt;/li&gt;
+  &lt;li&gt;손상된 디렉토리나 파일을 수정할 때 임시로 /lost+found 디렉토리에서 작업을 수행하고 정상적인 복구가 되면 사라짐&lt;/li&gt;
+  &lt;li&gt;/lost+found 디렉토리에 파일들이 많이 쌓여있다면 깨진 파일이 많다는 증거&lt;/li&gt;
+  &lt;li&gt;형식 : fsck [옵션] 장치명&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-04-05-unix-23-02.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;etcfstab&quot;&gt;/etc/fstab&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;파일 시스템에 대한 다양한 정보를 담고 있는 파일&lt;/li&gt;
+  &lt;li&gt;부팅 시에 마운트할 파티션 정보가 기록되어 있는 파일&lt;/li&gt;
+  &lt;li&gt;파티션 정보를 변경하였거나 디스크를 추가한 경우 이 파일에 등록해야 부팅 시에 자동으로 마운트할 수 있음&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;tstab : File System Table&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ vi /etc/fstab
+  /dev/fd0 /mnt/floppy auto noauto,owner 0 0
+  ......
+  /dev/hda5 swap swap defaults 0 0
+  /dev/cdrom /media/cdrom iso9660 noauto,owner,kudzu,ro 0 0
+  $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;/dev/cdrom : 장치의 이름&lt;/li&gt;
+      &lt;li&gt;/media/cdrom : 마운트될 디렉토리&lt;/li&gt;
+      &lt;li&gt;iso9660 : 파일 시스템의 종류&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;defaults&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;마운트될 때 여러 가지 옵션 중 하나&lt;/li&gt;
+          &lt;li&gt;일반 사용자가 마운트할 수 없게 함&lt;/li&gt;
+          &lt;li&gt;프로그램 실행 및 읽기/쓰기, 비동기, 블록을 나타낼 때 사용&lt;/li&gt;
+          &lt;li&gt;noauto : 장치가 부팅될 때 자동으로 마운트될 수 없음을 나타냄&lt;/li&gt;
+          &lt;li&gt;여러 가지 옵션들은 콤마(,)를 사용해 한꺼번에 정해줄 수 있음&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sun, 05 Apr 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/devlog/2020/04/05/unix-23/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/05/unix-23/</guid>
+        
+        <category>unix</category>
+        
+        
+        <category>devlog</category>
+        
+      </item>
+    
+      <item>
+        <title>[유닉스] 디스크 사용 정보, df 명령어, du 명령어</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-04-05-unix-22.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;df-disk-free-명령어&quot;&gt;df (disk free) 명령어&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;파일 시스템의 사용 중이거나 사용 가능한 디스크 공간에 대한 정보를 출력&lt;/li&gt;
+  &lt;li&gt;디스크의 크기, 사용량, 남아있는 용량 등&lt;/li&gt;
+  &lt;li&gt;형식 : df [옵션]&lt;/li&gt;
+  &lt;li&gt;옵션&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-04-05-unix-22-01.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    $ df
+    Filesystem 1k-blocks Used Available Use% Mounted on
+    /dev/sda1 7608792 338004 3819240 47% /
+    udev 244040 4 244036 1% /dev
+    ......
+    $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-04-05-unix-22-02.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;특정 장치에 대한 사용량만을 보고 싶다면 알고 싶은 장치의 이름을 써주면 됨&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ df /dev/hda1
+  Filesystem 1k-blocks Used Available Use% Mounted on
+  /dev/hda1 14749280 1448544 13300736 10% /windows
+  $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;du-disk-usage-명령어&quot;&gt;du (disk usage) 명령어&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;디스크 사용량을 요약해서 보여주는 명령어&lt;/li&gt;
+  &lt;li&gt;파일이나 디렉토리들이 디스크에서 차지하고 있는 크기를 출력&lt;/li&gt;
+  &lt;li&gt;파일명이나 디렉토리명을 지정하지 않으면 현재 디렉토리 정보를 출력&lt;/li&gt;
+  &lt;li&gt;형식 : du [옵션] [파일명]&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-04-05-unix-22-03.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;디렉토리를 지정하면 디렉토리와 그 안에 들어 있는 모든 서브디렉토리의 디스크 사용량을 보여줌&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ du /mnt
+  4 /mnt/cdrom
+  4 /mnt/floppy
+  12 /mnt
+  $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Sun, 05 Apr 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/devlog/2020/04/05/unix-22/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/05/unix-22/</guid>
+        
+        <category>unix</category>
+        
+        
+        <category>devlog</category>
+        
+      </item>
     
       <item>
         <title>[Database] 집계 함수 - AVG(평균), SUM(합), COUNT</title>
@@ -3119,294 +3330,6 @@ IllegalFormatConversionException 가 발생한다.&lt;/li&gt;
         <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/03/20/unix-19/</guid>
         
         <category>unix</category>
-        
-        
-        <category>devlog</category>
-        
-      </item>
-    
-      <item>
-        <title>[Database] MySQL 뷰(View)</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-22.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;mysql-뷰view&quot;&gt;MySQL 뷰(View)&lt;/h1&gt;
-
-&lt;h3 id=&quot;뷰-view-개념&quot;&gt;뷰 (View) 개념&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;다른 테이블을 기반으로 만들어진 가상 테이블&lt;/li&gt;
-  &lt;li&gt;데이터를 실제로 저장하지 않음&lt;/li&gt;
-  &lt;li&gt;논리적으로만 존재하는 테이블&lt;/li&gt;
-  &lt;li&gt;일반 테이블과 동일한 방법으로 사용&lt;/li&gt;
-  &lt;li&gt;다른 뷰를 기반으로 새로운 뷰를 만들 수 있음&lt;/li&gt;
-  &lt;li&gt;뷰를 통해 기본 테이블의 내용을 쉽게 검색할 수 있음&lt;/li&gt;
-  &lt;li&gt;기본 테이블의 내용을 변화시키는 작업은 제한적임&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;뷰-생성&quot;&gt;뷰 생성&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;명령어 : CREATE VIEW&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-22-01.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;속성리스트 : 뷰를 구성하는 속성의 이름&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;생략 가능 – SELECT 문에서 사용한 속성의 이름을 뷰에서 사용&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;SELECT 문 : 기본 테이블에 대한 SELECT 문&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;ORDER BY를 사용할 수 없음&lt;/li&gt;
-      &lt;li&gt;일반적인 SELECT 문과 동일&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;WITH CHECK OPTION&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;생성한 뷰에 삽입이나 수정 연산을 할 때, SELECT 문에서 제시한 뷰의 정의 조건을 위반하면 수행되지 않도록 하는 제약조건을 제시&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;예제 : Customer 테이블에서 등급이 VIP이거나 Gold 인 고객의 account, name, credit 으로 구성된 뷰를 GoodCustomer 이름으로 생성하고- 뷰의 내용을 검색하시오.&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;기본 테이블의 데이터
-&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-22-02.png&quot; alt=&quot;&quot; /&gt;
-        &lt;ul&gt;
-          &lt;li&gt;뷰 생성 명령어 및 테이블 내용 조회
-&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-22-03.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
-          &lt;li&gt;뷰의 구조 보기
-&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-22-04.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
-          &lt;li&gt;뷰의 속성리스트가 SELECT 문의 속성리스트와 이름이 동일하므로 지정하지 않고 사용
-&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-22-05.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;예제 : GoodCustomer 뷰에서 Credit이 10000 이상인 고객의 account와 credit로 구성된 GoodCustomerBigCredit 뷰를 생성하시오.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-22-06.png&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-22-07.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;예제 : 주문 테이블에서 고객별 주문 건수로 구성된 뷰를 OrderByCustomer 라는 이름으로 생성하고, 내용을 조회하시오.&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;주문 테이블의 데이터 조회
-&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-22-08.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
-      &lt;li&gt;OrderByCustomer 뷰를 생성하고 조회하기 위한 명령어
-&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-22-09.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
-      &lt;li&gt;OrderByCustomer 뷰의 데이터 조회
-&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-22-10.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
-      &lt;li&gt;OrderByCustomer 뷰의 구조
-&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-22-11.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;뷰의-활용&quot;&gt;뷰의 활용&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;뷰의 삽입, 수정, 삭제 연산&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;기본 테이블에서 수행됨&lt;/li&gt;
-      &lt;li&gt;제한적으로 수행됨&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;변경 불가능한 뷰&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;기본 테이블에 있는 내용이 아니고, 집계 함수로 계산된 내용을 포함하는 뷰&lt;/li&gt;
-      &lt;li&gt;DISTINCT 키위드를 포함하여 정의한 뷰&lt;/li&gt;
-      &lt;li&gt;GROUP BY 절을 포함하여 정의한 뷰&lt;/li&gt;
-      &lt;li&gt;여러 개의 테이블을 조인하여 정의한 뷰 – 변경이 불가능한 경우가 많음&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-22-12.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;뷰 삽입 (WITH CHECK OPTION)
-    &lt;ul&gt;
-      &lt;li&gt;제약 조건 : SELECT 문에서 제시한 정의 조건&lt;/li&gt;
-      &lt;li&gt;정의 조건을 위배하면 수행 안 됨&lt;/li&gt;
-      &lt;li&gt;예제 : 고객 테이블에서 등급(Grade)이 ‘VIP’ 이거나 ‘Gold’인 고객의 계정과, 이름, 등급을 가진 GoodCustomer4 뷰를 만드시오.
-&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-22-13.png&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-22-14.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;기본 테이블의 데이터가 삭제되거나 변경되면 뷰의 내용도 같이 변경됨
-    &lt;ul&gt;
-      &lt;li&gt;기본 테이블의 데이터를 삭제하기전 데이터
-&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-22-15.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
-      &lt;li&gt;customer 테이블의 bank 계정 레코드를 삭제 후
-&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-22-16.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;뷰의-장점&quot;&gt;뷰의 장점&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;질의문을 쉽게 작성할 수 있다.&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;특정 조건을 만족하는 레코드들로 뷰를 미리 만들어 놓을 경우 ==&amp;gt; 사용자가 WHERE 절에 특정 조건을 넣지 않아도 된다.&lt;/li&gt;
-      &lt;li&gt;GROUP BY, 집계함수, 조인 등을 이용해 뷰를 미리 만들 경우 ==&amp;gt; 복잡한 질의문을 만들지 않고 SELECT절과 FROM 절만으로 데이터 검색이 가능&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;데이터의 보안 유지에 도움이 된다.
-    &lt;ul&gt;
-      &lt;li&gt;여러 사용자의 요구에 맞는 다양한 뷰를 미리 정의&lt;/li&gt;
-      &lt;li&gt;사용자에게 제공된 뷰를 통해서만 데이터에 접근하도록 권한 설정 ==&amp;gt; 뷰에 포함되지 않은 데이터를 사용자로부터 보호할 수 있음.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;데이터를 편리하게 관리할 수 있다.
-    &lt;ul&gt;
-      &lt;li&gt;제공된 뷰에 포함되지 않은 기본 테이블의 다른 속성은 사용자가 신경 쓸 필요가 없음&lt;/li&gt;
-      &lt;li&gt;제공된 뷰와 관련이 없는 다른 테이블의 변화에도 영향을 받지 않음.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;뷰-삭제&quot;&gt;뷰 삭제&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;뷰를 삭제해도 기본 테이블은 영향을 받지 않음&lt;/li&gt;
-  &lt;li&gt;명령어 : DROP VIEW 뷰이름 CASCADE ㅣ RESTRICT;&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;삭제할 뷰를 이용해 만들어진 다른 뷰가 존재할 경우 처리 방법&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;RESTRICT : 다른 뷰가 삭제되지 않음&lt;/li&gt;
-      &lt;li&gt;CASCADE : 다른 뷰도 같이 삭제&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Fri, 20 Mar 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/03/20/database-22/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/03/20/database-22/</guid>
-        
-        <category>database</category>
-        
-        
-        <category>devlog</category>
-        
-      </item>
-    
-      <item>
-        <title>[Database] MySQL 일괄 실행, 백업, 복원</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-21.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;일괄-실행-백업-복원&quot;&gt;일괄 실행, 백업, 복원&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;MySQL Server 내에서 사용하는 명령어를 파일에 저장하여 일괄 처리&lt;/li&gt;
-  &lt;li&gt;파일의 확장자는 .sql 로 지정&lt;/li&gt;
-  &lt;li&gt;모든 명령을 파일에 저장하여 일괄처리함.&lt;/li&gt;
-  &lt;li&gt;데이터베이스를 백업한 후 복원하기 위하여 일괄처리함.&lt;/li&gt;
-  &lt;li&gt;Windows의 명령 프롬프트 창에서 실행한다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;테이블-생성-일괄처리&quot;&gt;테이블 생성 일괄처리&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;편집기를 사용하여 CREATE TABLE 명령을 파일에 저장&lt;/li&gt;
-  &lt;li&gt;명령어 : mysql –u계정 –p비밀번호 데이터베이스명 &amp;lt; 일괄처리파일명&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-21-01.png&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-21-02.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;데이터베이스-백업&quot;&gt;데이터베이스 백업&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;DBMS 내의 데이터 백업은 데이터베이스 별로 한다.&lt;/li&gt;
-  &lt;li&gt;테이블 별로 백업 할 수 없다.&lt;/li&gt;
-  &lt;li&gt;명령어 : mysqldump –u계정 –p비밀번호 데이터베이스명 &amp;gt; 백업파일명&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-21-03.png&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-21-04.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;백업된-파일-살펴보기&quot;&gt;백업된 파일 살펴보기&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;복원할 데이터베이스에는 복원할 동일한 이름의 테이블이 있어도 된다.
-    &lt;ul&gt;
-      &lt;li&gt;테이블이 있을 경우, 테이블이 자동 삭제되고 백업된 데이터로 테이블이 생성됨&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-21-05.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;테이블을 사용할 동안 다른 사람의 접근을 제한한다.&lt;/li&gt;
-  &lt;li&gt;READ
-    &lt;ul&gt;
-      &lt;li&gt;LOCK 한 사람이 테이블을 읽을 수 만 있고 기록할 수는 없다.&lt;/li&gt;
-      &lt;li&gt;다른 사람은 테이블을 읽거나 쓰기를 할 수 없다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;READ LOCAL
-    &lt;ul&gt;
-      &lt;li&gt;LOCK한 사람은 읽기만 가능하다.&lt;/li&gt;
-      &lt;li&gt;다른 사람은 쓰기와 읽기가 가능하다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;WRITE
-    &lt;ul&gt;
-      &lt;li&gt;LOCK한 사람만 읽고 쓸수 있다.&lt;/li&gt;
-      &lt;li&gt;다른 사람은 읽고 쓰기가 불가능하다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;UNLOCK TABLES
-    &lt;ul&gt;
-      &lt;li&gt;LOCK 한 테이블을 해제한다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/03/2020-03-20-database-21-06.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;데이터베이스-복원&quot;&gt;데이터베이스 복원&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;DBMS 내의 데이터 복원은 데이터베이스 별로 한다.&lt;/li&gt;
-  &lt;li&gt;테이블 별로 복원할 수 없다.&lt;/li&gt;
-  &lt;li&gt;복원할 데이터베이스는 DBMS내에 만들어져 있어야 한다.&lt;/li&gt;
-  &lt;li&gt;복원할 때 사용하는 계정은 해당 데이터베이스에 접근할 권한을 가지고 있어야 한다.&lt;/li&gt;
-  &lt;li&gt;명령어 : mysql –u계정 –p비밀번호 데이터베이스명 &amp;lt; 백업파일명&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Fri, 20 Mar 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/03/20/database-21/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/03/20/database-21/</guid>
-        
-        <category>database</category>
         
         
         <category>devlog</category>
