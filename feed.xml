@@ -5,9 +5,711 @@
     <description></description>
     <link>https://m-veloper.github.io/</link>
     <atom:link href="https://m-veloper.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 05 Apr 2020 23:06:16 +0900</pubDate>
-    <lastBuildDate>Sun, 05 Apr 2020 23:06:16 +0900</lastBuildDate>
+    <pubDate>Mon, 06 Apr 2020 20:14:36 +0900</pubDate>
+    <lastBuildDate>Mon, 06 Apr 2020 20:14:36 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>[유닉스] 파일 아카이브 - .gz 파일, &amp;nbsp; .zip 파일, &amp;nbsp; .bz2 파일</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-04-06-unix-26.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;gzipgunzip&quot;&gt;gzip/gunzip&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;gzip 명령으로 파일을 압축하여 .gz 파일을 생성할 수 있고, gzip 또는 gunzip 명령을 이용하여 압축을 풀 수 있다.
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;압축하기--gzip&quot;&gt;압축하기 : gzip&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;지정한 파일을 압축해 파일이름.gz 파일 생성&lt;/li&gt;
+  &lt;li&gt;압축 효율이 좋음&lt;/li&gt;
+  &lt;li&gt;형식 : gzip [옵션] 파일명&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;옵션&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;-d : 파일 압축을 해제&lt;/li&gt;
+      &lt;li&gt;-l : 압축된 파일의 정보를 보여줌&lt;/li&gt;
+      &lt;li&gt;-r : 하위 디렉토리로 이동하여 파일 압축&lt;/li&gt;
+      &lt;li&gt;-t : 압축 파일 검사&lt;/li&gt;
+      &lt;li&gt;-v : 압축 정보를 화면에 출력&lt;/li&gt;
+      &lt;li&gt;-g : 최대한 압축&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;사용 예&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;gzip test1.txt&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;gzip –v test2.txt test3.txt&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ gzip test1.txt
+  $ ls test1.*
+        
+      test1.txt.gz
+  $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;-d 옵션을 사용해 압축 파일 복원 가능&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;-l 옵션을 사용해 압축 파일에 대한 정보 확인 가능&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;파일의 원래 크기, 압축된 크기, 압축률, 원본 파일명 출력&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ gzip –l test1.txt.gz
+        
+      compressed uncompressed ratio uncompressed_name
+            
+          174        221      33.9%      test1.txt
+  $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;파일-내용-보기--zcat&quot;&gt;파일 내용 보기 : zcat&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;gzip으로 압축된 파일의 내용을 보여줌&lt;/li&gt;
+  &lt;li&gt;솔라리스와 리눅스에서 명령이 다름(솔라리스 : gzcat, 리눅스 : zcat)&lt;/li&gt;
+  &lt;li&gt;형식 : zcat 파일명&lt;/li&gt;
+  &lt;li&gt;사용 예
+    &lt;ul&gt;
+      &lt;li&gt;zcat test1.txt.gz&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;zcat test1.txt&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ zcat test1.txt.gz
+       
+      127.0.0.1 localhost
+      127.0.1.1 ksshin
+            
+  ......
+  $ zcat test1.txt
+        
+      127.0.0.1 localhost
+      127.0.1.1 ksshin
+            
+  ......
+  $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;압축풀기--gunzip&quot;&gt;압축풀기 : gunzip&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;gzip으로 압축된 파일의 압축을 복원&lt;/li&gt;
+  &lt;li&gt;형식 : gunzip 파일명&lt;/li&gt;
+  &lt;li&gt;사용 예
+    &lt;ul&gt;
+      &lt;li&gt;gunzip test1.txt.gz&lt;/li&gt;
+      &lt;li&gt;gunzip test1.txt&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;명령 결과는 gzip –d의 결과와 같음&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ ls *.gz
+  test1.tar.gz txt.tar.gz
+  $ gunzip *.gz
+  $ ls
+  test1.txt test2.txt test3.txt txt.tar
+  $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;zipunzip-명령&quot;&gt;zip/unzip 명령&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;zip 명령으로 파일을 압축하여 .zip 파일을 생성할 수 있고, unzip 명령을 이용하여 압축을 풀 수 있다.&lt;/li&gt;
+  &lt;li&gt;.zip 파일을 생성하고 그 압축을 풀어줌&lt;/li&gt;
+  &lt;li&gt;PC의 zip과 호환이 가능하기 때문에 유닉스와 PC간 데이터 주고받을 때 사용&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;압축하기--zip&quot;&gt;압축하기 : zip&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;지정한 파일을 압축해 파일이름.zip 파일 생성&lt;/li&gt;
+  &lt;li&gt;원본 파일은 그대로 두고 압축 파일을 별도로 만듦&lt;/li&gt;
+  &lt;li&gt;형식 : zip [옵션] zip파일명 압축할 파일명&lt;/li&gt;
+  &lt;li&gt;옵션
+    &lt;ul&gt;
+      &lt;li&gt;-v : 압축 정보를 화면에 출력&lt;/li&gt;
+      &lt;li&gt;-r : 디렉토리 압축&lt;/li&gt;
+      &lt;li&gt;-u : 수정되거나 추가된 파일만 출력&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;사용 예
+    &lt;ul&gt;
+      &lt;li&gt;zip test1.txt.zip test1.txt&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;zip –v txt.zip test2.txt test3.txt&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ zip test1.txt.zip test1.txt
+      adding: test1.txt (deflated 34%)
+            
+  $ ls *.zip
+      test1.txt.zip
+            
+  $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;디렉토리도 압축 가능&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ zip –r tmp.zip tmp
+      adding: tmp/ (stored 0%)
+      adding: tmp/test3.txt (deflated 34%)
+      adding: tmp/test1.txt (deflated 34%)
+      adding: tmp/test2.txt (deflated 34%)
+        
+  $ ls *.zip
+      test1.txt.zip tmp.zip
+  $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;압축풀기--unzip&quot;&gt;압축풀기 : unzip&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;zip으로 압축한 파일을 복원&lt;/li&gt;
+  &lt;li&gt;형식 : unzip 파일명&lt;/li&gt;
+  &lt;li&gt;사용 예
+    &lt;ul&gt;
+      &lt;li&gt;unzip test1.txt.zip&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;unzip test1.txt&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ mkdir temp1
+  $ mv tmp.zip temp1
+  $ cd temp1
+  $ unzip tmp.zip
+      Archive: tmp.zip
+      creating: tmp/
+      inflating: tmp/test3.txt
+      inflating: tmp/teset1.txt
+      inflating: tmp/test2.txt
+            
+  $ ls –F
+  tmp/ tmp.zip
+  $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;bzip2bunzip2&quot;&gt;bzip2/bunzip2&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;bzip2 명령으로 파일을 압축하여 .bz2 파일을 생성할 수 있고, bunzip2 명령을 이용하여 압축을 풀 수 있다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;압축하기--bzip2&quot;&gt;압축하기 : bzip2&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;오픈소스 압축 명령&lt;/li&gt;
+  &lt;li&gt;gzip을 개선하여 현재 가장 많이 사용하고 있는 압축 유틸리티&lt;/li&gt;
+  &lt;li&gt;gzip이나 zip에 비해 압축률은 좋지만 속도가 약간 느림&lt;/li&gt;
+  &lt;li&gt;지정한 파일을 압축해 파일이름.bz2 파일 생성&lt;/li&gt;
+  &lt;li&gt;형식 : bzip2 [옵션] 파일명&lt;/li&gt;
+  &lt;li&gt;옵션
+    &lt;ul&gt;
+      &lt;li&gt;-d : 파일 압축을 해제&lt;/li&gt;
+      &lt;li&gt;-l : 압축된 파일의 내용을 보여줌&lt;/li&gt;
+      &lt;li&gt;-t : 압축 파일 검사&lt;/li&gt;
+      &lt;li&gt;-v : 압축 정보를 화면에 출력&lt;/li&gt;
+      &lt;li&gt;–best : 최대한 압축&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;사용 예
+    &lt;ul&gt;
+      &lt;li&gt;bzip2 test1.txt&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;bzip2 –v test2.txt test3.txt&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ bzip2 test1.txt
+  $ ls
+      test1.txt.bz2 test2.txt test3.txt
+            
+  $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;파일-내용-보기--bzcat&quot;&gt;파일 내용 보기 : bzcat&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;압축된 파일의 내용을 봄&lt;/li&gt;
+  &lt;li&gt;형식 : bzcat 파일명&lt;/li&gt;
+  &lt;li&gt;사용 예
+    &lt;ul&gt;
+      &lt;li&gt;bzcat test1.txt.bz2&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;bzcat test1.txt&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ bzcat test1.txt.bz2
+      127.0.0.1 localhost
+      127.0.1.1 ksshin
+      ......
+  $ &amp;lt;br&amp;gt; &amp;lt;br&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;압축풀기--bunzip2&quot;&gt;압축풀기 : bunzip2&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;bzip2로 압축된 파일을 복원&lt;/li&gt;
+  &lt;li&gt;형식 : bunzip2 파일명&lt;/li&gt;
+  &lt;li&gt;사용 예
+    &lt;ul&gt;
+      &lt;li&gt;bunzip2 test1.txt.bz2&lt;/li&gt;
+      &lt;li&gt;bunzip2 test1.txt&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;bunzip2 명령의 결과는 bzip2 –d의 결과와 같음&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ bunzip2 test1.txt.bz2
+  $ ls
+      test1.txt test2.txt test3.txt
+  $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;압축-효율-비교&quot;&gt;압축 효율 비교&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;compress &amp;lt; gzip &amp;lt; bzip2&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Mon, 06 Apr 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/devlog/2020/04/06/unix-26/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/06/unix-26/</guid>
+        
+        <category>unix</category>
+        
+        
+        <category>devlog</category>
+        
+      </item>
+    
+      <item>
+        <title>[유닉스] 파일 압축하기(compress), 압축풀기(uncompress)</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-04-06-unix-25.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;압축하기--compress&quot;&gt;압축하기 : compress&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;파일을 압축&lt;/li&gt;
+  &lt;li&gt;가장 오래된 압축 유틸리티&lt;/li&gt;
+  &lt;li&gt;형식 : compress [옵션] 파일명&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;옵션&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;-f : 강제 압축&lt;/li&gt;
+      &lt;li&gt;-c : 압축 결과를 화면에 출력 (.Z 파일은 생성이 안 됨)&lt;/li&gt;
+      &lt;li&gt;-V : 압축 정보를 화면에 출력&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;사용 예 : compress test1.txt&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ compress test1.txt
+  $ ls test1.*
+  test1.txt.Z
+  $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;사용 예 : compress –v test2.txt test3.txt&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ compress –v test2.txt test3.txt
+  test2.txt: -- replaced with test2.txt.Z Compression: 15.83%
+  test3.txt: -- replaced with test3.txt.Z Compression: 15.83%
+  $ ls
+  test1.txt.Z test2.txt.Z test3.txt.Z
+  $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;옵션 없이 사용하면, 정상 압축될 때는 아무 메시지 출력하지 않고, 오류가 있을 때만 오류 메시지 출력&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;여러 파일 압축도 가능&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ compress –v *.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;파일 크기가 작으면 압축하지 않음&lt;/li&gt;
+  &lt;li&gt;-f 옵션은 강제 압축&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;압축률이 -(마이너스)이면 압축된 결과의 파일이 더 커졌음을 나타냄&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ cat &amp;gt; a.txt
+  Hello~!
+  ^D
+  $ ls –l a.*
+  -rw-r--r-- 1 ksshin ksshin 8 7월 4 08:40 a.txt
+  $ compress –fv a.txt
+  a.txt: -- replaced with a.txt.Z Compression: -50.00%
+  $ ls –l a.*
+  -rw-r--r-- 1 ksshin ksshin 12 7월 4 08:40 a.txt.Z
+  $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;파일-내용-보기--zcat&quot;&gt;파일 내용 보기 : zcat&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;압축을 풀지 않고도 압축된 파일의 내용을 볼 수 있음&lt;/li&gt;
+  &lt;li&gt;형식 : zcat 파일명&lt;/li&gt;
+  &lt;li&gt;사용 예
+    &lt;ul&gt;
+      &lt;li&gt;zcat test1.txt.Z&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;zcat test1.txt&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ zcat a.txt.Z
+  Hello~!
+  $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;압축-풀기--uncompress&quot;&gt;압축 풀기 : uncompress&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;compress로 압축된 파일의 압축을 풀어줌&lt;/li&gt;
+  &lt;li&gt;형식 : uncompress [옵션] 파일명&lt;/li&gt;
+  &lt;li&gt;옵션
+    &lt;ul&gt;
+      &lt;li&gt;-c : 복원 결과를 화면에 출력&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;사용 예 : uncompress test1.txt.Z, uncompress test1.txt&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;복원할 파일명을 지정하지 않으면 표준 입력을 압축 파일로 간주&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ ls
+  a.txt.Z test1.txt.Z test2.txt.Z test3.txt.Z
+  $ uncompress *.Z
+  $ ls *.txt
+  a.txt test1.txt test2.txt test3.txt
+  $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Mon, 06 Apr 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/devlog/2020/04/06/unix-25/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/06/unix-25/</guid>
+        
+        <category>unix</category>
+        
+        
+        <category>devlog</category>
+        
+      </item>
+    
+      <item>
+        <title>[유닉스] 파일 아카이브 - tar 파일, &amp;nbsp; .Z 파일</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-04-06-unix-24.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;파일-아카이브&quot;&gt;파일 아카이브&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;아카이브 : 보관소, 저장소&lt;/li&gt;
+  &lt;li&gt;파일 아카이브 : 파일을 묶어 하나로 만든 것&lt;/li&gt;
+  &lt;li&gt;과거 : 여러 파일이나 디렉토리를 묶어 이동식 저장 장치에 보관하기 위해 사용되었음&lt;/li&gt;
+  &lt;li&gt;다른 시스템과 파일을 주고받거나, 백업을 하기 위해 아카이브 파일 생성&lt;/li&gt;
+  &lt;li&gt;기존 아카이브에서 파일을 추출
+&lt;br /&gt;
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;tartape-archive&quot;&gt;tar(tape archive)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;파일과 디렉토리를 묶어 하나의 아카이브 파일 생성&lt;/li&gt;
+  &lt;li&gt;형식 : tar 기능[옵션] [아카이브 파일] 파일명&lt;/li&gt;
+  &lt;li&gt;기능 키
+    &lt;ul&gt;
+      &lt;li&gt;기능 키 앞에는 ‘–’ 기호를 사용하지 않아도 됨&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-04-06-unix-24-01.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;옵션&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;옵션 사용시 기능키와 결합하여 사용하며, ‘–’ 기호를 사용하지 않아도 되지만, 인자값이 있는 옵션을 여러 개
+  지정하는 경우에는 – 기호를 사용해야 함&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-04-06-unix-24-02.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;사용 예&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;tar cvf unix.tar Unix&lt;/li&gt;
+      &lt;li&gt;tar xvf unix.tar
+  &lt;br /&gt;
+  &lt;br /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;아카이브-생성하기--cvf&quot;&gt;아카이브 생성하기 : cvf&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;예제 파일 만들기&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ mkdir ~/ch9
+  $ cd ch9
+  $ cp /etc/hosts test1.txt
+  $ cp test1.txt test2.txt
+  $ cp test2.txt test3.txt
+  $ mkdir tmp
+  $ cp *.txt tmp
+  $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;tar로 아카이브 생성&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ tar cvf txt.tar *.txt
+  test1.txt
+  test2.txt
+  test3.txt
+  $ ls txt.tar
+  txt.tar
+  $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;c (create) : 아카이브 생성&lt;/li&gt;
+  &lt;li&gt;v (verbose) : 처리 중인 파일의 이름을 화면에 출력&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;f (file)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;생성될 아카이브의 이름 지정&lt;/li&gt;
+      &lt;li&gt;f 다음에 오는 이름이 아카이브 이름&lt;/li&gt;
+      &lt;li&gt;파일 이름에는 제약이 없으나 .tar로 지정하는 것이 좋음&lt;/li&gt;
+      &lt;li&gt;f가 지정되어 있으면 tar는 첫 번째 이름을 아카이브 이름으로, 두 번째부터 마지막 이름까지를 묶을 파일 이름으로 간주&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;f 다음에 이름을 쓰지 않은 경우&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ tar cvf *.txt
+  test2.txt
+  test3.txt
+  $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;쉘은 파일 이름에 사용된 특수 문자를 해석하여 tar에 전달&lt;/li&gt;
+      &lt;li&gt;tar는 “tar cvf test1.txt test2.txt test3.txt”를 전달받아 test1.txt를 아카이브 이름으로, 2.txt와 3.txt를 묶을 대상 파일로 이해하고 처리&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;디렉토리를 묶은 아카이브&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ tar cvf tmp.tar tmp
+  tmp/
+  tmp/test1.txt
+  tmp/test2.txt
+  tmp/test3.txt
+  $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;tar 명령으로 파일을 묶어 아카이브 파일을 만들어도 원본 파일은 그대로 유지됨&lt;/li&gt;
+  &lt;li&gt;디스크 용량을 두 배로 차지
+&lt;br /&gt;
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;아카이브-생성-확인하기--tvf&quot;&gt;아카이브 생성 확인하기 : tvf&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;t (table of contents) : 생성된 아카이브 확인&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ tar tvf txt.tar
+  -rw-r--r-- ksshin/ksshin 221 2015-07-04 22:18 test1.txt
+  -rw-r--r-- ksshin/ksshin 221 2015-07-04 22:18 test2.txt
+  -rw-r--r-- ksshin/ksshin 221 2015-07-04 22:18 test3.txt
+  $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;파일의 상세 정보 : ls –l 명령의 결과와 비슷&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   - : 파일 종류 (b, c, d, l, s, p 등)
+   rw-r--r-- : 접근 권한
+   ksshin/ksshin : 파일 소유자와 파일의 소속 그룹.
+   숫자 : 파일 크기
+   날짜 : 파일을 마지막으로 수정한 일시
+   이름 : 파일명
+&amp;lt;br&amp;gt;
+&amp;lt;br&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;아카이브-풀기--xvf&quot;&gt;아카이브 풀기 : xvf&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;x (extract) : 아카이브 풀기&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ mkdir temp
+  $ cp txt.tar temp
+  $ cd temp
+  $ tar xvf txt.tar
+  test1.txt
+  test2.txt
+  test3.txt
+  $ ls
+  test1.txt test2.txt test3.txt txt.tar
+  $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;아카이브 생성할 때 파일들은 저장한 원래의 경로에 복사됨&lt;/li&gt;
+  &lt;li&gt;아카이브를 풀기 전에 t (tvf) 기능을 이용해 아카이브의 경로를 확인한 후 작업을 수행하는 것이 바람직&lt;/li&gt;
+  &lt;li&gt;아카이브 생성할 때 절대경로를 지정하면, 아카이브 풀 때 현재 위치에 상관없이 원래 위치에 파일이 복사됨
+&lt;br /&gt;
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;아카이브-업데이트하기--uvf&quot;&gt;아카이브 업데이트하기 : uvf&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;u (update) : 아카이브 만든 이후, 일부 파일 내용이 바뀌었을 경우 사용&lt;/li&gt;
+  &lt;li&gt;아카이브에 없는 파일이거나, 아카이브에 있는 파일이지만 수정된 파일일 경우 아카이브의 마지막에 추가됨&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;파일에 변경 사항이 없을 경우 u 기능을 지정하여 아카이브 수정해도 변동 사항 없음&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ tar uvf txt.tar test2.txt
+  $ touch test2.txt
+  $ tar uvf txt.tar test2.txt
+  test2.txt
+  $ tar tvf txt.tar
+  -rw-r--r-- ksshin/ksshin 221 2015-07-04 22:18 test1.txt
+  -rw-r--r-- ksshin/ksshin 221 2015-07-04 22:18 test2.txt
+  -rw-r--r-- ksshin/ksshin 221 2015-07-04 22:18 test3.txt
+  -rw-r--r-- ksshin/ksshin 221 2015-07-05 06:08 test2.txt
+  $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;기존 파일에 변경 사항 없이 u 기능을 지정하여 아카이브를 수정하면 변동이 없음&lt;/li&gt;
+  &lt;li&gt;touch 명령으로 test2.txt의 수정 시간 변경 후 u 기능을 사용하면 아카이브의 마지막에 파일이 추가됨&lt;/li&gt;
+  &lt;li&gt;아카이브를 추출할 때 앞에서부터 순서대로 추출되므로 나중에 추가된 파일이 먼저 추출된 파일을 덮어쓰게 됨
+&lt;br /&gt;
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;파일-추가하기--rvf&quot;&gt;파일 추가하기 : rvf&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;r (replace) : 지정한 파일을 무조건 아카이브의 마지막에 추가&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ cp /etc/services test.txt
+  $ tar rvf txt.tar test.txt
+  test.txt
+  $ tar tvf txt.tar
+  -rw-r--r-- ksshin/ksshin 221 2015-07-04 22:18 test1.txt
+  -rw-r--r-- ksshin/ksshin 221 2015-07-04 22:18 test2.txt
+  -rw-r--r-- ksshin/ksshin 221 2015-07-04 22:18 test3.txt
+  -rw-r--r-- ksshin/ksshin 221 2015-07-05 06:08 test2.txt
+  -rw-r--r-- ksshin/ksshin 19558 2015-07-05 06:14 test.txt
+  $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Mon, 06 Apr 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/devlog/2020/04/06/unix-24/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/06/unix-24/</guid>
+        
+        <category>unix</category>
+        
+        
+        <category>devlog</category>
+        
+      </item>
+    
+      <item>
+        <title>시나공 컴활(컴퓨터활용능력) 시험 1급 필기 핵심요약</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/life/2020-04-06-tip-life-01.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;시나공-컴활컴퓨터활용능력-시험-1급-필기-핵심요약&quot;&gt;시나공 컴활(컴퓨터활용능력) 시험 1급 필기 핵심요약&lt;/h2&gt;
+
+&lt;p&gt;다운로드 클릭 ===&amp;gt; &lt;a href=&quot;https://mi-nya.tistory.com/90&quot;&gt;컴활1급 필기 요약본 다운로드&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 06 Apr 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/tip/2020/04/06/tip-life-01/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/04/06/tip-life-01/</guid>
+        
+        <category>life</category>
+        
+        
+        <category>tip</category>
+        
+      </item>
     
       <item>
         <title>[유닉스] 파일 시스템 마운트 와 복구</title>
@@ -2463,873 +3165,6 @@ IllegalFormatConversionException 가 발생한다.&lt;/li&gt;
         <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/03/22/sass-14/</guid>
         
         <category>sass</category>
-        
-        
-        <category>devlog</category>
-        
-      </item>
-    
-      <item>
-        <title>[자바스크립트] 제이쿼리(jQuery)로 select box 값 고정하기/ 변경하기</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/javascript/2020-03-21-tip-javascript-08.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;제이쿼리jquery로-select-box-값-고정하기-변경하기&quot;&gt;제이쿼리(jQuery)로 select box 값 고정하기/ 변경하기&lt;/h2&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    // value값으로 설정
-    $(&quot;#select_id&quot;).val(&quot;1&quot;).prop(&quot;selected&quot;, true);
-
-    // optipn의 순서값으로 설정
-    $(&quot;#select_id option:eq(0)&quot;).prop(&quot;selected&quot;, true);
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-</description>
-        <pubDate>Sat, 21 Mar 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/tip/2020/03/21/tip-javascript-08/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/03/21/tip-javascript-08/</guid>
-        
-        <category>javascript</category>
-        
-        
-        <category>tip</category>
-        
-      </item>
-    
-      <item>
-        <title>[유닉스] 포그라운드(foreground), 백그라운드(background)</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-20-unix-21.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;포그라운드foreground-백그라운드background&quot;&gt;포그라운드(foreground), 백그라운드(background)&lt;/h1&gt;
-
-&lt;h3 id=&quot;포그라운드와-백그라운드-작업의-이해&quot;&gt;포그라운드와 백그라운드 작업의 이해&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;쉘은 프로세스를 작업(job) 단위로 관리&lt;/li&gt;
-  &lt;li&gt;유닉스는 동시에 여러 작업을 할 수 있는 다중 작업(Multitasking) 운영체제&lt;/li&gt;
-  &lt;li&gt;포그라운드(foreground, 전위) 처리와 백그라운드(background, 후위) 처리 방식으로 동작&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;포그라운드-처리&quot;&gt;포그라운드 처리&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;사용자가 입력한 명령이 실행되어 결과가 출력될 때까지 프롬프트가 출력되지 않아 다른 명령을 입력할 수 없어 기다려야 하는 경우&lt;/li&gt;
-  &lt;li&gt;사용자가 명령을 입력하면 쉘이 명령을 해석하여 실행한 결과를 화면에 출력&lt;/li&gt;
-  &lt;li&gt;사용자는 화면에 출력된 결과를 보고 다시 명령을 입력하여 대화식 작업을 함&lt;/li&gt;
-  &lt;li&gt;포그라운드 프로세스 : 포그라운드 처리로 실행되고 있는 프로세스, 포그라운드 작업&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;포그라운드 처리의 예&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ find / -name passwd
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;find 명령이 끝날 때까지 기다려야 함&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;백그라운드-처리&quot;&gt;백그라운드 처리&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;포그라운드 처리 방식은 한 번에 하나의 명령만 실행시키므로 여러 프로세스를 동시에 실행시킬 수 없음&lt;/li&gt;
-  &lt;li&gt;백그라운드 처리 방식은 여러 프로세스를 동시에 실행시킬 수 있음&lt;/li&gt;
-  &lt;li&gt;명령의 처리가 끝나는 것과 관계없이 곧바로 프롬프트가 출력되어 사용자가 다른 작업을 계속할 수 있음&lt;/li&gt;
-  &lt;li&gt;백그라운드 프로세스 : 백그라운드 방식으로 처리되는 프로세스, 백그라운드 작업&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;명령을 백그라운드로 실행하려면 명령의 마지막에 ＆(앰퍼샌드) 기호를 추가&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ find / -name text ＆
-  [1] 6715
-  $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;백그라운드 프로세스는 실행 결과와 오류 메시지를 화면에 그대로 출력&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;다른 작업할 때 방해받을 수 있으므로 출력 방향 전환하여 실행 결과를 파일로 저장&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ find / -name passwd &amp;gt; pw.dat ＆
-  [2] 6725
-  $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;오류 메시지를 출력 방향 전환하여 파일로 저장&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ find / -name passwd &amp;gt; pw.dat 2&amp;gt; pw.err ＆
-  [3] 6726
-  $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;다른 작업을 하는 도중 백그라운드 작업이 종료되면 Enter 키를 입력했을 때 백그라운드 작업 종료 메시지가 출력됨&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;포그라운드와-백그라운드-작업-제어&quot;&gt;포그라운드와 백그라운드 작업 제어&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;작업 제어 : 작업 전환, 실행 중지, 작업 종료&lt;/li&gt;
-  &lt;li&gt;작업 전환 : 포그라운드 작업을 백그라운드 작업으로 전환, 백그라운드 작업을 포그라운드 작업으로 전환&lt;/li&gt;
-  &lt;li&gt;실행 중지 : 작업을 잠시 중단시키는 것&lt;/li&gt;
-  &lt;li&gt;작업 종료 : 프로세스 종료처럼 작업을 종료시키는 것&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;작업-목록-보기&quot;&gt;작업 목록 보기&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;jobs 명령
-    &lt;ul&gt;
-      &lt;li&gt;백그라운드 작업을 모두 보여줌. 특정 작업 번호 지정하면 해당 작업의 정보만 보여줌&lt;/li&gt;
-      &lt;li&gt;형식 : jobs [%작업]&lt;/li&gt;
-      &lt;li&gt;%작업
-        &lt;ul&gt;
-          &lt;li&gt;%번호 : 해당 번호의 작업 정보 출력&lt;/li&gt;
-          &lt;li&gt;%+ 또는 %% : 작업 순서가 +인 작업 정보 출력&lt;/li&gt;
-          &lt;li&gt;%- : 작업 순서가 –인 작업 정보 출력&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;사용 예 : jobs %1, jobs&lt;/p&gt;
-
-        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ sleep 100＆
-  [1] 6751
-  $ sleep 200＆
-  [2] 6752
-  $ jobs
-  [1]- Running sleep 100 ＆
-  [2]+ Running sleep 200 ＆
-  $ jobs %1
-  [1]- Running sleep 100 ＆
-  $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-20-unix-21-01.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;작업-전환하기&quot;&gt;작업 전환하기&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;fg 명령&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;백그라운드 프로세스를 포그라운드 프로세스로 전환&lt;/li&gt;
-      &lt;li&gt;사용법 : fg [%작업번호]&lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;백그라운드로 수행 중인 작업이 여러 개인 경우 가장 최근에 수행한 작업(보통 + 기호가 붙어 있는 작업)을 포그라운드로 전환&lt;/p&gt;
-
-        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ jobs
-  [3]+ Running sleep 150 ＆
-  $ fg
-  sleep 150
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;bg 명령&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;포그라운드 프로세스를 백그라운드 프로세스로 전환&lt;/p&gt;
-
-        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ sleep 150
-  ^Z
-  [3]+ Stopped sleep 150
-  $ bg
-  [3]+ sleep 150 ＆
-  $ jobs
-  [2]- Running sleep 200 ＆
-  [3]+ Running sleep 150 ＆
-  $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;작업-종료시키기&quot;&gt;작업 종료시키기&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;포그라운드 작업은 Ctrl+C를 입력하면 종료됨
-    &lt;ul&gt;
-      &lt;li&gt;Ctrl+C는 인터럽트 시그널을 포그라운드 프로세스에 전달&lt;/li&gt;
-      &lt;li&gt;프로세스는 인터럽트를 받으면 기본적으로 종료&lt;/li&gt;
-      &lt;li&gt;종료시키고자 하는 프로세스의 PID를 다른 터미널에서 찾아 강제로 종료시키는 방법도 있음&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;백그라운드 작업은 kill 명령으로 종료&lt;/li&gt;
-  &lt;li&gt;kill 명령의 인자로 PID 대신 ‘%작업 번호’도 가능&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;로그아웃-후에도-백그라운드-작업-계속-실행하기&quot;&gt;로그아웃 후에도 백그라운드 작업 계속 실행하기&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;nohup 명령&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;로그아웃 후에도 백그라운드 작업을 계속 실행시킴&lt;/li&gt;
-      &lt;li&gt;실행 중인 프로세스의 표준 출력과 표준 에러는 ‘nohup.out’이라는 파일을 생성하여 기록,&lt;/li&gt;
-      &lt;li&gt;nohup 명령행 뒤에 ‘＆’를 명시해야 함&lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;형식 : nohup 명령＆&lt;/p&gt;
-
-        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ nohup find / -name passwd ＆
-  [1] 7050
-  $ nohup: ignoring input and appending output to ‘nohup.out’
-  $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;사용자-전환하기&quot;&gt;사용자 전환하기&lt;/h1&gt;
-
-&lt;h3 id=&quot;로그인한-모든-사용자-정보-보기&quot;&gt;로그인한 모든 사용자 정보 보기&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;users 명령&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;현재 시스템에 로그인하고 있는 사용자명 출력&lt;/li&gt;
-      &lt;li&gt;명령의 결과를 한 행으로 출력&lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;형식 : users&lt;/p&gt;
-
-        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ users
-  ksshin ksshin
-  $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;who 명령&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;시스템을 사용하고 있는 사용자의 자세한 정보 출력&lt;/li&gt;
-      &lt;li&gt;사용자명, 사용자가 접속한 단말기 번호, 사용자가 로그인한 시간, 외부 컴퓨터 이름이나 IP 주소 등&lt;/li&gt;
-      &lt;li&gt;형식 : who [옵션]&lt;/li&gt;
-      &lt;li&gt;옵션
-        &lt;ul&gt;
-          &lt;li&gt;-q : 사용자명만 출력&lt;/li&gt;
-          &lt;li&gt;-H : 출력 항목의 제목도 함께 출력&lt;/li&gt;
-          &lt;li&gt;
-            &lt;p&gt;-b : 마지막으로 재부팅한 날짜와 시간 출력&lt;/p&gt;
-
-            &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ who
-  ksshin tty1 2015-06-10 14:42
-  ksshin :0 2015-06-10 14:38 (:0)
-  $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;            &lt;/div&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;w 명령&lt;/p&gt;
-    &lt;ul&gt;
-      &lt;li&gt;로그인한 사용자 정보와 현재 작업의 정보 출력&lt;/li&gt;
-      &lt;li&gt;사용자 정보 외에 시스템 정보도 출력&lt;/li&gt;
-      &lt;li&gt;시스템 정보 : 현재 시간, 시스템이 부팅된 후 현재까지 경과된 기간, 로그인하고 있는 사용자 수, 실행 대기 중인 작업의 수&lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;사용자 정보 : 사용자명, 단말기 번호, 로그인한 시간, 휴지(idle) 시간, JCPU, PCPU, 실행하고 있는 명령&lt;/p&gt;
-
-        &lt;ul&gt;
-          &lt;li&gt;휴지 시간 : 마지막 명령 실행 후부터 현재까지 작업하지 않고 있는 시간&lt;/li&gt;
-          &lt;li&gt;JCPU : 로그인한 후 실행했던 전체 프로세스에서 사용한 CPU 시간&lt;/li&gt;
-          &lt;li&gt;PCPU : 현재 실행 중인 프로세스가 사용한 CPU 시간&lt;/li&gt;
-          &lt;li&gt;what : 현재 실행 중인 명령&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;형식 : w [사용자명]&lt;/p&gt;
-
-        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ w
-  17:05:24 up 1 day, 15:41, 2 users, load average: 0.22, 0.16, 0.15
-  USER TTY FROM LOGIN@ IDLE JCPU PCPU WHAT
-  ksshin tty1 10 6월 15 4.00s 11.93s 0.09s w
-  ksshin :0 :0 10 6월 15 ?xdm? 4:40m 5.36s init --user
-  $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;자신의-정보-보기&quot;&gt;자신의 정보 보기&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;who am i 명령&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;로그인 정보 출력&lt;/li&gt;
-      &lt;li&gt;who 명령에 인자로 am i를 지정한 것&lt;/li&gt;
-      &lt;li&gt;who 명령의 결과 중 자신에 대한 정보만 출력&lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;whoami보다 상세한 사용자 정보 확인할 때 사용&lt;/p&gt;
-
-        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ who am i
-  ksshin tty1 2015-06-10 14:42
-  $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;whoami 명령&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;자신의 로그인 사용자명 출력&lt;/li&gt;
-      &lt;li&gt;가상콘솔을 사용하거나 여러 계정으로 동시에 로그인하고 있는 경우 현재 시스템을 사용하고 있는 사용자를확인할 때&lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;형식 : whoami&lt;/p&gt;
-
-        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ whoami
-  ksshin
-  $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;id 명령&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;현재 사용자의 로그인 ID와 그룹 정보 출력&lt;/li&gt;
-      &lt;li&gt;사용자명, uid(사용자를 구분하는 번호), gid(그룹을 구분하는 번호) 정보 출력&lt;/li&gt;
-      &lt;li&gt;형식 : id [옵션]&lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;옵션 : -a : 모든 그룹 정보 출력&lt;/p&gt;
-
-        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ id
-  uid=1001(user1) gid=1001(user1) groups=1001(user1)
-  $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;사용자-전환하기-1&quot;&gt;사용자 전환하기&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;su 명령&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;다른 사용자로 전환&lt;/li&gt;
-      &lt;li&gt;전환하려는 사용자의 비밀번호를 알고 있어야 함&lt;/li&gt;
-      &lt;li&gt;형식 : su [-] [사용자명]&lt;/li&gt;
-      &lt;li&gt;사용 예 : su, su – user1&lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;다시 돌아가려면 exit 명령 사용&lt;/p&gt;
-
-        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ su user1
-  Password:
-  $ whoami
-  user1
-  $ pwd
-  /home/ksshin
-  $ exit
-  $ whoami
-  ksshin
-  $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-
-        &lt;ul&gt;
-          &lt;li&gt;사용자가 ksshin에서 user1으로 전환하였지만 현재 디렉토리는 /home/ksshin&lt;/li&gt;
-          &lt;li&gt;su 명령만 사용하면, 사용자는 전환되지만 디렉토리는 변하지 않음&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;‘-’ 옵션을 사용하면 사용자의 초기화 파일을 실행시켜 작업 디렉토리도 변경&lt;/p&gt;
-
-        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ su - user1
-  Password:
-  $ pwd
-  /home/user1
-  $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;su 명령을 사용자 이름 지정 없이 사용하여 root로 전환&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ su
-  Password:
-  # whoami
-  root
-  #
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-</description>
-        <pubDate>Fri, 20 Mar 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/03/20/unix-21/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/03/20/unix-21/</guid>
-        
-        <category>unix</category>
-        
-        
-        <category>devlog</category>
-        
-      </item>
-    
-      <item>
-        <title>[유닉스] 프로세스 관리 명령</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-20-unix-20.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;프로세스-목록-보기&quot;&gt;프로세스 목록 보기&lt;/h1&gt;
-
-&lt;h3 id=&quot;ps-명령&quot;&gt;ps 명령&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;현재 실행 중인 프로세스의 정보를 출력&lt;/li&gt;
-  &lt;li&gt;형식 : ps [옵션]&lt;/li&gt;
-  &lt;li&gt;옵션
-    &lt;ul&gt;
-      &lt;li&gt;-e : 시스템에서 실행 중인 모든 프로세스 정보 출력&lt;/li&gt;
-      &lt;li&gt;-f : 프로세스에 대한 자세한 정보 출력&lt;/li&gt;
-      &lt;li&gt;-u uid : 특정 사용자에 대한 모든 프로세스 출력&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;사용 예 : ps, ps –ef, ps aux&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-20-unix-20-01.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;현재-단말기의-프로세스-목록-출력&quot;&gt;현재 단말기의 프로세스 목록 출력&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;ps 명령을 옵션 없이 사용하면 현재 쉘이나 단말기 창에서 실행시킨 사용자 프로세스의 정보 출력&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ ps
-  PID TTY TIME CMD
-  2570 tty1 00:00:12 bash
-  6710 tty1 00:00:00 ps
-  $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;프로세스의-상세-정보-출력&quot;&gt;프로세스의 상세 정보 출력&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;-f 옵션은 프로세스의 상세 정보 출력&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ ps –f
-  UID PID PPID C STIME TTY TIME CMD
-  ksshin 2570 1189 0 6월 16 tty1 00:00:12 -bash
-  ksshin 7174 2570 0 17:42 tty1 00:00:00 ps -f
-  $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-20-unix-20-02.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-&lt;h3 id=&quot;전체-프로세스-목록-출력-system-v-계열&quot;&gt;전체 프로세스 목록 출력 (System V 계열)&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;-e 옵션은 시스템에서 실행 중인 모든 프로세스 출력&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;TTY 값이 ‘?’인 것은 특정 터미널에서 실행되지 않은 프로세스로, 대부분 데몬&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ ps –e
-  PID TTY TIME CMD
-  1 ? 00:00:09 init
-  2 ? 00:00:00 kthreadd
-  3 ? 00:00:26 ksoftirqd/0
-  5 ? 00:00:00 kworker/0:0H
-  7 ? 00:00:24 rcu_sched
-  ......
-  $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;전체 프로세스의 상세 정보 확인은 –e 옵션과 –f 옵션을 함께 사용&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ ps –ef
-  UID PID PPID C STIME TTY TIME CMD
-  root 1 0 0 6월 16 ? 00:00:09 /sbin/init
-  root 2 0 0 6월 16 ? 00:00:00 [kthreadd]
-  root 3 2 0 6월 16 ? 00:00:26 [ksoftirqd/0]
-  root 5 2 0 6월 16 ? 00:00:00 [kworker/0:0H]
-  root 7 2 0 6월 16 ? 00:00:24 [rcu_sched]
-  ......
-  $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;전체-프로세스-목록-출력-bsd-계열&quot;&gt;전체 프로세스 목록 출력 (BSD 계열)&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;ps aux 명령&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ ps aux | more
-  UID PID %CPU %MEM VSZ RSS TTY STAT START TIME COMMAND
-  root 1 0.0 0.3 4572 1804 ? Ss 6월 25 0:14 /sbin/init
-  root 2 0.0 0.0 0 0 ? S 6월 25 0:00 [kthread]
-  root 3 0.0 0.0 0 0 ? S 6월 25 0:46 [ksoftirqd/0]
-  root 5 0.0 0.0 0 0 ? S&amp;lt; 6월 25 0:00 [kworker/0:0H]
-  root 7 0.0 0.0 0 0 ? S 6월 25 0:43 [rcu_sched]
-  ......
-  $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-20-unix-20-03.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;특정-사용자의-프로세스-목록-출력&quot;&gt;특정 사용자의 프로세스 목록 출력&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;-u 옵션은 특정 사용자가 실행시킨 프로세스의 목록 확인&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ ps –u ksshin
-  PID TTY TIME CMD
-  1693 ? 00:00:05 gnome-keyring-d
-  1695 ? 00:00:05 init
-  1767 ? 00:00:00 ssh-agent
-  1772 ? 00:00:47 dbus-daemon
-  1780 ? 00:00:00 upstart-event-b
-  ......
-  $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;특정-프로세스-정보-검색-명령&quot;&gt;특정 프로세스 정보 검색 명령&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;ps 명령 이용&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ ps –ef | grep bash
-  ksshin 2570 1189 0 6월 16 tty1 00:00:12 –bash
-  ksshin 7205 2570 0 18:01 tty1 00:00:00 grep--color=auto bash
-  $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;pgrep 명령 이용&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;지정한 패턴과 일치하는 프로세스의 정보를 출력&lt;/li&gt;
-      &lt;li&gt;형식 : pgrep [옵션] [패턴]&lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;사용 예 : pgrep bash, pgrep –l –u ksshin&lt;/p&gt;
-
-        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ pgrep –l bash
-  2570 bash
-  $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-20-unix-20-04.png&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;프로세스의-종료&quot;&gt;프로세스의 종료&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;응답 없는 프로세스나 불필요한 프로세스를 강제로 종료시키려면 해당 프로세스의 PID를 알아야 함&lt;/li&gt;
-  &lt;li&gt;ps –ef 명령으로 프로세스의 PID와 PPID 확인 가능&lt;/li&gt;
-  &lt;li&gt;PPID로 부모 프로세스를 종료시켜야 할 때도 있음&lt;/li&gt;
-  &lt;li&gt;프로세스 종료시키는 명령 : kill, pkill&lt;/li&gt;
-  &lt;li&gt;프로세스에 시그널을 보내 프로세스가 종료되게 함&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;kill-명령-이용해-프로세스-종료&quot;&gt;kill 명령 이용해 프로세스 종료&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;kill 명령
-    &lt;ul&gt;
-      &lt;li&gt;지정한 시그널을 프로세스에 보냄&lt;/li&gt;
-      &lt;li&gt;9번(SIGKILL)은 강제 종료, 15번(SIGTERM)은 프로세스 종료, 2번(SIGINT)은 인터럽트&lt;/li&gt;
-      &lt;li&gt;시그널을 지정하지 않으면 15번(SIGTERM) 시그널을 보냄&lt;/li&gt;
-      &lt;li&gt;형식 : kill [시그널] PID …&lt;/li&gt;
-      &lt;li&gt;시그널
-        &lt;ul&gt;
-          &lt;li&gt;-9 : 프로세스 강제 종료&lt;/li&gt;
-          &lt;li&gt;-15 : 프로세스 종료. 프로세스가 관련 파일을 정리 후 종료. 종료되지 않는 프로세스가 있을 수 있음&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;pkill-명령-이용해-프로세스-종료&quot;&gt;pkill 명령 이용해 프로세스 종료&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;프로세스 번호 대신 프로세스의 명령 이름(CMD)으로 프로세스를 찾아 종료시킴&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ sleep 100&amp;amp;
-  [1] 7386
-  $ sleep 200&amp;amp;
-  [2] 7387
-  $ ps –f
-  UID PID PPID C STIME TTY TIME CMD
-  ksshin 2570 1189 0 6월 16 tty1 00:00:12 -bash
-  ksshin 7386 2570 0 17:42 tty1 00:00:00 sleep 100
-  ksshin 7387 2570 0 17:42 tty1 00:00:00 sleep 200
-  ksshin 7174 2570 0 17:42 tty1 00:00:00 ps -f
-  $
-    
-    
-    
-  $ pkill sleep
-  [1]- Terminated sleep 100
-  [2]+ Terminated sleep 200
-  $ ps –f
-  UID PID PPID C STIME TTY TIME CMD
-  ksshin 2570 1189 0 6월 16 tty1 00:00:12 -bash
-  ksshin 7393 2570 0 17:42 tty1 00:00:00 ps -f
-  $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;프로세스-관리-도구&quot;&gt;프로세스 관리 도구&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;ps 명령으로는 현재 프로세스 목록을 확인만 할 수 있음&lt;/li&gt;
-  &lt;li&gt;이 정보를 가공하여 사용자가 보기 편하게 다양한 기능을 제공하는 도구&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;pstree-명령&quot;&gt;pstree 명령&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;프로세스의 상태를 트리(Tree) 구조로 출력해 주는 명령&lt;/li&gt;
-  &lt;li&gt;왼쪽이 부모 프로세스, 오른쪽이 자식 프로세스&lt;/li&gt;
-  &lt;li&gt;형식 : pstree [옵션]&lt;/li&gt;
-  &lt;li&gt;사용 예 : pstree -h&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-20-unix-20-05.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;top-명령&quot;&gt;top 명령&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;주기적으로 현재 실행 중인 프로세스에 대한 정보 출력&lt;/li&gt;
-  &lt;li&gt;자세한 요약 정보를 상단에 출력, 각 프로세스 정보를 하단에 출력&lt;/li&gt;
-  &lt;li&gt;형식 : top [옵션]&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-20-unix-20-06.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-</description>
-        <pubDate>Fri, 20 Mar 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/03/20/unix-20/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/03/20/unix-20/</guid>
-        
-        <category>unix</category>
-        
-        
-        <category>devlog</category>
-        
-      </item>
-    
-      <item>
-        <title>[유닉스] 프로세스의 개념과 종류</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-20-unix-19.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;데몬-프로세스&quot;&gt;데몬 프로세스&lt;/h1&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;프로세스process란&quot;&gt;프로세스(process)란&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;현재 실행 중인 프로그램&lt;/li&gt;
-  &lt;li&gt;프로그램 : 어떤 문제를 해결하기 위해 사용되는 명령어나 유틸리티의 집합&lt;/li&gt;
-  &lt;li&gt;프로그램을 실행하면 메모리(RAM, 주기억장치)에 상주. 이 때의 프로그램을 프로세스라고 함&lt;/li&gt;
-  &lt;li&gt;시스템 운영에 필요한 기능을 수행하는 시스템 프로세스, 사용자들이 실행시킨 사용자 프로세스&lt;/li&gt;
-  &lt;li&gt;사용자의 입력에 관계없이 실행되는 백그라운드(Background) 프로세스, 명령 입력 후 수행종료까지 기다려야 하는
-포그라운드(Foreground) 프로세스&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;멀티태스킹multitasking과-작업-전환&quot;&gt;멀티태스킹(Multitasking)과 작업 전환&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;멀티태스킹이란 동시에 하나 이상의 프로그램을 실행하는 것&lt;/li&gt;
-  &lt;li&gt;사용자 기준에서는, 다수의 프로그램들을 백그라운드 프로세스로 실행시킨 상태에서 추가로 포그라운드 프로세스로 다른 작업 수행 가능&lt;/li&gt;
-  &lt;li&gt;사용자가 실행한 프로세스는 중간에 중지시킬 수 있음&lt;/li&gt;
-  &lt;li&gt;백그라운드 프로세스를 포그라운드 프로세스로 전환하거나, 포그라운드 프로세스를 백그라운드 프로세스로 전환 가능&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;부모-프로세스와-자식-프로세스&quot;&gt;부모 프로세스와 자식 프로세스&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;프로세스는 부모-자식 관계가 있음&lt;/li&gt;
-  &lt;li&gt;부모 프로세스가 자식 프로세스를 생성, 자식 프로세스는 다른 자식 프로세스를 생성&lt;/li&gt;
-  &lt;li&gt;사용자가 실행시키는 명령도 프로세스로 실행됨.&lt;/li&gt;
-  &lt;li&gt;사용자 명령은 쉘의 자식 프로세스가 됨&lt;/li&gt;
-  &lt;li&gt;프로세스들은 각기 고유한 번호 PID(Process Identification Number)를 가짐&lt;/li&gt;
-  &lt;li&gt;부모 프로세스는 고유 번호 PPID (Parent Process Identification Number)를 가짐&lt;/li&gt;
-  &lt;li&gt;유닉스 부팅할 때 모든 프로세스의 조상인, PID가 1번인 init 프로세스 실행&lt;/li&gt;
-  &lt;li&gt;1번 프로세스가 fork 방식으로 다른 프로세스들 생성&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;프로세스의-생성&quot;&gt;프로세스의 생성&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;하나의 프로세스가 다른 프로세스를 실행하기 위한 시스템 호출 방법 : fork, exec&lt;/li&gt;
-  &lt;li&gt;fork
-    &lt;ul&gt;
-      &lt;li&gt;새로운 프로세스를 위해 메모리를 할당받아 복사본 형태의 프로세스를 실행하는 형태&lt;/li&gt;
-      &lt;li&gt;기존의 프로세스는 그대로 실행&lt;/li&gt;
-      &lt;li&gt;새롭게 생성된 프로세스는 원래의 프로세스와 똑같은 코드를 기반으로 실행&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;exec
-    &lt;ul&gt;
-      &lt;li&gt;원래의 프로세스를 새로운 프로세스로 대체하는 형태&lt;/li&gt;
-      &lt;li&gt;호출한 프로세스의 메모리에 새로운 프로세스의 코드를 덮어씌워 버림&lt;/li&gt;
-      &lt;li&gt;호출된 프로세스만 메모리에 남김&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;프로세스-초기화&quot;&gt;프로세스 초기화&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;프로그램을 사용하여 어떤 작업을 하기 위해서는 프로그램과 데이터가 메모리에 적재되어 있어야 함&lt;/li&gt;
-  &lt;li&gt;프로그램과 데이터가 메모리에 적재되어 CPU의 연산 과정을 통해 실행될 수 있는 것을 프로세스라 함&lt;/li&gt;
-  &lt;li&gt;메모리의 각 프로세스들은 모두 init 프로세스로부터 상속을 받아 생성됨&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;init-프로세스&quot;&gt;init 프로세스&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;init 프로세스는 PID가 1번인 프로세스임&lt;/li&gt;
-  &lt;li&gt;부팅 과정에서 커널이 PID 0번인 swapper 프로세스를 생성하고, swapper 프로세스가 init 프로세스를 생성&lt;/li&gt;
-  &lt;li&gt;init 프로세스는 /etc/inittab 파일을 읽어들여 실행됨&lt;/li&gt;
-  &lt;li&gt;init 프로세스가 사용자 환경에 필요한 스크립트를 실행시켜 사용자 환경이 구축되고 나면, 로그인 화면이 사용자에게나타남&lt;/li&gt;
-  &lt;li&gt;init 프로세스가 하는 일
-    &lt;ul&gt;
-      &lt;li&gt;파일 시스템의 구조 검사&lt;/li&gt;
-      &lt;li&gt;파일 시스템 마운트&lt;/li&gt;
-      &lt;li&gt;서버 데몬을 띄움&lt;/li&gt;
-      &lt;li&gt;사용자 로그인을 기다림&lt;/li&gt;
-      &lt;li&gt;사용자가 로그인하면 사용자를 위한 쉘을 띄움&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;시그널signal&quot;&gt;시그널(Signal)&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;‘신호’라는 의미, 프로세스끼리 서로 통신할 때 사용&lt;/li&gt;
-  &lt;li&gt;특정 프로세스가 다른 프로세스에게 메시지 보낼 때 시그널 이용&lt;/li&gt;
-  &lt;li&gt;사용자가 인터럽트 키를 통해 발생하는 시그널, 프로세스가 발생하는 시그널, 하드웨어가 발생하는 시그널&lt;/li&gt;
-  &lt;li&gt;시그널 목록은 ‘kill –l’ 명령으로 확인&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-03-20-unix-19-01.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;데몬daemon&quot;&gt;데몬(daemon)&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;주기적이고 지속적으로 서비스 요청을 처리하기 위해 계속 실행되는 프로세스&lt;/li&gt;
-  &lt;li&gt;백그라운드로 실행&lt;/li&gt;
-  &lt;li&gt;서버 역할을 하는 프로그램들이 해당되고 보통 이름 뒤에 데몬을 뜻하는 d를 붙임&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;데몬-프로세스-실행-방식&quot;&gt;데몬 프로세스 실행 방식&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;standalone 방식
-    &lt;ul&gt;
-      &lt;li&gt;부팅 시 실행되어 메모리에 계속 상주하면서 클라이언트의 서비스 요청을 처리하는 방식&lt;/li&gt;
-      &lt;li&gt;웹, 메일 등 빈번한 요청이 들어오는 서비스&lt;/li&gt;
-      &lt;li&gt;프로세스의 상태를 확인하는 ps 명령으로 확인해보면 항상 동작 중임&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;inet 방식
-    &lt;ul&gt;
-      &lt;li&gt;클라이언트의 서비스 요청이 들어왔을 때 관련 프로세스를 실행시키고 접속 종료 후 자동으로 프로세스 종료시키는 방식&lt;/li&gt;
-      &lt;li&gt;자주 사용하지 않는 서비스들에 대한 효율적인 메모리 관리에 유용함&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;프로세스의-종류&quot;&gt;프로세스의 종류&lt;/h1&gt;
-
-&lt;h3 id=&quot;데몬-프로세스-daemon-process&quot;&gt;데몬 프로세스 (daemon process)&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;커널에 의해 실행되고 특정 서비스를 제공하기 위해 존재&lt;/li&gt;
-  &lt;li&gt;웹 서비스를 제공하기 위해서는 httpd 프로세스가 동작하고 있어야 함&lt;/li&gt;
-  &lt;li&gt;httpd를 웹 서버 데몬이라 함&lt;/li&gt;
-  &lt;li&gt;평소 대기 상태로 서비스 요청을 기다리다가 서비스 요청이 들어오면 해당 서비스 제공&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;부모-프로세스-parent-process&quot;&gt;부모 프로세스 (parent process)&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;다른 프로세스를 만드는 프로세스&lt;/li&gt;
-  &lt;li&gt;부팅할 때 실행되는 1번 프로세스를 제외한 모든 프로세스는 부모 프로세스를 가지고 있음&lt;/li&gt;
-  &lt;li&gt;PPID(Parent Process ID)를 가짐&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;자식-프로세스-child-process&quot;&gt;자식 프로세스 (child process)&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;부모 프로세스에 의해 만들어지는 프로세스&lt;/li&gt;
-  &lt;li&gt;할 일이 끝나면 부모 프로세스에게 결과를 돌려주고 종료&lt;/li&gt;
-  &lt;li&gt;vi를 실행시키면 쉘이 vi 프로세스 생성&lt;/li&gt;
-  &lt;li&gt;쉘이 부모 프로세스, vi가 자식 프로세스&lt;/li&gt;
-  &lt;li&gt;사용자가 vi 종료하면 다시 부모 프로세스인 쉘로 돌아감&lt;/li&gt;
-  &lt;li&gt;PID(Process ID)를 가짐&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;고아-프로세스-orphan-process&quot;&gt;고아 프로세스 (orphan process)&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;자식 프로세스가 아직 실행 중인데 부모 프로세스가 먼저 종료되면 자식 프로세스는 고아 프로세스가 됨&lt;/li&gt;
-  &lt;li&gt;1번 프로세스가 새로운 부모 프로세스가 되어 고아 프로세스가 작업을 마치고 종료할 수 있도록 함&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;좀비-프로세스-zombie-process&quot;&gt;좀비 프로세스 (zombie process)&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;자식 프로세스가 실행 종료 후에도 프로세스 테이블 목록에 남아있는 경우
-    &lt;ul&gt;
-      &lt;li&gt;일반적으로, 자식 프로세스가 종료할 때 부모 프로세스에게 종료 정보(exit status) 보내고, 부모 프로세스가 이 정보 받으면 프로세스 테이블 목록에서 자식 프로세스 삭제됨&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;부모 프로세스가 자식 프로세스의 종료 정보를 읽어가기를 기다림&lt;/li&gt;
-  &lt;li&gt;프로세스 목록에 defunct 프로세스라고 나오기도 함&lt;/li&gt;
-  &lt;li&gt;실제로 실행되고 있지 않지만 동작 중인 프로세스 테이블 목록을 차지&lt;/li&gt;
-  &lt;li&gt;부모 프로세스에게 SIGCHILD 시그널을 보내서 부모 프로세스가 자식 프로세스를 정리하게 하거나, 부모 프로세스 자체를 종료시킴&lt;/li&gt;
-  &lt;li&gt;부모 프로세스가 종료되면 좀비 프로세스는 고아 프로세스가 됨&lt;/li&gt;
-  &lt;li&gt;새로운 부모인 init 프로세스가 자식 프로세스의 종료 정보를 주기적으로 확인, 정리&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Fri, 20 Mar 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/03/20/unix-19/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/03/20/unix-19/</guid>
-        
-        <category>unix</category>
         
         
         <category>devlog</category>
