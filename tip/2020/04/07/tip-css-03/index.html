@@ -31,14 +31,15 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="naver-site-verification" content="fa37cbf8ce41948de6e94c01991ffa04cea9b093"/>
 <meta name="google-site-verification" content="5M4Zw9wg_UqQkvlayfb5Mc_ogvJdc013w_zLUkxgO-Y" />
-<meta property="og:title" content="Home">
+<meta property="og:title" content="[CSS] 배경 이미지 반복 여부 정하는 속성(background-repeat)">
 <meta property="og:type" content="article">
 
 
 
 
 
-  <meta property="og:image" content="https://m-veloper.github.io/assets/img/logo.png">
+  <meta property="og:image" content="https://m-veloper.github.io/assets//img/linux-logo.png">
+  <br/>
 
 
 <meta property="og:image:width" content="640" />
@@ -46,13 +47,15 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 
 
 
-  <title>Home &middot; m_veloper</title>
+  <title>[CSS] 배경 이미지 반복 여부 정하는 속성(background-repeat) &middot; m_veloper</title>
 
 
 
 <meta name="description" content="
+
 ">
 <meta property="og:description" content="
+
 ">
 
 
@@ -60,13 +63,17 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 <!-- =============== -->
 <!-- LINKS           -->
 <!-- =============== -->
-<link rel="canonical" href="https://m-veloper.github.io/page-7/">
-<meta property="og:url" content="https://m-veloper.github.io/page-7/">
+<link rel="canonical" href="https://m-veloper.github.io/tip/2020/04/07/tip-css-03/">
+<meta property="og:url" content="https://m-veloper.github.io/tip/2020/04/07/tip-css-03/">
 
 <link rel="alternate" type="application/atom+xml" title="m_veloper Feed" href="https://m-veloper.github.io/feed.xml">
 
 
+  <link rel="prev" href="https://m-veloper.github.io/devlog/2020/04/06/unix-26/">
 
+
+
+  <link rel="next" href="https://m-veloper.github.io/tip/2020/04/07/tip-javascript-14/">
 
 
 <link rel="apple-touch-icon" href="https://m-veloper.github.io/apple-touch-icon.png">
@@ -192,67 +199,128 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 <div id="_yPushState">
   <div class="fade-in">
     <main id="_main" class="content" role="main" data-color="#e2adfd" data-image="/assets/img/nap.jpg">
+      <style>
+  /*광고 붙을떄 까지 안보이게*/
+  .row {
+    display: flex;
+    /*display: none;*/
+    justify-content: space-between;
+    align-items: center;
+    height: 300px;
+  }
+
+  .row-center {
+    display: flex;
+    justify-content: center;
+    height: 258px;
+  }
+  /*광고 붙을떄 까지 안보이게*/
+  /*.right-side{*/
+    /*display: none;*/
+  /*}*/
+
+  #tag{
+    margin-bottom: 0.875rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    height: 2rem;
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    margin-right: 0.875rem;
+    color: rgb(12, 166, 120);
+    font-size: 0.9rem;
+    background: rgb(241, 243, 245);
+    border-radius: 1rem;
+    text-decoration: none;
+  }
+  .post-date{
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+
+  .markdown-body h1 {
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+    margin-top: 56px;
+  }
+
+  .bmc-button img {
+    height: 34px !important;
+    width: 35px !important;
+    margin-bottom: 1px !important;
+    box-shadow: none !important;
+    border: none !important;
+    vertical-align: middle !important;
+  }
+
+  .bmc-button {
+    padding: 7px 10px 7px 10px !important;
+    line-height: 35px !important;
+    height: 51px !important;
+    min-width: 217px !important;
+    text-decoration: none !important;
+    display: inline-flex !important;
+    color: #ffffff !important;
+    background-color: #F471FF !important;
+    border-radius: 5px !important;
+    border: 1px solid transparent !important;
+    padding: 7px 10px 7px 10px !important;
+    font-size: 28px !important;
+    letter-spacing: 0.6px !important;
+    box-shadow: 0px 1px 2px rgba(190, 190, 190, 0.5) !important;
+    -webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;
+    margin: 0 auto !important;
+    font-family: 'Cookie', cursive !important;
+    -webkit-box-sizing: border-box !important;
+    box-sizing: border-box !important;
+    -o-transition: 0.3s all linear !important;
+    -webkit-transition: 0.3s all linear !important;
+    -moz-transition: 0.3s all linear !important;
+    -ms-transition: 0.3s all linear !important;
+    transition: 0.3s all linear !important;
+  }
+
+  .bmc-button:hover, .bmc-button:active, .bmc-button:focus {
+    -webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;
+    text-decoration: none !important;
+    box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;
+    opacity: 0.85 !important;
+    color: #ffffff !important;
+  }
+
+  #sponsor-button{
+    display: flex;
+    margin-bottom: 50px;
+  }
+
+  #sponsor-button h4{
+    margin: 12px;
+    color: red;
+  }
+
+</style>
+<link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
+<script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+
+
+
+
+
+<article id="post-tip/2020/04/07/tip-css-03" class="post this" role="article">
+  <header>
+
+    <h1 class="post-title">
       
-  <style>
-  #tag{
-    margin-bottom: 0.875rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    height: 2rem;
-    display: inline-flex;
-    -webkit-box-align: center;
-    align-items: center;
-    margin-right: 0.875rem;
-    color: rgb(12, 166, 120);
-    font-size: 0.9rem;
-    background: rgb(241, 243, 245);
-    border-radius: 1rem;
-    text-decoration: none;
-  }
-  .post-title{
-    font-size: 1.3rem;
-  }
-  .post-title a{
-    color: #999 !important;
-  }
-
-  .post-date{
-    font-size: 0.9rem;
-    font-weight: 400;
-  }
-
-  .read-more {
-    margin-top: 0;
-  }
-  .mb6 {
-    margin-bottom: 8rem;
-  }
-
-</style>
-
-
-
-<article id="post-review/2020/03/14/review-goods-fuji-x100v-02" class="post mb6 this" role="article">
-  <header>
-    <!--post 내용중 이미지 영역-->
-    <p><img src="https://1.bp.blogspot.com/-LedfoXqEt4s/XmzujoDX2QI/AAAAAAAAAJU/KqJnJnd6AncliZm_P7UQgPeQaDzzy6Z4wCLcBGAsYHQ/s1600/x100v%2B%25EC%2596%25B4%25EB%258C%2591%25ED%2584%25B0%25EB%25A7%2581%2B%252B%2B%25ED%259B%2584%25EB%2593%259C%2BND%25ED%2595%2584%25ED%2584%25B0%2B%25EC%2582%25AC%25EC%259A%25A9%25EB%25B2%2595%2B%25EB%25B3%25B5%25EC%2582%25AC.png" alt="" /></p>
-
-
-
-    <!--제목-->
-    <h1 class="post-title">
-      <a href="/review/2020/03/14/review-goods-fuji-x100v-02/" data-flip="title">
-      [fuji/후지필름] x100v 어댑터링, 후드 사용법 과 ND필터 끼우기
-      </a>
+        [CSS] 배경 이미지 반복 여부 정하는 속성(background-repeat)
+        
     </h1>
 
-    <!--날짜-->
     <p class="post-date heading">
-      <!--<time datetime="2020-03-14T00:00:00+09:00">14 Mar 2020</time>-->
-      <time datetime="2020-03-14T00:00:00+09:00">2020년 03월 14일</time>
+      <!--<time datetime="2020-04-07T00:00:00+09:00">07 Apr 2020</time>-->
+      <time datetime="2020-04-07T00:00:00+09:00">2020년 04월 07일</time>
     </p>
-
-    <!--카테고리영역-->
     
 
 
@@ -263,7 +331,7 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 
 
 
-<a href="/category/review/" data-flip="title" id="tag">Review</a>
+<a href="/category/tip/" data-flip="title" id="tag">Tip</a>
 
     
 
@@ -275,758 +343,284 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 
 
 
-<a href="/tag/review-goods/" data-flip="title" id="tag">Goods</a>
+<a href="/tag/devlog-css/" data-flip="title" id="tag">CSS</a>
 
 
     
   <div class="hr" style="padding-bottom:0"></div>
 
 
-
   </header>
   
 
   
-  <p class="read-more"><a class="heading" href="/review/2020/03/14/review-goods-fuji-x100v-02/" data-flip="title">바로가기 </a>
-  </p>
+  <div class="markdown-body">
+
+    <!-- 
+    <div class="head-image"><img src="https://m-veloper.github.io/assets//img/linux-logo.png" /></div>
+    <br /> -->
+
+    <div class='row' style="text-align: center">
+      <div>
+        <ins class="kakao_ad_area" style="display:none;" data-ad-unit= "DAN-sksc2jl3lbhe" data-ad-width= "250" data-ad-height= "250"></ins>
+      </div>
+      <div>
+        <ins class="kakao_ad_area" style="display:none;" data-ad-unit= "DAN-s13c6ao56o2p" data-ad-width= "250" data-ad-height= "250"></ins>
+      </div>
+      <div>
+        <ins class="kakao_ad_area" style="display:none;" data-ad-unit= "DAN-to1sb755uomv" data-ad-width= "250" data-ad-height= "250"></ins>
+      </div>
+    </div>
+
+    <br />
+    <p><img src="/assets/img/css/2020-04-07-tip-css-03.png" alt="" /></p>
+
+<h1 id="배경-이미지-반복">배경 이미지 반복</h1>
+
+<ul>
+  <li>
+    <p>background-repeat : 배경 이미지의 반복 여부와 반복 방향을 정합니다.</p>
+
+    <ul>
+      <li>기본값 : repeat</li>
+      <li>상속 : No</li>
+      <li>애니메이션 : No</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="사용법">사용법</h1>
+
+<table>
+  <tbody>
+    <tr>
+      <td>background-repeat: repeat</td>
+      <td>repeat-x</td>
+      <td>repeat-y</td>
+      <td>no-repeat</td>
+      <td>inherit</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- repeat : 가로 방향, 세로 방향으로 반복합니다.
+- repeat-x : 가로 방향으로 반복합니다.
+- repeat-y : 세로 방향으로 반복합니다.
+- no-repeat : 반복하지 않습니다.
+- initial : 기본값으로 설정합니다.
+- inherit : 부모 요소의 속성값을 상속받습니다
+</code></pre></div></div>
+
+<h1 id="브라우저-지원">브라우저 지원</h1>
+
+<ul>
+  <li>Chrome : 1.0+</li>
+  <li>Firefox : 1.0+</li>
+  <li>Internet Explorer : 4.0+</li>
+  <li>Opera : 3.5+</li>
+  <li>Safari : 1.0+</li>
+</ul>
+
+
+    <br />
+  </div>
   
 
 </article>
 
 
+<!-- buymeacoffee 버튼 -->
+<div id="sponsor-button" style="text-align: center">
+  <a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/TWYGPxs">
+    <img src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg" alt="Buy me a coffee">
+    <span style="margin-left:15px;font-size:28px !important;">Buy me a coffee</span>
+  </a>
+</div>
 
-  <style>
-  #tag{
-    margin-bottom: 0.875rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    height: 2rem;
-    display: inline-flex;
-    -webkit-box-align: center;
-    align-items: center;
-    margin-right: 0.875rem;
-    color: rgb(12, 166, 120);
-    font-size: 0.9rem;
-    background: rgb(241, 243, 245);
-    border-radius: 1rem;
-    text-decoration: none;
-  }
-  .post-title{
-    font-size: 1.3rem;
-  }
-  .post-title a{
-    color: #999 !important;
-  }
-
-  .post-date{
-    font-size: 0.9rem;
-    font-weight: 400;
-  }
-
-  .read-more {
-    margin-top: 0;
-  }
-  .mb6 {
-    margin-bottom: 8rem;
-  }
-
-</style>
+<div class="share">
+  <h2>Share this post</h2>
+  <div class="share-body">
+    <a href="http://twitter.com/share?text=[CSS] 배경 이미지 반복 여부 정하는 속성(background-repeat)&amp;url=https://m-veloper.github.io/tip/2020/04/07/tip-css-03/"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="icon-twitter">
+      </span>
+    </a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://m-veloper.github.io/tip/2020/04/07/tip-css-03/"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="icon-facebook">
+      </span>
+    </a>
+  </div>
+</div>
+<!--카카오애드핏-->
+<br><br>
+<div style="text-align: center">
+  <ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-rhg23mrcvho4" data-ad-width= "728" data-ad-height= "90"></ins>
+</div>
+<div style="text-align: center">
+  <ins class="kakao_ad_area" style="display:none;" data-ad-unit    = "DAN-r1icduz054jb" data-ad-width   = "728" data-ad-height  = "90"></ins>
+</div>
+<br />
 
 
 
-<article id="post-review/2020/03/14/review-goods-fuji-x100v-01" class="post mb6 this" role="article">
-  <header>
-    <!--post 내용중 이미지 영역-->
-    <p><img src="https://1.bp.blogspot.com/-9ZFQMisEtTE/XmycM_navEI/AAAAAAAAAHQ/jkF6vYJdEV0ijLBmLpy45yd97JbuiASFgCEwYBhgL/s1600/2020-03-14-review-goods-fuji-x100v.png" alt="" /></p>
+<!--
 
 
-
-    <!--제목-->
-    <h1 class="post-title">
-      <a href="/review/2020/03/14/review-goods-fuji-x100v-01/" data-flip="title">
-      [fuji/후지필름] x100v Black Unboxing / 언박싱(개봉기)
-      </a>
-    </h1>
-
-    <!--날짜-->
-    <p class="post-date heading">
-      <!--<time datetime="2020-03-14T00:00:00+09:00">14 Mar 2020</time>-->
-      <time datetime="2020-03-14T00:00:00+09:00">2020년 03월 14일</time>
-    </p>
-
-    <!--카테고리영역-->
+  <aside class="author" role="complementary">
+    <div class="author">
+  <h2 class="page-title hr">
+    About
+  </h2>
+<div class="author-body">
+  
     
-
-
-
-
-
-
-
-
-
-<a href="/category/review/" data-flip="title" id="tag">Review</a>
-
-    
-
-
-
-
-
-
-
-
-
-<a href="/tag/review-goods/" data-flip="title" id="tag">Goods</a>
-
-
-    
-  <div class="hr" style="padding-bottom:0"></div>
-
-
-
-  </header>
   
 
   
-  <p class="read-more"><a class="heading" href="/review/2020/03/14/review-goods-fuji-x100v-01/" data-flip="title">바로가기 </a>
-  </p>
+
+  <img
+    src="/assets/img/me.jpeg"
+    class="me"
+    alt="m_veloper"
+    srcset="/assets/img/me.jpeg 1x,/assets/img/me.jpeg 2x"
+    
+  />
+
+
   
-
-</article>
-
-
-
-  <style>
-  #tag{
-    margin-bottom: 0.875rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    height: 2rem;
-    display: inline-flex;
-    -webkit-box-align: center;
-    align-items: center;
-    margin-right: 0.875rem;
-    color: rgb(12, 166, 120);
-    font-size: 0.9rem;
-    background: rgb(241, 243, 245);
-    border-radius: 1rem;
-    text-decoration: none;
-  }
-  .post-title{
-    font-size: 1.3rem;
-  }
-  .post-title a{
-    color: #999 !important;
-  }
-
-  .post-date{
-    font-size: 0.9rem;
-    font-weight: 400;
-  }
-
-  .read-more {
-    margin-top: 0;
-  }
-  .mb6 {
-    margin-bottom: 8rem;
-  }
-
-</style>
-
-
-
-<article id="post-devlog/2020/03/13/unix-18" class="post mb6 this" role="article">
-  <header>
-    <!--post 내용중 이미지 영역-->
-    <p><img src="/assets/img/unix/2020-03-13-unix-18.png" alt="" /></p>
-
-
-
-    <!--제목-->
-    <h1 class="post-title">
-      <a href="/devlog/2020/03/13/unix-18/" data-flip="title">
-      [유닉스] 기본 접근 권한 설정
-      </a>
-    </h1>
-
-    <!--날짜-->
-    <p class="post-date heading">
-      <!--<time datetime="2020-03-13T00:00:00+09:00">13 Mar 2020</time>-->
-      <time datetime="2020-03-13T00:00:00+09:00">2020년 03월 13일</time>
-    </p>
-
-    <!--카테고리영역-->
+  <div class="author-body-description">
     
 
+  </div>
+</div>
+</div>
+
+  </aside>
+
+-->
 
 
 
+<aside class="related" role="complementary">
+  <h2 class="hr">Related Posts</h2>
 
-
-
-
-
-<a href="/category/devlog/" data-flip="title" id="tag">Devlog</a>
-
+  <ul class="related-posts">
     
-
-
-
-
-
-
-
-
-
-<a href="/tag/devlog-unix/" data-flip="title" id="tag">Unix</a>
-
-
-    
-  <div class="hr" style="padding-bottom:0"></div>
-
-
-
-  </header>
-  
-
-  
-  <p class="read-more"><a class="heading" href="/devlog/2020/03/13/unix-18/" data-flip="title">바로가기 </a>
-  </p>
-  
-
-</article>
-
-
-
-  <style>
-  #tag{
-    margin-bottom: 0.875rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    height: 2rem;
-    display: inline-flex;
-    -webkit-box-align: center;
-    align-items: center;
-    margin-right: 0.875rem;
-    color: rgb(12, 166, 120);
-    font-size: 0.9rem;
-    background: rgb(241, 243, 245);
-    border-radius: 1rem;
-    text-decoration: none;
-  }
-  .post-title{
-    font-size: 1.3rem;
-  }
-  .post-title a{
-    color: #999 !important;
-  }
-
-  .post-date{
-    font-size: 0.9rem;
-    font-weight: 400;
-  }
-
-  .read-more {
-    margin-top: 0;
-  }
-  .mb6 {
-    margin-bottom: 8rem;
-  }
-
-</style>
-
-
-
-<article id="post-devlog/2020/03/13/unix-17" class="post mb6 this" role="article">
-  <header>
-    <!--post 내용중 이미지 영역-->
-    <p><img src="/assets/img/unix/2020-03-13-unix-17.png" alt="" /></p>
-
-
-
-    <!--제목-->
-    <h1 class="post-title">
-      <a href="/devlog/2020/03/13/unix-17/" data-flip="title">
-      [유닉스] 접근 권한 변경
-      </a>
-    </h1>
-
-    <!--날짜-->
-    <p class="post-date heading">
-      <!--<time datetime="2020-03-13T00:00:00+09:00">13 Mar 2020</time>-->
-      <time datetime="2020-03-13T00:00:00+09:00">2020년 03월 13일</time>
-    </p>
-
-    <!--카테고리영역-->
-    
-
-
-
-
-
-
-
-
-
-<a href="/category/devlog/" data-flip="title" id="tag">Devlog</a>
-
-    
-
-
-
-
-
-
-
-
-
-<a href="/tag/devlog-unix/" data-flip="title" id="tag">Unix</a>
-
-
-    
-  <div class="hr" style="padding-bottom:0"></div>
-
-
-
-  </header>
-  
-
-  
-  <p class="read-more"><a class="heading" href="/devlog/2020/03/13/unix-17/" data-flip="title">바로가기 </a>
-  </p>
-  
-
-</article>
-
-
-
-  <style>
-  #tag{
-    margin-bottom: 0.875rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    height: 2rem;
-    display: inline-flex;
-    -webkit-box-align: center;
-    align-items: center;
-    margin-right: 0.875rem;
-    color: rgb(12, 166, 120);
-    font-size: 0.9rem;
-    background: rgb(241, 243, 245);
-    border-radius: 1rem;
-    text-decoration: none;
-  }
-  .post-title{
-    font-size: 1.3rem;
-  }
-  .post-title a{
-    color: #999 !important;
-  }
-
-  .post-date{
-    font-size: 0.9rem;
-    font-weight: 400;
-  }
-
-  .read-more {
-    margin-top: 0;
-  }
-  .mb6 {
-    margin-bottom: 8rem;
-  }
-
-</style>
-
-
-
-<article id="post-devlog/2020/03/13/unix-16" class="post mb6 this" role="article">
-  <header>
-    <!--post 내용중 이미지 영역-->
-    <p><img src="/assets/img/unix/2020-03-13-unix-16.png" alt="" /></p>
-
-
-
-    <!--제목-->
-    <h1 class="post-title">
-      <a href="/devlog/2020/03/13/unix-16/" data-flip="title">
-      [유닉스] 파일의 속성
-      </a>
-    </h1>
-
-    <!--날짜-->
-    <p class="post-date heading">
-      <!--<time datetime="2020-03-13T00:00:00+09:00">13 Mar 2020</time>-->
-      <time datetime="2020-03-13T00:00:00+09:00">2020년 03월 13일</time>
-    </p>
-
-    <!--카테고리영역-->
-    
-
-
-
-
-
-
-
-
-
-<a href="/category/devlog/" data-flip="title" id="tag">Devlog</a>
-
-    
-
-
-
-
-
-
-
-
-
-<a href="/tag/devlog-unix/" data-flip="title" id="tag">Unix</a>
-
-
-    
-  <div class="hr" style="padding-bottom:0"></div>
-
-
-
-  </header>
-  
-
-  
-  <p class="read-more"><a class="heading" href="/devlog/2020/03/13/unix-16/" data-flip="title">바로가기 </a>
-  </p>
-  
-
-</article>
-
-
-
-  <style>
-  #tag{
-    margin-bottom: 0.875rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    height: 2rem;
-    display: inline-flex;
-    -webkit-box-align: center;
-    align-items: center;
-    margin-right: 0.875rem;
-    color: rgb(12, 166, 120);
-    font-size: 0.9rem;
-    background: rgb(241, 243, 245);
-    border-radius: 1rem;
-    text-decoration: none;
-  }
-  .post-title{
-    font-size: 1.3rem;
-  }
-  .post-title a{
-    color: #999 !important;
-  }
-
-  .post-date{
-    font-size: 0.9rem;
-    font-weight: 400;
-  }
-
-  .read-more {
-    margin-top: 0;
-  }
-  .mb6 {
-    margin-bottom: 8rem;
-  }
-
-</style>
-
-
-
-<article id="post-devlog/2020/03/13/sass-10" class="post mb6 this" role="article">
-  <header>
-    <!--post 내용중 이미지 영역-->
-    <p><img src="/assets/img/sass/2020-03-13-sass-10.png" alt="" /></p>
-
-
-
-    <!--제목-->
-    <h1 class="post-title">
-      <a href="/devlog/2020/03/13/sass-10/" data-flip="title">
-      [Sass/SCSS] 재활용(Mixins) - @content
-      </a>
-    </h1>
-
-    <!--날짜-->
-    <p class="post-date heading">
-      <!--<time datetime="2020-03-13T00:00:00+09:00">13 Mar 2020</time>-->
-      <time datetime="2020-03-13T00:00:00+09:00">2020년 03월 13일</time>
-    </p>
-
-    <!--카테고리영역-->
-    
-
-
-
-
-
-
-
-
-
-<a href="/category/devlog/" data-flip="title" id="tag">Devlog</a>
-
-    
-
-
-
-
-
-
-
-
-
-<a href="/tag/devlog-sass/" data-flip="title" id="tag">Sass</a>
-
-
-    
-  <div class="hr" style="padding-bottom:0"></div>
-
-
-
-  </header>
-  
-
-  
-  <p class="read-more"><a class="heading" href="/devlog/2020/03/13/sass-10/" data-flip="title">바로가기 </a>
-  </p>
-  
-
-</article>
-
-
-
-  <style>
-  #tag{
-    margin-bottom: 0.875rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    height: 2rem;
-    display: inline-flex;
-    -webkit-box-align: center;
-    align-items: center;
-    margin-right: 0.875rem;
-    color: rgb(12, 166, 120);
-    font-size: 0.9rem;
-    background: rgb(241, 243, 245);
-    border-radius: 1rem;
-    text-decoration: none;
-  }
-  .post-title{
-    font-size: 1.3rem;
-  }
-  .post-title a{
-    color: #999 !important;
-  }
-
-  .post-date{
-    font-size: 0.9rem;
-    font-weight: 400;
-  }
-
-  .read-more {
-    margin-top: 0;
-  }
-  .mb6 {
-    margin-bottom: 8rem;
-  }
-
-</style>
-
-
-
-<article id="post-devlog/2020/03/13/sass-09" class="post mb6 this" role="article">
-  <header>
-    <!--post 내용중 이미지 영역-->
-    <p><img src="/assets/img/sass/2020-03-13-sass-09.png" alt="" /></p>
-
-
-
-    <!--제목-->
-    <h1 class="post-title">
-      <a href="/devlog/2020/03/13/sass-09/" data-flip="title">
-      [Sass/SCSS] 재활용(Mixins) - 인수(Arguments)
-      </a>
-    </h1>
-
-    <!--날짜-->
-    <p class="post-date heading">
-      <!--<time datetime="2020-03-13T00:00:00+09:00">13 Mar 2020</time>-->
-      <time datetime="2020-03-13T00:00:00+09:00">2020년 03월 13일</time>
-    </p>
-
-    <!--카테고리영역-->
-    
-
-
-
-
-
-
-
-
-
-<a href="/category/devlog/" data-flip="title" id="tag">Devlog</a>
-
-    
-
-
-
-
-
-
-
-
-
-<a href="/tag/devlog-sass/" data-flip="title" id="tag">Sass</a>
-
-
-    
-  <div class="hr" style="padding-bottom:0"></div>
-
-
-
-  </header>
-  
-
-  
-  <p class="read-more"><a class="heading" href="/devlog/2020/03/13/sass-09/" data-flip="title">바로가기 </a>
-  </p>
-  
-
-</article>
-
-
-
-  <style>
-  #tag{
-    margin-bottom: 0.875rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    height: 2rem;
-    display: inline-flex;
-    -webkit-box-align: center;
-    align-items: center;
-    margin-right: 0.875rem;
-    color: rgb(12, 166, 120);
-    font-size: 0.9rem;
-    background: rgb(241, 243, 245);
-    border-radius: 1rem;
-    text-decoration: none;
-  }
-  .post-title{
-    font-size: 1.3rem;
-  }
-  .post-title a{
-    color: #999 !important;
-  }
-
-  .post-date{
-    font-size: 0.9rem;
-    font-weight: 400;
-  }
-
-  .read-more {
-    margin-top: 0;
-  }
-  .mb6 {
-    margin-bottom: 8rem;
-  }
-
-</style>
-
-
-
-<article id="post-devlog/2020/03/13/sass-08" class="post mb6 this" role="article">
-  <header>
-    <!--post 내용중 이미지 영역-->
-    <p><img src="/assets/img/sass/2020-03-13-sass-08.png" alt="" /></p>
-
-
-
-    <!--제목-->
-    <h1 class="post-title">
-      <a href="/devlog/2020/03/13/sass-08/" data-flip="title">
-      [Sass/SCSS] 재활용(Mixins) - @include 
-      </a>
-    </h1>
-
-    <!--날짜-->
-    <p class="post-date heading">
-      <!--<time datetime="2020-03-13T00:00:00+09:00">13 Mar 2020</time>-->
-      <time datetime="2020-03-13T00:00:00+09:00">2020년 03월 13일</time>
-    </p>
-
-    <!--카테고리영역-->
-    
-
-
-
-
-
-
-
-
-
-<a href="/category/devlog/" data-flip="title" id="tag">Devlog</a>
-
-    
-
-
-
-
-
-
-
-
-
-<a href="/tag/devlog-sass/" data-flip="title" id="tag">Sass</a>
-
-
-    
-  <div class="hr" style="padding-bottom:0"></div>
-
-
-
-  </header>
-  
-
-  
-  <p class="read-more"><a class="heading" href="/devlog/2020/03/13/sass-08/" data-flip="title">바로가기 </a>
-  </p>
-  
-
-</article>
-
-
-
-
-<h2 class="sr-only">Pagination</h2>
-<nav class="pagination heading" role="navigation">
-  <ul>
-    <li class="pagination-item older" >
       
-        <a rel="next" href="/page-8/">이전</a>
       
-    </li>
-    <li class="pagination-item newer" >
       
-        <a rel="prev" href="/page-6/">다음</a>
+        
+        
+          
+
+
+
+<style>
+  .related-posts>li>small{
+    margin-left: 10px;
+  }
+</style>
+<li class="h4">
+  <a href="/tip/2020/04/07/tip-javascript-14/" data-flip="title">
+    <span>[자바스크립트] moment.js COUNTDOWN(카운트) 기능</span>
+  </a>
+  <small><time datetime="2020-04-07T00:00:00+09:00">
+    2020년 04월 07일
+  </time></small>
+</li>
+
+        
       
-    </li>
+        
+          
+          
+        
+        
+          
+
+
+
+<style>
+  .related-posts>li>small{
+    margin-left: 10px;
+  }
+</style>
+<li class="h4">
+  <a href="/tip/2020/04/06/tip-life-01/" data-flip="title">
+    <span>시나공 컴활(컴퓨터활용능력) 시험 1급 필기 핵심요약</span>
+  </a>
+  <small><time datetime="2020-04-06T00:00:00+09:00">
+    2020년 04월 06일
+  </time></small>
+</li>
+
+        
+      
+        
+        
+          
+
+
+
+<style>
+  .related-posts>li>small{
+    margin-left: 10px;
+  }
+</style>
+<li class="h4">
+  <a href="/tip/2020/04/02/tip-javascript-13/" data-flip="title">
+    <span>[자바스크립트] 날짜 포맷 함수(Date 포맷 함수)</span>
+  </a>
+  <small><time datetime="2020-04-02T00:00:00+09:00">
+    2020년 04월 02일
+  </time></small>
+</li>
+
+        
+      
+    
   </ul>
-</nav>
+</aside>
 
 
+
+      
+        <aside class="comments" role="complementary">
+  <div style="text-align: center">
+    <ins class="kakao_ad_area" style="display:none;"
+         data-ad-unit    = "DAN-1jy7ort537t4o"
+         data-ad-width   = "728"
+         data-ad-height  = "90"></ins>
+    <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+  </div>
+  <h2>Comments</h2>
+  <hr/>
+  <div id="disqus_thread"></div>
+  <script>
+    !function (s, i) {
+  function e(e) {
+    var t = s.pageYOffset || i.body.scrollTop;
+    s.DISQUS && !s._disqusThis && !s._disqusFirst && t + s.innerHeight >= s._disqusThreadOffsetTop && (s._disqusThis = !0, s.DISQUS.reset(
+      { reload: !0, config: d }))
+  }
+
+  var d = function () {
+    this.page.title = "[CSS] 배경 이미지 반복 여부 정하는 속성(background-repeat)",
+      this.page.identifier = "/tip/2020/04/07/tip-css-03",
+      this.page.url = "https://m-veloper.github.io/tip/2020/04/07/tip-css-03/"
+  };
+  s._disqusFirst = void 0 === s._disqusFirst || s._disqusFirst, s._disqusLoading = void 0 !== s._disqusLoading && s._disqusLoading, s._disqusThis = !1, s._disqusThreadOffsetTop = i.getElementById(
+    "disqus_thread").offsetTop, s._disqusLoading ? s._disqusFirst = !1 : (s._disqusLoading = !0, loadJSDeferred(
+    "//m-veloper.disqus.com/embed.js"), s.addEventListener ? s.addEventListener(
+    "scroll",
+    e,
+    { passive: !0 }) : s.attachEvent ? s.attachEvent("onscroll", e) : s.onscroll = e)
+}(window, document);
+
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</aside>
 
       
 

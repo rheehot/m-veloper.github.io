@@ -5,9 +5,138 @@
     <description></description>
     <link>https://m-veloper.github.io/</link>
     <atom:link href="https://m-veloper.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 06 Apr 2020 20:14:36 +0900</pubDate>
-    <lastBuildDate>Mon, 06 Apr 2020 20:14:36 +0900</lastBuildDate>
+    <pubDate>Tue, 07 Apr 2020 20:10:29 +0900</pubDate>
+    <lastBuildDate>Tue, 07 Apr 2020 20:10:29 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>[자바스크립트] moment.js COUNTDOWN(카운트) 기능</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/javascript/2020-04-07-tip-javascript-14.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;momentjs-countdown카운트-기능&quot;&gt;moment.js COUNTDOWN(카운트) 기능&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;moment.js에는 COUNTDOWN기능도 있습니다.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://momentjs.com/downloads/moment.js&quot;&gt;moment.js 다운로드&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;js를 다운 받아서 moment.js 로 저장.&lt;/li&gt;
+  &lt;li&gt;아래와 같이 사용
+&lt;br /&gt;
+&lt;br /&gt;
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;script&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;js/moment.js&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/script&amp;gt;
+
+&amp;lt;script&amp;gt;
+  
+    let setTimeId;
+    
+    function startTimer(setTime) {
+    
+        /&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;타이머&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;중복&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;실행&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;방지로&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;기존&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;시작된&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;타이머를&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;리셋하여&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;점점&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;빨라지는&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;오류를&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;방지&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;clearInterval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;setTimeId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;countDownDate&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;moment&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;setTime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'seconds'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;setTimeId&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;setInterval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        
+            &lt;span class=&quot;n&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;diff&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;countDownDate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;diff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;moment&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;diff&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            
+                &lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;타이머가&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;끝날&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;경우&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;TODO&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;처리&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;clearInterval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;setTimeId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;시간이초과 되었습니다. 다시 시도해주세요.&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            
+            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;moment&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;utc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;diff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;mm:ss&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot; 남았습니다.&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+            
+        &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stopTimer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;clearInterval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;setTimeId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;타이머끝&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;타이머&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;실행&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;startTimer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    
+&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/script&amp;gt;
+    &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+</description>
+        <pubDate>Tue, 07 Apr 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/tip/2020/04/07/tip-javascript-14/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/04/07/tip-javascript-14/</guid>
+        
+        <category>javascript</category>
+        
+        
+        <category>tip</category>
+        
+      </item>
+    
+      <item>
+        <title>[CSS] 배경 이미지 반복 여부 정하는 속성(background-repeat)</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/css/2020-04-07-tip-css-03.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;배경-이미지-반복&quot;&gt;배경 이미지 반복&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;background-repeat : 배경 이미지의 반복 여부와 반복 방향을 정합니다.&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;기본값 : repeat&lt;/li&gt;
+      &lt;li&gt;상속 : No&lt;/li&gt;
+      &lt;li&gt;애니메이션 : No&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;사용법&quot;&gt;사용법&lt;/h1&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;background-repeat: repeat&lt;/td&gt;
+      &lt;td&gt;repeat-x&lt;/td&gt;
+      &lt;td&gt;repeat-y&lt;/td&gt;
+      &lt;td&gt;no-repeat&lt;/td&gt;
+      &lt;td&gt;inherit&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;- repeat : 가로 방향, 세로 방향으로 반복합니다.
+- repeat-x : 가로 방향으로 반복합니다.
+- repeat-y : 세로 방향으로 반복합니다.
+- no-repeat : 반복하지 않습니다.
+- initial : 기본값으로 설정합니다.
+- inherit : 부모 요소의 속성값을 상속받습니다
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;브라우저-지원&quot;&gt;브라우저 지원&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Chrome : 1.0+&lt;/li&gt;
+  &lt;li&gt;Firefox : 1.0+&lt;/li&gt;
+  &lt;li&gt;Internet Explorer : 4.0+&lt;/li&gt;
+  &lt;li&gt;Opera : 3.5+&lt;/li&gt;
+  &lt;li&gt;Safari : 1.0+&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Tue, 07 Apr 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/tip/2020/04/07/tip-css-03/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/04/07/tip-css-03/</guid>
+        
+        <category>css</category>
+        
+        
+        <category>tip</category>
+        
+      </item>
     
       <item>
         <title>[유닉스] 파일 아카이브 - .gz 파일, &amp;nbsp; .zip 파일, &amp;nbsp; .bz2 파일</title>
@@ -2666,508 +2795,6 @@ IllegalFormatConversionException 가 발생한다.&lt;/li&gt;
         
         
         <category>tip</category>
-        
-      </item>
-    
-      <item>
-        <title>[Sass/SCSS] 내장 함수(Built-in Functions)</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/sass/2020-03-22-sass-15.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;내장-함수built-in-functions&quot;&gt;내장 함수(Built-in Functions)&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Sass에서 기본적으로 제공하는 내장 함수에는 많은 종류가 있습니다.&lt;/li&gt;
-  &lt;li&gt;모두 소개하지 않고, 주관적 경험에 의거해 필요하거나 필요할 수 있는 함수만 정리했습니다.&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://sass-lang.com/documentation/modules&quot;&gt;Sass Built-in Functions&lt;/a&gt;에서 모든 내장 함수를 확인할 수 있습니다.&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;[]는 선택 가능한 인수(argument)입니다.&lt;/li&gt;
-      &lt;li&gt;Zero-based numbering을 사용하지 않습니다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;색상rgb--hsl--opacity-함수&quot;&gt;색상(RGB / HSL / Opacity) 함수&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;mix($color1, $color2) : 두 개의 색을 섞습니다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;lighten($color, $amount) : 더 밝은색을 만듭니다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;darken($color, $amount) : 더 어두운색을 만듭니다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;saturate($color, $amount) : 색상의 채도를 올립니다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;desaturate($color, $amount) : 색상의 채도를 낮춥니다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;grayscale($color) : 색상을 회색으로 변환합니다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;invert($color) : 색상을 반전시킵니다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;rgba($color, $alpha) : 색상의 투명도를 변경합니다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;opacify($color, $amount) / fade-in($color, $amount) : 색상을 더 불투명하게 만듭니다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;transparentize($color, $amount) / fade-out($color, $amount) : 색상을 더 투명하게 만듭니다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;문자string-함수&quot;&gt;문자(String) 함수&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;unquote($string) : 문자에서 따옴표를 제거합니다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;quote($string) : 문자에 따옴표를 추가합니다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;str-insert($string, $insert, $index) : 문자의 index번째에 특정 문자를 삽입합니다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;str-index($string, $substring) : 문자에서 특정 문자의 첫 index를 반환합니다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;str-slice($string, $start-at, [$end-at]) : 문자에서 특정 문자(몇 번째 글자부터 몇 번째 글자까지)를 추출합니다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;to-upper-case($string) : 문자를 대문자를 변환합니다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;to-lower-case($string) : 문자를 소문자로 변환합니다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;숫자number-함수&quot;&gt;숫자(Number) 함수&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;percentage($number) : 숫자(단위 무시)를 백분율로 변환합니다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;round($number) : 정수로 반올림합니다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;ceil($number) : 정수로 올림합니다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;floor($number) : 정수로 내림(버림)합니다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;abs($number) : 숫자의 절대 값을 반환합니다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;min($numbers…) : 숫자 중 최소 값을 찾습니다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;max($numbers…) : 숫자 중 최대 값을 찾습니다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;random() : 0 부터 1 사이의 난수를 반환합니다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;list-함수&quot;&gt;List 함수&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;모든 List 내장 함수는 기존 List 데이터를 갱신하지 않고 새 List 데이터를 반환합니다.&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;모든 List 내장 함수는 Map 데이터에서도 사용할 수 있습니다.&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;length($list) : List의 개수를 반환합니다.&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;nth($list, $n) : List에서 n번째 값을 반환합니다.&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;set-nth($list, $n, $value) : List에서 n번째 값을 다른 값으로 변경합니다.&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;join($list1, $list2, [$separator]) : 두 개의 List를 하나로 결합합니다.&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;zip($lists…) : 여러 List들을 하나의 다차원 List로 결합합니다.&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;index($list, $value) : List에서 특정 값의 index를 반환합니다.&lt;/p&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;map-함수&quot;&gt;Map 함수&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;모든 Map 내장 함수는 기존 Map 데이터를 갱신하지 않고 새 Map 데이터를 반환합니다.&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;map-get($map, $key) : Map에서 특정 key의 value를 반환합니다.&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;map-merge($map1, $map2) : 두 개의 Map을 병합하여 새로운 Map를 만듭니다.&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;map-keys($map) : Map에서 모든 key를 List로 반환합니다.&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;map-values($map) : Map에서 모든 value를 List로 반환합니다.&lt;/p&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;관리introspection-함수&quot;&gt;관리(Introspection) 함수&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;variable-exists(name) : 변수가 현재 범위에 존재하는지 여부를 반환합니다.(인수는 $없이 변수의 이름만 사용합니다.)&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;unit($number) : 숫자의 단위를 반환합니다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;unitless($number) : 숫자에 단위가 있는지 여부를 반환합니다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;comparable($number1, $number2) : 두 개의 숫자가 연산 가능한지 여부를 반환합니다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;참고-자료references&quot;&gt;참고 자료(References)&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;http://sass-lang.com/documentation&lt;/li&gt;
-  &lt;li&gt;https://sass-guidelin.es/ko/&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    본 포스팅은 HEROPY 님의 영상과 블로그를 보고 공부한 내용을 정리한 것입니다.
-    https://heropy.blog/2018/01/31/sass/
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-</description>
-        <pubDate>Sun, 22 Mar 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/03/22/sass-15/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/03/22/sass-15/</guid>
-        
-        <category>sass</category>
-        
-        
-        <category>devlog</category>
-        
-      </item>
-    
-      <item>
-        <title>[Sass/SCSS] 반복문(for,each, while)</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/sass/2020-03-22-sass-14.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;for-함수&quot;&gt;for (함수)&lt;/h1&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;@for는 스타일을 반복적으로 출력합니다.&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;@for는 through를 사용하는 형식과 to를 사용하는 형식으로 나뉩니다.&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  // through
-  // 종료 만큼 반복
-  @for $변수 from 시작 through 종료 {
-    // 반복 내용
-  }
-    
-  // to
-  // 종료 직전까지 반복
-  @for $변수 from 시작 to 종료 {
-    // 반복 내용
-  }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;SCSS:&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  // 1부터 3번 반복
-  @for $i from 1 through 3 {
-    .through:nth-child(#{$i}) {
-      width : 20px * $i
-    }
-  }
-    
-  // 1부터 3 직전까지만 반복(2번 반복)
-  @for $i from 1 to 3 {
-    .to:nth-child(#{$i}) {
-      width : 20px * $i
-    }
-  }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Compiled to:&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; .through:nth-child(1) { width: 20px; }
- .through:nth-child(2) { width: 40px; }
- .through:nth-child(3) { width: 60px; }
-   
- .to:nth-child(1) { width: 20px; }
- .to:nth-child(2) { width: 40px; }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;to는 주어진 값 직전까지만 반복해야할 경우 유용할 수 있습니다.&lt;/li&gt;
-      &lt;li&gt;그러나 :nth-child()에서 특히 유용하게 사용되는 @for는 일반적으로 through를 사용하길 권장합니다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;each&quot;&gt;@each&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;@each는 List와 Map 데이터를 반복할 때 사용합니다.&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; @each $변수 in 데이터 {
-   // 반복 내용
- }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;SCSS:&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; // List Data
- $fruits: (apple, orange, banana, mango);
-   
- .fruits {
-   @each $fruit in $fruits {
-     li.#{$fruit} {
-       background: url(&quot;/images/#{$fruit}.png&quot;);
-     }
-   }
- }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Compiled to:&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  .fruits li.apple {
-    background: url(&quot;/images/apple.png&quot;);
-  }
-  .fruits li.orange {
-    background: url(&quot;/images/orange.png&quot;);
-  }
-  .fruits li.banana {
-    background: url(&quot;/images/banana.png&quot;);
-  }
-  .fruits li.mango {
-    background: url(&quot;/images/mango.png&quot;);
-  }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;조건에는 논리 연산자 and, or, not을 사용할 수 있습니다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;SCSS:&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; $fruits: (apple, orange, banana, mango);
-   
- .fruits {
-   @each $fruit in $fruits {
-     $i: index($fruits, $fruit);
-     li:nth-child(#{$i}) {
-       left: 50px * $i;
-     }
-   }
- }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Compiled to:&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; .fruits li:nth-child(1) {
-   left: 50px;
- }
- .fruits li:nth-child(2) {
-   left: 100px;
- }
- .fruits li:nth-child(3) {
-   left: 150px;
- }
- .fruits li:nth-child(4) {
-   left: 200px;
- }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;동시에 여러 개의 List 데이터를 반복 처리할 수도 있습니다.&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;단, 각 데이터의 Length가 같아야 합니다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;SCSS:&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $apple: (apple, korea);
-  $orange: (orange, china);
-  $banana: (banana, japan);
-    
-  @each $fruit, $country in $apple, $orange, $banana {
-    .box-#{$fruit} {
-      background: url(&quot;/images/#{$country}.png&quot;);
-    }
-  }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Compiled to:&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  .box-apple {
-    background: url(&quot;/images/korea.png&quot;);
-  }
-  .box-orange {
-    background: url(&quot;/images/china.png&quot;);
-  }
-  .box-banana {
-    background: url(&quot;/images/japan.png&quot;);
-  }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Map 데이터를 반복할 경우 하나의 데이터에 두 개의 변수가 필요합니다.&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  @each $key변수, $value변수 in 데이터 {
-    // 반복 내용
-  }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;SCSS:&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $fruits-data: (
-    apple: korea,
-    orange: china,
-    banana: japan
-  );
-    
-  @each $fruit, $country in $fruits-data {
-    .box-#{$fruit} {
-      background: url(&quot;/images/#{$country}.png&quot;);
-    }
-  }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Compiled to:&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  .box-apple {
-    background: url(&quot;/images/korea.png&quot;);
-  }
-  .box-orange {
-    background: url(&quot;/images/china.png&quot;);
-  }
-  .box-banana {
-    background: url(&quot;/images/japan.png&quot;);
-  }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;while&quot;&gt;@while&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;@while은 조건이 false로 평가될 때까지 내용을 반복합니다.&lt;/li&gt;
-  &lt;li&gt;잘못된 조건으로 인해 컴파일 중 무한 루프에 빠질 수 있습니다.&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;사용을 권장하지 않습니다.&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  @while 조건 {
-    // 반복 내용
-  }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;SCSS:&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $i: 6;
-    
-  @while $i &amp;gt; 0 {
-    .item-#{$i} {
-      width: 2px * $i;
-    }
-    $i: $i - 2;
-  }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Compiled to:&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; .item-6 { width: 12px; }
- .item-4 { width: 8px; }
- .item-2 { width: 4px; }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    본 포스팅은 HEROPY 님의 영상과 블로그를 보고 공부한 내용을 정리한 것입니다.
-    https://heropy.blog/2018/01/31/sass/
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-</description>
-        <pubDate>Sun, 22 Mar 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/03/22/sass-14/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/03/22/sass-14/</guid>
-        
-        <category>sass</category>
-        
-        
-        <category>devlog</category>
         
       </item>
     
