@@ -5,9 +5,239 @@
     <description></description>
     <link>https://m-veloper.github.io/</link>
     <atom:link href="https://m-veloper.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 07 Apr 2020 20:10:29 +0900</pubDate>
-    <lastBuildDate>Tue, 07 Apr 2020 20:10:29 +0900</lastBuildDate>
+    <pubDate>Wed, 08 Apr 2020 20:14:16 +0900</pubDate>
+    <lastBuildDate>Wed, 08 Apr 2020 20:14:16 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>자바(Java) 개발자를 위한 남궁성의 자바(Java)의 정석 요약 PDF</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/life/2020-04-08-tip-life-03.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;자바java의-정석-pdf&quot;&gt;자바(Java)의 정석 PDF&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;모든 책 내용이 포함되어있지 않습니다.&lt;/li&gt;
+  &lt;li&gt;좀더 상세한 내용은 “자바의정석”을 구매하여 보시기 바랍니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;다운로드 클릭 ===&amp;gt; &lt;a href=&quot;https://mi-nya.tistory.com/115&quot;&gt;자바(Java)의 정석 PDF - (1)&lt;/a&gt;
+&lt;br /&gt;
+다운로드 클릭 ===&amp;gt; &lt;a href=&quot;https://mi-nya.tistory.com/116&quot;&gt;자바(Java)의 정석 PDF - (2)&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 08 Apr 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/tip/2020/04/08/tip-life-03/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/04/08/tip-life-03/</guid>
+        
+        <category>life</category>
+        
+        
+        <category>tip</category>
+        
+      </item>
+    
+      <item>
+        <title>2020 시나공 컴활(컴퓨터활용능력) 시험 1급 필기 핵심요약</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/life/2020-04-06-tip-life-01.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;2020-시나공-컴활컴퓨터활용능력-시험-1급-필기-핵심요약&quot;&gt;2020 시나공 컴활(컴퓨터활용능력) 시험 1급 필기 핵심요약&lt;/h2&gt;
+
+&lt;p&gt;다운로드 클릭 ===&amp;gt; &lt;a href=&quot;https://mi-nya.tistory.com/113&quot;&gt;2020 컴활1급 필기 요약본 다운로드&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 08 Apr 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/tip/2020/04/08/tip-life-02/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/04/08/tip-life-02/</guid>
+        
+        <category>life</category>
+        
+        
+        <category>tip</category>
+        
+      </item>
+    
+      <item>
+        <title>[자바스크립트] jQuery(제이쿼리) 형제 요소의 탐색 .siblings() .next() .prev()</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/javascript/2020-04-08-tip-javascript-16.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;jquery제이쿼리-형제-요소의-탐색&quot;&gt;jQuery(제이쿼리) 형제 요소의 탐색&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;DOM 트리에서 특정 요소의 형제(sibling) 요소 즉, 같은 선상에 있는 요소를 선택하기 위한 메소드는 다음과 같다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;.siblings()&lt;/td&gt;
+      &lt;td&gt;선택한 요소의 형제(sibling) 요소 중에서 지정한 선택자에 해당하는 요소를 모두 선택한다.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;.next()&lt;/td&gt;
+      &lt;td&gt;선택한 요소의 바로 다음에 위치한 형제 요소를 선택한다.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;.nextAll()&lt;/td&gt;
+      &lt;td&gt;선택한 요소의 다음에 위치한 형제 요소를 모두 선택한다.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;.nextUntil()&lt;/td&gt;
+      &lt;td&gt;선택한 요소의 형제 요소 중에서 지정한 선택자에 해당하는 요소 바로 이전까지의 요소를 모두 선택한다.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;.prev()&lt;/td&gt;
+      &lt;td&gt;선택한 요소의 바로 이전에 위치한 형제 요소를 선택한다.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;.prevAll()&lt;/td&gt;
+      &lt;td&gt;선택한 요소의 이전에 위치한 형제 요소를 모두 선택한다.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;.prevUntil()&lt;/td&gt;
+      &lt;td&gt;선택한 요소의 형제 요소 중에서 지정한 선택자에 해당하는 요소 바로 다음까지의 요소를 모두 선택한다.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;예제-html&quot;&gt;예제 html&lt;/h3&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ul&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ul&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;부모&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;li&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;li&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;형제&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/li&amp;gt;
+  &amp;lt;li&amp;gt;li (형제)&amp;lt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;li&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;li&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;me&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;li&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;나&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/li&amp;gt;
+  &amp;lt;li&amp;gt;li (형제)&amp;lt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;li&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;li&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;li&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;형제&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/li&amp;gt;
+&amp;lt;/u&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h3 id=&quot;siblings-메소드&quot;&gt;.siblings() 메소드&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;.siblings() 메소드는 선택한 요소의 형제(sibling) 요소 중에서 지정한 선택자에 해당하는 요소를 모두 선택한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;    &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;.me&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;siblings&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;css&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;border&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;2px solid red&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;next-메소드&quot;&gt;.next() 메소드&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;.next() 메소드는 선택한 요소의 바로 다음에 위치한 형제 요소를 선택한다.&lt;/li&gt;
+  &lt;li&gt;me 클래스를 가진 요소의 바로 다음 형제 요소 하나를 선택하여, 해당 요소의 CSS 스타일을 변경한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;    &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;.me&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;css&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;border&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;2px solid red&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;nextall-메소드&quot;&gt;.nextAll() 메소드&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;.nextAll() 메소드는 선택한 요소의 다음에 위치한 형제 요소를 모두 선택한다.&lt;/li&gt;
+  &lt;li&gt;이때, 선택자를 인수로 전달하여, 전달받은 선택자에 해당하는 형제 요소만 선택할 수도 있다.&lt;/li&gt;
+  &lt;li&gt;me 클래스를 가진 요소의 다음에 있는 형제 요소를 모두 선택, 해당 요소의 CSS 스타일을 변경한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;    &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;.me&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;nextAll&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;css&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;border&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;2px solid red&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;nextuntil-메소드&quot;&gt;.nextUntil() 메소드&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;.nextUntil() 메소드는 선택한 요소의 형제 요소 중에서 전달받은 선택자에 해당하는 요소 바로 이전까지의 요소만을 모두 선택한다.&lt;/li&gt;
+  &lt;li&gt;이때, 선택자를 인수로 전달하지 않으면, .nextAll() 메소드와 동일하게 선택한 요소의 다음에 위치한 형제 요소를 모두 선택한다.&lt;/li&gt;
+  &lt;li&gt;me 클래스를 가진 요소의 이후 형제 요소 중에서 &amp;lt;li&amp;gt; 요소의 마지막 바로 이전까지의 모든 요소를 선택하여, 해당 요소의 CSS 스타일을 변경한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;    &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;.me&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;nextUntil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;li:last&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;css&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;border&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;2px solid red&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;prev-메소드&quot;&gt;.prev() 메소드&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;.prev() 메소드는 .next(), 메소드와 정반대로 요소들을 선택해 준다.&lt;/li&gt;
+  &lt;li&gt;me 클래스를 가진 요소의 바로 이전 형제 요소 하나를 선택하여, 해당 요소의 CSS 스타일을 변경한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;    &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;.me&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;prev&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;css&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;border&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;2px solid red&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;prevall-메소드&quot;&gt;.prevAll() 메소드&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;.prevAll() 메소드는 .nextAll() 메소드와 정반대로 요소들을 선택해 준다.
+me 클래스를 가진 요소의 이전에 있는 형제 요소를 모두 선택, 해당 요소의 CSS 스타일을 변경한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;    &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;.me&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;prevAll&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;css&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;border&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;2px solid red&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;prevuntil-메소드&quot;&gt;.prevUntil() 메소드&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;.prevUntil() 메소드는 .nextUntil() 메소드와 정반대로 요소들을 선택해 준다.&lt;/li&gt;
+  &lt;li&gt;me 클래스를 가진 요소의 이전 형제 요소 중에서 &amp;lt;li&amp;gt; 요소의 첫번째 바로 이전까지의 모든 요소를 선택하여, 해당 요소의 CSS 스타일을 변경한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;    &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;.me&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;prevUntil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;li:first&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;css&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;border&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;2px solid red&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+</description>
+        <pubDate>Wed, 08 Apr 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/tip/2020/04/08/tip-javascript-16/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/04/08/tip-javascript-16/</guid>
+        
+        <category>javascript</category>
+        
+        
+        <category>tip</category>
+        
+      </item>
+    
+      <item>
+        <title>[자바스크립트] 배열 순서 거꾸로(뒤에서부터, 반대로) 출력하기</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/javascript/2020-04-08-tip-javascript-15.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;배열-순서-거꾸로뒤에서부터-반대로-출력하기&quot;&gt;배열 순서 거꾸로(뒤에서부터, 반대로) 출력하기&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;배열을 뒤집을 일이 뭐가 있겠냐만은 혹시나 필요한 분들을 위해.&lt;/li&gt;
+  &lt;li&gt;reverse(); 를 사용합니다.&lt;/li&gt;
+  &lt;li&gt;응용해서 사용해보세요~&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+  
+    &lt;span class=&quot;n&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;testReverse&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    
+    &lt;span class=&quot;n&quot;&gt;testReverse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    
+    &lt;span class=&quot;n&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testReverse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+   
+    &lt;span class=&quot;n&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'순서대로 출력 : '&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;testReverse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    
+    &lt;span class=&quot;n&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'거꾸로 출력 : '&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;testReverse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;reverse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+        
+&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/script&amp;gt;
+    &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+</description>
+        <pubDate>Wed, 08 Apr 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/tip/2020/04/08/tip-javascript-15/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/04/08/tip-javascript-15/</guid>
+        
+        <category>javascript</category>
+        
+        
+        <category>tip</category>
+        
+      </item>
     
       <item>
         <title>[자바스크립트] moment.js COUNTDOWN(카운트) 기능</title>
@@ -2617,181 +2847,6 @@ IllegalFormatConversionException 가 발생한다.&lt;/li&gt;
         <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/03/24/tip-css-01/</guid>
         
         <category>css</category>
-        
-        
-        <category>tip</category>
-        
-      </item>
-    
-      <item>
-        <title>[MySQL/MariaDB] CASE WHEN 사용법</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/mysql/2020-03-23-tip-mysql-05.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;case-when&quot;&gt;CASE WHEN&lt;/h1&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;기본 사용법&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  ﻿CASE
-      WHEN '조건'
-      THEN '대체값'
-      WHEN '조건'
-      THEN '대체값'
-      ELSE 'WHEN 조건에 해당안될경우의 기본값'
-  END
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;예:&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  ﻿SELECT 
-      SUM(
-          CASE 
-              WHEN test_column = 1 
-              THEN test_column + 2 
-              ELSE 0 
-          END
-      ) AS testValue 
-  FROM testTable
-  WHERE start_no = #{startNo} AND start_dt BETWEEN #{startDt} AND #{endDt}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-</description>
-        <pubDate>Mon, 23 Mar 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/tip/2020/03/23/tip-mysql-05/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/03/23/tip-mysql-05/</guid>
-        
-        <category>mysql</category>
-        
-        
-        <category>tip</category>
-        
-      </item>
-    
-      <item>
-        <title>[MySQL/MariaDB] 반올림, 자릿수 버리기(ROUND,TRUNCATE)</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/mysql/2020-03-23-tip-mysql-04.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;반올림-자릿수-버리기roundtruncate&quot;&gt;반올림, 자릿수 버리기(ROUND,TRUNCATE)&lt;/h1&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;ROUND(숫자,반올림할 자릿수) : 숫자를 반올림할 자릿수 +1 자릿수에서 반올림&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;TRUNCATE(숫자,버릴 자릿수)  : 숫자를 버릴 자릿수 아래로 버림 ※ 반드시 버릴 자릿수를 명시해 주어야 함&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  SELECT ROUND(3456.1234567) FROM DUAL
-  // 3456
-     
-  SELECT ROUND(3456.1234567 ,1) FROM DUAL
-  // 3456.1
-     
-  SELECT ROUND(3456.1234567 ,4) FROM DUAL
-  // 3456.1235
-     
-  SELECT ROUND(3456.1234567 ,-1) FROM DUAL
-  // 3460
-     
-  SELECT ROUND(3456.1234567 ,-2) FROM DUAL
-  // 3500
-    
-    
-  SELECT TRUNCATE(3456.1234567 ,1) FROM DUAL;
-  // 3456.1
-     
-  SELECT TRUNCATE(3456.1234567 ,4) FROM DUAL;
-  // 3456.1234
-     
-  SELECT TRUNCATE(3456.1234567 ,-1) FROM DUAL;
-  // 3450
-     
-  SELECT TRUNCATE(3456.1234567 ,-2) FROM DUAL;
-  // 3400 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-</description>
-        <pubDate>Mon, 23 Mar 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/tip/2020/03/23/tip-mysql-04/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/03/23/tip-mysql-04/</guid>
-        
-        <category>mysql</category>
-        
-        
-        <category>tip</category>
-        
-      </item>
-    
-      <item>
-        <title>[MySQL/MariaDB] 최대값 최소값 구하기(MAX, MIN)</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/mysql/2020-03-23-tip-mysql-03.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;최대값-최소값-구하기max-min&quot;&gt;최대값 최소값 구하기(MAX, MIN)&lt;/h1&gt;
-&lt;h3 id=&quot;how-to-get-min-and-max-date-in-mysql&quot;&gt;How to get min and max date in MySQL&lt;/h3&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;최대값 (MAX) 구하기&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  SELECT MAX (컬럼) FROM 테이블
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;최소값(MIN) 구하기&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  SELECT MIN (컬럼) FROM 테이블
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-</description>
-        <pubDate>Mon, 23 Mar 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/tip/2020/03/23/tip-mysql-03/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/03/23/tip-mysql-03/</guid>
-        
-        <category>mysql</category>
-        
-        
-        <category>tip</category>
-        
-      </item>
-    
-      <item>
-        <title>[자바스크립트] 제이쿼리(jQuery)로 select box(셀렉트 박스) 값 가져오기</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/javascript/2020-03-23-tip-javascript-09.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;제이쿼리jquery로-select-box셀렉트-박스-값-가져오기&quot;&gt;제이쿼리(jQuery)로 select box(셀렉트 박스) 값 가져오기&lt;/h2&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &amp;lt;select id=&quot;myselect&quot; onchange=&quot;selectTest();&quot;&amp;gt;
-        &amp;lt;option value=&quot;1&quot;&amp;gt;일번&amp;lt;/option&amp;gt;
-        &amp;lt;option value=&quot;2&quot;&amp;gt;이번&amp;lt;/option&amp;gt;
-        &amp;lt;option value=&quot;3&quot;&amp;gt;삼번&amp;lt;/option&amp;gt;
-        &amp;lt;option value=&quot;4&quot;&amp;gt;사번r&amp;lt;/option&amp;gt;
-        &amp;lt;option value=&quot;5&quot;&amp;gt;오번&amp;lt;/option&amp;gt;
-    &amp;lt;/select&amp;gt;
-    
-    &amp;lt;script&amp;gt;
-     function selectTest(){
-        var testA = $(&quot;#myselect &amp;gt; option:selected&quot;).val(); //선택된 옵션의 value 가져오기
-        console.log(testA);
-    
-        var testB = $( &quot;#myselect option:selected&quot; ).text(); //선택된 옵션의 text 가져오기
-        console.log(testB);
-     }
-    &amp;lt;/script&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-</description>
-        <pubDate>Mon, 23 Mar 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/tip/2020/03/23/tip-javascript-09/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/03/23/tip-javascript-09/</guid>
-        
-        <category>javascript</category>
         
         
         <category>tip</category>

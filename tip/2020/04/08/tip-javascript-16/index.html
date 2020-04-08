@@ -31,7 +31,7 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="naver-site-verification" content="fa37cbf8ce41948de6e94c01991ffa04cea9b093"/>
 <meta name="google-site-verification" content="5M4Zw9wg_UqQkvlayfb5Mc_ogvJdc013w_zLUkxgO-Y" />
-<meta property="og:title" content="[자바스크립트] 왼쪽 숫자 0, 첫자리 0 제거하기(정규식)">
+<meta property="og:title" content="[자바스크립트] jQuery(제이쿼리) 형제 요소의 탐색 .siblings() .next() .prev()">
 <meta property="og:type" content="article">
 
 
@@ -47,7 +47,7 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 
 
 
-  <title>[자바스크립트] 왼쪽 숫자 0, 첫자리 0 제거하기(정규식) &middot; m_veloper</title>
+  <title>[자바스크립트] jQuery(제이쿼리) 형제 요소의 탐색 .siblings() .next() .prev() &middot; m_veloper</title>
 
 
 
@@ -63,17 +63,17 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 <!-- =============== -->
 <!-- LINKS           -->
 <!-- =============== -->
-<link rel="canonical" href="https://m-veloper.github.io/tip/2020/02/27/tip-javascript-03/">
-<meta property="og:url" content="https://m-veloper.github.io/tip/2020/02/27/tip-javascript-03/">
+<link rel="canonical" href="https://m-veloper.github.io/tip/2020/04/08/tip-javascript-16/">
+<meta property="og:url" content="https://m-veloper.github.io/tip/2020/04/08/tip-javascript-16/">
 
 <link rel="alternate" type="application/atom+xml" title="m_veloper Feed" href="https://m-veloper.github.io/feed.xml">
 
 
-  <link rel="prev" href="https://m-veloper.github.io/devlog/2020/02/26/unix-09/">
+  <link rel="prev" href="https://m-veloper.github.io/tip/2020/04/08/tip-javascript-15/">
 
 
 
-  <link rel="next" href="https://m-veloper.github.io/tip/2020/02/27/tip-javascript-04/">
+  <link rel="next" href="https://m-veloper.github.io/tip/2020/04/08/tip-life-02/">
 
 
 <link rel="apple-touch-icon" href="https://m-veloper.github.io/apple-touch-icon.png">
@@ -308,18 +308,18 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 
 
 
-<article id="post-tip/2020/02/27/tip-javascript-03" class="post this" role="article">
+<article id="post-tip/2020/04/08/tip-javascript-16" class="post this" role="article">
   <header>
 
     <h1 class="post-title">
       
-        [자바스크립트] 왼쪽 숫자 0, 첫자리 0 제거하기(정규식)
+        [자바스크립트] jQuery(제이쿼리) 형제 요소의 탐색 .siblings() .next() .prev()
         
     </h1>
 
     <p class="post-date heading">
-      <!--<time datetime="2020-02-27T00:00:00+09:00">27 Feb 2020</time>-->
-      <time datetime="2020-02-27T00:00:00+09:00">2020년 02월 27일</time>
+      <!--<time datetime="2020-04-08T00:00:00+09:00">08 Apr 2020</time>-->
+      <time datetime="2020-04-08T00:00:00+09:00">2020년 04월 08일</time>
     </p>
     
 
@@ -373,31 +373,135 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
     </div>
 
     <br />
-    <p><img src="/assets/img/javascript/2020-02-27-tip-javascript-03.png" alt="" /></p>
+    <p><img src="/assets/img/javascript/2020-04-08-tip-javascript-16.png" alt="" /></p>
 
-<h1 id="왼쪽-숫자-0-첫자리-0-제거하기정규식">왼쪽 숫자 0, 첫자리 0 제거하기(정규식)</h1>
-<h3 id="how-to-remove-leading-zeros-from-a-number-in-javascript">How to remove leading zeros from a number in JavaScript?</h3>
+<h1 id="jquery제이쿼리-형제-요소의-탐색">jQuery(제이쿼리) 형제 요소의 탐색</h1>
+
+<ul>
+  <li>DOM 트리에서 특정 요소의 형제(sibling) 요소 즉, 같은 선상에 있는 요소를 선택하기 위한 메소드는 다음과 같다.</li>
+</ul>
+
+<table>
+  <tbody>
+    <tr>
+      <td>.siblings()</td>
+      <td>선택한 요소의 형제(sibling) 요소 중에서 지정한 선택자에 해당하는 요소를 모두 선택한다.</td>
+    </tr>
+    <tr>
+      <td>.next()</td>
+      <td>선택한 요소의 바로 다음에 위치한 형제 요소를 선택한다.</td>
+    </tr>
+    <tr>
+      <td>.nextAll()</td>
+      <td>선택한 요소의 다음에 위치한 형제 요소를 모두 선택한다.</td>
+    </tr>
+    <tr>
+      <td>.nextUntil()</td>
+      <td>선택한 요소의 형제 요소 중에서 지정한 선택자에 해당하는 요소 바로 이전까지의 요소를 모두 선택한다.</td>
+    </tr>
+    <tr>
+      <td>.prev()</td>
+      <td>선택한 요소의 바로 이전에 위치한 형제 요소를 선택한다.</td>
+    </tr>
+    <tr>
+      <td>.prevAll()</td>
+      <td>선택한 요소의 이전에 위치한 형제 요소를 모두 선택한다.</td>
+    </tr>
+    <tr>
+      <td>.prevUntil()</td>
+      <td>선택한 요소의 형제 요소 중에서 지정한 선택자에 해당하는 요소 바로 다음까지의 요소를 모두 선택한다.</td>
+    </tr>
+  </tbody>
+</table>
+
 <p><br />
 <br /></p>
 
-<ol>
-  <li>
-    <p>자바스크립트</p>
+<h3 id="예제-html">예제 html</h3>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   let number = "0909123";
-   let formatNum = number.replace(/(^0+)/, "");
-    // 909123로 치환됨
-   console.log(formatNum);
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>자바</p>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">&lt;</span><span class="n">ul</span><span class="o">&gt;</span><span class="n">ul</span> <span class="p">(</span><span class="err">부모</span><span class="p">)</span>
+  <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="n">li</span> <span class="p">(</span><span class="err">형제</span><span class="p">)</span><span class="o">&lt;</span><span class="sr">/li&gt;
+  &lt;li&gt;li (형제)&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">li</span> <span class="k">class</span><span class="o">=</span><span class="s2">"me"</span><span class="o">&gt;</span><span class="n">li</span> <span class="p">(</span><span class="err">나</span><span class="p">)</span><span class="o">&lt;</span><span class="sr">/li&gt;
+  &lt;li&gt;li (형제)&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="n">li</span> <span class="p">(</span><span class="err">형제</span><span class="p">)</span><span class="o">&lt;</span><span class="sr">/li&gt;
+&lt;/u</span><span class="n">l</span><span class="o">&gt;</span></code></pre></figure>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> String testNum = "0909123";
- String checkNum = testNum.replaceAll("^0+", "");
-</code></pre></div>    </div>
-  </li>
-</ol>
+<h3 id="siblings-메소드">.siblings() 메소드</h3>
+
+<ul>
+  <li>.siblings() 메소드는 선택한 요소의 형제(sibling) 요소 중에서 지정한 선택자에 해당하는 요소를 모두 선택한다.</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">    <span class="err">$</span><span class="p">(</span><span class="s2">".me"</span><span class="p">).</span><span class="nf">siblings</span><span class="p">().</span><span class="nf">css</span><span class="p">({</span><span class="s2">"border"</span><span class="p">:</span> <span class="s2">"2px solid red"</span><span class="p">});</span></code></pre></figure>
+
+<p><br /></p>
+
+<h3 id="next-메소드">.next() 메소드</h3>
+
+<ul>
+  <li>.next() 메소드는 선택한 요소의 바로 다음에 위치한 형제 요소를 선택한다.</li>
+  <li>me 클래스를 가진 요소의 바로 다음 형제 요소 하나를 선택하여, 해당 요소의 CSS 스타일을 변경한다.</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">    <span class="err">$</span><span class="p">(</span><span class="s2">".me"</span><span class="p">).</span><span class="nf">next</span><span class="p">().</span><span class="nf">css</span><span class="p">({</span><span class="s2">"border"</span><span class="p">:</span> <span class="s2">"2px solid red"</span><span class="p">});</span></code></pre></figure>
+
+<p><br /></p>
+
+<h3 id="nextall-메소드">.nextAll() 메소드</h3>
+
+<ul>
+  <li>.nextAll() 메소드는 선택한 요소의 다음에 위치한 형제 요소를 모두 선택한다.</li>
+  <li>이때, 선택자를 인수로 전달하여, 전달받은 선택자에 해당하는 형제 요소만 선택할 수도 있다.</li>
+  <li>me 클래스를 가진 요소의 다음에 있는 형제 요소를 모두 선택, 해당 요소의 CSS 스타일을 변경한다.</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">    <span class="err">$</span><span class="p">(</span><span class="s2">".me"</span><span class="p">).</span><span class="nf">nextAll</span><span class="p">().</span><span class="nf">css</span><span class="p">({</span><span class="s2">"border"</span><span class="p">:</span> <span class="s2">"2px solid red"</span><span class="p">});</span></code></pre></figure>
+
+<p><br /></p>
+
+<h3 id="nextuntil-메소드">.nextUntil() 메소드</h3>
+
+<ul>
+  <li>.nextUntil() 메소드는 선택한 요소의 형제 요소 중에서 전달받은 선택자에 해당하는 요소 바로 이전까지의 요소만을 모두 선택한다.</li>
+  <li>이때, 선택자를 인수로 전달하지 않으면, .nextAll() 메소드와 동일하게 선택한 요소의 다음에 위치한 형제 요소를 모두 선택한다.</li>
+  <li>me 클래스를 가진 요소의 이후 형제 요소 중에서 &lt;li&gt; 요소의 마지막 바로 이전까지의 모든 요소를 선택하여, 해당 요소의 CSS 스타일을 변경한다.</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">    <span class="err">$</span><span class="p">(</span><span class="s2">".me"</span><span class="p">).</span><span class="nf">nextUntil</span><span class="p">(</span><span class="s2">"li:last"</span><span class="p">).</span><span class="nf">css</span><span class="p">({</span><span class="s2">"border"</span><span class="p">:</span> <span class="s2">"2px solid red"</span><span class="p">});</span></code></pre></figure>
+
+<p><br /></p>
+
+<h3 id="prev-메소드">.prev() 메소드</h3>
+
+<ul>
+  <li>.prev() 메소드는 .next(), 메소드와 정반대로 요소들을 선택해 준다.</li>
+  <li>me 클래스를 가진 요소의 바로 이전 형제 요소 하나를 선택하여, 해당 요소의 CSS 스타일을 변경한다.</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">    <span class="err">$</span><span class="p">(</span><span class="s2">".me"</span><span class="p">).</span><span class="nf">prev</span><span class="p">().</span><span class="nf">css</span><span class="p">({</span><span class="s2">"border"</span><span class="p">:</span> <span class="s2">"2px solid red"</span><span class="p">});</span></code></pre></figure>
+
+<p><br /></p>
+
+<h3 id="prevall-메소드">.prevAll() 메소드</h3>
+
+<ul>
+  <li>.prevAll() 메소드는 .nextAll() 메소드와 정반대로 요소들을 선택해 준다.
+me 클래스를 가진 요소의 이전에 있는 형제 요소를 모두 선택, 해당 요소의 CSS 스타일을 변경한다.</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">    <span class="err">$</span><span class="p">(</span><span class="s2">".me"</span><span class="p">).</span><span class="nf">prevAll</span><span class="p">().</span><span class="nf">css</span><span class="p">({</span><span class="s2">"border"</span><span class="p">:</span> <span class="s2">"2px solid red"</span><span class="p">});</span></code></pre></figure>
+
+<p><br /></p>
+
+<h3 id="prevuntil-메소드">.prevUntil() 메소드</h3>
+
+<ul>
+  <li>.prevUntil() 메소드는 .nextUntil() 메소드와 정반대로 요소들을 선택해 준다.</li>
+  <li>me 클래스를 가진 요소의 이전 형제 요소 중에서 &lt;li&gt; 요소의 첫번째 바로 이전까지의 모든 요소를 선택하여, 해당 요소의 CSS 스타일을 변경한다.</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">    <span class="err">$</span><span class="p">(</span><span class="s2">".me"</span><span class="p">).</span><span class="nf">prevUntil</span><span class="p">(</span><span class="s2">"li:first"</span><span class="p">).</span><span class="nf">css</span><span class="p">({</span><span class="s2">"border"</span><span class="p">:</span> <span class="s2">"2px solid red"</span><span class="p">});</span></code></pre></figure>
 
 
     <br />
@@ -418,12 +522,12 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 <div class="share">
   <h2>Share this post</h2>
   <div class="share-body">
-    <a href="http://twitter.com/share?text=[자바스크립트] 왼쪽 숫자 0, 첫자리 0 제거하기(정규식)&amp;url=https://m-veloper.github.io/tip/2020/02/27/tip-javascript-03/"
+    <a href="http://twitter.com/share?text=[자바스크립트] jQuery(제이쿼리) 형제 요소의 탐색 .siblings() .next() .prev()&amp;url=https://m-veloper.github.io/tip/2020/04/08/tip-javascript-16/"
       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
       <span class="icon-twitter">
       </span>
     </a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://m-veloper.github.io/tip/2020/02/27/tip-javascript-03/"
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://m-veloper.github.io/tip/2020/04/08/tip-javascript-16/"
       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
       <span class="icon-facebook">
       </span>
@@ -533,6 +637,9 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
         
       
         
+          
+          
+        
         
           
 
@@ -544,17 +651,14 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
   }
 </style>
 <li class="h4">
-  <a href="/tip/2020/04/08/tip-javascript-16/" data-flip="title">
-    <span>[자바스크립트] jQuery(제이쿼리) 형제 요소의 탐색 .siblings() .next() .prev()</span>
+  <a href="/tip/2020/04/08/tip-javascript-15/" data-flip="title">
+    <span>[자바스크립트] 배열 순서 거꾸로(뒤에서부터, 반대로) 출력하기</span>
   </a>
   <small><time datetime="2020-04-08T00:00:00+09:00">
     2020년 04월 08일
   </time></small>
 </li>
 
-        
-      
-        
         
       
     
@@ -584,9 +688,9 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
   }
 
   var d = function () {
-    this.page.title = "[자바스크립트] 왼쪽 숫자 0, 첫자리 0 제거하기(정규식)",
-      this.page.identifier = "/tip/2020/02/27/tip-javascript-03",
-      this.page.url = "https://m-veloper.github.io/tip/2020/02/27/tip-javascript-03/"
+    this.page.title = "[자바스크립트] jQuery(제이쿼리) 형제 요소의 탐색 .siblings() .next() .prev()",
+      this.page.identifier = "/tip/2020/04/08/tip-javascript-16",
+      this.page.url = "https://m-veloper.github.io/tip/2020/04/08/tip-javascript-16/"
   };
   s._disqusFirst = void 0 === s._disqusFirst || s._disqusFirst, s._disqusLoading = void 0 !== s._disqusLoading && s._disqusLoading, s._disqusThis = !1, s._disqusThreadOffsetTop = i.getElementById(
     "disqus_thread").offsetTop, s._disqusLoading ? s._disqusFirst = !1 : (s._disqusLoading = !0, loadJSDeferred(
