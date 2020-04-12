@@ -5,9 +5,140 @@
     <description></description>
     <link>https://m-veloper.github.io/</link>
     <atom:link href="https://m-veloper.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 08 Apr 2020 20:14:16 +0900</pubDate>
-    <lastBuildDate>Wed, 08 Apr 2020 20:14:16 +0900</lastBuildDate>
+    <pubDate>Sun, 12 Apr 2020 17:39:47 +0900</pubDate>
+    <lastBuildDate>Sun, 12 Apr 2020 17:39:47 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>[jQuery(제이쿼리)] Object의 특정 클래스(Class) 포함 여부 확인</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/javascript/2020-04-10-tip-javascript-18.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;클래스class-포함-여부-확인&quot;&gt;클래스(Class) 포함 여부 확인&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;jQuery를 통해 Javascript 코드 상에 HTML 객체(Object)를 제어하는 경우가 많이 있습니다.&lt;/li&gt;
+  &lt;li&gt;이 때에 객체의 특정 class 값을 이용하여 다수의 객체에 동시 접근하여 제어를 하거나 한 번에 동일한 CSS를 적용하는 등 다양한 용도로 사용할 수 있습니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;html-예제&quot;&gt;html 예제&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;아래의 div HTML 객체는 3가지의 class 속성 값을 가지고 있습니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;div_test&quot;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;milk apple house&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/div&amp;gt; 
+ &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;hasclass-함수-사용&quot;&gt;hasClass 함수 사용&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;ID가 div_test 인 객체가 class apple 을 가지고 있는지 체크합니다.&lt;/li&gt;
+  &lt;li&gt;hassClass 는 해당 객체가 파라메터로 들어온 속성 값을 가지고 있는 경우 true를 반환합니다.&lt;/li&gt;
+  &lt;li&gt;이 함수는 JQuery 1.2 버전에서 추가되었습니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;#div_test&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;hasClass&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;apple&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;속성값이&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;존재함&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;is-함수-사용&quot;&gt;is 함수 사용&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;is 함수를 통해 특정 class를 포함하고 있는지 체크합니다.&lt;/li&gt;
+  &lt;li&gt;is 함수에는 class 외에 id, name 등도 사용 가능.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;#div_test&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;is&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;.apple&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;속성값이&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;존재함&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;length-속성-체크&quot;&gt;length 속성 체크&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;length 값이 있는지 여부를 체크하여 class 속성이 존재하는지 확인할 수 있습니다.&lt;/li&gt;
+  &lt;li&gt;apple 클래스 속성 자체가 존재한다면 length 길이가 1이 됩니다. 존재하지 않는다면 length 길이는 0이 됩니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;#div_test.apple&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;속성값이&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;존재함&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h3 id=&quot;추천-함수&quot;&gt;추천 함수&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;상황에 따라 사용하면 되겠지만 보통 hasClass 를 많이 사용한다 합니다.&lt;/li&gt;
+  &lt;li&gt;hasClass 는 함수 명도 직관적입니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Fri, 10 Apr 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/tip/2020/04/10/tip-javascript-18/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/04/10/tip-javascript-18/</guid>
+        
+        <category>javascript</category>
+        
+        <category>jQuery</category>
+        
+        
+        <category>tip</category>
+        
+      </item>
+    
+      <item>
+        <title>[jQuery(제이쿼리)] 선택자에 변수 넣기</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/javascript/2020-04-10-tip-javascript-17.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;jquery제이쿼리-선택자에-변수-넣기&quot;&gt;jQuery(제이쿼리) 선택자에 변수 넣기&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;직접 선택자를 정의해서 사용하지 않고, 이벤트로 특정 값을 가져와서 선택자로 사용할 경우 사용합니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;index로-선택하기&quot;&gt;index로 선택하기&lt;/h3&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;test&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'selectTest'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'[index='&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;test&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;']'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;id로-선택하기&quot;&gt;id로 선택하기&lt;/h3&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;test&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'selectTest'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'#'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;test&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;class로-선택하기&quot;&gt;class로 선택하기&lt;/h3&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;test&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'selectTest'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'.'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;test&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+</description>
+        <pubDate>Fri, 10 Apr 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/tip/2020/04/10/tip-javascript-17/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/04/10/tip-javascript-17/</guid>
+        
+        <category>javascript</category>
+        
+        <category>jQuery</category>
+        
+        
+        <category>tip</category>
+        
+      </item>
     
       <item>
         <title>자바(Java) 개발자를 위한 남궁성의 자바(Java)의 정석 요약 PDF</title>
@@ -57,7 +188,7 @@
       </item>
     
       <item>
-        <title>[자바스크립트] jQuery(제이쿼리) 형제 요소의 탐색 .siblings() .next() .prev()</title>
+        <title>[jQuery(제이쿼리)] 형제 요소의 탐색 .siblings() .next() .prev()</title>
         <description>&lt;p&gt;&lt;img src=&quot;/assets/img/javascript/2020-04-08-tip-javascript-16.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;jquery제이쿼리-형제-요소의-탐색&quot;&gt;jQuery(제이쿼리) 형제 요소의 탐색&lt;/h1&gt;
@@ -194,6 +325,8 @@ me 클래스를 가진 요소의 이전에 있는 형제 요소를 모두 선택
         <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/04/08/tip-javascript-16/</guid>
         
         <category>javascript</category>
+        
+        <category>jQuery</category>
         
         
         <category>tip</category>
@@ -2237,7 +2370,7 @@ FROM 테이블_리스트;&lt;/li&gt;
       </item>
     
       <item>
-        <title>[자바스크립트] 제이쿼리로 table td 또는 ul li 값 가져오기</title>
+        <title>[jQuery(제이쿼리)] table td 또는 ul li 값 가져오기</title>
         <description>&lt;p&gt;&lt;img src=&quot;/assets/img/javascript/2020-04-01-tip-javascript-12.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;제이쿼리로-table-td-또는-ul-li-값-가져오기&quot;&gt;제이쿼리로 table td 또는 ul li 값 가져오기&lt;/h1&gt;
@@ -2288,6 +2421,8 @@ FROM 테이블_리스트;&lt;/li&gt;
         <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/04/01/tip-javascript-12/</guid>
         
         <category>javascript</category>
+        
+        <category>jQuery</category>
         
         
         <category>tip</category>
@@ -2737,116 +2872,6 @@ IllegalFormatConversionException 가 발생한다.&lt;/li&gt;
         <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/03/26/tip-java-03/</guid>
         
         <category>java</category>
-        
-        
-        <category>tip</category>
-        
-      </item>
-    
-      <item>
-        <title>[자바스크립트] 자바스크립트로 문자열 공백 제거하기</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/javascript/2020-03-25-tip-javascript-10.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;자바스크립트로-문자열-공백-제거하기&quot;&gt;자바스크립트로 문자열 공백 제거하기&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;콘솔창에서 확인할 때는 꼭 마우스로 드래그 해서 공백 제거 유무를 눈으로 확인하세요.&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  let str = &quot; 바보야, 바 보니? &quot;;
-    
-  console.log(str);
-    
-  console.log(str.replace(/(\s*)/g,&quot;&quot;)); // 문자열의 모든 공백 제거
-    
-  console.log(str.replace(/^\s*/,&quot;&quot;)); // 문자열의 제일 앞에 공백 제거
-    
-  console.log(str.replace(/\s*$/,&quot;&quot;)); // 문자열의 제일 뒤에 공백 제거
-    
-  console.log(str.trim());             // 문자열 제일 앞, 제일 뒤 공백 제거 (trim 함수 사용)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Wed, 25 Mar 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/tip/2020/03/25/tip-javascript-10/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/03/25/tip-javascript-10/</guid>
-        
-        <category>javascript</category>
-        
-        
-        <category>tip</category>
-        
-      </item>
-    
-      <item>
-        <title>[CSS] user agent stylesheet은 무엇일까?</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/css/2020-03-24-tip-css-01.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;user-agent-stylesheet&quot;&gt;user agent stylesheet?&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;margin 값을 정해두지 않아 브라우저 임의대로 설정한 것입니다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;간혹 css 작업을 하고 결과물을 보는데 생각했던 모습하고 약간 다른 경우가 있습니다.&lt;/p&gt;
-
-&lt;p&gt;제대로 css를 작성한 거 같은데 “개발자 도구”로 살펴보면 이상한 문구와 같이 체크해제가 되지 않습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/css/2020-03-24-tip-css-01-01.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;원래는 각 옵션들을 체크 해제하면서 확인이 가능해야 하는데, “user agent stylesheet” 이란 문구와 함께 css로 설정하지 않은 margin이 들어가 있는 걸 볼 수 있습니다.
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/css/2020-03-24-tip-css-01-02.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;분명 저는 css로 정확히 파란색 사각형 안에 인증번호가 들어가도록 했는데, 결과물은 사뭇 다릅니다.&lt;/p&gt;
-
-&lt;p&gt;위의 이미지와 같이 margin이 들어가 있습니다. 제가 의도한 것도 아닌데 말이죠.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;해결방법&quot;&gt;해결방법&lt;/h1&gt;
-
-&lt;p&gt;간혹 브라우저마다, 혹은 해당 영역이 다르게 보일 수 있습니다.&lt;/p&gt;
-
-&lt;p&gt;저의 경우, 브라우저는 크롬을 사용했지만, 똑같은 메일을 “네이버 메일” 과 “Gmail”에서 열어보면 결과가 다른 걸 확인했었습니다. 네이버는 정상적으로 보였지만 Gmail에서는 위의 그림처럼&lt;/p&gt;
-
-&lt;p&gt;user agent stylesheet 문구와 함께 강제로 margin이 들어가는 현상이 발생했습니다.&lt;/p&gt;
-
-&lt;p&gt;하지만 해결 방법은 의외로 간단합니다.&lt;/p&gt;
-
-&lt;p&gt;작성한 html 태그의 css 작성 코드에 margin이 있는지 없는지 다시 확인해보시기 바랍니다.&lt;/p&gt;
-
-&lt;p&gt;margin이 없는 경우가 대부분일 겁니다. 이때 margin을 입력해 주시면 됩니다.&lt;/p&gt;
-
-&lt;p&gt;내부 스타일 시트(Internal Style Sheet)인 &lt;style&gt;&lt;/style&gt; 안에다가 정의를 하던, Inline Styles로 정의를 하던 margin을 입력해 주면 됩니다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Inline Styles로 예를 들어보겠습니다.&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &amp;lt;ul class=&quot;slides&quot; style=&quot;margin:0;padding:0&quot;&amp;gt;
-    
-  &amp;lt;p style='color:#999; font-size: 2rem; font-weight: bold; margin:0; padding:0'&amp;gt;&amp;lt;/p&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-</description>
-        <pubDate>Tue, 24 Mar 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/tip/2020/03/24/tip-css-01/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/03/24/tip-css-01/</guid>
-        
-        <category>css</category>
         
         
         <category>tip</category>
