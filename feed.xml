@@ -5,9 +5,363 @@
     <description></description>
     <link>https://m-veloper.github.io/</link>
     <atom:link href="https://m-veloper.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 12 Apr 2020 17:39:47 +0900</pubDate>
-    <lastBuildDate>Sun, 12 Apr 2020 17:39:47 +0900</lastBuildDate>
+    <pubDate>Mon, 13 Apr 2020 20:17:34 +0900</pubDate>
+    <lastBuildDate>Mon, 13 Apr 2020 20:17:34 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>[Database] 속성의 데이터 타입 </title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-13-database-32.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;데이터-타입data-type&quot;&gt;데이터 타입(Data Type)&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;데이터 타입(자료형)이란 컴퓨터 시스템과 프로그래밍 언어에서 실수, 정수, 소수 자료형 등의 여러 종류의 데이터를 
+식별하는 타입으로서, 해당 자료형에 대한 가능한 값, 해당 자료형에서 수행을 할 수 있는 명령어, 데이터의 형태, 의미, 
+크기와 해당 자료형의 값이 저장되는 방식이다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;문자형-데이터타입&quot;&gt;문자형 데이터타입&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-13-database-32-01.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;숫자형-데이터타입&quot;&gt;숫자형 데이터타입&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-13-database-32-02.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;날짜형-데이터타입&quot;&gt;날짜형 데이터타입&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-13-database-32-03.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;이진-데이터타입&quot;&gt;이진 데이터타입&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-13-database-32-04.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 13 Apr 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/devlog/2020/04/13/database-32/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/13/database-32/</guid>
+        
+        <category>database</category>
+        
+        <category>mysql</category>
+        
+        
+        <category>devlog</category>
+        
+      </item>
+    
+      <item>
+        <title>[Database] 조인 검색 - JOIN</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-13-database-31.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;조인-검색&quot;&gt;조인 검색&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;여러개의 테이블을 연결하여 데이터를 검색하는 것&lt;/li&gt;
+  &lt;li&gt;조인 속성
+    &lt;ul&gt;
+      &lt;li&gt;테이블을 연결해주는 속성&lt;/li&gt;
+      &lt;li&gt;속성의 이름은 달라도 됨&lt;/li&gt;
+      &lt;li&gt;속성의 도메인은 같아야 함&lt;/li&gt;
+      &lt;li&gt;외래키를 조인 속성으로 이용&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-13-database-31-01.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;조인 검색 SQL 문
+    &lt;ul&gt;
+      &lt;li&gt;FROM 절 : 검색에 필요한 모든 테이블을 나열&lt;/li&gt;
+      &lt;li&gt;WHERE 절 : 조인 속성의 값이 같아야 함을 의미하는 조인 조건을 제시&lt;/li&gt;
+      &lt;li&gt;속성의 이름 앞에 소속된 테이블의 이름을 표시&lt;/li&gt;
+      &lt;li&gt;테이블 이름과 속성이름은 점( . )으로 연결
+        &lt;ul&gt;
+          &lt;li&gt;예 : orders.item : 주문테이블(orders)의 item 속성&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;apple 고객이 주문한 제품의 이름을 검색하시오.
+    &lt;ul&gt;
+      &lt;li&gt;필요한 테이블 : orders, items&lt;/li&gt;
+      &lt;li&gt;‘apple’ 검색 조건 : orders.customer = ‘apple’&lt;/li&gt;
+      &lt;li&gt;주문한 제품 검색 조건 : orders.item = items.code&lt;/li&gt;
+      &lt;li&gt;제품의 이름 : items.name&lt;/li&gt;
+      &lt;li&gt;Orders 와 Items 테이블&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-13-database-31-02.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;    &lt;span class=&quot;no&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;items&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;name&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;orders&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;items&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;orders&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;customer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'apple'&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;AND&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;orders&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;items&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-13-database-31-03.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;등급( customer.grade )이 Gold인 고객의 이름( customer.name ), 구매한 상품 코드 ( orders.item ), 수량 (
+orders.qty )와 주문일 ( orders.date )를 검색하시오.
+    &lt;ul&gt;
+      &lt;li&gt;필요한 테이블 : customer, orders&lt;/li&gt;
+      &lt;li&gt;Gold 고객 검색 조건 : customer.grade = ‘Gold’&lt;/li&gt;
+      &lt;li&gt;고객의 주문 검색 조건 : customer.account = orders.customer&lt;/li&gt;
+      &lt;li&gt;Customer와 Orders 테이블&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-13-database-31-04.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;    &lt;span class=&quot;no&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;customer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;orders&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;orders&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;qty&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;orders&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;date&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;customer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;orders&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;customer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;grade&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Gold'&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;AND&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;customer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;account&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;orders&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;customer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-13-database-31-05.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;등급( customer.grade )이 Gold인 고객의 이름( customer.name ), 구매한 상품명 ( items.name ), 수량 (
+orders.qty )와 주문일 ( orders.date )를 검색하시오.
+    &lt;ul&gt;
+      &lt;li&gt;필요한 테이블 : customer, items, orders&lt;/li&gt;
+      &lt;li&gt;Gold 고객 검색 조건 : customer.grade = ‘Gold’&lt;/li&gt;
+      &lt;li&gt;고객의 주문 검색 조건 : customer.account = orders.customer&lt;/li&gt;
+      &lt;li&gt;주문한 상품의 이름 검색 조건 : orders.item = items.code&lt;/li&gt;
+      &lt;li&gt;Customer, Items, Orders 테이블&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-13-database-31-06.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;    &lt;span class=&quot;no&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;customer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;items&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;orders&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;qty&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;orders&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;date&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;customer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;items&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;orders&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;customer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;grade&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Gold'&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;AND&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;customer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;account&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;orders&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;customer&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;AND&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Items&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;orders&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-13-database-31-07.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Mon, 13 Apr 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/devlog/2020/04/13/database-31/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/13/database-31/</guid>
+        
+        <category>database</category>
+        
+        <category>mysql</category>
+        
+        
+        <category>devlog</category>
+        
+      </item>
+    
+      <item>
+        <title>[Database] 그룹별 조건 검색 - GROUP BY, HAVING</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-13-database-30.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;그룹별-조건-검색---group-by-having&quot;&gt;그룹별 조건 검색 - GROUP BY, HAVING&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;일반적인 검색조건 : WHERE 절에 작성&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;집계 함수는 WHERE 절에서는 사용할 수 없음&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;그룹에 대한 조건 : HAVING 절에 작성&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;집계 함수는 HAVING 절에서 사용 가능&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;예제에 사용할 데이터베이스&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;Orders 테이블&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-13-database-30-01.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;group-by--having&quot;&gt;GROUP BY … HAVING&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Orders 테이블에서 2건 이상 주문된 제품(item) 별로 제품의 주문건수와 가장 많이 주문된 개수를 검색하시오. &lt;br /&gt;
+(주문건수는 주문건수, 가장 많이 주문한 개수는 최대주문수로 표기)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;주문한 제품(item)별 : GROUP BY item HAVING COUNT(*) &amp;gt;= 2&lt;/li&gt;
+      &lt;li&gt;제품별 주문건수 : COUNT( * )&lt;/li&gt;
+      &lt;li&gt;최대주문수 : MAX( qty )&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;    &lt;span class=&quot;no&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;COUNT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;주문건수&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;MAX&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;qty&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;최대주문수&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;orders&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;GROUP&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;item&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;HAVING&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;COUNT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-13-database-30-02.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Customer 테이블에서 적립금 평균이 5000원 이상인 등급 (grade)에 대해 등급별 고객 수와 적립금 평균을
+검색하시오. ( 등급별 고객수를 고객수, 적립금 평균을 평균적립금으로 표기)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;등급별 그룹 : GROUP BY grade&lt;/li&gt;
+      &lt;li&gt;적립금 평균이 5000원 이상 : AVG( credit ) &amp;gt;= 5000&lt;/li&gt;
+      &lt;li&gt;등급별 고객수 : COUNT( * )&lt;/li&gt;
+      &lt;li&gt;적립금 평균 : AVG( credit )&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;    &lt;span class=&quot;no&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;grade&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;등급&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;COUNT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;고객수&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;AVG&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;credit&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;평균적립금&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;customer&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;GROUP&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;grade&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;HAVING&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;AVG&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;credit&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-13-database-30-03.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Mon, 13 Apr 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/devlog/2020/04/13/database-30/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/13/database-30/</guid>
+        
+        <category>database</category>
+        
+        <category>mysql</category>
+        
+        
+        <category>devlog</category>
+        
+      </item>
+    
+      <item>
+        <title>[Database] 그룹별 검색 - GROUP BY</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-13-database-29.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;그룹별-검색---group-by&quot;&gt;그룹별 검색 - GROUP BY&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;특정 속성 값이 같은 투플을 모아 그룹을 만들어 검색&lt;/li&gt;
+  &lt;li&gt;GROUP BY 키워드를 사용&lt;/li&gt;
+  &lt;li&gt;기본 형식&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;    &lt;span class=&quot;no&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;ALL&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;ㅣ&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;DISTINCT&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;속성&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;리스트&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;테이블&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;리스트&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;조건&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;GROUP&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;속성&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;리스트&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;HAVING&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;조건&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;ORDER&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;속성&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;리스트&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;ASC&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;ㅣ&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;DESC&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+   &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;예제에 사용할 데이터베이스&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;Orders 테이블&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-13-database-29-01.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;group-by&quot;&gt;GROUP BY&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;질의 : Orders 테이블에서 주문 제품별 (item) 수량의 합계를 검색하시오.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;    &lt;span class=&quot;no&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;SUM&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;qty&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;총주문수량&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;orders&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;GROUP&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-13-database-29-02.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;[TIP]
+    &lt;ul&gt;
+      &lt;li&gt;그룹별로 검색할 때, 그룹을 나누는 기준 속성을 SELECT 절에 작성하는 것이 좋다&lt;/li&gt;
+      &lt;li&gt;SELECT 절에 작성하지 않아도 실행됨 ==&amp;gt; 어떤 그룹에 대한 검색 결과인지 확인하기 어렵다.&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;질의 : 그룹을 위한 기준 속성(item)을 SELECT 절에 포함시키는 않은 경우&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;   &lt;span class=&quot;no&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;SUM&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;qty&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;총주문수량&lt;/span&gt;
+   &lt;span class=&quot;no&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;orders&lt;/span&gt;
+   &lt;span class=&quot;no&quot;&gt;GROUP&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+   &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-13-database-29-03.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;질의 : Orders 테이블에서 주문한 제품(item)별로 주문건수와 가장 많이 주문한 개수(qty)를 검색하시오. (주문건수는
+     주문건수, 가장 많이 주문한 개수는 최대주문수로 표기)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;주문한 제품(item)별 : GROUP BY item&lt;/li&gt;
+      &lt;li&gt;제품별 주문건수 : COUNT( * )&lt;/li&gt;
+      &lt;li&gt;최대주문수 : MAX( qty )&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;   &lt;span class=&quot;no&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;COUNT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;주문건수&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;MAX&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;qty&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;최대주문수&lt;/span&gt;
+   &lt;span class=&quot;no&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;orders&lt;/span&gt;
+   &lt;span class=&quot;no&quot;&gt;GROUP&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+   &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-13-database-29-04.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 13 Apr 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/devlog/2020/04/13/database-29/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/13/database-29/</guid>
+        
+        <category>database</category>
+        
+        <category>mysql</category>
+        
+        
+        <category>devlog</category>
+        
+      </item>
     
       <item>
         <title>[jQuery(제이쿼리)] Object의 특정 클래스(Class) 포함 여부 확인</title>
@@ -1589,6 +1943,8 @@ me 클래스를 가진 요소의 이전에 있는 형제 요소를 모두 선택
         
         <category>database</category>
         
+        <category>mysql</category>
+        
         
         <category>devlog</category>
         
@@ -1695,6 +2051,8 @@ FROM 테이블_리스트&lt;br /&gt;
         <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/03/database-27/</guid>
         
         <category>database</category>
+        
+        <category>mysql</category>
         
         
         <category>devlog</category>
@@ -1870,6 +2228,8 @@ FROM 테이블_리스트&lt;br /&gt;
         
         <category>database</category>
         
+        <category>mysql</category>
+        
         
         <category>devlog</category>
         
@@ -1982,6 +2342,8 @@ FROM 테이블_리스트&lt;br /&gt;
         
         <category>database</category>
         
+        <category>mysql</category>
+        
         
         <category>devlog</category>
         
@@ -2070,6 +2432,8 @@ FROM 테이블_리스트&lt;br /&gt;
         <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/03/database-24/</guid>
         
         <category>database</category>
+        
+        <category>mysql</category>
         
         
         <category>devlog</category>
@@ -2239,6 +2603,8 @@ FROM 테이블_리스트;&lt;/li&gt;
         <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/03/database-23/</guid>
         
         <category>database</category>
+        
+        <category>mysql</category>
         
         
         <category>devlog</category>
@@ -2597,281 +2963,6 @@ FROM 테이블_리스트;&lt;/li&gt;
         <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/03/30/tip-jstl-03/</guid>
         
         <category>jstl</category>
-        
-        
-        <category>tip</category>
-        
-      </item>
-    
-      <item>
-        <title>[JAVA] 자바 소수점 사용하기</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/java/2020-03-30-tip-java-04.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;소수점-사용하기&quot;&gt;소수점 사용하기&lt;/h1&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Math.round() 를 이용&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  public class Round{
-     public static void main(String args[]){
-        System.out.println(Math.round(67.655*100)/100.0);
-     }
-  }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;Math.round 함수의 역할은 소수점 첫번째 자리를 참조하여 반올림을 시키는 것이다.
-그러나 소수점 몇 번째자리까지 필요할 때 바로 위의 방식을 쓰자
-67.655*100을 하면 6765.5가 된다.
-여기서 round가 적용되면 6766이 된다.
-다시 100.0 여기서 .0을 붙여야 실수로 적용이 되어 나온다.
-하면 67.66이 된다!! 세번째 자리에서 반올림하여 나오는것이다.
-100이라는 값을 1000으로 하면 네번째자리에서 반올림이 되고
-10을 하면 두번째자리이다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;System.out.printf() 혹은 format() 을 이용&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; ﻿System.out.printf(&quot;%.2f&quot;, 33.3333); //결과값 33.33﻿
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;이때 뒤에 들어가는 파라메터에 정수를 입력하게 되면?
-IllegalFormatConversionException 가 발생한다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;String.format() 을 이용&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  ﻿float f = 0.55555f
-    
-  String str = String.format(&quot;%.2f&quot;, f);
-    
-  System.out.println(&quot;str = &quot; + str);
-    
-  str = 0.56
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;DecimalFormat 을 이용&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  float f 의 소수점 두번째 자리까지의 값을 String str 로 변환합니다.
-    
-  float f = 0.55555f
-    
-  DecimalFormat format = new DecimalFormat(&quot;.##&quot;);
-    
-  String str = format.format(f);
-    
-  System.out.println(&quot;str = &quot; + str); //str = 0.55
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-</description>
-        <pubDate>Mon, 30 Mar 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/tip/2020/03/30/tip-java-04/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/03/30/tip-java-04/</guid>
-        
-        <category>java</category>
-        
-        
-        <category>tip</category>
-        
-      </item>
-    
-      <item>
-        <title>[Chart.js] 툴팁 사이즈 변경하기</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/chartjs/2020-03-29-tip-chartjs-02.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;chartjs-툴팁-사이즈-변경하기&quot;&gt;Chart.js 툴팁 사이즈 변경하기&lt;/h1&gt;
-&lt;h3 id=&quot;how-to-change-font-size-for-tooltip-in-chartjs&quot;&gt;How to change font size for tooltip in chart.js&lt;/h3&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;options 에 tooltips 을 선언하고 사용합니다.&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  // html
-  &amp;lt;canvas id=&quot;myChart&quot; width=&quot;400&quot; height=&quot;400&quot;&amp;gt;&amp;lt;/canvas&amp;gt;
-    
-  &amp;lt;script&amp;gt;
-    
-      var ctx = document.getElementById('myChart').getContext('2d');
-      var myChart = new Chart(ctx, {
-          type: 'bar',
-          data: {
-              labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-              datasets: [{
-                  label: '# of Votes',
-                  data: [12, 19, 3, 5, 2, 3],
-                  backgroundColor: [
-                      'rgba(255, 99, 132, 0.2)',
-                      'rgba(54, 162, 235, 0.2)',
-                      'rgba(255, 206, 86, 0.2)',
-                      'rgba(75, 192, 192, 0.2)',
-                      'rgba(153, 102, 255, 0.2)',
-                      'rgba(255, 159, 64, 0.2)'
-                  ],
-                  borderColor: [
-                      'rgba(255, 99, 132, 1)',
-                      'rgba(54, 162, 235, 1)',
-                      'rgba(255, 206, 86, 1)',
-                      'rgba(75, 192, 192, 1)',
-                      'rgba(153, 102, 255, 1)',
-                      'rgba(255, 159, 64, 1)'
-                  ],
-                  borderWidth: 1
-              }]
-          },
-          options: {
-              scales: {
-                  yAxes: [{
-                      ticks: {
-                          beginAtZero: true
-                      }
-                  }]
-              }
-              tooltips: {
-                  titleFontSize: 10,
-                  bodyFontSize: 10
-              }
-          }
-      });
-        
-  &amp;lt;/script&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Sun, 29 Mar 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/tip/2020/03/29/tip-chartjs-02/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/03/29/tip-chartjs-02/</guid>
-        
-        <category>chart.js</category>
-        
-        
-        <category>tip</category>
-        
-      </item>
-    
-      <item>
-        <title>[Chart.js] 도넛차트 굵기 조절, 변경하기</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/chartjs/2020-03-27-tip-chartjs-01.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;chartjs-도넛차트-굵기-조절-변경하기&quot;&gt;Chart.js 도넛차트 굵기 조절, 변경하기&lt;/h1&gt;
-&lt;h3 id=&quot;how-to-vary-the-thickness-of-doughnut-chart-using-chartjs&quot;&gt;How to vary the thickness of doughnut chart, using Chart.Js&lt;/h3&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;cutoutPercentage 또는 percentageInnerCutout 를 사용하세요&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  // html
-  &amp;lt;canvas id=&quot;myChart&quot; width=&quot;400&quot; height=&quot;400&quot;&amp;gt;&amp;lt;/canvas&amp;gt;
-    
-  &amp;lt;script&amp;gt;
-    
-      var ctx = document.getElementById('myChart').getContext('2d');
-        
-      var myDoughnutChart = new Chart(ctx, {
-          type: 'doughnut',
-          data: data,
-          options: {
-             cutoutPercentage: 65
-          }
-      });
-        
-      // 또는
-        
-      var myDoughnutChart = new Chart(ctx, {
-          type: 'doughnut',
-          data: data,
-          options: {
-             percentageInnerCutout: 65
-          }
-      });
-    
-  &amp;lt;/script&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Fri, 27 Mar 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/tip/2020/03/27/tip-chartjs-01/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/03/27/tip-chartjs-01/</guid>
-        
-        <category>chart.js</category>
-        
-        
-        <category>tip</category>
-        
-      </item>
-    
-      <item>
-        <title>[JAVA] 자바 날짜 차이구하기</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/java/2020-03-26-tip-java-03.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;자바-날짜-차이구하기&quot;&gt;자바 날짜 차이구하기&lt;/h1&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;public void calculateDateBetweenAandB(){
-
-    String dateA = &quot;2019-08-27&quot;;
-    String dateB = &quot;2019-09-09&quot;;
- 
-    // String Type을 Date Type으로 캐스팅하면서 생기는 예외로 인해 여기서 
-    예외처리 해주지 않으면 컴파일러에서 에러가 발생해서 컴파일을 할 수 없다.
-    
-    try{ 
-        SimpleDateFormat format = new SimpleDateFormat(&quot;yyyy-MM-dd&quot;);
-
-        // date1, date2 두 날짜를 parse()를 통해 Date형으로 변환.
-        Date FirstDate = format.parse(dateA);
-        Date SecondDate = format.parse(dateB);
-        
-        // Date로 변환된 두 날짜를 계산한 뒤 그 리턴값으로 long type 변수를 초기화 하고 있다.
-        // 연산결과 -950400000. long type 으로 return 된다.
-        long calDate = FirstDate.getTime() - SecondDate.getTime(); 
-        
-        // Date.getTime() 은 해당날짜를 기준으로1970년 00:00:00 부터 몇 초가 흘렀는지를 반환해준다. 
-        // 이제 24*60*60*1000(각 시간값에 따른 차이점) 을 나눠주면 일수가 나온다.
-        long calDateDays = calDate / ( 24*60*60*1000); 
- 
-        calDateDays = Math.abs(calDateDays);//절대값으로 출력
-        
-        System.out.println(&quot;두 날짜의 날짜 차이: &quot;+calDateDays);
-    }
-    catch(ParseException e){
-            // 예외 처리
-    }
-    
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-</description>
-        <pubDate>Thu, 26 Mar 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/tip/2020/03/26/tip-java-03/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/03/26/tip-java-03/</guid>
-        
-        <category>java</category>
         
         
         <category>tip</category>
