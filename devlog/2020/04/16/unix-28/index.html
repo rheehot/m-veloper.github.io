@@ -31,14 +31,15 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="naver-site-verification" content="fa37cbf8ce41948de6e94c01991ffa04cea9b093"/>
 <meta name="google-site-verification" content="5M4Zw9wg_UqQkvlayfb5Mc_ogvJdc013w_zLUkxgO-Y" />
-<meta property="og:title" content="[Database] 데이터 조작어(DML) - SELECT 문 (데이터 검색)">
+<meta property="og:title" content="[유닉스] 통신 명령어( write, wall, talk, mesg )">
 <meta property="og:type" content="article">
 
 
 
 
 
-  <meta property="og:image" content="https://m-veloper.github.io/assets/img/logo.png">
+  <meta property="og:image" content="https://m-veloper.github.io/assets//img/linux-logo.png">
+  <br/>
 
 
 <meta property="og:image:width" content="640" />
@@ -46,7 +47,7 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 
 
 
-  <title>[Database] 데이터 조작어(DML) - SELECT 문 (데이터 검색) &middot; m_veloper</title>
+  <title>[유닉스] 통신 명령어( write, wall, talk, mesg ) &middot; m_veloper</title>
 
 
 
@@ -62,17 +63,15 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 <!-- =============== -->
 <!-- LINKS           -->
 <!-- =============== -->
-<link rel="canonical" href="https://m-veloper.github.io/devlog/2020/04/03/database-23/">
-<meta property="og:url" content="https://m-veloper.github.io/devlog/2020/04/03/database-23/">
+<link rel="canonical" href="https://m-veloper.github.io/devlog/2020/04/16/unix-28/">
+<meta property="og:url" content="https://m-veloper.github.io/devlog/2020/04/16/unix-28/">
 
 <link rel="alternate" type="application/atom+xml" title="m_veloper Feed" href="https://m-veloper.github.io/feed.xml">
 
 
-  <link rel="prev" href="https://m-veloper.github.io/tip/2020/04/02/tip-javascript-13/">
+  <link rel="prev" href="https://m-veloper.github.io/devlog/2020/04/15/unix-27/">
 
 
-
-  <link rel="next" href="https://m-veloper.github.io/devlog/2020/04/03/database-24/">
 
 
 <link rel="apple-touch-icon" href="https://m-veloper.github.io/apple-touch-icon.png">
@@ -307,18 +306,18 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 
 
 
-<article id="post-devlog/2020/04/03/database-23" class="post this" role="article">
+<article id="post-devlog/2020/04/16/unix-28" class="post this" role="article">
   <header>
 
     <h1 class="post-title">
       
-        [Database] 데이터 조작어(DML) - SELECT 문 (데이터 검색)
+        [유닉스] 통신 명령어( write, wall, talk, mesg )
         
     </h1>
 
     <p class="post-date heading">
-      <!--<time datetime="2020-04-03T00:00:00+09:00">03 Apr 2020</time>-->
-      <time datetime="2020-04-03T00:00:00+09:00">2020년 04월 03일</time>
+      <!--<time datetime="2020-04-16T00:00:00+09:00">16 Apr 2020</time>-->
+      <time datetime="2020-04-16T00:00:00+09:00">2020년 04월 16일</time>
     </p>
     
 
@@ -342,7 +341,7 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 
 
 
-<a href="/tag/devlog-database/" data-flip="title" id="tag">Database</a>, <a href="/tag/tip-mysql/" data-flip="title" id="tag">MySQL</a>
+<a href="/tag/devlog-unix/" data-flip="title" id="tag">Unix</a>
 
 
     
@@ -355,7 +354,9 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
   
   <div class="markdown-body">
 
-    <!--  -->
+    <!-- 
+    <div class="head-image"><img src="https://m-veloper.github.io/assets//img/linux-logo.png" /></div>
+    <br /> -->
 
     <div class='row' style="text-align: center">
       <div>
@@ -370,160 +371,170 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
     </div>
 
     <br />
-    <p><img src="/assets/img/database/2020/04/2020-04-03-database-23.png" alt="" /></p>
+    <p><img src="/assets/img/unix/2020-04-16-unix-28.png" alt="" /></p>
 
-<h1 id="데이터-조작어dml---select-문-데이터-검색">데이터 조작어(DML) - SELECT 문 (데이터 검색)</h1>
-
-<h3 id="sql의-데이터-조작-기능">SQL의 데이터 조작 기능</h3>
+<h1 id="통신-명령어-write-wall-talk-mesg-">통신 명령어( write, wall, talk, mesg )</h1>
 
 <ul>
-  <li>
-    <p>데이터 검색, 삽입, 수정, 삭제</p>
+  <li>write, wall, talk, mesg를 사용하여 사용자간 직접 통신을 할 수 있습니다.</li>
+</ul>
 
-    <ul>
-      <li>데이터 검색 : SELECT - 테이블에서 조건에 맞는 튜플을 검색함</li>
-      <li>데이터 삽입 : INSERT - 테이블에 새로운 튜플을 삽입함</li>
-      <li>데이터 수정 : UPDATE - 테이블의 조건에 맞는 튜플의 내용을 변경함</li>
-      <li>데이터 삭제 : DELETE - 테이블에서 조건에 맞는 튜플을 삭제함</li>
-    </ul>
-  </li>
-  <li>
-    <p>예제에 사용할 판매 데이터베이스</p>
+<h3 id="write-명령을-이용한-통신">write 명령을 이용한 통신</h3>
 
+<p><img src="/assets/img/unix/2020-04-16-unix-28-01.png" alt="" /></p>
+
+<ul>
+  <li>지정한 사용자에게 메시지를 전송</li>
+  <li>메시지를 전달하려는 사용자는 하나만 지정 가능</li>
+  <li>형식 : write 사용자명 [단말기명]</li>
+  <li>사용 예 : write user2
     <ul>
-      <li>Customer 테이블</li>
-      <li>Items 테이블</li>
-      <li>Orders 테이블</li>
+      <li>write 명령으로 보내는 메시지는 상대방이 무슨 작업을 하고 있든지 상관없이 그대로 화면에 출력됨</li>
+      <li>write 명령을 입력하면 커서가 다음 행으로 이동하고 대기 상태</li>
+      <li>상대방의 화면에는 “Message from user1 on … ” 메시지가 화면에 출력됨</li>
+      <li>상대방 user2의 화면에는 다음 메시지 출력</li>
     </ul>
   </li>
 </ul>
 
-<p><img src="/assets/img/database/2020/04/2020-04-03-database-23-01.png" alt="" /></p>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="sr">//</span><span class="err">송신</span>
+<span class="err">$</span> <span class="n">write</span> <span class="n">user2</span>
 
-<p><img src="/assets/img/database/2020/04/2020-04-03-database-23-02.png" alt="" /></p>
-
-<p><img src="/assets/img/database/2020/04/2020-04-03-database-23-03.png" alt="" /></p>
-
-<h3 id="데이터-검색select-문">데이터 검색(SELECT 문)</h3>
+<span class="sr">//</span><span class="err">수신</span>
+<span class="err">$</span> <span class="no">Message</span> <span class="n">from</span> <span class="n">user</span> <span class="mi">1</span> <span class="n">on</span> <span class="o">....</span></code></pre></figure>
 
 <ul>
-  <li>
-    <p>데이터 검색 (SELECT 문)의 개요</p>
-
-    <ul>
-      <li>SELECT 키워드와 함께 검색하고 싶은 속성의 이름 나열</li>
-      <li>FROM 키워드와 함께 검색하고 싶은 속성이 있는 테이블의 이름 나열</li>
-      <li>검색 결과 : 테이블 형태</li>
-    </ul>
-  </li>
+  <li>user2라는 ID를 가진 사람과 대화</li>
+  <li>상대방이 하나 이상의 터미널에 접속되어 있을 때</li>
 </ul>
 
-<p><img src="/assets/img/database/2020/04/2020-04-03-database-23-04.png" alt="" /></p>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="sr">//</span><span class="err">송신</span>
+<span class="err">$</span> <span class="n">write</span> <span class="n">user2</span>
+<span class="no">Hi</span><span class="o">~!</span> <span class="no">Good</span> <span class="n">morning!</span> <span class="o">^</span><span class="no">D</span>
+
+<span class="sr">//</span><span class="err">수신</span>
+<span class="err">$</span> <span class="n">write</span> <span class="n">user2</span> <span class="n">tty2</span>
+<span class="no">Hi</span><span class="o">~!</span> <span class="no">Good</span> <span class="n">morning!</span> <span class="o">^</span><span class="no">D</span></code></pre></figure>
+
+<h3 id="wall-명령을-이용한-통신">wall 명령을 이용한 통신</h3>
 
 <ul>
-  <li>
-    <p>기본 검색</p>
-
-    <ul>
-      <li>SELECT [ ALL ㅣ DISTINCT ] 속성_리스트<br />
-FROM 테이블_리스트;</li>
-    </ul>
-  </li>
-  <li>
-    <p>질의</p>
-
-    <ul>
-      <li>
-        <p>Customer 테이블에 존재하는 모든 속성을 검색하시오.</p>
-
-        <ul>
-          <li>SELECT account, name, grade, credit, address FROM customer;
-  <img src="/assets/img/database/2020/04/2020-04-03-database-23-05.png" alt="" />
-  <br /></li>
-        </ul>
-      </li>
-      <li>
-        <p>Customer 테이블에 존재하는 모든 속성을 검색하시오.</p>
-
-        <ul>
-          <li>*는 모든 속성을 나타냄 (속성의 순서가 테이블의 속성순서와 동일)</li>
-          <li>SELECT * FROM customer
-  <img src="/assets/img/database/2020/04/2020-04-03-database-23-06.png" alt="" />
-  <br /></li>
-        </ul>
-      </li>
-      <li>
-        <p>Orders 테이블에서 주문한 item 만 검색하시오.</p>
-
-        <ul>
-          <li>
-            <p>SELECT item FROM orders
-  <img src="/assets/img/database/2020/04/2020-04-03-database-23-07.png" alt="" /></p>
-
-            <ul>
-              <li>결과 테이블의 투플이 중복되어 있음.
-                <ul>
-                  <li>관계 데이터 모델의 일반 릴레이션은 동일한 투플이 존재할 수 없음</li>
-                  <li>SELECT 문의 수행 결과로 반환되는 테이블에서는 동일한 투플이 중복될 수 있음</li>
-                  <li>결과 테이블이 중복을 허용할 수 있도록 명시적으로 지시하기 위하여 ALL을 사용</li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-    </ul>
-
-    <p><br /></p>
-
-    <ul>
-      <li>
-        <p>Orders 테이블에서 주문한 item을 검색하되, 명시적으로 결과 투플의 중복을 허용하시오.</p>
-
-        <ul>
-          <li>SELECT ALL item FROM orders;
-  <img src="/assets/img/database/2020/04/2020-04-03-database-23-08.png" alt="" />
-  <br /></li>
-        </ul>
-      </li>
-      <li>
-        <p>Orders 테이블에서 주문한 item을 검색하되, 중복을 제거하고 한번씩만 출력되도록 하시오.</p>
-
-        <ul>
-          <li>결과 테이블의 투플 중복을 제거하기 위하여 DISTINCT를 사용</li>
-          <li>SELECT DISTINCT item FROM orders;
-  <img src="/assets/img/database/2020/04/2020-04-03-database-23-09.png" alt="" />
-  <br /></li>
-        </ul>
-      </li>
-      <li>
-        <p>items 테이블에서 name, stocks, price를 검색하되, 출력되는 이름으로 ‘이름’, ‘재고’, ‘단가’ 의 이름을 사용하시오.</p>
-
-        <ul>
-          <li>SELECT name as 이름, stocks as 재고, price as 단가 from items;
-  <img src="/assets/img/database/2020/04/2020-04-03-database-23-10.png" alt="" />
-  <br /></li>
-        </ul>
-      </li>
-      <li>
-        <p>SELECT 다음의 속성_리스트에 산술식을 제시할 수 있다.</p>
-
-        <ul>
-          <li>산술식 : 속성이름 +, -, *, / 등의 산술 연산자와 상수</li>
-        </ul>
-      </li>
-      <li>
-        <p>items 테이블에서 name과 price 속성을 검색하되, price에 500원을 더해 조정단가라는 이름으로 출력하시오.</p>
-
-        <ul>
-          <li>SELECT name, price + 500 as 조정단가 FROM items;</li>
-        </ul>
-
-        <p><img src="/assets/img/database/2020/04/2020-04-03-database-23-11.png" alt="" /></p>
-      </li>
-    </ul>
-  </li>
+  <li>wall 명령</li>
+  <li>로그인하고 있는 모든 사용자에게 메시지를 전송</li>
+  <li>형식 : wall [파일명]</li>
+  <li>write 명령처럼 메시지를 직접 입력하고 Ctrl + D 키로 종료</li>
+  <li>전달하려는 내용을 파일로 작성하였다가 파일명을 인자로 지정할 수 있음</li>
+  <li>로그인된 모든 사용자 단말기 화면에 “Broadcast message from …” 메시지와 함께 사용자가 입력한 메시지 내용이
+출력됨</li>
 </ul>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="err">$</span> <span class="no">Broadcast</span> <span class="no">Message</span> <span class="n">from</span> <span class="n">user1</span><span class="vi">@Ubuntu</span> <span class="p">(</span><span class="n">pts</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span> <span class="n">at</span> <span class="mi">19</span><span class="p">:</span><span class="mo">03</span> <span class="o">...</span>
+<span class="n">wall</span> <span class="nb">test</span> <span class="n">message</span>
+<span class="err">$</span></code></pre></figure>
+
+<h3 id="talk-명령을-이용한-통신">talk 명령을 이용한 통신</h3>
+
+<p><img src="/assets/img/unix/2020-04-16-unix-28-02.png" alt="" /></p>
+
+<ul>
+  <li>talk 명령</li>
+  <li>다른 사용자와 일대일 대화를 할 수 있는 기능 제공</li>
+  <li>형식 : talk 사용자주소 [단말기명]</li>
+  <li>사용자주소 : 사용자명@호스트명</li>
+  <li>같은 시스템에 로그인한 사용자와의 대화일 경우 호스트명 없이 사용자명만 지정</li>
+  <li>write나 wall 명령은 같은 시스템에 로그인된 사용자에게만 메시지 전송 가능</li>
+  <li>talk 명령은 다른 시스템의 사용자와도 대화 가능</li>
+  <li>talk 명령을 입력하면 다음 메시지가 나타남</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="sr">//</span><span class="err">송신</span>
+<span class="p">[</span><span class="n">waiting</span> <span class="k">for</span> <span class="n">your</span> <span class="n">party</span> <span class="n">to</span> <span class="n">respond</span><span class="p">]</span>
+
+<span class="sr">//</span><span class="err">수신</span>
+<span class="err">$</span>
+<span class="no">Message</span> <span class="n">from</span> <span class="no">Talk_Daemon</span><span class="vi">@cc</span> <span class="n">at</span> <span class="mi">12</span><span class="p">:</span><span class="mi">45</span>
+<span class="ss">talk: </span><span class="n">connection</span> <span class="n">requested</span> <span class="n">by</span> <span class="n">user1</span><span class="vi">@cc</span>
+<span class="ss">talk: </span><span class="n">respond</span> <span class="ss">with: </span><span class="n">talk</span> <span class="n">user1</span><span class="vi">@cc</span></code></pre></figure>
+
+<ul>
+  <li>cc라는 컴퓨터에서 user1이라는 ID를 가진 사용자가 12시 45분에 대화를 요청</li>
+  <li>대화에 응하려면 다음과 같이 응답해야 함</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="sr">//</span><span class="err">수신</span>
+<span class="err">$</span> <span class="n">talk</span> <span class="n">user1</span>
+
+<span class="sr">//</span><span class="err">송신</span>
+<span class="err">$</span> <span class="n">talk</span> <span class="n">user2</span>
+<span class="p">[</span><span class="no">Connection</span> <span class="n">established</span><span class="p">]</span>
+<span class="no">Hi</span><span class="o">~~</span>
+<span class="no">How</span> <span class="n">are</span> <span class="n">you?</span>
+<span class="o">--------------------------------------------------------------------------------------</span>
+<span class="no">Hi</span><span class="o">~~</span>
+<span class="no">I</span><span class="err">’</span><span class="n">m</span> <span class="n">fine!</span> <span class="n">and</span> <span class="n">you?</span><span class="p">?</span>
+<span class="o">--------------------------------------------------------------------------------------</span>
+
+<span class="sr">//</span><span class="err">수신</span>
+<span class="err">$</span> <span class="n">talk</span> <span class="n">user1</span>
+<span class="no">Message</span> <span class="n">from</span> <span class="no">Talk_Daemon</span><span class="vi">@cc</span> <span class="n">at</span> <span class="mi">12</span><span class="p">:</span><span class="mi">45</span>
+<span class="ss">talk: </span><span class="n">connection</span> <span class="n">requested</span> <span class="n">by</span> <span class="n">user1</span><span class="vi">@cc</span>
+<span class="ss">talk: </span><span class="n">respond</span> <span class="ss">with: </span><span class="n">talk</span> <span class="n">user1</span><span class="vi">@cc</span>
+<span class="o">================================================</span>
+<span class="p">[</span><span class="no">Connection</span> <span class="n">established</span><span class="p">]</span>
+<span class="no">Hi</span><span class="o">~~</span>
+<span class="no">I</span><span class="err">’</span><span class="n">m</span> <span class="n">fine!</span> <span class="n">and</span> <span class="n">you?</span><span class="p">?</span>
+<span class="o">--------------------------------------------------------------------------------------</span>
+<span class="no">Hi</span><span class="o">~~</span>
+<span class="no">How</span> <span class="n">are</span> <span class="n">you?</span>
+<span class="o">--------------------------------------------------------------------------------------</span></code></pre></figure>
+
+<ul>
+  <li>대화를 종료하려면 ^D 키 입력</li>
+  <li>상대방이 로그인되어 있지 않은 상태에서 talk 명령으로 대화를 시도하면 다음 메시지 출력</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="p">[</span><span class="no">Your</span> <span class="n">party</span> <span class="n">is</span> <span class="n">no</span> <span class="n">logged</span> <span class="n">on</span><span class="p">]</span></code></pre></figure>
+
+<ul>
+  <li>상대방이 로그인되어 있지만 응답하지 않으면 다음 메시지 출력</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="p">[</span><span class="no">Ringing</span> <span class="n">your</span> <span class="n">party</span> <span class="n">again</span><span class="p">]</span></code></pre></figure>
+
+<h3 id="mesg-명령을-이용한-통신-제어">mesg 명령을 이용한 통신 제어</h3>
+
+<ul>
+  <li>mesg 명령</li>
+  <li>메시지를 단말기로 출력하는 것을 막거나(n) 허용함(y)</li>
+  <li>형식 : mesg [n or no/y or yes]</li>
+  <li>사용 예 : mesg n</li>
+  <li>user2 사용자가 메시지를 받지 않으려면 mesg n 또는 mesg no 입력</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="err">$</span> <span class="n">mesg</span> <span class="n">n</span>
+<span class="err">$</span></code></pre></figure>
+
+<ul>
+  <li>user1 사용자가 user2 사용자에게 메시지를 보내면 다음 메시지 출력</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="err">$</span> <span class="n">write</span> <span class="n">user2</span>
+<span class="no">Permission</span> <span class="n">denied</span>
+<span class="err">$</span></code></pre></figure>
+
+<ul>
+  <li>다시 메시지를 받으려면 mesg y 또는 mesg yes 입력</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="err">$</span> <span class="n">mesg</span> <span class="n">y</span>
+<span class="err">$</span></code></pre></figure>
+
+<ul>
+  <li>자신의 현재 대화 허용상태를 보려면 인자 없이 mesg 명령만 입력</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="err">$</span> <span class="n">mesg</span>
+<span class="n">is</span> <span class="n">y</span></code></pre></figure>
 
 
     <br />
@@ -544,12 +555,12 @@ FROM 테이블_리스트;</li>
 <div class="share">
   <h2>Share this post</h2>
   <div class="share-body">
-    <a href="http://twitter.com/share?text=[Database] 데이터 조작어(DML) - SELECT 문 (데이터 검색)&amp;url=https://m-veloper.github.io/devlog/2020/04/03/database-23/"
+    <a href="http://twitter.com/share?text=[유닉스] 통신 명령어( write, wall, talk, mesg )&amp;url=https://m-veloper.github.io/devlog/2020/04/16/unix-28/"
       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
       <span class="icon-twitter">
       </span>
     </a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://m-veloper.github.io/devlog/2020/04/03/database-23/"
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://m-veloper.github.io/devlog/2020/04/16/unix-28/"
       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
       <span class="icon-facebook">
       </span>
@@ -615,27 +626,8 @@ FROM 테이블_리스트;</li>
       
       
         
-        
           
-
-
-
-<style>
-  .related-posts>li>small{
-    margin-left: 10px;
-  }
-</style>
-<li class="h4">
-  <a href="/devlog/2020/04/16/unix-28/" data-flip="title">
-    <span>[유닉스] 통신 명령어( write, wall, talk, mesg )</span>
-  </a>
-  <small><time datetime="2020-04-16T00:00:00+09:00">
-    2020년 04월 16일
-  </time></small>
-</li>
-
-        
-      
+          
         
         
           
@@ -682,6 +674,25 @@ FROM 테이블_리스트;</li>
       
         
         
+          
+
+
+
+<style>
+  .related-posts>li>small{
+    margin-left: 10px;
+  }
+</style>
+<li class="h4">
+  <a href="/devlog/2020/04/13/database-32/" data-flip="title">
+    <span>[Database] 속성의 데이터 타입 </span>
+  </a>
+  <small><time datetime="2020-04-13T00:00:00+09:00">
+    2020년 04월 13일
+  </time></small>
+</li>
+
+        
       
     
   </ul>
@@ -710,9 +721,9 @@ FROM 테이블_리스트;</li>
   }
 
   var d = function () {
-    this.page.title = "[Database] 데이터 조작어(DML) - SELECT 문 (데이터 검색)",
-      this.page.identifier = "/devlog/2020/04/03/database-23",
-      this.page.url = "https://m-veloper.github.io/devlog/2020/04/03/database-23/"
+    this.page.title = "[유닉스] 통신 명령어( write, wall, talk, mesg )",
+      this.page.identifier = "/devlog/2020/04/16/unix-28",
+      this.page.url = "https://m-veloper.github.io/devlog/2020/04/16/unix-28/"
   };
   s._disqusFirst = void 0 === s._disqusFirst || s._disqusFirst, s._disqusLoading = void 0 !== s._disqusLoading && s._disqusLoading, s._disqusThis = !1, s._disqusThreadOffsetTop = i.getElementById(
     "disqus_thread").offsetTop, s._disqusLoading ? s._disqusFirst = !1 : (s._disqusLoading = !0, loadJSDeferred(
