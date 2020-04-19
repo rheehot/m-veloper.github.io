@@ -31,7 +31,7 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="naver-site-verification" content="fa37cbf8ce41948de6e94c01991ffa04cea9b093"/>
 <meta name="google-site-verification" content="5M4Zw9wg_UqQkvlayfb5Mc_ogvJdc013w_zLUkxgO-Y" />
-<meta property="og:title" content="[유닉스] 호스트와 사용자 정보( hostname, nslookup, ping, finger )">
+<meta property="og:title" content="[유닉스] 파일 및 디렉토리 검색 ( wc, ,grep, egrep, fgrep )">
 <meta property="og:type" content="article">
 
 
@@ -47,7 +47,7 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 
 
 
-  <title>[유닉스] 호스트와 사용자 정보( hostname, nslookup, ping, finger ) &middot; m_veloper</title>
+  <title>[유닉스] 파일 및 디렉토리 검색 ( wc, ,grep, egrep, fgrep ) &middot; m_veloper</title>
 
 
 
@@ -63,17 +63,15 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 <!-- =============== -->
 <!-- LINKS           -->
 <!-- =============== -->
-<link rel="canonical" href="https://m-veloper.github.io/devlog/2020/04/15/unix-27/">
-<meta property="og:url" content="https://m-veloper.github.io/devlog/2020/04/15/unix-27/">
+<link rel="canonical" href="https://m-veloper.github.io/devlog/2020/04/19/unix-31/">
+<meta property="og:url" content="https://m-veloper.github.io/devlog/2020/04/19/unix-31/">
 
 <link rel="alternate" type="application/atom+xml" title="m_veloper Feed" href="https://m-veloper.github.io/feed.xml">
 
 
-  <link rel="prev" href="https://m-veloper.github.io/devlog/2020/04/14/database-33/">
+  <link rel="prev" href="https://m-veloper.github.io/devlog/2020/04/18/database-37/">
 
 
-
-  <link rel="next" href="https://m-veloper.github.io/devlog/2020/04/16/unix-28/">
 
 
 <link rel="apple-touch-icon" href="https://m-veloper.github.io/apple-touch-icon.png">
@@ -308,18 +306,18 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 
 
 
-<article id="post-devlog/2020/04/15/unix-27" class="post this" role="article">
+<article id="post-devlog/2020/04/19/unix-31" class="post this" role="article">
   <header>
 
     <h1 class="post-title">
       
-        [유닉스] 호스트와 사용자 정보( hostname, nslookup, ping, finger )
+        [유닉스] 파일 및 디렉토리 검색 ( wc, ,grep, egrep, fgrep )
         
     </h1>
 
     <p class="post-date heading">
-      <!--<time datetime="2020-04-15T00:00:00+09:00">15 Apr 2020</time>-->
-      <time datetime="2020-04-15T00:00:00+09:00">2020년 04월 15일</time>
+      <!--<time datetime="2020-04-19T00:00:00+09:00">19 Apr 2020</time>-->
+      <time datetime="2020-04-19T00:00:00+09:00">2020년 04월 19일</time>
     </p>
     
 
@@ -373,124 +371,260 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
     </div>
 
     <br />
-    <p><img src="/assets/img/unix/2020-04-15-unix-27.png" alt="" /></p>
+    <p><img src="/assets/img/unix/2020-04-19-unix-31.png" alt="" /></p>
 
-<h1 id="호스트명-확인--hostname-명령">호스트명 확인 : hostname 명령</h1>
-
-<ul>
-  <li>현재 사용 중인 유닉스 시스템의 호스트 이름 확인</li>
-  <li>형식 : hostname</li>
-</ul>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="err">$</span> <span class="n">hostname</span>
-<span class="no">Ubuntu</span>
-<span class="err">$</span></code></pre></figure>
-
-<h1 id="ip-주소-검색--nslookup-명령">IP 주소 검색 : nslookup 명령</h1>
+<h1 id="wc">wc</h1>
 
 <ul>
-  <li>DNS (Domain Name System) 서버를 이용하여 도메인이나 IP를 조회하는 명령
+  <li>파일의 행 수, 단어 수, 문자 수를 출력</li>
+  <li>형식 : wc [옵션] 파일명</li>
+  <li>옵션
     <ul>
-      <li>DNS란 : 인터넷 상의 컴퓨터는 호스트명과 IP 주소를 가짐. 호스트명은 사용자가 사용하는 이름. IP 주소는 실제
-  통신에서 사용되는 주소. 호스트명을 IP 주소로 번역하는 서비스를 말함. 전화번호부와 같은 역할</li>
+      <li>-c : 바이트 수</li>
+      <li>-m : 문자 수</li>
+      <li>-C : -m과 동일</li>
+      <li>-l : 행 수</li>
+      <li>-w : 공백 문자나 새로운 행으로 구분된 단어의 수</li>
     </ul>
   </li>
-  <li>호스트 이름 또는 DNS 서버의 작동을 테스트하고자 할 경우 사용</li>
-  <li>형식 : nslookup [option] Hostname 또는 IP_Address</li>
-  <li>nslookup 명령을 실행하면 프롬프트가 &gt;로 바뀜
+  <li>사용 예
     <ul>
-      <li>IP 주소를 알고 싶은 도메인명을 입력하면 해당 호스트의 IP 주소를 출력</li>
+      <li>wc –l test2</li>
+      <li>wc –cw test2</li>
     </ul>
   </li>
-  <li>www.daum.net을 검색
+  <li>파일의 기본 정보 보기
     <ul>
-      <li>exit 명령으로 종료</li>
+      <li>라인 수 6, 단어 수 7, 바이트 수 61</li>
     </ul>
   </li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="err">$</span> <span class="n">nslookup</span>
-
-<span class="o">&gt;</span> <span class="n">www</span><span class="p">.</span><span class="nf">daum</span><span class="p">.</span><span class="nf">net</span>
-<span class="no">Server</span><span class="p">:</span> <span class="mf">127.0</span><span class="o">.</span><span class="mf">1.1</span>
-<span class="no">Address</span><span class="p">:</span> <span class="mf">127.0</span><span class="o">.</span><span class="mf">1.1</span><span class="c1">#53</span>
-<span class="no">Non</span><span class="o">-</span><span class="n">authoritative</span> <span class="ss">answer:
-</span><span class="n">www</span><span class="p">.</span><span class="nf">daum</span><span class="p">.</span><span class="nf">net</span> <span class="n">canonical</span> <span class="nb">name</span> <span class="o">=</span> <span class="n">www</span><span class="p">.</span><span class="nf">g</span><span class="p">.</span><span class="nf">daum</span><span class="p">.</span><span class="nf">net</span><span class="o">.</span>
-<span class="no">Name</span><span class="p">:</span> <span class="n">www</span><span class="p">.</span><span class="nf">g</span><span class="p">.</span><span class="nf">daum</span><span class="p">.</span><span class="nf">net</span>
-<span class="no">Address</span><span class="p">:</span> <span class="mf">180.70</span><span class="o">.</span><span class="mf">93.57</span>
-<span class="no">Name</span><span class="p">:</span> <span class="n">www</span><span class="p">.</span><span class="nf">g</span><span class="p">.</span><span class="nf">daum</span><span class="p">.</span><span class="nf">net</span>
-<span class="no">Address</span><span class="p">:</span> <span class="mf">180.70</span><span class="o">.</span><span class="mf">134.9</span>
-
-<span class="o">&gt;</span> <span class="nb">exit</span>
-<span class="err">$</span></code></pre></figure>
-
-<h1 id="호스트-동작-확인--ping-명령">호스트 동작 확인 : ping 명령</h1>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">    
+    <span class="err">$</span> <span class="n">vi</span> <span class="nb">test</span><span class="p">.</span><span class="nf">c</span>
+    <span class="err">$</span> <span class="n">cat</span> <span class="nb">test</span><span class="p">.</span><span class="nf">c</span>
+    <span class="c1">#include &lt;stdio.h&gt;</span>
+    <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nb">printf</span><span class="p">(</span><span class="err">“</span><span class="no">Hello</span><span class="p">,</span> <span class="no">World</span><span class="o">~!</span><span class="p">\</span><span class="n">n</span><span class="err">”</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="err">$</span> <span class="n">wc</span> <span class="nb">test</span><span class="p">.</span><span class="nf">c</span>
+    <span class="mi">6</span> <span class="mi">7</span> <span class="mi">61</span> <span class="nb">test</span><span class="p">.</span><span class="nf">c</span>
+    <span class="err">$</span></code></pre></figure>
 
 <ul>
-  <li>네트워크상에서 상대방과의 통신이 원활하게 이루어지고 있는지를 테스트</li>
-  <li>^C(Ctrl + C) 키로 프로세스 종료</li>
-  <li>형식 : ping IP_Adress 또는 URL</li>
-  <li>인터파크(interpark) 사이트의 시스템과 연결되는지 확인한 예
+  <li>파일의 바이트 수와 문자 수 보기 : -c, -m 옵션
     <ul>
-      <li>ping 명령 서비스를 제한하고 있는 호스트나 네트워크 장비들이 있어서 명령이 정상적으로 동작 안하는 경우가
-있음</li>
+      <li>옵션을 지정하지 않으면 바이트 수가, -m 옵션을 지정하면 문자 수가 출력됨</li>
+      <li>영어는 문자 수와 바이트 수가 같고, 한글은 다름</li>
     </ul>
   </li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="err">$</span> <span class="n">ping</span> <span class="n">www</span><span class="p">.</span><span class="nf">interpark</span><span class="p">.</span><span class="nf">com</span>
-<span class="no">PING</span> <span class="n">interpark</span><span class="p">.</span><span class="nf">com</span> <span class="p">(</span><span class="mf">211.233</span><span class="o">.</span><span class="mf">74.23</span><span class="p">)</span> <span class="mi">56</span><span class="p">(</span><span class="mi">84</span><span class="p">)</span> <span class="n">bytes</span> <span class="n">of</span> <span class="n">data</span><span class="o">.</span>
-<span class="mi">64</span> <span class="n">bytes</span> <span class="n">from</span> <span class="mf">211.233</span><span class="o">.</span><span class="mf">74.23</span><span class="p">:</span> <span class="n">icmp_seq</span><span class="o">=</span><span class="mi">1</span> <span class="n">ttl</span><span class="o">=</span><span class="mi">243</span> <span class="n">time</span><span class="o">=</span><span class="mf">6.96</span> <span class="n">ms</span>
-<span class="mi">64</span> <span class="n">bytes</span> <span class="n">from</span> <span class="mf">211.233</span><span class="o">.</span><span class="mf">74.23</span><span class="p">:</span> <span class="n">icmp_seq</span><span class="o">=</span><span class="mi">2</span> <span class="n">ttl</span><span class="o">=</span><span class="mi">243</span> <span class="n">time</span><span class="o">=</span><span class="mf">10.1</span> <span class="n">ms</span>
-<span class="mi">64</span> <span class="n">bytes</span> <span class="n">from</span> <span class="mf">211.233</span><span class="o">.</span><span class="mf">74.23</span><span class="p">:</span> <span class="n">icmp_seq</span><span class="o">=</span><span class="mi">3</span> <span class="n">ttl</span><span class="o">=</span><span class="mi">243</span> <span class="n">time</span><span class="o">=</span><span class="mf">10.5</span> <span class="n">ms</span>
-<span class="o">^</span><span class="no">C</span>
-<span class="o">---</span> <span class="n">interpark</span><span class="p">.</span><span class="nf">com</span> <span class="n">ping</span> <span class="n">statistics</span> <span class="o">---</span>
-<span class="mi">3</span> <span class="n">packets</span> <span class="n">transmitted</span><span class="p">,</span> <span class="mi">3</span> <span class="n">received</span><span class="p">,</span> <span class="mi">0</span><span class="o">%</span> <span class="n">packet</span> <span class="n">loss</span><span class="p">,</span> <span class="n">time</span> <span class="mi">2011</span><span class="n">ms</span>
-<span class="n">rtt</span> <span class="n">min</span><span class="o">/</span><span class="n">avg</span><span class="o">/</span><span class="n">max</span><span class="o">/</span><span class="n">mdev</span> <span class="o">=</span> <span class="mf">6.967</span><span class="o">/</span><span class="mf">9.219</span><span class="o">/</span><span class="mf">10.539</span><span class="o">/</span><span class="mf">1.602</span> <span class="n">ms</span>
-<span class="err">$</span></code></pre></figure>
-
-<h1 id="개인-정보-확인--finger-명령">개인 정보 확인 : finger 명령</h1>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">    <span class="err">$</span> <span class="n">wc</span> <span class="err">–</span><span class="n">c</span> <span class="nb">test</span><span class="p">.</span><span class="nf">c</span>
+    <span class="mi">61</span> <span class="nb">test</span><span class="p">.</span><span class="nf">c</span>
+    <span class="err">$</span> <span class="n">wc</span> <span class="err">–</span><span class="n">m</span> <span class="nb">test</span><span class="p">.</span><span class="nf">c</span>
+    <span class="mi">61</span> <span class="nb">test</span><span class="p">.</span><span class="nf">c</span>
+    <span class="err">$</span></code></pre></figure>
 
 <ul>
-  <li>사용자 계정의 자세한 정보 확인</li>
-  <li>형식 : finger [사용자명 l 사용자명@호스트명 l @호스트명]</li>
-  <li>로그인한 사용자 정보 출력
+  <li>wc 명령의 옵션 중복해 사용하기
     <ul>
-      <li>finger 명령을 인자없이 사용하면 시스템에 현재 로그인한 사용자의 정보를 보여줌</li>
-      <li>로그인명, 사용자의 실명, 로그인한 단말기명, 대기한 시간, 로그인한 시간, 접속한 호스트의 주소 정보</li>
+      <li>-l 옵션은 행 수만 알고 싶을 때 사용</li>
+      <li>-w 옵션은 단어 수만 알고 싶을 때 사용</li>
     </ul>
   </li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="err">$</span> <span class="n">finger</span>
-<span class="no">Login</span> <span class="no">Name</span> <span class="no">TTY</span> <span class="no">Idle</span> <span class="no">Login</span> <span class="no">Time</span> <span class="no">Office</span> <span class="no">Office</span> <span class="no">Phone</span>
-<span class="n">ksshin</span> <span class="n">ksshin</span> <span class="o">*</span><span class="n">tty1</span> <span class="no">June</span> <span class="mi">25</span> <span class="mi">20</span><span class="p">:</span><span class="mi">38</span>
-<span class="n">ksshin</span> <span class="n">ksshin</span> <span class="o">*</span><span class="p">:</span><span class="mi">0</span> <span class="no">June</span> <span class="mi">10</span> <span class="mi">14</span><span class="p">:</span><span class="mi">38</span> <span class="p">(:</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">user1</span> <span class="n">staff</span> <span class="o">*</span><span class="n">pts</span><span class="o">/</span><span class="mi">3</span> <span class="mi">1</span><span class="p">:</span><span class="mi">10</span> <span class="no">June</span> <span class="mi">25</span> <span class="mi">20</span><span class="p">:</span><span class="mi">25</span>
-<span class="err">$</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">    <span class="err">$</span> <span class="n">wc</span> <span class="err">–</span><span class="n">cl</span> <span class="nb">test</span><span class="p">.</span><span class="nf">c</span>
+    <span class="mi">6</span> <span class="mi">61</span> <span class="nb">test</span><span class="p">.</span><span class="nf">c</span>
+    <span class="err">$</span> <span class="n">wc</span> <span class="err">–</span><span class="n">mw</span> <span class="nb">test</span><span class="p">.</span><span class="nf">c</span>
+    <span class="mi">7</span> <span class="mi">61</span> <span class="nb">test</span><span class="p">.</span><span class="nf">c</span>
+    <span class="err">$</span></code></pre></figure>
 
 <ul>
-  <li>사용자의 상세 개인 정보 출력
+  <li>wc 명령의 다른 사용
     <ul>
-      <li>finger의 인자로 사용자명을 지정하면 사용자의 상세한 개인 정보 출력
-  i) 로그인명, 사용자의 실명, 사용자의 홈 디렉토리, 기본 쉘, 로그인한 시간과 단말기명, 접속한 외부 호스트의
-  주소, 메일, 특별한 계획 유무</li>
-      <li>마지막에 “No Plan.”은 사용자 홈 디렉토리에 있는 .plan 파일의 내용이 출력됨</li>
-      <li>.plan은 사용자의 일정이나 간단한 메모 등을 작성해 놓는 파일</li>
-      <li>“No Plan.”은 .plan 파일이 없음을 뜻함</li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>다른 명령과</td>
+              <td>(파이프)로 연결해 사용 가능</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>who는 시스템에 접속 중인 사용자의 정보를 출력</li>
+      <li>who는 한 사람당 한 라인씩 정보 출력, 결과로 나온 총 라인 수로 시스템에 접속한 사용자 수를 알 수 있음</li>
+      <li>현재 6명이 시스템에 접속해 있음</li>
     </ul>
   </li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="err">$</span> <span class="n">finger</span> <span class="n">ksshin</span>
-<span class="no">Login</span><span class="p">:</span> <span class="n">ksshin</span> <span class="no">Name</span><span class="p">:</span> <span class="n">ksshin</span>
-<span class="no">Directory</span><span class="p">:</span> <span class="sr">/home/</span><span class="n">ksshin</span> <span class="no">Shell</span><span class="p">:</span> <span class="sr">/bin/</span><span class="n">bash</span>
-<span class="no">On</span> <span class="n">since</span> <span class="no">Thu</span> <span class="no">Jun</span> <span class="mi">25</span> <span class="mi">20</span><span class="p">:</span><span class="mi">38</span> <span class="p">(</span><span class="no">KST</span><span class="p">)</span> <span class="n">on</span> <span class="n">tty1</span> <span class="mi">1</span> <span class="n">second</span> <span class="n">idle</span> <span class="p">(</span><span class="n">messages</span>
-<span class="n">off</span><span class="p">)</span>
-<span class="no">On</span> <span class="n">since</span> <span class="no">Wed</span> <span class="no">Jun</span> <span class="mi">10</span> <span class="mi">14</span><span class="p">:</span><span class="mi">38</span> <span class="p">(</span><span class="no">KST</span><span class="p">)</span> <span class="n">on</span> <span class="p">:</span><span class="mi">0</span> <span class="n">from</span> <span class="p">:</span><span class="mi">0</span> <span class="p">(</span><span class="n">messages</span> <span class="n">off</span><span class="p">)</span>
-<span class="no">No</span> <span class="n">mail</span><span class="o">.</span>
-<span class="no">No</span> <span class="no">Plan</span><span class="o">.</span>
-<span class="err">$</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">    <span class="err">$</span> <span class="n">who</span> <span class="o">|</span> <span class="n">wc</span> <span class="err">–</span><span class="n">l</span>
+    <span class="mi">6</span>
+    <span class="err">$</span></code></pre></figure>
+
+<h1 id="grep">grep</h1>
+
+<ul>
+  <li>global regular expressions print, 파일에서 정규 표현식을 포함한 모든 행을 출력</li>
+  <li>지정한 패턴을 포함하는 행을 찾음</li>
+  <li>형식 : grep [옵션] 패턴 [파일명]</li>
+  <li>옵션
+    <ul>
+      <li>-i : 대소문자 모두 검색</li>
+      <li>-l : 해당 패턴을 포함하는 파일 이름 출력</li>
+      <li>-n : 행 번호 출력</li>
+      <li>-v : 패턴을 포함하는 행을 제외한 행 출력</li>
+      <li>-c : 패턴을 포함하는 행 수 출력</li>
+      <li>-w : 패턴이 하나의 단어로 된 것만 출력</li>
+    </ul>
+  </li>
+  <li>사용 예
+    <ul>
+      <li>grep root /etc/passwd</li>
+      <li>grep –n unix ~/*.txt</li>
+      <li>grep –l hello *.c</li>
+    </ul>
+  </li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">    <span class="err">$</span> <span class="n">vi</span> <span class="n">grep</span><span class="p">.</span><span class="nf">dat</span>
+    <span class="err">$</span> <span class="n">cat</span> <span class="n">grep</span><span class="p">.</span><span class="nf">dat</span>
+    <span class="n">root</span> <span class="n">other</span> <span class="n">sh</span>
+    <span class="nb">system</span> <span class="n">admin</span>
+    <span class="no">UNIX</span> <span class="mi">123</span>
+    <span class="n">unix</span> <span class="mi">345</span>
+    <span class="n">unix</span><span class="o">+</span> <span class="n">other</span>
+    <span class="no">Network</span> <span class="mi">10</span>
+    <span class="n">adm</span> <span class="n">syslog</span> <span class="n">ksshin</span>
+    <span class="n">disk</span> <span class="n">admin</span>
+    <span class="n">cdrom</span> <span class="n">ksshin</span>
+    <span class="n">ksshin</span> <span class="mi">1000</span> <span class="n">csh</span>
+    <span class="n">user1</span> <span class="mi">1001</span> <span class="n">ksh</span>
+    <span class="err">$</span></code></pre></figure>
+
+<ul>
+  <li>unix가 들어 있는 행 찾기</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">    <span class="err">$</span> <span class="n">grep</span> <span class="n">unix</span> <span class="n">grep</span><span class="p">.</span><span class="nf">dat</span>
+    <span class="n">unix</span> <span class="mi">345</span>
+    <span class="n">unix</span><span class="o">+</span> <span class="n">other</span>
+    <span class="err">$</span></code></pre></figure>
+
+<ul>
+  <li>grep은 첫 번째 인자만 제외하고 나머지를 모두 파일 이름으로 간주</li>
+  <li>문자열에 공백이 포함되어 있으면 따옴표로 묶어야 함</li>
+  <li>파일 이름을 지정하지 않으면 표준 입력장치에서 검색할 데이터를 읽음
+    <ul>
+      <li>표준 입력 종료는 ^D</li>
+    </ul>
+  </li>
+  <li>‘ls –F ~‘의 실행 결과 중 /를 포함하는 내용만 출력
+    <ul>
+      <li>나의 홈 디렉토리 아래에 있는 디렉토리 목록만 출력</li>
+    </ul>
+  </li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">    <span class="err">$</span> <span class="n">ls</span> <span class="err">–</span><span class="no">F</span> <span class="o">~</span> <span class="o">|</span> <span class="n">grep</span> <span class="err">‘</span><span class="o">/</span><span class="err">’</span>
+    <span class="no">Desktop</span><span class="o">/</span>
+    <span class="no">Documents</span><span class="o">/</span>
+    <span class="no">Music</span><span class="o">/</span>
+    <span class="o">......</span>
+    <span class="no">Unix</span><span class="o">/</span>
+    <span class="err">$</span></code></pre></figure>
+
+<ul>
+  <li>who 명령의 실행 결과 중 나와 관련된 정보만 화면 출력
+    <ul>
+      <li>$LOGNAME은 나의 로그인 ID를 저장하는 환경 변수</li>
+    </ul>
+  </li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">    <span class="err">$</span> <span class="n">who</span> <span class="o">|</span> <span class="n">grep</span> <span class="vg">$LOGNAME</span>
+    <span class="n">ksshin</span> <span class="n">tty2</span> <span class="mi">2015</span><span class="o">-</span><span class="mo">07</span><span class="o">-</span><span class="mo">01</span> <span class="mo">00</span><span class="p">:</span><span class="mi">57</span>
+    <span class="n">ksshin</span> <span class="p">:</span><span class="mi">0</span> <span class="mi">2015</span><span class="o">-</span><span class="mo">06</span><span class="o">-</span><span class="mi">30</span> <span class="mi">18</span><span class="p">:</span><span class="mi">35</span> <span class="p">(:</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">ksshin</span> <span class="n">pts</span><span class="o">/</span><span class="mi">0</span> <span class="mi">2015</span><span class="o">-</span><span class="mo">06</span><span class="o">-</span><span class="mi">30</span> <span class="mi">18</span><span class="p">:</span><span class="mi">45</span> <span class="p">(:</span><span class="mf">0.0</span><span class="p">)</span>
+    <span class="err">$</span></code></pre></figure>
+
+<h1 id="grep-정규-표현식-사용하기">grep 정규 표현식 사용하기</h1>
+
+<ul>
+  <li>
+    <p>grep 명령을 사용해 정규 표현식 패턴 찾기
+<img src="/assets/img/unix/2020-04-19-unix-31-01.png" alt="" /></p>
+  </li>
+  <li>
+    <p>정규 표현식으로 표현된 패턴은 작은따옴표로 묶어줌</p>
+  </li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">    <span class="err">$</span> <span class="n">grep</span> <span class="err">‘</span><span class="o">^</span><span class="n">root</span><span class="err">’</span> <span class="n">grep</span><span class="p">.</span><span class="nf">dat</span>
+    <span class="n">root</span> <span class="n">other</span> <span class="n">sh</span>
+    <span class="err">$</span> <span class="n">grep</span> <span class="err">‘</span><span class="n">sh</span><span class="err">$’</span> <span class="n">grep</span><span class="p">.</span><span class="nf">dat</span>
+    <span class="n">root</span> <span class="n">other</span> <span class="n">sh</span>
+    <span class="n">ksshin</span> <span class="mi">1000</span> <span class="n">csh</span>
+    <span class="n">user1</span> <span class="mi">1001</span> <span class="n">ksh</span>
+    <span class="err">$</span> <span class="n">grep</span> <span class="err">‘</span><span class="p">[</span><span class="mi">0</span><span class="o">-</span><span class="mi">9</span><span class="p">].</span><span class="nf">*</span><span class="err">’</span> <span class="n">grep</span><span class="p">.</span><span class="nf">dat</span>
+    <span class="no">UNIX</span> <span class="mi">123</span>
+    <span class="n">unix</span> <span class="mi">345</span>
+    <span class="no">Network</span> <span class="mi">10</span>
+    <span class="n">ksshin</span> <span class="mi">1000</span> <span class="n">csh</span>
+    <span class="n">user1</span> <span class="mi">1001</span> <span class="n">ksh</span>
+    <span class="err">$</span></code></pre></figure>
+
+<h1 id="egrep">egrep</h1>
+
+<ul>
+  <li>확장된 정규 표현식(extended regular expression)을 사용하는 grep 명령</li>
+  <li>grep과 사용법은 동일</li>
+  <li>정규 표현식에 사용할 수 있는 특수 문자가 더 추가됨</li>
+</ul>
+
+<p><img src="/assets/img/unix/2020-04-19-unix-31-02.png" alt="" /></p>
+
+<ul>
+  <li>+를 사용한 검색 예</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">    <span class="err">$</span> <span class="n">egrep</span> <span class="err">‘</span><span class="p">[</span><span class="mi">34</span><span class="p">]</span><span class="o">+</span><span class="err">’</span> <span class="n">grep</span><span class="p">.</span><span class="nf">dat</span>
+    <span class="no">UNIX</span> <span class="mi">123</span>
+    <span class="n">unix</span> <span class="mi">345</span>
+    <span class="err">$</span></code></pre></figure>
+
+<ul>
+  <li>l 를 사용하여 두 번 검색하던 것을 한 번으로 줄일 수 있음</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">    
+    <span class="err">$</span> <span class="n">egrep</span> <span class="err">‘</span><span class="n">csh</span><span class="o">|</span><span class="n">bash</span><span class="err">’</span> <span class="n">grep</span><span class="p">.</span><span class="nf">dat</span>
+    <span class="n">ksshin</span> <span class="mi">1000</span> <span class="n">csh</span>
+    <span class="err">$</span></code></pre></figure>
+
+<h1 id="fgrep">fgrep</h1>
+
+<ul>
+  <li>지정한 파일에서 문자열을 찾는 명령</li>
+  <li>문자열에 포함된 모든 정규식 관련 특수 문자를 일반 문자로 해석해 검색</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">    <span class="err">$</span> <span class="n">fgrep</span> <span class="n">unix</span><span class="o">+</span> <span class="n">grep</span><span class="p">.</span><span class="nf">dat</span>
+    <span class="n">unix</span><span class="o">+</span> <span class="mi">123</span>
+    <span class="err">$</span> <span class="n">fgrep</span> <span class="err">‘</span><span class="p">[</span><span class="mi">0</span><span class="o">-</span><span class="mi">9</span><span class="p">].</span><span class="nf">*</span><span class="err">’</span> <span class="n">grep</span><span class="p">.</span><span class="nf">dat</span>
+    <span class="err">$</span></code></pre></figure>
+
+<ul>
+  <li>grep 명령에서 사용하는 모든 특수 문자 앞에 이스케이프 문자(‘\’)를 사용하면 fgrep과 같은 효과</li>
+  <li>다음 두 가지 명령의 결과는 같음</li>
+  <li>결국 특수 문자를 검색할 때, fgrep을 사용하는 것이 보다 편리함</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">    <span class="err">$</span> <span class="n">fgrep</span> <span class="err">‘</span><span class="p">[</span><span class="mi">0</span><span class="o">-</span><span class="mi">9</span><span class="p">].</span><span class="nf">*</span><span class="err">’</span> <span class="n">grep</span><span class="p">.</span><span class="nf">dat</span>
+    <span class="err">$</span> <span class="n">grep</span> <span class="err">‘</span><span class="p">\[</span><span class="mi">0</span><span class="o">-</span><span class="mi">9</span><span class="p">\]\</span><span class="o">.</span><span class="p">\</span><span class="o">*</span><span class="err">’</span> <span class="n">grep</span><span class="p">.</span><span class="nf">dat</span></code></pre></figure>
 
 
     <br />
@@ -511,12 +645,12 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
 <div class="share">
   <h2>Share this post</h2>
   <div class="share-body">
-    <a href="http://twitter.com/share?text=[유닉스] 호스트와 사용자 정보( hostname, nslookup, ping, finger )&amp;url=https://m-veloper.github.io/devlog/2020/04/15/unix-27/"
+    <a href="http://twitter.com/share?text=[유닉스] 파일 및 디렉토리 검색 ( wc, ,grep, egrep, fgrep )&amp;url=https://m-veloper.github.io/devlog/2020/04/19/unix-31/"
       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
       <span class="icon-twitter">
       </span>
     </a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://m-veloper.github.io/devlog/2020/04/15/unix-27/"
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://m-veloper.github.io/devlog/2020/04/19/unix-31/"
       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
       <span class="icon-facebook">
       </span>
@@ -582,27 +716,8 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
       
       
         
-        
           
-
-
-
-<style>
-  .related-posts>li>small{
-    margin-left: 10px;
-  }
-</style>
-<li class="h4">
-  <a href="/devlog/2020/04/19/unix-31/" data-flip="title">
-    <span>[유닉스] 파일 및 디렉토리 검색 ( wc, ,grep, egrep, fgrep )</span>
-  </a>
-  <small><time datetime="2020-04-19T00:00:00+09:00">
-    2020년 04월 19일
-  </time></small>
-</li>
-
-        
-      
+          
         
         
           
@@ -649,6 +764,25 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
       
         
         
+          
+
+
+
+<style>
+  .related-posts>li>small{
+    margin-left: 10px;
+  }
+</style>
+<li class="h4">
+  <a href="/devlog/2020/04/18/database-35/" data-flip="title">
+    <span>[Database] 검색 데이터 제한(Limit)</span>
+  </a>
+  <small><time datetime="2020-04-18T00:00:00+09:00">
+    2020년 04월 18일
+  </time></small>
+</li>
+
+        
       
     
   </ul>
@@ -677,9 +811,9 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
   }
 
   var d = function () {
-    this.page.title = "[유닉스] 호스트와 사용자 정보( hostname, nslookup, ping, finger )",
-      this.page.identifier = "/devlog/2020/04/15/unix-27",
-      this.page.url = "https://m-veloper.github.io/devlog/2020/04/15/unix-27/"
+    this.page.title = "[유닉스] 파일 및 디렉토리 검색 ( wc, ,grep, egrep, fgrep )",
+      this.page.identifier = "/devlog/2020/04/19/unix-31",
+      this.page.url = "https://m-veloper.github.io/devlog/2020/04/19/unix-31/"
   };
   s._disqusFirst = void 0 === s._disqusFirst || s._disqusFirst, s._disqusLoading = void 0 !== s._disqusLoading && s._disqusLoading, s._disqusThis = !1, s._disqusThreadOffsetTop = i.getElementById(
     "disqus_thread").offsetTop, s._disqusLoading ? s._disqusFirst = !1 : (s._disqusLoading = !0, loadJSDeferred(
