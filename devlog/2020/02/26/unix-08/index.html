@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<!-- Meta -->
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+	<meta name="generator" content="Jekyll">
+
+	<!--<title>[유닉스] 디렉토리 생성, 삭제</title>-->
+	<title>슬기로운 개발 생활</title>
+
+	<!-- CSS & fonts -->
+	<link rel="stylesheet" href="/assets/css/main.css">
+	<link rel="stylesheet" href="/assets/icomoon/style.css">
+	<link href="http://cdn.jsdelivr.net/gh/joungkyun/font-d2coding/d2coding.css" rel="stylesheet" type="text/css">
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,900,400italic%7CSignika:700,300,400,600' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/default.min.css">
+
+	<!-- RSS -->
+	<link href="/atom.xml" type="application/atom+xml" rel="alternate" title="ATOM Feed" />
+	<!-- Script -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/assets/js/main.js"></script>
+<script src="/assets/js/load-js-deferred.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+<script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+<script data-ad-client="ca-pub-9898399593070144" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<!--<script src="/js/fontawesome/all.js"></script>-->
+
+<!--<script>-->
+  <!--var currentPosition = parseInt($("#left-side-ad, #right-side-ad").css("top"));-->
+  <!--$(window).scroll(function () {-->
+    <!--var position = $(window).scrollTop();-->
+    <!--$("#left-side-ad, #right-side-ad").stop().animate({ "top": position + currentPosition + "px" }, 1000);-->
+  <!--});-->
+<!--</script>-->
+
+
+
+
+
+
+
+
+  </head>
+
+
+<body>
+
+	<div id="wrap">
+	  	
+	  	<!-- Navigation -->
+	  	<nav id="nav">
+	<div id="nav-list">
+		<div class="sidebar-about">
+			<h2><a id="_title" href="/">슬기로운 개발 생활</a></h2>
+			<p>느리지만 가고있어요..</p>
+
+		</div>
+		<!--<a href="">Home</a>-->
+
+		<!-- 카테고리, 태그 메뉴-->
+		<div id="_sidebar" class="sidebar">
+			<div class="sidebar-sticky" role="banner">
+				<nav class="sidebar-nav heading" role="navigation">
+					<ul>
+						<li>
+							<div  class="list-wrapper">
+								<h3 class="sidebar-nav-item">Learn</h3>
+							</div>
+							<ul class="list-body">
+								<li>
+									<a class="sidebar-nav-subitem" href="/a_tags/database/">Database</a>
+								</li>
+								<li>
+									<a class="sidebar-nav-subitem" href="/a_tags/unix/">Unix</a>
+								</li>
+								<li>
+									<a class="sidebar-nav-subitem" href="/a_tags/sass/">Sass</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div  class="list-wrapper">
+								<h3 class="sidebar-nav-item">Review</h3>
+							</div>
+							<ul class="list-body">
+								<li>
+									<a class="sidebar-nav-subitem" href="/a_tags/goods/">Goods</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div  class="list-wrapper">
+								<h3 class="sidebar-nav-item">Tip</h3>
+							</div>
+							<ul class="list-body">
+								<li>
+									<a class="sidebar-nav-subitem" href="/a_tags/web/">Web</a>
+									<a class="sidebar-nav-subitem" href="/a_tags/etc/">Etc</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<!--<ul>-->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!--<li>-->
+						<!--<div  class="list-wrapper">-->
+							<!--&lt;!&ndash;<a class="sidebar-nav-item" href="/a_categories/devlog/">Devlog</a>&ndash;&gt;-->
+							<!--<h3 class="sidebar-nav-item">Devlog</h3>-->
+						<!--</div>-->
+						<!--<ul class="list-body">-->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/database/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/database/2/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/database/3/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/database/4/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/13/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/12/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/2/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/3/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/4/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/5/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/6/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/7/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/8/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/9/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/10/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/11/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/sass/index.html">Sass</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/sass/2/index.html">Sass</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/unix/4/index.html">Unix</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/unix/index.html">Unix</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/unix/2/index.html">Unix</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/unix/3/index.html">Unix</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+						<!--</ul>-->
+					<!--</li>-->
+					<!---->
+					<!---->
+					<!--<li>-->
+						<!--<div  class="list-wrapper">-->
+							<!--&lt;!&ndash;<a class="sidebar-nav-item" href="/a_categories/review/">Review</a>&ndash;&gt;-->
+							<!--<h3 class="sidebar-nav-item">Review</h3>-->
+						<!--</div>-->
+						<!--<ul class="list-body">-->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/goods/index.html">Goods</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+						<!--</ul>-->
+					<!--</li>-->
+					<!---->
+					<!---->
+					<!--<li>-->
+						<!--<div  class="list-wrapper">-->
+							<!--&lt;!&ndash;<a class="sidebar-nav-item" href="/a_categories/tip/">Tip</a>&ndash;&gt;-->
+							<!--<h3 class="sidebar-nav-item">Tip</h3>-->
+						<!--</div>-->
+						<!--<ul class="list-body">-->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/web/index.html">Web</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/web/2/index.html">Web</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/web/3/index.html">Web</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/web/4/index.html">Web</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/etc/index.html">Etc</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+						<!--</ul>-->
+					<!--</li>-->
+					<!---->
+				<!--</ul>-->
+				</nav>
+			</div>
+		</div>
+
+		<!-- Nav pages -->
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+    
+    <!-- Nav links -->
+	  <!--<a href="https://github.com/KingFelix/emerald/archive/master.zip">Download</a>-->
+<!--<a href="https://github.com/KingFelix/emerald">Project on Github</a>-->
+<!--<a href="https://github.com/KingFelix/emerald">Categories</a>-->
+
+	</div>
+  <!-- Nav footer -->
+	
+	  <footer>
+	
+	<!--<span>version 1.1.0</span>-->
+
+</footer>
+	
+</nav>
+
+    
+    <!-- Icon menu -->
+	  <a id="nav-menu">
+	  	<div id="menu"></div>
+	  </a>
+
+      <!-- Header -->
+      
+        <header id="header">
+	<a href="/">
+		<!--<img src="/img/emerald.svg" alt="Emerald Logo">-->
+		<h1 class="top">M</h1>
+	  <h1 class="bottom">veloper</h1>
+	</a>
+</header>
+
+      
+
+    <!-- Main content -->
+		<div class="main-layout">
+			<div id="left-side-ad">
+				<div class="testAd">
+					<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+					<ins class="adsbygoogle"
+						 style="display:block"
+						 data-ad-client="ca-pub-9898399593070144"
+						 data-ad-slot="1150677138"
+						 data-ad-format="auto"
+						 data-full-width-responsive="true"></ins>
+					<script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+					</script>
+				</div>
+			</div>
+			<div id="container">
+				<main>
+					<article id="post-page">
+	<h2 class="title">[유닉스] 디렉토리 생성, 삭제</h2>
+	<a class="tag" href="" data-flip="title">
+		<time datetime="" class="by-line">2020년 02월 26일</time>
+	</a>
+	<hr>
+	<div class="content">
+		<!--<div class='kakao-ad-top'>-->
+			<!--<div>-->
+				<!--<ins class="kakao_ad_area" style="display:none;" data-ad-unit= "DAN-sksc2jl3lbhe" data-ad-width= "250" data-ad-height= "250"></ins>-->
+			<!--</div>-->
+			<!--<div>-->
+				<!--<ins class="kakao_ad_area" style="display:none;" data-ad-unit= "DAN-s13c6ao56o2p" data-ad-width= "250" data-ad-height= "250"></ins>-->
+			<!--</div>-->
+			<!--<div>-->
+				<!--<ins class="kakao_ad_area" style="display:none;" data-ad-unit= "DAN-to1sb755uomv" data-ad-width= "250" data-ad-height= "250"></ins>-->
+			<!--</div>-->
+		<!--</div>-->
+
+		<p><img src="/assets/img/unix/2020-02-26-unix-08.png" alt="" /></p>
+
+<h1 id="디렉토리-생성">디렉토리 생성</h1>
+<p><br />
+<br /></p>
+
+<h3 id="홈-디렉토리">홈 디렉토리</h3>
+
+<ul>
+  <li>새로운 디렉토리를 생성</li>
+  <li>시스템은 자동으로 “.”과 “..” 엔트리를 만들며, 일반 사용자는 이 두 엔트리를 삭제할 수 없음</li>
+  <li>형식 : mkdir [옵션] 디렉토리명</li>
+  <li>옵션</li>
+  <li>-p : 하위 디렉토리를 계층적으로 생성할 때 중간의 디렉토리가 없으면, 생성하면서 전체 디렉토리를 생성</li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="디렉토리-한-개-생성">디렉토리 한 개 생성</h3>
+
+<ul>
+  <li>
+    <p>mkdir 다음에 디렉토리 이름을 지정하면 현재 디렉토리 아래에 디렉토리 생성</p>
+  </li>
+  <li>예) mkdir Unix</li>
+  <li>
+    <p>mkdir 다음에 디렉토리 이름을 절대 경로로 지정하면 절대 경로 상에 디렉토리 생성</p>
+  </li>
+  <li>예) mkdir /home/ksshin/Unix/ch2</li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">mkdir </span>Unix
+<span class="nv">$ </span><span class="nb">ls </span>Unix
+<span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-a</span> Unix
+<span class="nb">.</span> ..
+<span class="nv">$ </span><span class="nb">mkdir</span> /home/ksshin/Unix/ch2
+<span class="nv">$ </span><span class="nb">ls </span>Unix
+ch3
+<span class="err">$</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="디렉토리-여러-개를-동시에-생성">디렉토리 여러 개를 동시에 생성</h3>
+
+<ul>
+  <li>mkdir 다음에 공백으로 구분되는 이름이 여러 개일 경우 각각을 디렉토리 이름으로 하여 여러 개의 디렉토리 생성</li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">mkdir </span>temp dir1
+<span class="nv">$ </span><span class="nb">ls</span> –l
+total 9
+drwxr-xr-x 2 ksshin ksshin 4096 30 May 21:12 temp
+drwxr-xr-x 2 ksshin ksshin 4096 30 May 21:12 dir1
+<span class="err">$</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>홈디렉토리로 이동하지 않고 생성</p>
+  </li>
+  <li>
+    <p>명령어 라인이 길어질 때는 줄 끝에 백슬래시() 문자 사용</p>
+  </li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">mkdir</span> /home/ksshin/Unix/ch1 <span class="se">\</span>
+/home/ksshin/Unix/ch2/document <span class="se">\</span>
+/home/ksshin/Unix/ch2/source
+<span class="err">$</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="중간-디렉토리-자동-생성">중간 디렉토리 자동 생성</h3>
+
+<ul>
+  <li>
+    <p>mkdir 명령 다음에 –p 옵션 사용</p>
+  </li>
+  <li>
+    <p>디렉토리 이름으로 지정한 경로 중 중간 단계의 디렉토리가 존재하지 않으면 중간 단계 디렉토리도 자동으로 생성한 뒤 해당 디렉토리 생성</p>
+  </li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">mkdir</span> –p temp/work/prog
+<span class="nv">$ </span><span class="nb">ls</span> –lR temp
+temp:
+total 1
+drwxr-xr-x 2 ksshin ksshin 4096 30 May 21:12 work
+temp/work:
+total 1
+drwxr-xr-x 2 ksshin ksshin 4096 30 May 21:12 prog
+temp/work/prog:
+total 0
+<span class="err">$</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="서브디렉토리-생성-후의-구조">서브디렉토리 생성 후의 구조</h3>
+
+<p><img src="/assets/img/unix/2020-02-26-unix-08-01.png" alt="" />
+<br /></p>
+
+<h1 id="디렉토리-생성-1">디렉토리 생성</h1>
+<p><br />
+<br /></p>
+
+<h3 id="rmdirremove-directory">rmdir(remove directory)</h3>
+
+<ul>
+  <li>디렉토리를 삭제</li>
+  <li>형식 : rmdir [옵션] 디렉토리명</li>
+  <li>옵션</li>
+  <li>-p : 지정한 디렉토리를 삭제한 뒤, 그 디렉토리의 부모 디렉토리가 빈 디렉토리일 경우 부모 디렉토리도 자동으로 삭제</li>
+  <li>사용 예</li>
+  <li>rmdir temp</li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="디렉토리-삭제할-때-규칙">디렉토리 삭제할 때 규칙</h3>
+
+<ul>
+  <li>비어 있지 않은 디렉토리는 삭제할 수 없다.</li>
+  <li>작업 디렉토리와 루트 디렉토리 사이에 있는 디렉토리는 어떤 것도 지울 수 없다.</li>
+  <li>비어 있지 않은 디렉토리를 한 번에 지우려면 ‘rm –r’ 명령 사용</li>
+  <li>디렉토리를 지울 때마다 사용자에게 질문하게 하려면 ‘rm –ir’ 명령 사용</li>
+  <li>비어 있지 않은 디렉토리를 삭제하려고 하면 오류 메시지 출력</li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">rmdir </span>temp
+<span class="nb">rmdir</span>: failed to remove ‘temp’ : Directory not empty
+<span class="err">$</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="디렉토리-한-개-삭제">디렉토리 한 개 삭제</h3>
+
+<ul>
+  <li>
+    <p>rmdir 다음에 디렉토리 이름 지정하면 현재 디렉토리 내에 있는 해당 디렉토리 삭제</p>
+  </li>
+  <li>
+    <p>예) rmdir dir</p>
+  </li>
+  <li>
+    <p>rmdir 다음에 디렉토리 이름을 절대경로로 지정하면 절대 경로 상에 있는 해당 디렉토리 삭제</p>
+  </li>
+  <li>
+    <p>예) rmdir /home/ksshin/test</p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="디렉토리-여러-개-삭제">디렉토리 여러 개 삭제</h3>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">rmdir </span>temp/work/prog <span class="nb">test</span>
+<span class="nv">$ </span><span class="nb">cd</span> ~/Unix/ch2
+<span class="nv">$ </span><span class="nb">rmdir </span>document <span class="nb">source</span>
+<span class="err">$</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="가장-단순한-디렉토리-삭제-방법">가장 단순한 디렉토리 삭제 방법</h3>
+
+<ul>
+  <li>가장 낮은 곳에 있는 디렉토리 삭제</li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd</span> ~/Unix/ch2
+<span class="nv">$ </span><span class="nb">rmdir </span>document <span class="nb">source</span>
+</code></pre></div></div>
+
+<ul>
+  <li>ch1, ch2 디렉토리 삭제</li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd</span> ..
+<span class="nv">$ </span><span class="nb">rmdir </span>ch1 ch2
+</code></pre></div></div>
+
+<ul>
+  <li>삭제 후 디렉토리 구조</li>
+</ul>
+
+<p><img src="/assets/img/unix/2020-02-26-unix-08-02.png" alt="" />
+<br /></p>
+
+<h3 id="가장-단순한-디렉토리-삭제-방법-1">가장 단순한 디렉토리 삭제 방법</h3>
+
+<ul>
+  <li>절대 경로명으로 디렉토리 삭제</li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">rmdir</span> /home/ksshin/Unix/ch2/document <span class="se">\</span>
+/home/ksshin/Unix/ch2/source <span class="se">\</span>
+/home/ksshin/Unix/ch1 <span class="se">\</span>
+/home/ksshin/Unix/ch2
+<span class="err">$</span>
+</code></pre></div></div>
+
+<ul>
+  <li>“~” 기호를 사용하여 디렉토리 삭제</li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">rmdir</span> ~/Unix/ch2/document <span class="se">\</span>
+~/Unix/ch2/source <span class="se">\</span>
+~/Unix/ch1 <span class="se">\</span>
+~/Unix/ch2
+<span class="err">$</span>
+</code></pre></div></div>
+
+
+
+		<!-- buymeacoffee 버튼 -->
+		<div id="sponsor-button" style="text-align: center">
+			<a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/TWYGPxs">
+				<img src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg" alt="Buy me a coffee">
+				<span style="margin-left:15px;font-size:28px !important;">Buy me a coffee</span>
+			</a>
+		</div>
+
+
+		<!--<div class="kakao-ad-bottom">-->
+			<div>
+				<ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-rhg23mrcvho4" data-ad-width= "728" data-ad-height= "90"></ins>
+			</div>
+			<div>
+				<ins class="kakao_ad_area" style="display:none;" data-ad-unit    = "DAN-r1icduz054jb" data-ad-width   = "728" data-ad-height  = "90"></ins>
+			</div>
+			<div>
+				<ins class="kakao_ad_area" style="display:none;" data-ad-unit    = "DAN-1jy7ort537t4o" data-ad-width   = "728" data-ad-height  = "90"></ins>
+			</div>
+		<!--</div>-->
+
+		<aside class="comments" role="complementary">
+  <h2>Comments</h2>
+  <hr/>
+  <div id="disqus_thread"></div>
+  <script>
+    !function (s, i) {
+      function e(e) {
+        var t = s.pageYOffset || i.body.scrollTop;
+        s.DISQUS && !s._disqusThis && !s._disqusFirst && t + s.innerHeight >= s._disqusThreadOffsetTop && (s._disqusThis = !0, s.DISQUS.reset(
+          { reload: !0, config: d }))
+      }
+
+      var d = function () {
+        this.page.title = "[유닉스] 디렉토리 생성, 삭제",
+          this.page.identifier = "/devlog/2020/02/26/unix-08",
+          this.page.url = "https://m-veloper.github.io/devlog/2020/02/26/unix-08/"
+      };
+      s._disqusFirst = void 0 === s._disqusFirst || s._disqusFirst, s._disqusLoading = void 0 !== s._disqusLoading && s._disqusLoading, s._disqusThis = !1, s._disqusThreadOffsetTop = i.getElementById(
+        "disqus_thread").offsetTop, s._disqusLoading ? s._disqusFirst = !1 : (s._disqusLoading = !0, loadJSDeferred(
+        "//m-veloper.disqus.com/embed.js"), s.addEventListener ? s.addEventListener(
+        "scroll",
+        e,
+        { passive: !0 }) : s.attachEvent ? s.attachEvent("onscroll", e) : s.onscroll = e)
+    }(window, document);
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+</aside>
+
+	</div>
+</article>
+
+
+				</main>
+				<!-- 페이지 네이션-->
+				<div class="pagination-container">
+
+</div>
+			</div>
+			<div id="right-side-ad">
+				<div class="testAd">
+					<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+					<ins class="adsbygoogle"
+						 style="display:block"
+						 data-ad-client="ca-pub-9898399593070144"
+						 data-ad-slot="4781185980"
+						 data-ad-format="auto"
+						 data-full-width-responsive="true"></ins>
+					<script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+					</script>
+				</div>
+			</div>
+		</div>
+		  <!-- Footer -->
+	    <!--<footer class="footer"><span>@2020 - m_veloper</span></footer>-->
+<footer class="footer">
+  <div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div>
+        
+
+        
+        
+        <div class="sidebar-social">
+          <ul>
+  
+    
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="https://github.com/m-veloper">
+    <span class="icon-github" title="GitHub"></span>
+    <!--<span class="sr-only">GitHub</span>-->
+  </a>
+</li>
+
+  
+    
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="mailto:m_veloper@naver.com">
+    <span class="icon-mail" title="Email"></span>
+    <!--<span class="sr-only">Email</span>-->
+  </a>
+</li>
+
+  
+    
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="https://m-veloper.github.io/feed.xml">
+    <span class="icon-rss2" title="RSS"></span>
+    <!--<span class="sr-only">RSS</span>-->
+  </a>
+</li>
+
+  
+</ul>
+
+        </div>
+        
+      </div>
+      <div>
+        <!--<p><small> Copyright © 2020 | <a href="/" title="">m_veloper</a> | All rights reserved.</small></p>-->
+        <p>Copyright © 2020 | <a href="/" title="">m_veloper</a> | All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</footer>
+
+	    <!-- Script -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/assets/js/main.js"></script>
+<script src="/assets/js/load-js-deferred.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+<script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+<script data-ad-client="ca-pub-9898399593070144" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<!--<script src="/js/fontawesome/all.js"></script>-->
+
+<!--<script>-->
+  <!--var currentPosition = parseInt($("#left-side-ad, #right-side-ad").css("top"));-->
+  <!--$(window).scroll(function () {-->
+    <!--var position = $(window).scrollTop();-->
+    <!--$("#left-side-ad, #right-side-ad").stop().animate({ "top": position + currentPosition + "px" }, 1000);-->
+  <!--});-->
+<!--</script>-->
+
+
+
+
+
+	</div>
+</body>
+</html>

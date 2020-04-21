@@ -1,0 +1,1274 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<!-- Meta -->
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+	<meta name="generator" content="Jekyll">
+
+	<!--<title>[유닉스] 파일 아카이브 - tar 파일, &nbsp; .Z 파일</title>-->
+	<title>슬기로운 개발 생활</title>
+
+	<!-- CSS & fonts -->
+	<link rel="stylesheet" href="/assets/css/main.css">
+	<link rel="stylesheet" href="/assets/icomoon/style.css">
+	<link href="http://cdn.jsdelivr.net/gh/joungkyun/font-d2coding/d2coding.css" rel="stylesheet" type="text/css">
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,900,400italic%7CSignika:700,300,400,600' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/default.min.css">
+
+	<!-- RSS -->
+	<link href="/atom.xml" type="application/atom+xml" rel="alternate" title="ATOM Feed" />
+	<!-- Script -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/assets/js/main.js"></script>
+<script src="/assets/js/load-js-deferred.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+<script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+<script data-ad-client="ca-pub-9898399593070144" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<!--<script src="/js/fontawesome/all.js"></script>-->
+
+<!--<script>-->
+  <!--var currentPosition = parseInt($("#left-side-ad, #right-side-ad").css("top"));-->
+  <!--$(window).scroll(function () {-->
+    <!--var position = $(window).scrollTop();-->
+    <!--$("#left-side-ad, #right-side-ad").stop().animate({ "top": position + currentPosition + "px" }, 1000);-->
+  <!--});-->
+<!--</script>-->
+
+
+
+
+
+
+
+
+  </head>
+
+
+<body>
+
+	<div id="wrap">
+	  	
+	  	<!-- Navigation -->
+	  	<nav id="nav">
+	<div id="nav-list">
+		<div class="sidebar-about">
+			<h2><a id="_title" href="/">슬기로운 개발 생활</a></h2>
+			<p>느리지만 가고있어요..</p>
+
+		</div>
+		<!--<a href="">Home</a>-->
+
+		<!-- 카테고리, 태그 메뉴-->
+		<div id="_sidebar" class="sidebar">
+			<div class="sidebar-sticky" role="banner">
+				<nav class="sidebar-nav heading" role="navigation">
+					<ul>
+						<li>
+							<div  class="list-wrapper">
+								<h3 class="sidebar-nav-item">Learn</h3>
+							</div>
+							<ul class="list-body">
+								<li>
+									<a class="sidebar-nav-subitem" href="/a_tags/database/">Database</a>
+								</li>
+								<li>
+									<a class="sidebar-nav-subitem" href="/a_tags/unix/">Unix</a>
+								</li>
+								<li>
+									<a class="sidebar-nav-subitem" href="/a_tags/sass/">Sass</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div  class="list-wrapper">
+								<h3 class="sidebar-nav-item">Review</h3>
+							</div>
+							<ul class="list-body">
+								<li>
+									<a class="sidebar-nav-subitem" href="/a_tags/goods/">Goods</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div  class="list-wrapper">
+								<h3 class="sidebar-nav-item">Tip</h3>
+							</div>
+							<ul class="list-body">
+								<li>
+									<a class="sidebar-nav-subitem" href="/a_tags/web/">Web</a>
+									<a class="sidebar-nav-subitem" href="/a_tags/etc/">Etc</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<!--<ul>-->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!--<li>-->
+						<!--<div  class="list-wrapper">-->
+							<!--&lt;!&ndash;<a class="sidebar-nav-item" href="/a_categories/devlog/">Devlog</a>&ndash;&gt;-->
+							<!--<h3 class="sidebar-nav-item">Devlog</h3>-->
+						<!--</div>-->
+						<!--<ul class="list-body">-->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/database/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/database/2/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/database/3/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/database/4/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/13/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/12/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/2/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/3/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/4/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/5/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/6/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/7/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/8/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/9/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/10/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/11/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/sass/index.html">Sass</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/sass/2/index.html">Sass</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/unix/4/index.html">Unix</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/unix/index.html">Unix</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/unix/2/index.html">Unix</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/unix/3/index.html">Unix</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+						<!--</ul>-->
+					<!--</li>-->
+					<!---->
+					<!---->
+					<!--<li>-->
+						<!--<div  class="list-wrapper">-->
+							<!--&lt;!&ndash;<a class="sidebar-nav-item" href="/a_categories/review/">Review</a>&ndash;&gt;-->
+							<!--<h3 class="sidebar-nav-item">Review</h3>-->
+						<!--</div>-->
+						<!--<ul class="list-body">-->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/goods/index.html">Goods</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+						<!--</ul>-->
+					<!--</li>-->
+					<!---->
+					<!---->
+					<!--<li>-->
+						<!--<div  class="list-wrapper">-->
+							<!--&lt;!&ndash;<a class="sidebar-nav-item" href="/a_categories/tip/">Tip</a>&ndash;&gt;-->
+							<!--<h3 class="sidebar-nav-item">Tip</h3>-->
+						<!--</div>-->
+						<!--<ul class="list-body">-->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/web/index.html">Web</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/web/2/index.html">Web</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/web/3/index.html">Web</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/web/4/index.html">Web</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/etc/index.html">Etc</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+						<!--</ul>-->
+					<!--</li>-->
+					<!---->
+				<!--</ul>-->
+				</nav>
+			</div>
+		</div>
+
+		<!-- Nav pages -->
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+    
+    <!-- Nav links -->
+	  <!--<a href="https://github.com/KingFelix/emerald/archive/master.zip">Download</a>-->
+<!--<a href="https://github.com/KingFelix/emerald">Project on Github</a>-->
+<!--<a href="https://github.com/KingFelix/emerald">Categories</a>-->
+
+	</div>
+  <!-- Nav footer -->
+	
+	  <footer>
+	
+	<!--<span>version 1.1.0</span>-->
+
+</footer>
+	
+</nav>
+
+    
+    <!-- Icon menu -->
+	  <a id="nav-menu">
+	  	<div id="menu"></div>
+	  </a>
+
+      <!-- Header -->
+      
+        <header id="header">
+	<a href="/">
+		<!--<img src="/img/emerald.svg" alt="Emerald Logo">-->
+		<h1 class="top">M</h1>
+	  <h1 class="bottom">veloper</h1>
+	</a>
+</header>
+
+      
+
+    <!-- Main content -->
+		<div class="main-layout">
+			<div id="left-side-ad">
+				<div class="testAd">
+					<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+					<ins class="adsbygoogle"
+						 style="display:block"
+						 data-ad-client="ca-pub-9898399593070144"
+						 data-ad-slot="1150677138"
+						 data-ad-format="auto"
+						 data-full-width-responsive="true"></ins>
+					<script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+					</script>
+				</div>
+			</div>
+			<div id="container">
+				<main>
+					<article id="post-page">
+	<h2 class="title">[유닉스] 파일 아카이브 - tar 파일, &nbsp; .Z 파일</h2>
+	<a class="tag" href="" data-flip="title">
+		<time datetime="" class="by-line">2020년 04월 06일</time>
+	</a>
+	<hr>
+	<div class="content">
+		<!--<div class='kakao-ad-top'>-->
+			<!--<div>-->
+				<!--<ins class="kakao_ad_area" style="display:none;" data-ad-unit= "DAN-sksc2jl3lbhe" data-ad-width= "250" data-ad-height= "250"></ins>-->
+			<!--</div>-->
+			<!--<div>-->
+				<!--<ins class="kakao_ad_area" style="display:none;" data-ad-unit= "DAN-s13c6ao56o2p" data-ad-width= "250" data-ad-height= "250"></ins>-->
+			<!--</div>-->
+			<!--<div>-->
+				<!--<ins class="kakao_ad_area" style="display:none;" data-ad-unit= "DAN-to1sb755uomv" data-ad-width= "250" data-ad-height= "250"></ins>-->
+			<!--</div>-->
+		<!--</div>-->
+
+		<p><img src="/assets/img/unix/2020-04-06-unix-24.png" alt="" /></p>
+
+<h1 id="파일-아카이브">파일 아카이브</h1>
+
+<ul>
+  <li>아카이브 : 보관소, 저장소</li>
+  <li>파일 아카이브 : 파일을 묶어 하나로 만든 것</li>
+  <li>과거 : 여러 파일이나 디렉토리를 묶어 이동식 저장 장치에 보관하기 위해 사용되었음</li>
+  <li>다른 시스템과 파일을 주고받거나, 백업을 하기 위해 아카이브 파일 생성</li>
+  <li>기존 아카이브에서 파일을 추출
+<br />
+<br /></li>
+</ul>
+
+<h3 id="tartape-archive">tar(tape archive)</h3>
+
+<ul>
+  <li>파일과 디렉토리를 묶어 하나의 아카이브 파일 생성</li>
+  <li>형식 : tar 기능[옵션] [아카이브 파일] 파일명</li>
+  <li>기능 키
+    <ul>
+      <li>기능 키 앞에는 ‘–’ 기호를 사용하지 않아도 됨</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="/assets/img/unix/2020-04-06-unix-24-01.png" alt="" />
+<br /></p>
+
+<ul>
+  <li>
+    <p>옵션</p>
+
+    <ul>
+      <li>옵션 사용시 기능키와 결합하여 사용하며, ‘–’ 기호를 사용하지 않아도 되지만, 인자값이 있는 옵션을 여러 개
+  지정하는 경우에는 – 기호를 사용해야 함</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="/assets/img/unix/2020-04-06-unix-24-02.png" alt="" />
+<br /></p>
+
+<ul>
+  <li>
+    <p>사용 예</p>
+
+    <ul>
+      <li>tar cvf unix.tar Unix</li>
+      <li>tar xvf unix.tar
+  <br />
+  <br /></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="아카이브-생성하기--cvf">아카이브 생성하기 : cvf</h3>
+
+<ul>
+  <li>예제 파일 만들기</li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">mkdir</span> ~/ch9
+<span class="nv">$ </span><span class="nb">cd </span>ch9
+<span class="nv">$ </span><span class="nb">cp</span> /etc/hosts test1.txt
+<span class="nv">$ </span><span class="nb">cp </span>test1.txt test2.txt
+<span class="nv">$ </span><span class="nb">cp </span>test2.txt test3.txt
+<span class="nv">$ </span><span class="nb">mkdir </span>tmp
+<span class="nv">$ </span><span class="nb">cp</span> <span class="k">*</span>.txt tmp
+<span class="err">$</span>
+</code></pre></div></div>
+
+<ul>
+  <li>tar로 아카이브 생성</li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">tar </span>cvf txt.tar <span class="k">*</span>.txt
+test1.txt
+test2.txt
+test3.txt
+<span class="nv">$ </span><span class="nb">ls </span>txt.tar
+txt.tar
+<span class="err">$</span>
+</code></pre></div></div>
+
+<ul>
+  <li>c (create) : 아카이브 생성</li>
+  <li>v (verbose) : 처리 중인 파일의 이름을 화면에 출력</li>
+  <li>
+    <p>f (file)</p>
+
+    <ul>
+      <li>생성될 아카이브의 이름 지정</li>
+      <li>f 다음에 오는 이름이 아카이브 이름</li>
+      <li>파일 이름에는 제약이 없으나 .tar로 지정하는 것이 좋음</li>
+      <li>f가 지정되어 있으면 tar는 첫 번째 이름을 아카이브 이름으로, 두 번째부터 마지막 이름까지를 묶을 파일 이름으로 간주</li>
+    </ul>
+  </li>
+  <li>f 다음에 이름을 쓰지 않은 경우
+    <ul>
+      <li>쉘은 파일 이름에 사용된 특수 문자를 해석하여 tar에 전달</li>
+      <li>tar는 “tar cvf test1.txt test2.txt test3.txt”를 전달받아 test1.txt를 아카이브 이름으로, 2.txt와 3.txt를 묶을 대상 파일로 이해하고 처리</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">tar </span>cvf <span class="k">*</span>.txt
+test2.txt
+test3.txt
+<span class="err">$</span>
+</code></pre></div></div>
+
+<ul>
+  <li>디렉토리를 묶은 아카이브</li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">tar </span>cvf tmp.tar tmp
+tmp/
+tmp/test1.txt
+tmp/test2.txt
+tmp/test3.txt
+<span class="err">$</span>
+</code></pre></div></div>
+
+<ul>
+  <li>tar 명령으로 파일을 묶어 아카이브 파일을 만들어도 원본 파일은 그대로 유지됨</li>
+  <li>디스크 용량을 두 배로 차지
+<br />
+<br /></li>
+</ul>
+
+<h3 id="아카이브-생성-확인하기--tvf">아카이브 생성 확인하기 : tvf</h3>
+
+<ul>
+  <li>t (table of contents) : 생성된 아카이브 확인</li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">tar </span>tvf txt.tar
+<span class="nt">-rw-r--r--</span> ksshin/ksshin 221 2015-07-04 22:18 test1.txt
+<span class="nt">-rw-r--r--</span> ksshin/ksshin 221 2015-07-04 22:18 test2.txt
+<span class="nt">-rw-r--r--</span> ksshin/ksshin 221 2015-07-04 22:18 test3.txt
+<span class="err">$</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>파일의 상세 정보 : ls –l 명령의 결과와 비슷</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   - : 파일 종류 (b, c, d, l, s, p 등)
+   rw-r--r-- : 접근 권한
+   ksshin/ksshin : 파일 소유자와 파일의 소속 그룹.
+   숫자 : 파일 크기
+   날짜 : 파일을 마지막으로 수정한 일시
+   이름 : 파일명
+&lt;br&gt;
+&lt;br&gt;
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="아카이브-풀기--xvf">아카이브 풀기 : xvf</h3>
+
+<ul>
+  <li>x (extract) : 아카이브 풀기</li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">mkdir </span>temp
+<span class="nv">$ </span><span class="nb">cp </span>txt.tar temp
+<span class="nv">$ </span><span class="nb">cd </span>temp
+<span class="nv">$ </span><span class="nb">tar </span>xvf txt.tar
+test1.txt
+test2.txt
+test3.txt
+<span class="nv">$ </span><span class="nb">ls
+</span>test1.txt test2.txt test3.txt txt.tar
+<span class="err">$</span>
+</code></pre></div></div>
+
+<ul>
+  <li>아카이브 생성할 때 파일들은 저장한 원래의 경로에 복사됨</li>
+  <li>아카이브를 풀기 전에 t (tvf) 기능을 이용해 아카이브의 경로를 확인한 후 작업을 수행하는 것이 바람직</li>
+  <li>아카이브 생성할 때 절대경로를 지정하면, 아카이브 풀 때 현재 위치에 상관없이 원래 위치에 파일이 복사됨
+<br />
+<br /></li>
+</ul>
+
+<h3 id="아카이브-업데이트하기--uvf">아카이브 업데이트하기 : uvf</h3>
+
+<ul>
+  <li>u (update) : 아카이브 만든 이후, 일부 파일 내용이 바뀌었을 경우 사용</li>
+  <li>아카이브에 없는 파일이거나, 아카이브에 있는 파일이지만 수정된 파일일 경우 아카이브의 마지막에 추가됨</li>
+  <li>파일에 변경 사항이 없을 경우 u 기능을 지정하여 아카이브 수정해도 변동 사항 없음</li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">tar </span>uvf txt.tar test2.txt
+<span class="nv">$ </span><span class="nb">touch </span>test2.txt
+<span class="nv">$ </span><span class="nb">tar </span>uvf txt.tar test2.txt
+test2.txt
+<span class="nv">$ </span><span class="nb">tar </span>tvf txt.tar
+<span class="nt">-rw-r--r--</span> ksshin/ksshin 221 2015-07-04 22:18 test1.txt
+<span class="nt">-rw-r--r--</span> ksshin/ksshin 221 2015-07-04 22:18 test2.txt
+<span class="nt">-rw-r--r--</span> ksshin/ksshin 221 2015-07-04 22:18 test3.txt
+<span class="nt">-rw-r--r--</span> ksshin/ksshin 221 2015-07-05 06:08 test2.txt
+<span class="err">$</span>
+</code></pre></div></div>
+
+<ul>
+  <li>기존 파일에 변경 사항 없이 u 기능을 지정하여 아카이브를 수정하면 변동이 없음</li>
+  <li>touch 명령으로 test2.txt의 수정 시간 변경 후 u 기능을 사용하면 아카이브의 마지막에 파일이 추가됨</li>
+  <li>아카이브를 추출할 때 앞에서부터 순서대로 추출되므로 나중에 추가된 파일이 먼저 추출된 파일을 덮어쓰게 됨
+<br />
+<br /></li>
+</ul>
+
+<h3 id="파일-추가하기--rvf">파일 추가하기 : rvf</h3>
+
+<ul>
+  <li>r (replace) : 지정한 파일을 무조건 아카이브의 마지막에 추가</li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cp</span> /etc/services test.txt
+<span class="nv">$ </span><span class="nb">tar </span>rvf txt.tar test.txt
+test.txt
+<span class="nv">$ </span><span class="nb">tar </span>tvf txt.tar
+<span class="nt">-rw-r--r--</span> ksshin/ksshin 221 2015-07-04 22:18 test1.txt
+<span class="nt">-rw-r--r--</span> ksshin/ksshin 221 2015-07-04 22:18 test2.txt
+<span class="nt">-rw-r--r--</span> ksshin/ksshin 221 2015-07-04 22:18 test3.txt
+<span class="nt">-rw-r--r--</span> ksshin/ksshin 221 2015-07-05 06:08 test2.txt
+<span class="nt">-rw-r--r--</span> ksshin/ksshin 19558 2015-07-05 06:14 test.txt
+<span class="err">$</span>
+</code></pre></div></div>
+
+
+
+		<!-- buymeacoffee 버튼 -->
+		<div id="sponsor-button" style="text-align: center">
+			<a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/TWYGPxs">
+				<img src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg" alt="Buy me a coffee">
+				<span style="margin-left:15px;font-size:28px !important;">Buy me a coffee</span>
+			</a>
+		</div>
+
+
+		<!--<div class="kakao-ad-bottom">-->
+			<div>
+				<ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-rhg23mrcvho4" data-ad-width= "728" data-ad-height= "90"></ins>
+			</div>
+			<div>
+				<ins class="kakao_ad_area" style="display:none;" data-ad-unit    = "DAN-r1icduz054jb" data-ad-width   = "728" data-ad-height  = "90"></ins>
+			</div>
+			<div>
+				<ins class="kakao_ad_area" style="display:none;" data-ad-unit    = "DAN-1jy7ort537t4o" data-ad-width   = "728" data-ad-height  = "90"></ins>
+			</div>
+		<!--</div>-->
+
+		<aside class="comments" role="complementary">
+  <h2>Comments</h2>
+  <hr/>
+  <div id="disqus_thread"></div>
+  <script>
+    !function (s, i) {
+      function e(e) {
+        var t = s.pageYOffset || i.body.scrollTop;
+        s.DISQUS && !s._disqusThis && !s._disqusFirst && t + s.innerHeight >= s._disqusThreadOffsetTop && (s._disqusThis = !0, s.DISQUS.reset(
+          { reload: !0, config: d }))
+      }
+
+      var d = function () {
+        this.page.title = "[유닉스] 파일 아카이브 - tar 파일, &nbsp; .Z 파일",
+          this.page.identifier = "/devlog/2020/04/06/unix-24",
+          this.page.url = "https://m-veloper.github.io/devlog/2020/04/06/unix-24/"
+      };
+      s._disqusFirst = void 0 === s._disqusFirst || s._disqusFirst, s._disqusLoading = void 0 !== s._disqusLoading && s._disqusLoading, s._disqusThis = !1, s._disqusThreadOffsetTop = i.getElementById(
+        "disqus_thread").offsetTop, s._disqusLoading ? s._disqusFirst = !1 : (s._disqusLoading = !0, loadJSDeferred(
+        "//m-veloper.disqus.com/embed.js"), s.addEventListener ? s.addEventListener(
+        "scroll",
+        e,
+        { passive: !0 }) : s.attachEvent ? s.attachEvent("onscroll", e) : s.onscroll = e)
+    }(window, document);
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+</aside>
+
+	</div>
+</article>
+
+
+				</main>
+				<!-- 페이지 네이션-->
+				<div class="pagination-container">
+
+</div>
+			</div>
+			<div id="right-side-ad">
+				<div class="testAd">
+					<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+					<ins class="adsbygoogle"
+						 style="display:block"
+						 data-ad-client="ca-pub-9898399593070144"
+						 data-ad-slot="4781185980"
+						 data-ad-format="auto"
+						 data-full-width-responsive="true"></ins>
+					<script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+					</script>
+				</div>
+			</div>
+		</div>
+		  <!-- Footer -->
+	    <!--<footer class="footer"><span>@2020 - m_veloper</span></footer>-->
+<footer class="footer">
+  <div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div>
+        
+
+        
+        
+        <div class="sidebar-social">
+          <ul>
+  
+    
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="https://github.com/m-veloper">
+    <span class="icon-github" title="GitHub"></span>
+    <!--<span class="sr-only">GitHub</span>-->
+  </a>
+</li>
+
+  
+    
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="mailto:m_veloper@naver.com">
+    <span class="icon-mail" title="Email"></span>
+    <!--<span class="sr-only">Email</span>-->
+  </a>
+</li>
+
+  
+    
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="https://m-veloper.github.io/feed.xml">
+    <span class="icon-rss2" title="RSS"></span>
+    <!--<span class="sr-only">RSS</span>-->
+  </a>
+</li>
+
+  
+</ul>
+
+        </div>
+        
+      </div>
+      <div>
+        <!--<p><small> Copyright © 2020 | <a href="/" title="">m_veloper</a> | All rights reserved.</small></p>-->
+        <p>Copyright © 2020 | <a href="/" title="">m_veloper</a> | All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</footer>
+
+	    <!-- Script -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/assets/js/main.js"></script>
+<script src="/assets/js/load-js-deferred.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+<script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+<script data-ad-client="ca-pub-9898399593070144" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<!--<script src="/js/fontawesome/all.js"></script>-->
+
+<!--<script>-->
+  <!--var currentPosition = parseInt($("#left-side-ad, #right-side-ad").css("top"));-->
+  <!--$(window).scroll(function () {-->
+    <!--var position = $(window).scrollTop();-->
+    <!--$("#left-side-ad, #right-side-ad").stop().animate({ "top": position + currentPosition + "px" }, 1000);-->
+  <!--});-->
+<!--</script>-->
+
+
+
+
+
+	</div>
+</body>
+</html>

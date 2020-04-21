@@ -1,0 +1,1436 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<!-- Meta -->
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+	<meta name="generator" content="Jekyll">
+
+	<!--<title>[Database] MySQL 기본 명령어 - 데이터베이스 및 사용자 계정</title>-->
+	<title>슬기로운 개발 생활</title>
+
+	<!-- CSS & fonts -->
+	<link rel="stylesheet" href="/assets/css/main.css">
+	<link rel="stylesheet" href="/assets/icomoon/style.css">
+	<link href="http://cdn.jsdelivr.net/gh/joungkyun/font-d2coding/d2coding.css" rel="stylesheet" type="text/css">
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,900,400italic%7CSignika:700,300,400,600' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/default.min.css">
+
+	<!-- RSS -->
+	<link href="/atom.xml" type="application/atom+xml" rel="alternate" title="ATOM Feed" />
+	<!-- Script -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/assets/js/main.js"></script>
+<script src="/assets/js/load-js-deferred.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+<script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+<script data-ad-client="ca-pub-9898399593070144" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<!--<script src="/js/fontawesome/all.js"></script>-->
+
+<!--<script>-->
+  <!--var currentPosition = parseInt($("#left-side-ad, #right-side-ad").css("top"));-->
+  <!--$(window).scroll(function () {-->
+    <!--var position = $(window).scrollTop();-->
+    <!--$("#left-side-ad, #right-side-ad").stop().animate({ "top": position + currentPosition + "px" }, 1000);-->
+  <!--});-->
+<!--</script>-->
+
+
+
+
+
+
+
+
+  </head>
+
+
+<body>
+
+	<div id="wrap">
+	  	
+	  	<!-- Navigation -->
+	  	<nav id="nav">
+	<div id="nav-list">
+		<div class="sidebar-about">
+			<h2><a id="_title" href="/">슬기로운 개발 생활</a></h2>
+			<p>느리지만 가고있어요..</p>
+
+		</div>
+		<!--<a href="">Home</a>-->
+
+		<!-- 카테고리, 태그 메뉴-->
+		<div id="_sidebar" class="sidebar">
+			<div class="sidebar-sticky" role="banner">
+				<nav class="sidebar-nav heading" role="navigation">
+					<ul>
+						<li>
+							<div  class="list-wrapper">
+								<h3 class="sidebar-nav-item">Learn</h3>
+							</div>
+							<ul class="list-body">
+								<li>
+									<a class="sidebar-nav-subitem" href="/a_tags/database/">Database</a>
+								</li>
+								<li>
+									<a class="sidebar-nav-subitem" href="/a_tags/unix/">Unix</a>
+								</li>
+								<li>
+									<a class="sidebar-nav-subitem" href="/a_tags/sass/">Sass</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div  class="list-wrapper">
+								<h3 class="sidebar-nav-item">Review</h3>
+							</div>
+							<ul class="list-body">
+								<li>
+									<a class="sidebar-nav-subitem" href="/a_tags/goods/">Goods</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div  class="list-wrapper">
+								<h3 class="sidebar-nav-item">Tip</h3>
+							</div>
+							<ul class="list-body">
+								<li>
+									<a class="sidebar-nav-subitem" href="/a_tags/web/">Web</a>
+									<a class="sidebar-nav-subitem" href="/a_tags/etc/">Etc</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<!--<ul>-->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!--<li>-->
+						<!--<div  class="list-wrapper">-->
+							<!--&lt;!&ndash;<a class="sidebar-nav-item" href="/a_categories/devlog/">Devlog</a>&ndash;&gt;-->
+							<!--<h3 class="sidebar-nav-item">Devlog</h3>-->
+						<!--</div>-->
+						<!--<ul class="list-body">-->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/database/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/database/2/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/database/3/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/database/4/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/13/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/12/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/2/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/3/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/4/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/5/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/6/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/7/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/8/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/9/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/10/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/11/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/sass/index.html">Sass</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/sass/2/index.html">Sass</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/unix/4/index.html">Unix</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/unix/index.html">Unix</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/unix/2/index.html">Unix</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/unix/3/index.html">Unix</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+						<!--</ul>-->
+					<!--</li>-->
+					<!---->
+					<!---->
+					<!--<li>-->
+						<!--<div  class="list-wrapper">-->
+							<!--&lt;!&ndash;<a class="sidebar-nav-item" href="/a_categories/review/">Review</a>&ndash;&gt;-->
+							<!--<h3 class="sidebar-nav-item">Review</h3>-->
+						<!--</div>-->
+						<!--<ul class="list-body">-->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/goods/index.html">Goods</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+						<!--</ul>-->
+					<!--</li>-->
+					<!---->
+					<!---->
+					<!--<li>-->
+						<!--<div  class="list-wrapper">-->
+							<!--&lt;!&ndash;<a class="sidebar-nav-item" href="/a_categories/tip/">Tip</a>&ndash;&gt;-->
+							<!--<h3 class="sidebar-nav-item">Tip</h3>-->
+						<!--</div>-->
+						<!--<ul class="list-body">-->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/web/index.html">Web</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/web/2/index.html">Web</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/web/3/index.html">Web</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/web/4/index.html">Web</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/etc/index.html">Etc</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+						<!--</ul>-->
+					<!--</li>-->
+					<!---->
+				<!--</ul>-->
+				</nav>
+			</div>
+		</div>
+
+		<!-- Nav pages -->
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+    
+    <!-- Nav links -->
+	  <!--<a href="https://github.com/KingFelix/emerald/archive/master.zip">Download</a>-->
+<!--<a href="https://github.com/KingFelix/emerald">Project on Github</a>-->
+<!--<a href="https://github.com/KingFelix/emerald">Categories</a>-->
+
+	</div>
+  <!-- Nav footer -->
+	
+	  <footer>
+	
+	<!--<span>version 1.1.0</span>-->
+
+</footer>
+	
+</nav>
+
+    
+    <!-- Icon menu -->
+	  <a id="nav-menu">
+	  	<div id="menu"></div>
+	  </a>
+
+      <!-- Header -->
+      
+        <header id="header">
+	<a href="/">
+		<!--<img src="/img/emerald.svg" alt="Emerald Logo">-->
+		<h1 class="top">M</h1>
+	  <h1 class="bottom">veloper</h1>
+	</a>
+</header>
+
+      
+
+    <!-- Main content -->
+		<div class="main-layout">
+			<div id="left-side-ad">
+				<div class="testAd">
+					<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+					<ins class="adsbygoogle"
+						 style="display:block"
+						 data-ad-client="ca-pub-9898399593070144"
+						 data-ad-slot="1150677138"
+						 data-ad-format="auto"
+						 data-full-width-responsive="true"></ins>
+					<script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+					</script>
+				</div>
+			</div>
+			<div id="container">
+				<main>
+					<article id="post-page">
+	<h2 class="title">[Database] MySQL 기본 명령어 - 데이터베이스 및 사용자 계정</h2>
+	<a class="tag" href="" data-flip="title">
+		<time datetime="" class="by-line">2020년 03월 12일</time>
+	</a>
+	<hr>
+	<div class="content">
+		<!--<div class='kakao-ad-top'>-->
+			<!--<div>-->
+				<!--<ins class="kakao_ad_area" style="display:none;" data-ad-unit= "DAN-sksc2jl3lbhe" data-ad-width= "250" data-ad-height= "250"></ins>-->
+			<!--</div>-->
+			<!--<div>-->
+				<!--<ins class="kakao_ad_area" style="display:none;" data-ad-unit= "DAN-s13c6ao56o2p" data-ad-width= "250" data-ad-height= "250"></ins>-->
+			<!--</div>-->
+			<!--<div>-->
+				<!--<ins class="kakao_ad_area" style="display:none;" data-ad-unit= "DAN-to1sb755uomv" data-ad-width= "250" data-ad-height= "250"></ins>-->
+			<!--</div>-->
+		<!--</div>-->
+
+		<p><img src="/assets/img/database/2020/03/2020-03-12-database-16.png" alt="" /></p>
+
+<h1 id="mysql-기본-명령어---데이터베이스">MySQL 기본 명령어 - 데이터베이스</h1>
+
+<ul>
+  <li>본 포스팅은 Windows를 기준으로 작성되었습니다
+<br /></li>
+</ul>
+
+<h2 id="사용할-데이터베이스-지정하기">사용할 데이터베이스 지정하기</h2>
+
+<ul>
+  <li>
+    <p>A. 로그인시 지정하기</p>
+
+    <ul>
+      <li>Windows 프롬프트 상에서 사용</li>
+      <li>
+        <p>명령어 : mysql –u계정 –p비밀번호 데이터베이스명</p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    mysql -uroot -p mysql
+        
+    또는
+        
+    mysql -uroot -p1234 mysql
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>B. 로그인 후 지정하기</p>
+
+    <ul>
+      <li>MySQL 내의 “mysql&gt;” 프롬프트 상에서 사용</li>
+      <li>
+        <p>명령어 : use 데이터베이스명</p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  show databases;
+      
+  use mysql;
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="데이터베이스-및-테이블-리스트-보기">데이터베이스 및 테이블 리스트 보기</h2>
+
+<ul>
+  <li>
+    <p>A. 데이터베이스 리스트 보기</p>
+
+    <ul>
+      <li>
+        <p>명령어 : show databases;</p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    show databases;
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>B. 테이블 리스트 보기</p>
+
+    <ul>
+      <li>데이터베이스를 선택한 후 사용</li>
+      <li>
+        <p>명령어 : show tables;</p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    use mysql;
+        
+    show tables; 
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>C. 테이블 구조 살펴보기</p>
+
+    <ul>
+      <li>데이터베이스를 선택한 후 사용</li>
+      <li>
+        <p>명령어 : desc 데이블명;</p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  use mysql;
+        
+  desc user;
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="데이터베이스-생성-및-삭제">데이터베이스 생성 및 삭제</h2>
+
+<ul>
+  <li>
+    <p>A. 데이터베이스 생성</p>
+
+    <ul>
+      <li>
+        <p>명령어 : create database 데이터베이스명;</p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  show databases;
+         
+  create database testdatabase;
+        
+  show databases;
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>B. 데이터베이스 삭제</p>
+
+    <ul>
+      <li>
+        <p>명령어 : drop database 데이터베이스명;</p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     show databases;
+                      
+     drop database testdatabase;
+         
+     show databases;
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><br />
+<br /></p>
+
+<h1 id="mysql-기본-명령어---사용자-계정">MySQL 기본 명령어 - 사용자 계정</h1>
+<p><br /></p>
+
+<h2 id="사용자-계정-만들기">사용자 계정 만들기</h2>
+
+<ul>
+  <li>
+    <p>A. 현재 등록되어 있는 계정 확인하기</p>
+
+    <ul>
+      <li>mysql내의 user 테이블의 투플 확인</li>
+      <li>조회하고자하는 속성을 지정</li>
+      <li>
+        <p>명령어 : select 속성1, … , 속성n from user;</p>
+
+        <ul>
+          <li>
+            <p>전체 속성을 나타내기 위하여 * 사용</p>
+
+            <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  use mysql;
+        
+  select host, user, password frm user;
+</code></pre></div>            </div>
+
+            <ul>
+              <li>
+                <p>[참고]</p>
+
+                <ul>
+                  <li>localhost : 자기 자신의 컴퓨터</li>
+                  <li>password</li>
+                  <li>암호화되어 저장됨</li>
+                  <li>암호화된 것을 풀수 있는 방법은 제공되지 않음</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>B. 계정 만들기</p>
+
+    <ul>
+      <li>계정을 등록하는데 사용되는 테이블 : mysql 데이터베이스 내의 user와 db</li>
+      <li>명령어
+        <ul>
+          <li>
+            <p>비밀번호 없는 계정 만들기</p>
+
+            <ul>
+              <li>
+                <p>CREATE USER ‘계정이름’@’localhost’;</p>
+
+                <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  use mysql;
+           
+  select host, user, password frm user;
+           
+  create user 'kimc'@'localhost';
+           
+  select host, user, password frm user;
+</code></pre></div>                </div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>C. 비밀번호를 가진 계정 만들기</p>
+
+    <ul>
+      <li>
+        <p>CREATE USER ‘계정이름’@’localhost’ IDENTIFIED BY ‘비밀번호’;</p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    use mysql;
+        
+    select host, user, password frm user;
+        
+    create user 'kimc'@'localhost' identified by '1234';
+        
+    select host, user, password frm user;
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="사용자-계정에-권한-부여-및-삭제">사용자 계정에 권한 부여 및 삭제</h2>
+
+<ul>
+  <li>
+    <p>A. 지정한 계정에 특정 데이터베이스 접근 권한 주기</p>
+
+    <ul>
+      <li>
+        <p>(1) 주의 사항</p>
+
+        <ul>
+          <li>root 계정에서만 사용자 계정의 데이터베이스 접근 권한을 줄 수 있음</li>
+          <li>접근권한을 설정하기 전에는 데이터베이스에 접근 불가능</li>
+          <li>접근 권한을 부여하지 않은 데이터베이스에는 접근할 수 없음</li>
+        </ul>
+      </li>
+      <li>
+        <p>(2) 접근 권한 부여 전</p>
+
+        <ul>
+          <li>예
+            <ul>
+              <li>
+                <p>kimc 계정에 testdatabase 데이터베이스 접근 권한 부여 전</p>
+
+                <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  show databases;
+</code></pre></div>                </div>
+
+                <ul>
+                  <li>접근 가능한 데이터베이스 확인</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>(4) 접근 권한 부여 명령어</p>
+
+        <ul>
+          <li>
+            <p>명령어</p>
+
+            <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  insert into db values ( ‘localhost’, ‘데이터베이스명’, ‘계정’, ‘y’, ‘y’, ... ‘y’ );
+</code></pre></div>            </div>
+
+            <ul>
+              <li>총 19개의 ‘y’</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>(5) 시스템에 적용하기 전</p>
+
+        <ul>
+          <li>kimc 계정에 로그인</li>
+          <li>
+            <p>접근 가능한 데이터베이스 확인</p>
+
+            <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  use testdatabase
+</code></pre></div>            </div>
+
+            <ul>
+              <li>데이터베이스 사용 시도</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>(6) 변경된 설정 시스템에 적용하기</p>
+
+        <ul>
+          <li>db에 추가된 권한은 시스템에 자동으로 적용되지 않음</li>
+          <li>
+            <p>명령어 : flush privileges;</p>
+
+            <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  flush privileges;
+</code></pre></div>            </div>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li>
+    <p>B. 계정의 권한 설정</p>
+
+    <ul>
+      <li>user 테이블에 정의된 모든 권한을 계정에 부여</li>
+      <li>모든 데이터베이스에 적용됨</li>
+      <li>
+        <p>명령어</p>
+
+        <ul>
+          <li>
+            <p>GRANT ALL PRIVILEGES ON * .* TO ‘계정’@‘localhost’ WITH GRANT OPTION;</p>
+
+            <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  grant all privileges on * .* to 'kimc'@'localhost' with grant option;
+</code></pre></div>            </div>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="계정-비밀번호-변경하기">계정 비밀번호 변경하기</h2>
+
+<ul>
+  <li>
+    <p>계정 비밀번호는 user 테이블에 암호화되어 저장되어 있다.</p>
+  </li>
+  <li>
+    <p>비밀번호 변경은 user 테이블의 password 속성을 변경하는 것</p>
+  </li>
+  <li>
+    <p>암호화시키기 위하여 password( ) 함수를 사용</p>
+
+    <ul>
+      <li>
+        <p>(1) 계정의 비밀번호 변경</p>
+
+        <ul>
+          <li>명령어 : update user set password=password( ‘새비밀번호’ ) where user=’계정‘;</li>
+        </ul>
+      </li>
+      <li>
+        <p>(2) 변경된 비밀번호로 계정에 로그인하기</p>
+
+        <ul>
+          <li>
+            <p>변경된 설정을 시스템에 적용하기</p>
+
+            <ul>
+              <li>MySQL 내에서 flush privileges; 사용</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="계정-삭제하기">계정 삭제하기</h2>
+
+<ul>
+  <li>
+    <p>계정 정보는 user 테이블에 있으며, 삭제할 계정의 레코드(투플)을 삭제</p>
+  </li>
+  <li>
+    <p>명령어 : drop user ‘계정’@‘localhost’;</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  drop user 'kimc'@'localhost';
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+
+		<!-- buymeacoffee 버튼 -->
+		<div id="sponsor-button" style="text-align: center">
+			<a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/TWYGPxs">
+				<img src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg" alt="Buy me a coffee">
+				<span style="margin-left:15px;font-size:28px !important;">Buy me a coffee</span>
+			</a>
+		</div>
+
+
+		<!--<div class="kakao-ad-bottom">-->
+			<div>
+				<ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-rhg23mrcvho4" data-ad-width= "728" data-ad-height= "90"></ins>
+			</div>
+			<div>
+				<ins class="kakao_ad_area" style="display:none;" data-ad-unit    = "DAN-r1icduz054jb" data-ad-width   = "728" data-ad-height  = "90"></ins>
+			</div>
+			<div>
+				<ins class="kakao_ad_area" style="display:none;" data-ad-unit    = "DAN-1jy7ort537t4o" data-ad-width   = "728" data-ad-height  = "90"></ins>
+			</div>
+		<!--</div>-->
+
+		<aside class="comments" role="complementary">
+  <h2>Comments</h2>
+  <hr/>
+  <div id="disqus_thread"></div>
+  <script>
+    !function (s, i) {
+      function e(e) {
+        var t = s.pageYOffset || i.body.scrollTop;
+        s.DISQUS && !s._disqusThis && !s._disqusFirst && t + s.innerHeight >= s._disqusThreadOffsetTop && (s._disqusThis = !0, s.DISQUS.reset(
+          { reload: !0, config: d }))
+      }
+
+      var d = function () {
+        this.page.title = "[Database] MySQL 기본 명령어 - 데이터베이스 및 사용자 계정",
+          this.page.identifier = "/devlog/2020/03/12/database-16",
+          this.page.url = "https://m-veloper.github.io/devlog/2020/03/12/database-16/"
+      };
+      s._disqusFirst = void 0 === s._disqusFirst || s._disqusFirst, s._disqusLoading = void 0 !== s._disqusLoading && s._disqusLoading, s._disqusThis = !1, s._disqusThreadOffsetTop = i.getElementById(
+        "disqus_thread").offsetTop, s._disqusLoading ? s._disqusFirst = !1 : (s._disqusLoading = !0, loadJSDeferred(
+        "//m-veloper.disqus.com/embed.js"), s.addEventListener ? s.addEventListener(
+        "scroll",
+        e,
+        { passive: !0 }) : s.attachEvent ? s.attachEvent("onscroll", e) : s.onscroll = e)
+    }(window, document);
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+</aside>
+
+	</div>
+</article>
+
+
+				</main>
+				<!-- 페이지 네이션-->
+				<div class="pagination-container">
+
+</div>
+			</div>
+			<div id="right-side-ad">
+				<div class="testAd">
+					<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+					<ins class="adsbygoogle"
+						 style="display:block"
+						 data-ad-client="ca-pub-9898399593070144"
+						 data-ad-slot="4781185980"
+						 data-ad-format="auto"
+						 data-full-width-responsive="true"></ins>
+					<script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+					</script>
+				</div>
+			</div>
+		</div>
+		  <!-- Footer -->
+	    <!--<footer class="footer"><span>@2020 - m_veloper</span></footer>-->
+<footer class="footer">
+  <div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div>
+        
+
+        
+        
+        <div class="sidebar-social">
+          <ul>
+  
+    
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="https://github.com/m-veloper">
+    <span class="icon-github" title="GitHub"></span>
+    <!--<span class="sr-only">GitHub</span>-->
+  </a>
+</li>
+
+  
+    
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="mailto:m_veloper@naver.com">
+    <span class="icon-mail" title="Email"></span>
+    <!--<span class="sr-only">Email</span>-->
+  </a>
+</li>
+
+  
+    
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="https://m-veloper.github.io/feed.xml">
+    <span class="icon-rss2" title="RSS"></span>
+    <!--<span class="sr-only">RSS</span>-->
+  </a>
+</li>
+
+  
+</ul>
+
+        </div>
+        
+      </div>
+      <div>
+        <!--<p><small> Copyright © 2020 | <a href="/" title="">m_veloper</a> | All rights reserved.</small></p>-->
+        <p>Copyright © 2020 | <a href="/" title="">m_veloper</a> | All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</footer>
+
+	    <!-- Script -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/assets/js/main.js"></script>
+<script src="/assets/js/load-js-deferred.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+<script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+<script data-ad-client="ca-pub-9898399593070144" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<!--<script src="/js/fontawesome/all.js"></script>-->
+
+<!--<script>-->
+  <!--var currentPosition = parseInt($("#left-side-ad, #right-side-ad").css("top"));-->
+  <!--$(window).scroll(function () {-->
+    <!--var position = $(window).scrollTop();-->
+    <!--$("#left-side-ad, #right-side-ad").stop().animate({ "top": position + currentPosition + "px" }, 1000);-->
+  <!--});-->
+<!--</script>-->
+
+
+
+
+
+	</div>
+</body>
+</html>
