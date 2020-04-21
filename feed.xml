@@ -3,11 +3,404 @@
   <channel>
     <title>m_veloper</title>
     <description></description>
-    <link>https://m-veloper.github.io/</link>
-    <atom:link href="https://m-veloper.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 20 Apr 2020 20:28:55 +0900</pubDate>
-    <lastBuildDate>Mon, 20 Apr 2020 20:28:55 +0900</lastBuildDate>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 21 Apr 2020 20:44:22 +0900</pubDate>
+    <lastBuildDate>Tue, 21 Apr 2020 20:44:22 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>[유닉스] 파일 덤프 [ dd (data duplicate) ]</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-04-21-unix-37.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;dd-data-duplicate&quot;&gt;dd (data duplicate)&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;입력한 내용을 변환하여 출력&lt;/li&gt;
+  &lt;li&gt;형식 : dd [옵션] [if=입력파일] [of=출력파일]&lt;/li&gt;
+  &lt;li&gt;옵션
+    &lt;ul&gt;
+      &lt;li&gt;bs=n : 입출력 블록의 크기를 n 바이트로 지정 (기본 1블록 = 512바이트)&lt;/li&gt;
+      &lt;li&gt;conv=lcase : 알파벳을 소문자로 변환&lt;/li&gt;
+      &lt;li&gt;conv=ucase : 알파벳을 대문자로 변환&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;사용 예
+    &lt;ul&gt;
+      &lt;li&gt;dd bs=2 if=/dev/null of=test&lt;/li&gt;
+      &lt;li&gt;dd conv=lcase if=test1 of=test2&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;대소문자-전환하기&quot;&gt;대소문자 전환하기&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;변환 형식 옵션의 값을 lcase로 주면 test_cut 파일 내용을 소문자로 변환&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;    
+    &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dd&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;conv&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lcase&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test_cut&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;of&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test_dd1&lt;/span&gt;
+    &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;records&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt;
+    &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;records&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;out&lt;/span&gt;
+    &lt;span class=&quot;mi&quot;&gt;146&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bytes&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;146&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;copied&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.0132024&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;11.1&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;kB&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;more&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;test_dd1&lt;/span&gt;
+    &lt;span class=&quot;mo&quot;&gt;001&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;hong&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;gil&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dong&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;80&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;
+    &lt;span class=&quot;mo&quot;&gt;002&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;park&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ji&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sung&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;76&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;
+    &lt;span class=&quot;mo&quot;&gt;003&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cha&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;doo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ri&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;90&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;
+    &lt;span class=&quot;mo&quot;&gt;004&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;park&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;chan&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ho&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;88&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;
+    &lt;span class=&quot;mo&quot;&gt;005&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;kim&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;yun&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;50&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;
+    &lt;span class=&quot;mo&quot;&gt;006&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bae&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ji&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;48&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;
+    &lt;span class=&quot;mo&quot;&gt;007&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;han&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;so&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ri&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;49&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;다시 대문자로 바꾸려면 변환 형식을 ucase로 사용&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;    &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dd&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;conv&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ucase&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test_cut&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;of&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test_dd1&lt;/span&gt;
+    &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;records&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt;
+    &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;records&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;out&lt;/span&gt;
+    &lt;span class=&quot;mi&quot;&gt;146&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bytes&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;146&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;copied&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.00951814&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;15.3&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;kB&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;more&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;test_dd2&lt;/span&gt;
+    &lt;span class=&quot;mo&quot;&gt;001&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;HONG&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;GIL&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;DONG&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;80&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;M&lt;/span&gt;
+    &lt;span class=&quot;mo&quot;&gt;002&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;PARK&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;JI&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;SUNG&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;76&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;M&lt;/span&gt;
+    &lt;span class=&quot;mo&quot;&gt;003&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;CHA&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;DOO&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;RI&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;90&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;M&lt;/span&gt;
+    &lt;span class=&quot;mo&quot;&gt;004&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;PARK&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;CHAN&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;HO&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;88&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;M&lt;/span&gt;
+    &lt;span class=&quot;mo&quot;&gt;005&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;KIM&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;YUN&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;50&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;F&lt;/span&gt;
+    &lt;span class=&quot;mo&quot;&gt;006&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;BAE&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;SUE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;JI&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;48&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;F&lt;/span&gt;
+    &lt;span class=&quot;mo&quot;&gt;007&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;HAN&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;SO&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;RI&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;49&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;F&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
+    &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;파일-지우기&quot;&gt;파일 지우기&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;dd 명령을 이용해 파일의 내용을 지울 수 있음&lt;/li&gt;
+  &lt;li&gt;/dev/null 파일은 빈 파일&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;    &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dd&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/dev/nu&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ll&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;of&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test_dd2&lt;/span&gt;
+    &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;records&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt;
+    &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;records&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;out&lt;/span&gt;
+    &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bytes&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;copied&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.0139501&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.0&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;kB&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;more&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;test_dd2&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ls&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;test_dd2&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;test_dd2&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
+    &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+</description>
+        <pubDate>Tue, 21 Apr 2020 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/devlog/2020/04/21/unix-37/</link>
+        <guid isPermaLink="true">http://localhost:4000/devlog/2020/04/21/unix-37/</guid>
+        
+        <category>unix</category>
+        
+        
+        <category>devlog</category>
+        
+      </item>
+    
+      <item>
+        <title>[유닉스] 파일 연결하기 ( paste )</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-04-21-unix-36.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;paste&quot;&gt;paste&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;파일의 내용을 결합&lt;/li&gt;
+  &lt;li&gt;형식 : paste [옵션] 파일1 파일2&lt;/li&gt;
+  &lt;li&gt;옵션
+    &lt;ul&gt;
+      &lt;li&gt;-s :수평으로 붙임&lt;/li&gt;
+      &lt;li&gt;-d 문자 : 필드 구분자를 지정&lt;/li&gt;
+      &lt;li&gt;
+        &lt;ul&gt;
+          &lt;li&gt;: 파일 대신 표준 입력 사용&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;사용 예 : paste test1 test2 &amp;gt; res, paste –s test1 test2&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;파일-붙이기&quot;&gt;파일 붙이기&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;예제 파일 만들기&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;    
+    &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cut&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;–&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;test_cut&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;test_paste1&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cut&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;–&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;test_cut&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;test_paste2&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cat&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;test_paste1&lt;/span&gt;
+    &lt;span class=&quot;mo&quot;&gt;001&lt;/span&gt;
+    &lt;span class=&quot;mo&quot;&gt;002&lt;/span&gt;
+    &lt;span class=&quot;mo&quot;&gt;003&lt;/span&gt;
+    &lt;span class=&quot;mo&quot;&gt;004&lt;/span&gt;
+    &lt;span class=&quot;mo&quot;&gt;005&lt;/span&gt;
+    &lt;span class=&quot;mo&quot;&gt;006&lt;/span&gt;
+    &lt;span class=&quot;mo&quot;&gt;007&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cat&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;test_paste2&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;Hong&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Gil&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Dong&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;Park&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Ji&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Sung&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;Cha&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Doo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Ri&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;Park&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Chan&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Ho&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;Kim&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Yun&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;A&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;Bae&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Sue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Ji&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;Han&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;So&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Ri&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;옵션 없이 두 파일을 붙이면 앞의 파일 내용을 첫 번째 필드로, 뒤에 지정한 파일 내용을 두 번째 필드로 하여 두
+파일의 내용을 한 행씩 합친다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;    &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;paste&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;test_paste2&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;test_paste1&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;Hong&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Gil&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Dong&lt;/span&gt; &lt;span class=&quot;mo&quot;&gt;001&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;Park&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Ji&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Sung&lt;/span&gt; &lt;span class=&quot;mo&quot;&gt;002&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;Cha&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Doo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Ri&lt;/span&gt; &lt;span class=&quot;mo&quot;&gt;003&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;Park&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Chan&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Ho&lt;/span&gt; &lt;span class=&quot;mo&quot;&gt;004&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;Kim&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Yun&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;mo&quot;&gt;005&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;Bae&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Sue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Ji&lt;/span&gt; &lt;span class=&quot;mo&quot;&gt;006&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;Han&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;So&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Ri&lt;/span&gt; &lt;span class=&quot;mo&quot;&gt;007&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
+    &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;두 파일의 행 수가 다른 경우&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;    &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cat&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;test_paste3&lt;/span&gt;
+    &lt;span class=&quot;mo&quot;&gt;001&lt;/span&gt; &lt;span class=&quot;mo&quot;&gt;002&lt;/span&gt; &lt;span class=&quot;mo&quot;&gt;003&lt;/span&gt; &lt;span class=&quot;mo&quot;&gt;004&lt;/span&gt;
+    &lt;span class=&quot;mo&quot;&gt;005&lt;/span&gt; &lt;span class=&quot;mo&quot;&gt;006&lt;/span&gt; &lt;span class=&quot;mo&quot;&gt;007&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;D&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;paste&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;test_paste2&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;test_paste3&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;Hong&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Gil&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Dong&lt;/span&gt; &lt;span class=&quot;mo&quot;&gt;001&lt;/span&gt; &lt;span class=&quot;mo&quot;&gt;002&lt;/span&gt; &lt;span class=&quot;mo&quot;&gt;003&lt;/span&gt; &lt;span class=&quot;mo&quot;&gt;004&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;Park&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Ji&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Sung&lt;/span&gt; &lt;span class=&quot;mo&quot;&gt;005&lt;/span&gt; &lt;span class=&quot;mo&quot;&gt;006&lt;/span&gt; &lt;span class=&quot;mo&quot;&gt;007&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;Cha&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Doo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Ri&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;Park&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Chan&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Ho&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;Kim&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Yun&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;A&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;Bae&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Sue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Ji&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;Han&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;So&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Ri&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
+    &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;필드-구분자-지정해-붙이기---d&quot;&gt;필드 구분자 지정해 붙이기 : -d&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;두 파일을 붙일 때 –d 옵션을 이용해 필드 구분자를 추가할 수 있음&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;    &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;paste&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;–&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;d: &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test_paste1&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;test_paste2&lt;/span&gt;
+    &lt;span class=&quot;mo&quot;&gt;001&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:Hong&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Gil&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Dong&lt;/span&gt;
+    &lt;span class=&quot;mo&quot;&gt;002&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:Park&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Ji&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Sung&lt;/span&gt;
+    &lt;span class=&quot;mo&quot;&gt;003&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:ChaDoo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Ri&lt;/span&gt;
+    &lt;span class=&quot;mo&quot;&gt;004&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:Park&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Chan&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Ho&lt;/span&gt;
+    &lt;span class=&quot;mo&quot;&gt;005&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:Kim&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Yun&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;A&lt;/span&gt;
+    &lt;span class=&quot;mo&quot;&gt;006&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:Bae&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Sue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Ji&lt;/span&gt;
+    &lt;span class=&quot;mo&quot;&gt;007&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:Han&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;So&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Ri&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
+    &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;파일-수평-붙이기---s&quot;&gt;파일 수평 붙이기 : -s&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;두 파일의 내용이 필드가 아닌 연속된 파일의 부분일 경우 원래대로 합치기&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;    &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;paste&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;–&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;test_paste1&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;test_paste2&lt;/span&gt;
+    &lt;span class=&quot;mo&quot;&gt;001&lt;/span&gt; &lt;span class=&quot;mo&quot;&gt;002&lt;/span&gt; &lt;span class=&quot;mo&quot;&gt;003&lt;/span&gt; &lt;span class=&quot;mo&quot;&gt;004&lt;/span&gt; &lt;span class=&quot;mo&quot;&gt;005&lt;/span&gt; &lt;span class=&quot;mo&quot;&gt;006&lt;/span&gt; &lt;span class=&quot;mo&quot;&gt;007&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;Hong&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Gil&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Dong&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Park&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Ji&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Sung&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Cha&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Doo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Ri&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Park&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;Chan&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Ho&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Kim&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Yun&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Bae&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Sue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Ji&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Han&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;So&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Ri&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
+    &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+</description>
+        <pubDate>Tue, 21 Apr 2020 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/devlog/2020/04/21/unix-36/</link>
+        <guid isPermaLink="true">http://localhost:4000/devlog/2020/04/21/unix-36/</guid>
+        
+        <category>unix</category>
+        
+        
+        <category>devlog</category>
+        
+      </item>
+    
+      <item>
+        <title>[유닉스] 필드 잘라내기 ( cut )</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-04-21-unix-35.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;cut&quot;&gt;cut&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;파일의 선택된 필드를 추출&lt;/li&gt;
+  &lt;li&gt;형식 : cut [옵션] [파일]&lt;/li&gt;
+  &lt;li&gt;옵션
+    &lt;ul&gt;
+      &lt;li&gt;-c 리스트 : 각 행에서 잘라낸 문자의 위치를 지정&lt;/li&gt;
+      &lt;li&gt;-f 필드번호 : 지정한 필드를 잘라냄&lt;/li&gt;
+      &lt;li&gt;-d 문자 : 필드 구분자&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;사용 예
+    &lt;ul&gt;
+      &lt;li&gt;cut –c 1-3 test&lt;/li&gt;
+      &lt;li&gt;cut –f 3 test&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;문자-추출---c&quot;&gt;문자 추출 : -c&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;예제 파일 만들기
+    &lt;ul&gt;
+      &lt;li&gt;cut 명령은 탭으로 구분되어야 다른 필드로 인식&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;    
+    &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cp&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;test_sort2&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;test_cut&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cat&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;test_cut&lt;/span&gt;
+    &lt;span class=&quot;mo&quot;&gt;001&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Hong&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Gil&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Dong&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;80&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;M&lt;/span&gt;
+    &lt;span class=&quot;mo&quot;&gt;002&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Park&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Ji&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Sung&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;76&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;M&lt;/span&gt;
+    &lt;span class=&quot;mo&quot;&gt;003&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Cha&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Doo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Ri&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;90&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;M&lt;/span&gt;
+    &lt;span class=&quot;mo&quot;&gt;004&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Park&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Chan&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Ho&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;88&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;M&lt;/span&gt;
+    &lt;span class=&quot;mo&quot;&gt;005&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Kim&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Yun&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;50&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;F&lt;/span&gt;
+    &lt;span class=&quot;mo&quot;&gt;006&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Bae&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Sue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Ji&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;48&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;F&lt;/span&gt;
+    &lt;span class=&quot;mo&quot;&gt;007&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Han&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;So&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Ri&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;49&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;F&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;파일에서 원하는 문자열 추출
+    &lt;ul&gt;
+      &lt;li&gt;5번째에서 8번째 문자열까지 추출하는 예제&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;    &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cut&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;–&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;test_cut&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;Hong&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;Park&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;Cha&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;Park&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;Kim&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;Bae&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;Han&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
+    &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;who를 이용해 시스템에 접속 중인 사용자의 이름만 추출&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;    &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;who&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cut&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;–&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sort&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;ksshin&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;ksshin&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;ksshin&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;ksshin&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;user1&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
+    &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;필드-추출---f&quot;&gt;필드 추출 : -f&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;cut 명령은 문자열보다 필드 추출에 더 많이 사용&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;    &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cut&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;–&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;test_cut&lt;/span&gt;
+    &lt;span class=&quot;mo&quot;&gt;001&lt;/span&gt;
+    &lt;span class=&quot;mo&quot;&gt;002&lt;/span&gt;
+    &lt;span class=&quot;mo&quot;&gt;003&lt;/span&gt;
+    &lt;span class=&quot;mo&quot;&gt;004&lt;/span&gt;
+    &lt;span class=&quot;mo&quot;&gt;005&lt;/span&gt;
+    &lt;span class=&quot;mo&quot;&gt;006&lt;/span&gt;
+    &lt;span class=&quot;mo&quot;&gt;007&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
+    &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;데이터 파일에서 성과 이름이 필요하면 2번과 3번 필드를 추출&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;    &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cut&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;–&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;test_cut&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;Hong&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Gil&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Dong&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;Park&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Ji&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Sung&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;Cha&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Doo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Ri&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;Park&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Chan&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Ho&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;Kim&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Yun&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;A&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;Bae&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Sue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Ji&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;Han&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;So&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Ri&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
+    &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;필드-구분자-지정---d&quot;&gt;필드 구분자 지정 : -d&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;필드 구분자로 탭이 아닌 다른 문자사용 가능
+    &lt;ul&gt;
+      &lt;li&gt;/etc/passwd 파일의 첫 번째 필드를 추출하는 예제&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;    &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cut&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;–&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;d: &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;etc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;passwd&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;more&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;daemon&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;bin&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;sys&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;sync&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;......&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
+    &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;파일의 내용이 탭이 아닌 공백으로 구분되어 있으면 공백을 필드 구분자로 지정&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;    &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cut&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;–&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;’&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;‘&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;test_sort2&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;Hong&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;Park&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;Cha&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;Park&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;Kim&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;Bae&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;Han&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
+    &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+</description>
+        <pubDate>Tue, 21 Apr 2020 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/devlog/2020/04/21/unix-35/</link>
+        <guid isPermaLink="true">http://localhost:4000/devlog/2020/04/21/unix-35/</guid>
+        
+        <category>unix</category>
+        
+        
+        <category>devlog</category>
+        
+      </item>
     
       <item>
         <title>[유닉스] 중복 삭제 ( uniq )</title>
@@ -127,8 +520,8 @@
 
 </description>
         <pubDate>Mon, 20 Apr 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/04/20/unix-34/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/20/unix-34/</guid>
+        <link>http://localhost:4000/devlog/2020/04/20/unix-34/</link>
+        <guid isPermaLink="true">http://localhost:4000/devlog/2020/04/20/unix-34/</guid>
         
         <category>unix</category>
         
@@ -205,8 +598,8 @@
     &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 </description>
         <pubDate>Mon, 20 Apr 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/04/20/unix-33/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/20/unix-33/</guid>
+        <link>http://localhost:4000/devlog/2020/04/20/unix-33/</link>
+        <guid isPermaLink="true">http://localhost:4000/devlog/2020/04/20/unix-33/</guid>
         
         <category>unix</category>
         
@@ -446,8 +839,8 @@
 
 </description>
         <pubDate>Mon, 20 Apr 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/04/20/unix-32/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/20/unix-32/</guid>
+        <link>http://localhost:4000/devlog/2020/04/20/unix-32/</link>
+        <guid isPermaLink="true">http://localhost:4000/devlog/2020/04/20/unix-32/</guid>
         
         <category>unix</category>
         
@@ -715,8 +1108,8 @@
 
 </description>
         <pubDate>Sun, 19 Apr 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/04/19/unix-31/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/19/unix-31/</guid>
+        <link>http://localhost:4000/devlog/2020/04/19/unix-31/</link>
+        <guid isPermaLink="true">http://localhost:4000/devlog/2020/04/19/unix-31/</guid>
         
         <category>unix</category>
         
@@ -866,8 +1259,8 @@
 
 </description>
         <pubDate>Sat, 18 Apr 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/04/18/database-37/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/18/database-37/</guid>
+        <link>http://localhost:4000/devlog/2020/04/18/database-37/</link>
+        <guid isPermaLink="true">http://localhost:4000/devlog/2020/04/18/database-37/</guid>
         
         <category>database</category>
         
@@ -928,8 +1321,8 @@
 
 </description>
         <pubDate>Sat, 18 Apr 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/04/18/database-36/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/18/database-36/</guid>
+        <link>http://localhost:4000/devlog/2020/04/18/database-36/</link>
+        <guid isPermaLink="true">http://localhost:4000/devlog/2020/04/18/database-36/</guid>
         
         <category>database</category>
         
@@ -970,8 +1363,8 @@
 &lt;br /&gt;&lt;/p&gt;
 </description>
         <pubDate>Sat, 18 Apr 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/04/18/database-35/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/18/database-35/</guid>
+        <link>http://localhost:4000/devlog/2020/04/18/database-35/</link>
+        <guid isPermaLink="true">http://localhost:4000/devlog/2020/04/18/database-35/</guid>
         
         <category>database</category>
         
@@ -1044,8 +1437,8 @@
 &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-18-database-34-04.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Sat, 18 Apr 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/04/18/database-34/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/18/database-34/</guid>
+        <link>http://localhost:4000/devlog/2020/04/18/database-34/</link>
+        <guid isPermaLink="true">http://localhost:4000/devlog/2020/04/18/database-34/</guid>
         
         <category>database</category>
         
@@ -1300,8 +1693,8 @@
 
 </description>
         <pubDate>Fri, 17 Apr 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/04/17/unix-30/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/17/unix-30/</guid>
+        <link>http://localhost:4000/devlog/2020/04/17/unix-30/</link>
+        <guid isPermaLink="true">http://localhost:4000/devlog/2020/04/17/unix-30/</guid>
         
         <category>unix</category>
         
@@ -1553,8 +1946,8 @@
 &lt;/ul&gt;
 </description>
         <pubDate>Fri, 17 Apr 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/04/17/unix-29/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/17/unix-29/</guid>
+        <link>http://localhost:4000/devlog/2020/04/17/unix-29/</link>
+        <guid isPermaLink="true">http://localhost:4000/devlog/2020/04/17/unix-29/</guid>
         
         <category>unix</category>
         
@@ -1732,8 +2125,8 @@
 
 </description>
         <pubDate>Thu, 16 Apr 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/04/16/unix-28/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/16/unix-28/</guid>
+        <link>http://localhost:4000/devlog/2020/04/16/unix-28/</link>
+        <guid isPermaLink="true">http://localhost:4000/devlog/2020/04/16/unix-28/</guid>
         
         <category>unix</category>
         
@@ -1865,8 +2258,8 @@
 
 </description>
         <pubDate>Wed, 15 Apr 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/04/15/unix-27/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/15/unix-27/</guid>
+        <link>http://localhost:4000/devlog/2020/04/15/unix-27/</link>
+        <guid isPermaLink="true">http://localhost:4000/devlog/2020/04/15/unix-27/</guid>
         
         <category>unix</category>
         
@@ -1949,8 +2342,8 @@
 
 </description>
         <pubDate>Tue, 14 Apr 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/04/14/database-33/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/14/database-33/</guid>
+        <link>http://localhost:4000/devlog/2020/04/14/database-33/</link>
+        <guid isPermaLink="true">http://localhost:4000/devlog/2020/04/14/database-33/</guid>
         
         <category>database</category>
         
@@ -1995,8 +2388,8 @@
 
 </description>
         <pubDate>Mon, 13 Apr 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/04/13/database-32/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/13/database-32/</guid>
+        <link>http://localhost:4000/devlog/2020/04/13/database-32/</link>
+        <guid isPermaLink="true">http://localhost:4000/devlog/2020/04/13/database-32/</guid>
         
         <category>database</category>
         
@@ -2112,8 +2505,8 @@ orders.qty )와 주문일 ( orders.date )를 검색하시오.
 &lt;br /&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 13 Apr 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/04/13/database-31/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/13/database-31/</guid>
+        <link>http://localhost:4000/devlog/2020/04/13/database-31/</link>
+        <guid isPermaLink="true">http://localhost:4000/devlog/2020/04/13/database-31/</guid>
         
         <category>database</category>
         
@@ -2203,8 +2596,8 @@ orders.qty )와 주문일 ( orders.date )를 검색하시오.
 &lt;br /&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 13 Apr 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/04/13/database-30/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/13/database-30/</guid>
+        <link>http://localhost:4000/devlog/2020/04/13/database-30/</link>
+        <guid isPermaLink="true">http://localhost:4000/devlog/2020/04/13/database-30/</guid>
         
         <category>database</category>
         
@@ -2303,8 +2696,8 @@ orders.qty )와 주문일 ( orders.date )를 검색하시오.
 
 </description>
         <pubDate>Mon, 13 Apr 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/04/13/database-29/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/13/database-29/</guid>
+        <link>http://localhost:4000/devlog/2020/04/13/database-29/</link>
+        <guid isPermaLink="true">http://localhost:4000/devlog/2020/04/13/database-29/</guid>
         
         <category>database</category>
         
@@ -2389,8 +2782,8 @@ orders.qty )와 주문일 ( orders.date )를 검색하시오.
 
 </description>
         <pubDate>Fri, 10 Apr 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/tip/2020/04/10/tip-javascript-18/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/04/10/tip-javascript-18/</guid>
+        <link>http://localhost:4000/tip/2020/04/10/tip-javascript-18/</link>
+        <guid isPermaLink="true">http://localhost:4000/tip/2020/04/10/tip-javascript-18/</guid>
         
         <category>javascript</category>
         
@@ -2434,8 +2827,8 @@ orders.qty )와 주문일 ( orders.date )를 검색하시오.
 
 </description>
         <pubDate>Fri, 10 Apr 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/tip/2020/04/10/tip-javascript-17/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/04/10/tip-javascript-17/</guid>
+        <link>http://localhost:4000/tip/2020/04/10/tip-javascript-17/</link>
+        <guid isPermaLink="true">http://localhost:4000/tip/2020/04/10/tip-javascript-17/</guid>
         
         <category>javascript</category>
         
@@ -2463,8 +2856,8 @@ orders.qty )와 주문일 ( orders.date )를 검색하시오.
 
 </description>
         <pubDate>Wed, 08 Apr 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/tip/2020/04/08/tip-life-03/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/04/08/tip-life-03/</guid>
+        <link>http://localhost:4000/tip/2020/04/08/tip-life-03/</link>
+        <guid isPermaLink="true">http://localhost:4000/tip/2020/04/08/tip-life-03/</guid>
         
         <category>life</category>
         
@@ -2483,8 +2876,8 @@ orders.qty )와 주문일 ( orders.date )를 검색하시오.
 
 </description>
         <pubDate>Wed, 08 Apr 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/tip/2020/04/08/tip-life-02/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/04/08/tip-life-02/</guid>
+        <link>http://localhost:4000/tip/2020/04/08/tip-life-02/</link>
+        <guid isPermaLink="true">http://localhost:4000/tip/2020/04/08/tip-life-02/</guid>
         
         <category>life</category>
         
@@ -2627,8 +3020,8 @@ me 클래스를 가진 요소의 이전에 있는 형제 요소를 모두 선택
 
 </description>
         <pubDate>Wed, 08 Apr 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/tip/2020/04/08/tip-javascript-16/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/04/08/tip-javascript-16/</guid>
+        <link>http://localhost:4000/tip/2020/04/08/tip-javascript-16/</link>
+        <guid isPermaLink="true">http://localhost:4000/tip/2020/04/08/tip-javascript-16/</guid>
         
         <category>javascript</category>
         
@@ -2668,8 +3061,8 @@ me 클래스를 가진 요소의 이전에 있는 형제 요소를 모두 선택
 
 </description>
         <pubDate>Wed, 08 Apr 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/tip/2020/04/08/tip-javascript-15/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/04/08/tip-javascript-15/</guid>
+        <link>http://localhost:4000/tip/2020/04/08/tip-javascript-15/</link>
+        <guid isPermaLink="true">http://localhost:4000/tip/2020/04/08/tip-javascript-15/</guid>
         
         <category>javascript</category>
         
@@ -2735,8 +3128,8 @@ me 클래스를 가진 요소의 이전에 있는 형제 요소를 모두 선택
 
 </description>
         <pubDate>Tue, 07 Apr 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/tip/2020/04/07/tip-javascript-14/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/04/07/tip-javascript-14/</guid>
+        <link>http://localhost:4000/tip/2020/04/07/tip-javascript-14/</link>
+        <guid isPermaLink="true">http://localhost:4000/tip/2020/04/07/tip-javascript-14/</guid>
         
         <category>javascript</category>
         
@@ -2797,8 +3190,8 @@ me 클래스를 가진 요소의 이전에 있는 형제 요소를 모두 선택
 
 </description>
         <pubDate>Tue, 07 Apr 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/tip/2020/04/07/tip-css-03/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/04/07/tip-css-03/</guid>
+        <link>http://localhost:4000/tip/2020/04/07/tip-css-03/</link>
+        <guid isPermaLink="true">http://localhost:4000/tip/2020/04/07/tip-css-03/</guid>
         
         <category>css</category>
         
@@ -3118,8 +3511,8 @@ me 클래스를 가진 요소의 이전에 있는 형제 요소를 모두 선택
 
 </description>
         <pubDate>Mon, 06 Apr 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/04/06/unix-26/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/06/unix-26/</guid>
+        <link>http://localhost:4000/devlog/2020/04/06/unix-26/</link>
+        <guid isPermaLink="true">http://localhost:4000/devlog/2020/04/06/unix-26/</guid>
         
         <category>unix</category>
         
@@ -3238,404 +3631,8 @@ me 클래스를 가진 요소의 이전에 있는 형제 요소를 모두 선택
 &lt;/ul&gt;
 </description>
         <pubDate>Mon, 06 Apr 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/04/06/unix-25/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/06/unix-25/</guid>
-        
-        <category>unix</category>
-        
-        
-        <category>devlog</category>
-        
-      </item>
-    
-      <item>
-        <title>[유닉스] 파일 아카이브 - tar 파일, &amp;nbsp; .Z 파일</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-04-06-unix-24.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;파일-아카이브&quot;&gt;파일 아카이브&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;아카이브 : 보관소, 저장소&lt;/li&gt;
-  &lt;li&gt;파일 아카이브 : 파일을 묶어 하나로 만든 것&lt;/li&gt;
-  &lt;li&gt;과거 : 여러 파일이나 디렉토리를 묶어 이동식 저장 장치에 보관하기 위해 사용되었음&lt;/li&gt;
-  &lt;li&gt;다른 시스템과 파일을 주고받거나, 백업을 하기 위해 아카이브 파일 생성&lt;/li&gt;
-  &lt;li&gt;기존 아카이브에서 파일을 추출
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;tartape-archive&quot;&gt;tar(tape archive)&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;파일과 디렉토리를 묶어 하나의 아카이브 파일 생성&lt;/li&gt;
-  &lt;li&gt;형식 : tar 기능[옵션] [아카이브 파일] 파일명&lt;/li&gt;
-  &lt;li&gt;기능 키
-    &lt;ul&gt;
-      &lt;li&gt;기능 키 앞에는 ‘–’ 기호를 사용하지 않아도 됨&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-04-06-unix-24-01.png&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;옵션&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;옵션 사용시 기능키와 결합하여 사용하며, ‘–’ 기호를 사용하지 않아도 되지만, 인자값이 있는 옵션을 여러 개
-  지정하는 경우에는 – 기호를 사용해야 함&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-04-06-unix-24-02.png&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;사용 예&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;tar cvf unix.tar Unix&lt;/li&gt;
-      &lt;li&gt;tar xvf unix.tar
-  &lt;br /&gt;
-  &lt;br /&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;아카이브-생성하기--cvf&quot;&gt;아카이브 생성하기 : cvf&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;예제 파일 만들기&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ mkdir ~/ch9
-  $ cd ch9
-  $ cp /etc/hosts test1.txt
-  $ cp test1.txt test2.txt
-  $ cp test2.txt test3.txt
-  $ mkdir tmp
-  $ cp *.txt tmp
-  $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;tar로 아카이브 생성&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ tar cvf txt.tar *.txt
-  test1.txt
-  test2.txt
-  test3.txt
-  $ ls txt.tar
-  txt.tar
-  $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;c (create) : 아카이브 생성&lt;/li&gt;
-  &lt;li&gt;v (verbose) : 처리 중인 파일의 이름을 화면에 출력&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;f (file)&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;생성될 아카이브의 이름 지정&lt;/li&gt;
-      &lt;li&gt;f 다음에 오는 이름이 아카이브 이름&lt;/li&gt;
-      &lt;li&gt;파일 이름에는 제약이 없으나 .tar로 지정하는 것이 좋음&lt;/li&gt;
-      &lt;li&gt;f가 지정되어 있으면 tar는 첫 번째 이름을 아카이브 이름으로, 두 번째부터 마지막 이름까지를 묶을 파일 이름으로 간주&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;f 다음에 이름을 쓰지 않은 경우&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ tar cvf *.txt
-  test2.txt
-  test3.txt
-  $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;쉘은 파일 이름에 사용된 특수 문자를 해석하여 tar에 전달&lt;/li&gt;
-      &lt;li&gt;tar는 “tar cvf test1.txt test2.txt test3.txt”를 전달받아 test1.txt를 아카이브 이름으로, 2.txt와 3.txt를 묶을 대상 파일로 이해하고 처리&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;디렉토리를 묶은 아카이브&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ tar cvf tmp.tar tmp
-  tmp/
-  tmp/test1.txt
-  tmp/test2.txt
-  tmp/test3.txt
-  $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;tar 명령으로 파일을 묶어 아카이브 파일을 만들어도 원본 파일은 그대로 유지됨&lt;/li&gt;
-  &lt;li&gt;디스크 용량을 두 배로 차지
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;아카이브-생성-확인하기--tvf&quot;&gt;아카이브 생성 확인하기 : tvf&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;t (table of contents) : 생성된 아카이브 확인&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ tar tvf txt.tar
-  -rw-r--r-- ksshin/ksshin 221 2015-07-04 22:18 test1.txt
-  -rw-r--r-- ksshin/ksshin 221 2015-07-04 22:18 test2.txt
-  -rw-r--r-- ksshin/ksshin 221 2015-07-04 22:18 test3.txt
-  $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;파일의 상세 정보 : ls –l 명령의 결과와 비슷&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   - : 파일 종류 (b, c, d, l, s, p 등)
-   rw-r--r-- : 접근 권한
-   ksshin/ksshin : 파일 소유자와 파일의 소속 그룹.
-   숫자 : 파일 크기
-   날짜 : 파일을 마지막으로 수정한 일시
-   이름 : 파일명
-&amp;lt;br&amp;gt;
-&amp;lt;br&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;아카이브-풀기--xvf&quot;&gt;아카이브 풀기 : xvf&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;x (extract) : 아카이브 풀기&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ mkdir temp
-  $ cp txt.tar temp
-  $ cd temp
-  $ tar xvf txt.tar
-  test1.txt
-  test2.txt
-  test3.txt
-  $ ls
-  test1.txt test2.txt test3.txt txt.tar
-  $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;아카이브 생성할 때 파일들은 저장한 원래의 경로에 복사됨&lt;/li&gt;
-  &lt;li&gt;아카이브를 풀기 전에 t (tvf) 기능을 이용해 아카이브의 경로를 확인한 후 작업을 수행하는 것이 바람직&lt;/li&gt;
-  &lt;li&gt;아카이브 생성할 때 절대경로를 지정하면, 아카이브 풀 때 현재 위치에 상관없이 원래 위치에 파일이 복사됨
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;아카이브-업데이트하기--uvf&quot;&gt;아카이브 업데이트하기 : uvf&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;u (update) : 아카이브 만든 이후, 일부 파일 내용이 바뀌었을 경우 사용&lt;/li&gt;
-  &lt;li&gt;아카이브에 없는 파일이거나, 아카이브에 있는 파일이지만 수정된 파일일 경우 아카이브의 마지막에 추가됨&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;파일에 변경 사항이 없을 경우 u 기능을 지정하여 아카이브 수정해도 변동 사항 없음&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ tar uvf txt.tar test2.txt
-  $ touch test2.txt
-  $ tar uvf txt.tar test2.txt
-  test2.txt
-  $ tar tvf txt.tar
-  -rw-r--r-- ksshin/ksshin 221 2015-07-04 22:18 test1.txt
-  -rw-r--r-- ksshin/ksshin 221 2015-07-04 22:18 test2.txt
-  -rw-r--r-- ksshin/ksshin 221 2015-07-04 22:18 test3.txt
-  -rw-r--r-- ksshin/ksshin 221 2015-07-05 06:08 test2.txt
-  $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;기존 파일에 변경 사항 없이 u 기능을 지정하여 아카이브를 수정하면 변동이 없음&lt;/li&gt;
-  &lt;li&gt;touch 명령으로 test2.txt의 수정 시간 변경 후 u 기능을 사용하면 아카이브의 마지막에 파일이 추가됨&lt;/li&gt;
-  &lt;li&gt;아카이브를 추출할 때 앞에서부터 순서대로 추출되므로 나중에 추가된 파일이 먼저 추출된 파일을 덮어쓰게 됨
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;파일-추가하기--rvf&quot;&gt;파일 추가하기 : rvf&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;r (replace) : 지정한 파일을 무조건 아카이브의 마지막에 추가&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ cp /etc/services test.txt
-  $ tar rvf txt.tar test.txt
-  test.txt
-  $ tar tvf txt.tar
-  -rw-r--r-- ksshin/ksshin 221 2015-07-04 22:18 test1.txt
-  -rw-r--r-- ksshin/ksshin 221 2015-07-04 22:18 test2.txt
-  -rw-r--r-- ksshin/ksshin 221 2015-07-04 22:18 test3.txt
-  -rw-r--r-- ksshin/ksshin 221 2015-07-05 06:08 test2.txt
-  -rw-r--r-- ksshin/ksshin 19558 2015-07-05 06:14 test.txt
-  $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-</description>
-        <pubDate>Mon, 06 Apr 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/04/06/unix-24/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/06/unix-24/</guid>
-        
-        <category>unix</category>
-        
-        
-        <category>devlog</category>
-        
-      </item>
-    
-      <item>
-        <title>시나공 컴활(컴퓨터활용능력) 시험 1급 필기 핵심요약</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/life/2020-04-06-tip-life-01.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;시나공-컴활컴퓨터활용능력-시험-1급-필기-핵심요약&quot;&gt;시나공 컴활(컴퓨터활용능력) 시험 1급 필기 핵심요약&lt;/h2&gt;
-
-&lt;p&gt;다운로드 클릭 ===&amp;gt; &lt;a href=&quot;https://mi-nya.tistory.com/90&quot;&gt;컴활1급 필기 요약본 다운로드&lt;/a&gt;&lt;/p&gt;
-
-</description>
-        <pubDate>Mon, 06 Apr 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/tip/2020/04/06/tip-life-01/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/04/06/tip-life-01/</guid>
-        
-        <category>life</category>
-        
-        
-        <category>tip</category>
-        
-      </item>
-    
-      <item>
-        <title>[유닉스] 파일 시스템 마운트 와 복구</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-04-05-unix-23.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;파일-시스템-마운트&quot;&gt;파일 시스템 마운트&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;유닉스 시스템은 주변장치를 파일로 취급&lt;/li&gt;
-  &lt;li&gt;마이크로소프트의 윈도우즈에서는 장치들이 시스템 부팅 시 자동으로 인식되거나, 새로 연결한 하드웨어도 PnP(Plug and Play) 기능에 의해 자동 인식됨&lt;/li&gt;
-  &lt;li&gt;유닉스는 주변장치 사용을 위해 시스템 부팅 후 mount 명령을 이용해 수동으로 작업. 작업 후 umount시켜야 함&lt;/li&gt;
-  &lt;li&gt;마운트 : 특정 장치를 특정 디렉토리처럼 사용하기 위해 장치와 디렉토리를 연결하는 작업&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;mount 명령의 일반 형식&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  mount –a [-fnrvw] [-t 파일 시스템 타입] [-O optlist]
-  mount [-fnrvw] [-o options] device | directory
-  mount [-fnrvw] [-t 파일 시스템 타입] [-o options] device directory
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;-a 옵션은 /etc/fstab에 명시된 모든 파일 시스템을 마운트할 때 사용&lt;/li&gt;
-      &lt;li&gt;-o 옵션은 특별한 옵션들을 지정할 때 사용&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-04-05-unix-23-01.png&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;device directory는 마운트할 장치의 시스템 파일을 지정&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;플로피 디스크 장치는 /dev/fd&lt;/li&gt;
-      &lt;li&gt;CD-ROM은 /dev/cdrom&lt;/li&gt;
-      &lt;li&gt;테이프 장치는 /dev/st0&lt;/li&gt;
-      &lt;li&gt;하드디스크 장치는 /dev/hda&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;mount 명령만 입력하면 현재 시스템에 마운트되어 있는 파일 시스템들의 종류를 볼 수 있음&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;CD-ROM을 사용하기 위해 CD-ROM 장치를 마운트&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ mount –t iso9660 /dev/cdrom /media/cdrom
-  mount: block device /dev/sr0 is write-protected, mounting read-only
-  $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;시디롬 장치가 읽기만 가능하다는 메시지&lt;/li&gt;
-      &lt;li&gt;/media/cdrom 디렉토리에 가면 CD의 내용을 볼 수 있음&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;CD-ROM 장치를 모두 사용한 후에는 언마운트&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ umount /dev/cdrom
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;usb 장치를 사용하기 위한 마운트&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;usb 파일 시스템의 타입은 vfat&lt;/p&gt;
-
-        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   $ mount –t vfat /dev/sdb1 /mnt/usb
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;파일-시스템-복구&quot;&gt;파일 시스템 복구&lt;/h1&gt;
-
-&lt;h3 id=&quot;fsck-filesystem-check-명령&quot;&gt;fsck (filesystem check) 명령&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;파일 시스템을 검사하고 수리&lt;/li&gt;
-  &lt;li&gt;손상된 디렉토리나 파일을 수정할 때 임시로 /lost+found 디렉토리에서 작업을 수행하고 정상적인 복구가 되면 사라짐&lt;/li&gt;
-  &lt;li&gt;/lost+found 디렉토리에 파일들이 많이 쌓여있다면 깨진 파일이 많다는 증거&lt;/li&gt;
-  &lt;li&gt;형식 : fsck [옵션] 장치명&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-04-05-unix-23-02.png&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;etcfstab&quot;&gt;/etc/fstab&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;파일 시스템에 대한 다양한 정보를 담고 있는 파일&lt;/li&gt;
-  &lt;li&gt;부팅 시에 마운트할 파티션 정보가 기록되어 있는 파일&lt;/li&gt;
-  &lt;li&gt;파티션 정보를 변경하였거나 디스크를 추가한 경우 이 파일에 등록해야 부팅 시에 자동으로 마운트할 수 있음&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;tstab : File System Table&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ vi /etc/fstab
-  /dev/fd0 /mnt/floppy auto noauto,owner 0 0
-  ......
-  /dev/hda5 swap swap defaults 0 0
-  /dev/cdrom /media/cdrom iso9660 noauto,owner,kudzu,ro 0 0
-  $
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;/dev/cdrom : 장치의 이름&lt;/li&gt;
-      &lt;li&gt;/media/cdrom : 마운트될 디렉토리&lt;/li&gt;
-      &lt;li&gt;iso9660 : 파일 시스템의 종류&lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;defaults&lt;/p&gt;
-
-        &lt;ul&gt;
-          &lt;li&gt;마운트될 때 여러 가지 옵션 중 하나&lt;/li&gt;
-          &lt;li&gt;일반 사용자가 마운트할 수 없게 함&lt;/li&gt;
-          &lt;li&gt;프로그램 실행 및 읽기/쓰기, 비동기, 블록을 나타낼 때 사용&lt;/li&gt;
-          &lt;li&gt;noauto : 장치가 부팅될 때 자동으로 마운트될 수 없음을 나타냄&lt;/li&gt;
-          &lt;li&gt;여러 가지 옵션들은 콤마(,)를 사용해 한꺼번에 정해줄 수 있음&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Sun, 05 Apr 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/04/05/unix-23/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/05/unix-23/</guid>
+        <link>http://localhost:4000/devlog/2020/04/06/unix-25/</link>
+        <guid isPermaLink="true">http://localhost:4000/devlog/2020/04/06/unix-25/</guid>
         
         <category>unix</category>
         
