@@ -4,12 +4,42 @@
  <title>슬기로운 개발 생활</title>
  <link href="https://m-veloper.github.io/atom.xml" rel="self"/>
  <id>https://m-veloper.github.io</id>
- <updated>2020-04-23T21:05:05+09:00</updated>
+ <updated>2020-04-27T20:09:50+09:00</updated>
  <author>
    <name>m-veloper</name>
    <uri>https://m-veloper.github.io</uri>
    <email>m_veloper@naver.com</email>
  </author>
+
+ 
+
+ <entry>
+   <title>[Database] MySQL 제어 함수 - IF, IFNULL, NULLIF</title>
+   <link href="https://m-veloper.github.io/devlog/2020/04/27/database-40/"/>
+   <id>https://m-veloper.github.io/devlog/2020/04/27/database-40</id>
+   <updated>2020-04-27T00:00:00+09:00</updated>
+   <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-27-database-40.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;if-함수&quot;&gt;IF() 함수&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;표현식1 이 참이면, 표현식2를 반환&lt;/li&gt; &lt;li&gt;표현식1 이 거짓이면, 표현식3을 반환&lt;/li&gt; &lt;li&gt;기본 형식&lt;/li&gt; &lt;/ul&gt; &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;IF&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;표현식&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;표현식&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;표현식&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt; &lt;ul&gt; &lt;li&gt;Orders 테이블 데이터&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;img...</content>
+ </entry>
+
+ 
+
+ <entry>
+   <title>[Database] MySQL 제어 함수 - CASE</title>
+   <link href="https://m-veloper.github.io/devlog/2020/04/27/database-39/"/>
+   <id>https://m-veloper.github.io/devlog/2020/04/27/database-39</id>
+   <updated>2020-04-27T00:00:00+09:00</updated>
+   <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-27-database-39.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;case-연산자&quot;&gt;CASE 연산자&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;속성이름의 값이 WHEN 절의 값과 같으면 반환값을 반환&lt;/li&gt; &lt;li&gt;예외반환값은 WHEN 절의 모든 값과 같지 않은 경우 반환되는 값&lt;/li&gt; &lt;li&gt;기본 형식 1&lt;/li&gt; &lt;/ul&gt; &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;CASE&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;속성이름&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;WHEN&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;값&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;THEN&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;반환값&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;.......&lt;/span&gt;...</content>
+ </entry>
+
+ 
+
+ <entry>
+   <title>[Database] MySQL의 내장 함수</title>
+   <link href="https://m-veloper.github.io/devlog/2020/04/27/database-38/"/>
+   <id>https://m-veloper.github.io/devlog/2020/04/27/database-38</id>
+   <updated>2020-04-27T00:00:00+09:00</updated>
+   <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-27-database-38.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;mysql의-내장-함수-build-in-function&quot;&gt;MySQL의 내장 함수 (Build-In Function)&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;내장함수는 상수나 속성이름을 입력 값으로 받아 단일 값을 결과로 반환&lt;/li&gt; &lt;li&gt;모든 내장 함수는 최초에 선언될 때 유효한 입력 값을 받아야 함 &lt;ul&gt; &lt;li&gt;수학 함수의 입력 값 : 정수 또는 실수&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;선언에 위배된 값이 입력되면 질의는 실행을 중지하고...</content>
+ </entry>
 
  
 
@@ -79,36 +109,6 @@
    <id>https://m-veloper.github.io/devlog/2020/04/19/unix-31</id>
    <updated>2020-04-19T00:00:00+09:00</updated>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-04-19-unix-31.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;wc&quot;&gt;wc&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;파일의 행 수, 단어 수, 문자 수를 출력&lt;/li&gt; &lt;li&gt;형식 : wc [옵션] 파일명&lt;/li&gt; &lt;li&gt;옵션 &lt;ul&gt; &lt;li&gt;-c : 바이트 수&lt;/li&gt; &lt;li&gt;-m : 문자 수&lt;/li&gt; &lt;li&gt;-C : -m과 동일&lt;/li&gt; &lt;li&gt;-l : 행 수&lt;/li&gt; &lt;li&gt;-w : 공백 문자나 새로운 행으로 구분된 단어의 수&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;사용...</content>
- </entry>
-
- 
-
- <entry>
-   <title>[Database] 데이터 수정 및 삭제 (UPDATE, DELETE)</title>
-   <link href="https://m-veloper.github.io/devlog/2020/04/18/database-37/"/>
-   <id>https://m-veloper.github.io/devlog/2020/04/18/database-37</id>
-   <updated>2020-04-18T00:00:00+09:00</updated>
-   <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-18-database-37.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;데이터-삽입-insert&quot;&gt;데이터 삽입 (INSERT)&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;주의 사항 &lt;ul&gt; &lt;li&gt;수정하는 속성의 속성값은 같은 도메인이어야 한다.&lt;/li&gt; &lt;li&gt;조건에 맞아 선택된 투플은 모든 수정된다.&lt;/li&gt; &lt;li&gt;한번 수정된 데이터는 복구가 안된다.&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;테이블에 저장된 데이터를 수정하기 위한 SQL명령어 : UPDATE&lt;/p&gt; &lt;/li&gt; &lt;li&gt;UPDATE 문 &lt;ul&gt; &lt;li&gt;테이블에 저장된 투플에서 특정 속성 값을...</content>
- </entry>
-
- 
-
- <entry>
-   <title>[Database] 데이터 삽입 (INSERT)</title>
-   <link href="https://m-veloper.github.io/devlog/2020/04/18/database-36/"/>
-   <id>https://m-veloper.github.io/devlog/2020/04/18/database-36</id>
-   <updated>2020-04-18T00:00:00+09:00</updated>
-   <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-18-database-36.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;데이터-삽입-insert&quot;&gt;데이터 삽입 (INSERT)&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;주의 사항 &lt;ul&gt; &lt;li&gt;데이터를 삽입하기 위하여, 테이블 속성의 정의를 확인하여야 함.&lt;/li&gt; &lt;li&gt;NULL이 가능한 속성은 값을 입력하지 않아도 됨.&lt;/li&gt; &lt;li&gt;NOT NULL인 속성은 반드시 값을 입력하여야 함.&lt;/li&gt; &lt;li&gt;DBMS는 데이터 유일성을 유지하기 위하여 같은 투플의 삽입을 제한하므로 데이터 작성시 같은 투플을 만들지 않도록 하여야...</content>
- </entry>
-
- 
-
- <entry>
-   <title>[Database] 검색 데이터 제한(Limit)</title>
-   <link href="https://m-veloper.github.io/devlog/2020/04/18/database-35/"/>
-   <id>https://m-veloper.github.io/devlog/2020/04/18/database-35</id>
-   <updated>2020-04-18T00:00:00+09:00</updated>
-   <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-18-database-35.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;limit&quot;&gt;Limit&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;검색시 제한이 필요할 때.&lt;/li&gt; &lt;li&gt;기본 형식&lt;/li&gt; &lt;/ul&gt; &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;속성&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;리스트&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;테이블&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;리스트&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;LIMIT&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;검색레코드수&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt; &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-18-database-35-01.png&quot; alt=&quot;&quot; /&gt; &lt;br /&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Orders 테이블에서 고객이름(customer)의 오름차순으로 5개만 검색하시오.&lt;/li&gt;...</content>
  </entry>
 
  

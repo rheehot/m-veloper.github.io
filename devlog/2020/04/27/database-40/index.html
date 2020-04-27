@@ -1,0 +1,1349 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<!-- Meta -->
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+	<meta name="generator" content="Jekyll">
+	<meta name="naver-site-verification" content="fa37cbf8ce41948de6e94c01991ffa04cea9b093"/>
+	<meta name="google-site-verification" content="5M4Zw9wg_UqQkvlayfb5Mc_ogvJdc013w_zLUkxgO-Y" />
+
+	<!--<title>[Database] MySQL 제어 함수 - IF, IFNULL, NULLIF</title>-->
+	<title>슬기로운 개발 생활</title>
+
+	<!-- CSS & fonts -->
+	<link rel="stylesheet" href="/assets/css/main.css">
+	<link rel="stylesheet" href="/assets/icomoon/style.css">
+	<link href="https://cdn.jsdelivr.net/gh/joungkyun/font-d2coding/d2coding.css" rel="stylesheet" type="text/css">
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,900,400italic%7CSignika:700,300,400,600' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/default.min.css">
+
+	<!-- RSS -->
+	<link href="/atom.xml" type="application/atom+xml" rel="alternate" title="ATOM Feed" />
+	<!-- Script -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/assets/js/main.js"></script>
+<script src="/assets/js/load-js-deferred.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+<script data-ad-client="ca-pub-9898399593070144" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+<script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
+
+
+
+<script>
+  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+  ga('create', 'UA-158538042-1', 'auto');
+  ga('send', 'pageview');
+  loadJSDeferred('https://www.google-analytics.com/analytics.js');
+</script>
+
+
+<!-- m-veloper 네이버애널리틱스 -->
+<script type="text/javascript">
+  if(!wcs_add) var wcs_add = {};
+  wcs_add["wa"] = "45688ef54680e0";
+  wcs_do();
+</script>
+
+
+<!--<script src="/js/fontawesome/all.js"></script>-->
+
+
+
+
+
+
+
+  </head>
+
+
+<body>
+
+	<div id="wrap">
+	  	
+	  	<!-- Navigation -->
+	  	<nav id="nav">
+	<div id="nav-list">
+		<div class="sidebar-about">
+			<h2><a id="_title" href="/">슬기로운 개발 생활</a></h2>
+			<p>느리지만 가고있어요..</p>
+
+		</div>
+		<!--<a href="">Home</a>-->
+
+		<!-- 카테고리, 태그 메뉴-->
+		<div id="_sidebar" class="sidebar">
+			<div class="sidebar-sticky" role="banner">
+				<nav class="sidebar-nav heading" role="navigation">
+					<ul>
+						<li>
+							<div  class="list-wrapper">
+								<h3 class="sidebar-nav-item">Learn</h3>
+							</div>
+							<ul class="list-body">
+								<li>
+									<a class="sidebar-nav-subitem" href="/a_tags/database/">Database</a>
+								</li>
+								<li>
+									<a class="sidebar-nav-subitem" href="/a_tags/unix/">Unix</a>
+								</li>
+								<li>
+									<a class="sidebar-nav-subitem" href="/a_tags/sass/">Sass</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div  class="list-wrapper">
+								<h3 class="sidebar-nav-item">Review</h3>
+							</div>
+							<ul class="list-body">
+								<li>
+									<a class="sidebar-nav-subitem" href="/a_tags/goods/">Goods</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div  class="list-wrapper">
+								<h3 class="sidebar-nav-item">Tip</h3>
+							</div>
+							<ul class="list-body">
+								<li>
+									<a class="sidebar-nav-subitem" href="/a_tags/web/">Web</a>
+									<a class="sidebar-nav-subitem" href="/a_tags/etc/">Etc</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div  class="list-wrapper">
+								<a class="" href="/a_tags/portfolio/"><h3 class="sidebar-nav-item">Portfolio</h3></a>
+								<a class="" href="/about/"><h3 class="sidebar-nav-item">About</h3></a>
+							</div>
+						</li>
+					</ul>
+					<!--<ul>-->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!--<li>-->
+						<!--<div  class="list-wrapper">-->
+							<!--&lt;!&ndash;<a class="sidebar-nav-item" href="/a_categories/devlog/">Devlog</a>&ndash;&gt;-->
+							<!--<h3 class="sidebar-nav-item">Devlog</h3>-->
+						<!--</div>-->
+						<!--<ul class="list-body">-->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/database/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/database/2/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/database/3/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/database/4/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/14/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/13/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/2/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/3/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/4/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/5/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/6/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/7/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/8/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/9/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/10/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/11/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/12/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/sass/index.html">Sass</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/sass/2/index.html">Sass</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/unix/3/index.html">Unix</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/unix/4/index.html">Unix</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/unix/index.html">Unix</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/unix/2/index.html">Unix</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+						<!--</ul>-->
+					<!--</li>-->
+					<!---->
+					<!---->
+					<!--<li>-->
+						<!--<div  class="list-wrapper">-->
+							<!--&lt;!&ndash;<a class="sidebar-nav-item" href="/a_categories/review/">Review</a>&ndash;&gt;-->
+							<!--<h3 class="sidebar-nav-item">Review</h3>-->
+						<!--</div>-->
+						<!--<ul class="list-body">-->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/goods/index.html">Goods</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+						<!--</ul>-->
+					<!--</li>-->
+					<!---->
+					<!---->
+					<!--<li>-->
+						<!--<div  class="list-wrapper">-->
+							<!--&lt;!&ndash;<a class="sidebar-nav-item" href="/a_categories/tip/">Tip</a>&ndash;&gt;-->
+							<!--<h3 class="sidebar-nav-item">Tip</h3>-->
+						<!--</div>-->
+						<!--<ul class="list-body">-->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/etc/index.html">Etc</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/web/index.html">Web</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/web/2/index.html">Web</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/web/3/index.html">Web</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/web/4/index.html">Web</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+						<!--</ul>-->
+					<!--</li>-->
+					<!---->
+					<!---->
+					<!--<li>-->
+						<!--<div  class="list-wrapper">-->
+							<!--&lt;!&ndash;<a class="sidebar-nav-item" href="/a_categories/portfolio/">Portfolio</a>&ndash;&gt;-->
+							<!--<h3 class="sidebar-nav-item">Portfolio</h3>-->
+						<!--</div>-->
+						<!--<ul class="list-body">-->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/portfolio/index.html">Portfolio</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+						<!--</ul>-->
+					<!--</li>-->
+					<!---->
+				<!--</ul>-->
+				</nav>
+			</div>
+		</div>
+
+		<!-- Nav pages -->
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+    
+    <!-- Nav links -->
+	  <!--<a href="https://github.com/KingFelix/emerald/archive/master.zip">Download</a>-->
+<!--<a href="https://github.com/KingFelix/emerald">Project on Github</a>-->
+<!--<a href="https://github.com/KingFelix/emerald">Categories</a>-->
+
+	</div>
+  <!-- Nav footer -->
+	
+	  <footer>
+	
+	<!--<span>version 1.1.0</span>-->
+
+</footer>
+	
+</nav>
+
+    
+    <!-- Icon menu -->
+	  <a id="nav-menu">
+	  	<div id="menu"></div>
+	  </a>
+
+      <!-- Header -->
+      
+        <header id="header">
+	<a href="/">
+		<!--<img src="/img/emerald.svg" alt="Emerald Logo">-->
+		<h1 class="top">M</h1>
+	  <h1 class="bottom">veloper</h1>
+	</a>
+</header>
+
+      
+
+    <!-- Main content -->
+		<div class="main-layout">
+			<div id="side-ad-left">
+				<div class="googleAd" style="min-width:250px; min-height:250px;">
+  <!-- 수직2 -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-9898399593070144"
+       data-ad-slot="1150677138"
+       data-ad-format="vertical"
+       data-full-width-responsive="true"></ins>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+<div class="googleAd" style="min-width:250px; min-height:250px;">
+  <!-- 정사각1 -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-9898399593070144"
+       data-ad-slot="3014955973"
+       data-ad-format="vertical"
+       data-full-width-responsive="true"></ins>
+  <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+			</div>
+			<div id="container">
+				<main>
+					<article id="post-page">
+	<h2 class="title">[Database] MySQL 제어 함수 - IF, IFNULL, NULLIF</h2>
+	<a class="tag" href="" data-flip="title">
+		<time datetime="" class="by-line">2020년 04월 27일</time>
+	</a>
+	<hr>
+	<div class="content">
+		<div class='kakao-ad-top'>
+			<div>
+				<ins class="kakao_ad_area" style="display:none;" data-ad-unit= "DAN-sksc2jl3lbhe" data-ad-width= "250" data-ad-height= "250"></ins>
+			</div>
+			<div>
+				<ins class="kakao_ad_area" style="display:none;" data-ad-unit= "DAN-s13c6ao56o2p" data-ad-width= "250" data-ad-height= "250"></ins>
+			</div>
+			<div>
+				<ins class="kakao_ad_area" style="display:none;" data-ad-unit= "DAN-to1sb755uomv" data-ad-width= "250" data-ad-height= "250"></ins>
+			</div>
+		</div>
+
+		<p><img src="/assets/img/database/2020/04/2020-04-27-database-40.png" alt="" /></p>
+
+<h1 id="if-함수">IF() 함수</h1>
+
+<ul>
+  <li>표현식1 이 참이면, 표현식2를 반환</li>
+  <li>표현식1 이 거짓이면, 표현식3을 반환</li>
+  <li>기본 형식</li>
+</ul>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">IF</span> <span class="p">(</span> <span class="err">표현식</span><span class="mi">1</span><span class="p">,</span> <span class="err">표현식</span><span class="mi">2</span><span class="p">,</span> <span class="err">표현식</span> <span class="mi">3</span> <span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li>Orders 테이블 데이터</li>
+</ul>
+
+<p><img src="/assets/img/database/2020/04/2020-04-27-database-40-01.png" alt="" /></p>
+
+<ul>
+  <li>Items 테이블 데이터</li>
+</ul>
+
+<p><img src="/assets/img/database/2020/04/2020-04-27-database-40-02.png" alt="" /></p>
+
+<h4 id="고객이-주문한-판매금액이-10000원을-초과하면-배송료를-면제하기-위한-질의문을-작성하시오-단-결과-테이블은-주문번호ordersnum-계정orderscustomer-주문물품ordersitem-판매금액-배송비무료배송일-경우-무료배송-유료-배송비는-2500를-반환한다">고객이 주문한 판매금액이 10000원을 초과하면 배송료를 면제하기 위한 질의문을 작성하시오. 단, 결과 테이블은 주문번호(orders.num), 계정(orders.customer), 주문물품(orders.item), 판매금액, 배송비(무료배송일 경우, ‘무료배송’, 유료 배송비는 2500)를 반환한다.</h4>
+
+<ul>
+  <li>질의에 필요한 테이블 : orders, items</li>
+  <li>판매금액 계산 : orders.qty * items.price</li>
+  <li>배송비를 계산 : IF ( ( orders.qty * items.price ) &gt; 10000, ‘무료배송’, ‘2500’ ) AS ‘배송비’</li>
+</ul>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> 
+    <span class="n">orders</span><span class="p">.</span><span class="n">num</span><span class="p">,</span> 
+    <span class="n">orders</span><span class="p">.</span><span class="n">customer</span><span class="p">,</span> 
+    <span class="n">orders</span><span class="p">.</span><span class="n">item</span><span class="p">,</span> 
+    <span class="p">(</span> <span class="n">orders</span><span class="p">.</span><span class="n">qty</span> <span class="o">*</span> <span class="n">items</span><span class="p">.</span><span class="n">price</span> <span class="p">)</span> <span class="k">AS</span> <span class="s1">'판매금액'</span><span class="p">,</span>
+    <span class="n">IF</span> <span class="p">(</span> <span class="p">(</span> <span class="n">orders</span><span class="p">.</span><span class="n">qty</span> <span class="o">*</span> <span class="n">items</span><span class="p">.</span><span class="n">price</span> <span class="p">)</span> <span class="o">&gt;</span> <span class="mi">10000</span><span class="p">,</span><span class="s1">'무료배송'</span><span class="p">,</span> <span class="s1">'2500'</span> <span class="p">)</span> <span class="k">AS</span> <span class="s1">'배송비'</span>
+<span class="k">FROM</span> <span class="n">orders</span><span class="p">,</span> <span class="n">items</span>
+<span class="k">WHERE</span> <span class="n">orders</span><span class="p">.</span><span class="n">item</span> <span class="o">=</span> <span class="n">items</span><span class="p">.</span><span class="n">code</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>~ 위 쿼리문 결과</p>
+
+<p><img src="/assets/img/database/2020/04/2020-04-27-database-40-03.png" alt="" /></p>
+
+<p><br /></p>
+
+<h3 id="고객이-주문한-판매금액이-10000원을-초과하면-배송료를-면제하기-위한-질의문을-작성하시오-단-같은-날-동일한-고객이-여러-건-주문한-경우-묶음-배송으로-처리하고-결과-테이블은-계정orderscustomer-판매금액-배송비무료배송일-경우-무료배송-유료-배송비는-2500를-반환한다">고객이 주문한 판매금액이 10000원을 초과하면 배송료를 면제하기 위한 질의문을 작성하시오. 단, 같은 날 동일한 고객이 여러 건 주문한 경우, 묶음 배송으로 처리하고, 결과 테이블은 계정(orders.customer), 판매금액, 배송비(무료배송일 경우, ‘무료배송’, 유료 배송비는 2500)를 반환한다.</h3>
+
+<ul>
+  <li>질의에 필요한 테이블 : orders, items</li>
+  <li>같은 판매일에 같은 고객이 주문한 경우 : GROUP BY orders.date, orders.customer</li>
+  <li>같은 판매일에 같은 고객이 주문한 판매금액 계산 : SUM( orders.qty * items.price )</li>
+  <li>배송비를 계산 : IF ( SUM( orders.qty * items.price ) &gt; 10000, ‘무료배송’, ‘2500’ ) AS ‘배송비’</li>
+</ul>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> 
+    <span class="n">orders</span><span class="p">.</span><span class="n">customer</span><span class="p">,</span>
+    <span class="k">SUM</span><span class="p">(</span> <span class="n">orders</span><span class="p">.</span><span class="n">qty</span> <span class="o">*</span> <span class="n">items</span><span class="p">.</span><span class="n">price</span> <span class="p">)</span> <span class="k">AS</span> <span class="s1">'판매금액'</span><span class="p">,</span>
+    <span class="n">IF</span> <span class="p">(</span> <span class="k">SUM</span><span class="p">(</span> <span class="n">orders</span><span class="p">.</span><span class="n">qty</span> <span class="o">*</span> <span class="n">items</span><span class="p">.</span><span class="n">price</span> <span class="p">)</span> <span class="o">&gt;</span> <span class="mi">10000</span><span class="p">,</span><span class="s1">'무료배송'</span><span class="p">,</span> <span class="s1">'2500'</span> <span class="p">)</span> <span class="k">AS</span> <span class="s1">'배송비'</span>
+<span class="k">FROM</span> <span class="n">orders</span><span class="p">,</span> <span class="n">items</span>
+<span class="k">WHERE</span> <span class="n">orders</span><span class="p">.</span><span class="n">item</span> <span class="o">=</span> <span class="n">items</span><span class="p">.</span><span class="n">code</span>
+<span class="k">GROUP</span> <span class="k">BY</span> <span class="n">orders</span><span class="p">.</span><span class="nb">date</span><span class="p">,</span> <span class="n">orders</span><span class="p">.</span><span class="n">customer</span><span class="p">;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>위 쿼리문 결과</li>
+</ul>
+
+<p><img src="/assets/img/database/2020/04/2020-04-27-database-40-04.png" alt="" /></p>
+
+<p><br /></p>
+
+<h1 id="ifnull--함수">IFNULL( ) 함수</h1>
+
+<ul>
+  <li>표현식1이 NULL이 아니면, 표현식1을 반환</li>
+  <li>표현식1이 NULL이면, 표현식2를 반환</li>
+  <li>기본 형식</li>
+</ul>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">IFNULL</span> <span class="p">(</span> <span class="err">표현식</span><span class="mi">1</span><span class="p">,</span> <span class="err">표현식</span><span class="mi">2</span> <span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="/assets/img/database/2020/04/2020-04-27-database-40-05.png" alt="" /></p>
+
+<p><img src="/assets/img/database/2020/04/2020-04-27-database-40-06.png" alt="" /></p>
+
+<p><img src="/assets/img/database/2020/04/2020-04-27-database-40-07.png" alt="" /></p>
+
+<p><img src="/assets/img/database/2020/04/2020-04-27-database-40-08.png" alt="" /></p>
+
+<p><br /></p>
+
+<h4 id="고객customer-테이블의-계정account-고객명name-주소address를-검색하되-주소가-null로-입력된경우-주소없음으로-표기하고-각-속성명을-계정-고객명-주소로-출력하시오">고객(customer) 테이블의 계정(account), 고객명(name), 주소(address)를 검색하되, 주소가 NULL로 입력된경우, ‘주소없음’으로 표기하고, 각 속성명을 계정, 고객명, 주소로 출력하시오.</h4>
+
+<ul>
+  <li>각 속성명 ‘계정’, ‘고객명’으로 표기 :  account AS ‘계정’, name AS ‘고객명’</li>
+  <li>주소가 NULL인 경우 ‘주소없음’으로 표기 : IFNULL( address, ‘주소없음’ ) AS ‘주소’</li>
+  <li>Customer 테이블 데이터</li>
+</ul>
+
+<p><img src="/assets/img/database/2020/04/2020-04-27-database-40-09.png" alt="" /></p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> 
+  <span class="n">account</span> <span class="k">AS</span> <span class="s1">'계정'</span><span class="p">,</span> 
+  <span class="n">name</span> <span class="k">AS</span> <span class="s1">'고객명'</span><span class="p">,</span>
+  <span class="n">IFNULL</span><span class="p">(</span> <span class="n">address</span><span class="p">,</span> <span class="s1">'주소없음'</span> <span class="p">)</span> <span class="k">AS</span> <span class="s1">'주소'</span>
+<span class="k">FROM</span> <span class="n">customer</span><span class="p">;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>위 쿼리문 결과</li>
+</ul>
+
+<p><img src="/assets/img/database/2020/04/2020-04-27-database-40-10.png" alt="" /></p>
+
+<p><br /></p>
+
+<h1 id="nullif--함수">NULLIF( ) 함수</h1>
+
+<ul>
+  <li>표현식1과 표현식2가 같으면 NULL을 반환</li>
+  <li>표현식1과 표현식2가 다르면 표현식1을 반환</li>
+  <li>기본 형식</li>
+</ul>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">NULLIF</span><span class="p">(</span> <span class="err">표현식</span><span class="mi">1</span><span class="p">,</span> <span class="err">표현식</span><span class="mi">2</span> <span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li>동일한 함수</li>
+</ul>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CASE</span> 
+  <span class="k">WHEN</span> <span class="err">표현식</span><span class="mi">1</span> <span class="o">=</span> <span class="err">표현식</span><span class="mi">2</span> <span class="k">THEN</span> <span class="k">NULL</span> 
+  <span class="k">ELSE</span> <span class="err">표현식</span><span class="mi">1</span> 
+<span class="k">END</span>
+</code></pre></div></div>
+
+<p><img src="/assets/img/database/2020/04/2020-04-27-database-40-11.png" alt="" /></p>
+
+<p><img src="/assets/img/database/2020/04/2020-04-27-database-40-12.png" alt="" /></p>
+
+
+
+		<!-- buymeacoffee 버튼 -->
+		<div id="sponsor-button" style="text-align: center">
+			<a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/TWYGPxs">
+				<img src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg" alt="Buy me a coffee">
+				<span style="margin-left:15px;font-size:28px !important;">Buy me a coffee</span>
+			</a>
+		</div>
+
+
+		<div class="kakao-ad-bottom">
+			<div>
+				<ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-rhg23mrcvho4" data-ad-width= "728" data-ad-height= "90"></ins>
+			</div>
+			<div>
+				<ins class="kakao_ad_area" style="display:none;" data-ad-unit    = "DAN-r1icduz054jb" data-ad-width   = "728" data-ad-height  = "90"></ins>
+			</div>
+			<div>
+				<ins class="kakao_ad_area" style="display:none;" data-ad-unit    = "DAN-1jy7ort537t4o" data-ad-width   = "728" data-ad-height  = "90"></ins>
+			</div>
+		</div>
+
+		<aside class="comments" role="complementary">
+  <h2>Comments</h2>
+  <hr/>
+  <div id="disqus_thread"></div>
+  <script>
+    !function (s, i) {
+      function e(e) {
+        var t = s.pageYOffset || i.body.scrollTop;
+        s.DISQUS && !s._disqusThis && !s._disqusFirst && t + s.innerHeight >= s._disqusThreadOffsetTop && (s._disqusThis = !0, s.DISQUS.reset(
+          { reload: !0, config: d }))
+      }
+
+      var d = function () {
+        this.page.title = "[Database] MySQL 제어 함수 - IF, IFNULL, NULLIF",
+          this.page.identifier = "/devlog/2020/04/27/database-40",
+          this.page.url = "https://m-veloper.github.io/devlog/2020/04/27/database-40/"
+      };
+      s._disqusFirst = void 0 === s._disqusFirst || s._disqusFirst, s._disqusLoading = void 0 !== s._disqusLoading && s._disqusLoading, s._disqusThis = !1, s._disqusThreadOffsetTop = i.getElementById(
+        "disqus_thread").offsetTop, s._disqusLoading ? s._disqusFirst = !1 : (s._disqusLoading = !0, loadJSDeferred(
+        "//m-veloper.disqus.com/embed.js"), s.addEventListener ? s.addEventListener(
+        "scroll",
+        e,
+        { passive: !0 }) : s.attachEvent ? s.attachEvent("onscroll", e) : s.onscroll = e)
+    }(window, document);
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+</aside>
+
+	</div>
+</article>
+
+
+				</main>
+				<!-- 페이지 네이션-->
+				<div class="pagination-container">
+
+</div>
+			</div>
+			<div id="side-ad-right">
+				<div class="googleAd" style="min-width:250px; min-height:250px;">
+  <!-- 수직 -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-9898399593070144"
+       data-ad-slot="4781185980"
+       data-ad-format="vertical"
+       data-full-width-responsive="true"></ins>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+<div class="googleAd" style="min-width:250px; min-height:250px;">
+  <!-- 정사각2 -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-9898399593070144"
+       data-ad-slot="3731628500"
+       data-ad-format="vertical"
+       data-full-width-responsive="true"></ins>
+  <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+			</div>
+		</div>
+		  <!-- Footer -->
+	    <!--<footer class="footer"><span>@2020 - m_veloper</span></footer>-->
+<footer class="footer">
+  <div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div>
+        
+
+        
+        
+        <div class="sidebar-social">
+          <ul>
+  
+    
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="https://github.com/m-veloper">
+    <span class="icon-github" title="GitHub"></span>
+    <!--<span class="sr-only">GitHub</span>-->
+  </a>
+</li>
+
+  
+    
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="mailto:m_veloper@naver.com">
+    <span class="icon-mail" title="Email"></span>
+    <!--<span class="sr-only">Email</span>-->
+  </a>
+</li>
+
+  
+    
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="https://m-veloper.github.io/feed.xml">
+    <span class="icon-rss2" title="RSS"></span>
+    <!--<span class="sr-only">RSS</span>-->
+  </a>
+</li>
+
+  
+</ul>
+
+        </div>
+        
+      </div>
+      <div>
+        <!--<p><small> Copyright © 2020 | <a href="/" title="">m_veloper</a> | All rights reserved.</small></p>-->
+        <p>Copyright © 2020 | <a href="/" title="">m_veloper</a> | All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</footer>
+
+	    <!-- Script -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/assets/js/main.js"></script>
+<script src="/assets/js/load-js-deferred.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+<script data-ad-client="ca-pub-9898399593070144" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+<script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
+
+
+
+<script>
+  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+  ga('create', 'UA-158538042-1', 'auto');
+  ga('send', 'pageview');
+  loadJSDeferred('https://www.google-analytics.com/analytics.js');
+</script>
+
+
+<!-- m-veloper 네이버애널리틱스 -->
+<script type="text/javascript">
+  if(!wcs_add) var wcs_add = {};
+  wcs_add["wa"] = "45688ef54680e0";
+  wcs_do();
+</script>
+
+
+<!--<script src="/js/fontawesome/all.js"></script>-->
+
+
+
+
+	</div>
+</body>
+</html>

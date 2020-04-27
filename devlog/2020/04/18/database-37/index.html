@@ -6,6 +6,8 @@
 	<meta charset="UTF-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 	<meta name="generator" content="Jekyll">
+	<meta name="naver-site-verification" content="fa37cbf8ce41948de6e94c01991ffa04cea9b093"/>
+	<meta name="google-site-verification" content="5M4Zw9wg_UqQkvlayfb5Mc_ogvJdc013w_zLUkxgO-Y" />
 
 	<!--<title>[Database] 데이터 수정 및 삭제 (UPDATE, DELETE)</title>-->
 	<title>슬기로운 개발 생활</title>
@@ -28,7 +30,24 @@
 <script data-ad-client="ca-pub-9898399593070144" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+<script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
 
+
+
+<script>
+  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+  ga('create', 'UA-158538042-1', 'auto');
+  ga('send', 'pageview');
+  loadJSDeferred('https://www.google-analytics.com/analytics.js');
+</script>
+
+
+<!-- m-veloper 네이버애널리틱스 -->
+<script type="text/javascript">
+  if(!wcs_add) var wcs_add = {};
+  wcs_add["wa"] = "45688ef54680e0";
+  wcs_do();
+</script>
 
 
 <!--<script src="/js/fontawesome/all.js"></script>-->
@@ -106,6 +125,12 @@
 						</li>
 					</ul>
 					<!--<ul>-->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
 					<!---->
 					<!---->
 					<!---->
@@ -994,9 +1019,9 @@
   <li>기본형식</li>
 </ul>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>UPDATE 테이블이름
-SET 속성이름1=값1, 속성이름2=값2, ...
-[ WHERE 조건 ] ;
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">UPDATE</span> <span class="err">테이블이름</span>
+<span class="k">SET</span> <span class="err">속성이름</span><span class="mi">1</span><span class="o">=</span><span class="err">값</span><span class="mi">1</span><span class="p">,</span> <span class="err">속성이름</span><span class="mi">2</span><span class="o">=</span><span class="err">값</span><span class="mi">2</span><span class="p">,</span> <span class="p">...</span>
+<span class="p">[</span> <span class="k">WHERE</span> <span class="err">조건</span> <span class="p">]</span> <span class="p">;</span>
 </code></pre></div></div>
 
 <ul>
@@ -1008,8 +1033,8 @@ SET 속성이름1=값1, 속성이름2=값2, ...
   </li>
 </ul>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>UPDATE items
-SET price = price * 1.05;
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">UPDATE</span> <span class="n">items</span>
+<span class="k">SET</span> <span class="n">price</span> <span class="o">=</span> <span class="n">price</span> <span class="o">*</span> <span class="mi">1</span><span class="p">.</span><span class="mi">05</span><span class="p">;</span>
 </code></pre></div></div>
 
 <ul>
@@ -1044,12 +1069,12 @@ SET price = price * 1.05;
   </li>
 </ul>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>UPDATE orders
-SET qty = 10
-WHERE item='E06' AND date='2015-06-01'
-AND customer IN ( SELECT account
-FROM customer
-WHERE name='이남이' );
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">UPDATE</span> <span class="n">orders</span>
+<span class="k">SET</span> <span class="n">qty</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="k">WHERE</span> <span class="n">item</span><span class="o">=</span><span class="s1">'E06'</span> <span class="k">AND</span> <span class="nb">date</span><span class="o">=</span><span class="s1">'2015-06-01'</span>
+<span class="k">AND</span> <span class="n">customer</span> <span class="k">IN</span> <span class="p">(</span> <span class="k">SELECT</span> <span class="n">account</span>
+<span class="k">FROM</span> <span class="n">customer</span>
+<span class="k">WHERE</span> <span class="n">name</span><span class="o">=</span><span class="s1">'이남이'</span> <span class="p">);</span>
 </code></pre></div></div>
 
 <p><img src="/assets/img/database/2020/04/2020-04-18-database-37-05.png" alt="" /></p>
@@ -1081,8 +1106,8 @@ WHERE name='이남이' );
   <li>기본형식</li>
 </ul>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DELETE FROM 테이블이름
-[ WHERE 조건 ] ;
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">DELETE</span> <span class="k">FROM</span> <span class="err">테이블이름</span>
+<span class="p">[</span> <span class="k">WHERE</span> <span class="err">조건</span> <span class="p">]</span> <span class="p">;</span>
 </code></pre></div></div>
 
 <ul>
@@ -1090,8 +1115,8 @@ WHERE name='이남이' );
 <img src="/assets/img/database/2020/04/2020-04-18-database-37-06.png" alt="" /></li>
 </ul>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DELETE FROM orders
-WHERE date=’2015-06-10’;
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">DELETE</span> <span class="k">FROM</span> <span class="n">orders</span>
+<span class="k">WHERE</span> <span class="nb">date</span><span class="o">=</span><span class="err">’</span><span class="mi">2015</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">10</span><span class="err">’</span><span class="p">;</span>
 </code></pre></div></div>
 
 <ul>
@@ -1104,7 +1129,7 @@ WHERE date=’2015-06-10’;
   </li>
 </ul>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DELETE FROM orders ;
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">DELETE</span> <span class="k">FROM</span> <span class="n">orders</span> <span class="p">;</span>
 </code></pre></div></div>
 
 
@@ -1286,7 +1311,24 @@ WHERE date=’2015-06-10’;
 <script data-ad-client="ca-pub-9898399593070144" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+<script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
 
+
+
+<script>
+  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+  ga('create', 'UA-158538042-1', 'auto');
+  ga('send', 'pageview');
+  loadJSDeferred('https://www.google-analytics.com/analytics.js');
+</script>
+
+
+<!-- m-veloper 네이버애널리틱스 -->
+<script type="text/javascript">
+  if(!wcs_add) var wcs_add = {};
+  wcs_add["wa"] = "45688ef54680e0";
+  wcs_do();
+</script>
 
 
 <!--<script src="/js/fontawesome/all.js"></script>-->

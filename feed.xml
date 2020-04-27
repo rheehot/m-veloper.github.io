@@ -5,9 +5,303 @@
     <description></description>
     <link>https://m-veloper.github.io/</link>
     <atom:link href="https://m-veloper.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 23 Apr 2020 21:05:05 +0900</pubDate>
-    <lastBuildDate>Thu, 23 Apr 2020 21:05:05 +0900</lastBuildDate>
+    <pubDate>Mon, 27 Apr 2020 20:09:50 +0900</pubDate>
+    <lastBuildDate>Mon, 27 Apr 2020 20:09:50 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>[Database] MySQL 제어 함수 - IF, IFNULL, NULLIF</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-27-database-40.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;if-함수&quot;&gt;IF() 함수&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;표현식1 이 참이면, 표현식2를 반환&lt;/li&gt;
+  &lt;li&gt;표현식1 이 거짓이면, 표현식3을 반환&lt;/li&gt;
+  &lt;li&gt;기본 형식&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;IF&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;표현식&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;표현식&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;표현식&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Orders 테이블 데이터&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-27-database-40-01.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Items 테이블 데이터&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-27-database-40-02.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;고객이-주문한-판매금액이-10000원을-초과하면-배송료를-면제하기-위한-질의문을-작성하시오-단-결과-테이블은-주문번호ordersnum-계정orderscustomer-주문물품ordersitem-판매금액-배송비무료배송일-경우-무료배송-유료-배송비는-2500를-반환한다&quot;&gt;고객이 주문한 판매금액이 10000원을 초과하면 배송료를 면제하기 위한 질의문을 작성하시오. 단, 결과 테이블은 주문번호(orders.num), 계정(orders.customer), 주문물품(orders.item), 판매금액, 배송비(무료배송일 경우, ‘무료배송’, 유료 배송비는 2500)를 반환한다.&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;질의에 필요한 테이블 : orders, items&lt;/li&gt;
+  &lt;li&gt;판매금액 계산 : orders.qty * items.price&lt;/li&gt;
+  &lt;li&gt;배송비를 계산 : IF ( ( orders.qty * items.price ) &amp;gt; 10000, ‘무료배송’, ‘2500’ ) AS ‘배송비’&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; 
+    &lt;span class=&quot;n&quot;&gt;orders&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+    &lt;span class=&quot;n&quot;&gt;orders&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;customer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+    &lt;span class=&quot;n&quot;&gt;orders&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;orders&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;qty&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;items&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;price&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'판매금액'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;IF&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;orders&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;qty&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;items&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;price&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'무료배송'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'2500'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'배송비'&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;orders&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;items&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;orders&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;item&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;items&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;~ 위 쿼리문 결과&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-27-database-40-03.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;고객이-주문한-판매금액이-10000원을-초과하면-배송료를-면제하기-위한-질의문을-작성하시오-단-같은-날-동일한-고객이-여러-건-주문한-경우-묶음-배송으로-처리하고-결과-테이블은-계정orderscustomer-판매금액-배송비무료배송일-경우-무료배송-유료-배송비는-2500를-반환한다&quot;&gt;고객이 주문한 판매금액이 10000원을 초과하면 배송료를 면제하기 위한 질의문을 작성하시오. 단, 같은 날 동일한 고객이 여러 건 주문한 경우, 묶음 배송으로 처리하고, 결과 테이블은 계정(orders.customer), 판매금액, 배송비(무료배송일 경우, ‘무료배송’, 유료 배송비는 2500)를 반환한다.&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;질의에 필요한 테이블 : orders, items&lt;/li&gt;
+  &lt;li&gt;같은 판매일에 같은 고객이 주문한 경우 : GROUP BY orders.date, orders.customer&lt;/li&gt;
+  &lt;li&gt;같은 판매일에 같은 고객이 주문한 판매금액 계산 : SUM( orders.qty * items.price )&lt;/li&gt;
+  &lt;li&gt;배송비를 계산 : IF ( SUM( orders.qty * items.price ) &amp;gt; 10000, ‘무료배송’, ‘2500’ ) AS ‘배송비’&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; 
+    &lt;span class=&quot;n&quot;&gt;orders&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;customer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;SUM&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;orders&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;qty&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;items&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;price&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'판매금액'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;IF&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;SUM&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;orders&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;qty&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;items&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;price&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'무료배송'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'2500'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'배송비'&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;orders&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;items&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;orders&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;item&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;items&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;code&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;GROUP&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;orders&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;orders&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;customer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;위 쿼리문 결과&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-27-database-40-04.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;ifnull--함수&quot;&gt;IFNULL( ) 함수&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;표현식1이 NULL이 아니면, 표현식1을 반환&lt;/li&gt;
+  &lt;li&gt;표현식1이 NULL이면, 표현식2를 반환&lt;/li&gt;
+  &lt;li&gt;기본 형식&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;IFNULL&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;표현식&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;표현식&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-27-database-40-05.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-27-database-40-06.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-27-database-40-07.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-27-database-40-08.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;고객customer-테이블의-계정account-고객명name-주소address를-검색하되-주소가-null로-입력된경우-주소없음으로-표기하고-각-속성명을-계정-고객명-주소로-출력하시오&quot;&gt;고객(customer) 테이블의 계정(account), 고객명(name), 주소(address)를 검색하되, 주소가 NULL로 입력된경우, ‘주소없음’으로 표기하고, 각 속성명을 계정, 고객명, 주소로 출력하시오.&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;각 속성명 ‘계정’, ‘고객명’으로 표기 :  account AS ‘계정’, name AS ‘고객명’&lt;/li&gt;
+  &lt;li&gt;주소가 NULL인 경우 ‘주소없음’으로 표기 : IFNULL( address, ‘주소없음’ ) AS ‘주소’&lt;/li&gt;
+  &lt;li&gt;Customer 테이블 데이터&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-27-database-40-09.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; 
+  &lt;span class=&quot;n&quot;&gt;account&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'계정'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+  &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'고객명'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;IFNULL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;address&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'주소없음'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'주소'&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;customer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;위 쿼리문 결과&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-27-database-40-10.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;nullif--함수&quot;&gt;NULLIF( ) 함수&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;표현식1과 표현식2가 같으면 NULL을 반환&lt;/li&gt;
+  &lt;li&gt;표현식1과 표현식2가 다르면 표현식1을 반환&lt;/li&gt;
+  &lt;li&gt;기본 형식&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;NULLIF&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;표현식&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;표현식&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;동일한 함수&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;CASE&lt;/span&gt; 
+  &lt;span class=&quot;k&quot;&gt;WHEN&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;표현식&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;표현식&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;THEN&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;NULL&lt;/span&gt; 
+  &lt;span class=&quot;k&quot;&gt;ELSE&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;표현식&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; 
+&lt;span class=&quot;k&quot;&gt;END&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-27-database-40-11.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-27-database-40-12.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 27 Apr 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/devlog/2020/04/27/database-40/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/27/database-40/</guid>
+        
+        <category>database</category>
+        
+        <category>mysql</category>
+        
+        
+        <category>devlog</category>
+        
+      </item>
+    
+      <item>
+        <title>[Database] MySQL 제어 함수 - CASE</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-27-database-39.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;case-연산자&quot;&gt;CASE 연산자&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;속성이름의 값이 WHEN 절의 값과 같으면 반환값을 반환&lt;/li&gt;
+  &lt;li&gt;예외반환값은 WHEN 절의 모든 값과 같지 않은 경우 반환되는 값&lt;/li&gt;
+  &lt;li&gt;기본 형식 1&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;CASE&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;속성이름&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;WHEN&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;값&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;THEN&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;반환값&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;.......&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;WHEN&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;값&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;THEN&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;반환값&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ELSE&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;예외반환값&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;END&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;기본 형식 2&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;CASE&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;WHEN&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;조건&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;THEN&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;반환값&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;.......&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;WHEN&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;조건&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;THEN&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;반환값&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ELSE&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;예외반환값&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;END&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Customer 테이블 데이터&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-27-database-39-01.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;customer에서-계정에-대한-등급을-확인하되-등급을-vip는-최우수고객-gold는-우수고객-silver는-일반고객-new는-새내기-null인-경우-자료없음으로-표기하시오&quot;&gt;Customer에서 계정에 대한 등급을 확인하되, 등급을 VIP는 최우수고객, Gold는 우수고객, Silver는 일반고객, New는 새내기, NULL인 경우 자료없음으로 표기하시오.&lt;/h4&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;account&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;CASE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;grade&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;WHEN&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Gold'&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;THEN&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'우수고객'&lt;/span&gt;
+               &lt;span class=&quot;k&quot;&gt;WHEN&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Silver'&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;THEN&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'일반고객'&lt;/span&gt;
+               &lt;span class=&quot;k&quot;&gt;WHEN&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'New'&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;THEN&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'새내기'&lt;/span&gt;
+               &lt;span class=&quot;k&quot;&gt;WHEN&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'VIP'&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;THEN&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'최우수고객'&lt;/span&gt;
+               &lt;span class=&quot;k&quot;&gt;ELSE&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'자료없음'&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;END&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'등급'&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;customer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;위 쿼리의 결과&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-27-database-39-02.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 27 Apr 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/devlog/2020/04/27/database-39/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/27/database-39/</guid>
+        
+        <category>database</category>
+        
+        <category>mysql</category>
+        
+        
+        <category>devlog</category>
+        
+      </item>
+    
+      <item>
+        <title>[Database] MySQL의 내장 함수</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-27-database-38.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;mysql의-내장-함수-build-in-function&quot;&gt;MySQL의 내장 함수 (Build-In Function)&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;내장함수는 상수나 속성이름을 입력 값으로 받아 단일 값을 결과로 반환&lt;/li&gt;
+  &lt;li&gt;모든 내장 함수는 최초에 선언될 때 유효한 입력 값을 받아야 함
+    &lt;ul&gt;
+      &lt;li&gt;수학 함수의 입력 값 : 정수 또는 실수&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;선언에 위배된 값이 입력되면 질의는 실행을 중지하고 오류 메시지를 출력&lt;/li&gt;
+  &lt;li&gt;내장함수는 SELECT절과 WHERE절, UPDATE SET절에 사용 가능
+    &lt;ul&gt;
+      &lt;li&gt;데이터 검색과 수정에만 내장함수를 사용&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-27-database-38-01.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;함수명&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;인자&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;테이블이름&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;열이름&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;함수명&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;인자&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;UPDATE&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;테이블이름&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;SET&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;열이름&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;함수명&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;인자&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;표현식에서-타입-변환&quot;&gt;표현식에서 타입 변환&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;데이터 타입이 다른 피연산자를 처리하기 위하여 연산자에 호환되도록 피연산자의 타입을 변환한다.&lt;/li&gt;
+  &lt;li&gt;일부 변환은 암시적으로 발생한다.&lt;/li&gt;
+  &lt;li&gt;필요에 따라 숫자를 문자열로 또는 문자열을 숫자로 자동으로 변환한다.&lt;/li&gt;
+  &lt;li&gt;CAST( ) 함수를 사용하여 명확하게 변환하는 것도 가능하다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-27-database-38-02.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;연산자-operators&quot;&gt;연산자 (Operators)&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-27-database-38-03.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Mon, 27 Apr 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/devlog/2020/04/27/database-38/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/27/database-38/</guid>
+        
+        <category>database</category>
+        
+        <category>mysql</category>
+        
+        
+        <category>devlog</category>
+        
+      </item>
     
       <item>
         <title>[유닉스] 파일 덤프 [ dd (data duplicate) ]</title>
@@ -1145,9 +1439,9 @@ unix+ 123
   &lt;li&gt;기본형식&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;UPDATE 테이블이름
-SET 속성이름1=값1, 속성이름2=값2, ...
-[ WHERE 조건 ] ;
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;UPDATE&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;테이블이름&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;SET&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;속성이름&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;값&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;속성이름&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;값&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;조건&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;ul&gt;
@@ -1159,8 +1453,8 @@ SET 속성이름1=값1, 속성이름2=값2, ...
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;UPDATE items
-SET price = price * 1.05;
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;UPDATE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;items&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;SET&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;price&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;price&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;05&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;ul&gt;
@@ -1195,12 +1489,12 @@ SET price = price * 1.05;
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;UPDATE orders
-SET qty = 10
-WHERE item='E06' AND date='2015-06-01'
-AND customer IN ( SELECT account
-FROM customer
-WHERE name='이남이' );
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;UPDATE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;orders&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;SET&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;qty&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'E06'&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AND&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'2015-06-01'&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;AND&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;customer&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;IN&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;account&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;customer&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'이남이'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-18-database-37-05.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
@@ -1232,8 +1526,8 @@ WHERE name='이남이' );
   &lt;li&gt;기본형식&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;DELETE FROM 테이블이름
-[ WHERE 조건 ] ;
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;DELETE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;테이블이름&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;조건&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;ul&gt;
@@ -1241,8 +1535,8 @@ WHERE name='이남이' );
 &lt;img src=&quot;/assets/img/database/2020/04/2020-04-18-database-37-06.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;DELETE FROM orders
-WHERE date=’2015-06-10’;
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;DELETE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;orders&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;’&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2015&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;06&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;’&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;ul&gt;
@@ -1255,7 +1549,7 @@ WHERE date=’2015-06-10’;
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;DELETE FROM orders ;
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;DELETE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;orders&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 </description>
@@ -3197,485 +3491,6 @@ me 클래스를 가진 요소의 이전에 있는 형제 요소를 모두 선택
         
         
         <category>tip</category>
-        
-      </item>
-    
-      <item>
-        <title>[CSS] 배경 이미지 반복 여부 정하는 속성(background-repeat)</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/css/2020-04-07-tip-css-03.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;배경-이미지-반복&quot;&gt;배경 이미지 반복&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;background-repeat : 배경 이미지의 반복 여부와 반복 방향을 정합니다.&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;기본값 : repeat&lt;/li&gt;
-      &lt;li&gt;상속 : No&lt;/li&gt;
-      &lt;li&gt;애니메이션 : No&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;사용법&quot;&gt;사용법&lt;/h1&gt;
-
-&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;background-repeat&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;repeat&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;repeat-x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;repeat-y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;no-repeat&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;inherit&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;repeat : 가로 방향, 세로 방향으로 반복합니다.&lt;/li&gt;
-  &lt;li&gt;repeat-x : 가로 방향으로 반복합니다.&lt;/li&gt;
-  &lt;li&gt;repeat-y : 세로 방향으로 반복합니다.&lt;/li&gt;
-  &lt;li&gt;no-repeat : 반복하지 않습니다.&lt;/li&gt;
-  &lt;li&gt;initial : 기본값으로 설정합니다.&lt;/li&gt;
-  &lt;li&gt;inherit : 부모 요소의 속성값을 상속받습니다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;브라우저-지원&quot;&gt;브라우저 지원&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Chrome : 1.0+&lt;/li&gt;
-  &lt;li&gt;Firefox : 1.0+&lt;/li&gt;
-  &lt;li&gt;Internet Explorer : 4.0+&lt;/li&gt;
-  &lt;li&gt;Opera : 3.5+&lt;/li&gt;
-  &lt;li&gt;Safari : 1.0+&lt;/li&gt;
-&lt;/ul&gt;
-
-</description>
-        <pubDate>Tue, 07 Apr 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/tip/2020/04/07/tip-css-03/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/tip/2020/04/07/tip-css-03/</guid>
-        
-        <category>web</category>
-        
-        <category>css</category>
-        
-        
-        <category>tip</category>
-        
-      </item>
-    
-      <item>
-        <title>[유닉스] 파일 아카이브 - .gz 파일, &amp;nbsp; .zip 파일, &amp;nbsp; .bz2 파일</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-04-06-unix-26.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;gzipgunzip&quot;&gt;gzip/gunzip&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;gzip 명령으로 파일을 압축하여 .gz 파일을 생성할 수 있고, gzip 또는 gunzip 명령을 이용하여 압축을 풀 수 있다.
-&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;압축하기--gzip&quot;&gt;압축하기 : gzip&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;지정한 파일을 압축해 파일이름.gz 파일 생성&lt;/li&gt;
-  &lt;li&gt;압축 효율이 좋음&lt;/li&gt;
-  &lt;li&gt;형식 : gzip [옵션] 파일명&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;옵션&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;-d : 파일 압축을 해제&lt;/li&gt;
-      &lt;li&gt;-l : 압축된 파일의 정보를 보여줌&lt;/li&gt;
-      &lt;li&gt;-r : 하위 디렉토리로 이동하여 파일 압축&lt;/li&gt;
-      &lt;li&gt;-t : 압축 파일 검사&lt;/li&gt;
-      &lt;li&gt;-v : 압축 정보를 화면에 출력&lt;/li&gt;
-      &lt;li&gt;-g : 최대한 압축&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;사용 예&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;gzip test1.txt&lt;/li&gt;
-      &lt;li&gt;gzip –v test2.txt test3.txt&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;gzip &lt;/span&gt;test1.txt
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ls &lt;/span&gt;test1.&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;
-
-test1.txt.gz
-&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;-d 옵션을 사용해 압축 파일 복원 가능&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;-l 옵션을 사용해 압축 파일에 대한 정보 확인 가능&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;파일의 원래 크기, 압축된 크기, 압축률, 원본 파일명 출력&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;gzip&lt;/span&gt; –l test1.txt.gz
-
-compressed uncompressed ratio uncompressed_name
-
-174        221      33.9%      test1.txt
-&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;파일-내용-보기--zcat&quot;&gt;파일 내용 보기 : zcat&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;gzip으로 압축된 파일의 내용을 보여줌&lt;/li&gt;
-  &lt;li&gt;솔라리스와 리눅스에서 명령이 다름(솔라리스 : gzcat, 리눅스 : zcat)&lt;/li&gt;
-  &lt;li&gt;형식 : zcat 파일명&lt;/li&gt;
-  &lt;li&gt;사용 예
-    &lt;ul&gt;
-      &lt;li&gt;zcat test1.txt.gz&lt;/li&gt;
-      &lt;li&gt;zcat test1.txt&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;zcat test1.txt.gz
-
-127.0.0.1 localhost
-127.0.1.1 ksshin
-
-......
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;zcat test1.txt
-
-127.0.0.1 localhost
-127.0.1.1 ksshin
-
-......
-&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;압축풀기--gunzip&quot;&gt;압축풀기 : gunzip&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;gzip으로 압축된 파일의 압축을 복원&lt;/li&gt;
-  &lt;li&gt;형식 : gunzip 파일명&lt;/li&gt;
-  &lt;li&gt;사용 예
-    &lt;ul&gt;
-      &lt;li&gt;gunzip test1.txt.gz&lt;/li&gt;
-      &lt;li&gt;gunzip test1.txt&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;명령 결과는 gzip –d의 결과와 같음&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.gz
-test1.tar.gz txt.tar.gz
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;gunzip&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.gz
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ls
-&lt;/span&gt;test1.txt test2.txt test3.txt txt.tar
-&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;zipunzip-명령&quot;&gt;zip/unzip 명령&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;zip 명령으로 파일을 압축하여 .zip 파일을 생성할 수 있고, unzip 명령을 이용하여 압축을 풀 수 있다.&lt;/li&gt;
-  &lt;li&gt;.zip 파일을 생성하고 그 압축을 풀어줌&lt;/li&gt;
-  &lt;li&gt;PC의 zip과 호환이 가능하기 때문에 유닉스와 PC간 데이터 주고받을 때 사용&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;압축하기--zip&quot;&gt;압축하기 : zip&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;지정한 파일을 압축해 파일이름.zip 파일 생성&lt;/li&gt;
-  &lt;li&gt;원본 파일은 그대로 두고 압축 파일을 별도로 만듦&lt;/li&gt;
-  &lt;li&gt;형식 : zip [옵션] zip파일명 압축할 파일명&lt;/li&gt;
-  &lt;li&gt;옵션
-    &lt;ul&gt;
-      &lt;li&gt;-v : 압축 정보를 화면에 출력&lt;/li&gt;
-      &lt;li&gt;-r : 디렉토리 압축&lt;/li&gt;
-      &lt;li&gt;-u : 수정되거나 추가된 파일만 출력&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;사용 예
-    &lt;ul&gt;
-      &lt;li&gt;zip test1.txt.zip test1.txt&lt;/li&gt;
-      &lt;li&gt;zip –v txt.zip test2.txt test3.txt&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;zip test1.txt.zip test1.txt
-adding: test1.txt &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;deflated 34%&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.zip
-test1.txt.zip
-
-&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;디렉토리도 압축 가능&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;zip –r tmp.zip tmp
-adding: tmp/ &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;stored 0%&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-adding: tmp/test3.txt &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;deflated 34%&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-adding: tmp/test1.txt &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;deflated 34%&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-adding: tmp/test2.txt &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;deflated 34%&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.zip
-test1.txt.zip tmp.zip
-&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;압축풀기--unzip&quot;&gt;압축풀기 : unzip&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;zip으로 압축한 파일을 복원&lt;/li&gt;
-  &lt;li&gt;형식 : unzip 파일명&lt;/li&gt;
-  &lt;li&gt;사용 예
-    &lt;ul&gt;
-      &lt;li&gt;unzip test1.txt.zip&lt;/li&gt;
-      &lt;li&gt;unzip test1.txt&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;mkdir &lt;/span&gt;temp1
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;mv &lt;/span&gt;tmp.zip temp1
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;temp1
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;unzip tmp.zip
-Archive: tmp.zip
-creating: tmp/
-inflating: tmp/test3.txt
-inflating: tmp/teset1.txt
-inflating: tmp/test2.txt
-
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt; –F
-tmp/ tmp.zip
-&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;bzip2bunzip2&quot;&gt;bzip2/bunzip2&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;bzip2 명령으로 파일을 압축하여 .bz2 파일을 생성할 수 있고, bunzip2 명령을 이용하여 압축을 풀 수 있다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;압축하기--bzip2&quot;&gt;압축하기 : bzip2&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;오픈소스 압축 명령&lt;/li&gt;
-  &lt;li&gt;gzip을 개선하여 현재 가장 많이 사용하고 있는 압축 유틸리티&lt;/li&gt;
-  &lt;li&gt;gzip이나 zip에 비해 압축률은 좋지만 속도가 약간 느림&lt;/li&gt;
-  &lt;li&gt;지정한 파일을 압축해 파일이름.bz2 파일 생성&lt;/li&gt;
-  &lt;li&gt;형식 : bzip2 [옵션] 파일명&lt;/li&gt;
-  &lt;li&gt;옵션
-    &lt;ul&gt;
-      &lt;li&gt;-d : 파일 압축을 해제&lt;/li&gt;
-      &lt;li&gt;-l : 압축된 파일의 내용을 보여줌&lt;/li&gt;
-      &lt;li&gt;-t : 압축 파일 검사&lt;/li&gt;
-      &lt;li&gt;-v : 압축 정보를 화면에 출력&lt;/li&gt;
-      &lt;li&gt;–best : 최대한 압축&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;사용 예
-    &lt;ul&gt;
-      &lt;li&gt;bzip2 test1.txt&lt;/li&gt;
-      &lt;li&gt;bzip2 –v test2.txt test3.txt&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;bzip2 test1.txt
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ls
-&lt;/span&gt;test1.txt.bz2 test2.txt test3.txt
-
-&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;파일-내용-보기--bzcat&quot;&gt;파일 내용 보기 : bzcat&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;압축된 파일의 내용을 봄&lt;/li&gt;
-  &lt;li&gt;형식 : bzcat 파일명&lt;/li&gt;
-  &lt;li&gt;사용 예
-    &lt;ul&gt;
-      &lt;li&gt;bzcat test1.txt.bz2&lt;/li&gt;
-      &lt;li&gt;bzcat test1.txt&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;bzcat test1.txt.bz2
-127.0.0.1 localhost
-127.0.1.1 ksshin
-......
-&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;압축풀기--bunzip2&quot;&gt;압축풀기 : bunzip2&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;bzip2로 압축된 파일을 복원&lt;/li&gt;
-  &lt;li&gt;형식 : bunzip2 파일명&lt;/li&gt;
-  &lt;li&gt;사용 예
-    &lt;ul&gt;
-      &lt;li&gt;bunzip2 test1.txt.bz2&lt;/li&gt;
-      &lt;li&gt;bunzip2 test1.txt&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;bunzip2 명령의 결과는 bzip2 –d의 결과와 같음&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;bunzip2 test1.txt.bz2
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ls
-&lt;/span&gt;test1.txt test2.txt test3.txt
-&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;압축-효율-비교&quot;&gt;압축 효율 비교&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;compress &amp;lt; gzip &amp;lt; bzip2&lt;/li&gt;
-&lt;/ul&gt;
-
-</description>
-        <pubDate>Mon, 06 Apr 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/04/06/unix-26/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/06/unix-26/</guid>
-        
-        <category>unix</category>
-        
-        
-        <category>devlog</category>
-        
-      </item>
-    
-      <item>
-        <title>[유닉스] 파일 압축하기(compress), 압축풀기(uncompress)</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-04-06-unix-25.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;압축하기--compress&quot;&gt;압축하기 : compress&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;파일을 압축&lt;/li&gt;
-  &lt;li&gt;가장 오래된 압축 유틸리티&lt;/li&gt;
-  &lt;li&gt;형식 : compress [옵션] 파일명&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;옵션&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;-f : 강제 압축&lt;/li&gt;
-      &lt;li&gt;-c : 압축 결과를 화면에 출력 (.Z 파일은 생성이 안 됨)&lt;/li&gt;
-      &lt;li&gt;-V : 압축 정보를 화면에 출력&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;사용 예 : compress test1.txt&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;compress test1.txt
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ls &lt;/span&gt;test1.&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;
-test1.txt.Z
-&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;사용 예 : compress –v test2.txt test3.txt&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;compress –v test2.txt test3.txt
-test2.txt: &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; replaced with test2.txt.Z Compression: 15.83%
-test3.txt: &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; replaced with test3.txt.Z Compression: 15.83%
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ls
-&lt;/span&gt;test1.txt.Z test2.txt.Z test3.txt.Z
-&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;옵션 없이 사용하면, 정상 압축될 때는 아무 메시지 출력하지 않고, 오류가 있을 때만 오류 메시지 출력&lt;/li&gt;
-  &lt;li&gt;여러 파일 압축도 가능&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;compress –v &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.txt
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;파일 크기가 작으면 압축하지 않음&lt;/li&gt;
-  &lt;li&gt;-f 옵션은 강제 압축&lt;/li&gt;
-  &lt;li&gt;압축률이 -(마이너스)이면 압축된 결과의 파일이 더 커졌음을 나타냄&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cat&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; a.txt
-Hello~!
-^D
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt; –l a.&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;-rw-r--r--&lt;/span&gt; 1 ksshin ksshin 8 7월 4 08:40 a.txt
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;compress –fv a.txt
-a.txt: &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; replaced with a.txt.Z Compression: &lt;span class=&quot;nt&quot;&gt;-50&lt;/span&gt;.00%
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt; –l a.&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;-rw-r--r--&lt;/span&gt; 1 ksshin ksshin 12 7월 4 08:40 a.txt.Z
-&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h1 id=&quot;파일-내용-보기--zcat&quot;&gt;파일 내용 보기 : zcat&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;압축을 풀지 않고도 압축된 파일의 내용을 볼 수 있음&lt;/li&gt;
-  &lt;li&gt;형식 : zcat 파일명&lt;/li&gt;
-  &lt;li&gt;사용 예
-    &lt;ul&gt;
-      &lt;li&gt;zcat test1.txt.Z&lt;/li&gt;
-      &lt;li&gt;zcat test1.txt&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;zcat a.txt.Z
-Hello~!
-&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h1 id=&quot;압축-풀기--uncompress&quot;&gt;압축 풀기 : uncompress&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;compress로 압축된 파일의 압축을 풀어줌&lt;/li&gt;
-  &lt;li&gt;형식 : uncompress [옵션] 파일명&lt;/li&gt;
-  &lt;li&gt;옵션
-    &lt;ul&gt;
-      &lt;li&gt;-c : 복원 결과를 화면에 출력&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;사용 예 : uncompress test1.txt.Z, uncompress test1.txt&lt;/li&gt;
-  &lt;li&gt;복원할 파일명을 지정하지 않으면 표준 입력을 압축 파일로 간주&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ls
-&lt;/span&gt;a.txt.Z test1.txt.Z test2.txt.Z test3.txt.Z
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;uncompress &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.Z
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.txt
-a.txt test1.txt test2.txt test3.txt
-&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-</description>
-        <pubDate>Mon, 06 Apr 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/04/06/unix-25/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/06/unix-25/</guid>
-        
-        <category>unix</category>
-        
-        
-        <category>devlog</category>
         
       </item>
     
