@@ -49,8 +49,53 @@
   wcs_do();
 </script>
 
+<!--<script>-->
+  <!--$(function () {-->
+    <!--var posts = [];-->
+    <!--$.get('/a_tags/database/posts.json', function (data) {-->
+      <!--posts = data;-->
+    <!--});-->
+    <!--$('#search').on('keyup', function () {-->
+      <!--var keyword = this.value.toLowerCase();-->
+      <!--var searchResult = [];-->
 
-<!--<script src="/js/fontawesome/all.js"></script>-->
+      <!--if (keyword.length > 0) {-->
+        <!--$('#search-result').show();-->
+      <!--} else {-->
+        <!--$('#search-result').hide();-->
+      <!--}-->
+      <!--$('.result-item').remove();-->
+
+      <!--for (var i = 0; i < posts.length; i++) {-->
+        <!--var post = posts[i];-->
+        <!--if (-->
+          <!--post.title.toLowerCase().indexOf(keyword) >= 0 ||-->
+          <!--post.description.toLowerCase().indexOf(keyword) >= 0-->
+        <!--) {-->
+          <!--searchResult.push(post);-->
+        <!--}-->
+      <!--}-->
+      <!--if (searchResult.length === 0) {-->
+        <!--$('#search-result').append(-->
+          <!--'<div class="result-item"><div class="description">There is no search result.</div></div>'-->
+        <!--);-->
+      <!--} else {-->
+        <!--for (var i = 0; i < searchResult.length; i++) {-->
+          <!--$('#search-result').append(-->
+            <!--'<a class="result-item" href="' +-->
+            <!--searchResult[i].url +-->
+            <!--'"><div class="title">【' + searchResult[i].category + '】' +-->
+            <!--searchResult[i].title +-->
+            <!--'</div><div class="description">' +-->
+            <!--searchResult[i].description +-->
+            <!--'</div></a>'-->
+          <!--);-->
+        <!--}-->
+      <!--}-->
+    <!--});-->
+  <!--});-->
+<!--</script>-->
+
 
 
 
@@ -400,6 +445,18 @@
 					<!---->
 					<!---->
 					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
 					<!--<li>-->
 						<!--<div  class="list-wrapper">-->
 							<!--&lt;!&ndash;<a class="sidebar-nav-item" href="/a_categories/devlog/">Devlog</a>&ndash;&gt;-->
@@ -428,6 +485,12 @@
 							<!---->
 							<!--<li>-->
 								<!--<a class="sidebar-nav-subitem" href="/a_tags/database/4/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/database/5/index.html">Database</a>-->
 							<!--</li>-->
 							<!---->
 							<!---->
@@ -613,6 +676,8 @@
 							<!---->
 							<!---->
 							<!---->
+							<!---->
+							<!---->
 							<!--<li>-->
 								<!--<a class="sidebar-nav-subitem" href="/a_tags/goods/index.html">Goods</a>-->
 							<!--</li>-->
@@ -652,6 +717,8 @@
 							<!--<h3 class="sidebar-nav-item">Tip</h3>-->
 						<!--</div>-->
 						<!--<ul class="list-body">-->
+							<!---->
+							<!---->
 							<!---->
 							<!---->
 							<!---->
@@ -745,6 +812,8 @@
 							<!--<h3 class="sidebar-nav-item">Portfolio</h3>-->
 						<!--</div>-->
 						<!--<ul class="list-body">-->
+							<!---->
+							<!---->
 							<!---->
 							<!---->
 							<!---->
@@ -910,6 +979,8 @@
 	  
 	    
 	  
+	    
+	  
     
     <!-- Nav links -->
 	  <!--<a href="https://github.com/KingFelix/emerald/archive/master.zip">Download</a>-->
@@ -944,6 +1015,18 @@
 </header>
 
       
+
+		<!--<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div id="search-bar">
+        <i class="fa fa-search" aria-hidden="true"></i>
+        <input id="search" type="text" placeholder="Search..." />
+        <div id="search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>-->
 
     <!-- Main content -->
 		<div class="main-layout">
@@ -986,14 +1069,290 @@
 </style>
 
 
-<article id="post-devlog/2020/03/20/database-20" class="post mb6 this" role="article">
+<article id="post-devlog/2020/04/03/database-26" class="post mb6 this" role="article">
   <div>
     <!--제목-->
     <h1 class="post-title">
       
-        <a href="/devlog/2020/03/20/database-20/" data-flip="title">
+        <a href="/devlog/2020/04/03/database-26/" data-flip="title">
       
-      [Database] MySQL 테이블 이름변경 및 삭제
+      [Database] 조건 검색 - NULL 을 이용한 검색
+      
+        </a>
+      
+    </h1>
+
+    <!--날짜-->
+    <p class="post-date heading">
+      <!--<time datetime="2020-04-03T00:00:00+09:00">03 Apr 2020</time>-->
+      <time datetime="2020-04-03T00:00:00+09:00">2020년 04월 03일</time>
+    </p>
+    <!--카테고리영역-->
+    
+
+
+
+
+
+
+
+
+
+<a class="tag" href="" data-flip="title">Devlog</a>
+
+
+    
+
+
+
+
+
+
+
+
+
+<a class="tag" href="" data-flip="title">Database</a><a class="tag" href="" data-flip="title">Mysql</a>
+
+
+    
+  <div class="hr" style="padding-bottom:0"></div>
+
+
+  </div>
+
+  
+
+  
+  
+
+</article>
+
+  
+
+  
+    
+<style>
+  .post+.post:before{
+    display: none !important;
+  }
+</style>
+
+
+<article id="post-devlog/2020/04/03/database-25" class="post mb6 this" role="article">
+  <div>
+    <!--제목-->
+    <h1 class="post-title">
+      
+        <a href="/devlog/2020/04/03/database-25/" data-flip="title">
+      
+      [Database] 조건 검색 - LIKE 를 이용한 검색
+      
+        </a>
+      
+    </h1>
+
+    <!--날짜-->
+    <p class="post-date heading">
+      <!--<time datetime="2020-04-03T00:00:00+09:00">03 Apr 2020</time>-->
+      <time datetime="2020-04-03T00:00:00+09:00">2020년 04월 03일</time>
+    </p>
+    <!--카테고리영역-->
+    
+
+
+
+
+
+
+
+
+
+<a class="tag" href="" data-flip="title">Devlog</a>
+
+
+    
+
+
+
+
+
+
+
+
+
+<a class="tag" href="" data-flip="title">Database</a><a class="tag" href="" data-flip="title">Mysql</a>
+
+
+    
+  <div class="hr" style="padding-bottom:0"></div>
+
+
+  </div>
+
+  
+
+  
+  
+
+</article>
+
+  
+
+  
+    
+<style>
+  .post+.post:before{
+    display: none !important;
+  }
+</style>
+
+
+<article id="post-devlog/2020/04/03/database-24" class="post mb6 this" role="article">
+  <div>
+    <!--제목-->
+    <h1 class="post-title">
+      
+        <a href="/devlog/2020/04/03/database-24/" data-flip="title">
+      
+      [Database] 조건 검색(WHERE 절)
+      
+        </a>
+      
+    </h1>
+
+    <!--날짜-->
+    <p class="post-date heading">
+      <!--<time datetime="2020-04-03T00:00:00+09:00">03 Apr 2020</time>-->
+      <time datetime="2020-04-03T00:00:00+09:00">2020년 04월 03일</time>
+    </p>
+    <!--카테고리영역-->
+    
+
+
+
+
+
+
+
+
+
+<a class="tag" href="" data-flip="title">Devlog</a>
+
+
+    
+
+
+
+
+
+
+
+
+
+<a class="tag" href="" data-flip="title">Database</a><a class="tag" href="" data-flip="title">Mysql</a>
+
+
+    
+  <div class="hr" style="padding-bottom:0"></div>
+
+
+  </div>
+
+  
+
+  
+  
+
+</article>
+
+  
+
+  
+    
+<style>
+  .post+.post:before{
+    display: none !important;
+  }
+</style>
+
+
+<article id="post-devlog/2020/04/03/database-23" class="post mb6 this" role="article">
+  <div>
+    <!--제목-->
+    <h1 class="post-title">
+      
+        <a href="/devlog/2020/04/03/database-23/" data-flip="title">
+      
+      [Database] 데이터 조작어(DML) - SELECT 문 (데이터 검색)
+      
+        </a>
+      
+    </h1>
+
+    <!--날짜-->
+    <p class="post-date heading">
+      <!--<time datetime="2020-04-03T00:00:00+09:00">03 Apr 2020</time>-->
+      <time datetime="2020-04-03T00:00:00+09:00">2020년 04월 03일</time>
+    </p>
+    <!--카테고리영역-->
+    
+
+
+
+
+
+
+
+
+
+<a class="tag" href="" data-flip="title">Devlog</a>
+
+
+    
+
+
+
+
+
+
+
+
+
+<a class="tag" href="" data-flip="title">Database</a><a class="tag" href="" data-flip="title">Mysql</a>
+
+
+    
+  <div class="hr" style="padding-bottom:0"></div>
+
+
+  </div>
+
+  
+
+  
+  
+
+</article>
+
+  
+
+  
+    
+<style>
+  .post+.post:before{
+    display: none !important;
+  }
+</style>
+
+
+<article id="post-devlog/2020/03/20/database-19" class="post mb6 this" role="article">
+  <div>
+    <!--제목-->
+    <h1 class="post-title">
+      
+        <a href="/devlog/2020/03/20/database-19/" data-flip="title">
+      
+      [Database] MySQL 테이블 변경
       
         </a>
       
@@ -1055,14 +1414,152 @@
 </style>
 
 
-<article id="post-devlog/2020/03/20/database-19" class="post mb6 this" role="article">
+<article id="post-devlog/2020/03/20/database-22" class="post mb6 this" role="article">
   <div>
     <!--제목-->
     <h1 class="post-title">
       
-        <a href="/devlog/2020/03/20/database-19/" data-flip="title">
+        <a href="/devlog/2020/03/20/database-22/" data-flip="title">
       
-      [Database] MySQL 테이블 변경
+      [Database] MySQL 뷰(View)
+      
+        </a>
+      
+    </h1>
+
+    <!--날짜-->
+    <p class="post-date heading">
+      <!--<time datetime="2020-03-20T00:00:00+09:00">20 Mar 2020</time>-->
+      <time datetime="2020-03-20T00:00:00+09:00">2020년 03월 20일</time>
+    </p>
+    <!--카테고리영역-->
+    
+
+
+
+
+
+
+
+
+
+<a class="tag" href="" data-flip="title">Devlog</a>
+
+
+    
+
+
+
+
+
+
+
+
+
+<a class="tag" href="" data-flip="title">Database</a><a class="tag" href="" data-flip="title">Mysql</a>
+
+
+    
+  <div class="hr" style="padding-bottom:0"></div>
+
+
+  </div>
+
+  
+
+  
+  
+
+</article>
+
+  
+
+  
+    
+<style>
+  .post+.post:before{
+    display: none !important;
+  }
+</style>
+
+
+<article id="post-devlog/2020/03/20/database-21" class="post mb6 this" role="article">
+  <div>
+    <!--제목-->
+    <h1 class="post-title">
+      
+        <a href="/devlog/2020/03/20/database-21/" data-flip="title">
+      
+      [Database] MySQL 일괄 실행, 백업, 복원
+      
+        </a>
+      
+    </h1>
+
+    <!--날짜-->
+    <p class="post-date heading">
+      <!--<time datetime="2020-03-20T00:00:00+09:00">20 Mar 2020</time>-->
+      <time datetime="2020-03-20T00:00:00+09:00">2020년 03월 20일</time>
+    </p>
+    <!--카테고리영역-->
+    
+
+
+
+
+
+
+
+
+
+<a class="tag" href="" data-flip="title">Devlog</a>
+
+
+    
+
+
+
+
+
+
+
+
+
+<a class="tag" href="" data-flip="title">Database</a><a class="tag" href="" data-flip="title">Mysql</a>
+
+
+    
+  <div class="hr" style="padding-bottom:0"></div>
+
+
+  </div>
+
+  
+
+  
+  
+
+</article>
+
+  
+
+  
+    
+<style>
+  .post+.post:before{
+    display: none !important;
+  }
+</style>
+
+
+<article id="post-devlog/2020/03/20/database-20" class="post mb6 this" role="article">
+  <div>
+    <!--제목-->
+    <h1 class="post-title">
+      
+        <a href="/devlog/2020/03/20/database-20/" data-flip="title">
+      
+      [Database] MySQL 테이블 이름변경 및 삭제
       
         </a>
       
@@ -1253,420 +1750,6 @@
 
   
 
-  
-    
-<style>
-  .post+.post:before{
-    display: none !important;
-  }
-</style>
-
-
-<article id="post-devlog/2020/03/12/database-17" class="post mb6 this" role="article">
-  <div>
-    <!--제목-->
-    <h1 class="post-title">
-      
-        <a href="/devlog/2020/03/12/database-17/" data-flip="title">
-      
-      [Database] SQL 개요와 MySQL 테이블 생성, AUTO_INCREMENT(자동증가)
-      
-        </a>
-      
-    </h1>
-
-    <!--날짜-->
-    <p class="post-date heading">
-      <!--<time datetime="2020-03-12T00:00:00+09:00">12 Mar 2020</time>-->
-      <time datetime="2020-03-12T00:00:00+09:00">2020년 03월 12일</time>
-    </p>
-    <!--카테고리영역-->
-    
-
-
-
-
-
-
-
-
-
-<a class="tag" href="" data-flip="title">Devlog</a>
-
-
-    
-
-
-
-
-
-
-
-
-
-<a class="tag" href="" data-flip="title">Database</a><a class="tag" href="" data-flip="title">Mysql</a>
-
-
-    
-  <div class="hr" style="padding-bottom:0"></div>
-
-
-  </div>
-
-  
-
-  
-  
-
-</article>
-
-  
-
-  
-    
-<style>
-  .post+.post:before{
-    display: none !important;
-  }
-</style>
-
-
-<article id="post-devlog/2020/03/06/database-13" class="post mb6 this" role="article">
-  <div>
-    <!--제목-->
-    <h1 class="post-title">
-      
-        <a href="/devlog/2020/03/06/database-13/" data-flip="title">
-      
-      [Database] 순수관계연산자 (2/3)
-      
-        </a>
-      
-    </h1>
-
-    <!--날짜-->
-    <p class="post-date heading">
-      <!--<time datetime="2020-03-06T00:00:00+09:00">06 Mar 2020</time>-->
-      <time datetime="2020-03-06T00:00:00+09:00">2020년 03월 06일</time>
-    </p>
-    <!--카테고리영역-->
-    
-
-
-
-
-
-
-
-
-
-<a class="tag" href="" data-flip="title">Devlog</a>
-
-
-    
-
-
-
-
-
-
-
-
-
-<a class="tag" href="" data-flip="title">Database</a><a class="tag" href="" data-flip="title">Mysql</a>
-
-
-    
-  <div class="hr" style="padding-bottom:0"></div>
-
-
-  </div>
-
-  
-
-  
-  
-
-</article>
-
-  
-
-  
-    
-<style>
-  .post+.post:before{
-    display: none !important;
-  }
-</style>
-
-
-<article id="post-devlog/2020/03/06/database-15" class="post mb6 this" role="article">
-  <div>
-    <!--제목-->
-    <h1 class="post-title">
-      
-        <a href="/devlog/2020/03/06/database-15/" data-flip="title">
-      
-      [Database] Windows(윈도우)에 MySQL 설치방법
-      
-        </a>
-      
-    </h1>
-
-    <!--날짜-->
-    <p class="post-date heading">
-      <!--<time datetime="2020-03-06T00:00:00+09:00">06 Mar 2020</time>-->
-      <time datetime="2020-03-06T00:00:00+09:00">2020년 03월 06일</time>
-    </p>
-    <!--카테고리영역-->
-    
-
-
-
-
-
-
-
-
-
-<a class="tag" href="" data-flip="title">Devlog</a>
-
-
-    
-
-
-
-
-
-
-
-
-
-<a class="tag" href="" data-flip="title">Database</a><a class="tag" href="" data-flip="title">Mysql</a>
-
-
-    
-  <div class="hr" style="padding-bottom:0"></div>
-
-
-  </div>
-
-  
-
-  
-  
-
-</article>
-
-  
-
-  
-    
-<style>
-  .post+.post:before{
-    display: none !important;
-  }
-</style>
-
-
-<article id="post-devlog/2020/03/06/database-14" class="post mb6 this" role="article">
-  <div>
-    <!--제목-->
-    <h1 class="post-title">
-      
-        <a href="/devlog/2020/03/06/database-14/" data-flip="title">
-      
-      [Database] 순수관계연산자 (3/3)
-      
-        </a>
-      
-    </h1>
-
-    <!--날짜-->
-    <p class="post-date heading">
-      <!--<time datetime="2020-03-06T00:00:00+09:00">06 Mar 2020</time>-->
-      <time datetime="2020-03-06T00:00:00+09:00">2020년 03월 06일</time>
-    </p>
-    <!--카테고리영역-->
-    
-
-
-
-
-
-
-
-
-
-<a class="tag" href="" data-flip="title">Devlog</a>
-
-
-    
-
-
-
-
-
-
-
-
-
-<a class="tag" href="" data-flip="title">Database</a><a class="tag" href="" data-flip="title">Mysql</a>
-
-
-    
-  <div class="hr" style="padding-bottom:0"></div>
-
-
-  </div>
-
-  
-
-  
-  
-
-</article>
-
-  
-
-  
-    
-<style>
-  .post+.post:before{
-    display: none !important;
-  }
-</style>
-
-
-<article id="post-devlog/2020/02/28/database-12" class="post mb6 this" role="article">
-  <div>
-    <!--제목-->
-    <h1 class="post-title">
-      
-        <a href="/devlog/2020/02/28/database-12/" data-flip="title">
-      
-      [Database] 순수관계연산자 (1/3)
-      
-        </a>
-      
-    </h1>
-
-    <!--날짜-->
-    <p class="post-date heading">
-      <!--<time datetime="2020-02-28T00:00:00+09:00">28 Feb 2020</time>-->
-      <time datetime="2020-02-28T00:00:00+09:00">2020년 02월 28일</time>
-    </p>
-    <!--카테고리영역-->
-    
-
-
-
-
-
-
-
-
-
-<a class="tag" href="" data-flip="title">Devlog</a>
-
-
-    
-
-
-
-
-
-
-
-
-
-<a class="tag" href="" data-flip="title">Database</a><a class="tag" href="" data-flip="title">Mysql</a>
-
-
-    
-  <div class="hr" style="padding-bottom:0"></div>
-
-
-  </div>
-
-  
-
-  
-  
-
-</article>
-
-  
-
-  
-    
-<style>
-  .post+.post:before{
-    display: none !important;
-  }
-</style>
-
-
-<article id="post-devlog/2020/02/28/database-11" class="post mb6 this" role="article">
-  <div>
-    <!--제목-->
-    <h1 class="post-title">
-      
-        <a href="/devlog/2020/02/28/database-11/" data-flip="title">
-      
-      [Database] 관계 대수
-      
-        </a>
-      
-    </h1>
-
-    <!--날짜-->
-    <p class="post-date heading">
-      <!--<time datetime="2020-02-28T00:00:00+09:00">28 Feb 2020</time>-->
-      <time datetime="2020-02-28T00:00:00+09:00">2020년 02월 28일</time>
-    </p>
-    <!--카테고리영역-->
-    
-
-
-
-
-
-
-
-
-
-<a class="tag" href="" data-flip="title">Devlog</a>
-
-
-    
-
-
-
-
-
-
-
-
-
-<a class="tag" href="" data-flip="title">Database</a><a class="tag" href="" data-flip="title">Mysql</a>
-
-
-    
-  <div class="hr" style="padding-bottom:0"></div>
-
-
-  </div>
-
-  
-
-  
-  
-
-</article>
-
-  
-
 
 				</main>
 				<!-- 페이지 네이션-->
@@ -1699,6 +1782,12 @@
   <li >
           <a href="/a_tags/database/4/index.html" title="Database">
             4
+          </a>
+        </li>
+  
+  <li >
+          <a href="/a_tags/database/5/index.html" title="Database">
+            5
           </a>
         </li>
   
@@ -1846,8 +1935,53 @@
   wcs_do();
 </script>
 
+<!--<script>-->
+  <!--$(function () {-->
+    <!--var posts = [];-->
+    <!--$.get('/a_tags/database/posts.json', function (data) {-->
+      <!--posts = data;-->
+    <!--});-->
+    <!--$('#search').on('keyup', function () {-->
+      <!--var keyword = this.value.toLowerCase();-->
+      <!--var searchResult = [];-->
 
-<!--<script src="/js/fontawesome/all.js"></script>-->
+      <!--if (keyword.length > 0) {-->
+        <!--$('#search-result').show();-->
+      <!--} else {-->
+        <!--$('#search-result').hide();-->
+      <!--}-->
+      <!--$('.result-item').remove();-->
+
+      <!--for (var i = 0; i < posts.length; i++) {-->
+        <!--var post = posts[i];-->
+        <!--if (-->
+          <!--post.title.toLowerCase().indexOf(keyword) >= 0 ||-->
+          <!--post.description.toLowerCase().indexOf(keyword) >= 0-->
+        <!--) {-->
+          <!--searchResult.push(post);-->
+        <!--}-->
+      <!--}-->
+      <!--if (searchResult.length === 0) {-->
+        <!--$('#search-result').append(-->
+          <!--'<div class="result-item"><div class="description">There is no search result.</div></div>'-->
+        <!--);-->
+      <!--} else {-->
+        <!--for (var i = 0; i < searchResult.length; i++) {-->
+          <!--$('#search-result').append(-->
+            <!--'<a class="result-item" href="' +-->
+            <!--searchResult[i].url +-->
+            <!--'"><div class="title">【' + searchResult[i].category + '】' +-->
+            <!--searchResult[i].title +-->
+            <!--'</div><div class="description">' +-->
+            <!--searchResult[i].description +-->
+            <!--'</div></a>'-->
+          <!--);-->
+        <!--}-->
+      <!--}-->
+    <!--});-->
+  <!--});-->
+<!--</script>-->
+
 
 
 
