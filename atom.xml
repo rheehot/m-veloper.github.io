@@ -4,12 +4,42 @@
  <title>슬기로운 개발 생활</title>
  <link href="https://m-veloper.github.io/atom.xml" rel="self"/>
  <id>https://m-veloper.github.io</id>
- <updated>2020-04-28T18:56:57+09:00</updated>
+ <updated>2020-04-29T17:17:26+09:00</updated>
  <author>
    <name>m-veloper</name>
    <uri>https://m-veloper.github.io</uri>
    <email>m_veloper@naver.com</email>
  </author>
+
+ 
+
+ <entry>
+   <title>[Database] MySQL 타입 변환 함수 (Type Conversion Functions)</title>
+   <link href="https://m-veloper.github.io/devlog/2020/04/29/database-49/"/>
+   <id>https://m-veloper.github.io/devlog/2020/04/29/database-49</id>
+   <updated>2020-04-29T00:00:00+09:00</updated>
+   <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-29-database-49.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;타입-변환-함수-type-conversion-functions&quot;&gt;타입 변환 함수 (Type Conversion Functions)&lt;/h1&gt; &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-29-database-49-01.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h3 id=&quot;binary&quot;&gt;BINARY&lt;/h3&gt; &lt;ul&gt; &lt;li&gt;문자열을 바이너리 문자열로 변환&lt;/li&gt; &lt;li&gt;속성값 비교를 강화하기 위한 방법 &lt;ul&gt; &lt;li&gt;문자끼리 비교가 아닌 바이트 간의 비교&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;대소문자 구분함&lt;/li&gt; &lt;li&gt;문자뒤의 스페이스도 중요한 문자로 인식&lt;/li&gt; &lt;/ul&gt; &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt;...</content>
+ </entry>
+
+ 
+
+ <entry>
+   <title>[Database] MySQL 문자열 함수 (String Fuctions) - (2)</title>
+   <link href="https://m-veloper.github.io/devlog/2020/04/29/database-48/"/>
+   <id>https://m-veloper.github.io/devlog/2020/04/29/database-48</id>
+   <updated>2020-04-29T00:00:00+09:00</updated>
+   <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-29-database-48.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;문자열-함수-string-fuctions&quot;&gt;문자열 함수 (String Fuctions)&lt;/h1&gt; &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-29-database-48-01.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-29-database-48-02.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h3 id=&quot;left-str-len--right-str-len-&quot;&gt;LEFT( str, len ), RIGHT( str, len )&lt;/h3&gt; &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;LEFT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'abcdefg'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;RIGHT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'abcdefg'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt; &lt;ul&gt;...</content>
+ </entry>
+
+ 
+
+ <entry>
+   <title>[Database] MySQL 문자열 함수 (String Fuctions) - (1)</title>
+   <link href="https://m-veloper.github.io/devlog/2020/04/29/database-47/"/>
+   <id>https://m-veloper.github.io/devlog/2020/04/29/database-47</id>
+   <updated>2020-04-29T00:00:00+09:00</updated>
+   <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-29-database-47.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;문자열-함수-string-fuctions&quot;&gt;문자열 함수 (String Fuctions)&lt;/h1&gt; &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-29-database-47-01.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h3 id=&quot;ascii&quot;&gt;ASCII()&lt;/h3&gt; &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ASCII&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'2'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ASCII&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ASCII&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'dx'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt; &lt;ul&gt; &lt;li&gt;쿼리 결과 &lt;img src=&quot;/assets/img/database/2020/04/2020-04-29-database-47-02.png&quot; alt=&quot;&quot; /&gt; &lt;br /&gt;&lt;/li&gt; &lt;/ul&gt; &lt;h3 id=&quot;bin-conv&quot;&gt;BIN(), CONV()&lt;/h3&gt;...</content>
+ </entry>
 
  
 
@@ -79,36 +109,6 @@
    <id>https://m-veloper.github.io/devlog/2020/04/27/database-40</id>
    <updated>2020-04-27T00:00:00+09:00</updated>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-27-database-40.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;if-함수&quot;&gt;IF() 함수&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;표현식1 이 참이면, 표현식2를 반환&lt;/li&gt; &lt;li&gt;표현식1 이 거짓이면, 표현식3을 반환&lt;/li&gt; &lt;li&gt;기본 형식&lt;/li&gt; &lt;/ul&gt; &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;IF&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;표현식&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;표현식&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;표현식&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt; &lt;ul&gt; &lt;li&gt;Orders 테이블 데이터&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;img...</content>
- </entry>
-
- 
-
- <entry>
-   <title>[Database] MySQL 제어 함수 - CASE</title>
-   <link href="https://m-veloper.github.io/devlog/2020/04/27/database-39/"/>
-   <id>https://m-veloper.github.io/devlog/2020/04/27/database-39</id>
-   <updated>2020-04-27T00:00:00+09:00</updated>
-   <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-27-database-39.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;case-연산자&quot;&gt;CASE 연산자&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;속성이름의 값이 WHEN 절의 값과 같으면 반환값을 반환&lt;/li&gt; &lt;li&gt;예외반환값은 WHEN 절의 모든 값과 같지 않은 경우 반환되는 값&lt;/li&gt; &lt;li&gt;기본 형식 1&lt;/li&gt; &lt;/ul&gt; &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;CASE&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;속성이름&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;WHEN&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;값&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;THEN&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;반환값&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;.......&lt;/span&gt;...</content>
- </entry>
-
- 
-
- <entry>
-   <title>[Database] MySQL의 내장 함수</title>
-   <link href="https://m-veloper.github.io/devlog/2020/04/27/database-38/"/>
-   <id>https://m-veloper.github.io/devlog/2020/04/27/database-38</id>
-   <updated>2020-04-27T00:00:00+09:00</updated>
-   <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-27-database-38.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;mysql의-내장-함수-build-in-function&quot;&gt;MySQL의 내장 함수 (Build-In Function)&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;내장함수는 상수나 속성이름을 입력 값으로 받아 단일 값을 결과로 반환&lt;/li&gt; &lt;li&gt;모든 내장 함수는 최초에 선언될 때 유효한 입력 값을 받아야 함 &lt;ul&gt; &lt;li&gt;수학 함수의 입력 값 : 정수 또는 실수&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;선언에 위배된 값이 입력되면 질의는 실행을 중지하고...</content>
- </entry>
-
- 
-
- <entry>
-   <title>[유닉스] 파일 덤프 [ dd (data duplicate) ]</title>
-   <link href="https://m-veloper.github.io/devlog/2020/04/21/unix-37/"/>
-   <id>https://m-veloper.github.io/devlog/2020/04/21/unix-37</id>
-   <updated>2020-04-21T00:00:00+09:00</updated>
-   <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-04-21-unix-37.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;dd-data-duplicate&quot;&gt;dd (data duplicate)&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;입력한 내용을 변환하여 출력&lt;/li&gt; &lt;li&gt;형식 : dd [옵션] [if=입력파일] [of=출력파일]&lt;/li&gt; &lt;li&gt;옵션 &lt;ul&gt; &lt;li&gt;bs=n : 입출력 블록의 크기를 n 바이트로 지정 (기본 1블록 = 512바이트)&lt;/li&gt; &lt;li&gt;conv=lcase : 알파벳을 소문자로 변환&lt;/li&gt; &lt;li&gt;conv=ucase : 알파벳을 대문자로 변환&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;사용 예 &lt;ul&gt; &lt;li&gt;dd bs=2...</content>
  </entry>
 
  
