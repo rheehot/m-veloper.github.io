@@ -5,9 +5,871 @@
     <description></description>
     <link>https://m-veloper.github.io/</link>
     <atom:link href="https://m-veloper.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 29 Apr 2020 17:17:26 +0900</pubDate>
-    <lastBuildDate>Wed, 29 Apr 2020 17:17:26 +0900</lastBuildDate>
+    <pubDate>Thu, 30 Apr 2020 13:08:27 +0900</pubDate>
+    <lastBuildDate>Thu, 30 Apr 2020 13:08:27 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>[유닉스] 쉘(Shell) 환경 설정</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-04-30-unix-40.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;쉘shell-명령&quot;&gt;쉘(Shell) 명령&lt;/h1&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;앨리어스alias--별칭-별명&quot;&gt;앨리어스(alias : 별칭, 별명)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;명령어에 정의한 다른 이름&lt;/li&gt;
+  &lt;li&gt;긴 명령어 대신 짧은 명령어를 만들어 사용할 수 있음&lt;/li&gt;
+  &lt;li&gt;여러 명령어를 하나의 명령어로 만들 수 있음&lt;/li&gt;
+  &lt;li&gt;원래 명령어를 수정해 사용할 수 있음&lt;/li&gt;
+  &lt;li&gt;자주 사용하는 옵션을 자동으로 수행되도록 할 수 있음&lt;/li&gt;
+  &lt;li&gt;형식 : alias 별칭=‘명령’&lt;/li&gt;
+  &lt;li&gt;사용 예
+    &lt;ul&gt;
+      &lt;li&gt;alias : 현재 설정된 별칭 목록 출력&lt;/li&gt;
+      &lt;li&gt;alias 이름=‘명령’ : 명령을 수정해 사용하는 경우&lt;/li&gt;
+      &lt;li&gt;alias 이름=‘명령;명령2;……’ : 여러 명령을 하나의 이름으로 사용&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;alias
+alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;’ls –CF’
+&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;la&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;’ls –A’
+&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;ll&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;’ls –alF’
+......
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;alias-설정&quot;&gt;alias 설정&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;별칭과 =, =과 명령 사이에 공백이 있으면 안 됨&lt;/li&gt;
+  &lt;li&gt;명령에 공백이 있으면 작은따옴표 사용&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;alias ls&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;’ls –F’
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ls
+&lt;/span&gt;hello.c tmp/
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;rm 명령&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;alias rm&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;’rm &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt;’
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;rm &lt;/span&gt;ttt
+&lt;span class=&quot;nb&quot;&gt;rm&lt;/span&gt;: remove regular file ‘ttt’?
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;alias-삭제&quot;&gt;alias 삭제&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;unalias 명령&lt;/li&gt;
+  &lt;li&gt;형식 : unalias 앨리어스&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;unalias rm&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;unalias ls&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;히스토리history&quot;&gt;히스토리(history)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;이전에 입력한 명령을 다시 불러 사용할 수 있게 하는 기능&lt;/li&gt;
+  &lt;li&gt;bash은 사용자가 입력한 명령을 사용자 홈 디렉토리 아래의 특수한 파일에 저장&lt;/li&gt;
+  &lt;li&gt;숨김 파일인 .bash_history는 명령을 저장하는 목적으로 사용되어 사용자가 실행한 명령이 저장됨&lt;/li&gt;
+  &lt;li&gt;형식 : history [숫자값]&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;이전-명령-보기&quot;&gt;이전 명령 보기&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;인자 없이 history 명령만 사용하면 전체 히스토리 명령을 보여줌&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;history&lt;/span&gt;
+......
+2266 &lt;span class=&quot;nb&quot;&gt;alias rm&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;‘rm –i’
+2267 &lt;span class=&quot;nb&quot;&gt;alias
+&lt;/span&gt;2268 &lt;span class=&quot;nb&quot;&gt;unalias rm
+&lt;/span&gt;2269 &lt;span class=&quot;nb&quot;&gt;unalias ls
+&lt;/span&gt;2270 &lt;span class=&quot;nb&quot;&gt;history&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;명령-재실행&quot;&gt;명령 재실행&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;히스토리의 장점은 이전에 실행했던 길고 복잡한 명령을 재입력하지 않고 반복 실행할 수 있다는 것&lt;/li&gt;
+  &lt;li&gt;이벤트 지정자 사용&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!!&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;history&lt;/span&gt;
+.....
+2269 &lt;span class=&quot;nb&quot;&gt;unalias ls
+&lt;/span&gt;2270 &lt;span class=&quot;nb&quot;&gt;history
+&lt;/span&gt;2271 &lt;span class=&quot;nb&quot;&gt;history&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-04-30-unix-40-01.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;명령-편집하기&quot;&gt;명령 편집하기&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;화살표 키 이용
+    &lt;ul&gt;
+      &lt;li&gt;상하 화살표 키를 이용해 이전 명령을 불러온 후 좌우 화살표 키를 이용해 명령의 잘못된 부분을 수정&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-04-30-unix-40-02.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;파일명 자동 완성 기능 설정
+    &lt;ul&gt;
+      &lt;li&gt;현재 디렉토리에서 파일명의 앞부분 일부를 입력하고 Esc 키를 두 번 또는 Tab 키를 입력하면 나머지 부분을 자동으로 완성.&lt;/li&gt;
+      &lt;li&gt;입력한 앞부분이 중복되면 중복된 부분까지만 출력&lt;/li&gt;
+      &lt;li&gt;l로 시작하는 파일이 3개 있으므로, l을 입력하고 Tab 키를 입력하면 중복되는 부분인 local.까지만 출력하고 기다림&lt;/li&gt;
+      &lt;li&gt;이 때 p를 입력하고 Tab키를 입력하면 local.profile로 파일명을 완성해줌&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ls
+&lt;/span&gt;local.cshrc local.login local.profile tmp
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ls &lt;/span&gt;l &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Tab&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;ls &lt;/span&gt;local.
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ls &lt;/span&gt;local.p &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Tab&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;ls &lt;/span&gt;local.profile
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;쉘-환경-설정&quot;&gt;쉘 환경 설정&lt;/h1&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;쉘-프롬프트-설정&quot;&gt;쉘 프롬프트 설정&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;환경 변수 PS1에 프롬프트로 사용할 문자열 저장
+    &lt;ul&gt;
+      &lt;li&gt;문자열 뒤에 공백 문자를 하나 넣어주면 프롬프트와 명령어를 쉽게 구분할 수 있다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ PS1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;“Hello&amp;gt; ”
+Hello&amp;gt; &lt;span class=&quot;nb&quot;&gt;pwd&lt;/span&gt;
+/home/ksshin
+Hello&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;프롬프트가 Unix] 모양이 되도록 변경&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ PS1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;‘Unix]’
+Unix]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;프롬프트에 현재 경로가 나오도록 변경&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ PS1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;“[&lt;span class=&quot;nv&quot;&gt;$PWD&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; ”
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;/home/ksshin]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;프롬프트에 현재 사용자 이름이 나오도록 변경&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ PS1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;“[&lt;span class=&quot;nv&quot;&gt;$LOGNAME&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;”
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;ksshin]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;유닉스 명령 실행 결과를 이용하여 프롬프트 변경
+    &lt;ul&gt;
+      &lt;li&gt;uname –n은 호스트 이름을 알려주는 명령&lt;/li&gt;
+      &lt;li&gt;명령을 실행시킨 결과를 출력하기 위해 ` 문자를 사용&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;프롬프트의 모양은 다음에 로그인하면 이전의 프롬프트로 돌아감&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ PS1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;“&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;uname&lt;/span&gt; –n&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;”
+Ubuntu &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-04-30-unix-40-03.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;환경-설정을-위한-파일-설정&quot;&gt;환경 설정을 위한 파일 설정&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;환경 설정 파일 : 사용자가 로그인할 때마다 자동으로 실행되는 명령을 저장한 것&lt;/li&gt;
+  &lt;li&gt;시스템 초기화 파일과 사용자 초기화 파일&lt;/li&gt;
+  &lt;li&gt;사용자가 로그인하면 먼저 시스템 초기화 파일이 실행되어 시스템 공통 환경을 만듦&lt;/li&gt;
+  &lt;li&gt;이후 사용자 초기화 파일을 순서대로 실행해 사용자별 맞춤 환경을 만듦&lt;/li&gt;
+  &lt;li&gt;시스템 초기화 파일
+    &lt;ul&gt;
+      &lt;li&gt;시스템을 사용하는 전체 사용자의 공통 환경을 설정하는 파일&lt;/li&gt;
+      &lt;li&gt;/etc 디렉토리에 존재. 시스템 관리자가 관리&lt;/li&gt;
+      &lt;li&gt;주요 기능
+        &lt;ul&gt;
+          &lt;li&gt;환경 변수 설정&lt;/li&gt;
+          &lt;li&gt;기본 명령어 경로 설정&lt;/li&gt;
+          &lt;li&gt;기본 터미널 설정&lt;/li&gt;
+          &lt;li&gt;사용자 접속시 관리자의 인사말 출력&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;사용자 초기화 파일
+    &lt;ul&gt;
+      &lt;li&gt;사용자의 홈 디렉토리에 존재. 사용자가 수정하고 관리&lt;/li&gt;
+      &lt;li&gt;주요 내용
+        &lt;ul&gt;
+          &lt;li&gt;기본 프롬프트 설정&lt;/li&gt;
+          &lt;li&gt;사용 권한 설정&lt;/li&gt;
+          &lt;li&gt;명령어 경로 설정&lt;/li&gt;
+          &lt;li&gt;사용자 앨리어스 설정&lt;/li&gt;
+          &lt;li&gt;기타 환경 설정&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;사용자 초기화 파일 : .profile(또는 .bash_profile)과 .bashrc&lt;/li&gt;
+      &lt;li&gt;.profile(또는 .bash_profile)은 로그인할 때만 실행&lt;/li&gt;
+      &lt;li&gt;.bashrc 파일은 로그인할 때는 실행되지 않고, 자식 쉘이 실행될 때마다 실행됨&lt;/li&gt;
+      &lt;li&gt;항상 같은 환경에서 작업하고 싶다면, 모든 환경 설정 값은 .bashrc에 넣고, .profile(또는 .bash_profile)의 마지막 부분에서 .bashrc 파일을 source 명령으로 실행시키는 것이 좋음&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-04-30-unix-40-04.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;사용자-초기화-파일배시-쉘-bash-shell&quot;&gt;사용자 초기화 파일(배시 쉘, bash shell)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;내 홈 디렉토리에 있는 사용자 초기화 파일은 .profile (또는 .bash_profile)
+    &lt;ul&gt;
+      &lt;li&gt;사용자가 로그인하면서 환경을 설정하기 위해 맨 처음 실행되는 일종의 배치 파일&lt;/li&gt;
+      &lt;li&gt;사용자는 자신의 쉘 환경을 바꿀 수 있음&lt;/li&gt;
+      &lt;li&gt;기본 프롬프트 설정, 명령어 경로 설정&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;.bashrc 파일
+    &lt;ul&gt;
+      &lt;li&gt;사용자가 로그인할 때 실행됨&lt;/li&gt;
+      &lt;li&gt;쉘 설정 및 alias 관련 설정&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;.bash_logout 파일
+    &lt;ul&gt;
+      &lt;li&gt;로그아웃에 관련된 설정을 해주는 파일&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;.bash_history 파일
+    &lt;ul&gt;
+      &lt;li&gt;사용자가 입력했던 명령어들에 대한 기록이 남아 있음&lt;/li&gt;
+      &lt;li&gt;vi 편집기로 기록의 내용 변경 가능&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;사용자 초기화 파일 실행 : .profile이나 .bashrc 파일을 처음 작성하거나 내용을 수정하였을 경우, 적용하려면 source 명령어를 사용해 실행&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; .profile
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+</description>
+        <pubDate>Thu, 30 Apr 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/devlog/2020/04/30/unix-40/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/30/unix-40/</guid>
+        
+        <category>unix</category>
+        
+        
+        <category>devlog</category>
+        
+      </item>
+    
+      <item>
+        <title>[유닉스] 쉘(Shell) 기본 사용법</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-04-30-unix-39.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;쉘shell-기본-사용법&quot;&gt;쉘(Shell) 기본 사용법&lt;/h1&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;문자열의-출력&quot;&gt;문자열의 출력&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;유닉스 명령은 유닉스 시스템이 제공하는 유틸리티 명령과 쉘이 제공하는 명령으로 나눔&lt;/li&gt;
+  &lt;li&gt;쉘 명령은 쉘이 자체적으로 제공하는 명령&lt;/li&gt;
+  &lt;li&gt;디렉토리 변경에 사용되는 cd가 대표적&lt;/li&gt;
+  &lt;li&gt;문자열 출력 명령 : echo&lt;/li&gt;
+  &lt;li&gt;echo는 쉘 명령과 유틸리티 명령 모두에서 제공됨&lt;/li&gt;
+  &lt;li&gt;/bin/echo와 같이 경로를 지정하여 실행하면 유틸리티 명령 실행&lt;/li&gt;
+  &lt;li&gt;경로 없이 실행하면 쉘 내장 명령 실행&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo test
+test&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;/bin/echo &lt;span class=&quot;nb&quot;&gt;test
+test&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;쉘-특수-문자&quot;&gt;쉘 특수 문자&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;쉘은 사용자가 명령을 더 편리하게 입력하고 실행할 수 있도록 특수 문자를 제공, 사용법은 모든 쉘에서 거의 비슷함&lt;/li&gt;
+  &lt;li&gt;특수 문자(Metacharacter)는 쉘에서 특수한 의미를 가진 문자들로 특수 기능을 수행&lt;/li&gt;
+  &lt;li&gt;사용자가 입력한 명령을 실행하기 전에 쉘이 특수 문자를 먼저 해독해 적절한 형태로 변경&lt;/li&gt;
+  &lt;li&gt;
+    &lt;table&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;주요 특수 문자 : *, ?,&lt;/td&gt;
+          &lt;td&gt;, ; 등&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;-특수-문자&quot;&gt;* 특수 문자&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;가장 많이 사용되는 특수 문자 중의 하나&lt;/li&gt;
+  &lt;li&gt;임의의 문자열을 나타내는 데 사용&lt;/li&gt;
+  &lt;li&gt;여러 파일의 이름을 나열할 때 파일 이름을 간단히 표시하기 위해 사용&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-04-30-unix-39-01.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;와---특수-문자&quot;&gt;?와 [ ] 특수 문자&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;?(물음표)와 [] (대괄호)는 모두 하나의 문자를 나타내는 데 사용&lt;/li&gt;
+  &lt;li&gt;?는 임의의 한 문자를, [ ]는 괄호 안에 포함된 문자 중 하나를 나타냄&lt;/li&gt;
+  &lt;li&gt;[ ]는 사용할 여러 문자를 나열하거나 범위를 지정할 수 있으며 다른 특수 문자와도 혼합 사용 가능&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-04-30-unix-39-02.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;와---특수-문자-1&quot;&gt;~와 - 특수 문자&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;~(틸드)와 -(대시)는 디렉토리를 나타내는 특수 문자&lt;/li&gt;
+  &lt;li&gt;~가 단독으로 사용되면 현재 작업 중인 사용자의 홈 디렉토리를 나타냄.
+    &lt;ul&gt;
+      &lt;li&gt;다른 사용자의 로그인 ID와 함께 사용되면 해당 사용자의 홈 디렉토리를 나타냄.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;-는 cd 명령으로 디렉토리를 이전하기 직전의 작업 디렉토리를 나타냄&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-04-30-unix-39-03.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;과--특수-문자&quot;&gt;;과 | 특수 문자&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;table&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;;(세미콜론)과&lt;/td&gt;
+          &lt;td&gt;(파이프)는 명령과 명령을 연결하는 데 사용&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/li&gt;
+  &lt;li&gt;;은 연결된 명령을 왼쪽부터 차례로 실행&lt;/li&gt;
+  &lt;li&gt;
+    &lt;table&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;는 왼쪽 명령의 실행 결과를 오른쪽 명령의 입력으로 전달&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+    &lt;ul&gt;
+      &lt;li&gt;파이프를 이용하면 여러 명령을 연결해 사용할 수 있음&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-04-30-unix-39-04.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;-와---특수-문자&quot;&gt;‘ ’와 “ ” 특수 문자&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;‘ ’(작은 따옴표)와 “ ”(큰 따옴표)는 문자열을 감싸며 문자열 안에 사용된 특수 문자의 의미를 없애는 기능&lt;/li&gt;
+  &lt;li&gt;*나 ?, ; 등 파일 이름에 사용하거나 화면에 메시지로 출력할 때는 따옴표를 사용&lt;/li&gt;
+  &lt;li&gt;‘ ’는 모든 특수 문자를 일반 문자로 간주해 처리&lt;/li&gt;
+  &lt;li&gt;“ ”는 $, `, \를 제외한 모든 특수 문자를 일반 문자로 간주해 처리&lt;/li&gt;
+  &lt;li&gt;$를 문자 그대로 사용하려면 작은 따옴표를, 쉘 환경 변수의 값을 포함한 문자열을 처리하려면 큰 따옴표를 사용&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-04-30-unix-39-05.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;-특수-문자-1&quot;&gt;` 특수 문자&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;`(백쿼터)는 키보드 왼쪽 상단의 Esc 키 아래에 있는 문자를 사용&lt;/li&gt;
+  &lt;li&gt;명령 실행 결과를 문자열로 받고 싶을 때 사용&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-04-30-unix-39-06.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;-특수-문자-2&quot;&gt;\ 특수 문자&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;(역슬래시)는 특수 문자를 일반 문자처럼 사용하도록 함&lt;/li&gt;
+  &lt;li&gt;특수 문자 바로 앞에 사용되며 해당 특수 문자의 효과를 없앰&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-04-30-unix-39-07.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;-특수-문자-3&quot;&gt;&amp;gt;,»,&amp;lt; 특수 문자&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;입출력의 방향을 바꾸는 특수 문자&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-04-30-unix-39-08.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;쉘의-환경-변수&quot;&gt;쉘의 환경 변수&lt;/h1&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;변수&quot;&gt;변수&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;특정한 쉘(Shell)에서만 적용되는 변수&lt;/li&gt;
+  &lt;li&gt;쉘 변수
+    &lt;ul&gt;
+      &lt;li&gt;서브 쉘로 그 값이 전달되지 않기 때문에 임시로 사용할 값을 저장하는 데 사용&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;환경 변수
+    &lt;ul&gt;
+      &lt;li&gt;유닉스 시스템이 쉘에 전달하는 사용자 정보, 각 사용자의 프롬프트 모양, 이전 작업 디렉토리 등의 정보가 저장되어 사용자의 작업 환경을 보다 편리하게 설정할 수 있게 해줌&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;변수-출력&quot;&gt;변수 출력&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;현재 설정된 변수 목록과 그 값을 보는 명령 : set, env&lt;/li&gt;
+  &lt;li&gt;set은 쉘 변수와 환경 변수 모두를 보여줌&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;set
+&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;BASH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/bin/bash
+&lt;span class=&quot;nv&quot;&gt;BASHOPTS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;checkwinsize:cmdhist:complete_fullquote:......
+&lt;span class=&quot;nv&quot;&gt;BASH_ALIASES&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=()&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;BASH_ARGC&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=()&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;BASH_ARGV&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=()&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;BASH_CMDS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=()&lt;/span&gt;
+......
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;env는 환경 변수만 보여줌
+    &lt;ul&gt;
+      &lt;li&gt;환경 변수 이름은 관습적으로 모두 대문자 사용&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;env&lt;/span&gt;
+......
+&lt;span class=&quot;nv&quot;&gt;SHELL&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/bin/bash
+&lt;span class=&quot;nv&quot;&gt;TERM&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;linux
+&lt;span class=&quot;nv&quot;&gt;USER&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;ksshin
+......
+&lt;span class=&quot;nv&quot;&gt;MAIL&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/var/mail/ksshin
+&lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/usr/local/sbin:/usr/loca/bin:......
+......
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;주요-환경-변수&quot;&gt;주요 환경 변수&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-04-30-unix-39-09.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;사용자의 현재 위치를 알아보는 방법으로 PWD 변수의 값을 출력해 볼 수 있음&lt;/li&gt;
+  &lt;li&gt;환경 변수의 값을 출력할 때는 변수 이름 앞에 특수 문자 $를 사용&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$PWD&lt;/span&gt;
+/home/ksshin
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;변수-정의&quot;&gt;변수 정의&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;쉘 변수에 값을 설정하는 방법&lt;/li&gt;
+  &lt;li&gt;형식 : 쉘 변수명=문자열&lt;/li&gt;
+  &lt;li&gt;사용 예 : ATEST=test&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ ATEST&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;test&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;set
+&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;ATEST&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;test&lt;/span&gt;
+......
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;여러 변수 중 방금 생성한 변수의 값만 출력&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$ATEST&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;test&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;쉘-변수를-환경-변수로-변경&quot;&gt;쉘 변수를 환경 변수로 변경&lt;/h3&gt;
+
+&lt;p&gt;export 명령 : 지정한 쉘 변수를 환경 변수로 바꿔주고, 그 값을 현재 쉘과 서브 쉘에 적용시키는 쉘의 내부 명령&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;형식 : export [-n][변수]&lt;/li&gt;
+  &lt;li&gt;옵션
+    &lt;ul&gt;
+      &lt;li&gt;-n : 환경 변수를 쉘 변수로 변경&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;사용 예
+    &lt;ul&gt;
+      &lt;li&gt;export&lt;/li&gt;
+      &lt;li&gt;export ATEST&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;쉘 변수 설정 후, export 명령을 이용하여 환경 변수로 변경&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ BTEST&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;test&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;BTEST
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;env&lt;/span&gt;
+......
+&lt;span class=&quot;nv&quot;&gt;BTEST&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;test&lt;/span&gt;
+......
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;변수를 선언하면서 동시에 export하여 환경 변수를 설정&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;CTEST&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;test&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$CTEST&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;test&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;변수를-이용하여-편리한-작업-환경-만들기&quot;&gt;변수를 이용하여 편리한 작업 환경 만들기&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;CDPATH 환경 변수
+    &lt;ul&gt;
+      &lt;li&gt;cd 명령을 실행할 때 인자로 주어진 디렉토리를 찾을 경로를 미리 지정&lt;/li&gt;
+      &lt;li&gt;cd 명령을 실행하면 CDPATH 변수에 :(콜론)으로 구분하여 지정된 경로 아래에 해당 디렉토리가 있는지 찾아보고, 없으면 현재 디렉토리에서 찾음&lt;/li&gt;
+      &lt;li&gt;자주 이동하는 경로를 CDPATH 변수에 지정하면 손쉽게 현재 위치를 변경할 수 있음&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$CDPATH&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ CDPATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;~/Unix
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;ch4
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;pwd&lt;/span&gt;
+/home/ksshin/Unix/ch4
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;ch3
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;pwd&lt;/span&gt;
+/home/ksshin/Unix/ch3
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;변수-해제&quot;&gt;변수 해제&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;정의된 변수를 해제할 때는 unset 명령 사용&lt;/li&gt;
+  &lt;li&gt;형식 : unset 변수&lt;/li&gt;
+  &lt;li&gt;사용 예
+    &lt;ul&gt;
+      &lt;li&gt;unset ATEST&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;unset &lt;/span&gt;CTEST
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$CTEST&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+</description>
+        <pubDate>Thu, 30 Apr 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/devlog/2020/04/30/unix-39/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/30/unix-39/</guid>
+        
+        <category>unix</category>
+        
+        
+        <category>devlog</category>
+        
+      </item>
+    
+      <item>
+        <title>[유닉스] 쉘(Shell)의 기능 및 종류</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-04-30-unix-38.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;쉘shell&quot;&gt;쉘(Shell)&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;사용자와 커널을 연결시켜주는 기능을 수행하는 특별한 프로그램&lt;/li&gt;
+  &lt;li&gt;사용자가 입력한 명령을 처리하고 실행 결과를 알려주는 기능&lt;/li&gt;
+  &lt;li&gt;세 가지 기능 : 명령어 해석기, 프로그래밍, 사용자 환경 설정&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;명령어-해석기-기능&quot;&gt;명령어 해석기 기능&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;사용자와 커널 사이에서 명령을 해석하여 전달하는 해석기(Interpreter) 또는 번역기(Translator) 역할 수행&lt;/li&gt;
+  &lt;li&gt;사용자가 입력한 명령이나 파일에서 읽어들인 명령을 해석하고 적절한 프로그램을 실행시킴&lt;/li&gt;
+  &lt;li&gt;로그인 쉘 : 사용자가 로그인하면 쉘은 자동으로 실행되어 사용자가 명령 입력하기를 기다림. /etc/passwd 파일에 사용자별로 지정되어 있음&lt;/li&gt;
+  &lt;li&gt;사용자 명령을 기다리고 있음의 표시가 프롬프트&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;프로그래밍-기능&quot;&gt;프로그래밍 기능&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;쉘 자체에서 프로그램 작성 가능&lt;/li&gt;
+  &lt;li&gt;여러 명령을 사용해 반복적으로 수행하는 작업을 프로그램 하나로 만들 수 있음
+    &lt;ul&gt;
+      &lt;li&gt;쉘 스크립트&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;사용자-환경-설정-기능&quot;&gt;사용자 환경 설정 기능&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;초기화 파일 기능을 이용해 사용자 환경을 설정&lt;/li&gt;
+  &lt;li&gt;명령을 찾아오는 경로 설정, 새로운 파일의 기본 권한 설정, 다양한 환경 변수 설정 등을 초기화 파일에 설정할 수 있음&lt;/li&gt;
+  &lt;li&gt;사용자가 로그인할 때 이 초기화 파일이 실행되어 사용자의 초기 환경 설정&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;쉘shell의-동작-순서&quot;&gt;쉘(Shell)의 동작 순서&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-04-30-unix-38-01.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;서브-쉘shell-생성&quot;&gt;서브 쉘(Shell) 생성&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;로그인 쉘 : 사용자가 로그인하면 자동으로 생성되는 기본 쉘&lt;/li&gt;
+  &lt;li&gt;서브 쉘 : 로그인 쉘의 프롬프트에서 다른 쉘을 실행해 새로 생성된 쉘&lt;/li&gt;
+  &lt;li&gt;서브 쉘은 또 다른 서브 쉘 생성 가능&lt;/li&gt;
+  &lt;li&gt;서브 쉘 종료 명령은 logout, Ctrl+D, exit 등 (exit을 추천)&lt;/li&gt;
+  &lt;li&gt;서브 쉘이 종료되면 서브 쉘을 실행했던 이전 쉘 환경으로 돌아감&lt;/li&gt;
+  &lt;li&gt;로그인 쉘에서 로그아웃하면 접속 해제됨&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-04-30-unix-38-02.png&quot; alt=&quot;&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;쉘shell의-종류&quot;&gt;쉘(Shell)의 종류&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;본 쉘, 콘 쉘, C 쉘, 배시 쉘&lt;/li&gt;
+  &lt;li&gt;명령을 입력하고 실행하는 대화식 동작 방식이 공통점&lt;/li&gt;
+  &lt;li&gt;스크립트를 작성하는 문법이 다름&lt;/li&gt;
+  &lt;li&gt;현재 사용 중인 쉘의 종류를 알아보는 가장 쉬운 방법은 프롬프트 모양을 보는 것
+    &lt;ul&gt;
+      &lt;li&gt;본 쉘, 콘 쉘, 배시 쉘은 $, C 쉘은 %&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;본bourne-shell-sh-쉘&quot;&gt;본(Bourne Shell, sh) 쉘&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;최초의 쉘&lt;/li&gt;
+  &lt;li&gt;개발자 스티븐 본(Stephen Bourne)의 이름을 따서 붙여짐&lt;/li&gt;
+  &lt;li&gt;초기에 단순하고 처리 속도가 빨라 많이 사용됨&lt;/li&gt;
+  &lt;li&gt;현재도 대부분의 유닉스 시스템에 기본 설치&lt;/li&gt;
+  &lt;li&gt;시스템 관리 작업을 수행하는 많은 쉘 스크립트들이 본 쉘을 기반으로 함&lt;/li&gt;
+  &lt;li&gt;명령이름 : sh&lt;/li&gt;
+  &lt;li&gt;히스토리 기능, 앨리어스 기능, 작업 제어 등 사용자 편의를 위한 기능을 제공하지 못해 다른 쉘들이 등장&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;콘korn-shell-ksh-쉘&quot;&gt;콘(Korn Shell, ksh) 쉘&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;1980년대 중반 AT&amp;amp;T 벨연구소의 데이비드 콘(David Korn)이 콘 쉘(Korn Shell)을 개발&lt;/li&gt;
+  &lt;li&gt;본 쉘과의 호환성 유지&lt;/li&gt;
+  &lt;li&gt;히스토리 기능, 앨리어스 기능 등 C 쉘의 특징들도 제공&lt;/li&gt;
+  &lt;li&gt;처리 속도가 빠름&lt;/li&gt;
+  &lt;li&gt;명령이름 : ksh&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;cc-shell-csh-쉘&quot;&gt;C(C Shell, csh) 쉘&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;캘리포니아 버클리 대학교에서 빌 조이(Bill Joy)가 개발&lt;/li&gt;
+  &lt;li&gt;본 쉘의 기능을 확장한 것&lt;/li&gt;
+  &lt;li&gt;본 쉘에 없는 앨리어스, 히스토리 등 사용자 편의 기능 포함&lt;/li&gt;
+  &lt;li&gt;C 언어를 기반으로 만들어졌으며 강력한 프로그램 작성 기능&lt;/li&gt;
+  &lt;li&gt;쉘 스크립트 작성을 위한 구문 형식이 C 언어와 같아 이름이 C 쉘이 되었음&lt;/li&gt;
+  &lt;li&gt;명령이름 : csh&lt;/li&gt;
+  &lt;li&gt;다양한 사용자 편의 기능을 구현하느라 크기가 커지고 처리 속도도 느려졌다는 단점이 있으나 편리한 기능 때문에 사용자들이 즐겨 사용함&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;배시-쉘-bourne-again-shell&quot;&gt;배시 쉘 (Bourne Again Shell)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;본 쉘을 기반으로 개발된 쉘&lt;/li&gt;
+  &lt;li&gt;1988년 브라이언 폭스(Brian Fox)에 의해 개발됨&lt;/li&gt;
+  &lt;li&gt;본 쉘과 호환성을 유지하면서 C 쉘, 콘 쉘의 편리한 기능도 포함&lt;/li&gt;
+  &lt;li&gt;GPL을 따르는 공개 소프트웨어&lt;/li&gt;
+  &lt;li&gt;리눅스의 기본 쉘, 솔라리스 11의 기본 쉘&lt;/li&gt;
+  &lt;li&gt;명령이름 : bash&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;기타-쉘&quot;&gt;기타 쉘&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;C 쉘, 콘 쉘을 바탕으로 한 다양한 쉘들이 추가로 개발되었음&lt;/li&gt;
+  &lt;li&gt;TC(The Enhanced C Shell, tcsh) 쉘
+    &lt;ul&gt;
+      &lt;li&gt;C 쉘의 기능을 확장한 것&lt;/li&gt;
+      &lt;li&gt;명령행 편집 기능&lt;/li&gt;
+      &lt;li&gt;명령어 완성 기능&lt;/li&gt;
+      &lt;li&gt;히스토리 목록에서의 시간 표시 기능&lt;/li&gt;
+      &lt;li&gt;명령이름 : tcsh&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;데스크 탑 콘 쉘
+    &lt;ul&gt;
+      &lt;li&gt;콘 쉘의 변형&lt;/li&gt;
+      &lt;li&gt;X 윈도의 기능을 지원할 수 있도록 콘 쉘 기능을 확장한 것&lt;/li&gt;
+      &lt;li&gt;명령이름 : dtksh&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Z 쉘
+    &lt;ul&gt;
+      &lt;li&gt;TC 쉘과 콘 쉘의 기능을 함께 가지고 있음&lt;/li&gt;
+      &lt;li&gt;명령이름 : zsh&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;쉘shell의-확인&quot;&gt;쉘(Shell)의 확인&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;echo 명령으로 쉘 종류 확인&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$SHELL&lt;/span&gt;
+/bin/bash
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;/etc/passwd 파일에서 확인
+    &lt;ul&gt;
+      &lt;li&gt;grep 명령을 사용하여 user1 문자열이 있는 행을 찾아 내용 출력&lt;/li&gt;
+      &lt;li&gt;/bin/bash가 사용자의 기본 쉘&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;grep &lt;/span&gt;user1 /etc/passwd
+user1:x:1001:1001:,,,:/home/user1:/bin/bash
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;/etc/shells 파일에서 확인&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cat&lt;/span&gt; /etc/shells
+&lt;span class=&quot;c&quot;&gt;# /etc/shells: valid login shells&lt;/span&gt;
+/bin/sh
+/bin/dash
+/bin/bash
+/bin/rbash
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;사용 중인 배시 쉘에 대한 상세 정보 확인&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;bash &lt;span class=&quot;nt&quot;&gt;--version&lt;/span&gt;
+GNU bash, version 4.3.11&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;1&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-release&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;i686-pc-linux-gnu&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+Copyright &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;C&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; 2013 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later &amp;lt;http://...&amp;gt;
+This is free software&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;쉘의-변경&quot;&gt;쉘의 변경&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;chsh 명령을 사용하여 로그인 쉘을 변경&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$SHELL&lt;/span&gt;
+/bin/bash
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;chsh
+Password:
+Changing the login shell &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;ksshin
+Enter the new value, or press ENTER &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;the default
+Login Shell &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;/bin/bash]:
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+</description>
+        <pubDate>Thu, 30 Apr 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/devlog/2020/04/30/unix-38/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/30/unix-38/</guid>
+        
+        <category>unix</category>
+        
+        
+        <category>devlog</category>
+        
+      </item>
     
       <item>
         <title>[Database] MySQL 타입 변환 함수 (Type Conversion Functions)</title>
@@ -3734,255 +4596,6 @@ No Plan.
         <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/15/unix-27/</guid>
         
         <category>unix</category>
-        
-        
-        <category>devlog</category>
-        
-      </item>
-    
-      <item>
-        <title>[Database] 서브 쿼리(Sub Query)</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-14-database-33.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;서브-쿼리sub-query&quot;&gt;서브 쿼리(Sub Query)&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;SELECT 문 안에 다른 SELECT 문을 포함&lt;/li&gt;
-  &lt;li&gt;괄호로 묶어 작성&lt;/li&gt;
-  &lt;li&gt;ORDER BY 절을 사용할 수 없음&lt;/li&gt;
-  &lt;li&gt;메인 쿼리(Main Query) 문보다 먼저 수행됨&lt;/li&gt;
-  &lt;li&gt;반환되는 행의 수에 따른 분류&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;예제&quot;&gt;예제&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;고객 ( customer )테이블에서 ‘bank’ 계정의 등급과 같은 모든 고객의 이름(name)과 적립금 (credit)을 검색하시오.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-14-database-33-01.png&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;credit&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;customer&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;grade&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;grade&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;customer&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;account&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'bank'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-14-database-33-02.png&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Customer 테이블에서 적립금이 가장 많은 고객의 이름(name)과 적립금(credit)을 검색하시오.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;credit&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;customer&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;credit&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;MAX&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;credit&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;customer&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-14-database-33-03.png&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;apple 고객이 주문한 제품의 이름을 검색하시오. ( 조인 검색의 질의1 )&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-14-database-33-04.png&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;items&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;code&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;IN&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;item&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;orders&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;customer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'apple'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-14-database-33-05.png&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;apple 고객이 주문하지 않은 제품의 이름(name)과 재고(qty)를 검색하시오.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-14-database-33-06.png&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;items&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;code&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;NOT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;IN&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;item&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;orders&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;customer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'apple'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;    
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-14-database-33-06.png&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-</description>
-        <pubDate>Tue, 14 Apr 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/04/14/database-33/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/14/database-33/</guid>
-        
-        <category>database</category>
-        
-        <category>mysql</category>
-        
-        
-        <category>devlog</category>
-        
-      </item>
-    
-      <item>
-        <title>[Database] 속성의 데이터 타입 </title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-13-database-32.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;데이터-타입data-type&quot;&gt;데이터 타입(Data Type)&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;데이터 타입(자료형)이란 컴퓨터 시스템과 프로그래밍 언어에서 실수, 정수, 소수 자료형 등의 여러 종류의 데이터를 
-식별하는 타입으로서, 해당 자료형에 대한 가능한 값, 해당 자료형에서 수행을 할 수 있는 명령어, 데이터의 형태, 의미, 
-크기와 해당 자료형의 값이 저장되는 방식이다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;문자형-데이터타입&quot;&gt;문자형 데이터타입&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-13-database-32-01.png&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;숫자형-데이터타입&quot;&gt;숫자형 데이터타입&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-13-database-32-02.png&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;날짜형-데이터타입&quot;&gt;날짜형 데이터타입&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-13-database-32-03.png&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;이진-데이터타입&quot;&gt;이진 데이터타입&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-13-database-32-04.png&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-</description>
-        <pubDate>Mon, 13 Apr 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/04/13/database-32/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/13/database-32/</guid>
-        
-        <category>database</category>
-        
-        <category>mysql</category>
-        
-        
-        <category>devlog</category>
-        
-      </item>
-    
-      <item>
-        <title>[Database] 조인 검색 - JOIN</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-13-database-31.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;조인-검색&quot;&gt;조인 검색&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;여러개의 테이블을 연결하여 데이터를 검색하는 것&lt;/li&gt;
-  &lt;li&gt;조인 속성
-    &lt;ul&gt;
-      &lt;li&gt;테이블을 연결해주는 속성&lt;/li&gt;
-      &lt;li&gt;속성의 이름은 달라도 됨&lt;/li&gt;
-      &lt;li&gt;속성의 도메인은 같아야 함&lt;/li&gt;
-      &lt;li&gt;외래키를 조인 속성으로 이용&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-13-database-31-01.png&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;조인 검색 SQL 문
-    &lt;ul&gt;
-      &lt;li&gt;FROM 절 : 검색에 필요한 모든 테이블을 나열&lt;/li&gt;
-      &lt;li&gt;WHERE 절 : 조인 속성의 값이 같아야 함을 의미하는 조인 조건을 제시&lt;/li&gt;
-      &lt;li&gt;속성의 이름 앞에 소속된 테이블의 이름을 표시&lt;/li&gt;
-      &lt;li&gt;테이블 이름과 속성이름은 점( . )으로 연결
-        &lt;ul&gt;
-          &lt;li&gt;예 : orders.item : 주문테이블(orders)의 item 속성&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;apple 고객이 주문한 제품의 이름을 검색하시오.
-    &lt;ul&gt;
-      &lt;li&gt;필요한 테이블 : orders, items&lt;/li&gt;
-      &lt;li&gt;‘apple’ 검색 조건 : orders.customer = ‘apple’&lt;/li&gt;
-      &lt;li&gt;주문한 제품 검색 조건 : orders.item = items.code&lt;/li&gt;
-      &lt;li&gt;제품의 이름 : items.name&lt;/li&gt;
-      &lt;li&gt;Orders 와 Items 테이블&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-13-database-31-02.png&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;items&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;orders&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;items&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;orders&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;customer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'apple'&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AND&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;orders&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;items&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-13-database-31-03.png&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;등급( customer.grade )이 Gold인 고객의 이름( customer.name ), 구매한 상품 코드 ( orders.item ), 수량 (
-orders.qty )와 주문일 ( orders.date )를 검색하시오.
-    &lt;ul&gt;
-      &lt;li&gt;필요한 테이블 : customer, orders&lt;/li&gt;
-      &lt;li&gt;Gold 고객 검색 조건 : customer.grade = ‘Gold’&lt;/li&gt;
-      &lt;li&gt;고객의 주문 검색 조건 : customer.account = orders.customer&lt;/li&gt;
-      &lt;li&gt;Customer와 Orders 테이블&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-13-database-31-04.png&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;customer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;orders&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;orders&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;qty&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;orders&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;date&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;customer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;orders&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;customer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;grade&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Gold'&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AND&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;customer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;account&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;orders&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;customer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;   
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-13-database-31-05.png&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;등급( customer.grade )이 Gold인 고객의 이름( customer.name ), 구매한 상품명 ( items.name ), 수량 (
-orders.qty )와 주문일 ( orders.date )를 검색하시오.
-    &lt;ul&gt;
-      &lt;li&gt;필요한 테이블 : customer, items, orders&lt;/li&gt;
-      &lt;li&gt;Gold 고객 검색 조건 : customer.grade = ‘Gold’&lt;/li&gt;
-      &lt;li&gt;고객의 주문 검색 조건 : customer.account = orders.customer&lt;/li&gt;
-      &lt;li&gt;주문한 상품의 이름 검색 조건 : orders.item = items.code&lt;/li&gt;
-      &lt;li&gt;Customer, Items, Orders 테이블&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-13-database-31-06.png&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;customer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;items&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;orders&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;qty&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;orders&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;date&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;customer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;items&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;orders&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;customer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;grade&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Gold'&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AND&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;customer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;account&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;orders&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;customer&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;AND&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Items&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;orders&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-13-database-31-07.png&quot; alt=&quot;&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-</description>
-        <pubDate>Mon, 13 Apr 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/04/13/database-31/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/13/database-31/</guid>
-        
-        <category>database</category>
-        
-        <category>mysql</category>
         
         
         <category>devlog</category>

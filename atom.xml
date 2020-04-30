@@ -4,12 +4,42 @@
  <title>슬기로운 개발 생활</title>
  <link href="https://m-veloper.github.io/atom.xml" rel="self"/>
  <id>https://m-veloper.github.io</id>
- <updated>2020-04-29T17:17:26+09:00</updated>
+ <updated>2020-04-30T13:08:27+09:00</updated>
  <author>
    <name>m-veloper</name>
    <uri>https://m-veloper.github.io</uri>
    <email>m_veloper@naver.com</email>
  </author>
+
+ 
+
+ <entry>
+   <title>[유닉스] 쉘(Shell) 환경 설정</title>
+   <link href="https://m-veloper.github.io/devlog/2020/04/30/unix-40/"/>
+   <id>https://m-veloper.github.io/devlog/2020/04/30/unix-40</id>
+   <updated>2020-04-30T00:00:00+09:00</updated>
+   <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-04-30-unix-40.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;쉘shell-명령&quot;&gt;쉘(Shell) 명령&lt;/h1&gt; &lt;p&gt;&lt;br /&gt;&lt;/p&gt; &lt;h3 id=&quot;앨리어스alias--별칭-별명&quot;&gt;앨리어스(alias : 별칭, 별명)&lt;/h3&gt; &lt;ul&gt; &lt;li&gt;명령어에 정의한 다른 이름&lt;/li&gt; &lt;li&gt;긴 명령어 대신 짧은 명령어를 만들어 사용할 수 있음&lt;/li&gt; &lt;li&gt;여러 명령어를 하나의 명령어로 만들 수 있음&lt;/li&gt; &lt;li&gt;원래 명령어를 수정해 사용할 수 있음&lt;/li&gt; &lt;li&gt;자주 사용하는 옵션을 자동으로 수행되도록 할 수 있음&lt;/li&gt; &lt;li&gt;형식...</content>
+ </entry>
+
+ 
+
+ <entry>
+   <title>[유닉스] 쉘(Shell) 기본 사용법</title>
+   <link href="https://m-veloper.github.io/devlog/2020/04/30/unix-39/"/>
+   <id>https://m-veloper.github.io/devlog/2020/04/30/unix-39</id>
+   <updated>2020-04-30T00:00:00+09:00</updated>
+   <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-04-30-unix-39.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;쉘shell-기본-사용법&quot;&gt;쉘(Shell) 기본 사용법&lt;/h1&gt; &lt;p&gt;&lt;br /&gt;&lt;/p&gt; &lt;h3 id=&quot;문자열의-출력&quot;&gt;문자열의 출력&lt;/h3&gt; &lt;ul&gt; &lt;li&gt;유닉스 명령은 유닉스 시스템이 제공하는 유틸리티 명령과 쉘이 제공하는 명령으로 나눔&lt;/li&gt; &lt;li&gt;쉘 명령은 쉘이 자체적으로 제공하는 명령&lt;/li&gt; &lt;li&gt;디렉토리 변경에 사용되는 cd가 대표적&lt;/li&gt; &lt;li&gt;문자열 출력 명령 : echo&lt;/li&gt; &lt;li&gt;echo는 쉘 명령과 유틸리티 명령 모두에서 제공됨&lt;/li&gt; &lt;li&gt;/bin/echo와 같이...</content>
+ </entry>
+
+ 
+
+ <entry>
+   <title>[유닉스] 쉘(Shell)의 기능 및 종류</title>
+   <link href="https://m-veloper.github.io/devlog/2020/04/30/unix-38/"/>
+   <id>https://m-veloper.github.io/devlog/2020/04/30/unix-38</id>
+   <updated>2020-04-30T00:00:00+09:00</updated>
+   <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-04-30-unix-38.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;쉘shell&quot;&gt;쉘(Shell)&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;사용자와 커널을 연결시켜주는 기능을 수행하는 특별한 프로그램&lt;/li&gt; &lt;li&gt;사용자가 입력한 명령을 처리하고 실행 결과를 알려주는 기능&lt;/li&gt; &lt;li&gt;세 가지 기능 : 명령어 해석기, 프로그래밍, 사용자 환경 설정&lt;/li&gt; &lt;/ul&gt; &lt;h3 id=&quot;명령어-해석기-기능&quot;&gt;명령어 해석기 기능&lt;/h3&gt; &lt;ul&gt; &lt;li&gt;사용자와 커널 사이에서 명령을 해석하여 전달하는 해석기(Interpreter) 또는 번역기(Translator) 역할 수행&lt;/li&gt; &lt;li&gt;사용자가...</content>
+ </entry>
 
  
 
@@ -79,36 +109,6 @@
    <id>https://m-veloper.github.io/devlog/2020/04/28/database-43</id>
    <updated>2020-04-28T00:00:00+09:00</updated>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-28-database-43.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;time-관련-함수&quot;&gt;TIME 관련 함수&lt;/h1&gt; &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-28-database-43-01.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h3 id=&quot;addtime&quot;&gt;ADDTIME()&lt;/h3&gt; &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;ADDTIME&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;expr1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;expr2&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt; &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ADDTIME&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'2020-01-01 23:59:59'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'1:1:1'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt; &lt;ul&gt; &lt;li&gt;쿼리 결과 &lt;img src=&quot;/assets/img/database/2020/04/2020-04-28-database-43-02.png&quot;...</content>
- </entry>
-
- 
-
- <entry>
-   <title>[Database] MySQL DATE FORMAT 함수(날짜 포맷 함수)</title>
-   <link href="https://m-veloper.github.io/devlog/2020/04/28/database-42/"/>
-   <id>https://m-veloper.github.io/devlog/2020/04/28/database-42</id>
-   <updated>2020-04-28T00:00:00+09:00</updated>
-   <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-28-database-42.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;date-format&quot;&gt;DATE FORMAT&lt;/h1&gt; &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-28-database-42-01.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-28-database-42-02.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;DATE_FORMAT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'2020-04-15 15:15:15'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'%W %M %Y'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt; &lt;ul&gt; &lt;li&gt;쿼리 결과 &lt;img src=&quot;/assets/img/database/2020/04/2020-04-28-database-42-03.png&quot; alt=&quot;&quot; /&gt; &lt;br /&gt;&lt;/li&gt; &lt;/ul&gt; &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span...</content>
- </entry>
-
- 
-
- <entry>
-   <title>[Database] MySQL Date 함수(날짜 함수)</title>
-   <link href="https://m-veloper.github.io/devlog/2020/04/28/database-41/"/>
-   <id>https://m-veloper.github.io/devlog/2020/04/28/database-41</id>
-   <updated>2020-04-28T00:00:00+09:00</updated>
-   <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-28-database-41.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;date-함수&quot;&gt;Date 함수&lt;/h1&gt; &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-28-database-41-01.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h3 id=&quot;curdate-current_date-current_date&quot;&gt;CURDATE(), CURRENT_DATE(), CURRENT_DATE&lt;/h3&gt; &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CURDATE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;CURRENT_DATE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;CURRENT_DATE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt; &lt;ul&gt; &lt;li&gt;쿼리 결과 &lt;img src=&quot;/assets/img/database/2020/04/2020-04-28-database-41-02.png&quot; alt=&quot;&quot; /&gt; &lt;br /&gt;&lt;/li&gt; &lt;/ul&gt; &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;DATE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;...</content>
- </entry>
-
- 
-
- <entry>
-   <title>[Database] MySQL 제어 함수 - IF, IFNULL, NULLIF</title>
-   <link href="https://m-veloper.github.io/devlog/2020/04/27/database-40/"/>
-   <id>https://m-veloper.github.io/devlog/2020/04/27/database-40</id>
-   <updated>2020-04-27T00:00:00+09:00</updated>
-   <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-27-database-40.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;if-함수&quot;&gt;IF() 함수&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;표현식1 이 참이면, 표현식2를 반환&lt;/li&gt; &lt;li&gt;표현식1 이 거짓이면, 표현식3을 반환&lt;/li&gt; &lt;li&gt;기본 형식&lt;/li&gt; &lt;/ul&gt; &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;IF&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;표현식&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;표현식&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;표현식&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt; &lt;ul&gt; &lt;li&gt;Orders 테이블 데이터&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;img...</content>
  </entry>
 
  
