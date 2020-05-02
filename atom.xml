@@ -4,12 +4,32 @@
  <title>슬기로운 개발 생활</title>
  <link href="https://m-veloper.github.io/atom.xml" rel="self"/>
  <id>https://m-veloper.github.io</id>
- <updated>2020-04-30T13:08:27+09:00</updated>
+ <updated>2020-05-02T22:50:42+09:00</updated>
  <author>
    <name>m-veloper</name>
    <uri>https://m-veloper.github.io</uri>
    <email>m_veloper@naver.com</email>
  </author>
+
+ 
+
+ <entry>
+   <title>[Database] MySQL 인덱스 (Index)</title>
+   <link href="https://m-veloper.github.io/devlog/2020/05/02/database-51/"/>
+   <id>https://m-veloper.github.io/devlog/2020/05/02/database-51</id>
+   <updated>2020-05-02T00:00:00+09:00</updated>
+   <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/05/2020-05-02-database-51.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;인덱스-index&quot;&gt;인덱스 (Index)&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;테이블에서 자주 사용하는 속성을 별도로 생성&lt;/li&gt; &lt;li&gt;테이블의 검색 동작 속도를 향상시키기 위하여 사용&lt;/li&gt; &lt;li&gt;테이블에 대한 킷값을 가지고 있는 사본 테이블&lt;/li&gt; &lt;li&gt;사용자들은 인텍스를 볼 수 없다.&lt;/li&gt; &lt;li&gt;MySQL에서는 기본키에 대하여 인덱스가 자동 생성된다.&lt;/li&gt; &lt;li&gt;대부분의 MySQL 인덱스 (기본키, UNIQUE, INDEX와 FULLTEXT)는 B-tree에 저장된다. &lt;ul&gt; &lt;li&gt;B-tree는...</content>
+ </entry>
+
+ 
+
+ <entry>
+   <title>[Database] MySQL GROUP BY 함수</title>
+   <link href="https://m-veloper.github.io/devlog/2020/05/02/database-50/"/>
+   <id>https://m-veloper.github.io/devlog/2020/05/02/database-50</id>
+   <updated>2020-05-02T00:00:00+09:00</updated>
+   <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/05/2020-05-02-database-50.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;group-by&quot;&gt;GROUP BY&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;GROUP으로부터 NULL이 아닌 값을 결합한 문자열 결과를 반환&lt;/li&gt; &lt;li&gt;모두 NULL 인 값만 있는 경우, NULL을 반환&lt;/li&gt; &lt;li&gt;기본 형식&lt;/li&gt; &lt;/ul&gt; &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;컬럼&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;테이블&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;GROUP&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;그룹화할&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;컬럼&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt; &lt;ul&gt;...</content>
+ </entry>
 
  
 
@@ -89,26 +109,6 @@
    <id>https://m-veloper.github.io/devlog/2020/04/28/database-45</id>
    <updated>2020-04-28T00:00:00+09:00</updated>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-28-database-45.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;day-month-year-관련-함수&quot;&gt;DAY, MONTH, YEAR 관련 함수&lt;/h1&gt; &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-28-database-45-01.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h3 id=&quot;day-week-weekofyear-month-year&quot;&gt;DAY(), WEEK(), WEEKOFYEAR(), MONTH(), YEAR()&lt;/h3&gt; &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;DAY&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CURDATE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;WEEK&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CURDATE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;WEEKOFYEAR&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CURDATE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()),&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;MONTH&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CURDATE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()),&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;YEAR&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CURDATE&lt;/span&gt;&lt;span...</content>
- </entry>
-
- 
-
- <entry>
-   <title>[Database] MySQL TIMESTAMP 함수</title>
-   <link href="https://m-veloper.github.io/devlog/2020/04/28/database-44/"/>
-   <id>https://m-veloper.github.io/devlog/2020/04/28/database-44</id>
-   <updated>2020-04-28T00:00:00+09:00</updated>
-   <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-28-database-44.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;timestamp-함수&quot;&gt;TIMESTAMP 함수&lt;/h1&gt; &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-28-database-44-01.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h3 id=&quot;now-current_timestamp-current_timestamp&quot;&gt;NOW(), CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP&lt;/h3&gt; &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;NOW&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;CURRENT_TIMESTAMP&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;CURRENT_TIMESTAMP&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt; &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NOW&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;CURRENT_TIMESTAMP&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;CURRENT_TIMESTAMP&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt; &lt;ul&gt; &lt;li&gt;쿼리 결과 &lt;img src=&quot;/assets/img/database/2020/04/2020-04-28-database-44-02.png&quot; alt=&quot;&quot;...</content>
- </entry>
-
- 
-
- <entry>
-   <title>[Database] MySQL TIME 관련 함수(시간 관련 함수)</title>
-   <link href="https://m-veloper.github.io/devlog/2020/04/28/database-43/"/>
-   <id>https://m-veloper.github.io/devlog/2020/04/28/database-43</id>
-   <updated>2020-04-28T00:00:00+09:00</updated>
-   <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-28-database-43.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;time-관련-함수&quot;&gt;TIME 관련 함수&lt;/h1&gt; &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-28-database-43-01.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h3 id=&quot;addtime&quot;&gt;ADDTIME()&lt;/h3&gt; &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;ADDTIME&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;expr1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;expr2&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt; &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ADDTIME&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'2020-01-01 23:59:59'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'1:1:1'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt; &lt;ul&gt; &lt;li&gt;쿼리 결과 &lt;img src=&quot;/assets/img/database/2020/04/2020-04-28-database-43-02.png&quot;...</content>
  </entry>
 
  

@@ -5,9 +5,263 @@
     <description></description>
     <link>https://m-veloper.github.io/</link>
     <atom:link href="https://m-veloper.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 30 Apr 2020 13:08:27 +0900</pubDate>
-    <lastBuildDate>Thu, 30 Apr 2020 13:08:27 +0900</lastBuildDate>
+    <pubDate>Sat, 02 May 2020 22:50:42 +0900</pubDate>
+    <lastBuildDate>Sat, 02 May 2020 22:50:42 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>[Database] MySQL 인덱스 (Index)</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/05/2020-05-02-database-51.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;인덱스-index&quot;&gt;인덱스 (Index)&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;테이블에서 자주 사용하는 속성을 별도로 생성&lt;/li&gt;
+  &lt;li&gt;테이블의 검색 동작 속도를 향상시키기 위하여 사용&lt;/li&gt;
+  &lt;li&gt;테이블에 대한 킷값을 가지고 있는 사본 테이블&lt;/li&gt;
+  &lt;li&gt;사용자들은 인텍스를 볼 수 없다.&lt;/li&gt;
+  &lt;li&gt;MySQL에서는 기본키에 대하여 인덱스가 자동 생성된다.&lt;/li&gt;
+  &lt;li&gt;대부분의 MySQL 인덱스 (기본키, UNIQUE, INDEX와 FULLTEXT)는 B-tree에 저장된다.
+    &lt;ul&gt;
+      &lt;li&gt;B-tree는 Binary Tree와 다르다.&lt;/li&gt;
+      &lt;li&gt;B-tree : 여러 개의 자식 노드를 가질 수 있다.&lt;/li&gt;
+      &lt;li&gt;Binary Tree : 2개의 자식 노드를 가진다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;장점
+    &lt;ul&gt;
+      &lt;li&gt;WHERE 절이나 ORDER BY 처리에서 빠른 처리 속도&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;단점
+    &lt;ul&gt;
+      &lt;li&gt;인덱스가 설정된 테이블을 수정할 때 처리 속도가 떨어짐&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;인덱스 생성시 고려 사항
+    &lt;ul&gt;
+      &lt;li&gt;WHERE절에서 자주 사용되는 속성을 선택한다.&lt;/li&gt;
+      &lt;li&gt;조인에 자주 사용되는 속성을 선택한다.&lt;/li&gt;
+      &lt;li&gt;인덱스가 많으면 속도가 느려진다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;인덱스-생성&quot;&gt;인덱스 생성&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;기본 형식&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;CREATE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;INDEX&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;인덱스명&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;ON&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;테이블명&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;속성명&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;ALTER&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;TABLE&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;테이블명&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ADD&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;INDEX&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;인덱스명&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;인덱스타입&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;](&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;인덱스속성명&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;테이블 생성 코드 ( 인덱스 생성 전 )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/05/2020-05-02-database-51-01.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;CREATE INDEX를 사용하여 Customer 테이블의 name 속성에 대하여 인덱스(nameidx)를 생성하시오.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;CREATE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;INDEX&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nameidx&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ON&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;customer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/05/2020-05-02-database-51-02.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;테이블 생성 코드 ( 인덱스 생성 후 )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/05/2020-05-02-database-51-03.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;인덱스-조회&quot;&gt;인덱스 조회&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;기본 형식&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SHOW&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;INDEX&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;테이블명&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;인덱스-삭제&quot;&gt;인덱스 삭제&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;기본 형식&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;DROP&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;INDEX&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;인덱스명&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ON&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;테이블명&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;ALTER&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;TABLE&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;테이블명&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;DROP&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;INDEX&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;인덱스명&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/05/2020-05-02-database-51-04.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/05/2020-05-02-database-51-05.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 02 May 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/devlog/2020/05/02/database-51/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/05/02/database-51/</guid>
+        
+        <category>database</category>
+        
+        <category>mysql</category>
+        
+        
+        <category>devlog</category>
+        
+      </item>
+    
+      <item>
+        <title>[Database] MySQL GROUP BY 함수</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/05/2020-05-02-database-50.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;group-by&quot;&gt;GROUP BY&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;GROUP으로부터 NULL이 아닌 값을 결합한 문자열 결과를 반환&lt;/li&gt;
+  &lt;li&gt;모두 NULL 인 값만 있는 경우, NULL을 반환&lt;/li&gt;
+  &lt;li&gt;기본 형식&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;컬럼&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;테이블&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;GROUP&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;그룹화할&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;컬럼&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;조건 처리 후에 컬럼 그룹화&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;컬럼&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;테이블&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;조건식&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;GROUP&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;그룹화할&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;컬럼&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;컬럼 그룹화 후에 조건 처리&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;컬럼&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;테이블&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;GROUP&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;그룹화할&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;컬럼&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;HAVING&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;조건식&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;조건 처리 후에 컬럼 그룹화 후에 조건 처리&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;컬럼&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;테이블&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;조건식&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;GROUP&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;그룹화할&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;컬럼&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;HAVING&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;조건식&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;ORDER BY가 존재하는 경우&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;컬럼&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;테이블&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;조건식&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;GROUP&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;그룹화할&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;컬럼&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;HAVING&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;조건식&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ORDER&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;컬럼&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[,&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;컬럼&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;컬럼&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;...];&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;예제&quot;&gt;예제&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;예제 테이블&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/05/2020-05-02-database-50-01.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;type 그룹화하여 name 갯수 조회 (컬럼 그룹화)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;COUNT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cnt&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;hero_collection&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;GROUP&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;결과&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/05/2020-05-02-database-50-02.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;type 1 초과인, type 그룹화하여 name 갯수 조회 (조건 처리 후 컬럼 그룹화)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;COUNT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cnt&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;hero_collection&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;GROUP&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;결과&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/05/2020-05-02-database-50-03.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;type 그룹화하여 name 갯수를 가져온 후, 그 중에 갯수가 2개 이상인 데이터 조회 (조건 처리 후에 컬럼 그룹화 후에 조건 처리)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;COUNT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cnt&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;hero_collection&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;GROUP&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;HAVING&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cnt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;결과&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/05/2020-05-02-database-50-04.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;type 1 초과인, type 그룹화하여 name 갯수를 가져온 후, 그 중에 갯수가 2개 이상인 데이터 조회 (조건 처리 후에 컬럼 그룹화 후에 조건 처리)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;COUNT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cnt&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;hero_collection&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;GROUP&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;HAVING&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cnt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;결과&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/05/2020-05-02-database-50-05.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;type 1 초과인, type 그룹화하여 name 갯수를 가져온 후, 그 중에 갯수가 2개 이상인 데이터를 type 내림차순 정렬로 조회 (내림차순 정렬)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;COUNT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cnt&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;hero_collection&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;GROUP&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;HAVING&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cnt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ORDER&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;DESC&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;결과&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/05/2020-05-02-database-50-06.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sat, 02 May 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/devlog/2020/05/02/database-50/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/05/02/database-50/</guid>
+        
+        <category>database</category>
+        
+        <category>mysql</category>
+        
+        
+        <category>devlog</category>
+        
+      </item>
     
       <item>
         <title>[유닉스] 쉘(Shell) 환경 설정</title>
@@ -4266,334 +4520,6 @@ bye~bye~
         <pubDate>Fri, 17 Apr 2020 00:00:00 +0900</pubDate>
         <link>https://m-veloper.github.io/devlog/2020/04/17/unix-29/</link>
         <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/17/unix-29/</guid>
-        
-        <category>unix</category>
-        
-        
-        <category>devlog</category>
-        
-      </item>
-    
-      <item>
-        <title>[유닉스] 통신 명령어( write, wall, talk, mesg )</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-04-16-unix-28.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;통신-명령어-write-wall-talk-mesg-&quot;&gt;통신 명령어( write, wall, talk, mesg )&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;write, wall, talk, mesg를 사용하여 사용자간 직접 통신을 할 수 있습니다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;write-명령을-이용한-통신&quot;&gt;write 명령을 이용한 통신&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-04-16-unix-28-01.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;지정한 사용자에게 메시지를 전송&lt;/li&gt;
-  &lt;li&gt;메시지를 전달하려는 사용자는 하나만 지정 가능&lt;/li&gt;
-  &lt;li&gt;형식 : write 사용자명 [단말기명]&lt;/li&gt;
-  &lt;li&gt;사용 예 : write user2
-    &lt;ul&gt;
-      &lt;li&gt;write 명령으로 보내는 메시지는 상대방이 무슨 작업을 하고 있든지 상관없이 그대로 화면에 출력됨&lt;/li&gt;
-      &lt;li&gt;write 명령을 입력하면 커서가 다음 행으로 이동하고 대기 상태&lt;/li&gt;
-      &lt;li&gt;상대방의 화면에는 “Message from user1 on … ” 메시지가 화면에 출력됨&lt;/li&gt;
-      &lt;li&gt;상대방 user2의 화면에는 다음 메시지 출력&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//송신
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;write user2
-
-//수신
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;Message from user 1 on ....
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;user2라는 ID를 가진 사람과 대화&lt;/li&gt;
-  &lt;li&gt;상대방이 하나 이상의 터미널에 접속되어 있을 때&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//송신
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;write user2
-Hi~! Good morning! ^D
-
-//수신
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;write user2 tty2
-Hi~! Good morning! ^D
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;wall-명령을-이용한-통신&quot;&gt;wall 명령을 이용한 통신&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;wall 명령&lt;/li&gt;
-  &lt;li&gt;로그인하고 있는 모든 사용자에게 메시지를 전송&lt;/li&gt;
-  &lt;li&gt;형식 : wall [파일명]&lt;/li&gt;
-  &lt;li&gt;write 명령처럼 메시지를 직접 입력하고 Ctrl + D 키로 종료&lt;/li&gt;
-  &lt;li&gt;전달하려는 내용을 파일로 작성하였다가 파일명을 인자로 지정할 수 있음&lt;/li&gt;
-  &lt;li&gt;로그인된 모든 사용자 단말기 화면에 “Broadcast message from …” 메시지와 함께 사용자가 입력한 메시지 내용이
-출력됨&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;Broadcast Message from user1@Ubuntu &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;pts/4&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; at 19:03 ...
-wall &lt;span class=&quot;nb&quot;&gt;test &lt;/span&gt;message
-&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;talk-명령을-이용한-통신&quot;&gt;talk 명령을 이용한 통신&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-04-16-unix-28-02.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;talk 명령&lt;/li&gt;
-  &lt;li&gt;다른 사용자와 일대일 대화를 할 수 있는 기능 제공&lt;/li&gt;
-  &lt;li&gt;형식 : talk 사용자주소 [단말기명]&lt;/li&gt;
-  &lt;li&gt;사용자주소 : 사용자명@호스트명&lt;/li&gt;
-  &lt;li&gt;같은 시스템에 로그인한 사용자와의 대화일 경우 호스트명 없이 사용자명만 지정&lt;/li&gt;
-  &lt;li&gt;write나 wall 명령은 같은 시스템에 로그인된 사용자에게만 메시지 전송 가능&lt;/li&gt;
-  &lt;li&gt;talk 명령은 다른 시스템의 사용자와도 대화 가능&lt;/li&gt;
-  &lt;li&gt;talk 명령을 입력하면 다음 메시지가 나타남&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//송신
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;waiting &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;your party to respond]
-
-//수신
-&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
-Message from Talk_Daemon@cc at 12:45
-talk: connection requested by user1@cc
-talk: respond with: talk user1@cc
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;cc라는 컴퓨터에서 user1이라는 ID를 가진 사용자가 12시 45분에 대화를 요청&lt;/li&gt;
-  &lt;li&gt;대화에 응하려면 다음과 같이 응답해야 함&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//수신
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;talk user1
-
-//송신
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;talk user2
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;Connection established]
-Hi~~
-How are you?
-&lt;span class=&quot;nt&quot;&gt;--------------------------------------------------------------------------------------&lt;/span&gt;
-Hi~~
-I’m fine! and you??
-&lt;span class=&quot;nt&quot;&gt;--------------------------------------------------------------------------------------&lt;/span&gt;
-
-//수신
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;talk user1
-Message from Talk_Daemon@cc at 12:45
-talk: connection requested by user1@cc
-talk: respond with: talk user1@cc
-&lt;span class=&quot;o&quot;&gt;================================================&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;Connection established]
-Hi~~
-I’m fine! and you??
-&lt;span class=&quot;nt&quot;&gt;--------------------------------------------------------------------------------------&lt;/span&gt;
-Hi~~
-How are you?
-&lt;span class=&quot;nt&quot;&gt;--------------------------------------------------------------------------------------&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;대화를 종료하려면 ^D 키 입력&lt;/li&gt;
-  &lt;li&gt;상대방이 로그인되어 있지 않은 상태에서 talk 명령으로 대화를 시도하면 다음 메시지 출력&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;Your party is no logged on]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;상대방이 로그인되어 있지만 응답하지 않으면 다음 메시지 출력&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;Ringing your party again]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;mesg-명령을-이용한-통신-제어&quot;&gt;mesg 명령을 이용한 통신 제어&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;mesg 명령&lt;/li&gt;
-  &lt;li&gt;메시지를 단말기로 출력하는 것을 막거나(n) 허용함(y)&lt;/li&gt;
-  &lt;li&gt;형식 : mesg [n or no/y or yes]&lt;/li&gt;
-  &lt;li&gt;사용 예 : mesg n&lt;/li&gt;
-  &lt;li&gt;user2 사용자가 메시지를 받지 않으려면 mesg n 또는 mesg no 입력&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;mesg n
-&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;user1 사용자가 user2 사용자에게 메시지를 보내면 다음 메시지 출력&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;write user2
-Permission denied
-&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;다시 메시지를 받으려면 mesg y 또는 mesg yes 입력&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;mesg y
-&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;자신의 현재 대화 허용상태를 보려면 인자 없이 mesg 명령만 입력&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;mesg
-is y
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-</description>
-        <pubDate>Thu, 16 Apr 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/04/16/unix-28/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/16/unix-28/</guid>
-        
-        <category>unix</category>
-        
-        
-        <category>devlog</category>
-        
-      </item>
-    
-      <item>
-        <title>[유닉스] 호스트와 사용자 정보( hostname, nslookup, ping, finger )</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-04-15-unix-27.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;호스트명-확인--hostname-명령&quot;&gt;호스트명 확인 : hostname 명령&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;현재 사용 중인 유닉스 시스템의 호스트 이름 확인&lt;/li&gt;
-  &lt;li&gt;형식 : hostname&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;hostname
-&lt;/span&gt;Ubuntu
-&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h1 id=&quot;ip-주소-검색--nslookup-명령&quot;&gt;IP 주소 검색 : nslookup 명령&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;DNS (Domain Name System) 서버를 이용하여 도메인이나 IP를 조회하는 명령
-    &lt;ul&gt;
-      &lt;li&gt;DNS란 : 인터넷 상의 컴퓨터는 호스트명과 IP 주소를 가짐. 호스트명은 사용자가 사용하는 이름. IP 주소는 실제
-  통신에서 사용되는 주소. 호스트명을 IP 주소로 번역하는 서비스를 말함. 전화번호부와 같은 역할&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;호스트 이름 또는 DNS 서버의 작동을 테스트하고자 할 경우 사용&lt;/li&gt;
-  &lt;li&gt;형식 : nslookup [option] Hostname 또는 IP_Address&lt;/li&gt;
-  &lt;li&gt;nslookup 명령을 실행하면 프롬프트가 &amp;gt;로 바뀜
-    &lt;ul&gt;
-      &lt;li&gt;IP 주소를 알고 싶은 도메인명을 입력하면 해당 호스트의 IP 주소를 출력&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;www.daum.net을 검색
-    &lt;ul&gt;
-      &lt;li&gt;exit 명령으로 종료&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;nslookup
-
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; www.daum.net
-Server: 127.0.1.1
-Address: 127.0.1.1#53
-Non-authoritative answer:
-www.daum.net canonical name &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; www.g.daum.net.
-Name: www.g.daum.net
-Address: 180.70.93.57
-Name: www.g.daum.net
-Address: 180.70.134.9
-
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;exit&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h1 id=&quot;호스트-동작-확인--ping-명령&quot;&gt;호스트 동작 확인 : ping 명령&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;네트워크상에서 상대방과의 통신이 원활하게 이루어지고 있는지를 테스트&lt;/li&gt;
-  &lt;li&gt;^C(Ctrl + C) 키로 프로세스 종료&lt;/li&gt;
-  &lt;li&gt;형식 : ping IP_Adress 또는 URL&lt;/li&gt;
-  &lt;li&gt;인터파크(interpark) 사이트의 시스템과 연결되는지 확인한 예
-    &lt;ul&gt;
-      &lt;li&gt;ping 명령 서비스를 제한하고 있는 호스트나 네트워크 장비들이 있어서 명령이 정상적으로 동작 안하는 경우가
-있음&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ping www.interpark.com
-PING interpark.com &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;211.233.74.23&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; 56&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;84&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; bytes of data.
-64 bytes from 211.233.74.23: &lt;span class=&quot;nv&quot;&gt;icmp_seq&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1 &lt;span class=&quot;nv&quot;&gt;ttl&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;243 &lt;span class=&quot;nb&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;6.96 ms
-64 bytes from 211.233.74.23: &lt;span class=&quot;nv&quot;&gt;icmp_seq&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;2 &lt;span class=&quot;nv&quot;&gt;ttl&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;243 &lt;span class=&quot;nb&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;10.1 ms
-64 bytes from 211.233.74.23: &lt;span class=&quot;nv&quot;&gt;icmp_seq&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;3 &lt;span class=&quot;nv&quot;&gt;ttl&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;243 &lt;span class=&quot;nb&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;10.5 ms
-^C
-&lt;span class=&quot;nt&quot;&gt;---&lt;/span&gt; interpark.com ping statistics &lt;span class=&quot;nt&quot;&gt;---&lt;/span&gt;
-3 packets transmitted, 3 received, 0% packet loss, &lt;span class=&quot;nb&quot;&gt;time &lt;/span&gt;2011ms
-rtt min/avg/max/mdev &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 6.967/9.219/10.539/1.602 ms
-&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h1 id=&quot;개인-정보-확인--finger-명령&quot;&gt;개인 정보 확인 : finger 명령&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;사용자 계정의 자세한 정보 확인&lt;/li&gt;
-  &lt;li&gt;형식 : finger [사용자명 l 사용자명@호스트명 l @호스트명]&lt;/li&gt;
-  &lt;li&gt;로그인한 사용자 정보 출력
-    &lt;ul&gt;
-      &lt;li&gt;finger 명령을 인자없이 사용하면 시스템에 현재 로그인한 사용자의 정보를 보여줌&lt;/li&gt;
-      &lt;li&gt;로그인명, 사용자의 실명, 로그인한 단말기명, 대기한 시간, 로그인한 시간, 접속한 호스트의 주소 정보&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;finger
-Login Name TTY Idle Login Time Office Office Phone
-ksshin ksshin &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;tty1 June 25 20:38
-ksshin ksshin &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;:0 June 10 14:38 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;:0&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-user1 staff &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;pts/3 1:10 June 25 20:25
-&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;사용자의 상세 개인 정보 출력
-    &lt;ul&gt;
-      &lt;li&gt;finger의 인자로 사용자명을 지정하면 사용자의 상세한 개인 정보 출력
-  i) 로그인명, 사용자의 실명, 사용자의 홈 디렉토리, 기본 쉘, 로그인한 시간과 단말기명, 접속한 외부 호스트의
-  주소, 메일, 특별한 계획 유무&lt;/li&gt;
-      &lt;li&gt;마지막에 “No Plan.”은 사용자 홈 디렉토리에 있는 .plan 파일의 내용이 출력됨&lt;/li&gt;
-      &lt;li&gt;.plan은 사용자의 일정이나 간단한 메모 등을 작성해 놓는 파일&lt;/li&gt;
-      &lt;li&gt;“No Plan.”은 .plan 파일이 없음을 뜻함&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;finger ksshin
-Login: ksshin Name: ksshin
-Directory: /home/ksshin Shell: /bin/bash
-On since Thu Jun 25 20:38 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;KST&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; on tty1 1 second idle &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;messages
-off&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-On since Wed Jun 10 14:38 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;KST&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; on :0 from :0 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;messages off&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-No mail.
-No Plan.
-&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-</description>
-        <pubDate>Wed, 15 Apr 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/04/15/unix-27/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/15/unix-27/</guid>
         
         <category>unix</category>
         
