@@ -4,12 +4,32 @@
  <title>슬기로운 개발 생활</title>
  <link href="https://m-veloper.github.io/atom.xml" rel="self"/>
  <id>https://m-veloper.github.io</id>
- <updated>2020-05-03T21:46:21+09:00</updated>
+ <updated>2020-05-04T02:16:33+09:00</updated>
  <author>
    <name>m-veloper</name>
    <uri>https://m-veloper.github.io</uri>
    <email>m_veloper@naver.com</email>
  </author>
+
+ 
+
+ <entry>
+   <title>[Database] 왼쪽 조인 (Left Join)</title>
+   <link href="https://m-veloper.github.io/devlog/2020/05/04/database-54/"/>
+   <id>https://m-veloper.github.io/devlog/2020/05/04/database-54</id>
+   <updated>2020-05-04T00:00:00+09:00</updated>
+   <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/05/2020-05-04-database-54.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;왼쪽-조인-left-join&quot;&gt;왼쪽 조인 (Left Join)&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;오른쪽 테이블(테이블2)과 매칭되는 왼쪽 테이블(테이블1)의 모든 투플을 반환한다.&lt;/li&gt; &lt;li&gt;오른쪽 테이블과 매칭이 되지 않을 경우, NULL을 반환된다.&lt;/li&gt; &lt;li&gt;기본 형식&lt;/li&gt; &lt;/ul&gt; &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;속성&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;리스트&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;테이블&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;LEFT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;JOIN&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;테이블&lt;/span&gt;&lt;span...</content>
+ </entry>
+
+ 
+
+ <entry>
+   <title>[Database] 오른쪽 조인 (Right Join)</title>
+   <link href="https://m-veloper.github.io/devlog/2020/05/04/database-53/"/>
+   <id>https://m-veloper.github.io/devlog/2020/05/04/database-53</id>
+   <updated>2020-05-04T00:00:00+09:00</updated>
+   <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/05/2020-05-04-database-53.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;오른쪽-조인-right-join&quot;&gt;오른쪽 조인 (Right Join)&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;왼쪽 테이블(테이블1)과 매칭되는 오른쪽 테이블(테이블2)의 모든 투플을 반환한다.&lt;/li&gt; &lt;li&gt;왼쪽 테이블과 매칭이 되지 않을 경우, NULL을 반환된다.&lt;/li&gt; &lt;li&gt;기본 형식&lt;/li&gt; &lt;/ul&gt; &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;속성&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;리스트&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;테이블&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;RIGHT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;JOIN&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;테이블&lt;/span&gt;&lt;span...</content>
+ </entry>
 
  
 
@@ -89,26 +109,6 @@
    <id>https://m-veloper.github.io/devlog/2020/04/29/database-48</id>
    <updated>2020-04-29T00:00:00+09:00</updated>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-29-database-48.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;문자열-함수-string-fuctions&quot;&gt;문자열 함수 (String Fuctions)&lt;/h1&gt; &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-29-database-48-01.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-29-database-48-02.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h3 id=&quot;left-str-len--right-str-len-&quot;&gt;LEFT( str, len ), RIGHT( str, len )&lt;/h3&gt; &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;LEFT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'abcdefg'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;RIGHT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'abcdefg'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt; &lt;ul&gt;...</content>
- </entry>
-
- 
-
- <entry>
-   <title>[Database] MySQL 문자열 함수 (String Fuctions) - (1)</title>
-   <link href="https://m-veloper.github.io/devlog/2020/04/29/database-47/"/>
-   <id>https://m-veloper.github.io/devlog/2020/04/29/database-47</id>
-   <updated>2020-04-29T00:00:00+09:00</updated>
-   <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-29-database-47.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;문자열-함수-string-fuctions&quot;&gt;문자열 함수 (String Fuctions)&lt;/h1&gt; &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-29-database-47-01.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h3 id=&quot;ascii&quot;&gt;ASCII()&lt;/h3&gt; &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ASCII&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'2'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ASCII&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ASCII&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'dx'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt; &lt;ul&gt; &lt;li&gt;쿼리 결과 &lt;img src=&quot;/assets/img/database/2020/04/2020-04-29-database-47-02.png&quot; alt=&quot;&quot; /&gt; &lt;br /&gt;&lt;/li&gt; &lt;/ul&gt; &lt;h3 id=&quot;bin-conv&quot;&gt;BIN(), CONV()&lt;/h3&gt;...</content>
- </entry>
-
- 
-
- <entry>
-   <title>[Database] MySQL 연산 함수, 계산 함수, 수학 함수 (Mathematical Functions)</title>
-   <link href="https://m-veloper.github.io/devlog/2020/04/28/database-46/"/>
-   <id>https://m-veloper.github.io/devlog/2020/04/28/database-46</id>
-   <updated>2020-04-28T00:00:00+09:00</updated>
-   <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-28-database-46.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;연산-함수-계산-함수-수학-함수-mathematical-functions&quot;&gt;연산 함수, 계산 함수, 수학 함수 (Mathematical Functions)&lt;/h1&gt; &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-28-database-46-01.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-28-database-46-02.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h3 id=&quot;abs-mod-sign&quot;&gt;ABS(), MOD(), SIGN()&lt;/h3&gt; &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;ABS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;MOD&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;N&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;M&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SIGN&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span...</content>
  </entry>
 
  
