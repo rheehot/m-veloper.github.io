@@ -4,12 +4,32 @@
  <title>슬기로운 개발 생활</title>
  <link href="https://m-veloper.github.io/atom.xml" rel="self"/>
  <id>https://m-veloper.github.io</id>
- <updated>2020-05-04T02:16:33+09:00</updated>
+ <updated>2020-05-05T12:05:50+09:00</updated>
  <author>
    <name>m-veloper</name>
    <uri>https://m-veloper.github.io</uri>
    <email>m_veloper@naver.com</email>
  </author>
+
+ 
+
+ <entry>
+   <title>[Database] 자바(JAVA) 란? 자바의 정의</title>
+   <link href="https://m-veloper.github.io/devlog/2020/05/05/database-56/"/>
+   <id>https://m-veloper.github.io/devlog/2020/05/05/database-56</id>
+   <updated>2020-05-05T00:00:00+09:00</updated>
+   <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/05/2020-05-05-database-56.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;java&quot;&gt;JAVA&lt;/h1&gt; &lt;h3 id=&quot;프로그래밍-언어&quot;&gt;프로그래밍 언어&lt;/h3&gt; &lt;ul&gt; &lt;li&gt;기계어(Machine Language) &lt;ul&gt; &lt;li&gt;0, 1의 이진수로 구성된 언어&lt;/li&gt; &lt;li&gt;컴퓨터의 CPU는 기계어만 이해하고 처리가능&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;어셈블리어 &lt;ul&gt; &lt;li&gt;기계어 명령을 ADD, SUB, MOVE 등과 같은 표현하기 쉬운 상징적인 단어인 니모닉 기호(mnemonic symbol)로 일대일 대응시킨 언어&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;고급언어 &lt;ul&gt; &lt;li&gt;사람이 이해하기...</content>
+ </entry>
+
+ 
+
+ <entry>
+   <title>[Database] 전체 조인 (Full Join)</title>
+   <link href="https://m-veloper.github.io/devlog/2020/05/05/database-55/"/>
+   <id>https://m-veloper.github.io/devlog/2020/05/05/database-55</id>
+   <updated>2020-05-05T00:00:00+09:00</updated>
+   <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/05/2020-05-05-database-55.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;전체-조인-full-join&quot;&gt;전체 조인 (Full Join)&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;테이블1과 테이블2의 모든 투플을 반환한다.&lt;/li&gt; &lt;li&gt;왼쪽 조인과 오른쪽 조인을 결합한 결과&lt;/li&gt; &lt;li&gt;기본 형식&lt;/li&gt; &lt;/ul&gt; &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;속성&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;리스트&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;테이블&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FULL&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;OUTER&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;JOIN&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;테이블&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ON&lt;/span&gt;...</content>
+ </entry>
 
  
 
@@ -89,26 +109,6 @@
    <id>https://m-veloper.github.io/devlog/2020/04/30/unix-38</id>
    <updated>2020-04-30T00:00:00+09:00</updated>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-04-30-unix-38.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;쉘shell&quot;&gt;쉘(Shell)&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;사용자와 커널을 연결시켜주는 기능을 수행하는 특별한 프로그램&lt;/li&gt; &lt;li&gt;사용자가 입력한 명령을 처리하고 실행 결과를 알려주는 기능&lt;/li&gt; &lt;li&gt;세 가지 기능 : 명령어 해석기, 프로그래밍, 사용자 환경 설정&lt;/li&gt; &lt;/ul&gt; &lt;h3 id=&quot;명령어-해석기-기능&quot;&gt;명령어 해석기 기능&lt;/h3&gt; &lt;ul&gt; &lt;li&gt;사용자와 커널 사이에서 명령을 해석하여 전달하는 해석기(Interpreter) 또는 번역기(Translator) 역할 수행&lt;/li&gt; &lt;li&gt;사용자가...</content>
- </entry>
-
- 
-
- <entry>
-   <title>[Database] MySQL 타입 변환 함수 (Type Conversion Functions)</title>
-   <link href="https://m-veloper.github.io/devlog/2020/04/29/database-49/"/>
-   <id>https://m-veloper.github.io/devlog/2020/04/29/database-49</id>
-   <updated>2020-04-29T00:00:00+09:00</updated>
-   <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-29-database-49.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;타입-변환-함수-type-conversion-functions&quot;&gt;타입 변환 함수 (Type Conversion Functions)&lt;/h1&gt; &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-29-database-49-01.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h3 id=&quot;binary&quot;&gt;BINARY&lt;/h3&gt; &lt;ul&gt; &lt;li&gt;문자열을 바이너리 문자열로 변환&lt;/li&gt; &lt;li&gt;속성값 비교를 강화하기 위한 방법 &lt;ul&gt; &lt;li&gt;문자끼리 비교가 아닌 바이트 간의 비교&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;대소문자 구분함&lt;/li&gt; &lt;li&gt;문자뒤의 스페이스도 중요한 문자로 인식&lt;/li&gt; &lt;/ul&gt; &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt;...</content>
- </entry>
-
- 
-
- <entry>
-   <title>[Database] MySQL 문자열 함수 (String Fuctions) - (2)</title>
-   <link href="https://m-veloper.github.io/devlog/2020/04/29/database-48/"/>
-   <id>https://m-veloper.github.io/devlog/2020/04/29/database-48</id>
-   <updated>2020-04-29T00:00:00+09:00</updated>
-   <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-29-database-48.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;문자열-함수-string-fuctions&quot;&gt;문자열 함수 (String Fuctions)&lt;/h1&gt; &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-29-database-48-01.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-29-database-48-02.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h3 id=&quot;left-str-len--right-str-len-&quot;&gt;LEFT( str, len ), RIGHT( str, len )&lt;/h3&gt; &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;LEFT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'abcdefg'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;RIGHT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'abcdefg'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt; &lt;ul&gt;...</content>
  </entry>
 
  

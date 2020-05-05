@@ -9,7 +9,7 @@
 	<meta name="naver-site-verification" content="fa37cbf8ce41948de6e94c01991ffa04cea9b093"/>
 	<meta name="google-site-verification" content="5M4Zw9wg_UqQkvlayfb5Mc_ogvJdc013w_zLUkxgO-Y" />
 
-	<!--<title>[Database] 내부 조인 (Inner Join)</title>-->
+	<!--<title>[Database] 전체 조인 (Full Join)</title>-->
 	<title>슬기로운 개발 생활</title>
 
 	<!-- CSS & fonts -->
@@ -1129,9 +1129,9 @@
 			<div id="container">
 				<main>
 					<article id="post-page">
-	<h2 class="title">[Database] 내부 조인 (Inner Join)</h2>
+	<h2 class="title">[Database] 전체 조인 (Full Join)</h2>
 	<a class="tag" href="" data-flip="title">
-		<time datetime="" class="by-line">2020년 05월 03일</time>
+		<time datetime="" class="by-line">2020년 05월 05일</time>
 	</a>
 	<hr>
 	<div class="content">
@@ -1147,58 +1147,90 @@
 			</div>
 		</div>
 
-		<p><img src="/assets/img/database/2020/05/2020-05-03-database-52.png" alt="" /></p>
+		<p><img src="/assets/img/database/2020/05/2020-05-05-database-55.png" alt="" /></p>
 
-<h1 id="내부-조인-inner-join">내부 조인 (Inner Join)</h1>
+<h1 id="전체-조인-full-join">전체 조인 (Full Join)</h1>
 
 <ul>
-  <li>두 테이블에서 속성이 일치하는 모든 투플을 반환</li>
-  <li>일반적인 조인과 동일</li>
+  <li>테이블1과 테이블2의 모든 투플을 반환한다.</li>
+  <li>왼쪽 조인과 오른쪽 조인을 결합한 결과</li>
   <li>기본 형식</li>
 </ul>
 
 <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="err">속성</span><span class="n">_</span><span class="err">리스트</span>
 <span class="k">FROM</span> <span class="err">테이블</span><span class="mi">1</span>
-<span class="k">INNER</span> <span class="k">JOIN</span> <span class="err">테이블</span><span class="mi">2</span>
+<span class="k">FULL</span> <span class="k">OUTER</span> <span class="k">JOIN</span> <span class="err">테이블</span><span class="mi">2</span>
 <span class="k">ON</span> <span class="err">테이블</span><span class="mi">1</span><span class="p">.</span> <span class="err">속성</span> <span class="o">=</span> <span class="err">테이블</span><span class="mi">2</span><span class="p">.</span><span class="err">속성</span>
 <span class="p">[</span> <span class="k">ORDER</span> <span class="k">BY</span> <span class="err">속성</span> <span class="p">];</span>
 </code></pre></div></div>
 
-<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="err">속성</span><span class="n">_</span><span class="err">리스트</span>
-<span class="k">FROM</span> <span class="err">테이블</span><span class="mi">1</span>
-<span class="k">JOIN</span> <span class="err">테이블</span><span class="mi">2</span>
-<span class="k">ON</span> <span class="err">테이블</span><span class="mi">1</span><span class="p">.</span> <span class="err">속성</span> <span class="o">=</span> <span class="err">테이블</span><span class="mi">2</span><span class="p">.</span><span class="err">속성</span>
-<span class="p">[</span> <span class="k">ORDER</span> <span class="k">BY</span> <span class="err">속성</span> <span class="p">];</span>
-</code></pre></div></div>
+<p><img src="/assets/img/database/2020/05/2020-05-05-database-55-01.png" alt="" /></p>
 
-<p><img src="/assets/img/database/2020/05/2020-05-03-database-52-01.png" alt="" /></p>
+<ul>
+  <li>MySQL은 전체조인 지원에 문제가 있으므로, 왼쪽 조인과 오른쪽 조인의 합집으로 해결</li>
+  <li>유니온 (Union)
+    <ul>
+      <li>두 질의문 결과의 합집합</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span> <span class="k">SELECT</span> <span class="err">속성리스트</span> <span class="k">FROM</span> <span class="err">테이블</span><span class="mi">1</span> <span class="p">)</span>
+<span class="k">UNION</span>
+<span class="p">(</span> <span class="k">SELECT</span> <span class="err">속성리스트</span> <span class="k">FROM</span> <span class="err">테이블</span><span class="mi">2</span> <span class="p">)</span>
+</code></pre></div></div>
 
 <ul>
   <li>
     <p>Customer 테이블
-<img src="/assets/img/database/2020/05/2020-05-03-database-52-02.png" alt="" /></p>
+<img src="/assets/img/database/2020/05/2020-05-05-database-55-02.png" alt="" /></p>
   </li>
   <li>
     <p>Orders 테이블
-<img src="/assets/img/database/2020/05/2020-05-03-database-52-03.png" alt="" /></p>
+<img src="/assets/img/database/2020/05/2020-05-05-database-55-03.png" alt="" /></p>
   </li>
   <li>
-    <p>주문을 한 고객의 이름(customer.name)과 주문 상품(orders.item)을 검색하시오.</p>
+    <p>고객의 구매 현황을 조사하되, 구매하지 않은 고객은 구매 항목에 NULL로 표시하고, 구매한 고객은 구매한 상품코드를 조사하시오. 또한, 비회원( 계정이 없는 고객 )에 대하여 판매된 상품을 조사하시오 (전체 조인 사용)</p>
   </li>
 </ul>
 
-<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="n">customer</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="n">orders</span><span class="p">.</span><span class="n">item</span>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="k">SELECT</span> <span class="n">customer</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="n">orders</span><span class="p">.</span><span class="n">item</span>
 <span class="k">FROM</span> <span class="n">customer</span>
-<span class="k">INNER</span> <span class="k">JOIN</span> <span class="n">orders</span>
-<span class="k">ON</span> <span class="n">customer</span><span class="p">.</span><span class="n">account</span><span class="o">=</span><span class="n">orders</span><span class="p">.</span><span class="n">customer</span><span class="p">;</span>
+<span class="k">LEFT</span> <span class="k">JOIN</span> <span class="n">orders</span>
+<span class="k">ON</span> <span class="n">customer</span><span class="p">.</span><span class="n">account</span><span class="o">=</span><span class="n">orders</span><span class="p">.</span><span class="n">customer</span><span class="p">)</span>
+<span class="k">UNION</span>
+<span class="p">(</span><span class="k">SELECT</span> <span class="n">customer</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="n">orders</span><span class="p">.</span><span class="n">item</span>
+<span class="k">FROM</span> <span class="n">customer</span>
+<span class="k">RIGHT</span> <span class="k">JOIN</span> <span class="n">orders</span>
+<span class="k">ON</span> <span class="n">customer</span><span class="p">.</span><span class="n">account</span><span class="o">=</span><span class="n">orders</span><span class="p">.</span><span class="n">customer</span><span class="p">);</span>
 </code></pre></div></div>
 
 <ul>
   <li>결과
-<img src="/assets/img/database/2020/05/2020-05-03-database-52-04.png" alt="" /></li>
+<img src="/assets/img/database/2020/05/2020-05-05-database-55-04.png" alt="" /></li>
 </ul>
 
 <p><br /></p>
+
+<ul>
+  <li>전체 조인의 모든 속성을 확인하기 위한 질의</li>
+</ul>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="k">SELECT</span> <span class="o">*</span>
+<span class="k">FROM</span> <span class="n">customer</span>
+<span class="k">LEFT</span> <span class="k">JOIN</span> <span class="n">orders</span>
+<span class="k">ON</span> <span class="n">customer</span><span class="p">.</span><span class="n">account</span><span class="o">=</span><span class="n">orders</span><span class="p">.</span><span class="n">customer</span><span class="p">)</span>
+<span class="k">UNION</span>
+<span class="p">(</span><span class="k">SELECT</span> <span class="o">*</span>
+<span class="k">FROM</span> <span class="n">customer</span>
+<span class="k">RIGHT</span> <span class="k">JOIN</span> <span class="n">orders</span>
+<span class="k">ON</span> <span class="n">customer</span><span class="p">.</span><span class="n">account</span><span class="o">=</span><span class="n">orders</span><span class="p">.</span><span class="n">customer</span><span class="p">);</span>
+</code></pre></div></div>
+
+<ul>
+  <li>결과
+<img src="/assets/img/database/2020/05/2020-05-05-database-55-05.png" alt="" /></li>
+</ul>
 
 
 
@@ -1236,9 +1268,9 @@
       }
 
       var d = function () {
-        this.page.title = "[Database] 내부 조인 (Inner Join)",
-          this.page.identifier = "/devlog/2020/05/03/database-52",
-          this.page.url = "https://m-veloper.github.io/devlog/2020/05/03/database-52/"
+        this.page.title = "[Database] 전체 조인 (Full Join)",
+          this.page.identifier = "/devlog/2020/05/05/database-55",
+          this.page.url = "https://m-veloper.github.io/devlog/2020/05/05/database-55/"
       };
       s._disqusFirst = void 0 === s._disqusFirst || s._disqusFirst, s._disqusLoading = void 0 !== s._disqusLoading && s._disqusLoading, s._disqusThis = !1, s._disqusThreadOffsetTop = i.getElementById(
         "disqus_thread").offsetTop, s._disqusLoading ? s._disqusFirst = !1 : (s._disqusLoading = !0, loadJSDeferred(
