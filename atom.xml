@@ -4,12 +4,22 @@
  <title>슬기로운 개발 생활</title>
  <link href="https://m-veloper.github.io/atom.xml" rel="self"/>
  <id>https://m-veloper.github.io</id>
- <updated>2020-05-05T12:05:50+09:00</updated>
+ <updated>2020-05-06T20:14:12+09:00</updated>
  <author>
    <name>m-veloper</name>
    <uri>https://m-veloper.github.io</uri>
    <email>m_veloper@naver.com</email>
  </author>
+
+ 
+
+ <entry>
+   <title>[유닉스] 쉘 스크립트(Shell Script)</title>
+   <link href="https://m-veloper.github.io/devlog/2020/05/06/unix-41/"/>
+   <id>https://m-veloper.github.io/devlog/2020/05/06/unix-41</id>
+   <updated>2020-05-06T00:00:00+09:00</updated>
+   <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-05-06-unix-41.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;쉘-스크립트shell-script&quot;&gt;쉘 스크립트(Shell Script)&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;스크립트 : “영화나 방송의 대본과 각본 따위의 방송 원고”&lt;/li&gt; &lt;li&gt;컴퓨터 소프트웨어 : 컴파일 언어, 스크립트 언어 &lt;ul&gt; &lt;li&gt;컴파일 언어 : 프로그램 작성 –&amp;gt; 컴파일 –&amp;gt; 실행 파일 만들기&lt;/li&gt; &lt;li&gt;스크립트 언어 : 인터프리터에 의해 실행됨 &lt;ul&gt; &lt;li&gt;언어 구조가 쉬워 빨리 배울 수...</content>
+ </entry>
 
  
 
@@ -99,16 +109,6 @@
    <id>https://m-veloper.github.io/devlog/2020/04/30/unix-39</id>
    <updated>2020-04-30T00:00:00+09:00</updated>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-04-30-unix-39.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;쉘shell-기본-사용법&quot;&gt;쉘(Shell) 기본 사용법&lt;/h1&gt; &lt;p&gt;&lt;br /&gt;&lt;/p&gt; &lt;h3 id=&quot;문자열의-출력&quot;&gt;문자열의 출력&lt;/h3&gt; &lt;ul&gt; &lt;li&gt;유닉스 명령은 유닉스 시스템이 제공하는 유틸리티 명령과 쉘이 제공하는 명령으로 나눔&lt;/li&gt; &lt;li&gt;쉘 명령은 쉘이 자체적으로 제공하는 명령&lt;/li&gt; &lt;li&gt;디렉토리 변경에 사용되는 cd가 대표적&lt;/li&gt; &lt;li&gt;문자열 출력 명령 : echo&lt;/li&gt; &lt;li&gt;echo는 쉘 명령과 유틸리티 명령 모두에서 제공됨&lt;/li&gt; &lt;li&gt;/bin/echo와 같이...</content>
- </entry>
-
- 
-
- <entry>
-   <title>[유닉스] 쉘(Shell)의 기능 및 종류</title>
-   <link href="https://m-veloper.github.io/devlog/2020/04/30/unix-38/"/>
-   <id>https://m-veloper.github.io/devlog/2020/04/30/unix-38</id>
-   <updated>2020-04-30T00:00:00+09:00</updated>
-   <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-04-30-unix-38.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;쉘shell&quot;&gt;쉘(Shell)&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;사용자와 커널을 연결시켜주는 기능을 수행하는 특별한 프로그램&lt;/li&gt; &lt;li&gt;사용자가 입력한 명령을 처리하고 실행 결과를 알려주는 기능&lt;/li&gt; &lt;li&gt;세 가지 기능 : 명령어 해석기, 프로그래밍, 사용자 환경 설정&lt;/li&gt; &lt;/ul&gt; &lt;h3 id=&quot;명령어-해석기-기능&quot;&gt;명령어 해석기 기능&lt;/h3&gt; &lt;ul&gt; &lt;li&gt;사용자와 커널 사이에서 명령을 해석하여 전달하는 해석기(Interpreter) 또는 번역기(Translator) 역할 수행&lt;/li&gt; &lt;li&gt;사용자가...</content>
  </entry>
 
  
