@@ -3,10 +3,10 @@
   <channel>
     <title>슬기로운 개발 생활</title>
     <description></description>
-    <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 07 May 2020 20:43:24 +0900</pubDate>
-    <lastBuildDate>Thu, 07 May 2020 20:43:24 +0900</lastBuildDate>
+    <link>https://m-veloper.github.io/</link>
+    <atom:link href="https://m-veloper.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Thu, 07 May 2020 20:52:57 +0900</pubDate>
+    <lastBuildDate>Thu, 07 May 2020 20:52:57 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
@@ -220,8 +220,8 @@
 
 </description>
         <pubDate>Thu, 07 May 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/devlog/2020/05/07/unix-42/</link>
-        <guid isPermaLink="true">http://localhost:4000/devlog/2020/05/07/unix-42/</guid>
+        <link>https://m-veloper.github.io/devlog/2020/05/07/unix-42/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/05/07/unix-42/</guid>
         
         <category>unix</category>
         
@@ -426,8 +426,8 @@
 
 </description>
         <pubDate>Wed, 06 May 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/devlog/2020/05/06/unix-41/</link>
-        <guid isPermaLink="true">http://localhost:4000/devlog/2020/05/06/unix-41/</guid>
+        <link>https://m-veloper.github.io/devlog/2020/05/06/unix-41/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/05/06/unix-41/</guid>
         
         <category>unix</category>
         
@@ -668,8 +668,8 @@
 
 </description>
         <pubDate>Tue, 05 May 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/devlog/2020/05/05/database-56/</link>
-        <guid isPermaLink="true">http://localhost:4000/devlog/2020/05/05/database-56/</guid>
+        <link>https://m-veloper.github.io/devlog/2020/05/05/database-56/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/05/05/database-56/</guid>
         
         <category>database</category>
         
@@ -769,8 +769,8 @@
 
 </description>
         <pubDate>Tue, 05 May 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/devlog/2020/05/05/database-55/</link>
-        <guid isPermaLink="true">http://localhost:4000/devlog/2020/05/05/database-55/</guid>
+        <link>https://m-veloper.github.io/devlog/2020/05/05/database-55/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/05/05/database-55/</guid>
         
         <category>database</category>
         
@@ -838,8 +838,8 @@
 
 </description>
         <pubDate>Mon, 04 May 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/devlog/2020/05/04/database-54/</link>
-        <guid isPermaLink="true">http://localhost:4000/devlog/2020/05/04/database-54/</guid>
+        <link>https://m-veloper.github.io/devlog/2020/05/04/database-54/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/05/04/database-54/</guid>
         
         <category>database</category>
         
@@ -907,8 +907,8 @@
 
 </description>
         <pubDate>Mon, 04 May 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/devlog/2020/05/04/database-53/</link>
-        <guid isPermaLink="true">http://localhost:4000/devlog/2020/05/04/database-53/</guid>
+        <link>https://m-veloper.github.io/devlog/2020/05/04/database-53/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/05/04/database-53/</guid>
         
         <category>database</category>
         
@@ -976,8 +976,8 @@
 
 </description>
         <pubDate>Sun, 03 May 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/devlog/2020/05/03/database-52/</link>
-        <guid isPermaLink="true">http://localhost:4000/devlog/2020/05/03/database-52/</guid>
+        <link>https://m-veloper.github.io/devlog/2020/05/03/database-52/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/05/03/database-52/</guid>
         
         <category>database</category>
         
@@ -1091,8 +1091,8 @@
 
 </description>
         <pubDate>Sat, 02 May 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/devlog/2020/05/02/database-51/</link>
-        <guid isPermaLink="true">http://localhost:4000/devlog/2020/05/02/database-51/</guid>
+        <link>https://m-veloper.github.io/devlog/2020/05/02/database-51/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/05/02/database-51/</guid>
         
         <category>database</category>
         
@@ -1230,8 +1230,8 @@
 &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/05/2020-05-02-database-50-06.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Sat, 02 May 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/devlog/2020/05/02/database-50/</link>
-        <guid isPermaLink="true">http://localhost:4000/devlog/2020/05/02/database-50/</guid>
+        <link>https://m-veloper.github.io/devlog/2020/05/02/database-50/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/05/02/database-50/</guid>
         
         <category>database</category>
         
@@ -1525,8 +1525,8 @@ Ubuntu &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
 
 </description>
         <pubDate>Thu, 30 Apr 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/devlog/2020/04/30/unix-40/</link>
-        <guid isPermaLink="true">http://localhost:4000/devlog/2020/04/30/unix-40/</guid>
+        <link>https://m-veloper.github.io/devlog/2020/04/30/unix-40/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/30/unix-40/</guid>
         
         <category>unix</category>
         
@@ -1868,8 +1868,8 @@ test&lt;/span&gt;
 
 </description>
         <pubDate>Thu, 30 Apr 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/devlog/2020/04/30/unix-39/</link>
-        <guid isPermaLink="true">http://localhost:4000/devlog/2020/04/30/unix-39/</guid>
+        <link>https://m-veloper.github.io/devlog/2020/04/30/unix-39/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/30/unix-39/</guid>
         
         <category>unix</category>
         
@@ -2094,8 +2094,8 @@ Login Shell &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;/bin/bash]:
 
 </description>
         <pubDate>Thu, 30 Apr 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/devlog/2020/04/30/unix-38/</link>
-        <guid isPermaLink="true">http://localhost:4000/devlog/2020/04/30/unix-38/</guid>
+        <link>https://m-veloper.github.io/devlog/2020/04/30/unix-38/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/30/unix-38/</guid>
         
         <category>unix</category>
         
@@ -2218,8 +2218,8 @@ Login Shell &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;/bin/bash]:
 
 </description>
         <pubDate>Wed, 29 Apr 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/devlog/2020/04/29/database-49/</link>
-        <guid isPermaLink="true">http://localhost:4000/devlog/2020/04/29/database-49/</guid>
+        <link>https://m-veloper.github.io/devlog/2020/04/29/database-49/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/29/database-49/</guid>
         
         <category>database</category>
         
@@ -2409,8 +2409,8 @@ Login Shell &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;/bin/bash]:
 
 </description>
         <pubDate>Wed, 29 Apr 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/devlog/2020/04/29/database-48/</link>
-        <guid isPermaLink="true">http://localhost:4000/devlog/2020/04/29/database-48/</guid>
+        <link>https://m-veloper.github.io/devlog/2020/04/29/database-48/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/29/database-48/</guid>
         
         <category>database</category>
         
@@ -2555,8 +2555,8 @@ Login Shell &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;/bin/bash]:
 &lt;/ul&gt;
 </description>
         <pubDate>Wed, 29 Apr 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/devlog/2020/04/29/database-47/</link>
-        <guid isPermaLink="true">http://localhost:4000/devlog/2020/04/29/database-47/</guid>
+        <link>https://m-veloper.github.io/devlog/2020/04/29/database-47/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/29/database-47/</guid>
         
         <category>database</category>
         
@@ -2677,8 +2677,8 @@ Login Shell &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;/bin/bash]:
 
 </description>
         <pubDate>Tue, 28 Apr 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/devlog/2020/04/28/database-46/</link>
-        <guid isPermaLink="true">http://localhost:4000/devlog/2020/04/28/database-46/</guid>
+        <link>https://m-veloper.github.io/devlog/2020/04/28/database-46/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/28/database-46/</guid>
         
         <category>database</category>
         
@@ -2787,8 +2787,8 @@ Login Shell &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;/bin/bash]:
 &lt;/ul&gt;
 </description>
         <pubDate>Tue, 28 Apr 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/devlog/2020/04/28/database-45/</link>
-        <guid isPermaLink="true">http://localhost:4000/devlog/2020/04/28/database-45/</guid>
+        <link>https://m-veloper.github.io/devlog/2020/04/28/database-45/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/28/database-45/</guid>
         
         <category>database</category>
         
@@ -2905,8 +2905,8 @@ Login Shell &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;/bin/bash]:
 
 </description>
         <pubDate>Tue, 28 Apr 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/devlog/2020/04/28/database-44/</link>
-        <guid isPermaLink="true">http://localhost:4000/devlog/2020/04/28/database-44/</guid>
+        <link>https://m-veloper.github.io/devlog/2020/04/28/database-44/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/28/database-44/</guid>
         
         <category>database</category>
         
@@ -3016,8 +3016,8 @@ Login Shell &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;/bin/bash]:
 
 </description>
         <pubDate>Tue, 28 Apr 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/devlog/2020/04/28/database-43/</link>
-        <guid isPermaLink="true">http://localhost:4000/devlog/2020/04/28/database-43/</guid>
+        <link>https://m-veloper.github.io/devlog/2020/04/28/database-43/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/28/database-43/</guid>
         
         <category>database</category>
         
@@ -3117,8 +3117,8 @@ Login Shell &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;/bin/bash]:
 
 </description>
         <pubDate>Tue, 28 Apr 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/devlog/2020/04/28/database-42/</link>
-        <guid isPermaLink="true">http://localhost:4000/devlog/2020/04/28/database-42/</guid>
+        <link>https://m-veloper.github.io/devlog/2020/04/28/database-42/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/28/database-42/</guid>
         
         <category>database</category>
         
@@ -3222,8 +3222,8 @@ Login Shell &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;/bin/bash]:
 
 </description>
         <pubDate>Tue, 28 Apr 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/devlog/2020/04/28/database-41/</link>
-        <guid isPermaLink="true">http://localhost:4000/devlog/2020/04/28/database-41/</guid>
+        <link>https://m-veloper.github.io/devlog/2020/04/28/database-41/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/28/database-41/</guid>
         
         <category>database</category>
         
@@ -3384,8 +3384,8 @@ Login Shell &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;/bin/bash]:
 
 </description>
         <pubDate>Mon, 27 Apr 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/devlog/2020/04/27/database-40/</link>
-        <guid isPermaLink="true">http://localhost:4000/devlog/2020/04/27/database-40/</guid>
+        <link>https://m-veloper.github.io/devlog/2020/04/27/database-40/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/27/database-40/</guid>
         
         <category>database</category>
         
@@ -3454,8 +3454,8 @@ Login Shell &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;/bin/bash]:
 
 </description>
         <pubDate>Mon, 27 Apr 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/devlog/2020/04/27/database-39/</link>
-        <guid isPermaLink="true">http://localhost:4000/devlog/2020/04/27/database-39/</guid>
+        <link>https://m-veloper.github.io/devlog/2020/04/27/database-39/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/27/database-39/</guid>
         
         <category>database</category>
         
@@ -3516,8 +3516,8 @@ Login Shell &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;/bin/bash]:
 &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-27-database-38-03.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 27 Apr 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/devlog/2020/04/27/database-38/</link>
-        <guid isPermaLink="true">http://localhost:4000/devlog/2020/04/27/database-38/</guid>
+        <link>https://m-veloper.github.io/devlog/2020/04/27/database-38/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/27/database-38/</guid>
         
         <category>database</category>
         
@@ -3614,8 +3614,8 @@ test_dd2
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Tue, 21 Apr 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/devlog/2020/04/21/unix-37/</link>
-        <guid isPermaLink="true">http://localhost:4000/devlog/2020/04/21/unix-37/</guid>
+        <link>https://m-veloper.github.io/devlog/2020/04/21/unix-37/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/21/unix-37/</guid>
         
         <category>unix</category>
         
@@ -3746,8 +3746,8 @@ Chan-Ho Kim Yun-A Bae Sue-Ji Han So-Ri
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Tue, 21 Apr 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/devlog/2020/04/21/unix-36/</link>
-        <guid isPermaLink="true">http://localhost:4000/devlog/2020/04/21/unix-36/</guid>
+        <link>https://m-veloper.github.io/devlog/2020/04/21/unix-36/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/21/unix-36/</guid>
         
         <category>unix</category>
         
@@ -3908,8 +3908,8 @@ Han
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Tue, 21 Apr 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/devlog/2020/04/21/unix-35/</link>
-        <guid isPermaLink="true">http://localhost:4000/devlog/2020/04/21/unix-35/</guid>
+        <link>https://m-veloper.github.io/devlog/2020/04/21/unix-35/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/21/unix-35/</guid>
         
         <category>unix</category>
         
@@ -4035,8 +4035,8 @@ bbbbb
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Mon, 20 Apr 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/devlog/2020/04/20/unix-34/</link>
-        <guid isPermaLink="true">http://localhost:4000/devlog/2020/04/20/unix-34/</guid>
+        <link>https://m-veloper.github.io/devlog/2020/04/20/unix-34/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/20/unix-34/</guid>
         
         <category>unix</category>
         
@@ -4113,8 +4113,8 @@ bbbbb
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Mon, 20 Apr 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/devlog/2020/04/20/unix-33/</link>
-        <guid isPermaLink="true">http://localhost:4000/devlog/2020/04/20/unix-33/</guid>
+        <link>https://m-veloper.github.io/devlog/2020/04/20/unix-33/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/20/unix-33/</guid>
         
         <category>unix</category>
         
@@ -4347,8 +4347,8 @@ colord:x:113:21:colord colour management daemon......
 
 </description>
         <pubDate>Mon, 20 Apr 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/devlog/2020/04/20/unix-32/</link>
-        <guid isPermaLink="true">http://localhost:4000/devlog/2020/04/20/unix-32/</guid>
+        <link>https://m-veloper.github.io/devlog/2020/04/20/unix-32/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/20/unix-32/</guid>
         
         <category>unix</category>
         
