@@ -2,9 +2,9 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
  <title>슬기로운 개발 생활</title>
- <link href="https://m-veloper.github.io/atom.xml" rel="self"/>
- <id>https://m-veloper.github.io</id>
- <updated>2020-05-06T20:14:12+09:00</updated>
+ <link href="http://localhost:4000/atom.xml" rel="self"/>
+ <id>http://localhost:4000</id>
+ <updated>2020-05-07T20:43:24+09:00</updated>
  <author>
    <name>m-veloper</name>
    <uri>https://m-veloper.github.io</uri>
@@ -14,9 +14,19 @@
  
 
  <entry>
+   <title>[유닉스] 쉘 스크립트(Shell Script) 변수 사용하기</title>
+   <link href="http://localhost:4000/devlog/2020/05/07/unix-42/"/>
+   <id>http://localhost:4000/devlog/2020/05/07/unix-42</id>
+   <updated>2020-05-07T00:00:00+09:00</updated>
+   <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-05-07-unix-42.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;쉘-스크립트shell-script-변수&quot;&gt;쉘 스크립트(Shell Script) 변수&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;쉘 변수 : 지역 변수, 환경 변수&lt;/li&gt; &lt;li&gt;“변수명=값” 형태로 정의와 동시에 값을 저장&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-05-07-unix-42-01.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;-, =, +, ?에 콜론을 붙이면 변수에 값이 정의되어 있거나 널 값으로 설정되어 있는 지 확인&lt;/li&gt; &lt;li&gt;콜론을 사용하지 않으면 널 값으로...</content>
+ </entry>
+
+ 
+
+ <entry>
    <title>[유닉스] 쉘 스크립트(Shell Script)</title>
-   <link href="https://m-veloper.github.io/devlog/2020/05/06/unix-41/"/>
-   <id>https://m-veloper.github.io/devlog/2020/05/06/unix-41</id>
+   <link href="http://localhost:4000/devlog/2020/05/06/unix-41/"/>
+   <id>http://localhost:4000/devlog/2020/05/06/unix-41</id>
    <updated>2020-05-06T00:00:00+09:00</updated>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-05-06-unix-41.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;쉘-스크립트shell-script&quot;&gt;쉘 스크립트(Shell Script)&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;스크립트 : “영화나 방송의 대본과 각본 따위의 방송 원고”&lt;/li&gt; &lt;li&gt;컴퓨터 소프트웨어 : 컴파일 언어, 스크립트 언어 &lt;ul&gt; &lt;li&gt;컴파일 언어 : 프로그램 작성 –&amp;gt; 컴파일 –&amp;gt; 실행 파일 만들기&lt;/li&gt; &lt;li&gt;스크립트 언어 : 인터프리터에 의해 실행됨 &lt;ul&gt; &lt;li&gt;언어 구조가 쉬워 빨리 배울 수...</content>
  </entry>
@@ -25,8 +35,8 @@
 
  <entry>
    <title>[Database] 자바(JAVA) 란? 자바의 정의</title>
-   <link href="https://m-veloper.github.io/devlog/2020/05/05/database-56/"/>
-   <id>https://m-veloper.github.io/devlog/2020/05/05/database-56</id>
+   <link href="http://localhost:4000/devlog/2020/05/05/database-56/"/>
+   <id>http://localhost:4000/devlog/2020/05/05/database-56</id>
    <updated>2020-05-05T00:00:00+09:00</updated>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/05/2020-05-05-database-56.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;java&quot;&gt;JAVA&lt;/h1&gt; &lt;h3 id=&quot;프로그래밍-언어&quot;&gt;프로그래밍 언어&lt;/h3&gt; &lt;ul&gt; &lt;li&gt;기계어(Machine Language) &lt;ul&gt; &lt;li&gt;0, 1의 이진수로 구성된 언어&lt;/li&gt; &lt;li&gt;컴퓨터의 CPU는 기계어만 이해하고 처리가능&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;어셈블리어 &lt;ul&gt; &lt;li&gt;기계어 명령을 ADD, SUB, MOVE 등과 같은 표현하기 쉬운 상징적인 단어인 니모닉 기호(mnemonic symbol)로 일대일 대응시킨 언어&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;고급언어 &lt;ul&gt; &lt;li&gt;사람이 이해하기...</content>
  </entry>
@@ -35,8 +45,8 @@
 
  <entry>
    <title>[Database] 전체 조인 (Full Join)</title>
-   <link href="https://m-veloper.github.io/devlog/2020/05/05/database-55/"/>
-   <id>https://m-veloper.github.io/devlog/2020/05/05/database-55</id>
+   <link href="http://localhost:4000/devlog/2020/05/05/database-55/"/>
+   <id>http://localhost:4000/devlog/2020/05/05/database-55</id>
    <updated>2020-05-05T00:00:00+09:00</updated>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/05/2020-05-05-database-55.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;전체-조인-full-join&quot;&gt;전체 조인 (Full Join)&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;테이블1과 테이블2의 모든 투플을 반환한다.&lt;/li&gt; &lt;li&gt;왼쪽 조인과 오른쪽 조인을 결합한 결과&lt;/li&gt; &lt;li&gt;기본 형식&lt;/li&gt; &lt;/ul&gt; &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;속성&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;리스트&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;테이블&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FULL&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;OUTER&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;JOIN&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;테이블&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ON&lt;/span&gt;...</content>
  </entry>
@@ -45,8 +55,8 @@
 
  <entry>
    <title>[Database] 왼쪽 조인 (Left Join)</title>
-   <link href="https://m-veloper.github.io/devlog/2020/05/04/database-54/"/>
-   <id>https://m-veloper.github.io/devlog/2020/05/04/database-54</id>
+   <link href="http://localhost:4000/devlog/2020/05/04/database-54/"/>
+   <id>http://localhost:4000/devlog/2020/05/04/database-54</id>
    <updated>2020-05-04T00:00:00+09:00</updated>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/05/2020-05-04-database-54.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;왼쪽-조인-left-join&quot;&gt;왼쪽 조인 (Left Join)&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;오른쪽 테이블(테이블2)과 매칭되는 왼쪽 테이블(테이블1)의 모든 투플을 반환한다.&lt;/li&gt; &lt;li&gt;오른쪽 테이블과 매칭이 되지 않을 경우, NULL을 반환된다.&lt;/li&gt; &lt;li&gt;기본 형식&lt;/li&gt; &lt;/ul&gt; &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;속성&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;리스트&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;테이블&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;LEFT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;JOIN&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;테이블&lt;/span&gt;&lt;span...</content>
  </entry>
@@ -55,8 +65,8 @@
 
  <entry>
    <title>[Database] 오른쪽 조인 (Right Join)</title>
-   <link href="https://m-veloper.github.io/devlog/2020/05/04/database-53/"/>
-   <id>https://m-veloper.github.io/devlog/2020/05/04/database-53</id>
+   <link href="http://localhost:4000/devlog/2020/05/04/database-53/"/>
+   <id>http://localhost:4000/devlog/2020/05/04/database-53</id>
    <updated>2020-05-04T00:00:00+09:00</updated>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/05/2020-05-04-database-53.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;오른쪽-조인-right-join&quot;&gt;오른쪽 조인 (Right Join)&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;왼쪽 테이블(테이블1)과 매칭되는 오른쪽 테이블(테이블2)의 모든 투플을 반환한다.&lt;/li&gt; &lt;li&gt;왼쪽 테이블과 매칭이 되지 않을 경우, NULL을 반환된다.&lt;/li&gt; &lt;li&gt;기본 형식&lt;/li&gt; &lt;/ul&gt; &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;속성&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;리스트&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;테이블&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;RIGHT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;JOIN&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;테이블&lt;/span&gt;&lt;span...</content>
  </entry>
@@ -65,8 +75,8 @@
 
  <entry>
    <title>[Database] 내부 조인 (Inner Join)</title>
-   <link href="https://m-veloper.github.io/devlog/2020/05/03/database-52/"/>
-   <id>https://m-veloper.github.io/devlog/2020/05/03/database-52</id>
+   <link href="http://localhost:4000/devlog/2020/05/03/database-52/"/>
+   <id>http://localhost:4000/devlog/2020/05/03/database-52</id>
    <updated>2020-05-03T00:00:00+09:00</updated>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/05/2020-05-03-database-52.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;내부-조인-inner-join&quot;&gt;내부 조인 (Inner Join)&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;두 테이블에서 속성이 일치하는 모든 투플을 반환&lt;/li&gt; &lt;li&gt;일반적인 조인과 동일&lt;/li&gt; &lt;li&gt;기본 형식&lt;/li&gt; &lt;/ul&gt; &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;속성&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;리스트&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;테이블&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;INNER&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;JOIN&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;테이블&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ON&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;테이블&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span...</content>
  </entry>
@@ -75,8 +85,8 @@
 
  <entry>
    <title>[Database] MySQL 인덱스 (Index)</title>
-   <link href="https://m-veloper.github.io/devlog/2020/05/02/database-51/"/>
-   <id>https://m-veloper.github.io/devlog/2020/05/02/database-51</id>
+   <link href="http://localhost:4000/devlog/2020/05/02/database-51/"/>
+   <id>http://localhost:4000/devlog/2020/05/02/database-51</id>
    <updated>2020-05-02T00:00:00+09:00</updated>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/05/2020-05-02-database-51.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;인덱스-index&quot;&gt;인덱스 (Index)&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;테이블에서 자주 사용하는 속성을 별도로 생성&lt;/li&gt; &lt;li&gt;테이블의 검색 동작 속도를 향상시키기 위하여 사용&lt;/li&gt; &lt;li&gt;테이블에 대한 킷값을 가지고 있는 사본 테이블&lt;/li&gt; &lt;li&gt;사용자들은 인텍스를 볼 수 없다.&lt;/li&gt; &lt;li&gt;MySQL에서는 기본키에 대하여 인덱스가 자동 생성된다.&lt;/li&gt; &lt;li&gt;대부분의 MySQL 인덱스 (기본키, UNIQUE, INDEX와 FULLTEXT)는 B-tree에 저장된다. &lt;ul&gt; &lt;li&gt;B-tree는...</content>
  </entry>
@@ -85,8 +95,8 @@
 
  <entry>
    <title>[Database] MySQL GROUP BY 함수</title>
-   <link href="https://m-veloper.github.io/devlog/2020/05/02/database-50/"/>
-   <id>https://m-veloper.github.io/devlog/2020/05/02/database-50</id>
+   <link href="http://localhost:4000/devlog/2020/05/02/database-50/"/>
+   <id>http://localhost:4000/devlog/2020/05/02/database-50</id>
    <updated>2020-05-02T00:00:00+09:00</updated>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/05/2020-05-02-database-50.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;group-by&quot;&gt;GROUP BY&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;GROUP으로부터 NULL이 아닌 값을 결합한 문자열 결과를 반환&lt;/li&gt; &lt;li&gt;모두 NULL 인 값만 있는 경우, NULL을 반환&lt;/li&gt; &lt;li&gt;기본 형식&lt;/li&gt; &lt;/ul&gt; &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;컬럼&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;테이블&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;GROUP&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;그룹화할&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;컬럼&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt; &lt;ul&gt;...</content>
  </entry>
@@ -95,20 +105,10 @@
 
  <entry>
    <title>[유닉스] 쉘(Shell) 환경 설정</title>
-   <link href="https://m-veloper.github.io/devlog/2020/04/30/unix-40/"/>
-   <id>https://m-veloper.github.io/devlog/2020/04/30/unix-40</id>
+   <link href="http://localhost:4000/devlog/2020/04/30/unix-40/"/>
+   <id>http://localhost:4000/devlog/2020/04/30/unix-40</id>
    <updated>2020-04-30T00:00:00+09:00</updated>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-04-30-unix-40.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;쉘shell-명령&quot;&gt;쉘(Shell) 명령&lt;/h1&gt; &lt;p&gt;&lt;br /&gt;&lt;/p&gt; &lt;h3 id=&quot;앨리어스alias--별칭-별명&quot;&gt;앨리어스(alias : 별칭, 별명)&lt;/h3&gt; &lt;ul&gt; &lt;li&gt;명령어에 정의한 다른 이름&lt;/li&gt; &lt;li&gt;긴 명령어 대신 짧은 명령어를 만들어 사용할 수 있음&lt;/li&gt; &lt;li&gt;여러 명령어를 하나의 명령어로 만들 수 있음&lt;/li&gt; &lt;li&gt;원래 명령어를 수정해 사용할 수 있음&lt;/li&gt; &lt;li&gt;자주 사용하는 옵션을 자동으로 수행되도록 할 수 있음&lt;/li&gt; &lt;li&gt;형식...</content>
- </entry>
-
- 
-
- <entry>
-   <title>[유닉스] 쉘(Shell) 기본 사용법</title>
-   <link href="https://m-veloper.github.io/devlog/2020/04/30/unix-39/"/>
-   <id>https://m-veloper.github.io/devlog/2020/04/30/unix-39</id>
-   <updated>2020-04-30T00:00:00+09:00</updated>
-   <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-04-30-unix-39.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;쉘shell-기본-사용법&quot;&gt;쉘(Shell) 기본 사용법&lt;/h1&gt; &lt;p&gt;&lt;br /&gt;&lt;/p&gt; &lt;h3 id=&quot;문자열의-출력&quot;&gt;문자열의 출력&lt;/h3&gt; &lt;ul&gt; &lt;li&gt;유닉스 명령은 유닉스 시스템이 제공하는 유틸리티 명령과 쉘이 제공하는 명령으로 나눔&lt;/li&gt; &lt;li&gt;쉘 명령은 쉘이 자체적으로 제공하는 명령&lt;/li&gt; &lt;li&gt;디렉토리 변경에 사용되는 cd가 대표적&lt;/li&gt; &lt;li&gt;문자열 출력 명령 : echo&lt;/li&gt; &lt;li&gt;echo는 쉘 명령과 유틸리티 명령 모두에서 제공됨&lt;/li&gt; &lt;li&gt;/bin/echo와 같이...</content>
  </entry>
 
  

@@ -3,11 +3,232 @@
   <channel>
     <title>슬기로운 개발 생활</title>
     <description></description>
-    <link>https://m-veloper.github.io/</link>
-    <atom:link href="https://m-veloper.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 06 May 2020 20:14:12 +0900</pubDate>
-    <lastBuildDate>Wed, 06 May 2020 20:14:12 +0900</lastBuildDate>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Thu, 07 May 2020 20:43:24 +0900</pubDate>
+    <lastBuildDate>Thu, 07 May 2020 20:43:24 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>[유닉스] 쉘 스크립트(Shell Script) 변수 사용하기</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-05-07-unix-42.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;쉘-스크립트shell-script-변수&quot;&gt;쉘 스크립트(Shell Script) 변수&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;쉘 변수 : 지역 변수, 환경 변수&lt;/li&gt;
+  &lt;li&gt;“변수명=값” 형태로 정의와 동시에 값을 저장&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-05-07-unix-42-01.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;-, =, +, ?에 콜론을 붙이면 변수에 값이 정의되어 있거나 널 값으로 설정되어 있는 지 확인&lt;/li&gt;
+  &lt;li&gt;콜론을 사용하지 않으면 널 값으로 정의된 변수도 설정된 것으로 간주&lt;/li&gt;
+  &lt;li&gt;test는 값이 정의되어 있으므로 정의된 값을 출력&lt;/li&gt;
+  &lt;li&gt;test1은 값이 정의되어 있지 않으므로 word 값을 출력&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;unix&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;unix&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;word&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;unix&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;word&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;word&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;test는 값이 정의되어 있으므로 대체되지 않고 정의된 값을 출력&lt;/li&gt;
+  &lt;li&gt;test1은 값이 정의되어 있지 않으므로 주어진 linux라는 값으로 대체됨&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;word&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;unix&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;linux&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;linux&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;temp&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;linux&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;test는 값이 정의되어 있으므로 word 값으로 대체되어 출력&lt;/li&gt;
+  &lt;li&gt;test 값이 정의되어 있으므로 정의되어 있는 값으로 출력&lt;/li&gt;
+  &lt;li&gt;test2는 변수가 없으므로 word 출력 후 스크립트 종료(스크립트 파일에서 실행할 경우 종료)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;word&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;word&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;word&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;unix&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;word&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bash&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;test2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;word&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;쉘-변수-문자열-처리하기&quot;&gt;쉘 변수 문자열 처리하기&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;변수 값이 문자열일 때 문자열 내에 포함된 패턴을 찾아 일부를 제거할 수 있음&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-05-07-unix-42-02.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;%는 변수의 뒤부터 지정한 패턴과 일치하는 가장 최소 부분을 제거
+    - 패턴으로 local을 지정하면 아무 것도 삭제되지 않고, local부터 나머지 문자열을 모두 삭제하고 싶으면 패턴을 /local*로 지정해야 함&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;%%는 패턴과 일치하는 최대 부분 제거&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;path1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;“&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;usr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bin&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;local&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bin&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;”&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bin&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;usr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bin&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;local&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%%/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bin&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;usr&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;’#’은 변수에 저장된 문자열의 앞부분부터 일치하는 패턴을 검색하여 최소로 일치하는 부분을 제거&lt;/li&gt;
+  &lt;li&gt;’##’은 모든 /가 포함된 문자열을 제거할 수 있어서 경로의 마지막에 나오는 파일 이름만 알아낼 때 유용함&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;path2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;“&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;home&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;user1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;profile&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;”&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;#/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;home&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;usr1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;profile&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;##*/&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;profile&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;‘#변수’는 변수에 지정된 문자의 개수를 출력&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path1&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;18&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path2&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;명령행-인자파라미터-parameter-처리하기&quot;&gt;명령행 인자(파라미터, parameter) 처리하기&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;스크립트 실행할 때 인자로 주어진 값을 스크립트 안에서 처리할 수 있음&lt;/li&gt;
+  &lt;li&gt;포지션 인자(Positional Parameter)라고 하는 특수 내장 변수들은, 명령행에 입력된 인자의 순서에 따라 이름이 정해지며 주어진 인자를 저장&lt;/li&gt;
+  &lt;li&gt;쉘 스크립트의 이름은 $0 변수에 저장됨&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-05-07-unix-42-03.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;인용-부호-처리&quot;&gt;인용 부호 처리&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;스크립트에서 인용 부호는 쉘 특수문자(Metacharacter : $, *, ? 등)의 의미를 없애기 위해 사용&lt;/li&gt;
+  &lt;li&gt;인용 부호 : ‘ ’(작은 따옴표), “ ”(큰 따옴표), (역슬래시)&lt;/li&gt;
+  &lt;li&gt;작은 따옴표(‘ ’)
+    &lt;ul&gt;
+      &lt;li&gt;모든 특수 문자들이 해석되는 것을 막음&lt;/li&gt;
+      &lt;li&gt;쌍으로 사용&lt;/li&gt;
+      &lt;li&gt;작은 따옴표 자체를 출력시키려면 큰 따옴표 안에서 사용하거나 (역슬래시) 다음에 사용&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;‘$&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;’&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;“&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;‘&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;’&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;”&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;‘&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;’&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;‘$&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;C&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;큰 따옴표(“ ”)
+    &lt;ul&gt;
+      &lt;li&gt;변수나 명령의 대체를 허용하지만 기타 특수 문자들이 해석되는 것을 막음&lt;/li&gt;
+      &lt;li&gt;쌍으로 사용&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;“$&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;”&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;“$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;”&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;2015&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;07&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;15&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;수&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;21&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;17&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;07&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;KST&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;“$&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;C&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;역슬래시()
+    &lt;ul&gt;
+      &lt;li&gt;단일 문자가 해석되는 것을 보호하기 위해 사용&lt;/li&gt;
+      &lt;li&gt;큰 따옴표 안에서 역슬래시는 $를 보호하여 해석되지 않도록 함&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;C&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;\\&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;test&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;‘\$&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;’&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;\$&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;“$&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;”&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;“\$&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;”&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;명령-대체&quot;&gt;명령 대체&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;명령의 출력을 변수로 지정하여 사용하는 것&lt;/li&gt;
+  &lt;li&gt;모든 쉘은 백쿼터(`)를 사용하여 명령을 대체함&lt;/li&gt;
+  &lt;li&gt;백쿼터는 쌍으로 사용&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;date&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;date&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;date&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`date`&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;2015&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;07&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;15&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;수&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;21&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;45&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;54&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;KST&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;‘&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;`date`&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;’&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;`date`&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;“&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;`date`&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;”&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;2015&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;07&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;15&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;수&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;21&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;53&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;44&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;KST&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;2015&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;07&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;15&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;수&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;21&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;53&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;51&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;KST&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;“$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;”&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;2015&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;07&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;15&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;수&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;21&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;54&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;05&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;KST&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+</description>
+        <pubDate>Thu, 07 May 2020 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/devlog/2020/05/07/unix-42/</link>
+        <guid isPermaLink="true">http://localhost:4000/devlog/2020/05/07/unix-42/</guid>
+        
+        <category>unix</category>
+        
+        
+        <category>devlog</category>
+        
+      </item>
     
       <item>
         <title>[유닉스] 쉘 스크립트(Shell Script)</title>
@@ -205,8 +426,8 @@
 
 </description>
         <pubDate>Wed, 06 May 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/05/06/unix-41/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/05/06/unix-41/</guid>
+        <link>http://localhost:4000/devlog/2020/05/06/unix-41/</link>
+        <guid isPermaLink="true">http://localhost:4000/devlog/2020/05/06/unix-41/</guid>
         
         <category>unix</category>
         
@@ -447,8 +668,8 @@
 
 </description>
         <pubDate>Tue, 05 May 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/05/05/database-56/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/05/05/database-56/</guid>
+        <link>http://localhost:4000/devlog/2020/05/05/database-56/</link>
+        <guid isPermaLink="true">http://localhost:4000/devlog/2020/05/05/database-56/</guid>
         
         <category>database</category>
         
@@ -548,8 +769,8 @@
 
 </description>
         <pubDate>Tue, 05 May 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/05/05/database-55/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/05/05/database-55/</guid>
+        <link>http://localhost:4000/devlog/2020/05/05/database-55/</link>
+        <guid isPermaLink="true">http://localhost:4000/devlog/2020/05/05/database-55/</guid>
         
         <category>database</category>
         
@@ -617,8 +838,8 @@
 
 </description>
         <pubDate>Mon, 04 May 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/05/04/database-54/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/05/04/database-54/</guid>
+        <link>http://localhost:4000/devlog/2020/05/04/database-54/</link>
+        <guid isPermaLink="true">http://localhost:4000/devlog/2020/05/04/database-54/</guid>
         
         <category>database</category>
         
@@ -686,8 +907,8 @@
 
 </description>
         <pubDate>Mon, 04 May 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/05/04/database-53/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/05/04/database-53/</guid>
+        <link>http://localhost:4000/devlog/2020/05/04/database-53/</link>
+        <guid isPermaLink="true">http://localhost:4000/devlog/2020/05/04/database-53/</guid>
         
         <category>database</category>
         
@@ -755,8 +976,8 @@
 
 </description>
         <pubDate>Sun, 03 May 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/05/03/database-52/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/05/03/database-52/</guid>
+        <link>http://localhost:4000/devlog/2020/05/03/database-52/</link>
+        <guid isPermaLink="true">http://localhost:4000/devlog/2020/05/03/database-52/</guid>
         
         <category>database</category>
         
@@ -870,8 +1091,8 @@
 
 </description>
         <pubDate>Sat, 02 May 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/05/02/database-51/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/05/02/database-51/</guid>
+        <link>http://localhost:4000/devlog/2020/05/02/database-51/</link>
+        <guid isPermaLink="true">http://localhost:4000/devlog/2020/05/02/database-51/</guid>
         
         <category>database</category>
         
@@ -1009,8 +1230,8 @@
 &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/05/2020-05-02-database-50-06.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Sat, 02 May 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/05/02/database-50/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/05/02/database-50/</guid>
+        <link>http://localhost:4000/devlog/2020/05/02/database-50/</link>
+        <guid isPermaLink="true">http://localhost:4000/devlog/2020/05/02/database-50/</guid>
         
         <category>database</category>
         
@@ -1304,8 +1525,8 @@ Ubuntu &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
 
 </description>
         <pubDate>Thu, 30 Apr 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/04/30/unix-40/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/30/unix-40/</guid>
+        <link>http://localhost:4000/devlog/2020/04/30/unix-40/</link>
+        <guid isPermaLink="true">http://localhost:4000/devlog/2020/04/30/unix-40/</guid>
         
         <category>unix</category>
         
@@ -1647,8 +1868,8 @@ test&lt;/span&gt;
 
 </description>
         <pubDate>Thu, 30 Apr 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/04/30/unix-39/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/30/unix-39/</guid>
+        <link>http://localhost:4000/devlog/2020/04/30/unix-39/</link>
+        <guid isPermaLink="true">http://localhost:4000/devlog/2020/04/30/unix-39/</guid>
         
         <category>unix</category>
         
@@ -1873,8 +2094,8 @@ Login Shell &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;/bin/bash]:
 
 </description>
         <pubDate>Thu, 30 Apr 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/04/30/unix-38/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/30/unix-38/</guid>
+        <link>http://localhost:4000/devlog/2020/04/30/unix-38/</link>
+        <guid isPermaLink="true">http://localhost:4000/devlog/2020/04/30/unix-38/</guid>
         
         <category>unix</category>
         
@@ -1997,8 +2218,8 @@ Login Shell &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;/bin/bash]:
 
 </description>
         <pubDate>Wed, 29 Apr 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/04/29/database-49/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/29/database-49/</guid>
+        <link>http://localhost:4000/devlog/2020/04/29/database-49/</link>
+        <guid isPermaLink="true">http://localhost:4000/devlog/2020/04/29/database-49/</guid>
         
         <category>database</category>
         
@@ -2188,8 +2409,8 @@ Login Shell &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;/bin/bash]:
 
 </description>
         <pubDate>Wed, 29 Apr 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/04/29/database-48/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/29/database-48/</guid>
+        <link>http://localhost:4000/devlog/2020/04/29/database-48/</link>
+        <guid isPermaLink="true">http://localhost:4000/devlog/2020/04/29/database-48/</guid>
         
         <category>database</category>
         
@@ -2334,8 +2555,8 @@ Login Shell &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;/bin/bash]:
 &lt;/ul&gt;
 </description>
         <pubDate>Wed, 29 Apr 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/04/29/database-47/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/29/database-47/</guid>
+        <link>http://localhost:4000/devlog/2020/04/29/database-47/</link>
+        <guid isPermaLink="true">http://localhost:4000/devlog/2020/04/29/database-47/</guid>
         
         <category>database</category>
         
@@ -2456,8 +2677,8 @@ Login Shell &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;/bin/bash]:
 
 </description>
         <pubDate>Tue, 28 Apr 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/04/28/database-46/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/28/database-46/</guid>
+        <link>http://localhost:4000/devlog/2020/04/28/database-46/</link>
+        <guid isPermaLink="true">http://localhost:4000/devlog/2020/04/28/database-46/</guid>
         
         <category>database</category>
         
@@ -2566,8 +2787,8 @@ Login Shell &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;/bin/bash]:
 &lt;/ul&gt;
 </description>
         <pubDate>Tue, 28 Apr 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/04/28/database-45/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/28/database-45/</guid>
+        <link>http://localhost:4000/devlog/2020/04/28/database-45/</link>
+        <guid isPermaLink="true">http://localhost:4000/devlog/2020/04/28/database-45/</guid>
         
         <category>database</category>
         
@@ -2684,8 +2905,8 @@ Login Shell &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;/bin/bash]:
 
 </description>
         <pubDate>Tue, 28 Apr 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/04/28/database-44/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/28/database-44/</guid>
+        <link>http://localhost:4000/devlog/2020/04/28/database-44/</link>
+        <guid isPermaLink="true">http://localhost:4000/devlog/2020/04/28/database-44/</guid>
         
         <category>database</category>
         
@@ -2795,8 +3016,8 @@ Login Shell &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;/bin/bash]:
 
 </description>
         <pubDate>Tue, 28 Apr 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/04/28/database-43/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/28/database-43/</guid>
+        <link>http://localhost:4000/devlog/2020/04/28/database-43/</link>
+        <guid isPermaLink="true">http://localhost:4000/devlog/2020/04/28/database-43/</guid>
         
         <category>database</category>
         
@@ -2896,8 +3117,8 @@ Login Shell &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;/bin/bash]:
 
 </description>
         <pubDate>Tue, 28 Apr 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/04/28/database-42/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/28/database-42/</guid>
+        <link>http://localhost:4000/devlog/2020/04/28/database-42/</link>
+        <guid isPermaLink="true">http://localhost:4000/devlog/2020/04/28/database-42/</guid>
         
         <category>database</category>
         
@@ -3001,8 +3222,8 @@ Login Shell &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;/bin/bash]:
 
 </description>
         <pubDate>Tue, 28 Apr 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/04/28/database-41/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/28/database-41/</guid>
+        <link>http://localhost:4000/devlog/2020/04/28/database-41/</link>
+        <guid isPermaLink="true">http://localhost:4000/devlog/2020/04/28/database-41/</guid>
         
         <category>database</category>
         
@@ -3163,8 +3384,8 @@ Login Shell &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;/bin/bash]:
 
 </description>
         <pubDate>Mon, 27 Apr 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/04/27/database-40/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/27/database-40/</guid>
+        <link>http://localhost:4000/devlog/2020/04/27/database-40/</link>
+        <guid isPermaLink="true">http://localhost:4000/devlog/2020/04/27/database-40/</guid>
         
         <category>database</category>
         
@@ -3233,8 +3454,8 @@ Login Shell &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;/bin/bash]:
 
 </description>
         <pubDate>Mon, 27 Apr 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/04/27/database-39/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/27/database-39/</guid>
+        <link>http://localhost:4000/devlog/2020/04/27/database-39/</link>
+        <guid isPermaLink="true">http://localhost:4000/devlog/2020/04/27/database-39/</guid>
         
         <category>database</category>
         
@@ -3295,8 +3516,8 @@ Login Shell &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;/bin/bash]:
 &lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/04/2020-04-27-database-38-03.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 27 Apr 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/04/27/database-38/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/27/database-38/</guid>
+        <link>http://localhost:4000/devlog/2020/04/27/database-38/</link>
+        <guid isPermaLink="true">http://localhost:4000/devlog/2020/04/27/database-38/</guid>
         
         <category>database</category>
         
@@ -3393,8 +3614,8 @@ test_dd2
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Tue, 21 Apr 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/04/21/unix-37/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/21/unix-37/</guid>
+        <link>http://localhost:4000/devlog/2020/04/21/unix-37/</link>
+        <guid isPermaLink="true">http://localhost:4000/devlog/2020/04/21/unix-37/</guid>
         
         <category>unix</category>
         
@@ -3525,8 +3746,8 @@ Chan-Ho Kim Yun-A Bae Sue-Ji Han So-Ri
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Tue, 21 Apr 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/04/21/unix-36/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/21/unix-36/</guid>
+        <link>http://localhost:4000/devlog/2020/04/21/unix-36/</link>
+        <guid isPermaLink="true">http://localhost:4000/devlog/2020/04/21/unix-36/</guid>
         
         <category>unix</category>
         
@@ -3687,8 +3908,8 @@ Han
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Tue, 21 Apr 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/04/21/unix-35/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/21/unix-35/</guid>
+        <link>http://localhost:4000/devlog/2020/04/21/unix-35/</link>
+        <guid isPermaLink="true">http://localhost:4000/devlog/2020/04/21/unix-35/</guid>
         
         <category>unix</category>
         
@@ -3814,8 +4035,8 @@ bbbbb
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Mon, 20 Apr 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/04/20/unix-34/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/20/unix-34/</guid>
+        <link>http://localhost:4000/devlog/2020/04/20/unix-34/</link>
+        <guid isPermaLink="true">http://localhost:4000/devlog/2020/04/20/unix-34/</guid>
         
         <category>unix</category>
         
@@ -3892,8 +4113,8 @@ bbbbb
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Mon, 20 Apr 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/04/20/unix-33/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/20/unix-33/</guid>
+        <link>http://localhost:4000/devlog/2020/04/20/unix-33/</link>
+        <guid isPermaLink="true">http://localhost:4000/devlog/2020/04/20/unix-33/</guid>
         
         <category>unix</category>
         
@@ -4126,288 +4347,8 @@ colord:x:113:21:colord colour management daemon......
 
 </description>
         <pubDate>Mon, 20 Apr 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/04/20/unix-32/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/20/unix-32/</guid>
-        
-        <category>unix</category>
-        
-        
-        <category>devlog</category>
-        
-      </item>
-    
-      <item>
-        <title>[유닉스] 파일 및 디렉토리 검색 ( wc, ,grep, egrep, fgrep )</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-04-19-unix-31.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;wc&quot;&gt;wc&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;파일의 행 수, 단어 수, 문자 수를 출력&lt;/li&gt;
-  &lt;li&gt;형식 : wc [옵션] 파일명&lt;/li&gt;
-  &lt;li&gt;옵션
-    &lt;ul&gt;
-      &lt;li&gt;-c : 바이트 수&lt;/li&gt;
-      &lt;li&gt;-m : 문자 수&lt;/li&gt;
-      &lt;li&gt;-C : -m과 동일&lt;/li&gt;
-      &lt;li&gt;-l : 행 수&lt;/li&gt;
-      &lt;li&gt;-w : 공백 문자나 새로운 행으로 구분된 단어의 수&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;사용 예
-    &lt;ul&gt;
-      &lt;li&gt;wc –l test2&lt;/li&gt;
-      &lt;li&gt;wc –cw test2&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;파일의 기본 정보 보기
-    &lt;ul&gt;
-      &lt;li&gt;라인 수 6, 단어 수 7, 바이트 수 61&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;vi test.c
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cat &lt;/span&gt;test.c
-&lt;span class=&quot;c&quot;&gt;#include &amp;lt;stdio.h&amp;gt;&lt;/span&gt;
-main&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;“Hello, World~!&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;”&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;wc &lt;/span&gt;test.c
-6 7 61 test.c
-&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;파일의 바이트 수와 문자 수 보기 : -c, -m 옵션
-    &lt;ul&gt;
-      &lt;li&gt;옵션을 지정하지 않으면 바이트 수가, -m 옵션을 지정하면 문자 수가 출력됨&lt;/li&gt;
-      &lt;li&gt;영어는 문자 수와 바이트 수가 같고, 한글은 다름&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;wc&lt;/span&gt; –c test.c
-61 test.c
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;wc&lt;/span&gt; –m test.c
-61 test.c
-&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;wc 명령의 옵션 중복해 사용하기
-    &lt;ul&gt;
-      &lt;li&gt;-l 옵션은 행 수만 알고 싶을 때 사용&lt;/li&gt;
-      &lt;li&gt;-w 옵션은 단어 수만 알고 싶을 때 사용&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;wc&lt;/span&gt; –cl test.c
-6 61 test.c
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;wc&lt;/span&gt; –mw test.c
-7 61 test.c
-&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;wc 명령의 다른 사용
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;table&gt;
-          &lt;tbody&gt;
-            &lt;tr&gt;
-              &lt;td&gt;다른 명령과&lt;/td&gt;
-              &lt;td&gt;(파이프)로 연결해 사용 가능&lt;/td&gt;
-            &lt;/tr&gt;
-          &lt;/tbody&gt;
-        &lt;/table&gt;
-      &lt;/li&gt;
-      &lt;li&gt;who는 시스템에 접속 중인 사용자의 정보를 출력&lt;/li&gt;
-      &lt;li&gt;who는 한 사람당 한 라인씩 정보 출력, 결과로 나온 총 라인 수로 시스템에 접속한 사용자 수를 알 수 있음&lt;/li&gt;
-      &lt;li&gt;현재 6명이 시스템에 접속해 있음&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;who&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;wc&lt;/span&gt; –l
-6
-&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h1 id=&quot;grep&quot;&gt;grep&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;global regular expressions print, 파일에서 정규 표현식을 포함한 모든 행을 출력&lt;/li&gt;
-  &lt;li&gt;지정한 패턴을 포함하는 행을 찾음&lt;/li&gt;
-  &lt;li&gt;형식 : grep [옵션] 패턴 [파일명]&lt;/li&gt;
-  &lt;li&gt;옵션
-    &lt;ul&gt;
-      &lt;li&gt;-i : 대소문자 모두 검색&lt;/li&gt;
-      &lt;li&gt;-l : 해당 패턴을 포함하는 파일 이름 출력&lt;/li&gt;
-      &lt;li&gt;-n : 행 번호 출력&lt;/li&gt;
-      &lt;li&gt;-v : 패턴을 포함하는 행을 제외한 행 출력&lt;/li&gt;
-      &lt;li&gt;-c : 패턴을 포함하는 행 수 출력&lt;/li&gt;
-      &lt;li&gt;-w : 패턴이 하나의 단어로 된 것만 출력&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;사용 예
-    &lt;ul&gt;
-      &lt;li&gt;grep root /etc/passwd&lt;/li&gt;
-      &lt;li&gt;grep –n unix ~/*.txt&lt;/li&gt;
-      &lt;li&gt;grep –l hello *.c&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;vi grep.dat
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cat &lt;/span&gt;grep.dat
-root other sh
-system admin
-UNIX 123
-unix 345
-unix+ other
-Network 10
-adm syslog ksshin
-disk admin
-cdrom ksshin
-ksshin 1000 csh
-user1 1001 ksh
-&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;unix가 들어 있는 행 찾기&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;grep &lt;/span&gt;unix grep.dat
-unix 345
-unix+ other
-&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;grep은 첫 번째 인자만 제외하고 나머지를 모두 파일 이름으로 간주&lt;/li&gt;
-  &lt;li&gt;문자열에 공백이 포함되어 있으면 따옴표로 묶어야 함&lt;/li&gt;
-  &lt;li&gt;파일 이름을 지정하지 않으면 표준 입력장치에서 검색할 데이터를 읽음
-    &lt;ul&gt;
-      &lt;li&gt;표준 입력 종료는 ^D&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;‘ls –F ~‘의 실행 결과 중 /를 포함하는 내용만 출력
-    &lt;ul&gt;
-      &lt;li&gt;나의 홈 디렉토리 아래에 있는 디렉토리 목록만 출력&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt; –F ~ | &lt;span class=&quot;nb&quot;&gt;grep&lt;/span&gt; ‘/’
-Desktop/
-Documents/
-Music/
-......
-Unix/
-&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;who 명령의 실행 결과 중 나와 관련된 정보만 화면 출력
-    &lt;ul&gt;
-      &lt;li&gt;$LOGNAME은 나의 로그인 ID를 저장하는 환경 변수&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;who&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;grep&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$LOGNAME&lt;/span&gt;
-ksshin tty2 2015-07-01 00:57
-ksshin :0 2015-06-30 18:35 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;:0&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-ksshin pts/0 2015-06-30 18:45 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;:0.0&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h1 id=&quot;grep-정규-표현식-사용하기&quot;&gt;grep 정규 표현식 사용하기&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;grep 명령을 사용해 정규 표현식 패턴 찾기
-&lt;img src=&quot;/assets/img/unix/2020-04-19-unix-31-01.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;정규 표현식으로 표현된 패턴은 작은따옴표로 묶어줌&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;grep&lt;/span&gt; ‘^root’ grep.dat
-root other sh
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;grep&lt;/span&gt; ‘sh&lt;span class=&quot;nv&quot;&gt;$’&lt;/span&gt; grep.dat
-root other sh
-ksshin 1000 csh
-user1 1001 ksh
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;grep&lt;/span&gt; ‘[0-9].&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;’ grep.dat
-UNIX 123
-unix 345
-Network 10
-ksshin 1000 csh
-user1 1001 ksh
-&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h1 id=&quot;egrep&quot;&gt;egrep&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;확장된 정규 표현식(extended regular expression)을 사용하는 grep 명령&lt;/li&gt;
-  &lt;li&gt;grep과 사용법은 동일&lt;/li&gt;
-  &lt;li&gt;정규 표현식에 사용할 수 있는 특수 문자가 더 추가됨&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-04-19-unix-31-02.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;+를 사용한 검색 예&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;egrep ‘[34]+’ grep.dat
-UNIX 123
-unix 345
-&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;l 를 사용하여 두 번 검색하던 것을 한 번으로 줄일 수 있음&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;egrep ‘csh|bash’ grep.dat
-ksshin 1000 csh
-&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h1 id=&quot;fgrep&quot;&gt;fgrep&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;지정한 파일에서 문자열을 찾는 명령&lt;/li&gt;
-  &lt;li&gt;문자열에 포함된 모든 정규식 관련 특수 문자를 일반 문자로 해석해 검색&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;fgrep unix+ grep.dat
-unix+ 123
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;fgrep ‘[0-9].&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;’ grep.dat
-&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;grep 명령에서 사용하는 모든 특수 문자 앞에 이스케이프 문자(‘\’)를 사용하면 fgrep과 같은 효과&lt;/li&gt;
-  &lt;li&gt;다음 두 가지 명령의 결과는 같음&lt;/li&gt;
-  &lt;li&gt;결국 특수 문자를 검색할 때, fgrep을 사용하는 것이 보다 편리함&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;fgrep ‘[0-9].&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;’ grep.dat
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;grep&lt;/span&gt; ‘&lt;span class=&quot;se&quot;&gt;\[&lt;/span&gt;0-9&lt;span class=&quot;se&quot;&gt;\]\.\*&lt;/span&gt;’ grep.dat
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-</description>
-        <pubDate>Sun, 19 Apr 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/04/19/unix-31/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/19/unix-31/</guid>
+        <link>http://localhost:4000/devlog/2020/04/20/unix-32/</link>
+        <guid isPermaLink="true">http://localhost:4000/devlog/2020/04/20/unix-32/</guid>
         
         <category>unix</category>
         

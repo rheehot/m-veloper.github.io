@@ -1,0 +1,1243 @@
+[
+
+{
+"title"    : "[유닉스] 쉘 스크립트(Shell Script) 변수 사용하기",
+"category" : "",
+"tags"     : "unix",
+"url"      : "/devlog/2020/05/07/unix-42/",
+"date"     : "2020-05-07 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[유닉스] 쉘 스크립트(Shell Script)",
+"category" : "",
+"tags"     : "unix",
+"url"      : "/devlog/2020/05/06/unix-41/",
+"date"     : "2020-05-06 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Database] 자바(JAVA) 란? 자바의 정의",
+"category" : "",
+"tags"     : "database, mysql",
+"url"      : "/devlog/2020/05/05/database-56/",
+"date"     : "2020-05-05 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Database] 전체 조인 (Full Join)",
+"category" : "",
+"tags"     : "database, mysql",
+"url"      : "/devlog/2020/05/05/database-55/",
+"date"     : "2020-05-05 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Database] 왼쪽 조인 (Left Join)",
+"category" : "",
+"tags"     : "database, mysql",
+"url"      : "/devlog/2020/05/04/database-54/",
+"date"     : "2020-05-04 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Database] 오른쪽 조인 (Right Join)",
+"category" : "",
+"tags"     : "database, mysql",
+"url"      : "/devlog/2020/05/04/database-53/",
+"date"     : "2020-05-04 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Database] 내부 조인 (Inner Join)",
+"category" : "",
+"tags"     : "database, mysql",
+"url"      : "/devlog/2020/05/03/database-52/",
+"date"     : "2020-05-03 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Database] MySQL 인덱스 (Index)",
+"category" : "",
+"tags"     : "database, mysql",
+"url"      : "/devlog/2020/05/02/database-51/",
+"date"     : "2020-05-02 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Database] MySQL GROUP BY 함수",
+"category" : "",
+"tags"     : "database, mysql",
+"url"      : "/devlog/2020/05/02/database-50/",
+"date"     : "2020-05-02 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[유닉스] 쉘(Shell) 환경 설정",
+"category" : "",
+"tags"     : "unix",
+"url"      : "/devlog/2020/04/30/unix-40/",
+"date"     : "2020-04-30 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[유닉스] 쉘(Shell) 기본 사용법",
+"category" : "",
+"tags"     : "unix",
+"url"      : "/devlog/2020/04/30/unix-39/",
+"date"     : "2020-04-30 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[유닉스] 쉘(Shell)의 기능 및 종류",
+"category" : "",
+"tags"     : "unix",
+"url"      : "/devlog/2020/04/30/unix-38/",
+"date"     : "2020-04-30 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Database] MySQL 타입 변환 함수 (Type Conversion Functions)",
+"category" : "",
+"tags"     : "database, mysql",
+"url"      : "/devlog/2020/04/29/database-49/",
+"date"     : "2020-04-29 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Database] MySQL 문자열 함수 (String Fuctions) - (2)",
+"category" : "",
+"tags"     : "database, mysql",
+"url"      : "/devlog/2020/04/29/database-48/",
+"date"     : "2020-04-29 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Database] MySQL 문자열 함수 (String Fuctions) - (1)",
+"category" : "",
+"tags"     : "database, mysql",
+"url"      : "/devlog/2020/04/29/database-47/",
+"date"     : "2020-04-29 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Database] MySQL 연산 함수, 계산 함수, 수학 함수 (Mathematical Functions)",
+"category" : "",
+"tags"     : "database, mysql",
+"url"      : "/devlog/2020/04/28/database-46/",
+"date"     : "2020-04-28 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Database] MySQL DAY, MONTH, YEAR, EXTRACT 관련 함수",
+"category" : "",
+"tags"     : "database, mysql",
+"url"      : "/devlog/2020/04/28/database-45/",
+"date"     : "2020-04-28 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Database] MySQL TIMESTAMP 함수",
+"category" : "",
+"tags"     : "database, mysql",
+"url"      : "/devlog/2020/04/28/database-44/",
+"date"     : "2020-04-28 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Database] MySQL TIME 관련 함수(시간 관련 함수)",
+"category" : "",
+"tags"     : "database, mysql",
+"url"      : "/devlog/2020/04/28/database-43/",
+"date"     : "2020-04-28 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Database] MySQL DATE FORMAT 함수(날짜 포맷 함수)",
+"category" : "",
+"tags"     : "database, mysql",
+"url"      : "/devlog/2020/04/28/database-42/",
+"date"     : "2020-04-28 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Database] MySQL Date 함수(날짜 함수)",
+"category" : "",
+"tags"     : "database, mysql",
+"url"      : "/devlog/2020/04/28/database-41/",
+"date"     : "2020-04-28 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Database] MySQL 제어 함수 - IF, IFNULL, NULLIF",
+"category" : "",
+"tags"     : "database, mysql",
+"url"      : "/devlog/2020/04/27/database-40/",
+"date"     : "2020-04-27 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Database] MySQL 제어 함수 - CASE",
+"category" : "",
+"tags"     : "database, mysql",
+"url"      : "/devlog/2020/04/27/database-39/",
+"date"     : "2020-04-27 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Database] MySQL의 내장 함수",
+"category" : "",
+"tags"     : "database, mysql",
+"url"      : "/devlog/2020/04/27/database-38/",
+"date"     : "2020-04-27 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[유닉스] 파일 덤프 [ dd (data duplicate) ]",
+"category" : "",
+"tags"     : "unix",
+"url"      : "/devlog/2020/04/21/unix-37/",
+"date"     : "2020-04-21 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[유닉스] 파일 연결하기 ( paste )",
+"category" : "",
+"tags"     : "unix",
+"url"      : "/devlog/2020/04/21/unix-36/",
+"date"     : "2020-04-21 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[유닉스] 필드 잘라내기 ( cut )",
+"category" : "",
+"tags"     : "unix",
+"url"      : "/devlog/2020/04/21/unix-35/",
+"date"     : "2020-04-21 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[유닉스] 중복 삭제 ( uniq )",
+"category" : "",
+"tags"     : "unix",
+"url"      : "/devlog/2020/04/20/unix-34/",
+"date"     : "2020-04-20 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[유닉스] 분할 ( split )",
+"category" : "",
+"tags"     : "unix",
+"url"      : "/devlog/2020/04/20/unix-33/",
+"date"     : "2020-04-20 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[유닉스] 파일 정렬 ( sort )",
+"category" : "",
+"tags"     : "unix",
+"url"      : "/devlog/2020/04/20/unix-32/",
+"date"     : "2020-04-20 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[유닉스] 파일 및 디렉토리 검색 ( wc, ,grep, egrep, fgrep )",
+"category" : "",
+"tags"     : "unix",
+"url"      : "/devlog/2020/04/19/unix-31/",
+"date"     : "2020-04-19 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Database] 데이터 수정 및 삭제 (UPDATE, DELETE)",
+"category" : "",
+"tags"     : "database, mysql",
+"url"      : "/devlog/2020/04/18/database-37/",
+"date"     : "2020-04-18 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Database] 데이터 삽입 (INSERT)",
+"category" : "",
+"tags"     : "database, mysql",
+"url"      : "/devlog/2020/04/18/database-36/",
+"date"     : "2020-04-18 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Database] 검색 데이터 제한(Limit)",
+"category" : "",
+"tags"     : "database, mysql",
+"url"      : "/devlog/2020/04/18/database-35/",
+"date"     : "2020-04-18 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Database] 별명 (Alias) 만들기",
+"category" : "",
+"tags"     : "database, mysql",
+"url"      : "/devlog/2020/04/18/database-34/",
+"date"     : "2020-04-18 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[유닉스] 파일 송신, 수신 (telnet, rlogin, ssh, ftp, rcp)",
+"category" : "",
+"tags"     : "unix",
+"url"      : "/devlog/2020/04/17/unix-30/",
+"date"     : "2020-04-17 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[유닉스] 이메일 보내기",
+"category" : "",
+"tags"     : "unix",
+"url"      : "/devlog/2020/04/17/unix-29/",
+"date"     : "2020-04-17 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[유닉스] 통신 명령어( write, wall, talk, mesg )",
+"category" : "",
+"tags"     : "unix",
+"url"      : "/devlog/2020/04/16/unix-28/",
+"date"     : "2020-04-16 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[유닉스] 호스트와 사용자 정보( hostname, nslookup, ping, finger )",
+"category" : "",
+"tags"     : "unix",
+"url"      : "/devlog/2020/04/15/unix-27/",
+"date"     : "2020-04-15 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Database] 서브 쿼리(Sub Query)",
+"category" : "",
+"tags"     : "database, mysql",
+"url"      : "/devlog/2020/04/14/database-33/",
+"date"     : "2020-04-14 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Database] 속성의 데이터 타입 ",
+"category" : "",
+"tags"     : "database, mysql",
+"url"      : "/devlog/2020/04/13/database-32/",
+"date"     : "2020-04-13 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Database] 조인 검색 - JOIN",
+"category" : "",
+"tags"     : "database, mysql",
+"url"      : "/devlog/2020/04/13/database-31/",
+"date"     : "2020-04-13 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Database] 그룹별 조건 검색 - GROUP BY, HAVING",
+"category" : "",
+"tags"     : "database, mysql",
+"url"      : "/devlog/2020/04/13/database-30/",
+"date"     : "2020-04-13 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Database] 그룹별 검색 - GROUP BY",
+"category" : "",
+"tags"     : "database, mysql",
+"url"      : "/devlog/2020/04/13/database-29/",
+"date"     : "2020-04-13 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[jQuery(제이쿼리)] Object의 특정 클래스(Class) 포함 여부 확인",
+"category" : "",
+"tags"     : "web, javascript, jQuery",
+"url"      : "/tip/2020/04/10/tip-javascript-18/",
+"date"     : "2020-04-10 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[jQuery(제이쿼리)] 선택자에 변수 넣기",
+"category" : "",
+"tags"     : "web, javascript, jQuery",
+"url"      : "/tip/2020/04/10/tip-javascript-17/",
+"date"     : "2020-04-10 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[jQuery(제이쿼리)] 형제 요소의 탐색 .siblings() .next() .prev()",
+"category" : "",
+"tags"     : "web, javascript, jQuery",
+"url"      : "/tip/2020/04/08/tip-javascript-16/",
+"date"     : "2020-04-08 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[자바스크립트] 배열 순서 거꾸로(뒤에서부터, 반대로) 출력하기",
+"category" : "",
+"tags"     : "web, javascript",
+"url"      : "/tip/2020/04/08/tip-javascript-15/",
+"date"     : "2020-04-08 00:00:00 +0900"
+} ,
+
+{
+"title"    : "자바(Java) 개발자를 위한 남궁성의 자바(Java)의 정석 요약 PDF",
+"category" : "",
+"tags"     : "etc, 남희성, 자바의정석",
+"url"      : "/2020/04/08/tip-life-03/",
+"date"     : "2020-04-08 00:00:00 +0900"
+} ,
+
+{
+"title"    : "2020 시나공 컴활(컴퓨터활용능력) 시험 1급 필기 핵심요약",
+"category" : "",
+"tags"     : "etc, 컴활",
+"url"      : "/2020/04/08/tip-life-02/",
+"date"     : "2020-04-08 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[자바스크립트] moment.js COUNTDOWN(카운트) 기능",
+"category" : "",
+"tags"     : "web, javascript",
+"url"      : "/tip/2020/04/07/tip-javascript-14/",
+"date"     : "2020-04-07 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[CSS] 배경 이미지 반복 여부 정하는 속성(background-repeat)",
+"category" : "",
+"tags"     : "web, css",
+"url"      : "/tip/2020/04/07/tip-css-03/",
+"date"     : "2020-04-07 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[유닉스] 파일 아카이브 - .gz 파일, &amp;nbsp; .zip 파일, &amp;nbsp; .bz2 파일",
+"category" : "",
+"tags"     : "unix",
+"url"      : "/devlog/2020/04/06/unix-26/",
+"date"     : "2020-04-06 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[유닉스] 파일 압축하기(compress), 압축풀기(uncompress)",
+"category" : "",
+"tags"     : "unix",
+"url"      : "/devlog/2020/04/06/unix-25/",
+"date"     : "2020-04-06 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[유닉스] 파일 아카이브 - tar 파일, &amp;nbsp; .Z 파일",
+"category" : "",
+"tags"     : "unix",
+"url"      : "/devlog/2020/04/06/unix-24/",
+"date"     : "2020-04-06 00:00:00 +0900"
+} ,
+
+{
+"title"    : "2019 시나공 컴활(컴퓨터활용능력) 시험 1급 필기 핵심요약",
+"category" : "",
+"tags"     : "etc, 컴활",
+"url"      : "/2020/04/06/tip-life-01/",
+"date"     : "2020-04-06 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[유닉스] 파일 시스템 마운트 와 복구",
+"category" : "",
+"tags"     : "unix",
+"url"      : "/devlog/2020/04/05/unix-23/",
+"date"     : "2020-04-05 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[유닉스] 디스크 사용 정보, df 명령어, du 명령어",
+"category" : "",
+"tags"     : "unix",
+"url"      : "/devlog/2020/04/05/unix-22/",
+"date"     : "2020-04-05 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Database] 집계 함수 - AVG(평균), SUM(합), COUNT",
+"category" : "",
+"tags"     : "database, mysql",
+"url"      : "/devlog/2020/04/03/database-28/",
+"date"     : "2020-04-03 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Database] 정렬 검색 - ORDER BY 를 이용한 검색",
+"category" : "",
+"tags"     : "database, mysql",
+"url"      : "/devlog/2020/04/03/database-27/",
+"date"     : "2020-04-03 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Database] 조건 검색 - NULL 을 이용한 검색",
+"category" : "",
+"tags"     : "database, mysql",
+"url"      : "/devlog/2020/04/03/database-26/",
+"date"     : "2020-04-03 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Database] 조건 검색 - LIKE 를 이용한 검색",
+"category" : "",
+"tags"     : "database, mysql",
+"url"      : "/devlog/2020/04/03/database-25/",
+"date"     : "2020-04-03 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Database] 조건 검색(WHERE 절)",
+"category" : "",
+"tags"     : "database, mysql",
+"url"      : "/devlog/2020/04/03/database-24/",
+"date"     : "2020-04-03 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Database] 데이터 조작어(DML) - SELECT 문 (데이터 검색)",
+"category" : "",
+"tags"     : "database, mysql",
+"url"      : "/devlog/2020/04/03/database-23/",
+"date"     : "2020-04-03 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[자바스크립트] 날짜 포맷 함수(Date 포맷 함수)",
+"category" : "",
+"tags"     : "web, javascript",
+"url"      : "/tip/2020/04/02/tip-javascript-13/",
+"date"     : "2020-04-02 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[CSS] 웹 폰트 적용하기",
+"category" : "",
+"tags"     : "web, css",
+"url"      : "/tip/2020/04/02/tip-css-02/",
+"date"     : "2020-04-02 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[jQuery(제이쿼리)] table td 또는 ul li 값 가져오기",
+"category" : "",
+"tags"     : "web, javascript, jQuery",
+"url"      : "/tip/2020/04/01/tip-javascript-12/",
+"date"     : "2020-04-01 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[자바스크립트] 아이디, 이메일 유효성 검사",
+"category" : "",
+"tags"     : "web, javascript",
+"url"      : "/tip/2020/03/31/tip-javascript-11/",
+"date"     : "2020-03-31 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Chart.js] 차트 사이즈 고정하기",
+"category" : "",
+"tags"     : "web, chartJs",
+"url"      : "/tip/2020/03/31/tip-chartjs-03/",
+"date"     : "2020-03-31 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[JSTL] 콤마(,) 또는 소수점 사용법",
+"category" : "",
+"tags"     : "web, jstl, spring",
+"url"      : "/tip/2020/03/30/tip-jstl-03/",
+"date"     : "2020-03-30 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[JAVA] 자바 소수점 사용하기",
+"category" : "",
+"tags"     : "web, java",
+"url"      : "/tip/2020/03/30/tip-java-04/",
+"date"     : "2020-03-30 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Chart.js] 툴팁 사이즈 변경하기",
+"category" : "",
+"tags"     : "web, chartJs",
+"url"      : "/tip/2020/03/29/tip-chartjs-02/",
+"date"     : "2020-03-29 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Chart.js] 도넛차트 굵기 조절, 변경하기",
+"category" : "",
+"tags"     : "web, chartJs",
+"url"      : "/tip/2020/03/27/tip-chartjs-01/",
+"date"     : "2020-03-27 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[JAVA] 자바 날짜 차이구하기",
+"category" : "",
+"tags"     : "web, java",
+"url"      : "/tip/2020/03/26/tip-java-03/",
+"date"     : "2020-03-26 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[자바스크립트] 문자열 공백 제거하기",
+"category" : "",
+"tags"     : "web, javascript",
+"url"      : "/tip/2020/03/25/tip-javascript-10/",
+"date"     : "2020-03-25 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[CSS] user agent stylesheet은 무엇일까?",
+"category" : "",
+"tags"     : "web, css",
+"url"      : "/tip/2020/03/24/tip-css-01/",
+"date"     : "2020-03-24 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[MySQL/MariaDB] CASE WHEN 사용법",
+"category" : "",
+"tags"     : "web, mysql, mariadb",
+"url"      : "/tip/2020/03/23/tip-mysql-05/",
+"date"     : "2020-03-23 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[MySQL/MariaDB] 반올림, 자릿수 버리기(ROUND,TRUNCATE)",
+"category" : "",
+"tags"     : "web, mysql, mariadb",
+"url"      : "/tip/2020/03/23/tip-mysql-04/",
+"date"     : "2020-03-23 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[MySQL/MariaDB] 최대값 최소값 구하기(MAX, MIN)",
+"category" : "",
+"tags"     : "web, mysql, mariadb",
+"url"      : "/tip/2020/03/23/tip-mysql-03/",
+"date"     : "2020-03-23 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[jQuery(제이쿼리)] select box(셀렉트 박스) 값 가져오기",
+"category" : "",
+"tags"     : "web, javascript, jQuery",
+"url"      : "/tip/2020/03/23/tip-javascript-09/",
+"date"     : "2020-03-23 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Sass/SCSS] 내장 함수(Built-in Functions)",
+"category" : "",
+"tags"     : "sass, scss",
+"url"      : "/devlog/2020/03/22/sass-15/",
+"date"     : "2020-03-22 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Sass/SCSS] 반복문(for,each, while)",
+"category" : "",
+"tags"     : "sass, scss",
+"url"      : "/devlog/2020/03/22/sass-14/",
+"date"     : "2020-03-22 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[jQuery(제이쿼리)] select box 값 고정하기/ 변경하기",
+"category" : "",
+"tags"     : "web, javascript, jQuery",
+"url"      : "/tip/2020/03/21/tip-javascript-08/",
+"date"     : "2020-03-21 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[유닉스] 포그라운드(foreground), 백그라운드(background)",
+"category" : "",
+"tags"     : "unix",
+"url"      : "/devlog/2020/03/20/unix-21/",
+"date"     : "2020-03-20 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[유닉스] 프로세스 관리 명령",
+"category" : "",
+"tags"     : "unix",
+"url"      : "/devlog/2020/03/20/unix-20/",
+"date"     : "2020-03-20 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[유닉스] 프로세스의 개념과 종류",
+"category" : "",
+"tags"     : "unix",
+"url"      : "/devlog/2020/03/20/unix-19/",
+"date"     : "2020-03-20 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Database] MySQL 뷰(View)",
+"category" : "",
+"tags"     : "database, mysql",
+"url"      : "/devlog/2020/03/20/database-22/",
+"date"     : "2020-03-20 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Database] MySQL 일괄 실행, 백업, 복원",
+"category" : "",
+"tags"     : "database, mysql",
+"url"      : "/devlog/2020/03/20/database-21/",
+"date"     : "2020-03-20 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Database] MySQL 테이블 이름변경 및 삭제",
+"category" : "",
+"tags"     : "database, mysql",
+"url"      : "/devlog/2020/03/20/database-20/",
+"date"     : "2020-03-20 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Database] MySQL 테이블 변경",
+"category" : "",
+"tags"     : "database, mysql",
+"url"      : "/devlog/2020/03/20/database-19/",
+"date"     : "2020-03-20 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Database] 기본키, 대체키, 외래키, 테이블 제약 조건",
+"category" : "",
+"tags"     : "database, mysql",
+"url"      : "/devlog/2020/03/19/database-18/",
+"date"     : "2020-03-19 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[JSTL] &lt; c:choose &gt;&lt; c:when &gt; 다중(중복, 여러번) 사용 하기 (&lt; c:choose &gt;&lt; c:when &gt;안에 &lt; c:choose &gt;&lt;c:when &gt;)",
+"category" : "",
+"tags"     : "web, jstl, spring",
+"url"      : "/tip/2020/03/18/tip-jstl-02/",
+"date"     : "2020-03-18 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[JAVA] 자바 날짜 구하기(특정 월의 첫째 날짜, 마지막 날짜)",
+"category" : "",
+"tags"     : "web, java",
+"url"      : "/tip/2020/03/18/tip-java-02/",
+"date"     : "2020-03-18 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Sass/SCSS] 조건문(if)",
+"category" : "",
+"tags"     : "sass, scss",
+"url"      : "/devlog/2020/03/17/sass-13/",
+"date"     : "2020-03-17 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Sass/SCSS] 함수(Functions)",
+"category" : "",
+"tags"     : "sass, scss",
+"url"      : "/devlog/2020/03/17/sass-12/",
+"date"     : "2020-03-17 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[MySQL/MariaDB] JOIN에서 ON 과 WHERE의 차이점",
+"category" : "",
+"tags"     : "web, mysql, mariadb",
+"url"      : "/tip/2020/03/16/tip-mysql-02/",
+"date"     : "2020-03-16 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[자바스크립트] 자동 실행 함수 (window.onload, $(document).ready())",
+"category" : "",
+"tags"     : "web, javascript",
+"url"      : "/tip/2020/03/16/tip-javascript-07/",
+"date"     : "2020-03-16 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Sass/SCSS] 확장(Extend) -  @extend",
+"category" : "",
+"tags"     : "sass, scss",
+"url"      : "/devlog/2020/03/16/sass-11/",
+"date"     : "2020-03-16 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[fuji/후지필름] x100v 어댑터링, 후드 사용법 과 ND필터 끼우기",
+"category" : "",
+"tags"     : "goods, x100v, fuji",
+"url"      : "/review/2020/03/14/review-goods-fuji-x100v-02/",
+"date"     : "2020-03-14 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[fuji/후지필름] x100v Black Unboxing / 언박싱(개봉기)",
+"category" : "",
+"tags"     : "goods, x100v, fuji",
+"url"      : "/review/2020/03/14/review-goods-fuji-x100v-01/",
+"date"     : "2020-03-14 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[유닉스] 기본 접근 권한 설정",
+"category" : "",
+"tags"     : "unix",
+"url"      : "/devlog/2020/03/13/unix-18/",
+"date"     : "2020-03-13 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[유닉스] 접근 권한 변경",
+"category" : "",
+"tags"     : "unix",
+"url"      : "/devlog/2020/03/13/unix-17/",
+"date"     : "2020-03-13 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[유닉스] 파일의 속성",
+"category" : "",
+"tags"     : "unix",
+"url"      : "/devlog/2020/03/13/unix-16/",
+"date"     : "2020-03-13 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Sass/SCSS] 재활용(Mixins) - @content",
+"category" : "",
+"tags"     : "sass, scss",
+"url"      : "/devlog/2020/03/13/sass-10/",
+"date"     : "2020-03-13 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Sass/SCSS] 재활용(Mixins) - 인수(Arguments)",
+"category" : "",
+"tags"     : "sass, scss",
+"url"      : "/devlog/2020/03/13/sass-09/",
+"date"     : "2020-03-13 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Sass/SCSS] 재활용(Mixins) - @include ",
+"category" : "",
+"tags"     : "sass, scss",
+"url"      : "/devlog/2020/03/13/sass-08/",
+"date"     : "2020-03-13 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Sass/SCSS] 가져오기(Import)",
+"category" : "",
+"tags"     : "sass, scss",
+"url"      : "/devlog/2020/03/13/sass-07/",
+"date"     : "2020-03-13 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Sass/SCSS] 문법 - 변수(Variables)",
+"category" : "",
+"tags"     : "sass, scss",
+"url"      : "/devlog/2020/03/12/sass-06/",
+"date"     : "2020-03-12 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Sass/SCSS] 문법 - 중첩",
+"category" : "",
+"tags"     : "sass, scss",
+"url"      : "/devlog/2020/03/12/sass-05/",
+"date"     : "2020-03-12 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Database] SQL 개요와 MySQL 테이블 생성, AUTO_INCREMENT(자동증가)",
+"category" : "",
+"tags"     : "database, mysql",
+"url"      : "/devlog/2020/03/12/database-17/",
+"date"     : "2020-03-12 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Database] MySQL 기본 명령어 - 데이터베이스 및 사용자 계정",
+"category" : "",
+"tags"     : "database, mysql",
+"url"      : "/devlog/2020/03/12/database-16/",
+"date"     : "2020-03-12 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Sass/SCSS] 문법 - 주석",
+"category" : "",
+"tags"     : "sass, scss",
+"url"      : "/devlog/2020/03/11/sass-04/",
+"date"     : "2020-03-11 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Sass/SCSS] Sass(SCSS) 컴파일 방법",
+"category" : "",
+"tags"     : "sass, scss",
+"url"      : "/devlog/2020/03/11/sass-03/",
+"date"     : "2020-03-11 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Sass/SCSS] Sass와 SCSS는 차이점",
+"category" : "",
+"tags"     : "sass, scss",
+"url"      : "/devlog/2020/03/10/sass-02/",
+"date"     : "2020-03-10 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Sass/SCSS] CSS Preprocessor(전처리기) 란?",
+"category" : "",
+"tags"     : "sass, scss",
+"url"      : "/devlog/2020/03/09/sass-01/",
+"date"     : "2020-03-09 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[MySQL/MariaDB] REPLACE 사용법(콤마제거, 치환하기)",
+"category" : "",
+"tags"     : "web, mysql, mariadb",
+"url"      : "/tip/2020/03/08/tip-mysql-01/",
+"date"     : "2020-03-08 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[JAVA] Java에서 백분율(퍼센트) 계산하기",
+"category" : "",
+"tags"     : "web, java",
+"url"      : "/tip/2020/03/07/tip-java-01/",
+"date"     : "2020-03-07 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[유닉스] vi 환경 설정",
+"category" : "",
+"tags"     : "unix",
+"url"      : "/devlog/2020/03/06/unix-15/",
+"date"     : "2020-03-06 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[유닉스] 편집기 (vi) - 내용 수정 및 삭제",
+"category" : "",
+"tags"     : "unix",
+"url"      : "/devlog/2020/03/06/unix-14/",
+"date"     : "2020-03-06 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[유닉스] 편집기 (vi)",
+"category" : "",
+"tags"     : "unix",
+"url"      : "/devlog/2020/03/06/unix-13/",
+"date"     : "2020-03-06 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Database] Windows(윈도우)에 MySQL 설치방법",
+"category" : "",
+"tags"     : "database, mysql",
+"url"      : "/devlog/2020/03/06/database-15/",
+"date"     : "2020-03-06 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Database] 순수관계연산자 (3/3)",
+"category" : "",
+"tags"     : "database, mysql",
+"url"      : "/devlog/2020/03/06/database-14/",
+"date"     : "2020-03-06 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Database] 순수관계연산자 (2/3)",
+"category" : "",
+"tags"     : "database, mysql",
+"url"      : "/devlog/2020/03/06/database-13/",
+"date"     : "2020-03-06 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[JSTL] &lt; c:if &gt;, &lt; c:choose &gt; 태그 사용법",
+"category" : "",
+"tags"     : "web, jstl, spring",
+"url"      : "/tip/2020/03/04/tip-jstl-01/",
+"date"     : "2020-03-04 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[자바스크립트] 절대값 구하기[ Math.abs() ] ",
+"category" : "",
+"tags"     : "web, javascript",
+"url"      : "/tip/2020/03/01/tip-javascript-06/",
+"date"     : "2020-03-01 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[자바스크립트] 문자열 길이(문자열 수) 확인",
+"category" : "",
+"tags"     : "web, javascript",
+"url"      : "/tip/2020/03/01/tip-javascript-05/",
+"date"     : "2020-03-01 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[유닉스] 링크, 수정 시각 변경",
+"category" : "",
+"tags"     : "unix",
+"url"      : "/devlog/2020/02/29/unix-12/",
+"date"     : "2020-02-29 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[유닉스] 복사, 삭제, 이동",
+"category" : "",
+"tags"     : "unix",
+"url"      : "/devlog/2020/02/29/unix-11/",
+"date"     : "2020-02-29 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[유닉스] 파일 내용 보기",
+"category" : "",
+"tags"     : "unix",
+"url"      : "/devlog/2020/02/29/unix-10/",
+"date"     : "2020-02-29 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Database] 순수관계연산자 (1/3)",
+"category" : "",
+"tags"     : "database, mysql",
+"url"      : "/devlog/2020/02/28/database-12/",
+"date"     : "2020-02-28 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Database] 관계 대수",
+"category" : "",
+"tags"     : "database, mysql",
+"url"      : "/devlog/2020/02/28/database-11/",
+"date"     : "2020-02-28 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Database] 관계 데이터 모델의 제약 조건",
+"category" : "",
+"tags"     : "database, mysql",
+"url"      : "/devlog/2020/02/28/database-10/",
+"date"     : "2020-02-28 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[자바스크립트] Null check, 빈 값 체크, 공백 체크",
+"category" : "",
+"tags"     : "web, javascript",
+"url"      : "/tip/2020/02/27/tip-javascript-04/",
+"date"     : "2020-02-27 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[자바스크립트] 왼쪽 숫자 0, 첫자리 0 제거하기(정규식)",
+"category" : "",
+"tags"     : "web, javascript",
+"url"      : "/tip/2020/02/27/tip-javascript-03/",
+"date"     : "2020-02-27 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[유닉스] 디렉토리 이름 변경 및 검색",
+"category" : "",
+"tags"     : "unix",
+"url"      : "/devlog/2020/02/26/unix-09/",
+"date"     : "2020-02-26 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[유닉스] 디렉토리 생성, 삭제",
+"category" : "",
+"tags"     : "unix",
+"url"      : "/devlog/2020/02/26/unix-08/",
+"date"     : "2020-02-26 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[자바스크립트] 문자열 자르기 (split, substring, substr)",
+"category" : "",
+"tags"     : "web, javascript",
+"url"      : "/tip/2020/02/25/tip-javascript-02/",
+"date"     : "2020-02-25 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[자바스크립트] 문자를 숫자로 바꾸기(String to int)",
+"category" : "",
+"tags"     : "web, javascript",
+"url"      : "/tip/2020/02/25/tip-javascript-01/",
+"date"     : "2020-02-25 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[유닉스] 디렉토리 이동",
+"category" : "",
+"tags"     : "unix",
+"url"      : "/devlog/2020/02/25/unix-07/",
+"date"     : "2020-02-25 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Database] 키 (Key)",
+"category" : "",
+"tags"     : "database, mysql",
+"url"      : "/devlog/2020/02/24/database-09/",
+"date"     : "2020-02-24 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Database] 관계 데이터 모델의 기본용어와 릴레이션 구성요소",
+"category" : "",
+"tags"     : "database, mysql",
+"url"      : "/devlog/2020/02/24/database-08/",
+"date"     : "2020-02-24 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Database] 약한 개체와 IE표기법",
+"category" : "",
+"tags"     : "database, mysql",
+"url"      : "/devlog/2020/02/23/database-07/",
+"date"     : "2020-02-23 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[유닉스] 디렉토리 계층구조",
+"category" : "",
+"tags"     : "unix",
+"url"      : "/devlog/2020/02/22/unix-06/",
+"date"     : "2020-02-22 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[유닉스] 파일의 종류",
+"category" : "",
+"tags"     : "unix",
+"url"      : "/devlog/2020/02/20/unix-05/",
+"date"     : "2020-02-20 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[유닉스] 일반 명령어",
+"category" : "",
+"tags"     : "unix",
+"url"      : "/devlog/2020/02/19/unix-04/",
+"date"     : "2020-02-19 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[유닉스] 명령어",
+"category" : "",
+"tags"     : "unix",
+"url"      : "/devlog/2020/02/18/unix-03/",
+"date"     : "2020-02-18 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[유닉스] 특징 및 구조",
+"category" : "",
+"tags"     : "unix",
+"url"      : "/devlog/2020/02/18/unix-02/",
+"date"     : "2020-02-18 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[유닉스] 역사와 발전",
+"category" : "",
+"tags"     : "unix",
+"url"      : "/devlog/2020/02/18/unix-01/",
+"date"     : "2020-02-18 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Database] 개체, 개체 타입과 속성",
+"category" : "",
+"tags"     : "database, mysql",
+"url"      : "/devlog/2020/02/17/database-06/",
+"date"     : "2020-02-17 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Database] 모델링과 개체-관계 모델 및 다이어그램",
+"category" : "",
+"tags"     : "database, mysql",
+"url"      : "/devlog/2020/02/16/database-05/",
+"date"     : "2020-02-16 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Database] 데이터베이스 스키마",
+"category" : "",
+"tags"     : "database, mysql",
+"url"      : "/devlog/2020/02/15/database-04/",
+"date"     : "2020-02-15 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Database] 데이터베이스 시스템",
+"category" : "",
+"tags"     : "database, mysql",
+"url"      : "/devlog/2020/02/14/database-03/",
+"date"     : "2020-02-14 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Database] 데이터베이스 모델",
+"category" : "",
+"tags"     : "database, mysql",
+"url"      : "/devlog/2020/02/13/database-02/",
+"date"     : "2020-02-13 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Database] 데이터베이스",
+"category" : "",
+"tags"     : "database, mysql",
+"url"      : "/devlog/2020/02/12/database-01/",
+"date"     : "2020-02-12 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[portfolio] 준비중 입니다.",
+"category" : "",
+"tags"     : "portfolio",
+"url"      : "/2020/01/01/portfolio-01/",
+"date"     : "2020-01-01 00:00:00 +0900"
+} 
+
+]
