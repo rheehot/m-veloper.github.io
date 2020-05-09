@@ -4,12 +4,32 @@
  <title>슬기로운 개발 생활</title>
  <link href="https://m-veloper.github.io/atom.xml" rel="self"/>
  <id>https://m-veloper.github.io</id>
- <updated>2020-05-08T20:29:26+09:00</updated>
+ <updated>2020-05-09T12:43:17+09:00</updated>
  <author>
    <name>m-veloper</name>
    <uri>https://m-veloper.github.io</uri>
    <email>m_veloper@naver.com</email>
  </author>
+
+ 
+
+ <entry>
+   <title>[유닉스] 쉘 스크립트(Shell Script) 제어문 - if 문</title>
+   <link href="https://m-veloper.github.io/devlog/2020/05/09/unix-45/"/>
+   <id>https://m-veloper.github.io/devlog/2020/05/09/unix-45</id>
+   <updated>2020-05-09T00:00:00+09:00</updated>
+   <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-05-09-unix-45.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;if-문&quot;&gt;if 문&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;주어진 조건을 만족할 때만 명령을 실행&lt;/li&gt; &lt;/ul&gt; &lt;h3 id=&quot;if--then--else-문&quot;&gt;if ~ then ~ else 문&lt;/h3&gt; &lt;ul&gt; &lt;li&gt;if 다음에 주어진 조건 명령을 실행하여 종료값이 0이면 &lt;ul&gt; &lt;li&gt;then 다음의 명령을 실행&lt;/li&gt; &lt;li&gt;0이 아니면 else 다음의 명령을 실행&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;조건 명령에 연산식이 올 경우 &lt;ul&gt;...</content>
+ </entry>
+
+ 
+
+ <entry>
+   <title>[유닉스] 쉘 스크립트(Shell Script) 연산자</title>
+   <link href="https://m-veloper.github.io/devlog/2020/05/09/unix-44/"/>
+   <id>https://m-veloper.github.io/devlog/2020/05/09/unix-44</id>
+   <updated>2020-05-09T00:00:00+09:00</updated>
+   <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-05-09-unix-44.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;연산자&quot;&gt;연산자&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;연산자는 프로그램에서 자료를 다양하게 처리하는 방법을 제공&lt;/li&gt; &lt;li&gt;배시 쉘은 산술 연산자, 비교 연산자, 논리 연산자, 비트 연산자 등 일반 프로그래밍 언어에서 제공하는 것과 유사한 연산자를 제공&lt;/li&gt; &lt;li&gt;배시 쉘에서 수치 연산자 사용할 때는 let 내장 명령이나 (( ))를 사용&lt;/li&gt; &lt;li&gt;비트 시프트 연산자는 here 문서의...</content>
+ </entry>
 
  
 
@@ -89,26 +109,6 @@
    <id>https://m-veloper.github.io/devlog/2020/05/03/database-52</id>
    <updated>2020-05-03T00:00:00+09:00</updated>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/05/2020-05-03-database-52.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;내부-조인-inner-join&quot;&gt;내부 조인 (Inner Join)&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;두 테이블에서 속성이 일치하는 모든 투플을 반환&lt;/li&gt; &lt;li&gt;일반적인 조인과 동일&lt;/li&gt; &lt;li&gt;기본 형식&lt;/li&gt; &lt;/ul&gt; &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;속성&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;리스트&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;테이블&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;INNER&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;JOIN&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;테이블&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ON&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;테이블&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span...</content>
- </entry>
-
- 
-
- <entry>
-   <title>[Database] MySQL 인덱스 (Index)</title>
-   <link href="https://m-veloper.github.io/devlog/2020/05/02/database-51/"/>
-   <id>https://m-veloper.github.io/devlog/2020/05/02/database-51</id>
-   <updated>2020-05-02T00:00:00+09:00</updated>
-   <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/05/2020-05-02-database-51.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;인덱스-index&quot;&gt;인덱스 (Index)&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;테이블에서 자주 사용하는 속성을 별도로 생성&lt;/li&gt; &lt;li&gt;테이블의 검색 동작 속도를 향상시키기 위하여 사용&lt;/li&gt; &lt;li&gt;테이블에 대한 킷값을 가지고 있는 사본 테이블&lt;/li&gt; &lt;li&gt;사용자들은 인텍스를 볼 수 없다.&lt;/li&gt; &lt;li&gt;MySQL에서는 기본키에 대하여 인덱스가 자동 생성된다.&lt;/li&gt; &lt;li&gt;대부분의 MySQL 인덱스 (기본키, UNIQUE, INDEX와 FULLTEXT)는 B-tree에 저장된다. &lt;ul&gt; &lt;li&gt;B-tree는...</content>
- </entry>
-
- 
-
- <entry>
-   <title>[Database] MySQL GROUP BY 함수</title>
-   <link href="https://m-veloper.github.io/devlog/2020/05/02/database-50/"/>
-   <id>https://m-veloper.github.io/devlog/2020/05/02/database-50</id>
-   <updated>2020-05-02T00:00:00+09:00</updated>
-   <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/05/2020-05-02-database-50.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;group-by&quot;&gt;GROUP BY&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;GROUP으로부터 NULL이 아닌 값을 결합한 문자열 결과를 반환&lt;/li&gt; &lt;li&gt;모두 NULL 인 값만 있는 경우, NULL을 반환&lt;/li&gt; &lt;li&gt;기본 형식&lt;/li&gt; &lt;/ul&gt; &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;컬럼&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;테이블&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;GROUP&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;그룹화할&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;컬럼&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt; &lt;ul&gt;...</content>
  </entry>
 
  

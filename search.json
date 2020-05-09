@@ -1,6 +1,22 @@
 [
 
 {
+"title"    : "[유닉스] 쉘 스크립트(Shell Script) 제어문 - if 문",
+"category" : "",
+"tags"     : "unix",
+"url"      : "/devlog/2020/05/09/unix-45/",
+"date"     : "2020-05-09 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[유닉스] 쉘 스크립트(Shell Script) 연산자",
+"category" : "",
+"tags"     : "unix",
+"url"      : "/devlog/2020/05/09/unix-44/",
+"date"     : "2020-05-09 00:00:00 +0900"
+} ,
+
+{
 "title"    : "[유닉스] 쉘 스크립트(Shell Script) 문법 - 사용자로부터 입력 받기",
 "category" : "",
 "tags"     : "unix",
