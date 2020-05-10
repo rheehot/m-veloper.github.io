@@ -4,12 +4,22 @@
  <title>슬기로운 개발 생활</title>
  <link href="https://m-veloper.github.io/atom.xml" rel="self"/>
  <id>https://m-veloper.github.io</id>
- <updated>2020-05-10T20:20:15+09:00</updated>
+ <updated>2020-05-11T00:07:30+09:00</updated>
  <author>
    <name>m-veloper</name>
    <uri>https://m-veloper.github.io</uri>
    <email>m_veloper@naver.com</email>
  </author>
+
+ 
+
+ <entry>
+   <title>[유닉스] 쉘 스크립트(Shell Script) 제어문 - for, while 문(반복문)</title>
+   <link href="https://m-veloper.github.io/devlog/2020/05/11/unix-47/"/>
+   <id>https://m-veloper.github.io/devlog/2020/05/11/unix-47</id>
+   <updated>2020-05-11T00:00:00+09:00</updated>
+   <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-05-11-unix-47.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;for-문&quot;&gt;for 문&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;리스트 안의 각 값들에 대해 지정한 명령을 순차적으로 실행&lt;/li&gt; &lt;li&gt;형식&lt;/li&gt; &lt;/ul&gt; &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;변수&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;명령&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;done&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt; &lt;ul&gt; &lt;li&gt;스크립트 예&lt;/li&gt; &lt;/ul&gt; &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cat&lt;/span&gt;...</content>
+ </entry>
 
  
 
@@ -99,16 +109,6 @@
    <id>https://m-veloper.github.io/devlog/2020/05/04/database-54</id>
    <updated>2020-05-04T00:00:00+09:00</updated>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/05/2020-05-04-database-54.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;왼쪽-조인-left-join&quot;&gt;왼쪽 조인 (Left Join)&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;오른쪽 테이블(테이블2)과 매칭되는 왼쪽 테이블(테이블1)의 모든 투플을 반환한다.&lt;/li&gt; &lt;li&gt;오른쪽 테이블과 매칭이 되지 않을 경우, NULL을 반환된다.&lt;/li&gt; &lt;li&gt;기본 형식&lt;/li&gt; &lt;/ul&gt; &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;속성&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;리스트&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;테이블&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;LEFT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;JOIN&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;테이블&lt;/span&gt;&lt;span...</content>
- </entry>
-
- 
-
- <entry>
-   <title>[Database] 오른쪽 조인 (Right Join)</title>
-   <link href="https://m-veloper.github.io/devlog/2020/05/04/database-53/"/>
-   <id>https://m-veloper.github.io/devlog/2020/05/04/database-53</id>
-   <updated>2020-05-04T00:00:00+09:00</updated>
-   <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/05/2020-05-04-database-53.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;오른쪽-조인-right-join&quot;&gt;오른쪽 조인 (Right Join)&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;왼쪽 테이블(테이블1)과 매칭되는 오른쪽 테이블(테이블2)의 모든 투플을 반환한다.&lt;/li&gt; &lt;li&gt;왼쪽 테이블과 매칭이 되지 않을 경우, NULL을 반환된다.&lt;/li&gt; &lt;li&gt;기본 형식&lt;/li&gt; &lt;/ul&gt; &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;속성&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;리스트&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;테이블&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;RIGHT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;JOIN&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;테이블&lt;/span&gt;&lt;span...</content>
  </entry>
 
  
