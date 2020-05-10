@@ -4,12 +4,22 @@
  <title>슬기로운 개발 생활</title>
  <link href="https://m-veloper.github.io/atom.xml" rel="self"/>
  <id>https://m-veloper.github.io</id>
- <updated>2020-05-09T12:43:17+09:00</updated>
+ <updated>2020-05-10T20:20:15+09:00</updated>
  <author>
    <name>m-veloper</name>
    <uri>https://m-veloper.github.io</uri>
    <email>m_veloper@naver.com</email>
  </author>
+
+ 
+
+ <entry>
+   <title>[유닉스] 쉘 스크립트(Shell Script) 제어문 - case 문</title>
+   <link href="https://m-veloper.github.io/devlog/2020/05/10/unix-46/"/>
+   <id>https://m-veloper.github.io/devlog/2020/05/10/unix-46</id>
+   <updated>2020-05-10T00:00:00+09:00</updated>
+   <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-05-10-unix-46.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;case-문&quot;&gt;case 문&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;주어진 변수의 값에 따라 실행할 명령을 따로 지정&lt;/li&gt; &lt;li&gt;변수의 값이 value1이면 ;;을 만날 때까지 명령을 실행&lt;/li&gt; &lt;li&gt;일치하는 값이 없으면 기본값인 * 다음에 나오는 명령을 실행&lt;/li&gt; &lt;li&gt;형식&lt;/li&gt; &lt;/ul&gt; &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;변수&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;value1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;명령&lt;/span&gt;&lt;span...</content>
+ </entry>
 
  
 
@@ -99,16 +109,6 @@
    <id>https://m-veloper.github.io/devlog/2020/05/04/database-53</id>
    <updated>2020-05-04T00:00:00+09:00</updated>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/05/2020-05-04-database-53.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;오른쪽-조인-right-join&quot;&gt;오른쪽 조인 (Right Join)&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;왼쪽 테이블(테이블1)과 매칭되는 오른쪽 테이블(테이블2)의 모든 투플을 반환한다.&lt;/li&gt; &lt;li&gt;왼쪽 테이블과 매칭이 되지 않을 경우, NULL을 반환된다.&lt;/li&gt; &lt;li&gt;기본 형식&lt;/li&gt; &lt;/ul&gt; &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;속성&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;리스트&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;테이블&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;RIGHT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;JOIN&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;테이블&lt;/span&gt;&lt;span...</content>
- </entry>
-
- 
-
- <entry>
-   <title>[Database] 내부 조인 (Inner Join)</title>
-   <link href="https://m-veloper.github.io/devlog/2020/05/03/database-52/"/>
-   <id>https://m-veloper.github.io/devlog/2020/05/03/database-52</id>
-   <updated>2020-05-03T00:00:00+09:00</updated>
-   <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/05/2020-05-03-database-52.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;내부-조인-inner-join&quot;&gt;내부 조인 (Inner Join)&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;두 테이블에서 속성이 일치하는 모든 투플을 반환&lt;/li&gt; &lt;li&gt;일반적인 조인과 동일&lt;/li&gt; &lt;li&gt;기본 형식&lt;/li&gt; &lt;/ul&gt; &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;속성&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;리스트&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;테이블&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;INNER&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;JOIN&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;테이블&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ON&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;테이블&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span...</content>
  </entry>
 
  

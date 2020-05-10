@@ -5,9 +5,73 @@
     <description></description>
     <link>https://m-veloper.github.io/</link>
     <atom:link href="https://m-veloper.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 09 May 2020 12:43:17 +0900</pubDate>
-    <lastBuildDate>Sat, 09 May 2020 12:43:17 +0900</lastBuildDate>
+    <pubDate>Sun, 10 May 2020 20:20:15 +0900</pubDate>
+    <lastBuildDate>Sun, 10 May 2020 20:20:15 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>[유닉스] 쉘 스크립트(Shell Script) 제어문 - case 문</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-05-10-unix-46.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;case-문&quot;&gt;case 문&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;주어진 변수의 값에 따라 실행할 명령을 따로 지정&lt;/li&gt;
+  &lt;li&gt;변수의 값이 value1이면 ;;을 만날 때까지 명령을 실행&lt;/li&gt;
+  &lt;li&gt;일치하는 값이 없으면 기본값인 * 다음에 나오는 명령을 실행&lt;/li&gt;
+  &lt;li&gt;형식&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;변수&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;value1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;명령&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;value2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;명령&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;명령&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;esac&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;스크립트 예&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cat&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;test_case&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;#!/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bin&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bash&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;#&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;test&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;#&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;“&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;Select&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;command&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;”&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;read&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cmd&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cmd&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;~&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;digit&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;date&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;11&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cd&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CD&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CD&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;13&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;HOME&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;14&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;15&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;aA&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;C&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;16&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pwd&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;17&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;18&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;19&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;“&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;Usage&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;command&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;”&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;21&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;esac&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+</description>
+        <pubDate>Sun, 10 May 2020 00:00:00 +0900</pubDate>
+        <link>https://m-veloper.github.io/devlog/2020/05/10/unix-46/</link>
+        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/05/10/unix-46/</guid>
+        
+        <category>unix</category>
+        
+        
+        <category>devlog</category>
+        
+      </item>
     
       <item>
         <title>[유닉스] 쉘 스크립트(Shell Script) 제어문 - if 문</title>
@@ -4141,168 +4205,6 @@ Chan-Ho Kim Yun-A Bae Sue-Ji Han So-Ri
         <pubDate>Tue, 21 Apr 2020 00:00:00 +0900</pubDate>
         <link>https://m-veloper.github.io/devlog/2020/04/21/unix-36/</link>
         <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/21/unix-36/</guid>
-        
-        <category>unix</category>
-        
-        
-        <category>devlog</category>
-        
-      </item>
-    
-      <item>
-        <title>[유닉스] 필드 잘라내기 ( cut )</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-04-21-unix-35.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;cut&quot;&gt;cut&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;파일의 선택된 필드를 추출&lt;/li&gt;
-  &lt;li&gt;형식 : cut [옵션] [파일]&lt;/li&gt;
-  &lt;li&gt;옵션
-    &lt;ul&gt;
-      &lt;li&gt;-c 리스트 : 각 행에서 잘라낸 문자의 위치를 지정&lt;/li&gt;
-      &lt;li&gt;-f 필드번호 : 지정한 필드를 잘라냄&lt;/li&gt;
-      &lt;li&gt;-d 문자 : 필드 구분자&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;사용 예
-    &lt;ul&gt;
-      &lt;li&gt;cut –c 1-3 test&lt;/li&gt;
-      &lt;li&gt;cut –f 3 test&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;문자-추출---c&quot;&gt;문자 추출 : -c&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;예제 파일 만들기
-    &lt;ul&gt;
-      &lt;li&gt;cut 명령은 탭으로 구분되어야 다른 필드로 인식&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cp &lt;/span&gt;test_sort2 test_cut
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cat &lt;/span&gt;test_cut
-001 Hong Gil-Dong 80 M
-002 Park Ji-Sung 76 M
-003 Cha Doo-Ri 90 M
-004 Park Chan-Ho 88 M
-005 Kim Yun-A 50 F
-006 Bae Sue-Ji 48 F
-007 Han So-Ri 49 F
-&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;파일에서 원하는 문자열 추출
-    &lt;ul&gt;
-      &lt;li&gt;5번째에서 8번째 문자열까지 추출하는 예제&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cut&lt;/span&gt; –c 5-8 test_cut
-Hong
-Park
-Cha
-Park
-Kim
-Bae
-Han
-&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;who를 이용해 시스템에 접속 중인 사용자의 이름만 추출&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;who&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;cut&lt;/span&gt; –c 1-8 | &lt;span class=&quot;nb&quot;&gt;sort
-&lt;/span&gt;ksshin
-ksshin
-ksshin
-ksshin
-user1
-&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;필드-추출---f&quot;&gt;필드 추출 : -f&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;cut 명령은 문자열보다 필드 추출에 더 많이 사용&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cut&lt;/span&gt; –f 1 test_cut
-001
-002
-003
-004
-005
-006
-007
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;데이터 파일에서 성과 이름이 필요하면 2번과 3번 필드를 추출&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cut&lt;/span&gt; –f 2,3 test_cut
-Hong Gil-Dong
-Park Ji-Sung
-Cha Doo-Ri
-Park Chan-Ho
-Kim Yun-A
-Bae Sue-Ji
-Han So-Ri
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;필드-구분자-지정---d&quot;&gt;필드 구분자 지정 : -d&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;필드 구분자로 탭이 아닌 다른 문자사용 가능
-    &lt;ul&gt;
-      &lt;li&gt;/etc/passwd 파일의 첫 번째 필드를 추출하는 예제&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cut&lt;/span&gt; –d: &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; 1 /etc/passwd | more
-root
-daemon
-bin
-sys
-&lt;span class=&quot;nb&quot;&gt;sync&lt;/span&gt;
-......
-&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;파일의 내용이 탭이 아닌 공백으로 구분되어 있으면 공백을 필드 구분자로 지정&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cut&lt;/span&gt; –d’ ‘ &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; 2 test_sort2
-Hong
-Park
-Cha
-Park
-Kim
-Bae
-Han
-&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-</description>
-        <pubDate>Tue, 21 Apr 2020 00:00:00 +0900</pubDate>
-        <link>https://m-veloper.github.io/devlog/2020/04/21/unix-35/</link>
-        <guid isPermaLink="true">https://m-veloper.github.io/devlog/2020/04/21/unix-35/</guid>
         
         <category>unix</category>
         
