@@ -1,0 +1,1488 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<!-- Meta -->
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+	<meta name="generator" content="Jekyll">
+	<meta name="naver-site-verification" content="fa37cbf8ce41948de6e94c01991ffa04cea9b093"/>
+	<meta name="google-site-verification" content="5M4Zw9wg_UqQkvlayfb5Mc_ogvJdc013w_zLUkxgO-Y" />
+
+	<!--<title>[유닉스] 쉘 스크립트(Shell Script) 제어문 - select, continue, until 문</title>-->
+	<title>슬기로운 개발 생활</title>
+
+	<!-- CSS & fonts -->
+	<link rel="stylesheet" href="/assets/css/main.css">
+	<link rel="stylesheet" href="/assets/icomoon/style.css">
+	<link rel="stylesheet" href="/assets/icomoon/style.css">
+	<link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+	<link href="https://cdn.jsdelivr.net/gh/joungkyun/font-d2coding/d2coding.css" rel="stylesheet" type="text/css">
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,900,400italic%7CSignika:700,300,400,600' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/default.min.css">
+
+	<!-- RSS -->
+	<link href="/atom.xml" type="application/atom+xml" rel="alternate" title="ATOM Feed" />
+	<!-- Script -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/assets/js/main.js"></script>
+<script src="/assets/js/load-js-deferred.js"></script>
+<script src="/assets/js/fontawesome-all.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+<script data-ad-client="ca-pub-9898399593070144" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+<script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
+
+
+
+
+
+<script>
+  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+  ga('create', 'UA-158538042-1', 'auto');
+  ga('send', 'pageview');
+  loadJSDeferred('https://www.google-analytics.com/analytics.js');
+</script>
+
+
+<!-- m-veloper 네이버애널리틱스 -->
+<script type="text/javascript">
+    if(!wcs_add) var wcs_add = {};
+    wcs_add["wa"] = "45688ef54680e0";
+    if(window.wcs) {
+        wcs_do();
+    }
+</script>
+
+
+
+
+
+  </head>
+
+
+<body>
+
+	<div id="wrap">
+	  	
+	  	<!-- Navigation -->
+	  	<nav id="nav">
+	<div id="nav-list">
+		<div class="sidebar-about">
+			<h2><a id="_title" href="/">슬기로운 개발 생활</a></h2>
+			<p>느리지만 가고있어요..</p>
+
+		</div>
+		<!--<a href="">Home</a>-->
+
+		<!-- 카테고리, 태그 메뉴-->
+		<div id="_sidebar" class="sidebar">
+			<div class="sidebar-sticky" role="banner">
+				<nav class="sidebar-nav heading" role="navigation">
+					<ul>
+						<li>
+							<div  class="list-wrapper">
+								<h3 class="sidebar-nav-item">Learn</h3>
+							</div>
+							<ul class="list-body">
+								<li>
+									<a class="sidebar-nav-subitem" href="/a_tags/database/">Database</a>
+								</li>
+								<li>
+									<a class="sidebar-nav-subitem" href="/a_tags/unix/">Unix</a>
+								</li>
+								<li>
+									<a class="sidebar-nav-subitem" href="/a_tags/sass/">Sass</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div  class="list-wrapper">
+								<h3 class="sidebar-nav-item">Review</h3>
+							</div>
+							<ul class="list-body">
+								<li>
+									<a class="sidebar-nav-subitem" href="/a_tags/goods/">Goods</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div  class="list-wrapper">
+								<h3 class="sidebar-nav-item">Tip</h3>
+							</div>
+							<ul class="list-body">
+								<li>
+									<a class="sidebar-nav-subitem" href="/a_tags/web/">Web</a>
+									<a class="sidebar-nav-subitem" href="/a_tags/etc/">Etc</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div  class="list-wrapper">
+								<a class="" href="/search/"><h3 class="sidebar-nav-item">Search [검색]</h3></a>
+								<a class="" href="/a_tags/portfolio/"><h3 class="sidebar-nav-item">Portfolio</h3></a>
+								<a class="" href="/about/"><h3 class="sidebar-nav-item">About</h3></a>
+							</div>
+						</li>
+					</ul>
+
+					
+					<article class="page" role="article">
+						<div class="author-body" style="max-width: 25%; margin: auto">
+							
+							
+  
+
+  
+
+  <img
+    src="/assets/img/me.png"
+    class="me"
+    alt="m_veloper"
+    srcset="/assets/img/me.png 1x,/assets/img/me.png 2x"
+    
+  />
+
+
+							
+						</div>
+					</article>
+					<!--<ul>-->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<!--<li>-->
+						<!--<div  class="list-wrapper">-->
+							<!--&lt;!&ndash;<a class="sidebar-nav-item" href="/a_categories/devlog/">Devlog</a>&ndash;&gt;-->
+							<!--<h3 class="sidebar-nav-item">Devlog</h3>-->
+						<!--</div>-->
+						<!--<ul class="list-body">-->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/database/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/database/2/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/database/3/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/database/4/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/database/5/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/database/6/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/javascript/2/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/javascript/index.html">Database</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/sass/2/index.html">Sass</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/sass/index.html">Sass</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/unix/index.html">Unix</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/unix/2/index.html">Unix</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/unix/3/index.html">Unix</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/unix/4/index.html">Unix</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/unix/5/index.html">Unix</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+						<!--</ul>-->
+					<!--</li>-->
+					<!---->
+					<!---->
+					<!--<li>-->
+						<!--<div  class="list-wrapper">-->
+							<!--&lt;!&ndash;<a class="sidebar-nav-item" href="/a_categories/review/">Review</a>&ndash;&gt;-->
+							<!--<h3 class="sidebar-nav-item">Review</h3>-->
+						<!--</div>-->
+						<!--<ul class="list-body">-->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/goods/index.html">Goods</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+						<!--</ul>-->
+					<!--</li>-->
+					<!---->
+					<!---->
+					<!--<li>-->
+						<!--<div  class="list-wrapper">-->
+							<!--&lt;!&ndash;<a class="sidebar-nav-item" href="/a_categories/tip/">Tip</a>&ndash;&gt;-->
+							<!--<h3 class="sidebar-nav-item">Tip</h3>-->
+						<!--</div>-->
+						<!--<ul class="list-body">-->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/etc/index.html">Etc</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/web/2/index.html">Web</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/web/3/index.html">Web</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/web/4/index.html">Web</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/web/index.html">Web</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+						<!--</ul>-->
+					<!--</li>-->
+					<!---->
+					<!---->
+					<!--<li>-->
+						<!--<div  class="list-wrapper">-->
+							<!--&lt;!&ndash;<a class="sidebar-nav-item" href="/a_categories/portfolio/">Portfolio</a>&ndash;&gt;-->
+							<!--<h3 class="sidebar-nav-item">Portfolio</h3>-->
+						<!--</div>-->
+						<!--<ul class="list-body">-->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!--<li>-->
+								<!--<a class="sidebar-nav-subitem" href="/a_tags/portfolio/index.html">Portfolio</a>-->
+							<!--</li>-->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+							<!---->
+						<!--</ul>-->
+					<!--</li>-->
+					<!---->
+				<!--</ul>-->
+				</nav>
+			</div>
+		</div>
+
+		<!-- Nav pages -->
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+    
+    <!-- Nav links -->
+	  <!--<a href="https://github.com/KingFelix/emerald/archive/master.zip">Download</a>-->
+<!--<a href="https://github.com/KingFelix/emerald">Project on Github</a>-->
+<!--<a href="https://github.com/KingFelix/emerald">Categories</a>-->
+
+	</div>
+  <!-- Nav footer -->
+	
+	  <footer>
+	
+	<!--<span>version 1.1.0</span>-->
+
+</footer>
+	
+</nav>
+
+    
+    <!-- Icon menu -->
+	  <a id="nav-menu">
+	  	<div id="menu"></div>
+	  </a>
+
+      <!-- Header -->
+      
+        <header id="header">
+	<a href="/">
+		<!--<img src="/img/emerald.svg" alt="Emerald Logo">-->
+		<h1 class="top">M</h1>
+	  <h1 class="bottom">veloper</h1>
+	</a>
+</header>
+
+      
+
+    <!-- Main content -->
+		<div class="main-layout">
+			<div id="side-ad-left">
+				<div class="googleAd" style="min-width:250px; min-height:250px;">
+  <!-- 수직2 -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-9898399593070144"
+       data-ad-slot="1150677138"
+       data-ad-format="vertical"
+       data-full-width-responsive="true"></ins>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+<div class="googleAd" style="min-width:250px; min-height:250px;">
+  <!-- 정사각1 -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-9898399593070144"
+       data-ad-slot="3014955973"
+       data-ad-format="vertical"
+       data-full-width-responsive="true"></ins>
+  <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+			</div>
+			<div id="container">
+				<main>
+					<article id="post-page">
+	<h2 class="title">[유닉스] 쉘 스크립트(Shell Script) 제어문 - select, continue, until 문</h2>
+	<a class="tag" href="" data-flip="title">
+		<time datetime="" class="by-line">2020년 05월 12일</time>
+	</a>
+	<hr>
+	<div class="content">
+		<div class='kakao-ad-top'>
+			<div>
+				<ins class="kakao_ad_area" style="display:none;" data-ad-unit= "DAN-sksc2jl3lbhe" data-ad-width= "250" data-ad-height= "250"></ins>
+			</div>
+			<div>
+				<ins class="kakao_ad_area" style="display:none;" data-ad-unit= "DAN-s13c6ao56o2p" data-ad-width= "250" data-ad-height= "250"></ins>
+			</div>
+			<div>
+				<ins class="kakao_ad_area" style="display:none;" data-ad-unit= "DAN-to1sb755uomv" data-ad-width= "250" data-ad-height= "250"></ins>
+			</div>
+		</div>
+
+		<p><img src="/assets/img/unix/2020-05-12-unix-48.png" alt="" /></p>
+
+<h1 id="until-문">until 문</h1>
+
+<ul>
+  <li>조건 명령이 정상 실행될 때까지 주어진 명령을 반복 실행</li>
+  <li>while 문과 반복 실행 조건이 반대하는 점을 제외하고는 거의 유사한 기능 제공</li>
+  <li>형식</li>
+</ul>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">until</span> <span class="err">조건명령</span>
+<span class="k">do</span>
+    <span class="err">명령</span>
+<span class="n">done</span>
+</code></pre></div></div>
+
+<ul>
+  <li>스크립트 예</li>
+</ul>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">$</span> <span class="n">cat</span> <span class="o">-</span><span class="n">n</span> <span class="n">test_until</span>
+<span class="mi">1</span> <span class="o">#!/</span><span class="n">bin</span><span class="o">/</span><span class="n">bash</span>
+<span class="mi">2</span> <span class="o">#</span>
+<span class="mi">3</span> <span class="o">#</span> <span class="n">test</span> <span class="k">until</span> <span class="n">loop</span>
+<span class="mi">4</span> <span class="o">#</span>
+<span class="mi">5</span>
+<span class="mi">6</span> <span class="n">echo</span> <span class="err">“</span><span class="k">Input</span> <span class="n">name</span> <span class="p">:</span><span class="err">”</span>
+<span class="mi">7</span> <span class="k">read</span> <span class="n">person</span>
+<span class="mi">8</span>
+<span class="mi">9</span> <span class="k">until</span> <span class="n">who</span> <span class="o">|</span> <span class="n">grep</span> <span class="err">$</span><span class="n">person</span> <span class="o">#</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="k">null</span>
+<span class="mi">10</span> <span class="k">do</span>
+<span class="mi">11</span>    <span class="n">sleep</span>
+<span class="mi">12</span> <span class="n">done</span>
+<span class="mi">13</span>
+<span class="mi">14</span> <span class="n">echo</span> <span class="err">“\</span><span class="mi">007</span><span class="err">”</span> <span class="o">#</span> <span class="n">beep</span>
+<span class="err">$</span>
+</code></pre></div></div>
+
+<ul>
+  <li>실행 결과</li>
+</ul>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">$</span> <span class="n">chmod</span> <span class="o">+</span><span class="n">x</span> <span class="n">test_until</span>
+<span class="err">$</span> <span class="p">.</span><span class="o">/</span><span class="n">test_until</span>
+<span class="k">Input</span> <span class="n">name</span> <span class="p">:</span>
+<span class="n">user2</span>
+<span class="n">user2</span> <span class="n">pts</span><span class="o">/</span><span class="mi">3</span>
+<span class="err">$</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h1 id="select-문">select 문</h1>
+
+<ul>
+  <li>메뉴를 생성할 수 있는 루프 명령</li>
+  <li>list에 지정한 항목을 선택 가능한 메뉴로 만들어 화면에 출력</li>
+  <li>각 항목은 순서대로 번호가 붙여짐</li>
+  <li>사용자 입력을 위한 프롬프트로는 PS3 환경 변수에 저장된 문자열을 사용</li>
+  <li>사용자가 입력한 값은 select와 in 사이에 지정한 변수에 저장됨</li>
+  <li>형식</li>
+</ul>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">select</span> <span class="err">변수</span> <span class="k">in</span> <span class="n">list</span>
+<span class="k">do</span>
+    <span class="err">명령</span>
+<span class="n">done</span>
+</code></pre></div></div>
+
+<ul>
+  <li>스크립트 예</li>
+</ul>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">$</span> <span class="n">cat</span> <span class="o">-</span><span class="n">n</span> <span class="n">test_select</span>
+<span class="mi">1</span> <span class="o">#!/</span><span class="n">bin</span><span class="o">/</span><span class="n">bash</span>
+<span class="mi">2</span> <span class="o">#</span>
+<span class="mi">3</span> <span class="o">#</span> <span class="n">test</span> <span class="k">select</span>
+<span class="mi">4</span> <span class="o">#</span>
+<span class="mi">5</span>
+<span class="mi">6</span> <span class="n">PS3</span><span class="o">=</span><span class="err">“</span><span class="k">Input</span> <span class="n">command</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span> <span class="p">:</span><span class="err">”</span>
+<span class="mi">7</span>
+<span class="mi">8</span> <span class="k">select</span> <span class="n">cmd</span> <span class="k">in</span> <span class="n">pwd</span> <span class="nb">date</span> <span class="n">quit</span> <span class="o">#</span> <span class="n">pwd</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="nb">date</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">quit</span><span class="o">=</span><span class="mi">3</span>
+<span class="mi">9</span> <span class="k">do</span>
+<span class="mi">10</span>    <span class="k">case</span> <span class="err">$</span><span class="n">cmd</span> <span class="k">in</span>
+<span class="mi">11</span>      <span class="n">pwd</span><span class="p">)</span> <span class="n">pwd</span> <span class="p">;;</span>
+<span class="mi">12</span>      <span class="nb">date</span><span class="p">)</span> <span class="nb">date</span> <span class="p">;;</span>
+<span class="mi">13</span>      <span class="n">quit</span><span class="p">)</span> <span class="n">break</span> <span class="p">;;</span>
+<span class="mi">14</span>      <span class="o">*</span><span class="p">)</span> <span class="n">echo</span> <span class="err">“</span><span class="n">Invalid</span> <span class="k">input</span><span class="p">,</span> <span class="k">select</span> <span class="n">number</span><span class="err">”</span> <span class="p">;;</span>
+<span class="mi">15</span>    <span class="n">esac</span>
+<span class="mi">16</span>
+<span class="mi">17</span>    <span class="n">REPLY</span><span class="o">=</span>
+<span class="mi">18</span> <span class="n">done</span>
+<span class="err">$</span>
+</code></pre></div></div>
+
+<ul>
+  <li>실행 결과</li>
+</ul>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">$</span> <span class="n">chmod</span> <span class="o">+</span><span class="n">x</span> <span class="n">test_select</span>
+<span class="err">$</span> <span class="p">.</span><span class="o">/</span><span class="n">test_select</span>
+<span class="mi">1</span><span class="p">)</span> <span class="n">pwd</span>
+<span class="mi">2</span><span class="p">)</span> <span class="nb">date</span>
+<span class="mi">3</span><span class="p">)</span> <span class="n">quit</span>
+<span class="k">Input</span> <span class="n">command</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span> <span class="p">:</span><span class="mi">1</span>
+<span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">ksshin</span><span class="o">/</span><span class="n">Unix</span><span class="o">/</span><span class="n">ch13</span>
+<span class="mi">1</span><span class="p">)</span> <span class="n">pwd</span>
+<span class="mi">2</span><span class="p">)</span> <span class="nb">date</span>
+<span class="mi">3</span><span class="p">)</span> <span class="n">quit</span>
+<span class="k">Input</span> <span class="n">command</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span> <span class="p">:</span><span class="mi">2</span>
+<span class="mi">2015</span><span class="p">.</span> <span class="mi">07</span><span class="p">.</span> <span class="mi">15</span><span class="p">.</span> <span class="p">(</span><span class="err">수</span><span class="p">)</span> <span class="mi">21</span><span class="p">:</span><span class="mi">54</span><span class="p">:</span><span class="mi">37</span> <span class="p">(</span><span class="n">KST</span><span class="p">)</span>
+<span class="mi">1</span><span class="p">)</span> <span class="n">pwd</span>
+<span class="mi">2</span><span class="p">)</span> <span class="nb">date</span>
+<span class="mi">3</span><span class="p">)</span> <span class="n">quit</span>
+<span class="k">Input</span> <span class="n">commnad</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span> <span class="p">:</span><span class="mi">3</span>
+<span class="err">$</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h1 id="continue-문">continue 문</h1>
+
+<ul>
+  <li>continue는 루프 안에서 사용되어 이후 실행 순서를 무시하고 루프의 처음으로 돌아가는 명령</li>
+  <li>for, while, until, select 등 반복문을 사용해 동일한 작업을 반복하면서 조건에 따라 작업을 수행하지 않을 때 사용</li>
+  <li>루트가 중첩되어 있으면 숫자를 인자로 사용해 특정 루프의 처음으로 돌아갈 수 있음</li>
+  <li>스크립트 예</li>
+</ul>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">$</span> <span class="n">cat</span> <span class="o">-</span><span class="n">n</span> <span class="n">test_cont</span>
+<span class="mi">1</span> <span class="o">#!/</span><span class="n">bin</span><span class="o">/</span><span class="n">bash</span>
+<span class="mi">2</span> <span class="o">#</span>
+<span class="mi">3</span> <span class="o">#</span> <span class="n">test</span> <span class="k">continue</span>
+<span class="mi">4</span> <span class="o">#</span>
+<span class="mi">5</span>
+<span class="mi">6</span> <span class="k">for</span> <span class="n">person</span> <span class="k">in</span> <span class="err">$</span><span class="p">(</span><span class="o">&lt;</span> <span class="n">list</span><span class="p">)</span>
+<span class="mi">7</span> <span class="k">do</span>
+<span class="mi">8</span>     <span class="n">if</span> <span class="p">[[</span> <span class="err">$</span><span class="n">person</span> <span class="o">==</span> <span class="n">user2</span> <span class="p">]]</span>
+<span class="mi">9</span>     <span class="k">then</span>
+<span class="mi">10</span>      <span class="k">continue</span>
+<span class="mi">11</span>    <span class="n">fi</span>
+<span class="mi">12</span>
+<span class="mi">13</span>    <span class="n">echo</span> <span class="err">“</span><span class="n">Hello</span><span class="p">,</span> <span class="err">$</span><span class="n">person</span> <span class="err">”</span>
+<span class="mi">14</span> <span class="n">done</span>
+<span class="err">$</span>
+</code></pre></div></div>
+
+<ul>
+  <li>실행 결과</li>
+</ul>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">$</span> <span class="n">chmod</span> <span class="o">+</span><span class="n">x</span> <span class="n">test_cont</span>
+<span class="err">$</span> <span class="p">.</span><span class="o">/</span><span class="n">test_cont</span>
+<span class="n">Hello</span><span class="p">,</span> <span class="n">user3</span>
+<span class="n">Hello</span><span class="p">,</span> <span class="n">user4</span>
+<span class="err">$</span>
+</code></pre></div></div>
+
+
+
+		<!-- buymeacoffee 버튼 -->
+		<div id="sponsor-button" style="text-align: center">
+			<a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/TWYGPxs">
+				<img src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg" alt="Buy me a coffee">
+				<span style="margin-left:15px;font-size:28px !important;">Buy me a coffee</span>
+			</a>
+		</div>
+
+
+		<div class="kakao-ad-bottom">
+			<div>
+				<ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-rhg23mrcvho4" data-ad-width= "728" data-ad-height= "90"></ins>
+			</div>
+			<div>
+				<ins class="kakao_ad_area" style="display:none;" data-ad-unit    = "DAN-r1icduz054jb" data-ad-width   = "728" data-ad-height  = "90"></ins>
+			</div>
+			<div>
+				<ins class="kakao_ad_area" style="display:none;" data-ad-unit    = "DAN-1jy7ort537t4o" data-ad-width   = "728" data-ad-height  = "90"></ins>
+			</div>
+		</div>
+
+		<aside class="comments" role="complementary">
+  <h2>Comments</h2>
+  <hr/>
+  <div id="disqus_thread"></div>
+  <script>
+    !function (s, i) {
+      function e(e) {
+        var t = s.pageYOffset || i.body.scrollTop;
+        s.DISQUS && !s._disqusThis && !s._disqusFirst && t + s.innerHeight >= s._disqusThreadOffsetTop && (s._disqusThis = !0, s.DISQUS.reset(
+          { reload: !0, config: d }))
+      }
+
+      var d = function () {
+        this.page.title = "[유닉스] 쉘 스크립트(Shell Script) 제어문 - select, continue, until 문",
+          this.page.identifier = "/devlog/2020/05/12/unix-48",
+          this.page.url = "https://m-veloper.github.io/devlog/2020/05/12/unix-48/"
+      };
+      s._disqusFirst = void 0 === s._disqusFirst || s._disqusFirst, s._disqusLoading = void 0 !== s._disqusLoading && s._disqusLoading, s._disqusThis = !1, s._disqusThreadOffsetTop = i.getElementById(
+        "disqus_thread").offsetTop, s._disqusLoading ? s._disqusFirst = !1 : (s._disqusLoading = !0, loadJSDeferred(
+        "//m-veloper.disqus.com/embed.js"), s.addEventListener ? s.addEventListener(
+        "scroll",
+        e,
+        { passive: !0 }) : s.attachEvent ? s.attachEvent("onscroll", e) : s.onscroll = e)
+    }(window, document);
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+</aside>
+
+	</div>
+</article>
+
+
+				</main>
+				<!-- 페이지 네이션-->
+				<div class="pagination-container">
+
+</div>
+			</div>
+			<div id="side-ad-right">
+				<div class="googleAd" style="min-width:250px; min-height:250px;">
+  <!-- 수직 -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-9898399593070144"
+       data-ad-slot="4781185980"
+       data-ad-format="vertical"
+       data-full-width-responsive="true"></ins>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+<div class="googleAd" style="min-width:250px; min-height:250px;">
+  <!-- 정사각2 -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-9898399593070144"
+       data-ad-slot="3731628500"
+       data-ad-format="vertical"
+       data-full-width-responsive="true"></ins>
+  <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+			</div>
+		</div>
+		  <!-- Footer -->
+	    <!--<footer class="footer"><span>@2020 - m_veloper</span></footer>-->
+<footer class="footer">
+  <div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div>
+        
+
+        
+        
+        <div class="sidebar-social">
+          <ul>
+  
+    
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="https://github.com/m-veloper">
+    <span class="icon-github" title="GitHub"></span>
+    <!--<span class="sr-only">GitHub</span>-->
+  </a>
+</li>
+
+  
+    
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="mailto:m_veloper@naver.com">
+    <span class="icon-mail" title="Email"></span>
+    <!--<span class="sr-only">Email</span>-->
+  </a>
+</li>
+
+  
+    
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="https://m-veloper.github.io/feed.xml">
+    <span class="icon-rss2" title="RSS"></span>
+    <!--<span class="sr-only">RSS</span>-->
+  </a>
+</li>
+
+  
+</ul>
+
+        </div>
+        
+      </div>
+      <div>
+        <!--<p><small> Copyright © 2020 | <a href="/" title="">m_veloper</a> | All rights reserved.</small></p>-->
+        <p>Copyright © 2020 | <a href="/" title="">m_veloper</a> | All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</footer>
+
+	    <!-- Script -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/assets/js/main.js"></script>
+<script src="/assets/js/load-js-deferred.js"></script>
+<script src="/assets/js/fontawesome-all.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+<script data-ad-client="ca-pub-9898399593070144" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+<script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
+
+
+
+
+
+<script>
+  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+  ga('create', 'UA-158538042-1', 'auto');
+  ga('send', 'pageview');
+  loadJSDeferred('https://www.google-analytics.com/analytics.js');
+</script>
+
+
+<!-- m-veloper 네이버애널리틱스 -->
+<script type="text/javascript">
+    if(!wcs_add) var wcs_add = {};
+    wcs_add["wa"] = "45688ef54680e0";
+    if(window.wcs) {
+        wcs_do();
+    }
+</script>
+
+
+	</div>
+</body>
+</html>
