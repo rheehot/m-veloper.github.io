@@ -4,12 +4,22 @@
  <title>슬기로운 개발 생활</title>
  <link href="https://m-veloper.github.io/atom.xml" rel="self"/>
  <id>https://m-veloper.github.io</id>
- <updated>2020-05-12T00:53:56+09:00</updated>
+ <updated>2020-05-13T00:12:00+09:00</updated>
  <author>
    <name>m-veloper</name>
    <uri>https://m-veloper.github.io</uri>
    <email>m_veloper@naver.com</email>
  </author>
+
+ 
+
+ <entry>
+   <title>[유닉스] 쉘 스크립트(Shell Script) 함수</title>
+   <link href="https://m-veloper.github.io/devlog/2020/05/13/unix-49/"/>
+   <id>https://m-veloper.github.io/devlog/2020/05/13/unix-49</id>
+   <updated>2020-05-13T00:00:00+09:00</updated>
+   <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-05-13-unix-49.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;함수&quot;&gt;함수&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;앨리어스를 이용하면 간단한 명령들을 하나의 다른 이름으로 재정의하여 사용할 수 있음&lt;/li&gt; &lt;li&gt;명령을 조건에 따라 다르게 실행하거나 인자를 받아 처리해야 할 때 함수를 사용&lt;/li&gt; &lt;li&gt;함수는 스크립트 안에서 정의하여 프로그래밍에 활용될 수도 있고, 사용자 초기화 파일에 정의하여 나만의 명령으로 사용할 수도 있음&lt;/li&gt; &lt;/ul&gt; &lt;h3 id=&quot;함수의-정의&quot;&gt;함수의...</content>
+ </entry>
 
  
 
@@ -99,16 +109,6 @@
    <id>https://m-veloper.github.io/devlog/2020/05/05/database-56</id>
    <updated>2020-05-05T00:00:00+09:00</updated>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/05/2020-05-05-database-56.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;java&quot;&gt;JAVA&lt;/h1&gt; &lt;h3 id=&quot;프로그래밍-언어&quot;&gt;프로그래밍 언어&lt;/h3&gt; &lt;ul&gt; &lt;li&gt;기계어(Machine Language) &lt;ul&gt; &lt;li&gt;0, 1의 이진수로 구성된 언어&lt;/li&gt; &lt;li&gt;컴퓨터의 CPU는 기계어만 이해하고 처리가능&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;어셈블리어 &lt;ul&gt; &lt;li&gt;기계어 명령을 ADD, SUB, MOVE 등과 같은 표현하기 쉬운 상징적인 단어인 니모닉 기호(mnemonic symbol)로 일대일 대응시킨 언어&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;고급언어 &lt;ul&gt; &lt;li&gt;사람이 이해하기...</content>
- </entry>
-
- 
-
- <entry>
-   <title>[Database] 전체 조인 (Full Join)</title>
-   <link href="https://m-veloper.github.io/devlog/2020/05/05/database-55/"/>
-   <id>https://m-veloper.github.io/devlog/2020/05/05/database-55</id>
-   <updated>2020-05-05T00:00:00+09:00</updated>
-   <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/05/2020-05-05-database-55.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;전체-조인-full-join&quot;&gt;전체 조인 (Full Join)&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;테이블1과 테이블2의 모든 투플을 반환한다.&lt;/li&gt; &lt;li&gt;왼쪽 조인과 오른쪽 조인을 결합한 결과&lt;/li&gt; &lt;li&gt;기본 형식&lt;/li&gt; &lt;/ul&gt; &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;속성&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;리스트&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;테이블&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FULL&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;OUTER&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;JOIN&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;테이블&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ON&lt;/span&gt;...</content>
  </entry>
 
  

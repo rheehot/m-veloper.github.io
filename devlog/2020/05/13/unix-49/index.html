@@ -9,7 +9,7 @@
 	<meta name="naver-site-verification" content="fa37cbf8ce41948de6e94c01991ffa04cea9b093"/>
 	<meta name="google-site-verification" content="5M4Zw9wg_UqQkvlayfb5Mc_ogvJdc013w_zLUkxgO-Y" />
 
-	<!--<title>[Database] 자바(JAVA) 란? 자바의 정의</title>-->
+	<!--<title>[유닉스] 쉘 스크립트(Shell Script) 함수</title>-->
 	<title>슬기로운 개발 생활</title>
 
 	<!-- CSS & fonts -->
@@ -1094,9 +1094,9 @@
 			<div id="container">
 				<main>
 					<article id="post-page">
-	<h2 class="title">[Database] 자바(JAVA) 란? 자바의 정의</h2>
+	<h2 class="title">[유닉스] 쉘 스크립트(Shell Script) 함수</h2>
 	<a class="tag" href="" data-flip="title">
-		<time datetime="" class="by-line">2020년 05월 05일</time>
+		<time datetime="" class="by-line">2020년 05월 13일</time>
 	</a>
 	<hr>
 	<div class="content">
@@ -1112,233 +1112,162 @@
 			</div>
 		</div>
 
-		<p><img src="/assets/img/database/2020/05/2020-05-05-database-56.png" alt="" /></p>
+		<p><img src="/assets/img/unix/2020-05-13-unix-49.png" alt="" /></p>
 
-<h1 id="java">JAVA</h1>
-
-<h3 id="프로그래밍-언어">프로그래밍 언어</h3>
+<h1 id="함수">함수</h1>
 
 <ul>
-  <li>기계어(Machine Language)
+  <li>앨리어스를 이용하면 간단한 명령들을 하나의 다른 이름으로 재정의하여 사용할 수 있음</li>
+  <li>명령을 조건에 따라 다르게 실행하거나 인자를 받아 처리해야 할 때 함수를 사용</li>
+  <li>함수는 스크립트 안에서 정의하여 프로그래밍에 활용될 수도 있고, 사용자 초기화 파일에 정의하여 나만의 명령으로 사용할 수도 있음</li>
+</ul>
+
+<h3 id="함수의-정의">함수의 정의</h3>
+
+<ul>
+  <li>함수를 프롬프트에서 정의해 사용 가능</li>
+  <li>함수의 본문을 나타내는 중괄호는 함수 이름 다음에 써도 되지만, 앞뒤에 공백을 주어 다른 문자열과 구분해야 함</li>
+  <li>기본 형식</li>
+</ul>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">function</span> <span class="n">functioname</span>
+<span class="err">{</span>
+  <span class="err">명령들</span>
+<span class="err">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>지우려는 파일을 휴지통으로 보내는 함수 만들기
     <ul>
-      <li>0, 1의 이진수로 구성된 언어</li>
-      <li>컴퓨터의 CPU는 기계어만 이해하고 처리가능</li>
-    </ul>
-  </li>
-  <li>어셈블리어
-    <ul>
-      <li>기계어 명령을 ADD, SUB, MOVE 등과 같은 표현하기 쉬운 상징적인 단어인 니모닉 기호(mnemonic symbol)로 일대일 대응시킨 언어</li>
-    </ul>
-  </li>
-  <li>고급언어
-    <ul>
-      <li>사람이 이해하기 쉽고, 복잡한 작업, 자료 구조,알고리즘을 표현하기 위해 고안된 언어</li>
-      <li>Pascal, Basic, C/C++, Java, C#</li>
-      <li>절차 지향 언어와 객체 지향 언어로 나눌 수 있음</li>
+      <li>휴지통으로 사용할 디렉토리 생성</li>
+      <li>디렉토리 이름은 .으로 시작하여 숨김 파일로</li>
+      <li>프롬프트에서 function 키워드와 함수 이름을 입력하면 프롬프트가 PS2 변수에 지정된 2차 프롬프트로 변경되어 다음 입력을 기다림</li>
+      <li>{ } 사이에 원하는 명령을 입력</li>
     </ul>
   </li>
 </ul>
 
-<h3 id="컴파일">컴파일</h3>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">$</span> <span class="n">mkdir</span> <span class="o">~/</span><span class="p">.</span><span class="n">TRASH</span>
+<span class="err">$</span> <span class="k">function</span> <span class="n">trash</span> <span class="err">{</span>
+<span class="o">&gt;</span> <span class="n">mv</span> <span class="err">$</span><span class="o">*</span> <span class="o">~/</span><span class="p">.</span><span class="n">TRASH</span>
+<span class="o">&gt;</span> <span class="err">}</span>
+<span class="err">$</span>
+</code></pre></div></div>
 
 <ul>
-  <li>소스 : 프로그래밍 언어로 작성된 텍스트 파일</li>
-  <li>컴파일 : 소스 파일을 컴퓨터가 이해할 수 있는 기계어로 만드는 과정
+  <li>함수가 올바로 정의되었는지 확인하려면 typeset –f 명령 이용
     <ul>
-      <li>소스 파일 확장자와 컴파일 된 파일의 확장자
-        <ul>
-          <li>자바 : .java -&gt; .class</li>
-          <li>C : .c -&gt; .obj-&gt; .exe</li>
-          <li>C++ : .cpp -&gt; .obj -&gt; .exe</li>
-        </ul>
-      </li>
+      <li>정의되어 있는 모든 함수의 목록을 보여줌</li>
     </ul>
   </li>
 </ul>
 
-<h3 id="자바의-목적">자바의 목적</h3>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">$</span> <span class="n">typeset</span> <span class="o">-</span><span class="n">f</span>
+<span class="n">trash</span> <span class="p">(</span> <span class="p">)</span>
+<span class="err">{</span>
+  <span class="n">mv</span> <span class="err">$</span><span class="o">*</span> <span class="o">~/</span><span class="p">.</span><span class="n">TRASH</span>
+<span class="err">}</span>
+<span class="err">$</span>
+</code></pre></div></div>
+
+<h3 id="함수-호출">함수 호출</h3>
 
 <ul>
-  <li>플랫폼 호환성 문제 해결
+  <li>파일 생성 후 .TRASH 디렉토리로 삭제</li>
+  <li>trash 함수를 .profile이나 .bashrc 파일에 저장하면 이후 로그인할 때마다 이 함수를 사용할 수 있음</li>
+  <li>앨리어스를 이용해 rm 명령을 trash 함수로 바꾸어 놓을 수도 있음</li>
+</ul>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">$</span> <span class="n">touch</span> <span class="n">a</span> <span class="n">b</span> <span class="k">c</span>
+<span class="err">$</span> <span class="n">trash</span> <span class="n">a</span> <span class="n">b</span> <span class="k">c</span>
+<span class="err">$</span> <span class="n">ls</span>
+<span class="err">$</span> <span class="n">ls</span> <span class="o">~/</span><span class="p">.</span><span class="n">TRASH</span>
+<span class="n">a</span> <span class="n">b</span> <span class="k">c</span>
+<span class="err">$</span>
+</code></pre></div></div>
+
+<h3 id="함수의-종료--return-문">함수의 종료 : return 문</h3>
+
+<ul>
+  <li>함수 본문의 마지막 문장을 실행하거나 return 문을 만나면 종료</li>
+  <li>함수의 종료 값은 return 명령으로 지정</li>
+  <li>return 명령이 없으면 함수 안의 마지막 명령의 종료 상태 값이 함수의 종료 값이 되고 $? 변수에 저장됨</li>
+  <li>예제 : 인자로 주어진 두 값을 더하는 스크립트</li>
+</ul>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">$</span> <span class="n">cat</span> <span class="err">–</span><span class="n">n</span> <span class="n">test_add</span>
+<span class="mi">1</span> <span class="o">#!/</span><span class="n">bin</span><span class="o">/</span><span class="n">bash</span>
+<span class="mi">2</span> <span class="o">#</span>
+<span class="mi">3</span> <span class="o">#</span> <span class="n">test</span> <span class="k">sum</span> <span class="k">function</span>
+<span class="mi">4</span> <span class="o">#</span>
+<span class="mi">5</span>
+<span class="mi">6</span> <span class="k">function</span> <span class="k">sum</span> <span class="err">{</span>
+<span class="mi">7</span>     <span class="n">typeset</span> <span class="k">sum</span>
+<span class="mi">8</span>
+<span class="mi">9</span>     <span class="p">((</span> <span class="k">sum</span> <span class="o">=</span> <span class="err">$</span><span class="mi">1</span> <span class="o">+</span> <span class="err">$</span><span class="mi">2</span> <span class="p">))</span>
+<span class="mi">10</span>    <span class="k">return</span> <span class="err">$</span><span class="k">sum</span>
+<span class="mi">11</span> <span class="err">}</span>
+<span class="mi">12</span>
+<span class="mi">13</span> <span class="k">sum</span> <span class="err">$</span><span class="mi">1</span> <span class="err">$</span><span class="mi">2</span>
+<span class="mi">14</span> <span class="n">echo</span> <span class="err">“$</span><span class="mi">1</span> <span class="o">+</span> <span class="err">$</span><span class="mi">2</span> <span class="o">=</span> <span class="err">$</span><span class="o">?</span><span class="err">”</span>
+<span class="err">$</span>
+</code></pre></div></div>
+
+<ul>
+  <li>실행 결과</li>
+</ul>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">$</span> <span class="n">chmod</span> <span class="o">+</span><span class="n">x</span> <span class="n">test_add</span>
+<span class="err">$</span> <span class="p">.</span><span class="o">/</span><span class="n">test_add</span> <span class="mi">1</span> <span class="mi">2</span>
+<span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="err">$</span>
+</code></pre></div></div>
+
+<h3 id="함수-삭제">함수 삭제</h3>
+
+<ul>
+  <li>unset 명령을 이용해 삭제</li>
+</ul>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">$</span> <span class="n">unset</span> <span class="err">–</span><span class="n">f</span> <span class="n">trash</span>
+<span class="err">$</span> <span class="n">typeset</span> <span class="o">-</span><span class="n">f</span>
+<span class="err">$</span>
+</code></pre></div></div>
+
+<h3 id="함수-예제">함수 예제</h3>
+
+<ul>
+  <li>여러 곳의 target으로 파일을 복사하는 함수를 작성하여, temp란 파일을 백업 파일로 복사하는 쉘 프로그램
     <ul>
-      <li>기존 언어로 작성된 프로그램은 PC, 유닉스, 메인 프레임 등 플랫폼 간에 호환성 없음</li>
-      <li>소스를 다시 컴파일하거나 프로그램을 재 작성해야 하는 단점</li>
-    </ul>
-  </li>
-  <li>플랫폼 독립적인 언어 개발
-    <ul>
-      <li>모든 플랫폼에서 호환성을 갖는 프로그래밍 언어 필요</li>
-      <li>네트워크, 특히 웹에 최적화된 프로그래밍 언어의 필요성 대두</li>
-    </ul>
-  </li>
-  <li>메모리 사용량이 적고 다양한 플랫폼을 가지는 가전 제품에 적용
-    <ul>
-      <li>가전 제품 : 작은 량의 메모리를 가지는 제어 장치</li>
-      <li>내장형 시스템 요구 충족</li>
+      <li>shift는 받아들인 인수를 하나씩 shift하는 명령</li>
+      <li>shift 명령을 쓰면 두 번째 인수로 offset이 됨</li>
+      <li>“$#”은 받아들인 인수의 개수</li>
+      <li>“$1”은 첫 번재 인수, “$2”는 두 번째 인수</li>
     </ul>
   </li>
 </ul>
 
-<h3 id="wora-write-once-run-anywhere">WORA (Write Once Run Anywhere)</h3>
-
-<ul>
-  <li>한번 작성된 코드는 모든 플랫폼에서 바로 실행되는 자바의 특징</li>
-  <li>C/C++ 등 기존 언어가 가진 플랫폼 종속성 극복
-    <ul>
-      <li>OS, H/W에 상관없이 자바 프로그램이 동일하게 실행</li>
-    </ul>
-  </li>
-  <li>네트워크에 연결된 어느 클라이언트에서나 실행
-    <ul>
-      <li>웹 브라우저, 분산 환경 지원</li>
-    </ul>
-  </li>
-</ul>
-
-<h3 id="wora를-가능하게-하는-자바의-특징">WORA를 가능하게 하는 자바의 특징</h3>
-
-<ul>
-  <li>바이트 코드(byte code)
-    <ul>
-      <li>자바 소스를 컴파일한 목적 코드</li>
-      <li>CPU에 종속적이지 않은 중립적인 코드</li>
-      <li>JVM에 의해 해석되고 실행됨</li>
-      <li>클래스 파일(.class)에 저장</li>
-    </ul>
-  </li>
-  <li>JVM(Java Virtual Machine)
-    <ul>
-      <li>자바 바이트 코드를 실행하는 자바 가상 기계(소프트웨어)</li>
-      <li>각기 다른 플랫폼에 설치</li>
-      <li>동일한 자바 실행 환경 제공</li>
-      <li>자바 가상 기계 자체는 플랫폼에 종속적
-        <ul>
-          <li>자바 가상 기계는 플랫폼마다 각각 작성됨</li>
-          <li>예) 리눅스에서 작동하는 자바 가상 기계는 윈도우에서 작동하지 않음</li>
-        </ul>
-      </li>
-      <li>자바 가상 기계 개발 및 공급
-        <ul>
-          <li>자바 개발사인 오라클 외 IBM, MS 등 다양한 회사에서 제작 공급</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-</ul>
-
-<h3 id="자바의-배포판">자바의 배포판</h3>
-
-<ul>
-  <li>JAVA SE
-    <ul>
-      <li>자바 표준 배포판(Standard Edition)</li>
-      <li>데스크탑과 서버 응용 개발 플랫폼</li>
-    </ul>
-  </li>
-  <li>Java ME
-    <ul>
-      <li>자바 마이크로 배포판</li>
-      <li>휴대 전화나 PDA, 셋톱박스 등 제한된 리소스를 갖는 하드웨어에서 응용 개발을 위한 플랫폼</li>
-      <li>Java SE의 서브셋 + 임베디드 및 가전 제품을 위한 API 정의</li>
-    </ul>
-  </li>
-  <li>Java EE
-    <ul>
-      <li>자바를 이용한 다중 사용자, 기업용 응용 개발을 위한 플랫폼</li>
-      <li>Java SE + 인터넷 기반의 서버사이드 컴퓨팅 관련 API 추가</li>
-    </ul>
-  </li>
-</ul>
-
-<h3 id="자바-개발-환경">자바 개발 환경</h3>
-
-<ul>
-  <li>JRE(Java Runtime Environment)
-    <ul>
-      <li>자바 실행 환경</li>
-      <li>JVM 포함</li>
-      <li>자바 실행 환경만 필요한 경우 JRE만 따로 다운 가능</li>
-    </ul>
-  </li>
-  <li>JDK(Java Development Kit)
-    <ul>
-      <li>자바 응용 개발 환경</li>
-      <li>개발에 필요한 도구 포함</li>
-      <li>컴파일러, JRE (Java Runtime Environment), 클래스 라이브러리, 샘플 등 포함</li>
-    </ul>
-  </li>
-  <li>JDK의 bin 디렉터리에 포함된 주요 개발 도구
-    <ul>
-      <li>javac : 자바 소스를 바이트 코드로 변환하는 컴파일러</li>
-      <li>java : jre의 bin 디렉터리에도 있는 자바 응용프로그램 실행기</li>
-      <li>javadoc : 자바소스 프로그램으로부터 HTML형식의 API 도큐먼트 생성</li>
-      <li>jar : 자바클래스 파일을 압축한 자바 아카이브 파일 (JAR)의 생성하고 관리하는 유틸리티</li>
-      <li>jdb : 자바 디버거</li>
-      <li>javap : 클래스 파일이 담긴 바이트 코드를 자바 소스와 함께 보여주는 디어셈블러</li>
-      <li>appletviewer - 웹 브라우저 없이 애플릿 응용프로그램을 실행하고 디버깅하는 유틸리티</li>
-    </ul>
-  </li>
-  <li>자바 API ( Application Programming Interface )
-    <ul>
-      <li>JDK에 포함된 클래스 라이브러리
-        <ul>
-          <li>주요한 기능들을 미리 구현한 클래스 라이브러리의 집합</li>
-        </ul>
-      </li>
-      <li>개발자는 API를 이용하여 쉽고 빠르게 자바 프로그램 개발
-        <ul>
-          <li><a href="http://docs.oracle.com/javase/8/docs/api">API</a>에서 정의한 규격에 따라 클래스 사용</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>자바 통합 개발 환경 ( IDE – Integrated Development Environment )
-    <ul>
-      <li>편집, 컴파일, 디버깅을 한번에 할 수 있는 통합된 개발 환경</li>
-      <li>이클립스(Eclipse)
-        <ul>
-          <li>자바 응용 프로그램 개발을 위한 통합 개발 환경</li>
-          <li>IBM에 의해 개발된 오픈 소스 프로젝트</li>
-          <li><a href="http://www.eclipse.org/downloads/">이클립스 다운로드</a></li>
-        </ul>
-      </li>
-      <li>이클립스 사용시 주의 사항
-        <ul>
-          <li>설치된 JRE가 32bit 또는 64bit version 에 따라, 이클립스도 동일한 package를 사용하여야 한다.</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-</ul>
-
-<p><br /></p>
-
-<h1 id="jdbc">JDBC</h1>
-
-<ul>
-  <li>관계형 데이터베이스에 저장된 데이터를 접근 및 조작할 수 있게 하는 자바 API</li>
-  <li>자바 응용프로그램이 다양한 DBMS에 대해 일관된 API로 데이터베이스 연결, 검색, 수정, 관리를 할 수 있게 한다.</li>
-  <li>자바 응용프로그램 개발자는 DBMS의 종류에 관계없이 JDBC API만을 이용하면 된다.</li>
-  <li>JDBC 구조도</li>
-</ul>
-
-<p><img src="/assets/img/database/2020/05/2020-05-05-database-56-01.png" alt="" /></p>
-
-<ul>
-  <li>JDBC 드라이버 매니저
-    <ul>
-      <li>자바 API에서 지원</li>
-      <li>JDBC 드라이버를 로드</li>
-    </ul>
-  </li>
-  <li>JDBC 드라이버
-    <ul>
-      <li>전용 프로토콜을 이용하여 DBMS에 접근</li>
-      <li>DBMS마다 고유한 JDBC 드라이버를 제공</li>
-      <li><a href="www.mysql.com/downloads/">JDBC 드라이버 다운로드</a></li>
-    </ul>
-  </li>
-</ul>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">$</span> <span class="n">cat</span> <span class="n">mcp</span>
+<span class="n">multicopy</span><span class="p">()</span>
+<span class="err">{</span>
+    <span class="k">source</span><span class="o">=</span><span class="err">$</span><span class="mi">1</span>
+    <span class="n">while</span> <span class="p">[</span> <span class="err">$</span><span class="o">#</span> <span class="o">-</span><span class="n">gt</span> <span class="mi">1</span> <span class="p">]</span>
+    <span class="k">do</span>
+      <span class="n">cp</span> <span class="err">$</span><span class="k">source</span> <span class="err">$</span><span class="mi">2</span>
+      <span class="n">shift</span>
+    <span class="n">done</span>
+<span class="err">}</span>
+<span class="n">multicopy</span> <span class="err">$</span><span class="mi">1</span> <span class="err">$</span><span class="mi">2</span> <span class="err">$</span><span class="mi">3</span> <span class="err">$</span><span class="mi">4</span>
+<span class="n">echo</span> <span class="err">$</span><span class="mi">1</span><span class="err">“의</span> <span class="err">백업파일</span> <span class="err">”$</span><span class="mi">2</span> <span class="err">$</span><span class="mi">3</span> <span class="err">$</span><span class="mi">3</span><span class="err">“</span> <span class="err">이</span> <span class="err">생성되었습니다</span><span class="p">.</span><span class="err">”</span>
+<span class="o">^</span><span class="n">z</span>
+<span class="err">$</span> <span class="n">ls</span>
+<span class="n">document</span> <span class="n">mc</span> <span class="k">temp</span> <span class="n">test</span>
+<span class="err">$</span> <span class="n">mcp</span> <span class="k">temp</span> <span class="n">temp1</span> <span class="n">temp2</span> <span class="n">temp3</span>
+<span class="k">temp</span><span class="err">의</span> <span class="err">백업파일</span> <span class="n">temp1</span> <span class="n">temp2</span> <span class="n">temp3</span> <span class="err">이</span> <span class="err">생성되었습니다</span><span class="p">.</span>
+<span class="err">$</span> <span class="n">ls</span>
+<span class="n">document</span> <span class="n">mc</span> <span class="k">temp</span> <span class="n">temp1</span> <span class="n">temp2</span> <span class="n">temp3</span> <span class="n">test</span>
+<span class="err">$</span>
+</code></pre></div></div>
 
 
 
@@ -1376,9 +1305,9 @@
       }
 
       var d = function () {
-        this.page.title = "[Database] 자바(JAVA) 란? 자바의 정의",
-          this.page.identifier = "/devlog/2020/05/05/database-56",
-          this.page.url = "https://m-veloper.github.io/devlog/2020/05/05/database-56/"
+        this.page.title = "[유닉스] 쉘 스크립트(Shell Script) 함수",
+          this.page.identifier = "/devlog/2020/05/13/unix-49",
+          this.page.url = "https://m-veloper.github.io/devlog/2020/05/13/unix-49/"
       };
       s._disqusFirst = void 0 === s._disqusFirst || s._disqusFirst, s._disqusLoading = void 0 !== s._disqusLoading && s._disqusLoading, s._disqusThis = !1, s._disqusThreadOffsetTop = i.getElementById(
         "disqus_thread").offsetTop, s._disqusLoading ? s._disqusFirst = !1 : (s._disqusLoading = !0, loadJSDeferred(
