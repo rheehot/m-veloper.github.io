@@ -9,7 +9,7 @@
 	<meta name="naver-site-verification" content="fa37cbf8ce41948de6e94c01991ffa04cea9b093"/>
 	<meta name="google-site-verification" content="5M4Zw9wg_UqQkvlayfb5Mc_ogvJdc013w_zLUkxgO-Y" />
 
-	<!--<title>[Sass/SCSS] 재활용(Mixins) - @include </title>-->
+	<!--<title>[유닉스] 쉘 스크립트(Shell Script) 디버깅</title>-->
 	<title>슬기로운 개발 생활</title>
 
 	<!-- CSS & fonts -->
@@ -1096,9 +1096,9 @@
 			<div id="container">
 				<main>
 					<article id="post-page">
-	<h2 class="title">[Sass/SCSS] 재활용(Mixins) - @include </h2>
+	<h2 class="title">[유닉스] 쉘 스크립트(Shell Script) 디버깅</h2>
 	<a class="tag" href="" data-flip="title">
-		<time datetime="" class="by-line">2020년 03월 13일</time>
+		<time datetime="" class="by-line">2020년 05월 14일</time>
 	</a>
 	<hr>
 	<div class="content">
@@ -1114,154 +1114,95 @@
 			</div>
 		</div>
 
-		<p><img src="/assets/img/sass/2020-03-13-sass-08.png" alt="" /></p>
+		<p><img src="/assets/img/unix/2020-05-14-unix-50.png" alt="" /></p>
 
-<h1 id="sassscss-재활용mixins---include">Sass(SCSS) 재활용(Mixins) - @include</h1>
-
-<p><br /></p>
+<h1 id="디버깅-오류-발생">디버깅 오류 발생</h1>
 
 <ul>
-  <li>Sass Mixins는 스타일 시트 전체에서 재사용 할 CSS 선언 그룹 을 정의하는 아주 훌륭한 기능입니다.</li>
-  <li>약간의 Mixin(믹스인)으로 다양한 스타일을 만들어낼 수 있습니다.</li>
-  <li>선언하기(@mixin)와 포함하기(@include)</li>
+  <li>복잡한 스크립트를 작성하다 보면 오류가 자주 발생</li>
+  <li>구문 오류는 바로 확인하여 수정 가능</li>
+  <li>실행 오류는 추적하기 쉽지 않음</li>
+  <li>쉘은 별도의 디버거를 제공하진 않지만 각 행의 실행을 추적할 수 있는 방법 제공</li>
 </ul>
 
-<p><br /></p>
-
-<h2 id="mixin">@mixin</h2>
+<h1 id="bash-x를-이용한-디버깅">bash –x를 이용한 디버깅</h1>
 
 <ul>
-  <li>기본적인 Mixin 선언은 아주 간단합니다.</li>
-  <li>
-    <p>@mixin 지시어를 이용하여 스타일을 정의합니다.</p>
-  </li>
-  <li>SCSS:</li>
+  <li>가장 많이 사용되며, 간단한 스크립트 디버깅 방법</li>
+  <li>-x 옵션으로 실행하면 각 행이 실행될 때마다 화면에 출력</li>
 </ul>
 
-<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">@mixin</span> <span class="err">믹스인이름</span> <span class="p">{</span>
-  <span class="err">스타일</span><span class="o">;</span>
-<span class="p">}</span>
-
-<span class="k">@mixin</span> <span class="n">large-text</span> <span class="p">{</span>
-  <span class="nl">font-size</span><span class="p">:</span> <span class="m">22px</span><span class="p">;</span>
-  <span class="nl">font-weight</span><span class="p">:</span> <span class="nb">bold</span><span class="p">;</span>
-  <span class="nl">font-family</span><span class="p">:</span> <span class="nb">sans-serif</span><span class="p">;</span>
-  <span class="nl">color</span><span class="p">:</span> <span class="no">orange</span><span class="p">;</span>
-<span class="p">}</span>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">$</span> <span class="n">bash</span> <span class="err">–</span><span class="n">x</span> <span class="n">test_while</span>
+<span class="o">+</span><span class="k">count</span><span class="o">=</span><span class="mi">1</span>
+<span class="o">+</span><span class="k">sum</span><span class="o">=</span><span class="mi">0</span>
+<span class="o">+</span><span class="p">((</span> <span class="k">count</span><span class="o">&lt;=</span><span class="mi">10</span> <span class="p">))</span>
+<span class="o">+</span><span class="p">((</span> <span class="k">sum</span><span class="o">+=</span><span class="k">count</span> <span class="p">))</span>
+<span class="p">......</span>
+<span class="o">+</span><span class="n">let</span> <span class="k">count</span><span class="o">+=</span><span class="mi">1</span>
+<span class="o">+</span><span class="p">((</span> <span class="k">count</span><span class="o">&lt;=</span><span class="mi">10</span> <span class="p">))</span>
+<span class="o">+</span><span class="n">echo</span> <span class="err">“</span><span class="k">Sum</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mi">10</span><span class="p">)</span> <span class="p">:</span> <span class="mi">55</span><span class="err">’</span>
+<span class="k">Sum</span><span class="p">(</span><span class="mi">1</span><span class="o">~</span><span class="mi">10</span><span class="p">)</span> <span class="p">:</span> <span class="mi">55</span>
+<span class="err">$</span>
 </code></pre></div></div>
 
 <ul>
-  <li>Sass:</li>
+  <li>+로 시작하는 행은 스크립트의 내용</li>
+  <li>가장 마지막의 +가 없는 행은 echo 명령에 의해 표준 출력으로 나오는 내용</li>
 </ul>
 
-<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">=</span><span class="err">믹스인이름</span>
-  <span class="err">스타일</span>
-  
-<span class="o">=</span><span class="nt">large-text</span>
-  <span class="nt">font-size</span><span class="o">:</span> <span class="nt">22px</span>
-  <span class="nt">font-weight</span><span class="o">:</span> <span class="nt">bold</span>
-  <span class="nt">font-family</span><span class="o">:</span> <span class="nt">sans-serif</span>
-  <span class="nt">color</span><span class="o">:</span> <span class="nt">orange</span>
+<h1 id="trap을-이용한-디버깅">trap을 이용한 디버깅</h1>
+
+<ul>
+  <li>bash –x 방법은 기본 실행 여부를 확인할 수는 있지만 실제 변수 안에 저장되는 값을 알 수 없다는 단점이 있음</li>
+  <li>스크립트 안에서 시그널을 처리하는 trap을 이용해 해결</li>
+</ul>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">$</span> <span class="n">cat</span> <span class="err">–</span><span class="n">n</span> <span class="n">test_trap</span>
+    <span class="mi">1</span> <span class="o">#!/</span><span class="n">bin</span><span class="o">/</span><span class="n">bash</span>
+    <span class="mi">2</span> <span class="o">#</span> <span class="n">test_trap</span> <span class="p">:</span> <span class="n">trap</span><span class="err">을</span> <span class="err">테스트하는</span> <span class="err">스크립트</span>
+    <span class="mi">3</span> <span class="o">#</span>
+    <span class="mi">4</span>
+    <span class="mi">5</span> <span class="n">trap</span> <span class="err">‘</span><span class="n">echo</span> <span class="err">“$</span><span class="n">LINENO</span> <span class="p">:</span> <span class="k">count</span><span class="o">=</span><span class="err">$</span><span class="k">count</span><span class="err">”’</span> <span class="n">DEBUG</span>
+    <span class="mi">6</span> <span class="k">count</span><span class="o">=</span><span class="mi">1</span>
+    <span class="mi">7</span> <span class="k">sum</span><span class="o">=</span><span class="mi">0</span>
+    <span class="mi">8</span> <span class="n">while</span> <span class="p">((</span> <span class="k">count</span><span class="o">&lt;=</span><span class="mi">10</span> <span class="p">))</span>
+    <span class="mi">9</span> <span class="k">do</span>
+    <span class="mi">10</span>    <span class="p">((</span> <span class="k">sum</span><span class="o">+=</span><span class="k">count</span> <span class="p">))</span>
+    <span class="mi">11</span>    <span class="n">let</span> <span class="k">count</span><span class="o">+=</span><span class="mi">1</span>
+    <span class="mi">12</span> <span class="n">done</span>
+    <span class="mi">13</span>
+    <span class="mi">14</span> <span class="n">echo</span> <span class="err">“</span><span class="k">Sum</span><span class="p">(</span><span class="mi">1</span><span class="o">~</span><span class="mi">10</span><span class="p">)</span> <span class="p">:</span> <span class="err">$</span><span class="k">sum</span><span class="err">”</span>
+<span class="err">$</span>
 </code></pre></div></div>
 
 <ul>
-  <li>Mixin은 선택자를 포함 가능하고 상위(부모) 요소 참조(＆같은)도 할 수 있습니다.</li>
-</ul>
-
-<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">@mixin</span> <span class="n">large-text</span> <span class="p">{</span>
-  <span class="nl">font</span><span class="p">:</span> <span class="err">{</span>
-    <span class="n">size</span><span class="p">:</span> <span class="m">22px</span><span class="p">;</span>
-    <span class="py">weight</span><span class="p">:</span> <span class="nb">bold</span><span class="p">;</span>
-    <span class="py">family</span><span class="p">:</span> <span class="nb">sans-serif</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="nt">color</span><span class="o">:</span> <span class="nt">orange</span><span class="o">;</span>
-
-  <span class="err">＆</span><span class="nd">::after</span> <span class="p">{</span>
-    <span class="nl">content</span><span class="p">:</span> <span class="s1">"!!"</span><span class="p">;</span>
-  <span class="p">}</span>
-
-  <span class="nt">span</span><span class="nc">.icon</span> <span class="p">{</span>
-    <span class="nl">background</span><span class="p">:</span> <span class="sx">url("/images/icon.png")</span><span class="p">;</span>
-  <span class="p">}</span>
-<span class="err">}</span>
-</code></pre></div></div>
-
-<p><br /></p>
-
-<h2 id="include">@include</h2>
-
-<ul>
-  <li>
-    <p>선언된 Mixin을 사용(포함)하기 위해서는 @include가 필요합니다.</p>
-  </li>
-  <li>
-    <p>SCSS:</p>
+  <li>실행 결과
+    <ul>
+      <li>5행이 시그널 처리를 위해 추가된 부분</li>
+      <li>시그널은 실행 중인 프로세스에 정보를 전달하는 메시지</li>
+      <li>가장 대표적인 시그널이 프로세스를 종료시키는 ^C</li>
+      <li>DEBUG 시그널은 쉘이 스크립트를 디버깅하기 위해 생성하는 시그널로 스크립트의 명령이 생성될 때마다 생성됨</li>
+      <li>5행에서 trap 명령은 DEBUG 시그널을 받으면 echo 문을 실행</li>
+      <li>디버깅이 완료되면 trap 명령 앞에 #을 추가해 주석으로 처리</li>
+    </ul>
   </li>
 </ul>
 
-<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">@include</span> <span class="err">믹스인이름</span><span class="p">;</span>
-
-<span class="nt">h1</span> <span class="p">{</span>
-  <span class="err">@include</span> <span class="err">large-text;</span>
-<span class="p">}</span>
-<span class="nt">div</span> <span class="p">{</span>
-  <span class="err">@include</span> <span class="err">large-text;</span>
-<span class="p">}</span>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">$</span> <span class="n">chmod</span> <span class="o">+</span><span class="n">x</span> <span class="n">test_trap</span>
+<span class="mi">6</span> <span class="p">:</span> <span class="k">count</span><span class="o">=</span>
+<span class="mi">7</span> <span class="p">:</span> <span class="k">count</span><span class="o">=</span><span class="mi">1</span>
+<span class="mi">8</span> <span class="p">:</span> <span class="k">count</span><span class="o">=</span><span class="mi">1</span>
+<span class="mi">10</span> <span class="p">:</span> <span class="k">count</span><span class="o">=</span><span class="mi">2</span>
+<span class="mi">11</span> <span class="p">:</span> <span class="k">count</span><span class="o">=</span><span class="mi">2</span>
+<span class="p">......</span>
+<span class="mi">10</span> <span class="p">:</span> <span class="k">count</span><span class="o">=</span><span class="mi">10</span>
+<span class="mi">11</span> <span class="p">:</span> <span class="k">count</span><span class="o">=</span><span class="mi">10</span>
+<span class="mi">8</span> <span class="p">:</span> <span class="k">count</span><span class="o">=</span><span class="mi">11</span>
+<span class="mi">14</span> <span class="p">:</span> <span class="k">count</span><span class="o">=</span><span class="mi">11</span>
+<span class="k">Sum</span><span class="p">(</span><span class="mi">1</span><span class="o">~</span><span class="mi">10</span><span class="p">)</span> <span class="p">:</span> <span class="mi">55</span>
+<span class="err">$</span>
 </code></pre></div></div>
 
-<ul>
-  <li>Sass:</li>
-</ul>
-
-<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">+</span><span class="err">믹스인이름</span>
-
-<span class="nt">h1</span>
-  <span class="o">+</span><span class="nt">large-text</span>
-<span class="nt">div</span>
-  <span class="o">+</span><span class="nt">large-text</span>
-</code></pre></div></div>
-
-<ul>
-  <li>Compiled to:</li>
-</ul>
-
-<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">h1</span> <span class="p">{</span>
-  <span class="nl">font-size</span><span class="p">:</span> <span class="m">22px</span><span class="p">;</span>
-  <span class="nl">font-weight</span><span class="p">:</span> <span class="nb">bold</span><span class="p">;</span>
-  <span class="nl">font-family</span><span class="p">:</span> <span class="nb">sans-serif</span><span class="p">;</span>
-  <span class="nl">color</span><span class="p">:</span> <span class="no">orange</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="nt">h1</span><span class="nd">::after</span> <span class="p">{</span>
-  <span class="nl">content</span><span class="p">:</span> <span class="s1">"!!"</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="nt">h1</span> <span class="nt">span</span><span class="nc">.icon</span> <span class="p">{</span>
-  <span class="nl">background</span><span class="p">:</span> <span class="sx">url("/images/icon.png")</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="nt">div</span> <span class="p">{</span>
-  <span class="nl">font-size</span><span class="p">:</span> <span class="m">22px</span><span class="p">;</span>
-  <span class="nl">font-weight</span><span class="p">:</span> <span class="nb">bold</span><span class="p">;</span>
-  <span class="nl">font-family</span><span class="p">:</span> <span class="nb">sans-serif</span><span class="p">;</span>
-  <span class="nl">color</span><span class="p">:</span> <span class="no">orange</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="nt">div</span><span class="nd">::after</span> <span class="p">{</span>
-  <span class="nl">content</span><span class="p">:</span> <span class="s1">"!!"</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="nt">div</span> <span class="nt">span</span><span class="nc">.icon</span> <span class="p">{</span>
-  <span class="nl">background</span><span class="p">:</span> <span class="sx">url("/images/icon.png")</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p><br />
-<br /></p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    본 포스팅은 HEROPY 님의 영상과 블로그를 보고 공부한 내용을 정리한 것입니다.
-    https://heropy.blog/2018/01/31/sass/
-</code></pre></div></div>
 
 
 		<!-- buymeacoffee 버튼 -->
@@ -1298,9 +1239,9 @@
       }
 
       var d = function () {
-        this.page.title = "[Sass/SCSS] 재활용(Mixins) - @include ",
-          this.page.identifier = "/devlog/2020/03/13/sass-08",
-          this.page.url = "https://m-veloper.github.io/devlog/2020/03/13/sass-08/"
+        this.page.title = "[유닉스] 쉘 스크립트(Shell Script) 디버깅",
+          this.page.identifier = "/devlog/2020/05/14/unix-50",
+          this.page.url = "https://m-veloper.github.io/devlog/2020/05/14/unix-50/"
       };
       s._disqusFirst = void 0 === s._disqusFirst || s._disqusFirst, s._disqusLoading = void 0 !== s._disqusLoading && s._disqusLoading, s._disqusThis = !1, s._disqusThreadOffsetTop = i.getElementById(
         "disqus_thread").offsetTop, s._disqusLoading ? s._disqusFirst = !1 : (s._disqusLoading = !0, loadJSDeferred(

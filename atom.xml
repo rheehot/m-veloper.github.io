@@ -4,12 +4,22 @@
  <title>슬기로운 개발 생활</title>
  <link href="https://m-veloper.github.io/atom.xml" rel="self"/>
  <id>https://m-veloper.github.io</id>
- <updated>2020-05-13T00:12:00+09:00</updated>
+ <updated>2020-05-14T00:06:10+09:00</updated>
  <author>
    <name>m-veloper</name>
    <uri>https://m-veloper.github.io</uri>
    <email>m_veloper@naver.com</email>
  </author>
+
+ 
+
+ <entry>
+   <title>[유닉스] 쉘 스크립트(Shell Script) 디버깅</title>
+   <link href="https://m-veloper.github.io/devlog/2020/05/14/unix-50/"/>
+   <id>https://m-veloper.github.io/devlog/2020/05/14/unix-50</id>
+   <updated>2020-05-14T00:00:00+09:00</updated>
+   <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-05-14-unix-50.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;디버깅-오류-발생&quot;&gt;디버깅 오류 발생&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;복잡한 스크립트를 작성하다 보면 오류가 자주 발생&lt;/li&gt; &lt;li&gt;구문 오류는 바로 확인하여 수정 가능&lt;/li&gt; &lt;li&gt;실행 오류는 추적하기 쉽지 않음&lt;/li&gt; &lt;li&gt;쉘은 별도의 디버거를 제공하진 않지만 각 행의 실행을 추적할 수 있는 방법 제공&lt;/li&gt; &lt;/ul&gt; &lt;h1 id=&quot;bash-x를-이용한-디버깅&quot;&gt;bash –x를 이용한 디버깅&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;가장 많이 사용되며,...</content>
+ </entry>
 
  
 
@@ -99,16 +109,6 @@
    <id>https://m-veloper.github.io/devlog/2020/05/06/unix-41</id>
    <updated>2020-05-06T00:00:00+09:00</updated>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-05-06-unix-41.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;쉘-스크립트shell-script&quot;&gt;쉘 스크립트(Shell Script)&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;스크립트 : “영화나 방송의 대본과 각본 따위의 방송 원고”&lt;/li&gt; &lt;li&gt;컴퓨터 소프트웨어 : 컴파일 언어, 스크립트 언어 &lt;ul&gt; &lt;li&gt;컴파일 언어 : 프로그램 작성 –&amp;gt; 컴파일 –&amp;gt; 실행 파일 만들기&lt;/li&gt; &lt;li&gt;스크립트 언어 : 인터프리터에 의해 실행됨 &lt;ul&gt; &lt;li&gt;언어 구조가 쉬워 빨리 배울 수...</content>
- </entry>
-
- 
-
- <entry>
-   <title>[Database] 자바(JAVA) 란? 자바의 정의</title>
-   <link href="https://m-veloper.github.io/devlog/2020/05/05/database-56/"/>
-   <id>https://m-veloper.github.io/devlog/2020/05/05/database-56</id>
-   <updated>2020-05-05T00:00:00+09:00</updated>
-   <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/database/2020/05/2020-05-05-database-56.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;java&quot;&gt;JAVA&lt;/h1&gt; &lt;h3 id=&quot;프로그래밍-언어&quot;&gt;프로그래밍 언어&lt;/h3&gt; &lt;ul&gt; &lt;li&gt;기계어(Machine Language) &lt;ul&gt; &lt;li&gt;0, 1의 이진수로 구성된 언어&lt;/li&gt; &lt;li&gt;컴퓨터의 CPU는 기계어만 이해하고 처리가능&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;어셈블리어 &lt;ul&gt; &lt;li&gt;기계어 명령을 ADD, SUB, MOVE 등과 같은 표현하기 쉬운 상징적인 단어인 니모닉 기호(mnemonic symbol)로 일대일 대응시킨 언어&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;고급언어 &lt;ul&gt; &lt;li&gt;사람이 이해하기...</content>
  </entry>
 
  

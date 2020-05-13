@@ -1,6 +1,14 @@
 [
 
 {
+"title"    : "[유닉스] 쉘 스크립트(Shell Script) 디버깅",
+"category" : "",
+"tags"     : "unix",
+"url"      : "/devlog/2020/05/14/unix-50/",
+"date"     : "2020-05-14 00:00:00 +0900"
+} ,
+
+{
 "title"    : "[유닉스] 쉘 스크립트(Shell Script) 함수",
 "category" : "",
 "tags"     : "unix",
