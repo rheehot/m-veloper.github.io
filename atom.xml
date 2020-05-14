@@ -4,12 +4,22 @@
  <title>슬기로운 개발 생활</title>
  <link href="https://m-veloper.github.io/atom.xml" rel="self"/>
  <id>https://m-veloper.github.io</id>
- <updated>2020-05-14T00:06:10+09:00</updated>
+ <updated>2020-05-15T02:22:20+09:00</updated>
  <author>
    <name>m-veloper</name>
    <uri>https://m-veloper.github.io</uri>
    <email>m_veloper@naver.com</email>
  </author>
+
+ 
+
+ <entry>
+   <title>[Jekyll] 검색(Search) 기능 만들기/ Github 블로그 검색(Search) 기능</title>
+   <link href="https://m-veloper.github.io/tip/2020/05/15/tip-jekyll-01/"/>
+   <id>https://m-veloper.github.io/tip/2020/05/15/tip-jekyll-01</id>
+   <updated>2020-05-15T00:00:00+09:00</updated>
+   <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/jekyll/2020-05-15-jekyll-01.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;검색search-기능-만들기&quot;&gt;검색(Search) 기능 만들기&lt;/h1&gt; &lt;h4 id=&quot;-본-포스팅은-기본적인-블로그가-만들어져-있다고-가정하고-진행합니다-&quot;&gt;[ 본 포스팅은 기본적인 블로그가 만들어져 있다고 가정하고 진행합니다. ]&lt;/h4&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;블로그에 글이 점점 많아지면서 내 자신도 내 글을 찾기가 점점 힘들어지고 있다는걸 깨달았습니다.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;페이징을 하나하나 넘겨가면서 내 글을 찾아서 보는것이 상당히 비효율적입니다.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;제 블로그에서 정보를...</content>
+ </entry>
 
  
 
@@ -99,16 +109,6 @@
    <id>https://m-veloper.github.io/devlog/2020/05/07/unix-42</id>
    <updated>2020-05-07T00:00:00+09:00</updated>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-05-07-unix-42.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;쉘-스크립트shell-script-변수&quot;&gt;쉘 스크립트(Shell Script) 변수&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;쉘 변수 : 지역 변수, 환경 변수&lt;/li&gt; &lt;li&gt;“변수명=값” 형태로 정의와 동시에 값을 저장&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-05-07-unix-42-01.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;-, =, +, ?에 콜론을 붙이면 변수에 값이 정의되어 있거나 널 값으로 설정되어 있는 지 확인&lt;/li&gt; &lt;li&gt;콜론을 사용하지 않으면 널 값으로...</content>
- </entry>
-
- 
-
- <entry>
-   <title>[유닉스] 쉘 스크립트(Shell Script)</title>
-   <link href="https://m-veloper.github.io/devlog/2020/05/06/unix-41/"/>
-   <id>https://m-veloper.github.io/devlog/2020/05/06/unix-41</id>
-   <updated>2020-05-06T00:00:00+09:00</updated>
-   <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-05-06-unix-41.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;쉘-스크립트shell-script&quot;&gt;쉘 스크립트(Shell Script)&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;스크립트 : “영화나 방송의 대본과 각본 따위의 방송 원고”&lt;/li&gt; &lt;li&gt;컴퓨터 소프트웨어 : 컴파일 언어, 스크립트 언어 &lt;ul&gt; &lt;li&gt;컴파일 언어 : 프로그램 작성 –&amp;gt; 컴파일 –&amp;gt; 실행 파일 만들기&lt;/li&gt; &lt;li&gt;스크립트 언어 : 인터프리터에 의해 실행됨 &lt;ul&gt; &lt;li&gt;언어 구조가 쉬워 빨리 배울 수...</content>
  </entry>
 
  

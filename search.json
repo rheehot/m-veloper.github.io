@@ -1,6 +1,14 @@
 [
 
 {
+"title"    : "[Jekyll] 검색(Search) 기능 만들기/ Github 블로그 검색(Search) 기능",
+"category" : "",
+"tags"     : "web, jekyll",
+"url"      : "/tip/2020/05/15/tip-jekyll-01/",
+"date"     : "2020-05-15 00:00:00 +0900"
+} ,
+
+{
 "title"    : "[유닉스] 쉘 스크립트(Shell Script) 디버깅",
 "category" : "",
 "tags"     : "unix",
