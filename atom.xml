@@ -4,12 +4,32 @@
  <title>슬기로운 개발 생활</title>
  <link href="https://m-veloper.github.io/atom.xml" rel="self"/>
  <id>https://m-veloper.github.io</id>
- <updated>2020-05-15T02:22:20+09:00</updated>
+ <updated>2020-05-16T01:26:37+09:00</updated>
  <author>
    <name>m-veloper</name>
    <uri>https://m-veloper.github.io</uri>
    <email>m_veloper@naver.com</email>
  </author>
+
+ 
+
+ <entry>
+   <title>[유닉스] 시스템 관리자</title>
+   <link href="https://m-veloper.github.io/devlog/2020/05/16/unix-51/"/>
+   <id>https://m-veloper.github.io/devlog/2020/05/16/unix-51</id>
+   <updated>2020-05-16T00:00:00+09:00</updated>
+   <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-05-16-unix-51.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;시스템-관리자&quot;&gt;시스템 관리자&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;유닉스 사용자 &lt;ul&gt; &lt;li&gt;일반 사용자와 시스템 관리자&lt;/li&gt; &lt;li&gt;일반 사용자 : 정해진 범위 내에서만 작업을 수행할 수 있는 사용자&lt;/li&gt; &lt;li&gt;시스템 관리자 : 시스템이 올바로 동작할 수 있도록 시스템을 관리하고 운영하는 책임을 가진 사용자&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;/ul&gt; &lt;h3 id=&quot;시스템-관리자의-역할&quot;&gt;시스템 관리자의 역할&lt;/h3&gt; &lt;ul&gt; &lt;li&gt;사용자 등록,...</content>
+ </entry>
+
+ 
+
+ <entry>
+   <title>[Javascript] ECMAScript6/ES6 는 무엇일까?</title>
+   <link href="https://m-veloper.github.io/devlog/2020/05/16/ECMAScript6-01/"/>
+   <id>https://m-veloper.github.io/devlog/2020/05/16/ECMAScript6-01</id>
+   <updated>2020-05-16T00:00:00+09:00</updated>
+   <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/ECMAScript6/2020-05-16-ECMAScript6-01.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;blockquote&gt; &lt;p&gt;이글은 “&lt;a href=&quot;https://wormwlrm.github.io/2018/10/03/What-is-the-difference-between-javascript-and-ecmascript.html&quot;&gt;재그지그&lt;/a&gt;“님의 글을 참고하였습니다.&lt;/p&gt; &lt;/blockquote&gt; &lt;p&gt;&lt;br /&gt;&lt;/p&gt; &lt;h1 id=&quot;ecmascript6es6-는-무엇일까&quot;&gt;ECMAScript6/ES6 는 무엇일까?&lt;/h1&gt; &lt;p&gt;이 글은 JavaScript와 ECMAScript에 대한 이해를 바탕으로 작성합니다. 이 글은 JavaScript에는 친숙하지만,&lt;/p&gt; &lt;p&gt;EMCAScript와 웹 브라우저, Babel과 같은 JavaScript를 둘러싼 여러가지 환경들에 대해 이해하고자 하는 분들에게&lt;/p&gt; &lt;p&gt;초점이 맞추어져 있습니다. 그리고 스크립팅 언어, JavaScript 엔진...</content>
+ </entry>
 
  
 
@@ -89,26 +109,6 @@
    <id>https://m-veloper.github.io/devlog/2020/05/09/unix-44</id>
    <updated>2020-05-09T00:00:00+09:00</updated>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-05-09-unix-44.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;연산자&quot;&gt;연산자&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;연산자는 프로그램에서 자료를 다양하게 처리하는 방법을 제공&lt;/li&gt; &lt;li&gt;배시 쉘은 산술 연산자, 비교 연산자, 논리 연산자, 비트 연산자 등 일반 프로그래밍 언어에서 제공하는 것과 유사한 연산자를 제공&lt;/li&gt; &lt;li&gt;배시 쉘에서 수치 연산자 사용할 때는 let 내장 명령이나 (( ))를 사용&lt;/li&gt; &lt;li&gt;비트 시프트 연산자는 here 문서의...</content>
- </entry>
-
- 
-
- <entry>
-   <title>[유닉스] 쉘 스크립트(Shell Script) 문법 - 사용자로부터 입력 받기</title>
-   <link href="https://m-veloper.github.io/devlog/2020/05/08/unix-43/"/>
-   <id>https://m-veloper.github.io/devlog/2020/05/08/unix-43</id>
-   <updated>2020-05-08T00:00:00+09:00</updated>
-   <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-05-08-unix-43.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;사용자로부터-입력-받기--read&quot;&gt;사용자로부터 입력 받기 : read&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;read 명령은 쉘 내장 명령&lt;/li&gt; &lt;li&gt;터미널이나 파일로부터 입력을 받아 들임&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-05-08-unix-43-01.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cat&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;–&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;test_read&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;#!/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bin&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bash&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;#&lt;/span&gt;...</content>
- </entry>
-
- 
-
- <entry>
-   <title>[유닉스] 쉘 스크립트(Shell Script) 변수 사용하기</title>
-   <link href="https://m-veloper.github.io/devlog/2020/05/07/unix-42/"/>
-   <id>https://m-veloper.github.io/devlog/2020/05/07/unix-42</id>
-   <updated>2020-05-07T00:00:00+09:00</updated>
-   <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-05-07-unix-42.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;쉘-스크립트shell-script-변수&quot;&gt;쉘 스크립트(Shell Script) 변수&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;쉘 변수 : 지역 변수, 환경 변수&lt;/li&gt; &lt;li&gt;“변수명=값” 형태로 정의와 동시에 값을 저장&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;img src=&quot;/assets/img/unix/2020-05-07-unix-42-01.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;-, =, +, ?에 콜론을 붙이면 변수에 값이 정의되어 있거나 널 값으로 설정되어 있는 지 확인&lt;/li&gt; &lt;li&gt;콜론을 사용하지 않으면 널 값으로...</content>
  </entry>
 
  

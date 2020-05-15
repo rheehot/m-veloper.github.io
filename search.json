@@ -1,6 +1,22 @@
 [
 
 {
+"title"    : "[유닉스] 시스템 관리자",
+"category" : "",
+"tags"     : "unix",
+"url"      : "/devlog/2020/05/16/unix-51/",
+"date"     : "2020-05-16 00:00:00 +0900"
+} ,
+
+{
+"title"    : "[Javascript] ECMAScript6/ES6 는 무엇일까?",
+"category" : "",
+"tags"     : "ECMAScript6, ES6, ES2015",
+"url"      : "/devlog/2020/05/16/ECMAScript6-01/",
+"date"     : "2020-05-16 00:00:00 +0900"
+} ,
+
+{
 "title"    : "[Jekyll] 검색(Search) 기능 만들기/ Github 블로그 검색(Search) 기능",
 "category" : "",
 "tags"     : "web, jekyll",
